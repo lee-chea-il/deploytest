@@ -1,0 +1,36 @@
+plugins {
+	id 'org.springframework.boot' version '2.7.4'
+	id 'io.spring.dependency-management' version '1.0.14.RELEASE'
+	id 'java'
+}
+
+group = 'com.classlink'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '1.8'
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	annotationProcessor 'org.projectlombok:lombok:1.18.24'
+	compileOnly 'org.projectlombok:lombok:1.18.24'
+	implementation 'org.apache.commons:commons-lang3:3.12.0'
+	implementation 'org.springframework.boot:spring-boot-starter-data-jdbc'
+	implementation 'org.mybatis.spring.boot:mybatis-spring-boot-starter:2.2.2'
+	implementation 'org.mariadb.jdbc:mariadb-java-client:3.0.4'
+	implementation 'org.springframework.boot:spring-boot-starter-websocket'
+	implementation group: 'org.apache.httpcomponents', name: 'httpclient', version: '4.4.1'
+	implementation group: 'io.jsonwebtoken', name: 'jjwt', version: '0.9.1'
+	implementation 'org.msgpack:msgpack-core:0.9.3'
+	implementation 'org.msgpack:jackson-dataformat-msgpack:0.9.3'
+	implementation 'org.reflections:reflections:0.10.2'
+
+}
+
+tasks.named('test') {
+	useJUnitPlatform()
+}
