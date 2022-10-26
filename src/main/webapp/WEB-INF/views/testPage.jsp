@@ -79,7 +79,7 @@
 			
       const PacketDataObj = {
 				OpCode : 121,
-				accessToken : "1234",
+				accessToken : "123456",
 				instanceId : "2",
 				data : encodedWebSocketMessagePackTestData
 			};
