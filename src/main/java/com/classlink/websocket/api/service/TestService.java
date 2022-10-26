@@ -4,7 +4,10 @@ import java.util.ArrayList;
 import java.util.List;
 import org.springframework.stereotype.Service;
 import org.springframework.web.socket.BinaryMessage;
+
+import com.classlink.websocket.api.domain.Packet.PacketData;
 import com.classlink.websocket.api.domain.TestProtoBuffDto.Person;
+import com.classlink.websocket.api.domain.WebSocketMessagePackTestClass.WebSocketMessagePackTest;
 import com.google.protobuf.InvalidProtocolBufferException;
 import lombok.extern.slf4j.Slf4j;
 
@@ -56,21 +59,21 @@ public class TestService {
 	 * ).build(); byte[] bytes = result.writeValueAsBytes(temp); return new
 	 * BinaryMessage(bytes); }
 	 */
-	public BinaryMessage testPacketDto(BinaryMessage message) throws InvalidProtocolBufferException {
-		//list.add(phoneNumber);
+	public BinaryMessage testPacketDto(PacketData param) throws InvalidProtocolBufferException {
+
+		log.info(param.getData().toString());
+
+		WebSocketMessagePackTest deserialized = WebSocketMessagePackTest.newBuilder().mergeFrom(param.getData())
+				.build();
+		// Person deserialized = Person.newBuilder().mergeFrom(bytes, 0, 1).build();
+
+		log.info("name ? =" + deserialized.getName());
+		log.info("age ? =" + deserialized.getAge());
+		log.info("height ? =" + deserialized.getHeight());
+		log.info("weight ? =" + deserialized.getWeight());
+		log.info("birthday ? =" + deserialized.getTestInnerClass().getBirthday(0));
 		
-		Person person = Person.newBuilder().setOpCode(122).setEmail("a@a.com").setName("김연아").build();
-		byte[] bytes = person.toByteArray();
-		log.info(bytes.toString());
-		
-		Person deserialized = Person.newBuilder().mergeFrom(bytes, 0, 4).build();
-		//Person deserialized = Person.newBuilder().mergeFrom(bytes, 0, 1).build();
-		
-		log.info("OpCode ? ="+deserialized.getOpCode());
-		log.info("email ? ="+deserialized.getEmail());
-		log.info("name ? ="+deserialized.getName());
-		//log.info("name ? ="+deserialized.getPhonesList().get(2));
-		
-		return new BinaryMessage(bytes);
+
+		return new BinaryMessage(deserialized.toByteArray());
 	}
 }

@@ -9,8 +9,7 @@ import org.springframework.web.socket.BinaryMessage;
 import org.springframework.web.socket.WebSocketSession;
 
 import com.classlink.websocket.api.common.OpCodeMapping;
-import com.classlink.websocket.api.domain.PacketData;
-import com.classlink.websocket.api.domain.PacketHeader;
+import com.classlink.websocket.api.domain.Packet.PacketData;
 import com.classlink.websocket.api.domain.testDto;
 import com.classlink.websocket.api.service.TestService;
 import com.fasterxml.jackson.core.exc.StreamReadException;
@@ -27,7 +26,7 @@ public class TestController {
 	}
 
 	@OpCodeMapping(value = 111)
-	public void test(WebSocketSession session, BinaryMessage message)
+	public void test(WebSocketSession session, PacketData param)
 			throws StreamReadException, DatabindException, IOException {
 		//session.sendMessage(testService().test(message));
 	}
@@ -39,9 +38,9 @@ public class TestController {
 	}
 	
 	@OpCodeMapping(value = 121)
-	public void testPacketDto(WebSocketSession session, BinaryMessage message)
+	public void testPacketDto(WebSocketSession session, PacketData param)
 			throws StreamReadException, DatabindException, IOException {
 		
-		session.sendMessage(testService().testPacketDto(message));
+		session.sendMessage(testService().testPacketDto(param));
 	}
 }

@@ -19,8 +19,8 @@ import org.springframework.web.socket.CloseStatus;
 import org.springframework.web.socket.WebSocketSession;
 import org.springframework.web.socket.handler.TextWebSocketHandler;
 import com.classlink.websocket.api.common.OpCodeMapping;
-import com.classlink.websocket.api.domain.PacketData;
-import com.classlink.websocket.api.domain.PacketHeader;
+import com.classlink.websocket.api.domain.Packet;
+import com.classlink.websocket.api.domain.Packet.PacketData;
 import com.classlink.websocket.api.domain.TestByteParam;
 import com.classlink.websocket.api.domain.TestProtoBuffDto.Person;
 import com.classlink.websocket.api.util.JwtTokenParser;
@@ -66,11 +66,11 @@ public class WebSocketHandler extends TextWebSocketHandler {
 		boolean stop = false;
 
 		try {
-			
-			Person deserializedParam = Person.newBuilder().mergeFrom(message.getPayload().array()).build();
+			PacketData deserializedParam = PacketData.newBuilder().mergeFrom(message.getPayload().array()).build();
 			log.info(String.valueOf(deserializedParam.getOpCode()));
-			log.info(deserializedParam.getName());
-			log.info(deserializedParam.getEmail());
+			log.info(deserializedParam.getAccessToken());
+			log.info(deserializedParam.getInstanceId());
+			log.info(deserializedParam.getData().toString());
 			
 			for (Class<?> clazz : list) {
 				int cnt = 0;
@@ -82,7 +82,7 @@ public class WebSocketHandler extends TextWebSocketHandler {
 
 						if (key == deserializedParam.getOpCode()) {
 							// method 호출
-							method.invoke(clazz.getConstructor().newInstance(), session, message);
+							method.invoke(clazz.getConstructor().newInstance(), session, deserializedParam);
 							log.info(clazz.getName() + "(" + key + ") -> 객체 준비 완료");
 							stop = true;
 							break;
