@@ -29,44 +29,76 @@
 	<script src="//cdn.jsdelivr.net/npm/protobufjs@7.1.2/dist/protobuf.js"></script>
 	<!--<script type="module" src="./app.js" defer></script>-->
 	<script>
-		console.log(protobuf);
-		var message = null;
-		var buffer = null;
 
-		var globalRoot = null;
-		var Person = null;
+		let globalRoot = null;
+		
+		let WebSocketMessagePackTest = null;
+		let TestInnerClass = null;
+		let PacketData  = null;
 
-		var timestampStart = null;
-		var Timestamp = null;
+		let createdPacketData = null;
+		let encodedPacketData = null;
+		let decodedPacketData = null;
 
-		var PersonSerializedData = null;
-		var PersonDeserializedData = null;
-		var PersonToObject = null;
+		//var root = protobuf.Root.fromJSON({}).addJSON().resolveAll();
+		
+		const commonPath = "js/"
+		const protoFileList = [commonPath.concat("webSocketMessagePackTest.proto"),commonPath.concat("PacketData.proto")];
 
-		var root = protobuf.Root.fromJSON({}).addJSON().resolveAll();
-
-		protobuf.load("js/testProto.proto", function(err, root) {
-			console.log(root);
+		protobuf.load(protoFileList, function(err, root) {
+		
+			console.log("root : " + root);
+			console.log("err : " + err);
 			globalRoot = root;
 
-			Person = root.lookupType("tutorial.Person");
-
-			console.log(Person);
-
-			var PersonObj = {
-				OpCode : 121,
-				name : "suyeong",
-				email : "qkdptwls_@naver.com",
+			WebSocketMessagePackTest = root.lookupType("tutorial.WebSocketMessagePackTest");
+			TestInnerClass = root.lookupType("tutorial.WebSocketMessagePackTest.TestInnerClass");
+			PacketData = root.lookupType("tutorial.PacketData");
+			
+			const WebSocketMessagePackTestObj = {
+				   name : "suyeong",
+				   age : 28,
+				   height : 169.7,
+				   weight : 60.1,
+				   isALive : true,
+				   testInnerClass : {
+				  		 byteArray : new Uint8Array([0]),
+				  		 availableLanguage : ["korean","english"],
+				  		 birthday : [8,2]
+				   }
 			};
-
-			var verifyMsg = Person.verify(PersonObj);
-			if (verifyMsg) {
-				throw Error(verifyMsg);
-			}
+			
+	     let verifyMsg = WebSocketMessagePackTest.verify(WebSocketMessagePackTestObj);
+	      if (verifyMsg) {
+	        throw Error(verifyMsg);
+	      }
+	      
+      	const createdWebSocketMessagePackTest = WebSocketMessagePackTest.create(WebSocketMessagePackTestObj);
+      	const encodedWebSocketMessagePackTestData = WebSocketMessagePackTest.encode(createdWebSocketMessagePackTest).finish();
+	      
+			
+      const PacketDataObj = {
+				OpCode : 121,
+				accessToken : "1234",
+				instanceId : "2",
+				data : encodedWebSocketMessagePackTestData
+			};
+			
+      verifyMsg = PacketData.verify(PacketDataObj);
+      if (verifyMsg) {
+        throw Error(verifyMsg);
+      }
+      
+    	createdPacketData = PacketData.create(PacketDataObj);
+    	encodedPacketData = PacketData.encode(createdPacketData).finish();
+    	decodedPacketData = PacketData.decode(encodedPacketData);
+			
+			/*
 
 			message = Person.create(PersonObj);
 
 			PersonSerializedData = Person.encode(message).finish();
+			PersonDeserializedData = Person.decode(PersonSerializedData);
 
 			PersonToObject = Person.toObject(message, {
 				enums : String, // enums as string names
@@ -77,6 +109,7 @@
 				objects : true, // populates empty objects (map fields) even if defaults=false
 				oneofs : true, // includes virtual oneof fields set to the present field's name
 			});
+			*/
 		});
 		//---------------------------------------------------------------------------------------------------
 
@@ -93,7 +126,12 @@
 			$("#btnSend").on("click", function(evt) {
 				console.log("실행!!");
 
-				let msg = PersonSerializedData;
+				let msg = encodedPacketData;
+				
+				console.log("serializedDataToSend mmmmmmmmmmmm>>", msg);
+				console.log("deserializedDataToSend mmmmmmmmmmmm>>", decodedPacketData);
+				console.log("deserializedInnerDataToSend mmmmmmmmmmmm>>", WebSocketMessagePackTest.decode(decodedPacketData.data));
+				
 				socket.send(msg);
 				console.log("socket.send 실행!!");
 
@@ -111,14 +149,14 @@
 			});
 		});
 
-		var socket = null;
-		var isStomp = false;
+		let socket = null;
+		let isStomp = false;
 
 		// pure web-socket
 		function connectWS() {
 			console.log("tttttttttttttt");
 			//var ws = new WebSocket("ws:112.171.101.31:45170/api?token=11234");
-			var ws = new WebSocket("ws:localhost:8301/api");
+			let ws = new WebSocket("ws:localhost:8301/api");
 			socket = ws;
 
 			ws.onopen = function() {
@@ -131,8 +169,10 @@
 
 				fileReader.onload = function(event) {
 					const arrayBuffer = event.target.result;
-					const deserializedData = getObjectFromArrayBuffer(arrayBuffer);
-					console.log("receivedDeserializedData", deserializedData);
+					const deserializedPacketData = PacketData.decode(new Uint8Array(arrayBuffer));
+					console.log("receivedDeserializedData mmmmmmmmmmmm>>", deserializedPacketData);
+					console.log("receivedDeserializedInnerData mmmmmmmmmmmm>>", WebSocketMessagePackTest.decode(deserializedPacketData.data));
+					
 				};
 
 				fileReader.readAsArrayBuffer(blob);

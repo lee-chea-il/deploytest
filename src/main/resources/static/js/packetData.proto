@@ -1,0 +1,9 @@
+syntax = "proto3";
+package tutorial;
+
+message PacketData {
+  int32 OpCode = 1;
+  string accessToken = 2;
+  string instanceId = 3;
+  bytes data = 4;
+}
