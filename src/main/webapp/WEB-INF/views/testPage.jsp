@@ -79,7 +79,7 @@
 			
       const PacketDataObj = {
 				OpCode : 121,
-				accessToken : "123456",
+				accessToken : "1234",
 				instanceId : "2",
 				data : encodedWebSocketMessagePackTestData
 			};
@@ -174,6 +174,7 @@
 					console.log("receivedDeserializedInnerData mmmmmmmmmmmm>>", WebSocketMessagePackTest.decode(deserializedPacketData.data));
 					
 				};
+
 				fileReader.readAsArrayBuffer(blob);
 			};
 
