@@ -174,7 +174,6 @@
 					console.log("receivedDeserializedInnerData mmmmmmmmmmmm>>", WebSocketMessagePackTest.decode(deserializedPacketData.data));
 					
 				};
-
 				fileReader.readAsArrayBuffer(blob);
 			};
 
