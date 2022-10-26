@@ -29,12 +29,19 @@ public class TestController {
 	@OpCodeMapping(value = 111)
 	public void test(WebSocketSession session, BinaryMessage message)
 			throws StreamReadException, DatabindException, IOException {
-		session.sendMessage(testService().test(message));
+		//session.sendMessage(testService().test(message));
 	}
 
 	@OpCodeMapping(value = 112)
 	public void test1(WebSocketSession session, BinaryMessage message)
 			throws StreamReadException, DatabindException, IOException {
-		session.sendMessage(testService().test1(message));
+		//session.sendMessage(testService().test1(message));
+	}
+	
+	@OpCodeMapping(value = 121)
+	public void testPacketDto(WebSocketSession session, BinaryMessage message)
+			throws StreamReadException, DatabindException, IOException {
+		
+		session.sendMessage(testService().testPacketDto(message));
 	}
 }

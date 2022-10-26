@@ -28,7 +28,9 @@ dependencies {
 	implementation 'org.msgpack:msgpack-core:0.9.3'
 	implementation 'org.msgpack:jackson-dataformat-msgpack:0.9.3'
 	implementation 'org.reflections:reflections:0.10.2'
-
+	implementation 'javax.servlet:jstl'
+    implementation 'org.apache.tomcat.embed:tomcat-embed-jasper'
+    implementation 'com.google.protobuf:protobuf-java:3.21.8'
 }
 
 tasks.named('test') {

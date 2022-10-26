@@ -1,0 +1,11 @@
+syntax = "proto3";
+package tutorial;
+
+option java_package = "com.classlink.websocket.api.domain";
+option java_outer_classname = "TestProtoBuffDto";
+
+message Person {
+  int32 OpCode = 1;
+  string name = 2;
+  string email = 3;
+}

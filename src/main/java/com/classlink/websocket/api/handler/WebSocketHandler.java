@@ -1,5 +1,9 @@
 package com.classlink.websocket.api.handler;
 
+import java.io.ByteArrayInputStream;
+import java.io.IOException;
+import java.io.ObjectInput;
+import java.io.ObjectInputStream;
 import java.lang.reflect.Method;
 
 import java.util.Set;
@@ -15,9 +19,15 @@ import org.springframework.web.socket.CloseStatus;
 import org.springframework.web.socket.WebSocketSession;
 import org.springframework.web.socket.handler.TextWebSocketHandler;
 import com.classlink.websocket.api.common.OpCodeMapping;
+import com.classlink.websocket.api.domain.PacketData;
 import com.classlink.websocket.api.domain.PacketHeader;
+import com.classlink.websocket.api.domain.TestByteParam;
+import com.classlink.websocket.api.domain.TestProtoBuffDto.Person;
 import com.classlink.websocket.api.util.JwtTokenParser;
+import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.google.protobuf.InvalidProtocolBufferException;
+
 import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
@@ -45,20 +55,22 @@ public class WebSocketHandler extends TextWebSocketHandler {
 		// Reflections 클래스는 원하는 클래스를 찾기 위해 사용
 		// 파라미터값은 클래스를 찾을때 출발 패키지
 		// "" -> classpath 모든 패키지 검색
-		Reflections reflector = new Reflections(new ConfigurationBuilder().forPackages("com.classlink.websocket.api.controller"));
-		
+		Reflections reflector = new Reflections(
+				new ConfigurationBuilder().forPackages("com.classlink.websocket.api.controller"));
+
 		// getTypesAnnotatedWith():
 		// 파라미터값으로 넘긴 어노테이션이 붙은 클래스를 찾는다.
 		// 반환값: Controller 어노테이션이 선언된 클래스 목록
 		Set<Class<?>> list = reflector.getTypesAnnotatedWith(Controller.class);
 
-		ObjectMapper param = new ObjectMapper(new MessagePackFactory());
-		byte[] byte1 = message.getPayload().array();
 		boolean stop = false;
-		PacketHeader deserializedParam;
-		
+
 		try {
-			deserializedParam = param.readValue(byte1, PacketHeader.class);
+			
+			Person deserializedParam = Person.newBuilder().mergeFrom(message.getPayload().array()).build();
+			log.info(String.valueOf(deserializedParam.getOpCode()));
+			log.info(deserializedParam.getName());
+			log.info(deserializedParam.getEmail());
 			
 			for (Class<?> clazz : list) {
 				int cnt = 0;
@@ -67,7 +79,7 @@ public class WebSocketHandler extends TextWebSocketHandler {
 				for (Method method : methods) {
 					if (method.isAnnotationPresent(OpCodeMapping.class)) {
 						int key = method.getDeclaredAnnotation(OpCodeMapping.class).value();
-						
+
 						if (key == deserializedParam.getOpCode()) {
 							// method 호출
 							method.invoke(clazz.getConstructor().newInstance(), session, message);
