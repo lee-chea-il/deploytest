@@ -169,6 +169,7 @@
 
 				fileReader.onload = function(event) {
 					const arrayBuffer = event.target.result;
+					console.log(arrayBuffer);
 					const deserializedPacketData = PacketData.decode(new Uint8Array(arrayBuffer));
 					console.log("receivedDeserializedData mmmmmmmmmmmm>>", deserializedPacketData);
 					console.log("receivedDeserializedInnerData mmmmmmmmmmmm>>", WebSocketMessagePackTest.decode(deserializedPacketData.data));

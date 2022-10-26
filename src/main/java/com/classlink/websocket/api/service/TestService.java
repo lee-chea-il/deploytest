@@ -8,6 +8,7 @@ import org.springframework.web.socket.BinaryMessage;
 import com.classlink.websocket.api.domain.Packet.PacketData;
 import com.classlink.websocket.api.domain.TestProtoBuffDto.Person;
 import com.classlink.websocket.api.domain.WebSocketMessagePackTestClass.WebSocketMessagePackTest;
+import com.google.protobuf.ByteString;
 import com.google.protobuf.InvalidProtocolBufferException;
 import lombok.extern.slf4j.Slf4j;
 
@@ -60,20 +61,21 @@ public class TestService {
 	 * BinaryMessage(bytes); }
 	 */
 	public BinaryMessage testPacketDto(PacketData param) throws InvalidProtocolBufferException {
-
-		log.info(param.getData().toString());
-
+		//data 부분 역직렬화
 		WebSocketMessagePackTest deserialized = WebSocketMessagePackTest.newBuilder().mergeFrom(param.getData())
 				.build();
-		// Person deserialized = Person.newBuilder().mergeFrom(bytes, 0, 1).build();
 
 		log.info("name ? =" + deserialized.getName());
 		log.info("age ? =" + deserialized.getAge());
 		log.info("height ? =" + deserialized.getHeight());
 		log.info("weight ? =" + deserialized.getWeight());
 		log.info("birthday ? =" + deserialized.getTestInnerClass().getBirthday(0));
+		log.info("toByteArray ? =" + deserialized.toByteArray().toString());
 		
+		//PacketData 직렬화
+		PacketData result = PacketData.newBuilder().setOpCode(205).setAccessToken(param.getAccessToken())
+				.setInstanceId(param.getInstanceId()).setData(deserialized.toByteString()).build();
 
-		return new BinaryMessage(deserialized.toByteArray());
+		return new BinaryMessage(result.toByteArray());
 	}
 }
