@@ -155,8 +155,8 @@
 		// pure web-socket
 		function connectWS() {
 			console.log("tttttttttttttt");
-			//var ws = new WebSocket("ws:112.171.101.31:45170/api?token=11234");
-			let ws = new WebSocket("ws:localhost:8301/api");
+			var ws = new WebSocket("ws:112.171.101.31:45170/api");
+			//let ws = new WebSocket("ws:localhost:8301/api");
 			socket = ws;
 
 			ws.onopen = function() {
