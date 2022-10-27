@@ -6,6 +6,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.socket.BinaryMessage;
 import org.springframework.web.socket.WebSocketSession;
 
+import com.classlink.websocket.api.common.OpCode;
 import com.classlink.websocket.api.common.OpCodeMapping;
 import com.classlink.websocket.api.domain.Packet.PacketData;
 import com.classlink.websocket.api.service.TestService;

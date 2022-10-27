@@ -1,14 +1,8 @@
 package com.classlink.websocket.api.handler;
 
-import java.io.ByteArrayInputStream;
-import java.io.IOException;
-import java.io.ObjectInput;
-import java.io.ObjectInputStream;
 import java.lang.reflect.Method;
-
 import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
-import org.msgpack.jackson.dataformat.MessagePackFactory;
 import org.reflections.Reflections;
 import org.reflections.util.ConfigurationBuilder;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,15 +13,8 @@ import org.springframework.web.socket.CloseStatus;
 import org.springframework.web.socket.WebSocketSession;
 import org.springframework.web.socket.handler.TextWebSocketHandler;
 import com.classlink.websocket.api.common.OpCodeMapping;
-import com.classlink.websocket.api.domain.Packet;
 import com.classlink.websocket.api.domain.Packet.PacketData;
-import com.classlink.websocket.api.domain.TestByteParam;
-import com.classlink.websocket.api.domain.TestProtoBuffDto.Person;
 import com.classlink.websocket.api.util.JwtTokenParser;
-import com.fasterxml.jackson.core.type.TypeReference;
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.google.protobuf.InvalidProtocolBufferException;
-
 import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
