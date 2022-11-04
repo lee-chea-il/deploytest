@@ -1,0 +1,8 @@
+syntax = "proto3";
+package tutorial;
+option java_package = "com.classlink.websocket.api.member.domain.protobuf";
+option java_outer_classname = "MemberIdentity";
+
+message MemberIdentityData {
+  int32 MemIdx = 3;
+}

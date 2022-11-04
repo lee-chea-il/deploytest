@@ -10,6 +10,6 @@ public class TestPageController {
 	@RequestMapping("/testPage")
 	public String testPage() {
 		log.info("here?");
-		return "testPage";
+		return "webSocketApiTest";
 	}
 }

@@ -3,6 +3,7 @@ package com.classlink.websocket.api.handler;
 import java.lang.reflect.Method;
 import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
+
 import org.reflections.Reflections;
 import org.reflections.util.ConfigurationBuilder;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,9 +13,12 @@ import org.springframework.web.socket.BinaryMessage;
 import org.springframework.web.socket.CloseStatus;
 import org.springframework.web.socket.WebSocketSession;
 import org.springframework.web.socket.handler.TextWebSocketHandler;
+
 import com.classlink.websocket.api.common.OpCodeMapping;
 import com.classlink.websocket.api.domain.Packet.PacketData;
+import com.classlink.websocket.api.util.BeanUtils;
 import com.classlink.websocket.api.util.JwtTokenParser;
+
 import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
@@ -22,7 +26,7 @@ import lombok.extern.slf4j.Slf4j;
 public class WebSocketHandler extends TextWebSocketHandler {
 
 	private static final ConcurrentHashMap<String, WebSocketSession> CLIENTS = new ConcurrentHashMap<String, WebSocketSession>();
-
+	
 	@Autowired
 	JwtTokenParser jwtTokenParser;
 
@@ -69,7 +73,12 @@ public class WebSocketHandler extends TextWebSocketHandler {
 
 						if (key == deserializedParam.getOpCode()) {
 							// method 호출
-							method.invoke(clazz.getConstructor().newInstance(), session, deserializedParam);
+							log.info("clazz name : " + clazz.getName());
+							log.info("clazz getSimpleName : " + clazz.getSimpleName());
+							log.info("clazz getTypeName : " + clazz.getTypeName());
+							log.info("clazz : " + BeanUtils.getBean(clazz));
+							
+							method.invoke(BeanUtils.getBean(clazz), session, deserializedParam);
 							log.info(clazz.getName() + "(" + key + ") -> 객체 준비 완료");
 							stop = true;
 							break;
