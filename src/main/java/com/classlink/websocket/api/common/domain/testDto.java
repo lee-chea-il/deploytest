@@ -1,4 +1,4 @@
-package com.classlink.websocket.api.domain;
+package com.classlink.websocket.api.common.domain;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

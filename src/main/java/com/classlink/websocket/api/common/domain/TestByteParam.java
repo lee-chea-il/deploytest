@@ -1,4 +1,4 @@
-package com.classlink.websocket.api.domain;
+package com.classlink.websocket.api.common.domain;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 

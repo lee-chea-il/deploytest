@@ -15,7 +15,7 @@ import org.springframework.web.socket.WebSocketSession;
 import org.springframework.web.socket.handler.TextWebSocketHandler;
 
 import com.classlink.websocket.api.common.OpCodeMapping;
-import com.classlink.websocket.api.domain.Packet.PacketData;
+import com.classlink.websocket.api.common.domain.Packet.PacketData;
 import com.classlink.websocket.api.util.BeanUtils;
 import com.classlink.websocket.api.util.JwtTokenParser;
 

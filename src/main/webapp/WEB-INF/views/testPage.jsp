@@ -45,7 +45,7 @@
 		const commonPath = "js/"
 		const protoFileList = [commonPath.concat("webSocketMessagePackTest.proto"),commonPath.concat("PacketData.proto")];
 
-		protobuf.load(protoFileList, function(err, root) {
+		const protobufData = protobuf.load(protoFileList, function(err, root) {
 		
 			console.log("root : " + root);
 			console.log("err : " + err);

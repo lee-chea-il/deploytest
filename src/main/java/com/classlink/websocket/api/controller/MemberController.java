@@ -7,7 +7,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.socket.WebSocketSession;
 
 import com.classlink.websocket.api.common.OpCodeMapping;
-import com.classlink.websocket.api.domain.Packet.PacketData;
+import com.classlink.websocket.api.common.domain.Packet.PacketData;
 import com.classlink.websocket.api.member.MemberService;
 import com.fasterxml.jackson.core.exc.StreamReadException;
 import com.fasterxml.jackson.databind.DatabindException;
@@ -21,6 +21,7 @@ public class MemberController {
 //	public MemberService memberService() {
 //		return new MemberService();
 //	}
+	
 	@Autowired
 	MemberService memberService;
 

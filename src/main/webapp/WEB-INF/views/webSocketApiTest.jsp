@@ -6,123 +6,75 @@
 <title>Hello2</title>
 </head>
 <body>
-  <h1>Thymeleaf Test Page</h1>
-  <!--<h3 th:text="${uname}"></h3>-->
+  <h1>WebSocket API Test Page</h1>
 
   <div class="well">
     <button id="btnOpen" class="btn btn-primary">open socket</button>
-    <input type="text" id="msg" value="1212" class="form-control" />
+    <input type="number" id="opCode" value="101" class="form-control" />
     <button id="btnSend" class="btn btn-primary">Send Message</button>
   </div>
-
-  <!--<p th:text="'Name: ' + ${name}"></p>-->
+  <div>Result</div>
 
   <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-
   <script src="https://cdnjs.cloudflare.com/ajax/libs/sockjs-client/1.3.0/sockjs.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/stomp.js/2.3.3/stomp.min.js"></script>
   <script src="//cdn.jsdelivr.net/npm/protobufjs@7.1.2/dist/protobuf.js"></script>
-  <!--<script type="module" src="./app.js" defer></script>-->
+  <script src="js/util.js"></script>
   <script>
-			let globalRoot = null;
 
-			let MemberIdentity = null;
-			let PacketData = null;
+			const IdentityName = "Identity";
+			const PacketName = "Packet";
 
-			let createdPacketData = null;
-			let encodedPacketData = null;
-			let decodedPacketData = null;
+			const commonPath = "../proto"
+			const protoFileList = [ commonPath.concat("/member/Identity.proto"), commonPath.concat("/common/PacketData.proto") ];
 
-			//var root = protobuf.Root.fromJSON({}).addJSON().resolveAll();
 
-			const commonPath = "js/"
-			const protoFileList = [ commonPath.concat("memberIdentity.proto"), commonPath.concat("PacketData.proto") ];
-
-			protobuf.load(protoFileList, function(err, root) {
-
-				console.log("root : " + root);
-				console.log("err : " + err);
-				globalRoot = root;
-
-				MemberIdentity = root.lookupType("tutorial.MemberIdentityData");
-				PacketData = root.lookupType("tutorial.PacketData");
-
-				const MemberIdentityObj = {
-					MdtIdx : 1,
-					IdtCode : 1,
-					MemIdx : 7,
-					DeleteYn : 'N'
-				};
-
-				let verifyMsg = MemberIdentity.verify(MemberIdentityObj);
-				if (verifyMsg) {
-					throw Error(verifyMsg);
-				}
-
-				const createdMemberIdentity = MemberIdentity.create(MemberIdentityObj);
-				const encodedMemberIdentity = MemberIdentity.encode(createdMemberIdentity).finish();
-
-				const PacketDataObj = {
-					OpCode : 101,
-					accessToken : "1234",
-					instanceId : "2",
-					data : encodedMemberIdentity
-				};
-
-				verifyMsg = PacketData.verify(PacketDataObj);
-				if (verifyMsg) {
-					throw Error(verifyMsg);
-				}
-
-				createdPacketData = PacketData.create(PacketDataObj);
-				encodedPacketData = PacketData.encode(createdPacketData).finish();
-				decodedPacketData = PacketData.decode(encodedPacketData);
-
-			});
 			//---------------------------------------------------------------------------------------------------
-
-			// Deserialize again
-			// var deserializedDataToSend = msgpack.deserialize(serializedDataToSend);
 
 			$(document).ready(function() {
 				$("#btnOpen").on("click", function(evt) {
 					connectWS();
-					//connectSockJS();
-					//connectStomp();
 				});
 
 				$("#btnSend").on("click", function(evt) {
-					console.log("실행!!");
+					
+					 let OpCode = parseInt(document.getElementById("opCode").value);
+					
+			     protobuf.load(protoFileList, function(err, root) {
+			    	  console.log("Info: protobuf files onloaded.");
+			    	  
+			        loadMessage(root, IdentityName, "tutorial.IdentityData");
+			        loadMessage(root, PacketName, "tutorial.PacketData");
 
-					let msg = encodedPacketData;
+			        const PacketDataObj = {
+			          OpCode : OpCode,
+			          accessToken : "1234",
+			          instanceId : "2"
+			        //data : encodedMemberIdentity
+			        };
 
-					console.log("serializedDataToSend mmmmmmmmmmmm>>", msg);
-					console.log("deserializedDataToSend mmmmmmmmmmmm>>", decodedPacketData);
-					console.log("deserializedInnerDataToSend mmmmmmmmmmmm>>", MemberIdentity.decode(decodedPacketData.data));
+			        setDataToSend(root, PacketName, PacketDataObj);
+			        
+		          console.log("Info: send triggered.");
+		          let message = getEncodedData(PacketName);
 
-					socket.send(msg);
-					console.log("socket.send 실행!!");
+		          console.log("deserializedDataToSend mmmmmmmmmmmm>>", getDecodedData(PacketName));
+		          console.log("deserializedInnerDataToSend mmmmmmmmmmmm>>", Identity.decode(getDecodedData(PacketName).data));
 
-					evt.preventDefault();
+		          socket.send(message);
+		          
+		          if (socket.readyState !== 1)
+		            return;
+		          });
 
-					if (!isStomp && socket.readyState !== 1)
-						return;
-
-					if (isStomp)
-						socket.send("/TTT", {}, JSON.stringify({
-							roomid : "message",
-							id : 124,
-							msg : msg
-						}));
-				});
+			      });
+				
 			});
 
 			let socket = null;
-			let isStomp = false;
 
 			// pure web-socket
 			function connectWS() {
-				console.log("tttttttttttttt");
 				//var ws = new WebSocket("ws:112.171.101.31:45170/api");
 				let ws = new WebSocket("ws:localhost:8301/api");
 				socket = ws;
@@ -131,26 +83,32 @@
 					console.log("Info: connection opened.");
 				};
 
-				ws.onmessage = function(event) {
+				ws.onmessage = async function(event) {
+					console.log("Info: onmessage triggered.");
+					
 					const blob = event.data;
-					const fileReader = new FileReader();
-
-					fileReader.onload = function(event) {
-						const arrayBuffer = event.target.result;
-						console.log(arrayBuffer);
-						const deserializedPacketData = PacketData.decode(new Uint8Array(arrayBuffer));
-						console.log("receivedDeserializedData mmmmmmmmmmmm>>", deserializedPacketData);
-						console.log("receivedDeserializedInnerData mmmmmmmmmmmm>>", MemberIdentity.decode(deserializedPacketData.data));
-
-					};
-
-					fileReader.readAsArrayBuffer(blob);
+					
+					await readBlobDataAsync(blob, PacketName);
+					
+					let OpCode = parseInt(document.getElementById("opCode").value);
+					
+					switch(OpCode) {
+						case 101:
+							const receivedIdentityData = Identity.decode(deserializedPacketData.data);
+	            console.log("receivedDeserializedInnerData mmmmmmmmmmmm>>", receivedIdentityData);
+	            break;
+						default:
+							break;
+					}
+					
+				  
 				};
 
 				ws.onclose = function(event) {
 					console.log("Info: connection closed.");
 					//setTimeout( function(){ connect(); }, 1000); // retry connection!!
 				};
+				
 				ws.onerror = function(err) {
 					console.log("Error:", err);
 				};

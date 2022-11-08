@@ -6,7 +6,7 @@
     SELECT ci.idt_name
     FROM cl_member_identity cmi
     LEFT JOIN cl_identity ci 
-    ON cmi.idt_code = #{idt_code}
+    ON cmi.idt_code = ci.idt_code
     WHERE cmi.mem_idx = #{mem_idx}
     AND cmi.delete_yn = "N"
     and ci.delete_yn = "N"

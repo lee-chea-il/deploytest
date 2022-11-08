@@ -1,5 +1,7 @@
 package com.classlink.websocket.api.member.domain.dto;
 
+import java.util.List;
+
 import lombok.Builder;
 import lombok.Data;
 import lombok.Getter;
@@ -22,8 +24,8 @@ public class MemberDto {
 	@Getter
 	@Setter
 	public static class IdentityDto {
-		private String idt_name;
-		private String resultCode;
+		private int resultCode;
 		private String message;
+		private List<String> idt_names;
 	}
 }

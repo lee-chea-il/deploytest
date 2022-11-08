@@ -1,13 +1,13 @@
-package com.classlink.websocket.api.service;
+package com.classlink.websocket.api.common;
 
 import java.util.ArrayList;
 import java.util.List;
 import org.springframework.stereotype.Service;
 import org.springframework.web.socket.BinaryMessage;
 
-import com.classlink.websocket.api.domain.Packet.PacketData;
-import com.classlink.websocket.api.domain.TestProtoBuffDto.Person;
-import com.classlink.websocket.api.domain.WebSocketMessagePackTestClass.WebSocketMessagePackTest;
+import com.classlink.websocket.api.common.domain.Packet.PacketData;
+import com.classlink.websocket.api.common.domain.TestProtoBuffDto.Person;
+import com.classlink.websocket.api.common.domain.WebSocketMessagePackTestClass.WebSocketMessagePackTest;
 import com.google.protobuf.ByteString;
 import com.google.protobuf.InvalidProtocolBufferException;
 import lombok.extern.slf4j.Slf4j;
