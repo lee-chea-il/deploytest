@@ -10,7 +10,7 @@
 
   <div class="well">
     <button id="btnOpen" class="btn btn-primary">open socket</button>
-    <input type="number" id="opCode" value="101" class="form-control" />
+    <input type="number" id="OpCode" value="101" class="form-control" />
     <button id="btnSend" class="btn btn-primary">Send Message</button>
   </div>
   <div>Result</div>
@@ -22,11 +22,11 @@
   <script src="js/util.js"></script>
   <script>
 
-			const IdentityName = "Identity";
+			const IdentityName = "MemberIdentityList";
 			const PacketName = "Packet";
 
 			const commonPath = "../proto"
-			const protoFileList = [ commonPath.concat("/member/Identity.proto"), commonPath.concat("/common/PacketData.proto") ];
+			const protoFileList = [ commonPath.concat("/member/response/CwclassMemberIdentityList.proto"), commonPath.concat("/common/CwclassPacket.proto") ];
 
 
 			//---------------------------------------------------------------------------------------------------
@@ -38,19 +38,19 @@
 
 				$("#btnSend").on("click", function(evt) {
 					
-					 let OpCode = parseInt(document.getElementById("opCode").value);
+					 let OpCode = parseInt(document.getElementById("OpCode").value);
 					
 			     protobuf.load(protoFileList, function(err, root) {
 			    	  console.log("Info: protobuf files onloaded.");
 			    	  
-			        loadMessage(root, IdentityName, "tutorial.IdentityData");
-			        loadMessage(root, PacketName, "tutorial.PacketData");
+			        loadMessage(root, IdentityName, "classlink.CwclassMemberIdentityList");
+			        loadMessage(root, PacketName, "classlink.CwclassPacket");
 
 			        const PacketDataObj = {
 			          OpCode : OpCode,
-			          accessToken : "1234",
-			          instanceId : "2"
-			        //data : encodedMemberIdentity
+			          AccessToken : "1234",
+			          InstanceId : 2
+			        //Data : encodedMemberIdentity
 			        };
 
 			        setDataToSend(root, PacketName, PacketDataObj);
@@ -59,7 +59,7 @@
 		          let message = getEncodedData(PacketName);
 
 		          console.log("deserializedDataToSend mmmmmmmmmmmm>>", getDecodedData(PacketName));
-		          console.log("deserializedInnerDataToSend mmmmmmmmmmmm>>", Identity.decode(getDecodedData(PacketName).data));
+		          console.log("deserializedInnerDataToSend mmmmmmmmmmmm>>", window[IdentityName].decode(getDecodedData(PacketName).Data));
 
 		          socket.send(message);
 		          
@@ -88,20 +88,19 @@
 					
 					const blob = event.data;
 					
-					await readBlobDataAsync(blob, PacketName);
+					const deserializedPacket = await readBlobDataAsync(blob, PacketName);
+					console.log("onmessage/deserializedPacket : " + deserializedPacket);
 					
-					let OpCode = parseInt(document.getElementById("opCode").value);
+					let OpCode = parseInt(document.getElementById("OpCode").value);
 					
 					switch(OpCode) {
 						case 101:
-							const receivedIdentityData = Identity.decode(deserializedPacketData.data);
+							const receivedIdentityData = window[IdentityName].decode(deserializedPacket.Data);
 	            console.log("receivedDeserializedInnerData mmmmmmmmmmmm>>", receivedIdentityData);
 	            break;
 						default:
 							break;
 					}
-					
-				  
 				};
 
 				ws.onclose = function(event) {

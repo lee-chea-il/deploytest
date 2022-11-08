@@ -1,0 +1,10 @@
+syntax = "proto3";
+package classlink;
+option java_package = "com.classlink.websocket.api.common.domain";
+option java_outer_classname = "Response";
+
+message CwclassResponse {
+  int32 ResultCode = 1;
+  string Message = 2;
+  bytes Data = 3;
+}

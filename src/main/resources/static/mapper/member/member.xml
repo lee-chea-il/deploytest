@@ -2,7 +2,7 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="com.classlink.websocket.api.member.MemberMapper">
-  <select id="selectMemberIdentityByIdMemberIdx" resultType="com.classlink.websocket.api.member.domain.vo.MemberVo$IdentityVo">
+  <select id="findMemberIdentityByMemberIdx" resultType="com.classlink.websocket.api.member.domain.vo.MemberVo$IdentityVo">
     SELECT ci.idt_name
     FROM cl_member_identity cmi
     LEFT JOIN cl_identity ci 

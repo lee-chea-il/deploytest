@@ -6,3 +6,4 @@ option java_outer_classname = "MemberIdentity";
 message MemberIdentityData {
   int32 MemIdx = 3;
 }
+
