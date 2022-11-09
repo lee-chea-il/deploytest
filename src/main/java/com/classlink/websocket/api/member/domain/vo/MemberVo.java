@@ -1,12 +1,12 @@
 package com.classlink.websocket.api.member.domain.vo;
 
 import lombok.Getter;
-import lombok.Setter;
+import lombok.NoArgsConstructor;
 
 public class MemberVo {
 	
 	@Getter
-	@Setter
+	@NoArgsConstructor
 	public static class MemberIdentityVo {
 		private int mdt_idx;
 		private String idt_code;
@@ -18,7 +18,7 @@ public class MemberVo {
 	}
 	
 	@Getter
-	@Setter
+	@NoArgsConstructor
 	public static class IdentityVo {
 		private String idt_code;
 		private String idt_name;

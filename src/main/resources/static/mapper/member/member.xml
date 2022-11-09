@@ -2,7 +2,7 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="com.classlink.websocket.api.member.MemberMapper">
-  <select id="findMemberIdentityByMemberIdx" resultType="com.classlink.websocket.api.member.domain.vo.MemberVo$IdentityVo">
+  <select id="selectMemberIdentityByMemberIdx" resultType="com.classlink.websocket.api.member.domain.vo.MemberVo$IdentityVo">
     SELECT ci.idt_name
     FROM cl_member_identity cmi
     LEFT JOIN cl_identity ci 
@@ -11,5 +11,13 @@
     AND cmi.delete_yn = "N"
     and ci.delete_yn = "N"
   </select>
+  
+  <insert id="insertMemberIdentity" parameterType="com.classlink.websocket.api.member.domain.vo.MemberVo$MemberIdentityVo"
+   useGeneratedKeys="true" keyProperty="mdt_idx">
+     INSERT INTO cl_member_identity
+     (idt_code, mem_idx)
+     VALUES
+     (#{idt_code}, #{mem_idx}) 
+  </insert>
 
 </mapper>

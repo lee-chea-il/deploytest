@@ -22,15 +22,31 @@
   <script src="js/util.js"></script>
   <script>
 
-			const IdentityName = "MemberIdentityList";
-			const PacketName = "Packet";
+    //---------------------------------------------------------------------------------------------------
+    // window[]를 통해서 브라우저상에 전역변수(global)로 지정할때 사용하는 변수  
+    
+      const PacketName = "Packet";
+      const IdentityListName = "IdentityList";
+      const IdentityCreateName = "IdentityCreate";
 
+    //---------------------------------------------------------------------------------------------------
+    // protobuf.load시에 로딩할 protobuf 파일 경로 지정  
+    
 			const commonPath = "../proto"
-			const protoFileList = [ commonPath.concat("/member/response/CwclassMemberIdentityList.proto"), commonPath.concat("/common/CwclassPacket.proto") ];
-
+			const protoFileList = [ commonPath.concat("/member/response/CWclassIdentityList.proto"),
+				commonPath.concat("/member/request/CWclassIdentityCreate.proto"),
+				commonPath.concat("/member/request/CWclassIdentityInfo.proto"),
+				commonPath.concat("/common/CWclassPacket.proto")];
 
 			//---------------------------------------------------------------------------------------------------
-
+      // 아래 전체코드 flow
+			// 1.브라우저가 로딩되고나서 open socket 버튼 클릭시, connectWS()함수를 통해서 websocket 연결
+			// 2.Send Message 클릭시, document.getElementById("OpCode").value를 통해서 OpCode를 input 박스에서 가져옴
+			// 3.switch문을 통해서 OpCode에 따라 Packet에 데이터를 담거나 꺼낼때 사용하는 proto파일의 message를 전역변수에 담고,  
+			// 추가적으로 데이터를 Packet에 담아야하는 경우 setDataToSend를 통해서 데이터를 serialize한다.
+			// 4.PacketObj에 Data담는곳에 serialize한 데이터를 담는다.
+			// 5.PacketObj를 setDataToSend를 serialize해서 socket.send()에 담아서 서버에 전송한다.
+			
 			$(document).ready(function() {
 				$("#btnOpen").on("click", function(evt) {
 					connectWS();
@@ -39,29 +55,42 @@
 				$("#btnSend").on("click", function(evt) {
 					
 					 let OpCode = parseInt(document.getElementById("OpCode").value);
+					 let Data = new Uint8Array([]);
 					
 			     protobuf.load(protoFileList, function(err, root) {
 			    	  console.log("Info: protobuf files onloaded.");
 			    	  
-			        loadMessage(root, IdentityName, "classlink.CwclassMemberIdentityList");
-			        loadMessage(root, PacketName, "classlink.CwclassPacket");
+			    	  loadMessage(root, PacketName, "Classlink.CWclassPacket");
 
-			        const PacketDataObj = {
-			          OpCode : OpCode,
-			          AccessToken : "1234",
-			          InstanceId : 2
-			        //Data : encodedMemberIdentity
-			        };
-
-			        setDataToSend(root, PacketName, PacketDataObj);
-			        
+			    	  switch (OpCode) {
+                case 100 :
+                  loadMessage(root, IdentityCreateName, "Classlink.CWclassIdentityCreate");
+                  
+                  const IdentityCreateObj = {
+                  		IdtCode : '3',
+                  		MemIdx : 7,
+                    };
+                  
+                  Data = setDataToSend(root, IdentityCreateName, IdentityCreateObj);
+                  break;
+                  
+			    	  	case 101 :
+			    	  		loadMessage(root, IdentityListName, "Classlink.CWclassIdentityList");
+			    	  	  break;
+			    	    default:
+			    	    	break;
+			    	  }
+			    	  
+              const PacketObj = {
+                  OpCode : OpCode,
+                  AccessToken : "1234",
+                  InstanceId : 2,
+                  Data : Data
+                };
+		          
+		          socket.send(setDataToSend(root, PacketName, PacketObj));
+		          
 		          console.log("Info: send triggered.");
-		          let message = getEncodedData(PacketName);
-
-		          console.log("deserializedDataToSend mmmmmmmmmmmm>>", getDecodedData(PacketName));
-		          console.log("deserializedInnerDataToSend mmmmmmmmmmmm>>", window[IdentityName].decode(getDecodedData(PacketName).Data));
-
-		          socket.send(message);
 		          
 		          if (socket.readyState !== 1)
 		            return;
@@ -70,13 +99,23 @@
 			      });
 				
 			});
-
+			
+		//---------------------------------------------------------------------------------------------------
+    // connectWS 전체적인 설명
+    // 1. new WebSocket()을 통해서 서버와 소켓연결을 하고 socket변수에 담는다(나중에 socket.send할때 사용하기위함)
+		// 2. websocket이 연결이되면 ws.onopen()에 연결된 함수가 실행된다.
+		// 3. websocket을 통해 send를하면 ws:localhost:8301/api로 데이터를 보내고, ws:localhost:8301/api에 연결된 브라우저에게
+		// 스프링이 데이터를 보내는데, 그 데이터를 ws.onmessage에서 switch문에 opCode를 가져와서
+		// 분기되서 받아볼수있다.
+		// (자세한 부분은 readBlobDataAsync함수를 살펴보기!)
+		// 4. ws.onclose는 소켓통신이 중단되면 실행되는 함수이다.
+		
 			let socket = null;
 
 			// pure web-socket
 			function connectWS() {
 				//var ws = new WebSocket("ws:112.171.101.31:45170/api");
-				let ws = new WebSocket("ws:localhost:8301/api");
+				const ws = new WebSocket("ws:localhost:8301/api");
 				socket = ws;
 
 				ws.onopen = function() {
@@ -86,18 +125,20 @@
 				ws.onmessage = async function(event) {
 					console.log("Info: onmessage triggered.");
 					
-					const blob = event.data;
-					
-					const deserializedPacket = await readBlobDataAsync(blob, PacketName);
-					console.log("onmessage/deserializedPacket : " + deserializedPacket);
-					
 					let OpCode = parseInt(document.getElementById("OpCode").value);
+					let blob = event.data;
+					
+					await readBlobDataAsync(blob, PacketName);
 					
 					switch(OpCode) {
-						case 101:
-							const receivedIdentityData = window[IdentityName].decode(deserializedPacket.Data);
-	            console.log("receivedDeserializedInnerData mmmmmmmmmmmm>>", receivedIdentityData);
+            case 100:
+              break;
+              
+						case 101:		
+							const receivedIdentityListNameData = window[IdentityListName].decode(receivedPacketData.Data);			
+	            console.log("receivedIdentityListNameData mmmmmmmmmmmm>>", receivedIdentityListNameData);
 	            break;
+	            
 						default:
 							break;
 					}

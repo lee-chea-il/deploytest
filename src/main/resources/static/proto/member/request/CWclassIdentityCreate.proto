@@ -1,9 +1,9 @@
 syntax = "proto3";
-package classlink;
+package Classlink;
 option java_package = "com.classlink.websocket.api.member.domain.param.proto";
-option java_outer_classname = "MemberIdentityCreate";
+option java_outer_classname = "IdentityCreate";
 
-message CwclassMemberIdentityCreate {
+message CWclassIdentityCreate {
   string IdtCode = 2;
   int32 MemIdx = 3;
 }
