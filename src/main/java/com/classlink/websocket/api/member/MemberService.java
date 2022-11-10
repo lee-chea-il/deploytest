@@ -11,6 +11,7 @@ import com.classlink.websocket.api.member.domain.dto.proto.IdentityList.CWclassI
 import com.classlink.websocket.api.member.domain.param.MemberParam.MemberIdentityParam;
 import com.classlink.websocket.api.member.domain.param.proto.IdentityCreate.CWclassIdentityCreate;
 import com.classlink.websocket.api.member.domain.vo.MemberVo.IdentityVo;
+import com.classlink.websocket.api.util.JwtTokenParser;
 import com.google.protobuf.InvalidProtocolBufferException;
 
 import lombok.RequiredArgsConstructor;
@@ -23,7 +24,7 @@ public class MemberService {
 
 	private final MemberMapper memberMapper;
 	
-	public BinaryMessage findMemberIdentityByMemberIdx(CWclassPacket packetReqProto) throws InvalidProtocolBufferException {
+	public BinaryMessage findMemberIdentityByMemberIdx(CWclassPacket packetReqProto, String userId) throws InvalidProtocolBufferException {
 		
 		List<IdentityVo> identityVo = memberMapper.selectMemberIdentityByMemberIdx(7);
 		
@@ -51,7 +52,7 @@ public class MemberService {
 		return new BinaryMessage(PacketResProto.toByteArray());
 	}
 
-	public BinaryMessage addMemberIdentity(CWclassPacket packetReqProto) throws InvalidProtocolBufferException {
+	public BinaryMessage addMemberIdentity(CWclassPacket packetReqProto, String userId) throws InvalidProtocolBufferException {
 		
 		CWclassIdentityCreate identityCreateProto = CWclassIdentityCreate.newBuilder().mergeFrom(packetReqProto.getData()).build(); 
 		MemberIdentityParam memberIdentityParam = MemberIdentityParam.builder().idt_code(identityCreateProto.getIdtCode()).mem_idx(7).build();

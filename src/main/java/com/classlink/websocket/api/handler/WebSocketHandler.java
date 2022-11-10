@@ -19,6 +19,7 @@ import com.classlink.websocket.api.common.domain.Packet.CWclassPacket;
 import com.classlink.websocket.api.util.BeanUtils;
 import com.classlink.websocket.api.util.JwtTokenParser;
 
+import io.jsonwebtoken.Claims;
 import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
@@ -26,7 +27,7 @@ import lombok.extern.slf4j.Slf4j;
 public class WebSocketHandler extends TextWebSocketHandler {
 
 	private static final ConcurrentHashMap<String, WebSocketSession> CLIENTS = new ConcurrentHashMap<String, WebSocketSession>();
-	
+
 	@Autowired
 	JwtTokenParser jwtTokenParser;
 
@@ -55,14 +56,27 @@ public class WebSocketHandler extends TextWebSocketHandler {
 		Set<Class<?>> list = reflector.getTypesAnnotatedWith(Controller.class);
 
 		boolean stop = false;
-
+		int opCode = 0;
+		String userId = null;
 		try {
-			CWclassPacket deserializedParam = CWclassPacket.newBuilder().mergeFrom(message.getPayload().array()).build();
+			CWclassPacket deserializedParam = CWclassPacket.newBuilder().mergeFrom(message.getPayload().array())
+					.build();
 			log.info(String.valueOf(deserializedParam.getOpCode()));
 			log.info(deserializedParam.getAccessToken());
 			log.info(String.valueOf(deserializedParam.getInstanceId()));
 			log.info(deserializedParam.getData().toString());
-			
+
+			// 토큰 유효성 검사
+			if (jwtTokenParser.checkClaim(deserializedParam.getAccessToken())) {
+				// 토큰이 유효할때 호출할 opCode 및 userId 처리
+				opCode = deserializedParam.getOpCode();
+				userId = jwtTokenParser.getUserId(deserializedParam.getAccessToken());
+			} else {
+				// 토큰이 유효하지 않을때 호출할 opCode 및 userId 처리
+				opCode = 900;
+				userId = "";
+			}
+
 			for (Class<?> clazz : list) {
 				int cnt = 0;
 				Method[] methods = clazz.getDeclaredMethods();
@@ -71,14 +85,14 @@ public class WebSocketHandler extends TextWebSocketHandler {
 					if (method.isAnnotationPresent(OpCodeMapping.class)) {
 						int key = method.getDeclaredAnnotation(OpCodeMapping.class).value();
 
-						if (key == deserializedParam.getOpCode()) {
+						if (key == opCode) {
 							// method 호출
 							log.info("clazz name : " + clazz.getName());
 							log.info("clazz getSimpleName : " + clazz.getSimpleName());
 							log.info("clazz getTypeName : " + clazz.getTypeName());
 							log.info("clazz : " + BeanUtils.getBean(clazz));
-							
-							method.invoke(BeanUtils.getBean(clazz), session, deserializedParam);
+
+							method.invoke(BeanUtils.getBean(clazz), session, deserializedParam, userId);
 							log.info(clazz.getName() + "(" + key + ") -> 객체 준비 완료");
 							stop = true;
 							break;

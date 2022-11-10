@@ -22,12 +22,12 @@ public class MemberController {
 	private final MemberService memberService;
 
 	@OpCodeMapping(value = 100)
-	public void memberIdentityAdd(WebSocketSession session, CWclassPacket packetReqProto) throws StreamReadException, DatabindException, IOException {
-		session.sendMessage(memberService.addMemberIdentity(packetReqProto));
+	public void memberIdentityAdd(WebSocketSession session, CWclassPacket packetReqProto, String userId) throws StreamReadException, DatabindException, IOException {
+		session.sendMessage(memberService.addMemberIdentity(packetReqProto, userId));
 	}
 	
 	@OpCodeMapping(value = 101)
-	public void memberIdentityDetails(WebSocketSession session, CWclassPacket packetReqProto) throws StreamReadException, DatabindException, IOException {
-		session.sendMessage(memberService.findMemberIdentityByMemberIdx(packetReqProto));
+	public void memberIdentityDetails(WebSocketSession session, CWclassPacket packetReqProto, String userId) throws StreamReadException, DatabindException, IOException {
+		session.sendMessage(memberService.findMemberIdentityByMemberIdx(packetReqProto, userId));
 	}
 }
