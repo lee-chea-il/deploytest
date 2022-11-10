@@ -16,9 +16,9 @@ function setDataToSend(root, fileName, data) {
   window[createdFileData] = window[fileName].create(data);
   window[encodedFileData] = window[fileName].encode(window[createdFileData]).finish();
   window[decodedFileData] = window[fileName].decode(window[encodedFileData]);
-  
+
   console.log("deserialized" + fileName + "ToSend mmmmmmmmmmmm>>", window[decodedFileData]);
-  
+
   return window[encodedFileData];
 }
 
@@ -47,13 +47,12 @@ function readBlobDataAsync(blob, fileName) {
 
     fileReader.onload = function(event) {
       const arrayBuffer = event.target.result;
-      const receivedFileDataName = 'received' + fileName + 'Data';
 
-      window[receivedFileDataName] = window[fileName].decode(new Uint8Array(arrayBuffer));
+      const receivedFileData = window[fileName].decode(new Uint8Array(arrayBuffer));
 
-      console.log("receivedPacketData mmmmmmmmmmmm>>", window[receivedFileDataName]);
-      
-      resolve(window[receivedFileDataName]);
+      console.log("receivedPacketData mmmmmmmmmmmm>>", receivedFileData);
+
+      resolve(receivedFileData);
     };
 
     fileReader.readAsArrayBuffer(blob);
@@ -61,6 +60,9 @@ function readBlobDataAsync(blob, fileName) {
   });
 }
 
-
+function getOpCodeFromSelectBox() {
+  const opCodeDom = document.getElementById("OpCode");
+  return parseInt(opCodeDom.options[opCodeDom.selectedIndex].value);
+}
 
 

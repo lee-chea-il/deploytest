@@ -19,16 +19,16 @@ public final class IdentityInfo {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>string MemNickname = 1;</code>
-     * @return The memNickname.
+     * <code>string MemEmail = 1;</code>
+     * @return The memEmail.
      */
-    java.lang.String getMemNickname();
+    java.lang.String getMemEmail();
     /**
-     * <code>string MemNickname = 1;</code>
-     * @return The bytes for memNickname.
+     * <code>string MemEmail = 1;</code>
+     * @return The bytes for memEmail.
      */
     com.google.protobuf.ByteString
-        getMemNicknameBytes();
+        getMemEmailBytes();
 
     /**
      * <code>string MemName = 2;</code>
@@ -43,24 +43,36 @@ public final class IdentityInfo {
         getMemNameBytes();
 
     /**
-     * <code>string MemEmail = 3;</code>
-     * @return The memEmail.
+     * <code>string MemNickname = 3;</code>
+     * @return The memNickname.
      */
-    java.lang.String getMemEmail();
+    java.lang.String getMemNickname();
     /**
-     * <code>string MemEmail = 3;</code>
-     * @return The bytes for memEmail.
+     * <code>string MemNickname = 3;</code>
+     * @return The bytes for memNickname.
      */
     com.google.protobuf.ByteString
-        getMemEmailBytes();
+        getMemNicknameBytes();
 
     /**
-     * <code>string MemPhone = 4;</code>
+     * <code>string MemImg = 4;</code>
+     * @return The memImg.
+     */
+    java.lang.String getMemImg();
+    /**
+     * <code>string MemImg = 4;</code>
+     * @return The bytes for memImg.
+     */
+    com.google.protobuf.ByteString
+        getMemImgBytes();
+
+    /**
+     * <code>string MemPhone = 5;</code>
      * @return The memPhone.
      */
     java.lang.String getMemPhone();
     /**
-     * <code>string MemPhone = 4;</code>
+     * <code>string MemPhone = 5;</code>
      * @return The bytes for memPhone.
      */
     com.google.protobuf.ByteString
@@ -79,9 +91,10 @@ public final class IdentityInfo {
       super(builder);
     }
     private CWclassIdentityInfo() {
-      memNickname_ = "";
-      memName_ = "";
       memEmail_ = "";
+      memName_ = "";
+      memNickname_ = "";
+      memImg_ = "";
       memPhone_ = "";
     }
 
@@ -110,38 +123,38 @@ public final class IdentityInfo {
               com.classlink.websocket.api.member.domain.param.proto.IdentityInfo.CWclassIdentityInfo.class, com.classlink.websocket.api.member.domain.param.proto.IdentityInfo.CWclassIdentityInfo.Builder.class);
     }
 
-    public static final int MEMNICKNAME_FIELD_NUMBER = 1;
-    private volatile java.lang.Object memNickname_;
+    public static final int MEMEMAIL_FIELD_NUMBER = 1;
+    private volatile java.lang.Object memEmail_;
     /**
-     * <code>string MemNickname = 1;</code>
-     * @return The memNickname.
+     * <code>string MemEmail = 1;</code>
+     * @return The memEmail.
      */
     @java.lang.Override
-    public java.lang.String getMemNickname() {
-      java.lang.Object ref = memNickname_;
+    public java.lang.String getMemEmail() {
+      java.lang.Object ref = memEmail_;
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        memNickname_ = s;
+        memEmail_ = s;
         return s;
       }
     }
     /**
-     * <code>string MemNickname = 1;</code>
-     * @return The bytes for memNickname.
+     * <code>string MemEmail = 1;</code>
+     * @return The bytes for memEmail.
      */
     @java.lang.Override
     public com.google.protobuf.ByteString
-        getMemNicknameBytes() {
-      java.lang.Object ref = memNickname_;
+        getMemEmailBytes() {
+      java.lang.Object ref = memEmail_;
       if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        memNickname_ = b;
+        memEmail_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -186,48 +199,86 @@ public final class IdentityInfo {
       }
     }
 
-    public static final int MEMEMAIL_FIELD_NUMBER = 3;
-    private volatile java.lang.Object memEmail_;
+    public static final int MEMNICKNAME_FIELD_NUMBER = 3;
+    private volatile java.lang.Object memNickname_;
     /**
-     * <code>string MemEmail = 3;</code>
-     * @return The memEmail.
+     * <code>string MemNickname = 3;</code>
+     * @return The memNickname.
      */
     @java.lang.Override
-    public java.lang.String getMemEmail() {
-      java.lang.Object ref = memEmail_;
+    public java.lang.String getMemNickname() {
+      java.lang.Object ref = memNickname_;
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        memEmail_ = s;
+        memNickname_ = s;
         return s;
       }
     }
     /**
-     * <code>string MemEmail = 3;</code>
-     * @return The bytes for memEmail.
+     * <code>string MemNickname = 3;</code>
+     * @return The bytes for memNickname.
      */
     @java.lang.Override
     public com.google.protobuf.ByteString
-        getMemEmailBytes() {
-      java.lang.Object ref = memEmail_;
+        getMemNicknameBytes() {
+      java.lang.Object ref = memNickname_;
       if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        memEmail_ = b;
+        memNickname_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
       }
     }
 
-    public static final int MEMPHONE_FIELD_NUMBER = 4;
+    public static final int MEMIMG_FIELD_NUMBER = 4;
+    private volatile java.lang.Object memImg_;
+    /**
+     * <code>string MemImg = 4;</code>
+     * @return The memImg.
+     */
+    @java.lang.Override
+    public java.lang.String getMemImg() {
+      java.lang.Object ref = memImg_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        memImg_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string MemImg = 4;</code>
+     * @return The bytes for memImg.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getMemImgBytes() {
+      java.lang.Object ref = memImg_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        memImg_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int MEMPHONE_FIELD_NUMBER = 5;
     private volatile java.lang.Object memPhone_;
     /**
-     * <code>string MemPhone = 4;</code>
+     * <code>string MemPhone = 5;</code>
      * @return The memPhone.
      */
     @java.lang.Override
@@ -244,7 +295,7 @@ public final class IdentityInfo {
       }
     }
     /**
-     * <code>string MemPhone = 4;</code>
+     * <code>string MemPhone = 5;</code>
      * @return The bytes for memPhone.
      */
     @java.lang.Override
@@ -276,17 +327,20 @@ public final class IdentityInfo {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(memNickname_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, memNickname_);
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(memEmail_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, memEmail_);
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(memName_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, memName_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(memEmail_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, memEmail_);
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(memNickname_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, memNickname_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(memImg_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, memImg_);
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(memPhone_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, memPhone_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 5, memPhone_);
       }
       getUnknownFields().writeTo(output);
     }
@@ -297,17 +351,20 @@ public final class IdentityInfo {
       if (size != -1) return size;
 
       size = 0;
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(memNickname_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, memNickname_);
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(memEmail_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, memEmail_);
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(memName_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, memName_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(memEmail_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, memEmail_);
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(memNickname_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, memNickname_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(memImg_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, memImg_);
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(memPhone_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, memPhone_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, memPhone_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -324,12 +381,14 @@ public final class IdentityInfo {
       }
       com.classlink.websocket.api.member.domain.param.proto.IdentityInfo.CWclassIdentityInfo other = (com.classlink.websocket.api.member.domain.param.proto.IdentityInfo.CWclassIdentityInfo) obj;
 
-      if (!getMemNickname()
-          .equals(other.getMemNickname())) return false;
-      if (!getMemName()
-          .equals(other.getMemName())) return false;
       if (!getMemEmail()
           .equals(other.getMemEmail())) return false;
+      if (!getMemName()
+          .equals(other.getMemName())) return false;
+      if (!getMemNickname()
+          .equals(other.getMemNickname())) return false;
+      if (!getMemImg()
+          .equals(other.getMemImg())) return false;
       if (!getMemPhone()
           .equals(other.getMemPhone())) return false;
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
@@ -343,12 +402,14 @@ public final class IdentityInfo {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + MEMNICKNAME_FIELD_NUMBER;
-      hash = (53 * hash) + getMemNickname().hashCode();
-      hash = (37 * hash) + MEMNAME_FIELD_NUMBER;
-      hash = (53 * hash) + getMemName().hashCode();
       hash = (37 * hash) + MEMEMAIL_FIELD_NUMBER;
       hash = (53 * hash) + getMemEmail().hashCode();
+      hash = (37 * hash) + MEMNAME_FIELD_NUMBER;
+      hash = (53 * hash) + getMemName().hashCode();
+      hash = (37 * hash) + MEMNICKNAME_FIELD_NUMBER;
+      hash = (53 * hash) + getMemNickname().hashCode();
+      hash = (37 * hash) + MEMIMG_FIELD_NUMBER;
+      hash = (53 * hash) + getMemImg().hashCode();
       hash = (37 * hash) + MEMPHONE_FIELD_NUMBER;
       hash = (53 * hash) + getMemPhone().hashCode();
       hash = (29 * hash) + getUnknownFields().hashCode();
@@ -479,11 +540,13 @@ public final class IdentityInfo {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        memNickname_ = "";
+        memEmail_ = "";
 
         memName_ = "";
 
-        memEmail_ = "";
+        memNickname_ = "";
+
+        memImg_ = "";
 
         memPhone_ = "";
 
@@ -513,9 +576,10 @@ public final class IdentityInfo {
       @java.lang.Override
       public com.classlink.websocket.api.member.domain.param.proto.IdentityInfo.CWclassIdentityInfo buildPartial() {
         com.classlink.websocket.api.member.domain.param.proto.IdentityInfo.CWclassIdentityInfo result = new com.classlink.websocket.api.member.domain.param.proto.IdentityInfo.CWclassIdentityInfo(this);
-        result.memNickname_ = memNickname_;
-        result.memName_ = memName_;
         result.memEmail_ = memEmail_;
+        result.memName_ = memName_;
+        result.memNickname_ = memNickname_;
+        result.memImg_ = memImg_;
         result.memPhone_ = memPhone_;
         onBuilt();
         return result;
@@ -565,16 +629,20 @@ public final class IdentityInfo {
 
       public Builder mergeFrom(com.classlink.websocket.api.member.domain.param.proto.IdentityInfo.CWclassIdentityInfo other) {
         if (other == com.classlink.websocket.api.member.domain.param.proto.IdentityInfo.CWclassIdentityInfo.getDefaultInstance()) return this;
-        if (!other.getMemNickname().isEmpty()) {
-          memNickname_ = other.memNickname_;
+        if (!other.getMemEmail().isEmpty()) {
+          memEmail_ = other.memEmail_;
           onChanged();
         }
         if (!other.getMemName().isEmpty()) {
           memName_ = other.memName_;
           onChanged();
         }
-        if (!other.getMemEmail().isEmpty()) {
-          memEmail_ = other.memEmail_;
+        if (!other.getMemNickname().isEmpty()) {
+          memNickname_ = other.memNickname_;
+          onChanged();
+        }
+        if (!other.getMemImg().isEmpty()) {
+          memImg_ = other.memImg_;
           onChanged();
         }
         if (!other.getMemPhone().isEmpty()) {
@@ -608,7 +676,7 @@ public final class IdentityInfo {
                 done = true;
                 break;
               case 10: {
-                memNickname_ = input.readStringRequireUtf8();
+                memEmail_ = input.readStringRequireUtf8();
 
                 break;
               } // case 10
@@ -618,15 +686,20 @@ public final class IdentityInfo {
                 break;
               } // case 18
               case 26: {
-                memEmail_ = input.readStringRequireUtf8();
+                memNickname_ = input.readStringRequireUtf8();
 
                 break;
               } // case 26
               case 34: {
-                memPhone_ = input.readStringRequireUtf8();
+                memImg_ = input.readStringRequireUtf8();
 
                 break;
               } // case 34
+              case 42: {
+                memPhone_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 42
               default: {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                   done = true; // was an endgroup tag
@@ -643,78 +716,78 @@ public final class IdentityInfo {
         return this;
       }
 
-      private java.lang.Object memNickname_ = "";
+      private java.lang.Object memEmail_ = "";
       /**
-       * <code>string MemNickname = 1;</code>
-       * @return The memNickname.
+       * <code>string MemEmail = 1;</code>
+       * @return The memEmail.
        */
-      public java.lang.String getMemNickname() {
-        java.lang.Object ref = memNickname_;
+      public java.lang.String getMemEmail() {
+        java.lang.Object ref = memEmail_;
         if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
-          memNickname_ = s;
+          memEmail_ = s;
           return s;
         } else {
           return (java.lang.String) ref;
         }
       }
       /**
-       * <code>string MemNickname = 1;</code>
-       * @return The bytes for memNickname.
+       * <code>string MemEmail = 1;</code>
+       * @return The bytes for memEmail.
        */
       public com.google.protobuf.ByteString
-          getMemNicknameBytes() {
-        java.lang.Object ref = memNickname_;
+          getMemEmailBytes() {
+        java.lang.Object ref = memEmail_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
-          memNickname_ = b;
+          memEmail_ = b;
           return b;
         } else {
           return (com.google.protobuf.ByteString) ref;
         }
       }
       /**
-       * <code>string MemNickname = 1;</code>
-       * @param value The memNickname to set.
+       * <code>string MemEmail = 1;</code>
+       * @param value The memEmail to set.
        * @return This builder for chaining.
        */
-      public Builder setMemNickname(
+      public Builder setMemEmail(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
   
-        memNickname_ = value;
+        memEmail_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>string MemNickname = 1;</code>
+       * <code>string MemEmail = 1;</code>
        * @return This builder for chaining.
        */
-      public Builder clearMemNickname() {
+      public Builder clearMemEmail() {
         
-        memNickname_ = getDefaultInstance().getMemNickname();
+        memEmail_ = getDefaultInstance().getMemEmail();
         onChanged();
         return this;
       }
       /**
-       * <code>string MemNickname = 1;</code>
-       * @param value The bytes for memNickname to set.
+       * <code>string MemEmail = 1;</code>
+       * @param value The bytes for memEmail to set.
        * @return This builder for chaining.
        */
-      public Builder setMemNicknameBytes(
+      public Builder setMemEmailBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
         
-        memNickname_ = value;
+        memEmail_ = value;
         onChanged();
         return this;
       }
@@ -795,85 +868,161 @@ public final class IdentityInfo {
         return this;
       }
 
-      private java.lang.Object memEmail_ = "";
+      private java.lang.Object memNickname_ = "";
       /**
-       * <code>string MemEmail = 3;</code>
-       * @return The memEmail.
+       * <code>string MemNickname = 3;</code>
+       * @return The memNickname.
        */
-      public java.lang.String getMemEmail() {
-        java.lang.Object ref = memEmail_;
+      public java.lang.String getMemNickname() {
+        java.lang.Object ref = memNickname_;
         if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
-          memEmail_ = s;
+          memNickname_ = s;
           return s;
         } else {
           return (java.lang.String) ref;
         }
       }
       /**
-       * <code>string MemEmail = 3;</code>
-       * @return The bytes for memEmail.
+       * <code>string MemNickname = 3;</code>
+       * @return The bytes for memNickname.
        */
       public com.google.protobuf.ByteString
-          getMemEmailBytes() {
-        java.lang.Object ref = memEmail_;
+          getMemNicknameBytes() {
+        java.lang.Object ref = memNickname_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
-          memEmail_ = b;
+          memNickname_ = b;
           return b;
         } else {
           return (com.google.protobuf.ByteString) ref;
         }
       }
       /**
-       * <code>string MemEmail = 3;</code>
-       * @param value The memEmail to set.
+       * <code>string MemNickname = 3;</code>
+       * @param value The memNickname to set.
        * @return This builder for chaining.
        */
-      public Builder setMemEmail(
+      public Builder setMemNickname(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
   
-        memEmail_ = value;
+        memNickname_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>string MemEmail = 3;</code>
+       * <code>string MemNickname = 3;</code>
        * @return This builder for chaining.
        */
-      public Builder clearMemEmail() {
+      public Builder clearMemNickname() {
         
-        memEmail_ = getDefaultInstance().getMemEmail();
+        memNickname_ = getDefaultInstance().getMemNickname();
         onChanged();
         return this;
       }
       /**
-       * <code>string MemEmail = 3;</code>
-       * @param value The bytes for memEmail to set.
+       * <code>string MemNickname = 3;</code>
+       * @param value The bytes for memNickname to set.
        * @return This builder for chaining.
        */
-      public Builder setMemEmailBytes(
+      public Builder setMemNicknameBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
         
-        memEmail_ = value;
+        memNickname_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object memImg_ = "";
+      /**
+       * <code>string MemImg = 4;</code>
+       * @return The memImg.
+       */
+      public java.lang.String getMemImg() {
+        java.lang.Object ref = memImg_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          memImg_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string MemImg = 4;</code>
+       * @return The bytes for memImg.
+       */
+      public com.google.protobuf.ByteString
+          getMemImgBytes() {
+        java.lang.Object ref = memImg_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          memImg_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string MemImg = 4;</code>
+       * @param value The memImg to set.
+       * @return This builder for chaining.
+       */
+      public Builder setMemImg(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        memImg_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string MemImg = 4;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearMemImg() {
+        
+        memImg_ = getDefaultInstance().getMemImg();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string MemImg = 4;</code>
+       * @param value The bytes for memImg to set.
+       * @return This builder for chaining.
+       */
+      public Builder setMemImgBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        memImg_ = value;
         onChanged();
         return this;
       }
 
       private java.lang.Object memPhone_ = "";
       /**
-       * <code>string MemPhone = 4;</code>
+       * <code>string MemPhone = 5;</code>
        * @return The memPhone.
        */
       public java.lang.String getMemPhone() {
@@ -889,7 +1038,7 @@ public final class IdentityInfo {
         }
       }
       /**
-       * <code>string MemPhone = 4;</code>
+       * <code>string MemPhone = 5;</code>
        * @return The bytes for memPhone.
        */
       public com.google.protobuf.ByteString
@@ -906,7 +1055,7 @@ public final class IdentityInfo {
         }
       }
       /**
-       * <code>string MemPhone = 4;</code>
+       * <code>string MemPhone = 5;</code>
        * @param value The memPhone to set.
        * @return This builder for chaining.
        */
@@ -921,7 +1070,7 @@ public final class IdentityInfo {
         return this;
       }
       /**
-       * <code>string MemPhone = 4;</code>
+       * <code>string MemPhone = 5;</code>
        * @return This builder for chaining.
        */
       public Builder clearMemPhone() {
@@ -931,7 +1080,7 @@ public final class IdentityInfo {
         return this;
       }
       /**
-       * <code>string MemPhone = 4;</code>
+       * <code>string MemPhone = 5;</code>
        * @param value The bytes for memPhone to set.
        * @return This builder for chaining.
        */
@@ -1024,12 +1173,12 @@ public final class IdentityInfo {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\031CWclassIdentityInfo.proto\022\tClasslink\"_" +
-      "\n\023CWclassIdentityInfo\022\023\n\013MemNickname\030\001 \001" +
-      "(\t\022\017\n\007MemName\030\002 \001(\t\022\020\n\010MemEmail\030\003 \001(\t\022\020\n" +
-      "\010MemPhone\030\004 \001(\tBE\n5com.classlink.websock" +
-      "et.api.member.domain.param.protoB\014Identi" +
-      "tyInfob\006proto3"
+      "\n\031CWclassIdentityInfo.proto\022\tClasslink\"o" +
+      "\n\023CWclassIdentityInfo\022\020\n\010MemEmail\030\001 \001(\t\022" +
+      "\017\n\007MemName\030\002 \001(\t\022\023\n\013MemNickname\030\003 \001(\t\022\016\n" +
+      "\006MemImg\030\004 \001(\t\022\020\n\010MemPhone\030\005 \001(\tBE\n5com.c" +
+      "lasslink.websocket.api.member.domain.par" +
+      "am.protoB\014IdentityInfob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -1040,7 +1189,7 @@ public final class IdentityInfo {
     internal_static_Classlink_CWclassIdentityInfo_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_Classlink_CWclassIdentityInfo_descriptor,
-        new java.lang.String[] { "MemNickname", "MemName", "MemEmail", "MemPhone", });
+        new java.lang.String[] { "MemEmail", "MemName", "MemNickname", "MemImg", "MemPhone", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

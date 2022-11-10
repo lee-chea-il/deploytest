@@ -4,8 +4,9 @@ option java_package = "com.classlink.websocket.api.member.domain.param.proto";
 option java_outer_classname = "IdentityInfo";
 
 message CWclassIdentityInfo {
-  string MemNickname = 1;
+  string MemEmail = 1;
   string MemName = 2;
-  string MemEmail = 3;
-  string MemPhone = 4;
+  string MemNickname = 3;
+  string MemImg = 4;
+  string MemPhone = 5;
 }

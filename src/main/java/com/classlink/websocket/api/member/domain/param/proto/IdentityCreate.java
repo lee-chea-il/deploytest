@@ -29,12 +29,6 @@ public final class IdentityCreate {
      */
     com.google.protobuf.ByteString
         getIdtCodeBytes();
-
-    /**
-     * <code>int32 MemIdx = 3;</code>
-     * @return The memIdx.
-     */
-    int getMemIdx();
   }
   /**
    * Protobuf type {@code Classlink.CWclassIdentityCreate}
@@ -115,17 +109,6 @@ public final class IdentityCreate {
       }
     }
 
-    public static final int MEMIDX_FIELD_NUMBER = 3;
-    private int memIdx_;
-    /**
-     * <code>int32 MemIdx = 3;</code>
-     * @return The memIdx.
-     */
-    @java.lang.Override
-    public int getMemIdx() {
-      return memIdx_;
-    }
-
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -143,9 +126,6 @@ public final class IdentityCreate {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(idtCode_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, idtCode_);
       }
-      if (memIdx_ != 0) {
-        output.writeInt32(3, memIdx_);
-      }
       getUnknownFields().writeTo(output);
     }
 
@@ -157,10 +137,6 @@ public final class IdentityCreate {
       size = 0;
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(idtCode_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, idtCode_);
-      }
-      if (memIdx_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(3, memIdx_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -179,8 +155,6 @@ public final class IdentityCreate {
 
       if (!getIdtCode()
           .equals(other.getIdtCode())) return false;
-      if (getMemIdx()
-          != other.getMemIdx()) return false;
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -194,8 +168,6 @@ public final class IdentityCreate {
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + IDTCODE_FIELD_NUMBER;
       hash = (53 * hash) + getIdtCode().hashCode();
-      hash = (37 * hash) + MEMIDX_FIELD_NUMBER;
-      hash = (53 * hash) + getMemIdx();
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -326,8 +298,6 @@ public final class IdentityCreate {
         super.clear();
         idtCode_ = "";
 
-        memIdx_ = 0;
-
         return this;
       }
 
@@ -355,7 +325,6 @@ public final class IdentityCreate {
       public com.classlink.websocket.api.member.domain.param.proto.IdentityCreate.CWclassIdentityCreate buildPartial() {
         com.classlink.websocket.api.member.domain.param.proto.IdentityCreate.CWclassIdentityCreate result = new com.classlink.websocket.api.member.domain.param.proto.IdentityCreate.CWclassIdentityCreate(this);
         result.idtCode_ = idtCode_;
-        result.memIdx_ = memIdx_;
         onBuilt();
         return result;
       }
@@ -408,9 +377,6 @@ public final class IdentityCreate {
           idtCode_ = other.idtCode_;
           onChanged();
         }
-        if (other.getMemIdx() != 0) {
-          setMemIdx(other.getMemIdx());
-        }
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
@@ -442,11 +408,6 @@ public final class IdentityCreate {
 
                 break;
               } // case 18
-              case 24: {
-                memIdx_ = input.readInt32();
-
-                break;
-              } // case 24
               default: {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                   done = true; // was an endgroup tag
@@ -538,37 +499,6 @@ public final class IdentityCreate {
         onChanged();
         return this;
       }
-
-      private int memIdx_ ;
-      /**
-       * <code>int32 MemIdx = 3;</code>
-       * @return The memIdx.
-       */
-      @java.lang.Override
-      public int getMemIdx() {
-        return memIdx_;
-      }
-      /**
-       * <code>int32 MemIdx = 3;</code>
-       * @param value The memIdx to set.
-       * @return This builder for chaining.
-       */
-      public Builder setMemIdx(int value) {
-        
-        memIdx_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>int32 MemIdx = 3;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearMemIdx() {
-        
-        memIdx_ = 0;
-        onChanged();
-        return this;
-      }
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -648,10 +578,10 @@ public final class IdentityCreate {
   static {
     java.lang.String[] descriptorData = {
       "\n\033CWclassIdentityCreate.proto\022\tClasslink" +
-      "\"8\n\025CWclassIdentityCreate\022\017\n\007IdtCode\030\002 \001" +
-      "(\t\022\016\n\006MemIdx\030\003 \001(\005BG\n5com.classlink.webs" +
-      "ocket.api.member.domain.param.protoB\016Ide" +
-      "ntityCreateb\006proto3"
+      "\"(\n\025CWclassIdentityCreate\022\017\n\007IdtCode\030\002 \001" +
+      "(\tBG\n5com.classlink.websocket.api.member" +
+      ".domain.param.protoB\016IdentityCreateb\006pro" +
+      "to3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -662,7 +592,7 @@ public final class IdentityCreate {
     internal_static_Classlink_CWclassIdentityCreate_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_Classlink_CWclassIdentityCreate_descriptor,
-        new java.lang.String[] { "IdtCode", "MemIdx", });
+        new java.lang.String[] { "IdtCode", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

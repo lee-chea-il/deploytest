@@ -10,7 +10,10 @@
 
   <div class="well">
     <button id="btnOpen" class="btn btn-primary">open socket</button>
-    <input type="number" id="OpCode" value="101" class="form-control" />
+    <select id="OpCode" class="form-control">
+      <option value="100">신분생성</option>
+      <option value="101" selected>신분조회</option>
+    </select>
     <button id="btnSend" class="btn btn-primary">Send Message</button>
   </div>
   <div>Result</div>
@@ -21,7 +24,7 @@
   <script src="//cdn.jsdelivr.net/npm/protobufjs@7.1.2/dist/protobuf.js"></script>
   <script src="js/util.js"></script>
   <script>
-
+  
     //---------------------------------------------------------------------------------------------------
     // window[]를 통해서 브라우저상에 전역변수(global)로 지정할때 사용하는 변수  
     
@@ -53,12 +56,14 @@
 				});
 
 				$("#btnSend").on("click", function(evt) {
+					 console.clear();
 					
-					 let OpCode = parseInt(document.getElementById("OpCode").value);
+					 let OpCode = getOpCodeFromSelectBox();
+					 
 					 let Data = new Uint8Array([]);
 					
 			     protobuf.load(protoFileList, function(err, root) {
-			    	  console.log("Info: protobuf files onloaded.");
+			    	  console.log("INFO: protobuf files loaded.");
 			    	  
 			    	  loadMessage(root, PacketName, "Classlink.CWclassPacket");
 
@@ -88,9 +93,9 @@
                   Data : Data
                 };
 		          
-		          socket.send(setDataToSend(root, PacketName, PacketObj));
-		          
-		          console.log("Info: send triggered.");
+              console.log("INFO: send triggered.");
+              socket.send(setDataToSend(root, PacketName, PacketObj));
+              console.time("TIME");
 		          
 		          if (socket.readyState !== 1)
 		            return;
@@ -119,16 +124,17 @@
 				socket = ws;
 
 				ws.onopen = function() {
-					console.log("Info: connection opened.");
+					console.log("INFO: connection opened.");
 				};
 
 				ws.onmessage = async function(event) {
-					console.log("Info: onmessage triggered.");
+					console.timeEnd("TIME");
+					console.log("INFO: onmessage triggered.");
 					
-					let OpCode = parseInt(document.getElementById("OpCode").value);
+					let OpCode = getOpCodeFromSelectBox();
 					let blob = event.data;
 					
-					await readBlobDataAsync(blob, PacketName);
+					const receivedPacketData = await readBlobDataAsync(blob, PacketName);
 					
 					switch(OpCode) {
             case 100:
@@ -136,7 +142,7 @@
               
 						case 101:		
 							const receivedIdentityListNameData = window[IdentityListName].decode(receivedPacketData.Data);			
-	            console.log("receivedIdentityListNameData mmmmmmmmmmmm>>", receivedIdentityListNameData);
+	            console.log("receivedIdentityListData mmmmmmmmmmmm>>", receivedIdentityListNameData);
 	            break;
 	            
 						default:
@@ -145,7 +151,7 @@
 				};
 
 				ws.onclose = function(event) {
-					console.log("Info: connection closed.");
+					console.log("INFO: connection closed.");
 					//setTimeout( function(){ connect(); }, 1000); // retry connection!!
 				};
 				

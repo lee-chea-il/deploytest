@@ -27,7 +27,7 @@ public class MemberService {
 		
 		List<IdentityVo> identityVo = memberMapper.selectMemberIdentityByMemberIdx(7);
 		
-		int opCode = 101;
+		int opCode = packetReqProto.getOpCode();
 		
 		CWclassPacket PacketResProto;
 		
@@ -54,11 +54,11 @@ public class MemberService {
 	public BinaryMessage addMemberIdentity(CWclassPacket packetReqProto) throws InvalidProtocolBufferException {
 		
 		CWclassIdentityCreate identityCreateProto = CWclassIdentityCreate.newBuilder().mergeFrom(packetReqProto.getData()).build(); 
-		MemberIdentityParam memberIdentityParam = MemberIdentityParam.builder().idt_code(identityCreateProto.getIdtCode()).mem_idx(identityCreateProto.getMemIdx()).build();
+		MemberIdentityParam memberIdentityParam = MemberIdentityParam.builder().idt_code(identityCreateProto.getIdtCode()).mem_idx(7).build();
 		
 		memberMapper.insertMemberIdentity(memberIdentityParam);
 		
-		int opCode = 101;
+		int opCode = packetReqProto.getOpCode();
 		
 		if(memberIdentityParam.getMdt_idx() == 0) {
 			opCode = 500;
