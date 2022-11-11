@@ -6,6 +6,7 @@ import java.util.Base64;
 import org.springframework.stereotype.Component;
 
 import com.classlink.websocket.api.common.CommonConst;
+import com.classlink.websocket.api.jwt.domain.JwtExeptionCode;
 
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.ExpiredJwtException;
@@ -32,6 +33,23 @@ public class JwtTokenParser {
 		} catch (JwtException e) { // Token이 변조된 경우 Exception이 발생한다.
 			return false;
 		}
+	}
+	
+	// ==Jwt 토큰의 유효성 체크 메소드==//
+	public JwtExeptionCode getValidationResult(String token) {
+		try {
+			token = BearerRemove(token); // Bearer 제거
+			Claims claims = Jwts.parser()
+					.setSigningKey(Base64.getEncoder().encodeToString(CommonConst.SIGNING_KEY.getBytes()))
+					.parseClaimsJws(token).getBody();
+		} catch (ExpiredJwtException e) { // Token이 만료된 경우 Exception이 발생한다.
+			return JwtExeptionCode.JWT_TOKEN_EXPIRED;
+
+		} catch (JwtException e) { // Token이 변조된 경우 Exception이 발생한다.
+			return JwtExeptionCode.JWT_TOKEN_NOT_VALID;
+		}
+		
+		return null;
 	}
 
 	// ==토큰 앞 부분('Bearer') 제거 메소드==//

@@ -28,7 +28,9 @@
     //---------------------------------------------------------------------------------------------------
     // window[]를 통해서 브라우저상에 전역변수(global)로 지정할때 사용하는 변수  
     
-      const PacketName = "Packet";
+      const PacketName = "PacketData";
+      const JwtExceptionName = "JwtException";
+    
       const IdentityListName = "IdentityList";
       const IdentityCreateName = "IdentityCreate";
 
@@ -36,10 +38,11 @@
     // protobuf.load시에 로딩할 protobuf 파일 경로 지정  
     
 			const commonPath = "../proto"
-			const protoFileList = [ commonPath.concat("/member/response/CWclassIdentityList.proto"),
-				commonPath.concat("/member/request/CWclassIdentityCreate.proto"),
-				commonPath.concat("/member/request/CWclassIdentityInfo.proto"),
-				commonPath.concat("/common/CWclassPacket.proto")];
+			const protoFileList = [ commonPath.concat("/member/response/SWclassIdentityList.proto"),
+				commonPath.concat("/member/request/SWclassIdentityCreate.proto"),
+				commonPath.concat("/member/request/SWclassIdentityInfo.proto"),
+				commonPath.concat("/common/PacketData.proto"),
+				commonPath.concat("/jwt/jwtException.proto")];
 
 			//---------------------------------------------------------------------------------------------------
       // 아래 전체코드 flow
@@ -65,11 +68,12 @@
 			     protobuf.load(protoFileList, function(err, root) {
 			    	  console.log("INFO: protobuf files loaded.");
 			    	  
-			    	  loadMessage(root, PacketName, "Classlink.CWclassPacket");
+			    	  loadMessage(root, PacketName, "Classlink.PacketData");
+			    	  loadMessage(root, JwtExceptionName, "Classlink.JwtException");
 
 			    	  switch (OpCode) {
                 case 100 :
-                  loadMessage(root, IdentityCreateName, "Classlink.CWclassIdentityCreate");
+                  loadMessage(root, IdentityCreateName, "Classlink.SWclassIdentityCreate");
                   
                   const IdentityCreateObj = {
                   		IdtCode : '3',
@@ -80,15 +84,16 @@
                   break;
                   
 			    	  	case 101 :
-			    	  		loadMessage(root, IdentityListName, "Classlink.CWclassIdentityList");
+			    	  		loadMessage(root, IdentityListName, "Classlink.SWclassIdentityList");
 			    	  	  break;
+                  
 			    	    default:
 			    	    	break;
 			    	  }
 			    	  
               const PacketObj = {
                   OpCode : OpCode,
-                  AccessToken : "1234",
+                  AccessToken : "Bearer yJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2NjgyMjM4NDYsInVzZXJfbmFtZSI6InF3ZXIiLCJqdGkiOiIwYTAwZTc0NS0xNjlkLTRmNDUtYTk3YS1lOWExZDk5ZjdiMjYiLCJjbGllbnRfaWQiOiJjbGFzc2xpbmsiLCJzY29wZSI6WyJjbGllbnQiXX0.plkCZq3-f1rJ3D5hdqo8GsJaomcw8Ivz-LTEQsi4g5k",
                   InstanceId : 2,
                   Data : Data
                 };
@@ -131,12 +136,11 @@
 					console.timeEnd("TIME");
 					console.log("INFO: onmessage triggered.");
 					
-					let OpCode = getOpCodeFromSelectBox();
 					let blob = event.data;
 					
 					const receivedPacketData = await readBlobDataAsync(blob, PacketName);
 					
-					switch(OpCode) {
+					switch(receivedPacketData.OpCode) {
             case 100:
               break;
               
@@ -144,6 +148,11 @@
 							const receivedIdentityListNameData = window[IdentityListName].decode(receivedPacketData.Data);			
 	            console.log("receivedIdentityListData mmmmmmmmmmmm>>", receivedIdentityListNameData);
 	            break;
+	            
+	          case 401:   
+              const receivedJwtExceptionNameData = window[JwtExceptionName].decode(receivedPacketData.Data);      
+              console.log("receivedJwtExceptionNameData mmmmmmmmmmmm>>", receivedJwtExceptionNameData);
+              break;
 	            
 						default:
 							break;

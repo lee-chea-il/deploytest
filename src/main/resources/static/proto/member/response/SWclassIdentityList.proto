@@ -3,6 +3,6 @@ package Classlink;
 option java_package = "com.classlink.websocket.api.member.domain.dto.proto";
 option java_outer_classname = "IdentityList";
 
-message CWclassIdentityList {
+message SWclassIdentityList {
   repeated string IdtNames = 3;
 }

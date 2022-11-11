@@ -15,11 +15,11 @@ import org.springframework.web.socket.WebSocketSession;
 import org.springframework.web.socket.handler.TextWebSocketHandler;
 
 import com.classlink.websocket.api.common.OpCodeMapping;
-import com.classlink.websocket.api.common.domain.Packet.CWclassPacket;
+import com.classlink.websocket.api.common.domain.proto.Packet.PacketData;
+import com.classlink.websocket.api.jwt.JwtExceptionResponseController;
 import com.classlink.websocket.api.util.BeanUtils;
 import com.classlink.websocket.api.util.JwtTokenParser;
 
-import io.jsonwebtoken.Claims;
 import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
@@ -30,6 +30,9 @@ public class WebSocketHandler extends TextWebSocketHandler {
 
 	@Autowired
 	JwtTokenParser jwtTokenParser;
+	
+	@Autowired
+	JwtExceptionResponseController jwtExceptionResponseController;
 
 	@Override
 	public void afterConnectionEstablished(WebSocketSession session) throws Exception {
@@ -59,7 +62,7 @@ public class WebSocketHandler extends TextWebSocketHandler {
 		int opCode = 0;
 		String userId = null;
 		try {
-			CWclassPacket deserializedParam = CWclassPacket.newBuilder().mergeFrom(message.getPayload().array())
+			PacketData deserializedParam = PacketData.newBuilder().mergeFrom(message.getPayload().array())
 					.build();
 			log.info(String.valueOf(deserializedParam.getOpCode()));
 			log.info(deserializedParam.getAccessToken());
@@ -72,9 +75,8 @@ public class WebSocketHandler extends TextWebSocketHandler {
 				opCode = deserializedParam.getOpCode();
 				userId = jwtTokenParser.getUserId(deserializedParam.getAccessToken());
 			} else {
-				// 토큰이 유효하지 않을때 호출할 opCode 및 userId 처리
-				opCode = 900;
-				userId = "";
+				// 토큰이 유효하지 않을때 호출할 opCode 처리 및 message 전송
+				jwtExceptionResponseController.tokenException(session, deserializedParam);
 			}
 
 			for (Class<?> clazz : list) {

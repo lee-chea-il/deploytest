@@ -3,7 +3,7 @@ package Classlink;
 option java_package = "com.classlink.websocket.api.member.domain.param.proto";
 option java_outer_classname = "IdentityInfo";
 
-message CWclassIdentityInfo {
+message SWclassIdentityInfo {
   string MemEmail = 1;
   string MemName = 2;
   string MemNickname = 3;

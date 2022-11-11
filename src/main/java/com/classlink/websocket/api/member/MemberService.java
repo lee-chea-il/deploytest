@@ -6,12 +6,11 @@ import java.util.stream.Collectors;
 import org.springframework.stereotype.Service;
 import org.springframework.web.socket.BinaryMessage;
 
-import com.classlink.websocket.api.common.domain.Packet.CWclassPacket;
-import com.classlink.websocket.api.member.domain.dto.proto.IdentityList.CWclassIdentityList;
+import com.classlink.websocket.api.common.domain.proto.Packet.PacketData;
+import com.classlink.websocket.api.member.domain.dto.proto.IdentityList.SWclassIdentityList;
 import com.classlink.websocket.api.member.domain.param.MemberParam.MemberIdentityParam;
-import com.classlink.websocket.api.member.domain.param.proto.IdentityCreate.CWclassIdentityCreate;
+import com.classlink.websocket.api.member.domain.param.proto.IdentityCreate.SWclassIdentityCreate;
 import com.classlink.websocket.api.member.domain.vo.MemberVo.IdentityVo;
-import com.classlink.websocket.api.util.JwtTokenParser;
 import com.google.protobuf.InvalidProtocolBufferException;
 
 import lombok.RequiredArgsConstructor;
@@ -24,37 +23,37 @@ public class MemberService {
 
 	private final MemberMapper memberMapper;
 	
-	public BinaryMessage findMemberIdentityByMemberIdx(CWclassPacket packetReqProto, String userId) throws InvalidProtocolBufferException {
+	public BinaryMessage findMemberIdentityByMemberIdx(PacketData packetReqProto, String userId) throws InvalidProtocolBufferException {
 		
 		List<IdentityVo> identityVo = memberMapper.selectMemberIdentityByMemberIdx(7);
 		
 		int opCode = packetReqProto.getOpCode();
 		
-		CWclassPacket PacketResProto;
+		PacketData PacketResProto;
 		
 		if(identityVo.isEmpty()) {
 			
 			opCode = 404;
 			
-			PacketResProto = CWclassPacket.newBuilder().setOpCode(opCode).setAccessToken(packetReqProto.getAccessToken()).setInstanceId(packetReqProto.getInstanceId()).build();
+			PacketResProto = PacketData.newBuilder().setOpCode(opCode).setAccessToken(packetReqProto.getAccessToken()).setInstanceId(packetReqProto.getInstanceId()).build();
 			
 		}else {
 			identityVo.stream().forEach(idtVo -> log.info("result : " + idtVo.getIdt_name()));
 			
 			List<String> IdtNames = identityVo.stream().map(field -> field.getIdt_name()).collect(Collectors.toList());	
 			
-			CWclassIdentityList memberIdentityListProto = CWclassIdentityList.newBuilder().addAllIdtNames(IdtNames).build();
+			SWclassIdentityList memberIdentityListProto = SWclassIdentityList.newBuilder().addAllIdtNames(IdtNames).build();
 			
-			PacketResProto = CWclassPacket.newBuilder().setOpCode(opCode).setAccessToken(packetReqProto.getAccessToken()).setInstanceId(packetReqProto.getInstanceId()).setData(memberIdentityListProto.toByteString()).build();
+			PacketResProto = PacketData.newBuilder().setOpCode(opCode).setAccessToken(packetReqProto.getAccessToken()).setInstanceId(packetReqProto.getInstanceId()).setData(memberIdentityListProto.toByteString()).build();
 		}
 		
 
 		return new BinaryMessage(PacketResProto.toByteArray());
 	}
 
-	public BinaryMessage addMemberIdentity(CWclassPacket packetReqProto, String userId) throws InvalidProtocolBufferException {
+	public BinaryMessage addMemberIdentity(PacketData packetReqProto, String userId) throws InvalidProtocolBufferException {
 		
-		CWclassIdentityCreate identityCreateProto = CWclassIdentityCreate.newBuilder().mergeFrom(packetReqProto.getData()).build(); 
+		SWclassIdentityCreate identityCreateProto = SWclassIdentityCreate.newBuilder().mergeFrom(packetReqProto.getData()).build(); 
 		MemberIdentityParam memberIdentityParam = MemberIdentityParam.builder().idt_code(identityCreateProto.getIdtCode()).mem_idx(7).build();
 		
 		memberMapper.insertMemberIdentity(memberIdentityParam);
@@ -65,7 +64,7 @@ public class MemberService {
 			opCode = 500;
 		}
 		
-		CWclassPacket PacketResProto = CWclassPacket.newBuilder().setOpCode(opCode).setAccessToken(packetReqProto.getAccessToken()).setInstanceId(packetReqProto.getInstanceId()).build();
+		PacketData PacketResProto = PacketData.newBuilder().setOpCode(opCode).setAccessToken(packetReqProto.getAccessToken()).setInstanceId(packetReqProto.getInstanceId()).build();
 		
 		return new BinaryMessage(PacketResProto.toByteArray());
 	}
