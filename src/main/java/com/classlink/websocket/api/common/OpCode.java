@@ -1,11 +1,15 @@
 package com.classlink.websocket.api.common;
 
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+
+@Getter
+@AllArgsConstructor
 public enum OpCode {
-	TEST(121), LOGIN(101);
+	
+	DEFAULT(0),IDENTITY_ADD(100), IDENTITY_DETAILS(101),
+	INSTITUTION_MY_LIST(201);
 
 	private final int value;
 
-	OpCode(int value) {
-		this.value = value;
-	}
 }

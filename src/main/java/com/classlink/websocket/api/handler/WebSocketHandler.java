@@ -14,6 +14,7 @@ import org.springframework.web.socket.CloseStatus;
 import org.springframework.web.socket.WebSocketSession;
 import org.springframework.web.socket.handler.TextWebSocketHandler;
 
+import com.classlink.websocket.api.common.OpCode;
 import com.classlink.websocket.api.common.OpCodeMapping;
 import com.classlink.websocket.api.common.domain.proto.Packet.PacketData;
 import com.classlink.websocket.api.jwt.JwtExceptionResponseController;
@@ -85,9 +86,9 @@ public class WebSocketHandler extends TextWebSocketHandler {
 
 				for (Method method : methods) {
 					if (method.isAnnotationPresent(OpCodeMapping.class)) {
-						int key = method.getDeclaredAnnotation(OpCodeMapping.class).value();
+						OpCode key = method.getDeclaredAnnotation(OpCodeMapping.class).value();
 
-						if (key == opCode) {
+						if (key.getValue() == opCode) {
 							// method 호출
 							log.info("clazz name : " + clazz.getName());
 							log.info("clazz getSimpleName : " + clazz.getSimpleName());

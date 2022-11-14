@@ -5,6 +5,7 @@ import java.io.IOException;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.socket.WebSocketSession;
 
+import com.classlink.websocket.api.common.OpCode;
 import com.classlink.websocket.api.common.OpCodeMapping;
 import com.classlink.websocket.api.common.domain.proto.Packet.PacketData;
 import com.classlink.websocket.api.member.MemberService;
@@ -21,12 +22,12 @@ public class MemberController {
 	
 	private final MemberService memberService;
 
-	@OpCodeMapping(value = 100)
+	@OpCodeMapping(value = OpCode.IDENTITY_ADD)
 	public void memberIdentityAdd(WebSocketSession session, PacketData packetReqProto, String userId) throws StreamReadException, DatabindException, IOException {
 		session.sendMessage(memberService.addMemberIdentity(packetReqProto, userId));
 	}
 	
-	@OpCodeMapping(value = 101)
+	@OpCodeMapping(value = OpCode.IDENTITY_DETAILS)
 	public void memberIdentityDetails(WebSocketSession session, PacketData packetReqProto, String userId) throws StreamReadException, DatabindException, IOException {
 		session.sendMessage(memberService.findMemberIdentityByMemberIdx(packetReqProto, userId));
 	}

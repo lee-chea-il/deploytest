@@ -26,6 +26,10 @@ spring:
   config:
     activate:
       on-profile: "prod"
+  mvc:
+    view:
+      prefix: /WEB-INF/views/
+      suffix: .jsp
   datasource:
     driver-class-name: org.mariadb.jdbc.Driver
     url: jdbc:mariadb://112.171.101.31:3106/inshop?characterEncoding=UTF-8&serverTimezone=UTC
@@ -51,6 +55,10 @@ spring:
   config:
     activate:
       on-profile: "dev"
+  mvc:
+    view:
+      prefix: /WEB-INF/views/
+      suffix: .jsp
   datasource:
     driver-class-name: org.mariadb.jdbc.Driver
     url: jdbc:mariadb://112.171.101.31:45336/classlink?characterEncoding=UTF-8&serverTimezone=Asia/Seoul
