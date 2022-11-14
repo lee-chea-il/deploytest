@@ -21,6 +21,6 @@ public class HomeController {
 	
 	@OpCodeMapping(value = 201)
 	public void myInstitutionList(WebSocketSession session, PacketData packetReqProto, String userId) throws IOException {
-//		session.sendMessage(homeService.findMyInstitutionByMemId(packetReqProto, userId));
+		session.sendMessage(homeService.findMyInstitutionByMemId(packetReqProto, userId));
 	}
 }

@@ -12,7 +12,7 @@ public class MemberParam {
 	public static class MemberIdentityParam{
 		private int mdt_idx;
 		private String idt_code;
-		private int mem_idx;
+		private String mem_id;
 	}
 
 }

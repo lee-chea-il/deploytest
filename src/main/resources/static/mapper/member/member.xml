@@ -4,10 +4,12 @@
 <mapper namespace="com.classlink.websocket.api.member.MemberMapper">
   <select id="selectMemberIdentityByMemberIdx" resultType="com.classlink.websocket.api.member.domain.vo.MemberVo$IdentityVo">
     SELECT ci.idt_name
-    FROM cl_member_identity cmi
+    FROM cl_member cm 
+    LEFT JOIN cl_member_identity cmi
+    on cm.mem_idx = cmi.mem_idx
     LEFT JOIN cl_identity ci 
     ON cmi.idt_code = ci.idt_code
-    WHERE cmi.mem_idx = #{mem_idx}
+    WHERE cm.mem_id = #{mem_id}
     AND cmi.delete_yn = "N"
     and ci.delete_yn = "N"
   </select>
@@ -17,7 +19,7 @@
      INSERT INTO cl_member_identity
      (idt_code, mem_idx)
      VALUES
-     (#{idt_code}, #{mem_idx}) 
+     (#{idt_code}, (select cm.mem_idx from cl_member cm where cm.mem_id = #{mem_id})) 
   </insert>
 
 </mapper>

@@ -13,12 +13,12 @@ public class MemberDto {
 	@Setter
 	@Builder
 	public static class MemberIdentityDto{
-		private String IdtCode;
-		private String IdtName;
-		private String DeleteYn;
-		private String regDate;
+		private String idt_code;
+		private String idt_name;
+		private String delete_yn;
+		private String reg_date;
 		private String update;
-		private String deleteDate;
+		private String delete_date;
 	}
 	
 	@Getter

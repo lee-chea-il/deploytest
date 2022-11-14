@@ -11,7 +11,7 @@ import com.classlink.websocket.api.member.domain.vo.MemberVo;
 @Mapper
 public interface MemberMapper {
 	
-	List<MemberVo.IdentityVo> selectMemberIdentityByMemberIdx(@Param("mem_idx") int mem_idx);
+	List<MemberVo.IdentityVo> selectMemberIdentityByMemberIdx(@Param("mem_id") String mem_id);
 
 	void insertMemberIdentity(MemberIdentityParam memberIdentityParam);
 }

@@ -15,9 +15,9 @@ public class HomeService {
 
 	private final HomeMapper homeMapper;
 	
-	public BinaryMessage findMyInstitution(PacketData packetReqProto, String userId) {
+	public BinaryMessage findMyInstitutionByMemId(PacketData packetReqProto, String userId) {
 		
-//		homeMapper.selectMyInstitutionByMemId(userId);
+//		List<MyInstitutionListDto> myInstitutionListDtos = homeMapper.selectMyInstitutionByMemId(userId);
 		
 		return null;
 	}

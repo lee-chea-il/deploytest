@@ -25,7 +25,7 @@ public class MemberService {
 	
 	public BinaryMessage findMemberIdentityByMemberIdx(PacketData packetReqProto, String userId) throws InvalidProtocolBufferException {
 		
-		List<IdentityVo> identityVo = memberMapper.selectMemberIdentityByMemberIdx(7);
+		List<IdentityVo> identityVo = memberMapper.selectMemberIdentityByMemberIdx(userId);
 		
 		int opCode = packetReqProto.getOpCode();
 		
@@ -54,7 +54,7 @@ public class MemberService {
 	public BinaryMessage addMemberIdentity(PacketData packetReqProto, String userId) throws InvalidProtocolBufferException {
 		
 		SWclassIdentityCreate identityCreateProto = SWclassIdentityCreate.newBuilder().mergeFrom(packetReqProto.getData()).build(); 
-		MemberIdentityParam memberIdentityParam = MemberIdentityParam.builder().idt_code(identityCreateProto.getIdtCode()).mem_idx(7).build();
+		MemberIdentityParam memberIdentityParam = MemberIdentityParam.builder().idt_code(identityCreateProto.getIdtCode()).mem_id(userId).build();
 		
 		memberMapper.insertMemberIdentity(memberIdentityParam);
 		
