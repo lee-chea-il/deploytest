@@ -37,10 +37,16 @@ public final class Packet {
         getAccessTokenBytes();
 
     /**
-     * <code>int32 InstanceId = 3;</code>
+     * <code>string InstanceId = 3;</code>
      * @return The instanceId.
      */
-    int getInstanceId();
+    java.lang.String getInstanceId();
+    /**
+     * <code>string InstanceId = 3;</code>
+     * @return The bytes for instanceId.
+     */
+    com.google.protobuf.ByteString
+        getInstanceIdBytes();
 
     /**
      * <code>bytes Data = 4;</code>
@@ -62,6 +68,7 @@ public final class Packet {
     }
     private PacketData() {
       accessToken_ = "";
+      instanceId_ = "";
       data_ = com.google.protobuf.ByteString.EMPTY;
     }
 
@@ -140,14 +147,41 @@ public final class Packet {
     }
 
     public static final int INSTANCEID_FIELD_NUMBER = 3;
-    private int instanceId_;
+    private volatile java.lang.Object instanceId_;
     /**
-     * <code>int32 InstanceId = 3;</code>
+     * <code>string InstanceId = 3;</code>
      * @return The instanceId.
      */
     @java.lang.Override
-    public int getInstanceId() {
-      return instanceId_;
+    public java.lang.String getInstanceId() {
+      java.lang.Object ref = instanceId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        instanceId_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string InstanceId = 3;</code>
+     * @return The bytes for instanceId.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getInstanceIdBytes() {
+      java.lang.Object ref = instanceId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        instanceId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
     }
 
     public static final int DATA_FIELD_NUMBER = 4;
@@ -181,8 +215,8 @@ public final class Packet {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(accessToken_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, accessToken_);
       }
-      if (instanceId_ != 0) {
-        output.writeInt32(3, instanceId_);
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(instanceId_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, instanceId_);
       }
       if (!data_.isEmpty()) {
         output.writeBytes(4, data_);
@@ -203,9 +237,8 @@ public final class Packet {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(accessToken_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, accessToken_);
       }
-      if (instanceId_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(3, instanceId_);
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(instanceId_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, instanceId_);
       }
       if (!data_.isEmpty()) {
         size += com.google.protobuf.CodedOutputStream
@@ -230,8 +263,8 @@ public final class Packet {
           != other.getOpCode()) return false;
       if (!getAccessToken()
           .equals(other.getAccessToken())) return false;
-      if (getInstanceId()
-          != other.getInstanceId()) return false;
+      if (!getInstanceId()
+          .equals(other.getInstanceId())) return false;
       if (!getData()
           .equals(other.getData())) return false;
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
@@ -250,7 +283,7 @@ public final class Packet {
       hash = (37 * hash) + ACCESSTOKEN_FIELD_NUMBER;
       hash = (53 * hash) + getAccessToken().hashCode();
       hash = (37 * hash) + INSTANCEID_FIELD_NUMBER;
-      hash = (53 * hash) + getInstanceId();
+      hash = (53 * hash) + getInstanceId().hashCode();
       hash = (37 * hash) + DATA_FIELD_NUMBER;
       hash = (53 * hash) + getData().hashCode();
       hash = (29 * hash) + getUnknownFields().hashCode();
@@ -385,7 +418,7 @@ public final class Packet {
 
         accessToken_ = "";
 
-        instanceId_ = 0;
+        instanceId_ = "";
 
         data_ = com.google.protobuf.ByteString.EMPTY;
 
@@ -474,8 +507,9 @@ public final class Packet {
           accessToken_ = other.accessToken_;
           onChanged();
         }
-        if (other.getInstanceId() != 0) {
-          setInstanceId(other.getInstanceId());
+        if (!other.getInstanceId().isEmpty()) {
+          instanceId_ = other.instanceId_;
+          onChanged();
         }
         if (other.getData() != com.google.protobuf.ByteString.EMPTY) {
           setData(other.getData());
@@ -516,11 +550,11 @@ public final class Packet {
 
                 break;
               } // case 18
-              case 24: {
-                instanceId_ = input.readInt32();
+              case 26: {
+                instanceId_ = input.readStringRequireUtf8();
 
                 break;
-              } // case 24
+              } // case 26
               case 34: {
                 data_ = input.readBytes();
 
@@ -649,33 +683,78 @@ public final class Packet {
         return this;
       }
 
-      private int instanceId_ ;
+      private java.lang.Object instanceId_ = "";
       /**
-       * <code>int32 InstanceId = 3;</code>
+       * <code>string InstanceId = 3;</code>
        * @return The instanceId.
        */
-      @java.lang.Override
-      public int getInstanceId() {
-        return instanceId_;
+      public java.lang.String getInstanceId() {
+        java.lang.Object ref = instanceId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          instanceId_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
       }
       /**
-       * <code>int32 InstanceId = 3;</code>
+       * <code>string InstanceId = 3;</code>
+       * @return The bytes for instanceId.
+       */
+      public com.google.protobuf.ByteString
+          getInstanceIdBytes() {
+        java.lang.Object ref = instanceId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          instanceId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string InstanceId = 3;</code>
        * @param value The instanceId to set.
        * @return This builder for chaining.
        */
-      public Builder setInstanceId(int value) {
-        
+      public Builder setInstanceId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
         instanceId_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>int32 InstanceId = 3;</code>
+       * <code>string InstanceId = 3;</code>
        * @return This builder for chaining.
        */
       public Builder clearInstanceId() {
         
-        instanceId_ = 0;
+        instanceId_ = getDefaultInstance().getInstanceId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string InstanceId = 3;</code>
+       * @param value The bytes for instanceId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setInstanceIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        instanceId_ = value;
         onChanged();
         return this;
       }
@@ -793,7 +872,7 @@ public final class Packet {
     java.lang.String[] descriptorData = {
       "\n\020PacketData.proto\022\tClasslink\"S\n\nPacketD" +
       "ata\022\016\n\006OpCode\030\001 \001(\005\022\023\n\013AccessToken\030\002 \001(\t" +
-      "\022\022\n\nInstanceId\030\003 \001(\005\022\014\n\004Data\030\004 \001(\014B9\n/co" +
+      "\022\022\n\nInstanceId\030\003 \001(\t\022\014\n\004Data\030\004 \001(\014B9\n/co" +
       "m.classlink.websocket.api.common.domain." +
       "protoB\006Packetb\006proto3"
     };

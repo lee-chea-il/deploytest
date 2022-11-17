@@ -4,5 +4,5 @@ option java_package = "com.classlink.websocket.api.member.domain.param.proto";
 option java_outer_classname = "IdentityCreate";
 
 message SWclassIdentityCreate {
-  string IdtCode = 2;
+  string IdtCode = 1;
 }

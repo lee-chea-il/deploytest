@@ -6,6 +6,6 @@ option java_outer_classname = "Packet";
 message PacketData {
   int32 OpCode = 1;
   string AccessToken = 2;
-  int32 InstanceId = 3;
+  string InstanceId = 3;
   bytes Data = 4;
 }

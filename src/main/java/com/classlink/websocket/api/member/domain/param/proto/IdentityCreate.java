@@ -19,12 +19,12 @@ public final class IdentityCreate {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>string IdtCode = 2;</code>
+     * <code>string IdtCode = 1;</code>
      * @return The idtCode.
      */
     java.lang.String getIdtCode();
     /**
-     * <code>string IdtCode = 2;</code>
+     * <code>string IdtCode = 1;</code>
      * @return The bytes for idtCode.
      */
     com.google.protobuf.ByteString
@@ -71,10 +71,10 @@ public final class IdentityCreate {
               com.classlink.websocket.api.member.domain.param.proto.IdentityCreate.SWclassIdentityCreate.class, com.classlink.websocket.api.member.domain.param.proto.IdentityCreate.SWclassIdentityCreate.Builder.class);
     }
 
-    public static final int IDTCODE_FIELD_NUMBER = 2;
+    public static final int IDTCODE_FIELD_NUMBER = 1;
     private volatile java.lang.Object idtCode_;
     /**
-     * <code>string IdtCode = 2;</code>
+     * <code>string IdtCode = 1;</code>
      * @return The idtCode.
      */
     @java.lang.Override
@@ -91,7 +91,7 @@ public final class IdentityCreate {
       }
     }
     /**
-     * <code>string IdtCode = 2;</code>
+     * <code>string IdtCode = 1;</code>
      * @return The bytes for idtCode.
      */
     @java.lang.Override
@@ -124,7 +124,7 @@ public final class IdentityCreate {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(idtCode_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, idtCode_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, idtCode_);
       }
       getUnknownFields().writeTo(output);
     }
@@ -136,7 +136,7 @@ public final class IdentityCreate {
 
       size = 0;
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(idtCode_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, idtCode_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, idtCode_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -403,11 +403,11 @@ public final class IdentityCreate {
               case 0:
                 done = true;
                 break;
-              case 18: {
+              case 10: {
                 idtCode_ = input.readStringRequireUtf8();
 
                 break;
-              } // case 18
+              } // case 10
               default: {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                   done = true; // was an endgroup tag
@@ -426,7 +426,7 @@ public final class IdentityCreate {
 
       private java.lang.Object idtCode_ = "";
       /**
-       * <code>string IdtCode = 2;</code>
+       * <code>string IdtCode = 1;</code>
        * @return The idtCode.
        */
       public java.lang.String getIdtCode() {
@@ -442,7 +442,7 @@ public final class IdentityCreate {
         }
       }
       /**
-       * <code>string IdtCode = 2;</code>
+       * <code>string IdtCode = 1;</code>
        * @return The bytes for idtCode.
        */
       public com.google.protobuf.ByteString
@@ -459,7 +459,7 @@ public final class IdentityCreate {
         }
       }
       /**
-       * <code>string IdtCode = 2;</code>
+       * <code>string IdtCode = 1;</code>
        * @param value The idtCode to set.
        * @return This builder for chaining.
        */
@@ -474,7 +474,7 @@ public final class IdentityCreate {
         return this;
       }
       /**
-       * <code>string IdtCode = 2;</code>
+       * <code>string IdtCode = 1;</code>
        * @return This builder for chaining.
        */
       public Builder clearIdtCode() {
@@ -484,7 +484,7 @@ public final class IdentityCreate {
         return this;
       }
       /**
-       * <code>string IdtCode = 2;</code>
+       * <code>string IdtCode = 1;</code>
        * @param value The bytes for idtCode to set.
        * @return This builder for chaining.
        */
@@ -578,7 +578,7 @@ public final class IdentityCreate {
   static {
     java.lang.String[] descriptorData = {
       "\n\033SWclassIdentityCreate.proto\022\tClasslink" +
-      "\"(\n\025SWclassIdentityCreate\022\017\n\007IdtCode\030\002 \001" +
+      "\"(\n\025SWclassIdentityCreate\022\017\n\007IdtCode\030\001 \001" +
       "(\tBG\n5com.classlink.websocket.api.member" +
       ".domain.param.protoB\016IdentityCreateb\006pro" +
       "to3"

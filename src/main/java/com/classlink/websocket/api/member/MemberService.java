@@ -26,6 +26,7 @@ public class MemberService {
 	
 	public BinaryMessage findMemberIdentityByMemberIdx(PacketData packetReqProto, String userId) throws InvalidProtocolBufferException {
 		
+		log.info("userId : " + userId);
 		List<IdentityVo> identityVo = memberMapper.selectMemberIdentityByMemberIdx(userId);
 		
 		PacketData packetResProto;

@@ -19,24 +19,24 @@ public final class IdentityList {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>repeated string IdtNames = 3;</code>
+     * <code>repeated string IdtNames = 1;</code>
      * @return A list containing the idtNames.
      */
     java.util.List<java.lang.String>
         getIdtNamesList();
     /**
-     * <code>repeated string IdtNames = 3;</code>
+     * <code>repeated string IdtNames = 1;</code>
      * @return The count of idtNames.
      */
     int getIdtNamesCount();
     /**
-     * <code>repeated string IdtNames = 3;</code>
+     * <code>repeated string IdtNames = 1;</code>
      * @param index The index of the element to return.
      * @return The idtNames at the given index.
      */
     java.lang.String getIdtNames(int index);
     /**
-     * <code>repeated string IdtNames = 3;</code>
+     * <code>repeated string IdtNames = 1;</code>
      * @param index The index of the value to return.
      * @return The bytes of the idtNames at the given index.
      */
@@ -84,10 +84,10 @@ public final class IdentityList {
               com.classlink.websocket.api.member.domain.dto.proto.IdentityList.SWclassIdentityList.class, com.classlink.websocket.api.member.domain.dto.proto.IdentityList.SWclassIdentityList.Builder.class);
     }
 
-    public static final int IDTNAMES_FIELD_NUMBER = 3;
+    public static final int IDTNAMES_FIELD_NUMBER = 1;
     private com.google.protobuf.LazyStringList idtNames_;
     /**
-     * <code>repeated string IdtNames = 3;</code>
+     * <code>repeated string IdtNames = 1;</code>
      * @return A list containing the idtNames.
      */
     public com.google.protobuf.ProtocolStringList
@@ -95,14 +95,14 @@ public final class IdentityList {
       return idtNames_;
     }
     /**
-     * <code>repeated string IdtNames = 3;</code>
+     * <code>repeated string IdtNames = 1;</code>
      * @return The count of idtNames.
      */
     public int getIdtNamesCount() {
       return idtNames_.size();
     }
     /**
-     * <code>repeated string IdtNames = 3;</code>
+     * <code>repeated string IdtNames = 1;</code>
      * @param index The index of the element to return.
      * @return The idtNames at the given index.
      */
@@ -110,7 +110,7 @@ public final class IdentityList {
       return idtNames_.get(index);
     }
     /**
-     * <code>repeated string IdtNames = 3;</code>
+     * <code>repeated string IdtNames = 1;</code>
      * @param index The index of the value to return.
      * @return The bytes of the idtNames at the given index.
      */
@@ -134,7 +134,7 @@ public final class IdentityList {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       for (int i = 0; i < idtNames_.size(); i++) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, idtNames_.getRaw(i));
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, idtNames_.getRaw(i));
       }
       getUnknownFields().writeTo(output);
     }
@@ -431,12 +431,12 @@ public final class IdentityList {
               case 0:
                 done = true;
                 break;
-              case 26: {
+              case 10: {
                 java.lang.String s = input.readStringRequireUtf8();
                 ensureIdtNamesIsMutable();
                 idtNames_.add(s);
                 break;
-              } // case 26
+              } // case 10
               default: {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                   done = true; // was an endgroup tag
@@ -462,7 +462,7 @@ public final class IdentityList {
          }
       }
       /**
-       * <code>repeated string IdtNames = 3;</code>
+       * <code>repeated string IdtNames = 1;</code>
        * @return A list containing the idtNames.
        */
       public com.google.protobuf.ProtocolStringList
@@ -470,14 +470,14 @@ public final class IdentityList {
         return idtNames_.getUnmodifiableView();
       }
       /**
-       * <code>repeated string IdtNames = 3;</code>
+       * <code>repeated string IdtNames = 1;</code>
        * @return The count of idtNames.
        */
       public int getIdtNamesCount() {
         return idtNames_.size();
       }
       /**
-       * <code>repeated string IdtNames = 3;</code>
+       * <code>repeated string IdtNames = 1;</code>
        * @param index The index of the element to return.
        * @return The idtNames at the given index.
        */
@@ -485,7 +485,7 @@ public final class IdentityList {
         return idtNames_.get(index);
       }
       /**
-       * <code>repeated string IdtNames = 3;</code>
+       * <code>repeated string IdtNames = 1;</code>
        * @param index The index of the value to return.
        * @return The bytes of the idtNames at the given index.
        */
@@ -494,7 +494,7 @@ public final class IdentityList {
         return idtNames_.getByteString(index);
       }
       /**
-       * <code>repeated string IdtNames = 3;</code>
+       * <code>repeated string IdtNames = 1;</code>
        * @param index The index to set the value at.
        * @param value The idtNames to set.
        * @return This builder for chaining.
@@ -510,7 +510,7 @@ public final class IdentityList {
         return this;
       }
       /**
-       * <code>repeated string IdtNames = 3;</code>
+       * <code>repeated string IdtNames = 1;</code>
        * @param value The idtNames to add.
        * @return This builder for chaining.
        */
@@ -525,7 +525,7 @@ public final class IdentityList {
         return this;
       }
       /**
-       * <code>repeated string IdtNames = 3;</code>
+       * <code>repeated string IdtNames = 1;</code>
        * @param values The idtNames to add.
        * @return This builder for chaining.
        */
@@ -538,7 +538,7 @@ public final class IdentityList {
         return this;
       }
       /**
-       * <code>repeated string IdtNames = 3;</code>
+       * <code>repeated string IdtNames = 1;</code>
        * @return This builder for chaining.
        */
       public Builder clearIdtNames() {
@@ -548,7 +548,7 @@ public final class IdentityList {
         return this;
       }
       /**
-       * <code>repeated string IdtNames = 3;</code>
+       * <code>repeated string IdtNames = 1;</code>
        * @param value The bytes of the idtNames to add.
        * @return This builder for chaining.
        */
@@ -642,7 +642,7 @@ public final class IdentityList {
   static {
     java.lang.String[] descriptorData = {
       "\n\031SWclassIdentityList.proto\022\tClasslink\"\'" +
-      "\n\023SWclassIdentityList\022\020\n\010IdtNames\030\003 \003(\tB" +
+      "\n\023SWclassIdentityList\022\020\n\010IdtNames\030\001 \003(\tB" +
       "C\n3com.classlink.websocket.api.member.do" +
       "main.dto.protoB\014IdentityListb\006proto3"
     };

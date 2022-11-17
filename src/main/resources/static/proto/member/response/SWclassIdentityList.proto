@@ -4,5 +4,5 @@ option java_package = "com.classlink.websocket.api.member.domain.dto.proto";
 option java_outer_classname = "IdentityList";
 
 message SWclassIdentityList {
-  repeated string IdtNames = 3;
+  repeated string IdtNames = 1;
 }

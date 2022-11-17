@@ -105,7 +105,7 @@
               const PacketObj = {
                   OpCode : OpCode,
                   AccessToken : "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2Njg0OTE4OTAsInVzZXJfbmFtZSI6InN0cmluZyIsImp0aSI6IjVkN2Y2OTlmLTIyMjEtNGEzNi05ZjFjLTMyMmU2YjA1ZDZlYyIsImNsaWVudF9pZCI6ImNsYXNzbGluayIsInNjb3BlIjpbImNsaWVudCJdfQ.ComTiP2Nre9J-Io9oHUBLvdG4GgowZB_6OqodJzy4NQ",
-                  InstanceId : 2,
+                  InstanceId : '2',
                   Data : Data
                 };
 		          
@@ -136,8 +136,8 @@
 		  let data = null;
 			// pure web-socket
 			function connectWS() {
-				//var ws = new WebSocket("ws:112.171.101.31:45170/api");
-				const ws = new WebSocket("ws:localhost:8301/api");
+				var ws = new WebSocket("ws:112.171.101.31:45170/api");
+				//const ws = new WebSocket("ws:localhost:8301/api");
 				socket = ws;
 
 				ws.onopen = function() {
