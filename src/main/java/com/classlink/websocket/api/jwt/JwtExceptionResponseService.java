@@ -13,6 +13,9 @@ import com.classlink.websocket.api.util.JwtTokenParser;
 import com.fasterxml.jackson.core.exc.StreamReadException;
 import com.fasterxml.jackson.databind.DatabindException;
 
+import lombok.extern.slf4j.Slf4j;
+
+@Slf4j
 @Service
 public class JwtExceptionResponseService {
 	
@@ -20,6 +23,7 @@ public class JwtExceptionResponseService {
 	JwtTokenParser jwtTokenParser;
 	
 	public BinaryMessage tokenExceptionThrow (PacketData packetReqProto) throws StreamReadException, DatabindException, IOException {
+		log.info("tokenExceptionThrow 함수 실행!");
 		
 		JwtExeptionCode resultCode = jwtTokenParser.getValidationResult(packetReqProto.getAccessToken());
 		

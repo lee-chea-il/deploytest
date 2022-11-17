@@ -13,6 +13,7 @@
     <select id="OpCode" class="form-control">
       <option value="100">신분생성</option>
       <option value="101" selected>신분조회</option>
+      <option value="201" >소속기관조회</option>
     </select>
     <button id="btnSend" class="btn btn-primary">Send Message</button>
   </div>
@@ -28,11 +29,16 @@
     //---------------------------------------------------------------------------------------------------
     // window[]를 통해서 브라우저상에 전역변수(global)로 지정할때 사용하는 변수  
     
+      //필수객체 및 에러관련 
       const PacketName = "PacketData";
       const JwtExceptionName = "JwtException";
     
+      //신분
       const IdentityListName = "IdentityList";
       const IdentityCreateName = "IdentityCreate";
+      
+      //로비
+      const MyInstitutionListName = "MyInstitutionList";
 
     //---------------------------------------------------------------------------------------------------
     // protobuf.load시에 로딩할 protobuf 파일 경로 지정  
@@ -41,6 +47,7 @@
 			const protoFileList = [ commonPath.concat("/member/response/SWclassIdentityList.proto"),
 				commonPath.concat("/member/request/SWclassIdentityCreate.proto"),
 				commonPath.concat("/member/request/SWclassIdentityInfo.proto"),
+				commonPath.concat("/lobby/home/response/SWclassMyInstitutionList.proto"),
 				commonPath.concat("/common/PacketData.proto"),
 				commonPath.concat("/jwt/jwtException.proto")];
 
@@ -86,6 +93,10 @@
 			    	  	case 101 :
 			    	  		loadMessage(root, IdentityListName, "Classlink.SWclassIdentityList");
 			    	  	  break;
+			    	  	  
+                case 201 :
+                  loadMessage(root, MyInstitutionListName, "Classlink.SWclassMyInstitutionList");
+                  break;
                   
 			    	    default:
 			    	    	break;
@@ -122,10 +133,11 @@
 		
 			let socket = null;
 
+		  let data = null;
 			// pure web-socket
 			function connectWS() {
-				var ws = new WebSocket("ws:112.171.101.31:45170/api");
-				//const ws = new WebSocket("ws:localhost:8301/api");
+				//var ws = new WebSocket("ws:112.171.101.31:45170/api");
+				const ws = new WebSocket("ws:localhost:8301/api");
 				socket = ws;
 
 				ws.onopen = function() {
@@ -149,8 +161,14 @@
 	            console.log("receivedIdentityListData mmmmmmmmmmmm>>", receivedIdentityListNameData);
 	            break;
 	            
+            case 201:   
+              const receivedMyInstitutionListNameData = window[MyInstitutionListName].decode(receivedPacketData.Data);
+              data = receivedMyInstitutionListNameData;
+              console.log("receivedMyInstitutionListNameData mmmmmmmmmmmm>>", receivedMyInstitutionListNameData);
+              break;
+	            
 	          case 401:   
-              const receivedJwtExceptionNameData = window[JwtExceptionName].decode(receivedPacketData.Data);      
+              const receivedJwtExceptionNameData = window[JwtExceptionName].decode(receivedPacketData.Data);    
               console.log("receivedJwtExceptionNameData mmmmmmmmmmmm>>", receivedJwtExceptionNameData);
               break;
 	            

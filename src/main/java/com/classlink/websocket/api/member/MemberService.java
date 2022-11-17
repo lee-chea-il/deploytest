@@ -6,6 +6,7 @@ import java.util.stream.Collectors;
 import org.springframework.stereotype.Service;
 import org.springframework.web.socket.BinaryMessage;
 
+import com.classlink.websocket.api.common.OpCode;
 import com.classlink.websocket.api.common.domain.proto.Packet.PacketData;
 import com.classlink.websocket.api.member.domain.dto.proto.IdentityList.SWclassIdentityList;
 import com.classlink.websocket.api.member.domain.param.MemberParam.MemberIdentityParam;
@@ -27,28 +28,24 @@ public class MemberService {
 		
 		List<IdentityVo> identityVo = memberMapper.selectMemberIdentityByMemberIdx(userId);
 		
-		int opCode = packetReqProto.getOpCode();
-		
-		PacketData PacketResProto;
+		PacketData packetResProto;
 		
 		if(identityVo.isEmpty()) {
 			
-			opCode = 404;
+			packetResProto = PacketData.newBuilder().setOpCode(OpCode.NOT_FOUND.getValue()).setAccessToken(packetReqProto.getAccessToken()).setInstanceId(packetReqProto.getInstanceId()).build();
 			
-			PacketResProto = PacketData.newBuilder().setOpCode(opCode).setAccessToken(packetReqProto.getAccessToken()).setInstanceId(packetReqProto.getInstanceId()).build();
-			
-		}else {
-			identityVo.stream().forEach(idtVo -> log.info("result : " + idtVo.getIdt_name()));
-			
-			List<String> IdtNames = identityVo.stream().map(field -> field.getIdt_name()).collect(Collectors.toList());	
-			
-			SWclassIdentityList memberIdentityListProto = SWclassIdentityList.newBuilder().addAllIdtNames(IdtNames).build();
-			
-			PacketResProto = PacketData.newBuilder().setOpCode(opCode).setAccessToken(packetReqProto.getAccessToken()).setInstanceId(packetReqProto.getInstanceId()).setData(memberIdentityListProto.toByteString()).build();
+			return new BinaryMessage(packetResProto.toByteArray());
 		}
 		
+		identityVo.stream().forEach(idtVo -> log.info("result : " + idtVo.getIdt_name()));
+		
+		List<String> IdtNames = identityVo.stream().map(field -> field.getIdt_name()).collect(Collectors.toList());	
+		
+		SWclassIdentityList memberIdentityListProto = SWclassIdentityList.newBuilder().addAllIdtNames(IdtNames).build();
+		
+		packetResProto = PacketData.newBuilder().setOpCode(packetReqProto.getOpCode()).setAccessToken(packetReqProto.getAccessToken()).setInstanceId(packetReqProto.getInstanceId()).setData(memberIdentityListProto.toByteString()).build();
 
-		return new BinaryMessage(PacketResProto.toByteArray());
+		return new BinaryMessage(packetResProto.toByteArray());
 	}
 
 	public BinaryMessage addMemberIdentity(PacketData packetReqProto, String userId) throws InvalidProtocolBufferException {
@@ -58,13 +55,10 @@ public class MemberService {
 		
 		memberMapper.insertMemberIdentity(memberIdentityParam);
 		
-		int opCode = packetReqProto.getOpCode();
+		int opCode = memberIdentityParam.getMdt_idx() == 0 ? OpCode.ADD_FAIL.getValue() : packetReqProto.getOpCode();
 		
-		if(memberIdentityParam.getMdt_idx() == 0) {
-			opCode = 500;
-		}
-		
-		PacketData PacketResProto = PacketData.newBuilder().setOpCode(opCode).setAccessToken(packetReqProto.getAccessToken()).setInstanceId(packetReqProto.getInstanceId()).build();
+		PacketData PacketResProto = PacketData.newBuilder()
+				.setOpCode(opCode).setAccessToken(packetReqProto.getAccessToken()).setInstanceId(packetReqProto.getInstanceId()).build();
 		
 		return new BinaryMessage(PacketResProto.toByteArray());
 	}

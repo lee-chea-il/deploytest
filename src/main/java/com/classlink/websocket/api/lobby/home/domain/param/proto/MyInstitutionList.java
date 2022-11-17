@@ -19,28 +19,28 @@ public final class MyInstitutionList {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>string InsName = 1;</code>
-     * @return The insName.
+     * <code>repeated .Classlink.SWclassMyInstitutionList.SWclassMyInstitution swclassMyInstitution = 1;</code>
      */
-    java.lang.String getInsName();
+    java.util.List<com.classlink.websocket.api.lobby.home.domain.param.proto.MyInstitutionList.SWclassMyInstitutionList.SWclassMyInstitution> 
+        getSwclassMyInstitutionList();
     /**
-     * <code>string InsName = 1;</code>
-     * @return The bytes for insName.
+     * <code>repeated .Classlink.SWclassMyInstitutionList.SWclassMyInstitution swclassMyInstitution = 1;</code>
      */
-    com.google.protobuf.ByteString
-        getInsNameBytes();
-
+    com.classlink.websocket.api.lobby.home.domain.param.proto.MyInstitutionList.SWclassMyInstitutionList.SWclassMyInstitution getSwclassMyInstitution(int index);
     /**
-     * <code>string StdUseYn = 2;</code>
-     * @return The stdUseYn.
+     * <code>repeated .Classlink.SWclassMyInstitutionList.SWclassMyInstitution swclassMyInstitution = 1;</code>
      */
-    java.lang.String getStdUseYn();
+    int getSwclassMyInstitutionCount();
     /**
-     * <code>string StdUseYn = 2;</code>
-     * @return The bytes for stdUseYn.
+     * <code>repeated .Classlink.SWclassMyInstitutionList.SWclassMyInstitution swclassMyInstitution = 1;</code>
      */
-    com.google.protobuf.ByteString
-        getStdUseYnBytes();
+    java.util.List<? extends com.classlink.websocket.api.lobby.home.domain.param.proto.MyInstitutionList.SWclassMyInstitutionList.SWclassMyInstitutionOrBuilder> 
+        getSwclassMyInstitutionOrBuilderList();
+    /**
+     * <code>repeated .Classlink.SWclassMyInstitutionList.SWclassMyInstitution swclassMyInstitution = 1;</code>
+     */
+    com.classlink.websocket.api.lobby.home.domain.param.proto.MyInstitutionList.SWclassMyInstitutionList.SWclassMyInstitutionOrBuilder getSwclassMyInstitutionOrBuilder(
+        int index);
   }
   /**
    * Protobuf type {@code Classlink.SWclassMyInstitutionList}
@@ -55,8 +55,7 @@ public final class MyInstitutionList {
       super(builder);
     }
     private SWclassMyInstitutionList() {
-      insName_ = "";
-      stdUseYn_ = "";
+      swclassMyInstitution_ = java.util.Collections.emptyList();
     }
 
     @java.lang.Override
@@ -84,80 +83,742 @@ public final class MyInstitutionList {
               com.classlink.websocket.api.lobby.home.domain.param.proto.MyInstitutionList.SWclassMyInstitutionList.class, com.classlink.websocket.api.lobby.home.domain.param.proto.MyInstitutionList.SWclassMyInstitutionList.Builder.class);
     }
 
-    public static final int INSNAME_FIELD_NUMBER = 1;
-    private volatile java.lang.Object insName_;
-    /**
-     * <code>string InsName = 1;</code>
-     * @return The insName.
-     */
-    @java.lang.Override
-    public java.lang.String getInsName() {
-      java.lang.Object ref = insName_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        insName_ = s;
-        return s;
-      }
+    public interface SWclassMyInstitutionOrBuilder extends
+        // @@protoc_insertion_point(interface_extends:Classlink.SWclassMyInstitutionList.SWclassMyInstitution)
+        com.google.protobuf.MessageOrBuilder {
+
+      /**
+       * <code>string InsName = 1;</code>
+       * @return The insName.
+       */
+      java.lang.String getInsName();
+      /**
+       * <code>string InsName = 1;</code>
+       * @return The bytes for insName.
+       */
+      com.google.protobuf.ByteString
+          getInsNameBytes();
+
+      /**
+       * <code>string StdUseYn = 2;</code>
+       * @return The stdUseYn.
+       */
+      java.lang.String getStdUseYn();
+      /**
+       * <code>string StdUseYn = 2;</code>
+       * @return The bytes for stdUseYn.
+       */
+      com.google.protobuf.ByteString
+          getStdUseYnBytes();
     }
     /**
-     * <code>string InsName = 1;</code>
-     * @return The bytes for insName.
+     * Protobuf type {@code Classlink.SWclassMyInstitutionList.SWclassMyInstitution}
      */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getInsNameBytes() {
-      java.lang.Object ref = insName_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        insName_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
+    public static final class SWclassMyInstitution extends
+        com.google.protobuf.GeneratedMessageV3 implements
+        // @@protoc_insertion_point(message_implements:Classlink.SWclassMyInstitutionList.SWclassMyInstitution)
+        SWclassMyInstitutionOrBuilder {
+    private static final long serialVersionUID = 0L;
+      // Use SWclassMyInstitution.newBuilder() to construct.
+      private SWclassMyInstitution(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+        super(builder);
       }
+      private SWclassMyInstitution() {
+        insName_ = "";
+        stdUseYn_ = "";
+      }
+
+      @java.lang.Override
+      @SuppressWarnings({"unused"})
+      protected java.lang.Object newInstance(
+          UnusedPrivateParameter unused) {
+        return new SWclassMyInstitution();
+      }
+
+      @java.lang.Override
+      public final com.google.protobuf.UnknownFieldSet
+      getUnknownFields() {
+        return this.unknownFields;
+      }
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.classlink.websocket.api.lobby.home.domain.param.proto.MyInstitutionList.internal_static_Classlink_SWclassMyInstitutionList_SWclassMyInstitution_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.classlink.websocket.api.lobby.home.domain.param.proto.MyInstitutionList.internal_static_Classlink_SWclassMyInstitutionList_SWclassMyInstitution_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.classlink.websocket.api.lobby.home.domain.param.proto.MyInstitutionList.SWclassMyInstitutionList.SWclassMyInstitution.class, com.classlink.websocket.api.lobby.home.domain.param.proto.MyInstitutionList.SWclassMyInstitutionList.SWclassMyInstitution.Builder.class);
+      }
+
+      public static final int INSNAME_FIELD_NUMBER = 1;
+      private volatile java.lang.Object insName_;
+      /**
+       * <code>string InsName = 1;</code>
+       * @return The insName.
+       */
+      @java.lang.Override
+      public java.lang.String getInsName() {
+        java.lang.Object ref = insName_;
+        if (ref instanceof java.lang.String) {
+          return (java.lang.String) ref;
+        } else {
+          com.google.protobuf.ByteString bs = 
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          insName_ = s;
+          return s;
+        }
+      }
+      /**
+       * <code>string InsName = 1;</code>
+       * @return The bytes for insName.
+       */
+      @java.lang.Override
+      public com.google.protobuf.ByteString
+          getInsNameBytes() {
+        java.lang.Object ref = insName_;
+        if (ref instanceof java.lang.String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          insName_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      public static final int STDUSEYN_FIELD_NUMBER = 2;
+      private volatile java.lang.Object stdUseYn_;
+      /**
+       * <code>string StdUseYn = 2;</code>
+       * @return The stdUseYn.
+       */
+      @java.lang.Override
+      public java.lang.String getStdUseYn() {
+        java.lang.Object ref = stdUseYn_;
+        if (ref instanceof java.lang.String) {
+          return (java.lang.String) ref;
+        } else {
+          com.google.protobuf.ByteString bs = 
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          stdUseYn_ = s;
+          return s;
+        }
+      }
+      /**
+       * <code>string StdUseYn = 2;</code>
+       * @return The bytes for stdUseYn.
+       */
+      @java.lang.Override
+      public com.google.protobuf.ByteString
+          getStdUseYnBytes() {
+        java.lang.Object ref = stdUseYn_;
+        if (ref instanceof java.lang.String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          stdUseYn_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      private byte memoizedIsInitialized = -1;
+      @java.lang.Override
+      public final boolean isInitialized() {
+        byte isInitialized = memoizedIsInitialized;
+        if (isInitialized == 1) return true;
+        if (isInitialized == 0) return false;
+
+        memoizedIsInitialized = 1;
+        return true;
+      }
+
+      @java.lang.Override
+      public void writeTo(com.google.protobuf.CodedOutputStream output)
+                          throws java.io.IOException {
+        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(insName_)) {
+          com.google.protobuf.GeneratedMessageV3.writeString(output, 1, insName_);
+        }
+        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(stdUseYn_)) {
+          com.google.protobuf.GeneratedMessageV3.writeString(output, 2, stdUseYn_);
+        }
+        getUnknownFields().writeTo(output);
+      }
+
+      @java.lang.Override
+      public int getSerializedSize() {
+        int size = memoizedSize;
+        if (size != -1) return size;
+
+        size = 0;
+        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(insName_)) {
+          size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, insName_);
+        }
+        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(stdUseYn_)) {
+          size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, stdUseYn_);
+        }
+        size += getUnknownFields().getSerializedSize();
+        memoizedSize = size;
+        return size;
+      }
+
+      @java.lang.Override
+      public boolean equals(final java.lang.Object obj) {
+        if (obj == this) {
+         return true;
+        }
+        if (!(obj instanceof com.classlink.websocket.api.lobby.home.domain.param.proto.MyInstitutionList.SWclassMyInstitutionList.SWclassMyInstitution)) {
+          return super.equals(obj);
+        }
+        com.classlink.websocket.api.lobby.home.domain.param.proto.MyInstitutionList.SWclassMyInstitutionList.SWclassMyInstitution other = (com.classlink.websocket.api.lobby.home.domain.param.proto.MyInstitutionList.SWclassMyInstitutionList.SWclassMyInstitution) obj;
+
+        if (!getInsName()
+            .equals(other.getInsName())) return false;
+        if (!getStdUseYn()
+            .equals(other.getStdUseYn())) return false;
+        if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+        return true;
+      }
+
+      @java.lang.Override
+      public int hashCode() {
+        if (memoizedHashCode != 0) {
+          return memoizedHashCode;
+        }
+        int hash = 41;
+        hash = (19 * hash) + getDescriptor().hashCode();
+        hash = (37 * hash) + INSNAME_FIELD_NUMBER;
+        hash = (53 * hash) + getInsName().hashCode();
+        hash = (37 * hash) + STDUSEYN_FIELD_NUMBER;
+        hash = (53 * hash) + getStdUseYn().hashCode();
+        hash = (29 * hash) + getUnknownFields().hashCode();
+        memoizedHashCode = hash;
+        return hash;
+      }
+
+      public static com.classlink.websocket.api.lobby.home.domain.param.proto.MyInstitutionList.SWclassMyInstitutionList.SWclassMyInstitution parseFrom(
+          java.nio.ByteBuffer data)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+      public static com.classlink.websocket.api.lobby.home.domain.param.proto.MyInstitutionList.SWclassMyInstitutionList.SWclassMyInstitution parseFrom(
+          java.nio.ByteBuffer data,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+      public static com.classlink.websocket.api.lobby.home.domain.param.proto.MyInstitutionList.SWclassMyInstitutionList.SWclassMyInstitution parseFrom(
+          com.google.protobuf.ByteString data)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+      public static com.classlink.websocket.api.lobby.home.domain.param.proto.MyInstitutionList.SWclassMyInstitutionList.SWclassMyInstitution parseFrom(
+          com.google.protobuf.ByteString data,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+      public static com.classlink.websocket.api.lobby.home.domain.param.proto.MyInstitutionList.SWclassMyInstitutionList.SWclassMyInstitution parseFrom(byte[] data)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+      public static com.classlink.websocket.api.lobby.home.domain.param.proto.MyInstitutionList.SWclassMyInstitutionList.SWclassMyInstitution parseFrom(
+          byte[] data,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+      public static com.classlink.websocket.api.lobby.home.domain.param.proto.MyInstitutionList.SWclassMyInstitutionList.SWclassMyInstitution parseFrom(java.io.InputStream input)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseWithIOException(PARSER, input);
+      }
+      public static com.classlink.websocket.api.lobby.home.domain.param.proto.MyInstitutionList.SWclassMyInstitutionList.SWclassMyInstitution parseFrom(
+          java.io.InputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseWithIOException(PARSER, input, extensionRegistry);
+      }
+      public static com.classlink.websocket.api.lobby.home.domain.param.proto.MyInstitutionList.SWclassMyInstitutionList.SWclassMyInstitution parseDelimitedFrom(java.io.InputStream input)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseDelimitedWithIOException(PARSER, input);
+      }
+      public static com.classlink.websocket.api.lobby.home.domain.param.proto.MyInstitutionList.SWclassMyInstitutionList.SWclassMyInstitution parseDelimitedFrom(
+          java.io.InputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+      }
+      public static com.classlink.websocket.api.lobby.home.domain.param.proto.MyInstitutionList.SWclassMyInstitutionList.SWclassMyInstitution parseFrom(
+          com.google.protobuf.CodedInputStream input)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseWithIOException(PARSER, input);
+      }
+      public static com.classlink.websocket.api.lobby.home.domain.param.proto.MyInstitutionList.SWclassMyInstitutionList.SWclassMyInstitution parseFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseWithIOException(PARSER, input, extensionRegistry);
+      }
+
+      @java.lang.Override
+      public Builder newBuilderForType() { return newBuilder(); }
+      public static Builder newBuilder() {
+        return DEFAULT_INSTANCE.toBuilder();
+      }
+      public static Builder newBuilder(com.classlink.websocket.api.lobby.home.domain.param.proto.MyInstitutionList.SWclassMyInstitutionList.SWclassMyInstitution prototype) {
+        return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+      }
+      @java.lang.Override
+      public Builder toBuilder() {
+        return this == DEFAULT_INSTANCE
+            ? new Builder() : new Builder().mergeFrom(this);
+      }
+
+      @java.lang.Override
+      protected Builder newBuilderForType(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        Builder builder = new Builder(parent);
+        return builder;
+      }
+      /**
+       * Protobuf type {@code Classlink.SWclassMyInstitutionList.SWclassMyInstitution}
+       */
+      public static final class Builder extends
+          com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+          // @@protoc_insertion_point(builder_implements:Classlink.SWclassMyInstitutionList.SWclassMyInstitution)
+          com.classlink.websocket.api.lobby.home.domain.param.proto.MyInstitutionList.SWclassMyInstitutionList.SWclassMyInstitutionOrBuilder {
+        public static final com.google.protobuf.Descriptors.Descriptor
+            getDescriptor() {
+          return com.classlink.websocket.api.lobby.home.domain.param.proto.MyInstitutionList.internal_static_Classlink_SWclassMyInstitutionList_SWclassMyInstitution_descriptor;
+        }
+
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+          return com.classlink.websocket.api.lobby.home.domain.param.proto.MyInstitutionList.internal_static_Classlink_SWclassMyInstitutionList_SWclassMyInstitution_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  com.classlink.websocket.api.lobby.home.domain.param.proto.MyInstitutionList.SWclassMyInstitutionList.SWclassMyInstitution.class, com.classlink.websocket.api.lobby.home.domain.param.proto.MyInstitutionList.SWclassMyInstitutionList.SWclassMyInstitution.Builder.class);
+        }
+
+        // Construct using com.classlink.websocket.api.lobby.home.domain.param.proto.MyInstitutionList.SWclassMyInstitutionList.SWclassMyInstitution.newBuilder()
+        private Builder() {
+
+        }
+
+        private Builder(
+            com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+          super(parent);
+
+        }
+        @java.lang.Override
+        public Builder clear() {
+          super.clear();
+          insName_ = "";
+
+          stdUseYn_ = "";
+
+          return this;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Descriptors.Descriptor
+            getDescriptorForType() {
+          return com.classlink.websocket.api.lobby.home.domain.param.proto.MyInstitutionList.internal_static_Classlink_SWclassMyInstitutionList_SWclassMyInstitution_descriptor;
+        }
+
+        @java.lang.Override
+        public com.classlink.websocket.api.lobby.home.domain.param.proto.MyInstitutionList.SWclassMyInstitutionList.SWclassMyInstitution getDefaultInstanceForType() {
+          return com.classlink.websocket.api.lobby.home.domain.param.proto.MyInstitutionList.SWclassMyInstitutionList.SWclassMyInstitution.getDefaultInstance();
+        }
+
+        @java.lang.Override
+        public com.classlink.websocket.api.lobby.home.domain.param.proto.MyInstitutionList.SWclassMyInstitutionList.SWclassMyInstitution build() {
+          com.classlink.websocket.api.lobby.home.domain.param.proto.MyInstitutionList.SWclassMyInstitutionList.SWclassMyInstitution result = buildPartial();
+          if (!result.isInitialized()) {
+            throw newUninitializedMessageException(result);
+          }
+          return result;
+        }
+
+        @java.lang.Override
+        public com.classlink.websocket.api.lobby.home.domain.param.proto.MyInstitutionList.SWclassMyInstitutionList.SWclassMyInstitution buildPartial() {
+          com.classlink.websocket.api.lobby.home.domain.param.proto.MyInstitutionList.SWclassMyInstitutionList.SWclassMyInstitution result = new com.classlink.websocket.api.lobby.home.domain.param.proto.MyInstitutionList.SWclassMyInstitutionList.SWclassMyInstitution(this);
+          result.insName_ = insName_;
+          result.stdUseYn_ = stdUseYn_;
+          onBuilt();
+          return result;
+        }
+
+        @java.lang.Override
+        public Builder clone() {
+          return super.clone();
+        }
+        @java.lang.Override
+        public Builder setField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            java.lang.Object value) {
+          return super.setField(field, value);
+        }
+        @java.lang.Override
+        public Builder clearField(
+            com.google.protobuf.Descriptors.FieldDescriptor field) {
+          return super.clearField(field);
+        }
+        @java.lang.Override
+        public Builder clearOneof(
+            com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+          return super.clearOneof(oneof);
+        }
+        @java.lang.Override
+        public Builder setRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            int index, java.lang.Object value) {
+          return super.setRepeatedField(field, index, value);
+        }
+        @java.lang.Override
+        public Builder addRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            java.lang.Object value) {
+          return super.addRepeatedField(field, value);
+        }
+        @java.lang.Override
+        public Builder mergeFrom(com.google.protobuf.Message other) {
+          if (other instanceof com.classlink.websocket.api.lobby.home.domain.param.proto.MyInstitutionList.SWclassMyInstitutionList.SWclassMyInstitution) {
+            return mergeFrom((com.classlink.websocket.api.lobby.home.domain.param.proto.MyInstitutionList.SWclassMyInstitutionList.SWclassMyInstitution)other);
+          } else {
+            super.mergeFrom(other);
+            return this;
+          }
+        }
+
+        public Builder mergeFrom(com.classlink.websocket.api.lobby.home.domain.param.proto.MyInstitutionList.SWclassMyInstitutionList.SWclassMyInstitution other) {
+          if (other == com.classlink.websocket.api.lobby.home.domain.param.proto.MyInstitutionList.SWclassMyInstitutionList.SWclassMyInstitution.getDefaultInstance()) return this;
+          if (!other.getInsName().isEmpty()) {
+            insName_ = other.insName_;
+            onChanged();
+          }
+          if (!other.getStdUseYn().isEmpty()) {
+            stdUseYn_ = other.stdUseYn_;
+            onChanged();
+          }
+          this.mergeUnknownFields(other.getUnknownFields());
+          onChanged();
+          return this;
+        }
+
+        @java.lang.Override
+        public final boolean isInitialized() {
+          return true;
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+          if (extensionRegistry == null) {
+            throw new java.lang.NullPointerException();
+          }
+          try {
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                case 10: {
+                  insName_ = input.readStringRequireUtf8();
+
+                  break;
+                } // case 10
+                case 18: {
+                  stdUseYn_ = input.readStringRequireUtf8();
+
+                  break;
+                } // case 18
+                default: {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+              } // switch (tag)
+            } // while (!done)
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.unwrapIOException();
+          } finally {
+            onChanged();
+          } // finally
+          return this;
+        }
+
+        private java.lang.Object insName_ = "";
+        /**
+         * <code>string InsName = 1;</code>
+         * @return The insName.
+         */
+        public java.lang.String getInsName() {
+          java.lang.Object ref = insName_;
+          if (!(ref instanceof java.lang.String)) {
+            com.google.protobuf.ByteString bs =
+                (com.google.protobuf.ByteString) ref;
+            java.lang.String s = bs.toStringUtf8();
+            insName_ = s;
+            return s;
+          } else {
+            return (java.lang.String) ref;
+          }
+        }
+        /**
+         * <code>string InsName = 1;</code>
+         * @return The bytes for insName.
+         */
+        public com.google.protobuf.ByteString
+            getInsNameBytes() {
+          java.lang.Object ref = insName_;
+          if (ref instanceof String) {
+            com.google.protobuf.ByteString b = 
+                com.google.protobuf.ByteString.copyFromUtf8(
+                    (java.lang.String) ref);
+            insName_ = b;
+            return b;
+          } else {
+            return (com.google.protobuf.ByteString) ref;
+          }
+        }
+        /**
+         * <code>string InsName = 1;</code>
+         * @param value The insName to set.
+         * @return This builder for chaining.
+         */
+        public Builder setInsName(
+            java.lang.String value) {
+          if (value == null) {
+    throw new NullPointerException();
+  }
+  
+          insName_ = value;
+          onChanged();
+          return this;
+        }
+        /**
+         * <code>string InsName = 1;</code>
+         * @return This builder for chaining.
+         */
+        public Builder clearInsName() {
+          
+          insName_ = getDefaultInstance().getInsName();
+          onChanged();
+          return this;
+        }
+        /**
+         * <code>string InsName = 1;</code>
+         * @param value The bytes for insName to set.
+         * @return This builder for chaining.
+         */
+        public Builder setInsNameBytes(
+            com.google.protobuf.ByteString value) {
+          if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+          
+          insName_ = value;
+          onChanged();
+          return this;
+        }
+
+        private java.lang.Object stdUseYn_ = "";
+        /**
+         * <code>string StdUseYn = 2;</code>
+         * @return The stdUseYn.
+         */
+        public java.lang.String getStdUseYn() {
+          java.lang.Object ref = stdUseYn_;
+          if (!(ref instanceof java.lang.String)) {
+            com.google.protobuf.ByteString bs =
+                (com.google.protobuf.ByteString) ref;
+            java.lang.String s = bs.toStringUtf8();
+            stdUseYn_ = s;
+            return s;
+          } else {
+            return (java.lang.String) ref;
+          }
+        }
+        /**
+         * <code>string StdUseYn = 2;</code>
+         * @return The bytes for stdUseYn.
+         */
+        public com.google.protobuf.ByteString
+            getStdUseYnBytes() {
+          java.lang.Object ref = stdUseYn_;
+          if (ref instanceof String) {
+            com.google.protobuf.ByteString b = 
+                com.google.protobuf.ByteString.copyFromUtf8(
+                    (java.lang.String) ref);
+            stdUseYn_ = b;
+            return b;
+          } else {
+            return (com.google.protobuf.ByteString) ref;
+          }
+        }
+        /**
+         * <code>string StdUseYn = 2;</code>
+         * @param value The stdUseYn to set.
+         * @return This builder for chaining.
+         */
+        public Builder setStdUseYn(
+            java.lang.String value) {
+          if (value == null) {
+    throw new NullPointerException();
+  }
+  
+          stdUseYn_ = value;
+          onChanged();
+          return this;
+        }
+        /**
+         * <code>string StdUseYn = 2;</code>
+         * @return This builder for chaining.
+         */
+        public Builder clearStdUseYn() {
+          
+          stdUseYn_ = getDefaultInstance().getStdUseYn();
+          onChanged();
+          return this;
+        }
+        /**
+         * <code>string StdUseYn = 2;</code>
+         * @param value The bytes for stdUseYn to set.
+         * @return This builder for chaining.
+         */
+        public Builder setStdUseYnBytes(
+            com.google.protobuf.ByteString value) {
+          if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+          
+          stdUseYn_ = value;
+          onChanged();
+          return this;
+        }
+        @java.lang.Override
+        public final Builder setUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.setUnknownFields(unknownFields);
+        }
+
+        @java.lang.Override
+        public final Builder mergeUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.mergeUnknownFields(unknownFields);
+        }
+
+
+        // @@protoc_insertion_point(builder_scope:Classlink.SWclassMyInstitutionList.SWclassMyInstitution)
+      }
+
+      // @@protoc_insertion_point(class_scope:Classlink.SWclassMyInstitutionList.SWclassMyInstitution)
+      private static final com.classlink.websocket.api.lobby.home.domain.param.proto.MyInstitutionList.SWclassMyInstitutionList.SWclassMyInstitution DEFAULT_INSTANCE;
+      static {
+        DEFAULT_INSTANCE = new com.classlink.websocket.api.lobby.home.domain.param.proto.MyInstitutionList.SWclassMyInstitutionList.SWclassMyInstitution();
+      }
+
+      public static com.classlink.websocket.api.lobby.home.domain.param.proto.MyInstitutionList.SWclassMyInstitutionList.SWclassMyInstitution getDefaultInstance() {
+        return DEFAULT_INSTANCE;
+      }
+
+      private static final com.google.protobuf.Parser<SWclassMyInstitution>
+          PARSER = new com.google.protobuf.AbstractParser<SWclassMyInstitution>() {
+        @java.lang.Override
+        public SWclassMyInstitution parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
+        }
+      };
+
+      public static com.google.protobuf.Parser<SWclassMyInstitution> parser() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Parser<SWclassMyInstitution> getParserForType() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.classlink.websocket.api.lobby.home.domain.param.proto.MyInstitutionList.SWclassMyInstitutionList.SWclassMyInstitution getDefaultInstanceForType() {
+        return DEFAULT_INSTANCE;
+      }
+
     }
 
-    public static final int STDUSEYN_FIELD_NUMBER = 2;
-    private volatile java.lang.Object stdUseYn_;
+    public static final int SWCLASSMYINSTITUTION_FIELD_NUMBER = 1;
+    private java.util.List<com.classlink.websocket.api.lobby.home.domain.param.proto.MyInstitutionList.SWclassMyInstitutionList.SWclassMyInstitution> swclassMyInstitution_;
     /**
-     * <code>string StdUseYn = 2;</code>
-     * @return The stdUseYn.
+     * <code>repeated .Classlink.SWclassMyInstitutionList.SWclassMyInstitution swclassMyInstitution = 1;</code>
      */
     @java.lang.Override
-    public java.lang.String getStdUseYn() {
-      java.lang.Object ref = stdUseYn_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        stdUseYn_ = s;
-        return s;
-      }
+    public java.util.List<com.classlink.websocket.api.lobby.home.domain.param.proto.MyInstitutionList.SWclassMyInstitutionList.SWclassMyInstitution> getSwclassMyInstitutionList() {
+      return swclassMyInstitution_;
     }
     /**
-     * <code>string StdUseYn = 2;</code>
-     * @return The bytes for stdUseYn.
+     * <code>repeated .Classlink.SWclassMyInstitutionList.SWclassMyInstitution swclassMyInstitution = 1;</code>
      */
     @java.lang.Override
-    public com.google.protobuf.ByteString
-        getStdUseYnBytes() {
-      java.lang.Object ref = stdUseYn_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        stdUseYn_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
+    public java.util.List<? extends com.classlink.websocket.api.lobby.home.domain.param.proto.MyInstitutionList.SWclassMyInstitutionList.SWclassMyInstitutionOrBuilder> 
+        getSwclassMyInstitutionOrBuilderList() {
+      return swclassMyInstitution_;
+    }
+    /**
+     * <code>repeated .Classlink.SWclassMyInstitutionList.SWclassMyInstitution swclassMyInstitution = 1;</code>
+     */
+    @java.lang.Override
+    public int getSwclassMyInstitutionCount() {
+      return swclassMyInstitution_.size();
+    }
+    /**
+     * <code>repeated .Classlink.SWclassMyInstitutionList.SWclassMyInstitution swclassMyInstitution = 1;</code>
+     */
+    @java.lang.Override
+    public com.classlink.websocket.api.lobby.home.domain.param.proto.MyInstitutionList.SWclassMyInstitutionList.SWclassMyInstitution getSwclassMyInstitution(int index) {
+      return swclassMyInstitution_.get(index);
+    }
+    /**
+     * <code>repeated .Classlink.SWclassMyInstitutionList.SWclassMyInstitution swclassMyInstitution = 1;</code>
+     */
+    @java.lang.Override
+    public com.classlink.websocket.api.lobby.home.domain.param.proto.MyInstitutionList.SWclassMyInstitutionList.SWclassMyInstitutionOrBuilder getSwclassMyInstitutionOrBuilder(
+        int index) {
+      return swclassMyInstitution_.get(index);
     }
 
     private byte memoizedIsInitialized = -1;
@@ -174,11 +835,8 @@ public final class MyInstitutionList {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(insName_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, insName_);
-      }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(stdUseYn_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, stdUseYn_);
+      for (int i = 0; i < swclassMyInstitution_.size(); i++) {
+        output.writeMessage(1, swclassMyInstitution_.get(i));
       }
       getUnknownFields().writeTo(output);
     }
@@ -189,11 +847,9 @@ public final class MyInstitutionList {
       if (size != -1) return size;
 
       size = 0;
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(insName_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, insName_);
-      }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(stdUseYn_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, stdUseYn_);
+      for (int i = 0; i < swclassMyInstitution_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(1, swclassMyInstitution_.get(i));
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -210,10 +866,8 @@ public final class MyInstitutionList {
       }
       com.classlink.websocket.api.lobby.home.domain.param.proto.MyInstitutionList.SWclassMyInstitutionList other = (com.classlink.websocket.api.lobby.home.domain.param.proto.MyInstitutionList.SWclassMyInstitutionList) obj;
 
-      if (!getInsName()
-          .equals(other.getInsName())) return false;
-      if (!getStdUseYn()
-          .equals(other.getStdUseYn())) return false;
+      if (!getSwclassMyInstitutionList()
+          .equals(other.getSwclassMyInstitutionList())) return false;
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -225,10 +879,10 @@ public final class MyInstitutionList {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + INSNAME_FIELD_NUMBER;
-      hash = (53 * hash) + getInsName().hashCode();
-      hash = (37 * hash) + STDUSEYN_FIELD_NUMBER;
-      hash = (53 * hash) + getStdUseYn().hashCode();
+      if (getSwclassMyInstitutionCount() > 0) {
+        hash = (37 * hash) + SWCLASSMYINSTITUTION_FIELD_NUMBER;
+        hash = (53 * hash) + getSwclassMyInstitutionList().hashCode();
+      }
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -357,10 +1011,13 @@ public final class MyInstitutionList {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        insName_ = "";
-
-        stdUseYn_ = "";
-
+        if (swclassMyInstitutionBuilder_ == null) {
+          swclassMyInstitution_ = java.util.Collections.emptyList();
+        } else {
+          swclassMyInstitution_ = null;
+          swclassMyInstitutionBuilder_.clear();
+        }
+        bitField0_ = (bitField0_ & ~0x00000001);
         return this;
       }
 
@@ -387,8 +1044,16 @@ public final class MyInstitutionList {
       @java.lang.Override
       public com.classlink.websocket.api.lobby.home.domain.param.proto.MyInstitutionList.SWclassMyInstitutionList buildPartial() {
         com.classlink.websocket.api.lobby.home.domain.param.proto.MyInstitutionList.SWclassMyInstitutionList result = new com.classlink.websocket.api.lobby.home.domain.param.proto.MyInstitutionList.SWclassMyInstitutionList(this);
-        result.insName_ = insName_;
-        result.stdUseYn_ = stdUseYn_;
+        int from_bitField0_ = bitField0_;
+        if (swclassMyInstitutionBuilder_ == null) {
+          if (((bitField0_ & 0x00000001) != 0)) {
+            swclassMyInstitution_ = java.util.Collections.unmodifiableList(swclassMyInstitution_);
+            bitField0_ = (bitField0_ & ~0x00000001);
+          }
+          result.swclassMyInstitution_ = swclassMyInstitution_;
+        } else {
+          result.swclassMyInstitution_ = swclassMyInstitutionBuilder_.build();
+        }
         onBuilt();
         return result;
       }
@@ -437,13 +1102,31 @@ public final class MyInstitutionList {
 
       public Builder mergeFrom(com.classlink.websocket.api.lobby.home.domain.param.proto.MyInstitutionList.SWclassMyInstitutionList other) {
         if (other == com.classlink.websocket.api.lobby.home.domain.param.proto.MyInstitutionList.SWclassMyInstitutionList.getDefaultInstance()) return this;
-        if (!other.getInsName().isEmpty()) {
-          insName_ = other.insName_;
-          onChanged();
-        }
-        if (!other.getStdUseYn().isEmpty()) {
-          stdUseYn_ = other.stdUseYn_;
-          onChanged();
+        if (swclassMyInstitutionBuilder_ == null) {
+          if (!other.swclassMyInstitution_.isEmpty()) {
+            if (swclassMyInstitution_.isEmpty()) {
+              swclassMyInstitution_ = other.swclassMyInstitution_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+            } else {
+              ensureSwclassMyInstitutionIsMutable();
+              swclassMyInstitution_.addAll(other.swclassMyInstitution_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.swclassMyInstitution_.isEmpty()) {
+            if (swclassMyInstitutionBuilder_.isEmpty()) {
+              swclassMyInstitutionBuilder_.dispose();
+              swclassMyInstitutionBuilder_ = null;
+              swclassMyInstitution_ = other.swclassMyInstitution_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+              swclassMyInstitutionBuilder_ = 
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                   getSwclassMyInstitutionFieldBuilder() : null;
+            } else {
+              swclassMyInstitutionBuilder_.addAllMessages(other.swclassMyInstitution_);
+            }
+          }
         }
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
@@ -472,15 +1155,18 @@ public final class MyInstitutionList {
                 done = true;
                 break;
               case 10: {
-                insName_ = input.readStringRequireUtf8();
-
+                com.classlink.websocket.api.lobby.home.domain.param.proto.MyInstitutionList.SWclassMyInstitutionList.SWclassMyInstitution m =
+                    input.readMessage(
+                        com.classlink.websocket.api.lobby.home.domain.param.proto.MyInstitutionList.SWclassMyInstitutionList.SWclassMyInstitution.parser(),
+                        extensionRegistry);
+                if (swclassMyInstitutionBuilder_ == null) {
+                  ensureSwclassMyInstitutionIsMutable();
+                  swclassMyInstitution_.add(m);
+                } else {
+                  swclassMyInstitutionBuilder_.addMessage(m);
+                }
                 break;
               } // case 10
-              case 18: {
-                stdUseYn_ = input.readStringRequireUtf8();
-
-                break;
-              } // case 18
               default: {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                   done = true; // was an endgroup tag
@@ -496,157 +1182,246 @@ public final class MyInstitutionList {
         } // finally
         return this;
       }
+      private int bitField0_;
 
-      private java.lang.Object insName_ = "";
-      /**
-       * <code>string InsName = 1;</code>
-       * @return The insName.
-       */
-      public java.lang.String getInsName() {
-        java.lang.Object ref = insName_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          insName_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <code>string InsName = 1;</code>
-       * @return The bytes for insName.
-       */
-      public com.google.protobuf.ByteString
-          getInsNameBytes() {
-        java.lang.Object ref = insName_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          insName_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>string InsName = 1;</code>
-       * @param value The insName to set.
-       * @return This builder for chaining.
-       */
-      public Builder setInsName(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        insName_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string InsName = 1;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearInsName() {
-        
-        insName_ = getDefaultInstance().getInsName();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string InsName = 1;</code>
-       * @param value The bytes for insName to set.
-       * @return This builder for chaining.
-       */
-      public Builder setInsNameBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        insName_ = value;
-        onChanged();
-        return this;
+      private java.util.List<com.classlink.websocket.api.lobby.home.domain.param.proto.MyInstitutionList.SWclassMyInstitutionList.SWclassMyInstitution> swclassMyInstitution_ =
+        java.util.Collections.emptyList();
+      private void ensureSwclassMyInstitutionIsMutable() {
+        if (!((bitField0_ & 0x00000001) != 0)) {
+          swclassMyInstitution_ = new java.util.ArrayList<com.classlink.websocket.api.lobby.home.domain.param.proto.MyInstitutionList.SWclassMyInstitutionList.SWclassMyInstitution>(swclassMyInstitution_);
+          bitField0_ |= 0x00000001;
+         }
       }
 
-      private java.lang.Object stdUseYn_ = "";
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          com.classlink.websocket.api.lobby.home.domain.param.proto.MyInstitutionList.SWclassMyInstitutionList.SWclassMyInstitution, com.classlink.websocket.api.lobby.home.domain.param.proto.MyInstitutionList.SWclassMyInstitutionList.SWclassMyInstitution.Builder, com.classlink.websocket.api.lobby.home.domain.param.proto.MyInstitutionList.SWclassMyInstitutionList.SWclassMyInstitutionOrBuilder> swclassMyInstitutionBuilder_;
+
       /**
-       * <code>string StdUseYn = 2;</code>
-       * @return The stdUseYn.
+       * <code>repeated .Classlink.SWclassMyInstitutionList.SWclassMyInstitution swclassMyInstitution = 1;</code>
        */
-      public java.lang.String getStdUseYn() {
-        java.lang.Object ref = stdUseYn_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          stdUseYn_ = s;
-          return s;
+      public java.util.List<com.classlink.websocket.api.lobby.home.domain.param.proto.MyInstitutionList.SWclassMyInstitutionList.SWclassMyInstitution> getSwclassMyInstitutionList() {
+        if (swclassMyInstitutionBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(swclassMyInstitution_);
         } else {
-          return (java.lang.String) ref;
+          return swclassMyInstitutionBuilder_.getMessageList();
         }
       }
       /**
-       * <code>string StdUseYn = 2;</code>
-       * @return The bytes for stdUseYn.
+       * <code>repeated .Classlink.SWclassMyInstitutionList.SWclassMyInstitution swclassMyInstitution = 1;</code>
        */
-      public com.google.protobuf.ByteString
-          getStdUseYnBytes() {
-        java.lang.Object ref = stdUseYn_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          stdUseYn_ = b;
-          return b;
+      public int getSwclassMyInstitutionCount() {
+        if (swclassMyInstitutionBuilder_ == null) {
+          return swclassMyInstitution_.size();
         } else {
-          return (com.google.protobuf.ByteString) ref;
+          return swclassMyInstitutionBuilder_.getCount();
         }
       }
       /**
-       * <code>string StdUseYn = 2;</code>
-       * @param value The stdUseYn to set.
-       * @return This builder for chaining.
+       * <code>repeated .Classlink.SWclassMyInstitutionList.SWclassMyInstitution swclassMyInstitution = 1;</code>
        */
-      public Builder setStdUseYn(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        stdUseYn_ = value;
-        onChanged();
+      public com.classlink.websocket.api.lobby.home.domain.param.proto.MyInstitutionList.SWclassMyInstitutionList.SWclassMyInstitution getSwclassMyInstitution(int index) {
+        if (swclassMyInstitutionBuilder_ == null) {
+          return swclassMyInstitution_.get(index);
+        } else {
+          return swclassMyInstitutionBuilder_.getMessage(index);
+        }
+      }
+      /**
+       * <code>repeated .Classlink.SWclassMyInstitutionList.SWclassMyInstitution swclassMyInstitution = 1;</code>
+       */
+      public Builder setSwclassMyInstitution(
+          int index, com.classlink.websocket.api.lobby.home.domain.param.proto.MyInstitutionList.SWclassMyInstitutionList.SWclassMyInstitution value) {
+        if (swclassMyInstitutionBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureSwclassMyInstitutionIsMutable();
+          swclassMyInstitution_.set(index, value);
+          onChanged();
+        } else {
+          swclassMyInstitutionBuilder_.setMessage(index, value);
+        }
         return this;
       }
       /**
-       * <code>string StdUseYn = 2;</code>
-       * @return This builder for chaining.
+       * <code>repeated .Classlink.SWclassMyInstitutionList.SWclassMyInstitution swclassMyInstitution = 1;</code>
        */
-      public Builder clearStdUseYn() {
-        
-        stdUseYn_ = getDefaultInstance().getStdUseYn();
-        onChanged();
+      public Builder setSwclassMyInstitution(
+          int index, com.classlink.websocket.api.lobby.home.domain.param.proto.MyInstitutionList.SWclassMyInstitutionList.SWclassMyInstitution.Builder builderForValue) {
+        if (swclassMyInstitutionBuilder_ == null) {
+          ensureSwclassMyInstitutionIsMutable();
+          swclassMyInstitution_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          swclassMyInstitutionBuilder_.setMessage(index, builderForValue.build());
+        }
         return this;
       }
       /**
-       * <code>string StdUseYn = 2;</code>
-       * @param value The bytes for stdUseYn to set.
-       * @return This builder for chaining.
+       * <code>repeated .Classlink.SWclassMyInstitutionList.SWclassMyInstitution swclassMyInstitution = 1;</code>
        */
-      public Builder setStdUseYnBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        stdUseYn_ = value;
-        onChanged();
+      public Builder addSwclassMyInstitution(com.classlink.websocket.api.lobby.home.domain.param.proto.MyInstitutionList.SWclassMyInstitutionList.SWclassMyInstitution value) {
+        if (swclassMyInstitutionBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureSwclassMyInstitutionIsMutable();
+          swclassMyInstitution_.add(value);
+          onChanged();
+        } else {
+          swclassMyInstitutionBuilder_.addMessage(value);
+        }
         return this;
+      }
+      /**
+       * <code>repeated .Classlink.SWclassMyInstitutionList.SWclassMyInstitution swclassMyInstitution = 1;</code>
+       */
+      public Builder addSwclassMyInstitution(
+          int index, com.classlink.websocket.api.lobby.home.domain.param.proto.MyInstitutionList.SWclassMyInstitutionList.SWclassMyInstitution value) {
+        if (swclassMyInstitutionBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureSwclassMyInstitutionIsMutable();
+          swclassMyInstitution_.add(index, value);
+          onChanged();
+        } else {
+          swclassMyInstitutionBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .Classlink.SWclassMyInstitutionList.SWclassMyInstitution swclassMyInstitution = 1;</code>
+       */
+      public Builder addSwclassMyInstitution(
+          com.classlink.websocket.api.lobby.home.domain.param.proto.MyInstitutionList.SWclassMyInstitutionList.SWclassMyInstitution.Builder builderForValue) {
+        if (swclassMyInstitutionBuilder_ == null) {
+          ensureSwclassMyInstitutionIsMutable();
+          swclassMyInstitution_.add(builderForValue.build());
+          onChanged();
+        } else {
+          swclassMyInstitutionBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .Classlink.SWclassMyInstitutionList.SWclassMyInstitution swclassMyInstitution = 1;</code>
+       */
+      public Builder addSwclassMyInstitution(
+          int index, com.classlink.websocket.api.lobby.home.domain.param.proto.MyInstitutionList.SWclassMyInstitutionList.SWclassMyInstitution.Builder builderForValue) {
+        if (swclassMyInstitutionBuilder_ == null) {
+          ensureSwclassMyInstitutionIsMutable();
+          swclassMyInstitution_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          swclassMyInstitutionBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .Classlink.SWclassMyInstitutionList.SWclassMyInstitution swclassMyInstitution = 1;</code>
+       */
+      public Builder addAllSwclassMyInstitution(
+          java.lang.Iterable<? extends com.classlink.websocket.api.lobby.home.domain.param.proto.MyInstitutionList.SWclassMyInstitutionList.SWclassMyInstitution> values) {
+        if (swclassMyInstitutionBuilder_ == null) {
+          ensureSwclassMyInstitutionIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, swclassMyInstitution_);
+          onChanged();
+        } else {
+          swclassMyInstitutionBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .Classlink.SWclassMyInstitutionList.SWclassMyInstitution swclassMyInstitution = 1;</code>
+       */
+      public Builder clearSwclassMyInstitution() {
+        if (swclassMyInstitutionBuilder_ == null) {
+          swclassMyInstitution_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+          onChanged();
+        } else {
+          swclassMyInstitutionBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .Classlink.SWclassMyInstitutionList.SWclassMyInstitution swclassMyInstitution = 1;</code>
+       */
+      public Builder removeSwclassMyInstitution(int index) {
+        if (swclassMyInstitutionBuilder_ == null) {
+          ensureSwclassMyInstitutionIsMutable();
+          swclassMyInstitution_.remove(index);
+          onChanged();
+        } else {
+          swclassMyInstitutionBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .Classlink.SWclassMyInstitutionList.SWclassMyInstitution swclassMyInstitution = 1;</code>
+       */
+      public com.classlink.websocket.api.lobby.home.domain.param.proto.MyInstitutionList.SWclassMyInstitutionList.SWclassMyInstitution.Builder getSwclassMyInstitutionBuilder(
+          int index) {
+        return getSwclassMyInstitutionFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <code>repeated .Classlink.SWclassMyInstitutionList.SWclassMyInstitution swclassMyInstitution = 1;</code>
+       */
+      public com.classlink.websocket.api.lobby.home.domain.param.proto.MyInstitutionList.SWclassMyInstitutionList.SWclassMyInstitutionOrBuilder getSwclassMyInstitutionOrBuilder(
+          int index) {
+        if (swclassMyInstitutionBuilder_ == null) {
+          return swclassMyInstitution_.get(index);  } else {
+          return swclassMyInstitutionBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <code>repeated .Classlink.SWclassMyInstitutionList.SWclassMyInstitution swclassMyInstitution = 1;</code>
+       */
+      public java.util.List<? extends com.classlink.websocket.api.lobby.home.domain.param.proto.MyInstitutionList.SWclassMyInstitutionList.SWclassMyInstitutionOrBuilder> 
+           getSwclassMyInstitutionOrBuilderList() {
+        if (swclassMyInstitutionBuilder_ != null) {
+          return swclassMyInstitutionBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(swclassMyInstitution_);
+        }
+      }
+      /**
+       * <code>repeated .Classlink.SWclassMyInstitutionList.SWclassMyInstitution swclassMyInstitution = 1;</code>
+       */
+      public com.classlink.websocket.api.lobby.home.domain.param.proto.MyInstitutionList.SWclassMyInstitutionList.SWclassMyInstitution.Builder addSwclassMyInstitutionBuilder() {
+        return getSwclassMyInstitutionFieldBuilder().addBuilder(
+            com.classlink.websocket.api.lobby.home.domain.param.proto.MyInstitutionList.SWclassMyInstitutionList.SWclassMyInstitution.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .Classlink.SWclassMyInstitutionList.SWclassMyInstitution swclassMyInstitution = 1;</code>
+       */
+      public com.classlink.websocket.api.lobby.home.domain.param.proto.MyInstitutionList.SWclassMyInstitutionList.SWclassMyInstitution.Builder addSwclassMyInstitutionBuilder(
+          int index) {
+        return getSwclassMyInstitutionFieldBuilder().addBuilder(
+            index, com.classlink.websocket.api.lobby.home.domain.param.proto.MyInstitutionList.SWclassMyInstitutionList.SWclassMyInstitution.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .Classlink.SWclassMyInstitutionList.SWclassMyInstitution swclassMyInstitution = 1;</code>
+       */
+      public java.util.List<com.classlink.websocket.api.lobby.home.domain.param.proto.MyInstitutionList.SWclassMyInstitutionList.SWclassMyInstitution.Builder> 
+           getSwclassMyInstitutionBuilderList() {
+        return getSwclassMyInstitutionFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          com.classlink.websocket.api.lobby.home.domain.param.proto.MyInstitutionList.SWclassMyInstitutionList.SWclassMyInstitution, com.classlink.websocket.api.lobby.home.domain.param.proto.MyInstitutionList.SWclassMyInstitutionList.SWclassMyInstitution.Builder, com.classlink.websocket.api.lobby.home.domain.param.proto.MyInstitutionList.SWclassMyInstitutionList.SWclassMyInstitutionOrBuilder> 
+          getSwclassMyInstitutionFieldBuilder() {
+        if (swclassMyInstitutionBuilder_ == null) {
+          swclassMyInstitutionBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              com.classlink.websocket.api.lobby.home.domain.param.proto.MyInstitutionList.SWclassMyInstitutionList.SWclassMyInstitution, com.classlink.websocket.api.lobby.home.domain.param.proto.MyInstitutionList.SWclassMyInstitutionList.SWclassMyInstitution.Builder, com.classlink.websocket.api.lobby.home.domain.param.proto.MyInstitutionList.SWclassMyInstitutionList.SWclassMyInstitutionOrBuilder>(
+                  swclassMyInstitution_,
+                  ((bitField0_ & 0x00000001) != 0),
+                  getParentForChildren(),
+                  isClean());
+          swclassMyInstitution_ = null;
+        }
+        return swclassMyInstitutionBuilder_;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -717,6 +1492,11 @@ public final class MyInstitutionList {
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_Classlink_SWclassMyInstitutionList_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_Classlink_SWclassMyInstitutionList_SWclassMyInstitution_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_Classlink_SWclassMyInstitutionList_SWclassMyInstitution_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -727,10 +1507,13 @@ public final class MyInstitutionList {
   static {
     java.lang.String[] descriptorData = {
       "\n\036SWclassMyInstitutionList.proto\022\tClassl" +
-      "ink\"=\n\030SWclassMyInstitutionList\022\017\n\007InsNa" +
-      "me\030\001 \001(\t\022\020\n\010StdUseYn\030\002 \001(\tBN\n9com.classl" +
-      "ink.websocket.api.lobby.home.domain.para" +
-      "m.protoB\021MyInstitutionListb\006proto3"
+      "ink\"\255\001\n\030SWclassMyInstitutionList\022V\n\024swcl" +
+      "assMyInstitution\030\001 \003(\01328.Classlink.SWcla" +
+      "ssMyInstitutionList.SWclassMyInstitution" +
+      "\0329\n\024SWclassMyInstitution\022\017\n\007InsName\030\001 \001(" +
+      "\t\022\020\n\010StdUseYn\030\002 \001(\tBN\n9com.classlink.web" +
+      "socket.api.lobby.home.domain.param.proto" +
+      "B\021MyInstitutionListb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -741,6 +1524,12 @@ public final class MyInstitutionList {
     internal_static_Classlink_SWclassMyInstitutionList_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_Classlink_SWclassMyInstitutionList_descriptor,
+        new java.lang.String[] { "SwclassMyInstitution", });
+    internal_static_Classlink_SWclassMyInstitutionList_SWclassMyInstitution_descriptor =
+      internal_static_Classlink_SWclassMyInstitutionList_descriptor.getNestedTypes().get(0);
+    internal_static_Classlink_SWclassMyInstitutionList_SWclassMyInstitution_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_Classlink_SWclassMyInstitutionList_SWclassMyInstitution_descriptor,
         new java.lang.String[] { "InsName", "StdUseYn", });
   }
 
