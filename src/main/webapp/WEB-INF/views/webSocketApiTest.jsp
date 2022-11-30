@@ -11,8 +11,11 @@
   <div class="well">
     <button id="btnOpen" class="btn btn-primary">open socket</button>
     <select id="OpCode" class="form-control">
-      <option value="100">신분생성</option>
-      <option value="101" selected>신분조회</option>
+      <option value="100">신분 생성</option>
+      <option value="101" selected>신분 조회</option>
+      <option value="102" >아바타 생성</option>
+      <option value="103" >아바타 조회</option>
+      <option value="104" >아바타 변경</option>
       <option value="201" >소속기관조회</option>
     </select>
     <button id="btnSend" class="btn btn-primary">Send Message</button>
@@ -34,8 +37,18 @@
       const JwtExceptionName = "JwtException";
     
       //신분
-      const IdentityListName = "IdentityList";
-      const IdentityCreateName = "IdentityCreate";
+      const IdentityListReqName = "IdentityListReq";
+      const IdentityListResName = "IdentityListRes";
+      const IdentityCreateReqName = "IdentityCreateReq";
+      const IdentityCreateResName = "IdentityCreateRes";
+      
+      //아바타
+      const IdentityAvatarCreateReqName = "IdentityAvatarCreateReq";
+      const IdentityAvatarCreateResName = "IdentityAvatarCreateRes";
+      const IdentityAvatarDetailReqName = "IdentityAvatarDetailReq";
+      const IdentityAvatarDetailResName = "IdentityAvatarDetailRes";
+      const IdentityAvatarChangeReqName = "IdentityAvatarChangeReq";
+      const IdentityAvatarChangeResName = "IdentityAvatarChangeRes";
       
       //로비
       const MyInstitutionListName = "MyInstitutionList";
@@ -44,12 +57,22 @@
     // protobuf.load시에 로딩할 protobuf 파일 경로 지정  
     
 			const commonPath = "../proto"
-			const protoFileList = [ commonPath.concat("/member/response/SWclassIdentityList.proto"),
-				commonPath.concat("/member/request/SWclassIdentityCreate.proto"),
+			const protoFileList = [ 
+				commonPath.concat("/member/response/IdentityListRes.proto"),
+				commonPath.concat("/member/request/IdentityListReq.proto"),
+				commonPath.concat("/member/request/IdentityCreateReq.proto"),
+				commonPath.concat("/member/response/IdentityCreateRes.proto"),
+        commonPath.concat("/member/request/IdentityAvatarCreateReq.proto"),
+        commonPath.concat("/member/response/IdentityAvatarCreateRes.proto"),
+        commonPath.concat("/member/request/IdentityAvatarDetailReq.proto"),
+        commonPath.concat("/member/response/IdentityAvatarDetailRes.proto"),
+        commonPath.concat("/member/request/IdentityAvatarChangeReq.proto"),
+				commonPath.concat("/member/response/IdentityAvatarChangeRes.proto"),
 				commonPath.concat("/member/request/SWclassIdentityInfo.proto"),
 				commonPath.concat("/lobby/home/response/SWclassMyInstitutionList.proto"),
 				commonPath.concat("/common/PacketData.proto"),
-				commonPath.concat("/jwt/jwtException.proto")];
+				commonPath.concat("/jwt/jwtException.proto")
+				];
 
 			//---------------------------------------------------------------------------------------------------
       // 아래 전체코드 flow
@@ -80,19 +103,65 @@
 
 			    	  switch (OpCode) {
                 case 100 :
-                  loadMessage(root, IdentityCreateName, "Classlink.SWclassIdentityCreate");
+                  loadMessage(root, IdentityCreateReqName, "Classlink.IdentityCreateReq");
+                  loadMessage(root, IdentityCreateResName, "Classlink.IdentityCreateRes");
                   
-                  const IdentityCreateObj = {
-                  		IdtCode : '3',
-                  		MemIdx : 7,
+                  const IdentityCreateReqObj = {
+                  		InsCode : 'testA',
+                  		IdentityType : 'T'
                     };
                   
-                  Data = setDataToSend(root, IdentityCreateName, IdentityCreateObj);
+                  Data = setDataToSend(root, IdentityCreateReqName, IdentityCreateReqObj);
                   break;
                   
 			    	  	case 101 :
-			    	  		loadMessage(root, IdentityListName, "Classlink.SWclassIdentityList");
+			    	  		loadMessage(root, IdentityListReqName, "Classlink.IdentityListReq");
+			    	  		loadMessage(root, IdentityListResName, "Classlink.IdentityListRes");
+			    	  		
+			    	  		const IdentityListReqObj = {
+                      InsCode : 'testA'
+                    };
+                  
+                  Data = setDataToSend(root, IdentityListReqName, IdentityListReqObj);
 			    	  	  break;
+			    	  	  
+			    	  	case 102 :
+                  loadMessage(root, IdentityAvatarCreateReqName, "Classlink.IdentityAvatarCreateReq");
+                  loadMessage(root, IdentityAvatarCreateResName, "Classlink.IdentityAvatarCreateRes");
+                  
+                  const IdentityAvatarCreateReqObj = {
+                      InsCode : 'testA',
+                      IdentityType : 'P',
+                      AvatarId : '150'
+                    };
+                  
+                  Data = setDataToSend(root, IdentityAvatarCreateReqName, IdentityAvatarCreateReqObj);
+                  break;
+                  
+			    	  	case 103 :
+                  loadMessage(root, IdentityAvatarDetailReqName, "Classlink.IdentityAvatarDetailReq");
+                  loadMessage(root, IdentityAvatarDetailResName, "Classlink.IdentityAvatarDetailRes");
+                  
+                  const IdentityAvatarDetailReqObj = {
+                      InsCode : 'testA',
+                      IdentityType : 'P',
+                    };
+                  
+                  Data = setDataToSend(root, IdentityAvatarDetailReqName, IdentityAvatarDetailReqObj);
+                  break;
+                  
+			    	  	case 104 :
+                  loadMessage(root, IdentityAvatarChangeReqName, "Classlink.IdentityAvatarChangeReq");
+                  loadMessage(root, IdentityAvatarChangeResName, "Classlink.IdentityAvatarChangeRes");
+                  
+                  const IdentityAvatarChangeReqObj = {
+                      InsCode : 'testA',
+                      IdentityType : 'P',
+                      AvatarId : '155'
+                    };
+                  
+                  Data = setDataToSend(root, IdentityAvatarChangeReqName, IdentityAvatarChangeReqObj);
+                  break;
 			    	  	  
                 case 201 :
                   loadMessage(root, MyInstitutionListName, "Classlink.SWclassMyInstitutionList");
@@ -104,7 +173,7 @@
 			    	  
               const PacketObj = {
                   OpCode : OpCode,
-                  AccessToken : "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2Njg0OTE4OTAsInVzZXJfbmFtZSI6InN0cmluZyIsImp0aSI6IjVkN2Y2OTlmLTIyMjEtNGEzNi05ZjFjLTMyMmU2YjA1ZDZlYyIsImNsaWVudF9pZCI6ImNsYXNzbGluayIsInNjb3BlIjpbImNsaWVudCJdfQ.ComTiP2Nre9J-Io9oHUBLvdG4GgowZB_6OqodJzy4NQ",
+                  AccessToken : "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2Njk4MDQ2NDEsInVzZXJfbmFtZSI6InRlc3Q3Nzc3IiwianRpIjoiZTVlZWI1OTItOTg0Yy00NTNkLWJjNTEtNzdiZTk5ZTBlOGUwIiwiY2xpZW50X2lkIjoiY2xhc3NsaW5rIiwic2NvcGUiOlsiY2xpZW50Il19.PS41Kpvd6mql1LodkDdWFFM6KfOGjjP76M8vRDwBpXY",
                   InstanceId : '2',
                   Data : Data
                 };
@@ -136,8 +205,8 @@
 		  let data = null;
 			// pure web-socket
 			function connectWS() {
-				var ws = new WebSocket("ws:112.171.101.31:45170/api");
-				//const ws = new WebSocket("ws:localhost:8301/api");
+				//var ws = new WebSocket("ws:112.171.101.31:45170/api");
+				const ws = new WebSocket("ws:localhost:8301/api");
 				socket = ws;
 
 				ws.onopen = function() {
@@ -154,22 +223,38 @@
 					
 					switch(receivedPacketData.OpCode) {
             case 100:
-              break;
+            	const receivedIdentityCreateResData = window[IdentityCreateResName].decode(receivedPacketData.Data);
+            	console.log("receivedIdentityCreateResData mmmmmmmmmmmm>>", receivedIdentityCreateResData);
+            	break;
               
 						case 101:		
-							const receivedIdentityListNameData = window[IdentityListName].decode(receivedPacketData.Data);			
-	            console.log("receivedIdentityListData mmmmmmmmmmmm>>", receivedIdentityListNameData);
+							const receivedIdentityListResData = window[IdentityListResName].decode(receivedPacketData.Data);			
+	            console.log("receivedIdentityListResData mmmmmmmmmmmm>>", receivedIdentityListResData);
 	            break;
 	            
+            case 102:   
+              const receivedIdentityAvatarCreateResData = window[IdentityAvatarCreateResName].decode(receivedPacketData.Data);      
+              console.log("receivedIdentityAvatarCreateResData mmmmmmmmmmmm>>", receivedIdentityAvatarCreateResData);
+              break;
+              
+            case 103:   
+              const receivedIdentityAvatarDetailResData = window[IdentityAvatarDetailResName].decode(receivedPacketData.Data);      
+              console.log("receivedIdentityAvatarDetailResData mmmmmmmmmmmm>>", receivedIdentityAvatarDetailResData);
+              break;
+              
+            case 104:   
+              const receivedIdentityAvatarChangeReqData = window[IdentityAvatarChangeReqName].decode(receivedPacketData.Data);      
+              console.log("receivedIdentityAvatarChangeReqData mmmmmmmmmmmm>>", receivedIdentityAvatarChangeReqData);
+              break;
+	            
             case 201:   
-              const receivedMyInstitutionListNameData = window[MyInstitutionListName].decode(receivedPacketData.Data);
-              data = receivedMyInstitutionListNameData;
-              console.log("receivedMyInstitutionListNameData mmmmmmmmmmmm>>", receivedMyInstitutionListNameData);
+              const receivedMyInstitutionListData = window[MyInstitutionListName].decode(receivedPacketData.Data);
+              console.log("receivedMyInstitutionListData mmmmmmmmmmmm>>", receivedMyInstitutionListData);
               break;
 	            
 	          case 401:   
-              const receivedJwtExceptionNameData = window[JwtExceptionName].decode(receivedPacketData.Data);    
-              console.log("receivedJwtExceptionNameData mmmmmmmmmmmm>>", receivedJwtExceptionNameData);
+              const receivedJwtExceptionData = window[JwtExceptionName].decode(receivedPacketData.Data);    
+              console.log("receivedJwtExceptionData mmmmmmmmmmmm>>", receivedJwtExceptionData);
               break;
 	            
 						default:

@@ -1,0 +1,14 @@
+syntax = "proto3";
+package Classlink;
+option java_package = "com.classlink.websocket.api.member.domain.dto.proto";
+option java_outer_classname = "IdentityListResProto";
+
+message IdentityListRes {
+	repeated Identity IdtList = 1;
+
+	message Identity {
+		string InsCode = 1;
+		string  IdentitytType = 2;
+		string AvartarId = 3;
+	}
+}

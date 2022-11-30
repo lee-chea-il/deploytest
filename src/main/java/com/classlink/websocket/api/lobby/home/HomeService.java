@@ -6,8 +6,8 @@ import java.util.List;
 import org.springframework.stereotype.Service;
 import org.springframework.web.socket.BinaryMessage;
 
-import com.classlink.websocket.api.common.OpCode;
-import com.classlink.websocket.api.common.domain.proto.Packet.PacketData;
+import com.classlink.websocket.api.common.ResultCode;
+import com.classlink.websocket.api.common.domain.proto.PacketDataProto.PacketData;
 import com.classlink.websocket.api.lobby.home.domain.dto.InstitutionDto.MyInstitutionListDto;
 import com.classlink.websocket.api.lobby.home.domain.param.proto.MyInstitutionList.SWclassMyInstitutionList;
 import com.classlink.websocket.api.lobby.home.domain.param.proto.MyInstitutionList.SWclassMyInstitutionList.SWclassMyInstitution;
@@ -31,7 +31,7 @@ public class HomeService {
 		
 		if(myInstitutionListDtos.isEmpty()) {
 			
-			packetResProto = PacketData.newBuilder().setOpCode(OpCode.NOT_FOUND.getValue()).setAccessToken(packetReqProto.getAccessToken()).setInstanceId(packetReqProto.getInstanceId()).build();
+			packetResProto = PacketData.newBuilder().setOpCode(ResultCode.NOT_FOUND.getCode()).setAccessToken(packetReqProto.getAccessToken()).setInstanceId(packetReqProto.getInstanceId()).build();
 			
 		}else {
 			List<SWclassMyInstitution> subMyInstitutionList = new ArrayList<>() ;

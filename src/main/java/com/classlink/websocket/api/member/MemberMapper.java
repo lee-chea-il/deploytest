@@ -3,15 +3,25 @@ package com.classlink.websocket.api.member;
 import java.util.List;
 
 import org.apache.ibatis.annotations.Mapper;
-import org.apache.ibatis.annotations.Param;
 
-import com.classlink.websocket.api.member.domain.param.MemberParam.MemberIdentityParam;
-import com.classlink.websocket.api.member.domain.vo.MemberVo;
+import com.classlink.websocket.api.member.domain.dto.MemberDto;
+import com.classlink.websocket.api.member.domain.dto.MemberDto.IdentityAvatarDetailDto;
+import com.classlink.websocket.api.member.domain.param.MemberParam.IdentityAvatarChangeParam;
+import com.classlink.websocket.api.member.domain.param.MemberParam.IdentityAvatarCreateParam;
+import com.classlink.websocket.api.member.domain.param.MemberParam.IdentityAvatarDetailParam;
+import com.classlink.websocket.api.member.domain.param.MemberParam.IdentityCreateParam;
+import com.classlink.websocket.api.member.domain.param.MemberParam.IdentityListParam;
 
 @Mapper
 public interface MemberMapper {
 	
-	List<MemberVo.IdentityVo> selectMemberIdentityByMemberIdx(@Param("mem_id") String mem_id);
+	List<MemberDto.IdentityListDto> selectMemberIdentityByMemberId(IdentityListParam identityListParam);
 
-	void insertMemberIdentity(MemberIdentityParam memberIdentityParam);
+	void insertMemberIdentity(IdentityCreateParam IdentityParam);
+
+	void insertMemberAvartar(IdentityAvatarCreateParam avatarParam);
+
+	IdentityAvatarDetailDto selectIdentityAvartarByMemberId(IdentityAvatarDetailParam avatarDetailParam);
+
+	int updateIdentityAvartarByMemberId(IdentityAvatarChangeParam avatarDetailParam);
 }

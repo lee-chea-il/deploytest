@@ -1,11 +1,13 @@
 syntax = "proto3";
 package Classlink;
 option java_package = "com.classlink.websocket.api.common.domain.proto";
-option java_outer_classname = "Packet";
+option java_outer_classname = "PacketDataProto";
 
 message PacketData {
   int32 OpCode = 1;
   string AccessToken = 2;
   string InstanceId = 3;
-  bytes Data = 4;
+  int32 ResultCode = 4;
+  string ResultMessage =5;
+  bytes Data = 6;
 }

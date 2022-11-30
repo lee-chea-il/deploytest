@@ -79,7 +79,7 @@
 			
       const PacketDataObj = {
 				OpCode : 121,
-				accessToken : "1234",
+				accessToken : "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2NjkxNzM0NzEsInVzZXJfbmFtZSI6InRlc3Q3Nzc3IiwianRpIjoiNTQwMTNhZmUtOTZlYS00NGRkLTg5ZmMtNmE3NGYxMjQ2ZDYwIiwiY2xpZW50X2lkIjoiY2xhc3NsaW5rIiwic2NvcGUiOlsiY2xpZW50Il19.uIRHtjYfDQY6CPjbnLoOE8ygfEQygVqMBPcM3z2cHEQ",
 				instanceId : "2",
 				data : encodedWebSocketMessagePackTestData
 			};

@@ -43,10 +43,10 @@ public class JwtTokenParser {
 					.setSigningKey(Base64.getEncoder().encodeToString(CommonConst.SIGNING_KEY.getBytes()))
 					.parseClaimsJws(token).getBody();
 		} catch (ExpiredJwtException e) { // Token이 만료된 경우 Exception이 발생한다.
-			return JwtExeptionCode.JWT_TOKEN_EXPIRED;
+			return JwtExeptionCode.JWT_EXPIRED;
 
 		} catch (JwtException e) { // Token이 변조된 경우 Exception이 발생한다.
-			return JwtExeptionCode.JWT_TOKEN_NOT_VALID;
+			return JwtExeptionCode.JWT_NOT_VALID;
 		}
 		
 		return null;

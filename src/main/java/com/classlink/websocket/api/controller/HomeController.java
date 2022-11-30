@@ -7,7 +7,7 @@ import org.springframework.web.socket.WebSocketSession;
 
 import com.classlink.websocket.api.common.OpCode;
 import com.classlink.websocket.api.common.OpCodeMapping;
-import com.classlink.websocket.api.common.domain.proto.Packet.PacketData;
+import com.classlink.websocket.api.common.domain.proto.PacketDataProto.PacketData;
 import com.classlink.websocket.api.lobby.home.HomeService;
 
 import lombok.RequiredArgsConstructor;

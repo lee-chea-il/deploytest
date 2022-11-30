@@ -1,7 +1,7 @@
 syntax = "proto3";
 package Classlink;
 option java_package = "com.classlink.websocket.api.jwt.domain.proto";
-option java_outer_classname = "JwtExceptionResponse";
+option java_outer_classname = "JwtExceptionProto";
 
 message JwtException {
   string Message = 1;

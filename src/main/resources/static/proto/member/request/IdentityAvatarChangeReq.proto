@@ -1,0 +1,10 @@
+syntax = "proto3";
+package Classlink;
+option java_package = "com.classlink.websocket.api.member.domain.param.proto";
+option java_outer_classname = "IdentityAvatarChangeReqProto";
+
+message IdentityAvatarChangeReq {
+  string InsCode = 1;
+  string IdentityType = 2;
+  string AvatarId = 3;
+}
