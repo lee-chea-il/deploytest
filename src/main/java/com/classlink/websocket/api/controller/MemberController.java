@@ -28,8 +28,8 @@ public class MemberController {
 	}
 	
 	@OpCodeMapping(value = OpCode.IDENTITY_LIST)
-	public void memberIdentityDetails(WebSocketSession session, PacketData packetReqProto, String userId) throws StreamReadException, DatabindException, IOException {
-		session.sendMessage(memberService.findMemberIdentityByMemberId(packetReqProto, userId));
+	public void memberIdentityList(WebSocketSession session, PacketData packetReqProto, String userId) throws StreamReadException, DatabindException, IOException {
+		session.sendMessage(memberService.findMemberIdentitiesByMemberId(packetReqProto, userId));
 	}
 	
 	@OpCodeMapping(value = OpCode.AVARTAR_CREATE)
@@ -37,13 +37,24 @@ public class MemberController {
 		session.sendMessage(memberService.addIdentityAvartar(packetReqProto, userId));
 	}
 	
-	@OpCodeMapping(value = OpCode.AVARTAR_DETAIL)
-	public void IdentityAvartarDetails(WebSocketSession session, PacketData packetReqProto, String userId) throws StreamReadException, DatabindException, IOException {
+	@OpCodeMapping(value = OpCode.AVARTAR_INFO)
+	public void IdentityAvartarInfo(WebSocketSession session, PacketData packetReqProto, String userId) throws StreamReadException, DatabindException, IOException {
 		session.sendMessage(memberService.findIdentityAvartarByMemberId(packetReqProto, userId));
 	}
 	
 	@OpCodeMapping(value = OpCode.AVARTAR_CHANGE)
-	public void IdentityAvartarModify(WebSocketSession session, PacketData packetReqProto, String userId) throws StreamReadException, DatabindException, IOException {
+	public void IdentityAvartarChange(WebSocketSession session, PacketData packetReqProto, String userId) throws StreamReadException, DatabindException, IOException {
 		session.sendMessage(memberService.modifyIdentityAvartarByMemberId(packetReqProto, userId));
 	}
+	
+	@OpCodeMapping(value = OpCode.INSTITUTION_INFO)
+	public void IdentityInstitutionInfo(WebSocketSession session, PacketData packetReqProto, String userId) throws StreamReadException, DatabindException, IOException {
+		session.sendMessage(memberService.findInstitutionInfoByInsCode(packetReqProto, userId));
+	}
+	
+	@OpCodeMapping(value = OpCode.INSTITUTION_ENROLLMENT_REQUEST_CREATE)
+	public void IdentityInstitutionEnrollmentAdd(WebSocketSession session, PacketData packetReqProto, String userId) throws StreamReadException, DatabindException, IOException {
+		session.sendMessage(memberService.addInstitutionEnrollment(packetReqProto, userId));
+	}
+
 }

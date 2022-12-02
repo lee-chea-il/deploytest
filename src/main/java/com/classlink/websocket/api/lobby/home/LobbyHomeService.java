@@ -8,9 +8,13 @@ import org.springframework.web.socket.BinaryMessage;
 
 import com.classlink.websocket.api.common.ResultCode;
 import com.classlink.websocket.api.common.domain.proto.PacketDataProto.PacketData;
-import com.classlink.websocket.api.lobby.home.domain.dto.InstitutionDto.MyInstitutionListDto;
+import com.classlink.websocket.api.lobby.home.domain.dto.LobbyHomeDto.InstitutionEnrollmentRequestListDto;
+import com.classlink.websocket.api.lobby.home.domain.dto.LobbyHomeDto.MyInstitutionListDto;
+import com.classlink.websocket.api.lobby.home.domain.param.LobbyHomeParam.InstitutionEnrollmentRequestListParam;
+import com.classlink.websocket.api.lobby.home.domain.param.proto.LobbyHomeEnrollmentRequestListReqProto.LobbyHomeEnrollmentRequestListReq;
 import com.classlink.websocket.api.lobby.home.domain.param.proto.MyInstitutionList.SWclassMyInstitutionList;
 import com.classlink.websocket.api.lobby.home.domain.param.proto.MyInstitutionList.SWclassMyInstitutionList.SWclassMyInstitution;
+import com.google.protobuf.InvalidProtocolBufferException;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -18,14 +22,45 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 @Service
 @RequiredArgsConstructor
-public class HomeService {
+public class LobbyHomeService {
 
-	private final HomeMapper homeMapper;
+	private final LobbyHomeMapper lobbyHomeMapper;
+	
+	public BinaryMessage findInstitutionEnrollmentsByInsCode(PacketData packetReqProto, String userId) throws InvalidProtocolBufferException {
+		
+		LobbyHomeEnrollmentRequestListReq lobbyHomeEnrollmentRequestListReq = LobbyHomeEnrollmentRequestListReq.newBuilder().mergeFrom(packetReqProto.getData()).build();
+		InstitutionEnrollmentRequestListParam institutionEnrollmentRequestListParam = InstitutionEnrollmentRequestListParam.builder().ins_code(lobbyHomeEnrollmentRequestListReq.getInsCode()).build();
+		
+		List<InstitutionEnrollmentRequestListDto> institutionEnrollmentRequestListDtos = lobbyHomeMapper.selectInstitutionEnrollmentsByInsCode(institutionEnrollmentRequestListParam);
+		
+		PacketData packetResProto;
+		
+//		if(institutionEnrollmentRequestListDtos institutionEnrollmentRequestListDtos.isEmpty()) {
+//			
+//		}
+		
+		return null;
+	}
+
+	public BinaryMessage modifyInstitutionEnrollmentViewStatus(PacketData packetReqProto, String userId) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	
+	public BinaryMessage findInstitutionEnrollmentRequestorInfo(PacketData packetReqProto, String userId) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public BinaryMessage modifyInstitutionEnrollmentRequestStatus(PacketData packetReqProto, String userId) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 	
 	public BinaryMessage findMyInstitutionByMemId(PacketData packetReqProto, String userId) {
 		
 		log.info("findMyInstitutionByMemId 함수 실행!");
-		List<MyInstitutionListDto> myInstitutionListDtos = homeMapper.selectMyInstitutionByMemId(userId);
+		List<MyInstitutionListDto> myInstitutionListDtos = lobbyHomeMapper.selectMyInstitutionByMemId(userId);
 		
 		PacketData packetResProto;
 		

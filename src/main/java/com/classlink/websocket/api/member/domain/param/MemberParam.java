@@ -10,7 +10,6 @@ public class MemberParam {
 	@Setter
 	@Builder
 	public static class IdentityCreateParam{
-		private int mdt_idx;
 		private String ins_code;
 		private String mem_id;
 		private String identity_type;
@@ -27,18 +26,17 @@ public class MemberParam {
 	@Getter
 	@Setter
 	@Builder
-	public static class IdentityAvatarCreateParam{
-		private int mea_idx;
+	public static class AvatarCreateParam{
 		private String mem_id;
 		private String ins_code;
 		private String identity_type;
-		private String mea_avatar_id;		
+		private int mea_avatar_id;		
 	}
 	
 	@Getter
 	@Setter
 	@Builder
-	public static class IdentityAvatarDetailParam{
+	public static class AvatarDetailParam{
 		private String mem_id;
 		private String ins_code;
 		private String identity_type;	
@@ -47,11 +45,27 @@ public class MemberParam {
 	@Getter
 	@Setter
 	@Builder
-	public static class IdentityAvatarChangeParam{
-		private String mea_avatar_id;
+	public static class AvatarChangeParam{
+		private int mea_avatar_id;
 		private String mem_id;
 		private String ins_code;
 		private String identity_type;	
+	}
+	
+	@Getter
+	@Setter
+	@Builder
+	public static class InstitutionInfoParam{
+		private String ins_code;
+		private String ins_invite_url;	
+	}
+	
+	@Getter
+	@Setter
+	@Builder
+	public static class InstitutionEnrollmentRequestParam{
+		private String ins_code;
+		private String mem_id;
 	}
 
 }

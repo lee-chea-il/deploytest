@@ -43,16 +43,10 @@ public final class IdentityAvatarCreateReqProto {
         getIdentityTypeBytes();
 
     /**
-     * <code>string AvatarId = 3;</code>
+     * <code>int32 AvatarId = 3;</code>
      * @return The avatarId.
      */
-    java.lang.String getAvatarId();
-    /**
-     * <code>string AvatarId = 3;</code>
-     * @return The bytes for avatarId.
-     */
-    com.google.protobuf.ByteString
-        getAvatarIdBytes();
+    int getAvatarId();
   }
   /**
    * Protobuf type {@code Classlink.IdentityAvatarCreateReq}
@@ -69,7 +63,6 @@ public final class IdentityAvatarCreateReqProto {
     private IdentityAvatarCreateReq() {
       insCode_ = "";
       identityType_ = "";
-      avatarId_ = "";
     }
 
     @java.lang.Override
@@ -174,41 +167,14 @@ public final class IdentityAvatarCreateReqProto {
     }
 
     public static final int AVATARID_FIELD_NUMBER = 3;
-    private volatile java.lang.Object avatarId_;
+    private int avatarId_;
     /**
-     * <code>string AvatarId = 3;</code>
+     * <code>int32 AvatarId = 3;</code>
      * @return The avatarId.
      */
     @java.lang.Override
-    public java.lang.String getAvatarId() {
-      java.lang.Object ref = avatarId_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        avatarId_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>string AvatarId = 3;</code>
-     * @return The bytes for avatarId.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getAvatarIdBytes() {
-      java.lang.Object ref = avatarId_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        avatarId_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
+    public int getAvatarId() {
+      return avatarId_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -231,8 +197,8 @@ public final class IdentityAvatarCreateReqProto {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(identityType_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, identityType_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(avatarId_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, avatarId_);
+      if (avatarId_ != 0) {
+        output.writeInt32(3, avatarId_);
       }
       getUnknownFields().writeTo(output);
     }
@@ -249,8 +215,9 @@ public final class IdentityAvatarCreateReqProto {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(identityType_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, identityType_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(avatarId_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, avatarId_);
+      if (avatarId_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(3, avatarId_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -271,8 +238,8 @@ public final class IdentityAvatarCreateReqProto {
           .equals(other.getInsCode())) return false;
       if (!getIdentityType()
           .equals(other.getIdentityType())) return false;
-      if (!getAvatarId()
-          .equals(other.getAvatarId())) return false;
+      if (getAvatarId()
+          != other.getAvatarId()) return false;
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -289,7 +256,7 @@ public final class IdentityAvatarCreateReqProto {
       hash = (37 * hash) + IDENTITYTYPE_FIELD_NUMBER;
       hash = (53 * hash) + getIdentityType().hashCode();
       hash = (37 * hash) + AVATARID_FIELD_NUMBER;
-      hash = (53 * hash) + getAvatarId().hashCode();
+      hash = (53 * hash) + getAvatarId();
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -422,7 +389,7 @@ public final class IdentityAvatarCreateReqProto {
 
         identityType_ = "";
 
-        avatarId_ = "";
+        avatarId_ = 0;
 
         return this;
       }
@@ -509,9 +476,8 @@ public final class IdentityAvatarCreateReqProto {
           identityType_ = other.identityType_;
           onChanged();
         }
-        if (!other.getAvatarId().isEmpty()) {
-          avatarId_ = other.avatarId_;
-          onChanged();
+        if (other.getAvatarId() != 0) {
+          setAvatarId(other.getAvatarId());
         }
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
@@ -549,11 +515,11 @@ public final class IdentityAvatarCreateReqProto {
 
                 break;
               } // case 18
-              case 26: {
-                avatarId_ = input.readStringRequireUtf8();
+              case 24: {
+                avatarId_ = input.readInt32();
 
                 break;
-              } // case 26
+              } // case 24
               default: {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                   done = true; // was an endgroup tag
@@ -722,78 +688,33 @@ public final class IdentityAvatarCreateReqProto {
         return this;
       }
 
-      private java.lang.Object avatarId_ = "";
+      private int avatarId_ ;
       /**
-       * <code>string AvatarId = 3;</code>
+       * <code>int32 AvatarId = 3;</code>
        * @return The avatarId.
        */
-      public java.lang.String getAvatarId() {
-        java.lang.Object ref = avatarId_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          avatarId_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
+      @java.lang.Override
+      public int getAvatarId() {
+        return avatarId_;
       }
       /**
-       * <code>string AvatarId = 3;</code>
-       * @return The bytes for avatarId.
-       */
-      public com.google.protobuf.ByteString
-          getAvatarIdBytes() {
-        java.lang.Object ref = avatarId_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          avatarId_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>string AvatarId = 3;</code>
+       * <code>int32 AvatarId = 3;</code>
        * @param value The avatarId to set.
        * @return This builder for chaining.
        */
-      public Builder setAvatarId(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
+      public Builder setAvatarId(int value) {
+        
         avatarId_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>string AvatarId = 3;</code>
+       * <code>int32 AvatarId = 3;</code>
        * @return This builder for chaining.
        */
       public Builder clearAvatarId() {
         
-        avatarId_ = getDefaultInstance().getAvatarId();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string AvatarId = 3;</code>
-       * @param value The bytes for avatarId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setAvatarIdBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        avatarId_ = value;
+        avatarId_ = 0;
         onChanged();
         return this;
       }
@@ -878,7 +799,7 @@ public final class IdentityAvatarCreateReqProto {
       "\n\035IdentityAvatarCreateReq.proto\022\tClassli" +
       "nk\"R\n\027IdentityAvatarCreateReq\022\017\n\007InsCode" +
       "\030\001 \001(\t\022\024\n\014IdentityType\030\002 \001(\t\022\020\n\010AvatarId" +
-      "\030\003 \001(\tBU\n5com.classlink.websocket.api.me" +
+      "\030\003 \001(\005BU\n5com.classlink.websocket.api.me" +
       "mber.domain.param.protoB\034IdentityAvatarC" +
       "reateReqProtob\006proto3"
     };

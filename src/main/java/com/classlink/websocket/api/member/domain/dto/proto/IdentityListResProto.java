@@ -112,16 +112,10 @@ public final class IdentityListResProto {
           getIdentitytTypeBytes();
 
       /**
-       * <code>string AvartarId = 3;</code>
+       * <code>int32 AvartarId = 3;</code>
        * @return The avartarId.
        */
-      java.lang.String getAvartarId();
-      /**
-       * <code>string AvartarId = 3;</code>
-       * @return The bytes for avartarId.
-       */
-      com.google.protobuf.ByteString
-          getAvartarIdBytes();
+      int getAvartarId();
     }
     /**
      * Protobuf type {@code Classlink.IdentityListRes.Identity}
@@ -138,7 +132,6 @@ public final class IdentityListResProto {
       private Identity() {
         insCode_ = "";
         identitytType_ = "";
-        avartarId_ = "";
       }
 
       @java.lang.Override
@@ -243,41 +236,14 @@ public final class IdentityListResProto {
       }
 
       public static final int AVARTARID_FIELD_NUMBER = 3;
-      private volatile java.lang.Object avartarId_;
+      private int avartarId_;
       /**
-       * <code>string AvartarId = 3;</code>
+       * <code>int32 AvartarId = 3;</code>
        * @return The avartarId.
        */
       @java.lang.Override
-      public java.lang.String getAvartarId() {
-        java.lang.Object ref = avartarId_;
-        if (ref instanceof java.lang.String) {
-          return (java.lang.String) ref;
-        } else {
-          com.google.protobuf.ByteString bs = 
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          avartarId_ = s;
-          return s;
-        }
-      }
-      /**
-       * <code>string AvartarId = 3;</code>
-       * @return The bytes for avartarId.
-       */
-      @java.lang.Override
-      public com.google.protobuf.ByteString
-          getAvartarIdBytes() {
-        java.lang.Object ref = avartarId_;
-        if (ref instanceof java.lang.String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          avartarId_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
+      public int getAvartarId() {
+        return avartarId_;
       }
 
       private byte memoizedIsInitialized = -1;
@@ -300,8 +266,8 @@ public final class IdentityListResProto {
         if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(identitytType_)) {
           com.google.protobuf.GeneratedMessageV3.writeString(output, 2, identitytType_);
         }
-        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(avartarId_)) {
-          com.google.protobuf.GeneratedMessageV3.writeString(output, 3, avartarId_);
+        if (avartarId_ != 0) {
+          output.writeInt32(3, avartarId_);
         }
         getUnknownFields().writeTo(output);
       }
@@ -318,8 +284,9 @@ public final class IdentityListResProto {
         if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(identitytType_)) {
           size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, identitytType_);
         }
-        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(avartarId_)) {
-          size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, avartarId_);
+        if (avartarId_ != 0) {
+          size += com.google.protobuf.CodedOutputStream
+            .computeInt32Size(3, avartarId_);
         }
         size += getUnknownFields().getSerializedSize();
         memoizedSize = size;
@@ -340,8 +307,8 @@ public final class IdentityListResProto {
             .equals(other.getInsCode())) return false;
         if (!getIdentitytType()
             .equals(other.getIdentitytType())) return false;
-        if (!getAvartarId()
-            .equals(other.getAvartarId())) return false;
+        if (getAvartarId()
+            != other.getAvartarId()) return false;
         if (!getUnknownFields().equals(other.getUnknownFields())) return false;
         return true;
       }
@@ -358,7 +325,7 @@ public final class IdentityListResProto {
         hash = (37 * hash) + IDENTITYTTYPE_FIELD_NUMBER;
         hash = (53 * hash) + getIdentitytType().hashCode();
         hash = (37 * hash) + AVARTARID_FIELD_NUMBER;
-        hash = (53 * hash) + getAvartarId().hashCode();
+        hash = (53 * hash) + getAvartarId();
         hash = (29 * hash) + getUnknownFields().hashCode();
         memoizedHashCode = hash;
         return hash;
@@ -491,7 +458,7 @@ public final class IdentityListResProto {
 
           identitytType_ = "";
 
-          avartarId_ = "";
+          avartarId_ = 0;
 
           return this;
         }
@@ -578,9 +545,8 @@ public final class IdentityListResProto {
             identitytType_ = other.identitytType_;
             onChanged();
           }
-          if (!other.getAvartarId().isEmpty()) {
-            avartarId_ = other.avartarId_;
-            onChanged();
+          if (other.getAvartarId() != 0) {
+            setAvartarId(other.getAvartarId());
           }
           this.mergeUnknownFields(other.getUnknownFields());
           onChanged();
@@ -618,11 +584,11 @@ public final class IdentityListResProto {
 
                   break;
                 } // case 18
-                case 26: {
-                  avartarId_ = input.readStringRequireUtf8();
+                case 24: {
+                  avartarId_ = input.readInt32();
 
                   break;
-                } // case 26
+                } // case 24
                 default: {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                     done = true; // was an endgroup tag
@@ -791,78 +757,33 @@ public final class IdentityListResProto {
           return this;
         }
 
-        private java.lang.Object avartarId_ = "";
+        private int avartarId_ ;
         /**
-         * <code>string AvartarId = 3;</code>
+         * <code>int32 AvartarId = 3;</code>
          * @return The avartarId.
          */
-        public java.lang.String getAvartarId() {
-          java.lang.Object ref = avartarId_;
-          if (!(ref instanceof java.lang.String)) {
-            com.google.protobuf.ByteString bs =
-                (com.google.protobuf.ByteString) ref;
-            java.lang.String s = bs.toStringUtf8();
-            avartarId_ = s;
-            return s;
-          } else {
-            return (java.lang.String) ref;
-          }
+        @java.lang.Override
+        public int getAvartarId() {
+          return avartarId_;
         }
         /**
-         * <code>string AvartarId = 3;</code>
-         * @return The bytes for avartarId.
-         */
-        public com.google.protobuf.ByteString
-            getAvartarIdBytes() {
-          java.lang.Object ref = avartarId_;
-          if (ref instanceof String) {
-            com.google.protobuf.ByteString b = 
-                com.google.protobuf.ByteString.copyFromUtf8(
-                    (java.lang.String) ref);
-            avartarId_ = b;
-            return b;
-          } else {
-            return (com.google.protobuf.ByteString) ref;
-          }
-        }
-        /**
-         * <code>string AvartarId = 3;</code>
+         * <code>int32 AvartarId = 3;</code>
          * @param value The avartarId to set.
          * @return This builder for chaining.
          */
-        public Builder setAvartarId(
-            java.lang.String value) {
-          if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        public Builder setAvartarId(int value) {
+          
           avartarId_ = value;
           onChanged();
           return this;
         }
         /**
-         * <code>string AvartarId = 3;</code>
+         * <code>int32 AvartarId = 3;</code>
          * @return This builder for chaining.
          */
         public Builder clearAvartarId() {
           
-          avartarId_ = getDefaultInstance().getAvartarId();
-          onChanged();
-          return this;
-        }
-        /**
-         * <code>string AvartarId = 3;</code>
-         * @param value The bytes for avartarId to set.
-         * @return This builder for chaining.
-         */
-        public Builder setAvartarIdBytes(
-            com.google.protobuf.ByteString value) {
-          if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-          
-          avartarId_ = value;
+          avartarId_ = 0;
           onChanged();
           return this;
         }
@@ -1659,7 +1580,7 @@ public final class IdentityListResProto {
       "dentityListRes\0224\n\007IdtList\030\001 \003(\0132#.Classl" +
       "ink.IdentityListRes.Identity\032E\n\010Identity" +
       "\022\017\n\007InsCode\030\001 \001(\t\022\025\n\rIdentitytType\030\002 \001(\t" +
-      "\022\021\n\tAvartarId\030\003 \001(\tBK\n3com.classlink.web" +
+      "\022\021\n\tAvartarId\030\003 \001(\005BK\n3com.classlink.web" +
       "socket.api.member.domain.dto.protoB\024Iden" +
       "tityListResProtob\006proto3"
     };

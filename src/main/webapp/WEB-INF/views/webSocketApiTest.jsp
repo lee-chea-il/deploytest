@@ -16,6 +16,8 @@
       <option value="102" >아바타 생성</option>
       <option value="103" >아바타 조회</option>
       <option value="104" >아바타 변경</option>
+      <option value="105" >교육기관 조회</option>
+      <option value="106" >교육기관 등록요청</option>
       <option value="201" >소속기관조회</option>
     </select>
     <button id="btnSend" class="btn btn-primary">Send Message</button>
@@ -50,6 +52,12 @@
       const IdentityAvatarChangeReqName = "IdentityAvatarChangeReq";
       const IdentityAvatarChangeResName = "IdentityAvatarChangeRes";
       
+      //교육기관 등록요청
+      const IdentityInstitutionInfoReqName = "IdentityInstitutionInfoReq";
+      const IdentityInstitutionInfoResName = "IdentityInstitutionInfoRes";
+      const IdentityInstitutionEnrollmentRequestReqName = "IdentityInstitutionEnrollmentRequestReq";
+      const IdentityInstitutionEnrollmentRequestResName = "IdentityInstitutionEnrollmentRequestRes";
+      
       //로비
       const MyInstitutionListName = "MyInstitutionList";
 
@@ -68,6 +76,10 @@
         commonPath.concat("/member/response/IdentityAvatarDetailRes.proto"),
         commonPath.concat("/member/request/IdentityAvatarChangeReq.proto"),
 				commonPath.concat("/member/response/IdentityAvatarChangeRes.proto"),
+				commonPath.concat("/member/request/IdentityInstitutionInfoReq.proto"),
+				commonPath.concat("/member/response/IdentityInstitutionInfoRes.proto"),
+				commonPath.concat("/member/request/IdentityInstitutionEnrollmentRequestReq.proto"),
+        commonPath.concat("/member/response/IdentityInstitutionEnrollmentRequestRes.proto"),
 				commonPath.concat("/member/request/SWclassIdentityInfo.proto"),
 				commonPath.concat("/lobby/home/response/SWclassMyInstitutionList.proto"),
 				commonPath.concat("/common/PacketData.proto"),
@@ -102,6 +114,7 @@
 			    	  loadMessage(root, JwtExceptionName, "Classlink.JwtException");
 
 			    	  switch (OpCode) {
+			    	    //신분생성-----------------------------------------------------------------------------------------
                 case 100 :
                   loadMessage(root, IdentityCreateReqName, "Classlink.IdentityCreateReq");
                   loadMessage(root, IdentityCreateResName, "Classlink.IdentityCreateRes");
@@ -113,18 +126,19 @@
                   
                   Data = setDataToSend(root, IdentityCreateReqName, IdentityCreateReqObj);
                   break;
-                  
+                //신분조회-----------------------------------------------------------------------------------------
 			    	  	case 101 :
 			    	  		loadMessage(root, IdentityListReqName, "Classlink.IdentityListReq");
 			    	  		loadMessage(root, IdentityListResName, "Classlink.IdentityListRes");
 			    	  		
+			    	  		
 			    	  		const IdentityListReqObj = {
-                      InsCode : 'testA'
+                      InsCode : ''
                     };
                   
                   Data = setDataToSend(root, IdentityListReqName, IdentityListReqObj);
 			    	  	  break;
-			    	  	  
+			    	  	//아바타생성-----------------------------------------------------------------------------------------
 			    	  	case 102 :
                   loadMessage(root, IdentityAvatarCreateReqName, "Classlink.IdentityAvatarCreateReq");
                   loadMessage(root, IdentityAvatarCreateResName, "Classlink.IdentityAvatarCreateRes");
@@ -137,19 +151,19 @@
                   
                   Data = setDataToSend(root, IdentityAvatarCreateReqName, IdentityAvatarCreateReqObj);
                   break;
-                  
+                //아바타 조회-----------------------------------------------------------------------------------------
 			    	  	case 103 :
                   loadMessage(root, IdentityAvatarDetailReqName, "Classlink.IdentityAvatarDetailReq");
                   loadMessage(root, IdentityAvatarDetailResName, "Classlink.IdentityAvatarDetailRes");
                   
                   const IdentityAvatarDetailReqObj = {
-                      InsCode : 'testA',
+                      //InsCode : 'testA',
                       IdentityType : 'P',
                     };
                   
                   Data = setDataToSend(root, IdentityAvatarDetailReqName, IdentityAvatarDetailReqObj);
                   break;
-                  
+                //아바타 변경-----------------------------------------------------------------------------------------
 			    	  	case 104 :
                   loadMessage(root, IdentityAvatarChangeReqName, "Classlink.IdentityAvatarChangeReq");
                   loadMessage(root, IdentityAvatarChangeResName, "Classlink.IdentityAvatarChangeRes");
@@ -162,7 +176,30 @@
                   
                   Data = setDataToSend(root, IdentityAvatarChangeReqName, IdentityAvatarChangeReqObj);
                   break;
-			    	  	  
+                //-----------------------------------------------------------------------------------------
+                case 105 :
+                  loadMessage(root, IdentityInstitutionInfoReqName, "Classlink.IdentityInstitutionInfoReq");
+                  loadMessage(root, IdentityInstitutionInfoResName, "Classlink.IdentityInstitutionInfoRes");
+                  
+                  const IdentityInstitutionInfoReqObj = {
+                      InsCode : 'testA',
+                      InsInviteUrl : '/img/url'
+                    };
+                  
+                  Data = setDataToSend(root, IdentityInstitutionInfoReqName, IdentityInstitutionInfoReqObj);
+                  break;
+                //-----------------------------------------------------------------------------------------
+                case 106 :
+                  loadMessage(root, IdentityInstitutionEnrollmentRequestReqName, "Classlink.IdentityInstitutionEnrollmentRequestReq");
+                  loadMessage(root, IdentityInstitutionEnrollmentRequestResName, "Classlink.IdentityInstitutionEnrollmentRequestRes");
+                  
+                  const IdentityInstitutionEnrollmentRequestReqObj = {
+                      InsCode : 'testA'
+                    };
+                  
+                  Data = setDataToSend(root, IdentityInstitutionEnrollmentRequestReqName, IdentityInstitutionEnrollmentRequestReqObj);
+                  break;
+                //-----------------------------------------------------------------------------------------  
                 case 201 :
                   loadMessage(root, MyInstitutionListName, "Classlink.SWclassMyInstitutionList");
                   break;
@@ -173,7 +210,7 @@
 			    	  
               const PacketObj = {
                   OpCode : OpCode,
-                  AccessToken : "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2Njk4MDQ2NDEsInVzZXJfbmFtZSI6InRlc3Q3Nzc3IiwianRpIjoiZTVlZWI1OTItOTg0Yy00NTNkLWJjNTEtNzdiZTk5ZTBlOGUwIiwiY2xpZW50X2lkIjoiY2xhc3NsaW5rIiwic2NvcGUiOlsiY2xpZW50Il19.PS41Kpvd6mql1LodkDdWFFM6KfOGjjP76M8vRDwBpXY",
+                  AccessToken : "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2NzAwMzQwNzcsInVzZXJfbmFtZSI6InRlc3Q3Nzc3IiwianRpIjoiMTA0NmMyZTAtNWI5Ni00YzRkLWEzYTItNDg3N2M0NTQyOTkxIiwiY2xpZW50X2lkIjoiY2xhc3NsaW5rIiwic2NvcGUiOlsiY2xpZW50Il19.WsJ679RyHKaIJRV1inHdQHrqzoSB9fLaq8F2Rv3wLUA",
                   InstanceId : '2',
                   Data : Data
                 };
@@ -243,8 +280,18 @@
               break;
               
             case 104:   
-              const receivedIdentityAvatarChangeReqData = window[IdentityAvatarChangeReqName].decode(receivedPacketData.Data);      
-              console.log("receivedIdentityAvatarChangeReqData mmmmmmmmmmmm>>", receivedIdentityAvatarChangeReqData);
+              const receivedIdentityAvatarChangeResData = window[IdentityAvatarChangeResName].decode(receivedPacketData.Data);      
+              console.log("receivedIdentityAvatarChangeResData mmmmmmmmmmmm>>", receivedIdentityAvatarChangeResData);
+              break;
+              
+            case 105:   
+              const receivedIdentityInstitutionInfoResData = window[IdentityInstitutionInfoResName].decode(receivedPacketData.Data);      
+              console.log("receivedIdentityInstitutionInfoResData mmmmmmmmmmmm>>", receivedIdentityInstitutionInfoResData);
+              break;
+              
+            case 106:   
+              const receivedIdentityInstitutionEnrollmentRequestResData = window[IdentityInstitutionEnrollmentRequestResName].decode(receivedPacketData.Data);      
+              console.log("receivedIdentityInstitutionEnrollmentRequestResData mmmmmmmmmmmm>>", receivedIdentityInstitutionEnrollmentRequestResData);
               break;
 	            
             case 201:   

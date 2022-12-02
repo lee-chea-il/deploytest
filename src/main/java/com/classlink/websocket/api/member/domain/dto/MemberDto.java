@@ -25,15 +25,24 @@ public class MemberDto {
 	public static class IdentityListDto {
 		private String ins_code;
 		private String identity_type;
-		private String mea_avatar_id;
+		private int mea_avatar_id;
 	}
 	
 	@Getter
 	@Setter
 	@Builder
-	public static class IdentityAvatarDetailDto {
+	public static class AvatarDetailDto {
 		private String ins_code;
 		private String identity_type;
-		private String mea_avatar_id;
+		private int mea_avatar_id;
+	}
+	
+	@Getter
+	@Setter
+	@Builder
+	public static class InstitutionInfoDto{
+		private String ins_code;
+		private String InsName;	
+		private String InsLogoImg;
 	}
 }

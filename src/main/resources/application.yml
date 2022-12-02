@@ -18,7 +18,6 @@ spring:
   
 mybatis:
   type-aliases-package: com.classlink.websocket.api.domain
-#  type-aliases-package: com.classlink.websocket.api.member.domain, com.classlink.websocket.api.lobby.home.domain
   mapper-locations: classpath:static/mapper/**/*.xml
 
 ---

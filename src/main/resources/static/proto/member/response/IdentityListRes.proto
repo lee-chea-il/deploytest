@@ -9,6 +9,6 @@ message IdentityListRes {
 	message Identity {
 		string InsCode = 1;
 		string  IdentitytType = 2;
-		string AvartarId = 3;
+		int32 AvartarId = 3;
 	}
 }

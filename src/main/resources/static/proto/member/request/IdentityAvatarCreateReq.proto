@@ -6,5 +6,5 @@ option java_outer_classname = "IdentityAvatarCreateReqProto";
 message IdentityAvatarCreateReq {
   string InsCode = 1;
   string IdentityType = 2;
-  string AvatarId = 3;
+  int32 AvatarId = 3;
 }
