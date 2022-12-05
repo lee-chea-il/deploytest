@@ -18,15 +18,15 @@ import com.classlink.websocket.api.member.domain.param.MemberParam.InstitutionIn
 @Mapper
 public interface MemberMapper {
 	
-	List<MemberDto.IdentityListDto> selectMemberIdentitiesByMemberId(IdentityListParam identityListParam);
+	List<MemberDto.IdentityListDto> selectIdentitiesByMemberId(IdentityListParam identityListParam);
 
-	int insertMemberIdentity(IdentityCreateParam IdentityParam);
+	int insertIdentity(IdentityCreateParam IdentityParam);
 
-	int insertMemberAvartar(AvatarCreateParam avatarParam);
+	int insertAvartar(AvatarCreateParam avatarParam);
 
-	AvatarDetailDto selectIdentityAvartarByMemberId(AvatarDetailParam avatarDetailParam);
+	AvatarDetailDto selectAvartarByMemberId(AvatarDetailParam avatarDetailParam);
 
-	int updateIdentityAvartarByMemberId(AvatarChangeParam avatarDetailParam);
+	int updateAvartarByMemberId(AvatarChangeParam avatarDetailParam);
 
 	InstitutionInfoDto selectInstitutionInfoByInsCode(
 			InstitutionInfoParam InstitutionInfoParam);

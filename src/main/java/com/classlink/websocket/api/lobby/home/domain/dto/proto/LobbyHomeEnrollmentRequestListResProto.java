@@ -19,64 +19,28 @@ public final class LobbyHomeEnrollmentRequestListResProto {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>string MemId = 1;</code>
-     * @return The memId.
+     * <code>repeated .Classlink.LobbyHomeEnrollmentRequestListRes.LobbyHomeEnrollmentRequest lobbyHomeEnrollmentRequestList = 1;</code>
      */
-    java.lang.String getMemId();
+    java.util.List<com.classlink.websocket.api.lobby.home.domain.dto.proto.LobbyHomeEnrollmentRequestListResProto.LobbyHomeEnrollmentRequestListRes.LobbyHomeEnrollmentRequest> 
+        getLobbyHomeEnrollmentRequestListList();
     /**
-     * <code>string MemId = 1;</code>
-     * @return The bytes for memId.
+     * <code>repeated .Classlink.LobbyHomeEnrollmentRequestListRes.LobbyHomeEnrollmentRequest lobbyHomeEnrollmentRequestList = 1;</code>
      */
-    com.google.protobuf.ByteString
-        getMemIdBytes();
-
+    com.classlink.websocket.api.lobby.home.domain.dto.proto.LobbyHomeEnrollmentRequestListResProto.LobbyHomeEnrollmentRequestListRes.LobbyHomeEnrollmentRequest getLobbyHomeEnrollmentRequestList(int index);
     /**
-     * <code>string MemImg = 2;</code>
-     * @return The memImg.
+     * <code>repeated .Classlink.LobbyHomeEnrollmentRequestListRes.LobbyHomeEnrollmentRequest lobbyHomeEnrollmentRequestList = 1;</code>
      */
-    java.lang.String getMemImg();
+    int getLobbyHomeEnrollmentRequestListCount();
     /**
-     * <code>string MemImg = 2;</code>
-     * @return The bytes for memImg.
+     * <code>repeated .Classlink.LobbyHomeEnrollmentRequestListRes.LobbyHomeEnrollmentRequest lobbyHomeEnrollmentRequestList = 1;</code>
      */
-    com.google.protobuf.ByteString
-        getMemImgBytes();
-
+    java.util.List<? extends com.classlink.websocket.api.lobby.home.domain.dto.proto.LobbyHomeEnrollmentRequestListResProto.LobbyHomeEnrollmentRequestListRes.LobbyHomeEnrollmentRequestOrBuilder> 
+        getLobbyHomeEnrollmentRequestListOrBuilderList();
     /**
-     * <code>string MemName = 3;</code>
-     * @return The memName.
+     * <code>repeated .Classlink.LobbyHomeEnrollmentRequestListRes.LobbyHomeEnrollmentRequest lobbyHomeEnrollmentRequestList = 1;</code>
      */
-    java.lang.String getMemName();
-    /**
-     * <code>string MemName = 3;</code>
-     * @return The bytes for memName.
-     */
-    com.google.protobuf.ByteString
-        getMemNameBytes();
-
-    /**
-     * <code>string ItmRegistrationDate = 4;</code>
-     * @return The itmRegistrationDate.
-     */
-    java.lang.String getItmRegistrationDate();
-    /**
-     * <code>string ItmRegistrationDate = 4;</code>
-     * @return The bytes for itmRegistrationDate.
-     */
-    com.google.protobuf.ByteString
-        getItmRegistrationDateBytes();
-
-    /**
-     * <code>string ItmViewYn = 5;</code>
-     * @return The itmViewYn.
-     */
-    java.lang.String getItmViewYn();
-    /**
-     * <code>string ItmViewYn = 5;</code>
-     * @return The bytes for itmViewYn.
-     */
-    com.google.protobuf.ByteString
-        getItmViewYnBytes();
+    com.classlink.websocket.api.lobby.home.domain.dto.proto.LobbyHomeEnrollmentRequestListResProto.LobbyHomeEnrollmentRequestListRes.LobbyHomeEnrollmentRequestOrBuilder getLobbyHomeEnrollmentRequestListOrBuilder(
+        int index);
   }
   /**
    * Protobuf type {@code Classlink.LobbyHomeEnrollmentRequestListRes}
@@ -91,11 +55,7 @@ public final class LobbyHomeEnrollmentRequestListResProto {
       super(builder);
     }
     private LobbyHomeEnrollmentRequestListRes() {
-      memId_ = "";
-      memImg_ = "";
-      memName_ = "";
-      itmRegistrationDate_ = "";
-      itmViewYn_ = "";
+      lobbyHomeEnrollmentRequestList_ = java.util.Collections.emptyList();
     }
 
     @java.lang.Override
@@ -123,194 +83,1189 @@ public final class LobbyHomeEnrollmentRequestListResProto {
               com.classlink.websocket.api.lobby.home.domain.dto.proto.LobbyHomeEnrollmentRequestListResProto.LobbyHomeEnrollmentRequestListRes.class, com.classlink.websocket.api.lobby.home.domain.dto.proto.LobbyHomeEnrollmentRequestListResProto.LobbyHomeEnrollmentRequestListRes.Builder.class);
     }
 
-    public static final int MEMID_FIELD_NUMBER = 1;
-    private volatile java.lang.Object memId_;
-    /**
-     * <code>string MemId = 1;</code>
-     * @return The memId.
-     */
-    @java.lang.Override
-    public java.lang.String getMemId() {
-      java.lang.Object ref = memId_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        memId_ = s;
-        return s;
-      }
+    public interface LobbyHomeEnrollmentRequestOrBuilder extends
+        // @@protoc_insertion_point(interface_extends:Classlink.LobbyHomeEnrollmentRequestListRes.LobbyHomeEnrollmentRequest)
+        com.google.protobuf.MessageOrBuilder {
+
+      /**
+       * <code>string MemId = 1;</code>
+       * @return The memId.
+       */
+      java.lang.String getMemId();
+      /**
+       * <code>string MemId = 1;</code>
+       * @return The bytes for memId.
+       */
+      com.google.protobuf.ByteString
+          getMemIdBytes();
+
+      /**
+       * <code>string MemImg = 2;</code>
+       * @return The memImg.
+       */
+      java.lang.String getMemImg();
+      /**
+       * <code>string MemImg = 2;</code>
+       * @return The bytes for memImg.
+       */
+      com.google.protobuf.ByteString
+          getMemImgBytes();
+
+      /**
+       * <code>string MemName = 3;</code>
+       * @return The memName.
+       */
+      java.lang.String getMemName();
+      /**
+       * <code>string MemName = 3;</code>
+       * @return The bytes for memName.
+       */
+      com.google.protobuf.ByteString
+          getMemNameBytes();
+
+      /**
+       * <code>string ItmRegistrationDate = 4;</code>
+       * @return The itmRegistrationDate.
+       */
+      java.lang.String getItmRegistrationDate();
+      /**
+       * <code>string ItmRegistrationDate = 4;</code>
+       * @return The bytes for itmRegistrationDate.
+       */
+      com.google.protobuf.ByteString
+          getItmRegistrationDateBytes();
+
+      /**
+       * <code>string ItmViewYn = 5;</code>
+       * @return The itmViewYn.
+       */
+      java.lang.String getItmViewYn();
+      /**
+       * <code>string ItmViewYn = 5;</code>
+       * @return The bytes for itmViewYn.
+       */
+      com.google.protobuf.ByteString
+          getItmViewYnBytes();
     }
     /**
-     * <code>string MemId = 1;</code>
-     * @return The bytes for memId.
+     * Protobuf type {@code Classlink.LobbyHomeEnrollmentRequestListRes.LobbyHomeEnrollmentRequest}
      */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getMemIdBytes() {
-      java.lang.Object ref = memId_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        memId_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
+    public static final class LobbyHomeEnrollmentRequest extends
+        com.google.protobuf.GeneratedMessageV3 implements
+        // @@protoc_insertion_point(message_implements:Classlink.LobbyHomeEnrollmentRequestListRes.LobbyHomeEnrollmentRequest)
+        LobbyHomeEnrollmentRequestOrBuilder {
+    private static final long serialVersionUID = 0L;
+      // Use LobbyHomeEnrollmentRequest.newBuilder() to construct.
+      private LobbyHomeEnrollmentRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+        super(builder);
       }
+      private LobbyHomeEnrollmentRequest() {
+        memId_ = "";
+        memImg_ = "";
+        memName_ = "";
+        itmRegistrationDate_ = "";
+        itmViewYn_ = "";
+      }
+
+      @java.lang.Override
+      @SuppressWarnings({"unused"})
+      protected java.lang.Object newInstance(
+          UnusedPrivateParameter unused) {
+        return new LobbyHomeEnrollmentRequest();
+      }
+
+      @java.lang.Override
+      public final com.google.protobuf.UnknownFieldSet
+      getUnknownFields() {
+        return this.unknownFields;
+      }
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.classlink.websocket.api.lobby.home.domain.dto.proto.LobbyHomeEnrollmentRequestListResProto.internal_static_Classlink_LobbyHomeEnrollmentRequestListRes_LobbyHomeEnrollmentRequest_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.classlink.websocket.api.lobby.home.domain.dto.proto.LobbyHomeEnrollmentRequestListResProto.internal_static_Classlink_LobbyHomeEnrollmentRequestListRes_LobbyHomeEnrollmentRequest_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.classlink.websocket.api.lobby.home.domain.dto.proto.LobbyHomeEnrollmentRequestListResProto.LobbyHomeEnrollmentRequestListRes.LobbyHomeEnrollmentRequest.class, com.classlink.websocket.api.lobby.home.domain.dto.proto.LobbyHomeEnrollmentRequestListResProto.LobbyHomeEnrollmentRequestListRes.LobbyHomeEnrollmentRequest.Builder.class);
+      }
+
+      public static final int MEMID_FIELD_NUMBER = 1;
+      private volatile java.lang.Object memId_;
+      /**
+       * <code>string MemId = 1;</code>
+       * @return The memId.
+       */
+      @java.lang.Override
+      public java.lang.String getMemId() {
+        java.lang.Object ref = memId_;
+        if (ref instanceof java.lang.String) {
+          return (java.lang.String) ref;
+        } else {
+          com.google.protobuf.ByteString bs = 
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          memId_ = s;
+          return s;
+        }
+      }
+      /**
+       * <code>string MemId = 1;</code>
+       * @return The bytes for memId.
+       */
+      @java.lang.Override
+      public com.google.protobuf.ByteString
+          getMemIdBytes() {
+        java.lang.Object ref = memId_;
+        if (ref instanceof java.lang.String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          memId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      public static final int MEMIMG_FIELD_NUMBER = 2;
+      private volatile java.lang.Object memImg_;
+      /**
+       * <code>string MemImg = 2;</code>
+       * @return The memImg.
+       */
+      @java.lang.Override
+      public java.lang.String getMemImg() {
+        java.lang.Object ref = memImg_;
+        if (ref instanceof java.lang.String) {
+          return (java.lang.String) ref;
+        } else {
+          com.google.protobuf.ByteString bs = 
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          memImg_ = s;
+          return s;
+        }
+      }
+      /**
+       * <code>string MemImg = 2;</code>
+       * @return The bytes for memImg.
+       */
+      @java.lang.Override
+      public com.google.protobuf.ByteString
+          getMemImgBytes() {
+        java.lang.Object ref = memImg_;
+        if (ref instanceof java.lang.String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          memImg_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      public static final int MEMNAME_FIELD_NUMBER = 3;
+      private volatile java.lang.Object memName_;
+      /**
+       * <code>string MemName = 3;</code>
+       * @return The memName.
+       */
+      @java.lang.Override
+      public java.lang.String getMemName() {
+        java.lang.Object ref = memName_;
+        if (ref instanceof java.lang.String) {
+          return (java.lang.String) ref;
+        } else {
+          com.google.protobuf.ByteString bs = 
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          memName_ = s;
+          return s;
+        }
+      }
+      /**
+       * <code>string MemName = 3;</code>
+       * @return The bytes for memName.
+       */
+      @java.lang.Override
+      public com.google.protobuf.ByteString
+          getMemNameBytes() {
+        java.lang.Object ref = memName_;
+        if (ref instanceof java.lang.String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          memName_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      public static final int ITMREGISTRATIONDATE_FIELD_NUMBER = 4;
+      private volatile java.lang.Object itmRegistrationDate_;
+      /**
+       * <code>string ItmRegistrationDate = 4;</code>
+       * @return The itmRegistrationDate.
+       */
+      @java.lang.Override
+      public java.lang.String getItmRegistrationDate() {
+        java.lang.Object ref = itmRegistrationDate_;
+        if (ref instanceof java.lang.String) {
+          return (java.lang.String) ref;
+        } else {
+          com.google.protobuf.ByteString bs = 
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          itmRegistrationDate_ = s;
+          return s;
+        }
+      }
+      /**
+       * <code>string ItmRegistrationDate = 4;</code>
+       * @return The bytes for itmRegistrationDate.
+       */
+      @java.lang.Override
+      public com.google.protobuf.ByteString
+          getItmRegistrationDateBytes() {
+        java.lang.Object ref = itmRegistrationDate_;
+        if (ref instanceof java.lang.String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          itmRegistrationDate_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      public static final int ITMVIEWYN_FIELD_NUMBER = 5;
+      private volatile java.lang.Object itmViewYn_;
+      /**
+       * <code>string ItmViewYn = 5;</code>
+       * @return The itmViewYn.
+       */
+      @java.lang.Override
+      public java.lang.String getItmViewYn() {
+        java.lang.Object ref = itmViewYn_;
+        if (ref instanceof java.lang.String) {
+          return (java.lang.String) ref;
+        } else {
+          com.google.protobuf.ByteString bs = 
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          itmViewYn_ = s;
+          return s;
+        }
+      }
+      /**
+       * <code>string ItmViewYn = 5;</code>
+       * @return The bytes for itmViewYn.
+       */
+      @java.lang.Override
+      public com.google.protobuf.ByteString
+          getItmViewYnBytes() {
+        java.lang.Object ref = itmViewYn_;
+        if (ref instanceof java.lang.String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          itmViewYn_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      private byte memoizedIsInitialized = -1;
+      @java.lang.Override
+      public final boolean isInitialized() {
+        byte isInitialized = memoizedIsInitialized;
+        if (isInitialized == 1) return true;
+        if (isInitialized == 0) return false;
+
+        memoizedIsInitialized = 1;
+        return true;
+      }
+
+      @java.lang.Override
+      public void writeTo(com.google.protobuf.CodedOutputStream output)
+                          throws java.io.IOException {
+        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(memId_)) {
+          com.google.protobuf.GeneratedMessageV3.writeString(output, 1, memId_);
+        }
+        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(memImg_)) {
+          com.google.protobuf.GeneratedMessageV3.writeString(output, 2, memImg_);
+        }
+        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(memName_)) {
+          com.google.protobuf.GeneratedMessageV3.writeString(output, 3, memName_);
+        }
+        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(itmRegistrationDate_)) {
+          com.google.protobuf.GeneratedMessageV3.writeString(output, 4, itmRegistrationDate_);
+        }
+        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(itmViewYn_)) {
+          com.google.protobuf.GeneratedMessageV3.writeString(output, 5, itmViewYn_);
+        }
+        getUnknownFields().writeTo(output);
+      }
+
+      @java.lang.Override
+      public int getSerializedSize() {
+        int size = memoizedSize;
+        if (size != -1) return size;
+
+        size = 0;
+        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(memId_)) {
+          size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, memId_);
+        }
+        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(memImg_)) {
+          size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, memImg_);
+        }
+        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(memName_)) {
+          size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, memName_);
+        }
+        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(itmRegistrationDate_)) {
+          size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, itmRegistrationDate_);
+        }
+        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(itmViewYn_)) {
+          size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, itmViewYn_);
+        }
+        size += getUnknownFields().getSerializedSize();
+        memoizedSize = size;
+        return size;
+      }
+
+      @java.lang.Override
+      public boolean equals(final java.lang.Object obj) {
+        if (obj == this) {
+         return true;
+        }
+        if (!(obj instanceof com.classlink.websocket.api.lobby.home.domain.dto.proto.LobbyHomeEnrollmentRequestListResProto.LobbyHomeEnrollmentRequestListRes.LobbyHomeEnrollmentRequest)) {
+          return super.equals(obj);
+        }
+        com.classlink.websocket.api.lobby.home.domain.dto.proto.LobbyHomeEnrollmentRequestListResProto.LobbyHomeEnrollmentRequestListRes.LobbyHomeEnrollmentRequest other = (com.classlink.websocket.api.lobby.home.domain.dto.proto.LobbyHomeEnrollmentRequestListResProto.LobbyHomeEnrollmentRequestListRes.LobbyHomeEnrollmentRequest) obj;
+
+        if (!getMemId()
+            .equals(other.getMemId())) return false;
+        if (!getMemImg()
+            .equals(other.getMemImg())) return false;
+        if (!getMemName()
+            .equals(other.getMemName())) return false;
+        if (!getItmRegistrationDate()
+            .equals(other.getItmRegistrationDate())) return false;
+        if (!getItmViewYn()
+            .equals(other.getItmViewYn())) return false;
+        if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+        return true;
+      }
+
+      @java.lang.Override
+      public int hashCode() {
+        if (memoizedHashCode != 0) {
+          return memoizedHashCode;
+        }
+        int hash = 41;
+        hash = (19 * hash) + getDescriptor().hashCode();
+        hash = (37 * hash) + MEMID_FIELD_NUMBER;
+        hash = (53 * hash) + getMemId().hashCode();
+        hash = (37 * hash) + MEMIMG_FIELD_NUMBER;
+        hash = (53 * hash) + getMemImg().hashCode();
+        hash = (37 * hash) + MEMNAME_FIELD_NUMBER;
+        hash = (53 * hash) + getMemName().hashCode();
+        hash = (37 * hash) + ITMREGISTRATIONDATE_FIELD_NUMBER;
+        hash = (53 * hash) + getItmRegistrationDate().hashCode();
+        hash = (37 * hash) + ITMVIEWYN_FIELD_NUMBER;
+        hash = (53 * hash) + getItmViewYn().hashCode();
+        hash = (29 * hash) + getUnknownFields().hashCode();
+        memoizedHashCode = hash;
+        return hash;
+      }
+
+      public static com.classlink.websocket.api.lobby.home.domain.dto.proto.LobbyHomeEnrollmentRequestListResProto.LobbyHomeEnrollmentRequestListRes.LobbyHomeEnrollmentRequest parseFrom(
+          java.nio.ByteBuffer data)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+      public static com.classlink.websocket.api.lobby.home.domain.dto.proto.LobbyHomeEnrollmentRequestListResProto.LobbyHomeEnrollmentRequestListRes.LobbyHomeEnrollmentRequest parseFrom(
+          java.nio.ByteBuffer data,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+      public static com.classlink.websocket.api.lobby.home.domain.dto.proto.LobbyHomeEnrollmentRequestListResProto.LobbyHomeEnrollmentRequestListRes.LobbyHomeEnrollmentRequest parseFrom(
+          com.google.protobuf.ByteString data)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+      public static com.classlink.websocket.api.lobby.home.domain.dto.proto.LobbyHomeEnrollmentRequestListResProto.LobbyHomeEnrollmentRequestListRes.LobbyHomeEnrollmentRequest parseFrom(
+          com.google.protobuf.ByteString data,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+      public static com.classlink.websocket.api.lobby.home.domain.dto.proto.LobbyHomeEnrollmentRequestListResProto.LobbyHomeEnrollmentRequestListRes.LobbyHomeEnrollmentRequest parseFrom(byte[] data)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+      public static com.classlink.websocket.api.lobby.home.domain.dto.proto.LobbyHomeEnrollmentRequestListResProto.LobbyHomeEnrollmentRequestListRes.LobbyHomeEnrollmentRequest parseFrom(
+          byte[] data,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+      public static com.classlink.websocket.api.lobby.home.domain.dto.proto.LobbyHomeEnrollmentRequestListResProto.LobbyHomeEnrollmentRequestListRes.LobbyHomeEnrollmentRequest parseFrom(java.io.InputStream input)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseWithIOException(PARSER, input);
+      }
+      public static com.classlink.websocket.api.lobby.home.domain.dto.proto.LobbyHomeEnrollmentRequestListResProto.LobbyHomeEnrollmentRequestListRes.LobbyHomeEnrollmentRequest parseFrom(
+          java.io.InputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseWithIOException(PARSER, input, extensionRegistry);
+      }
+      public static com.classlink.websocket.api.lobby.home.domain.dto.proto.LobbyHomeEnrollmentRequestListResProto.LobbyHomeEnrollmentRequestListRes.LobbyHomeEnrollmentRequest parseDelimitedFrom(java.io.InputStream input)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseDelimitedWithIOException(PARSER, input);
+      }
+      public static com.classlink.websocket.api.lobby.home.domain.dto.proto.LobbyHomeEnrollmentRequestListResProto.LobbyHomeEnrollmentRequestListRes.LobbyHomeEnrollmentRequest parseDelimitedFrom(
+          java.io.InputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+      }
+      public static com.classlink.websocket.api.lobby.home.domain.dto.proto.LobbyHomeEnrollmentRequestListResProto.LobbyHomeEnrollmentRequestListRes.LobbyHomeEnrollmentRequest parseFrom(
+          com.google.protobuf.CodedInputStream input)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseWithIOException(PARSER, input);
+      }
+      public static com.classlink.websocket.api.lobby.home.domain.dto.proto.LobbyHomeEnrollmentRequestListResProto.LobbyHomeEnrollmentRequestListRes.LobbyHomeEnrollmentRequest parseFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseWithIOException(PARSER, input, extensionRegistry);
+      }
+
+      @java.lang.Override
+      public Builder newBuilderForType() { return newBuilder(); }
+      public static Builder newBuilder() {
+        return DEFAULT_INSTANCE.toBuilder();
+      }
+      public static Builder newBuilder(com.classlink.websocket.api.lobby.home.domain.dto.proto.LobbyHomeEnrollmentRequestListResProto.LobbyHomeEnrollmentRequestListRes.LobbyHomeEnrollmentRequest prototype) {
+        return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+      }
+      @java.lang.Override
+      public Builder toBuilder() {
+        return this == DEFAULT_INSTANCE
+            ? new Builder() : new Builder().mergeFrom(this);
+      }
+
+      @java.lang.Override
+      protected Builder newBuilderForType(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        Builder builder = new Builder(parent);
+        return builder;
+      }
+      /**
+       * Protobuf type {@code Classlink.LobbyHomeEnrollmentRequestListRes.LobbyHomeEnrollmentRequest}
+       */
+      public static final class Builder extends
+          com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+          // @@protoc_insertion_point(builder_implements:Classlink.LobbyHomeEnrollmentRequestListRes.LobbyHomeEnrollmentRequest)
+          com.classlink.websocket.api.lobby.home.domain.dto.proto.LobbyHomeEnrollmentRequestListResProto.LobbyHomeEnrollmentRequestListRes.LobbyHomeEnrollmentRequestOrBuilder {
+        public static final com.google.protobuf.Descriptors.Descriptor
+            getDescriptor() {
+          return com.classlink.websocket.api.lobby.home.domain.dto.proto.LobbyHomeEnrollmentRequestListResProto.internal_static_Classlink_LobbyHomeEnrollmentRequestListRes_LobbyHomeEnrollmentRequest_descriptor;
+        }
+
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+          return com.classlink.websocket.api.lobby.home.domain.dto.proto.LobbyHomeEnrollmentRequestListResProto.internal_static_Classlink_LobbyHomeEnrollmentRequestListRes_LobbyHomeEnrollmentRequest_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  com.classlink.websocket.api.lobby.home.domain.dto.proto.LobbyHomeEnrollmentRequestListResProto.LobbyHomeEnrollmentRequestListRes.LobbyHomeEnrollmentRequest.class, com.classlink.websocket.api.lobby.home.domain.dto.proto.LobbyHomeEnrollmentRequestListResProto.LobbyHomeEnrollmentRequestListRes.LobbyHomeEnrollmentRequest.Builder.class);
+        }
+
+        // Construct using com.classlink.websocket.api.lobby.home.domain.dto.proto.LobbyHomeEnrollmentRequestListResProto.LobbyHomeEnrollmentRequestListRes.LobbyHomeEnrollmentRequest.newBuilder()
+        private Builder() {
+
+        }
+
+        private Builder(
+            com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+          super(parent);
+
+        }
+        @java.lang.Override
+        public Builder clear() {
+          super.clear();
+          memId_ = "";
+
+          memImg_ = "";
+
+          memName_ = "";
+
+          itmRegistrationDate_ = "";
+
+          itmViewYn_ = "";
+
+          return this;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Descriptors.Descriptor
+            getDescriptorForType() {
+          return com.classlink.websocket.api.lobby.home.domain.dto.proto.LobbyHomeEnrollmentRequestListResProto.internal_static_Classlink_LobbyHomeEnrollmentRequestListRes_LobbyHomeEnrollmentRequest_descriptor;
+        }
+
+        @java.lang.Override
+        public com.classlink.websocket.api.lobby.home.domain.dto.proto.LobbyHomeEnrollmentRequestListResProto.LobbyHomeEnrollmentRequestListRes.LobbyHomeEnrollmentRequest getDefaultInstanceForType() {
+          return com.classlink.websocket.api.lobby.home.domain.dto.proto.LobbyHomeEnrollmentRequestListResProto.LobbyHomeEnrollmentRequestListRes.LobbyHomeEnrollmentRequest.getDefaultInstance();
+        }
+
+        @java.lang.Override
+        public com.classlink.websocket.api.lobby.home.domain.dto.proto.LobbyHomeEnrollmentRequestListResProto.LobbyHomeEnrollmentRequestListRes.LobbyHomeEnrollmentRequest build() {
+          com.classlink.websocket.api.lobby.home.domain.dto.proto.LobbyHomeEnrollmentRequestListResProto.LobbyHomeEnrollmentRequestListRes.LobbyHomeEnrollmentRequest result = buildPartial();
+          if (!result.isInitialized()) {
+            throw newUninitializedMessageException(result);
+          }
+          return result;
+        }
+
+        @java.lang.Override
+        public com.classlink.websocket.api.lobby.home.domain.dto.proto.LobbyHomeEnrollmentRequestListResProto.LobbyHomeEnrollmentRequestListRes.LobbyHomeEnrollmentRequest buildPartial() {
+          com.classlink.websocket.api.lobby.home.domain.dto.proto.LobbyHomeEnrollmentRequestListResProto.LobbyHomeEnrollmentRequestListRes.LobbyHomeEnrollmentRequest result = new com.classlink.websocket.api.lobby.home.domain.dto.proto.LobbyHomeEnrollmentRequestListResProto.LobbyHomeEnrollmentRequestListRes.LobbyHomeEnrollmentRequest(this);
+          result.memId_ = memId_;
+          result.memImg_ = memImg_;
+          result.memName_ = memName_;
+          result.itmRegistrationDate_ = itmRegistrationDate_;
+          result.itmViewYn_ = itmViewYn_;
+          onBuilt();
+          return result;
+        }
+
+        @java.lang.Override
+        public Builder clone() {
+          return super.clone();
+        }
+        @java.lang.Override
+        public Builder setField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            java.lang.Object value) {
+          return super.setField(field, value);
+        }
+        @java.lang.Override
+        public Builder clearField(
+            com.google.protobuf.Descriptors.FieldDescriptor field) {
+          return super.clearField(field);
+        }
+        @java.lang.Override
+        public Builder clearOneof(
+            com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+          return super.clearOneof(oneof);
+        }
+        @java.lang.Override
+        public Builder setRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            int index, java.lang.Object value) {
+          return super.setRepeatedField(field, index, value);
+        }
+        @java.lang.Override
+        public Builder addRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            java.lang.Object value) {
+          return super.addRepeatedField(field, value);
+        }
+        @java.lang.Override
+        public Builder mergeFrom(com.google.protobuf.Message other) {
+          if (other instanceof com.classlink.websocket.api.lobby.home.domain.dto.proto.LobbyHomeEnrollmentRequestListResProto.LobbyHomeEnrollmentRequestListRes.LobbyHomeEnrollmentRequest) {
+            return mergeFrom((com.classlink.websocket.api.lobby.home.domain.dto.proto.LobbyHomeEnrollmentRequestListResProto.LobbyHomeEnrollmentRequestListRes.LobbyHomeEnrollmentRequest)other);
+          } else {
+            super.mergeFrom(other);
+            return this;
+          }
+        }
+
+        public Builder mergeFrom(com.classlink.websocket.api.lobby.home.domain.dto.proto.LobbyHomeEnrollmentRequestListResProto.LobbyHomeEnrollmentRequestListRes.LobbyHomeEnrollmentRequest other) {
+          if (other == com.classlink.websocket.api.lobby.home.domain.dto.proto.LobbyHomeEnrollmentRequestListResProto.LobbyHomeEnrollmentRequestListRes.LobbyHomeEnrollmentRequest.getDefaultInstance()) return this;
+          if (!other.getMemId().isEmpty()) {
+            memId_ = other.memId_;
+            onChanged();
+          }
+          if (!other.getMemImg().isEmpty()) {
+            memImg_ = other.memImg_;
+            onChanged();
+          }
+          if (!other.getMemName().isEmpty()) {
+            memName_ = other.memName_;
+            onChanged();
+          }
+          if (!other.getItmRegistrationDate().isEmpty()) {
+            itmRegistrationDate_ = other.itmRegistrationDate_;
+            onChanged();
+          }
+          if (!other.getItmViewYn().isEmpty()) {
+            itmViewYn_ = other.itmViewYn_;
+            onChanged();
+          }
+          this.mergeUnknownFields(other.getUnknownFields());
+          onChanged();
+          return this;
+        }
+
+        @java.lang.Override
+        public final boolean isInitialized() {
+          return true;
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+          if (extensionRegistry == null) {
+            throw new java.lang.NullPointerException();
+          }
+          try {
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                case 10: {
+                  memId_ = input.readStringRequireUtf8();
+
+                  break;
+                } // case 10
+                case 18: {
+                  memImg_ = input.readStringRequireUtf8();
+
+                  break;
+                } // case 18
+                case 26: {
+                  memName_ = input.readStringRequireUtf8();
+
+                  break;
+                } // case 26
+                case 34: {
+                  itmRegistrationDate_ = input.readStringRequireUtf8();
+
+                  break;
+                } // case 34
+                case 42: {
+                  itmViewYn_ = input.readStringRequireUtf8();
+
+                  break;
+                } // case 42
+                default: {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+              } // switch (tag)
+            } // while (!done)
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.unwrapIOException();
+          } finally {
+            onChanged();
+          } // finally
+          return this;
+        }
+
+        private java.lang.Object memId_ = "";
+        /**
+         * <code>string MemId = 1;</code>
+         * @return The memId.
+         */
+        public java.lang.String getMemId() {
+          java.lang.Object ref = memId_;
+          if (!(ref instanceof java.lang.String)) {
+            com.google.protobuf.ByteString bs =
+                (com.google.protobuf.ByteString) ref;
+            java.lang.String s = bs.toStringUtf8();
+            memId_ = s;
+            return s;
+          } else {
+            return (java.lang.String) ref;
+          }
+        }
+        /**
+         * <code>string MemId = 1;</code>
+         * @return The bytes for memId.
+         */
+        public com.google.protobuf.ByteString
+            getMemIdBytes() {
+          java.lang.Object ref = memId_;
+          if (ref instanceof String) {
+            com.google.protobuf.ByteString b = 
+                com.google.protobuf.ByteString.copyFromUtf8(
+                    (java.lang.String) ref);
+            memId_ = b;
+            return b;
+          } else {
+            return (com.google.protobuf.ByteString) ref;
+          }
+        }
+        /**
+         * <code>string MemId = 1;</code>
+         * @param value The memId to set.
+         * @return This builder for chaining.
+         */
+        public Builder setMemId(
+            java.lang.String value) {
+          if (value == null) {
+    throw new NullPointerException();
+  }
+  
+          memId_ = value;
+          onChanged();
+          return this;
+        }
+        /**
+         * <code>string MemId = 1;</code>
+         * @return This builder for chaining.
+         */
+        public Builder clearMemId() {
+          
+          memId_ = getDefaultInstance().getMemId();
+          onChanged();
+          return this;
+        }
+        /**
+         * <code>string MemId = 1;</code>
+         * @param value The bytes for memId to set.
+         * @return This builder for chaining.
+         */
+        public Builder setMemIdBytes(
+            com.google.protobuf.ByteString value) {
+          if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+          
+          memId_ = value;
+          onChanged();
+          return this;
+        }
+
+        private java.lang.Object memImg_ = "";
+        /**
+         * <code>string MemImg = 2;</code>
+         * @return The memImg.
+         */
+        public java.lang.String getMemImg() {
+          java.lang.Object ref = memImg_;
+          if (!(ref instanceof java.lang.String)) {
+            com.google.protobuf.ByteString bs =
+                (com.google.protobuf.ByteString) ref;
+            java.lang.String s = bs.toStringUtf8();
+            memImg_ = s;
+            return s;
+          } else {
+            return (java.lang.String) ref;
+          }
+        }
+        /**
+         * <code>string MemImg = 2;</code>
+         * @return The bytes for memImg.
+         */
+        public com.google.protobuf.ByteString
+            getMemImgBytes() {
+          java.lang.Object ref = memImg_;
+          if (ref instanceof String) {
+            com.google.protobuf.ByteString b = 
+                com.google.protobuf.ByteString.copyFromUtf8(
+                    (java.lang.String) ref);
+            memImg_ = b;
+            return b;
+          } else {
+            return (com.google.protobuf.ByteString) ref;
+          }
+        }
+        /**
+         * <code>string MemImg = 2;</code>
+         * @param value The memImg to set.
+         * @return This builder for chaining.
+         */
+        public Builder setMemImg(
+            java.lang.String value) {
+          if (value == null) {
+    throw new NullPointerException();
+  }
+  
+          memImg_ = value;
+          onChanged();
+          return this;
+        }
+        /**
+         * <code>string MemImg = 2;</code>
+         * @return This builder for chaining.
+         */
+        public Builder clearMemImg() {
+          
+          memImg_ = getDefaultInstance().getMemImg();
+          onChanged();
+          return this;
+        }
+        /**
+         * <code>string MemImg = 2;</code>
+         * @param value The bytes for memImg to set.
+         * @return This builder for chaining.
+         */
+        public Builder setMemImgBytes(
+            com.google.protobuf.ByteString value) {
+          if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+          
+          memImg_ = value;
+          onChanged();
+          return this;
+        }
+
+        private java.lang.Object memName_ = "";
+        /**
+         * <code>string MemName = 3;</code>
+         * @return The memName.
+         */
+        public java.lang.String getMemName() {
+          java.lang.Object ref = memName_;
+          if (!(ref instanceof java.lang.String)) {
+            com.google.protobuf.ByteString bs =
+                (com.google.protobuf.ByteString) ref;
+            java.lang.String s = bs.toStringUtf8();
+            memName_ = s;
+            return s;
+          } else {
+            return (java.lang.String) ref;
+          }
+        }
+        /**
+         * <code>string MemName = 3;</code>
+         * @return The bytes for memName.
+         */
+        public com.google.protobuf.ByteString
+            getMemNameBytes() {
+          java.lang.Object ref = memName_;
+          if (ref instanceof String) {
+            com.google.protobuf.ByteString b = 
+                com.google.protobuf.ByteString.copyFromUtf8(
+                    (java.lang.String) ref);
+            memName_ = b;
+            return b;
+          } else {
+            return (com.google.protobuf.ByteString) ref;
+          }
+        }
+        /**
+         * <code>string MemName = 3;</code>
+         * @param value The memName to set.
+         * @return This builder for chaining.
+         */
+        public Builder setMemName(
+            java.lang.String value) {
+          if (value == null) {
+    throw new NullPointerException();
+  }
+  
+          memName_ = value;
+          onChanged();
+          return this;
+        }
+        /**
+         * <code>string MemName = 3;</code>
+         * @return This builder for chaining.
+         */
+        public Builder clearMemName() {
+          
+          memName_ = getDefaultInstance().getMemName();
+          onChanged();
+          return this;
+        }
+        /**
+         * <code>string MemName = 3;</code>
+         * @param value The bytes for memName to set.
+         * @return This builder for chaining.
+         */
+        public Builder setMemNameBytes(
+            com.google.protobuf.ByteString value) {
+          if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+          
+          memName_ = value;
+          onChanged();
+          return this;
+        }
+
+        private java.lang.Object itmRegistrationDate_ = "";
+        /**
+         * <code>string ItmRegistrationDate = 4;</code>
+         * @return The itmRegistrationDate.
+         */
+        public java.lang.String getItmRegistrationDate() {
+          java.lang.Object ref = itmRegistrationDate_;
+          if (!(ref instanceof java.lang.String)) {
+            com.google.protobuf.ByteString bs =
+                (com.google.protobuf.ByteString) ref;
+            java.lang.String s = bs.toStringUtf8();
+            itmRegistrationDate_ = s;
+            return s;
+          } else {
+            return (java.lang.String) ref;
+          }
+        }
+        /**
+         * <code>string ItmRegistrationDate = 4;</code>
+         * @return The bytes for itmRegistrationDate.
+         */
+        public com.google.protobuf.ByteString
+            getItmRegistrationDateBytes() {
+          java.lang.Object ref = itmRegistrationDate_;
+          if (ref instanceof String) {
+            com.google.protobuf.ByteString b = 
+                com.google.protobuf.ByteString.copyFromUtf8(
+                    (java.lang.String) ref);
+            itmRegistrationDate_ = b;
+            return b;
+          } else {
+            return (com.google.protobuf.ByteString) ref;
+          }
+        }
+        /**
+         * <code>string ItmRegistrationDate = 4;</code>
+         * @param value The itmRegistrationDate to set.
+         * @return This builder for chaining.
+         */
+        public Builder setItmRegistrationDate(
+            java.lang.String value) {
+          if (value == null) {
+    throw new NullPointerException();
+  }
+  
+          itmRegistrationDate_ = value;
+          onChanged();
+          return this;
+        }
+        /**
+         * <code>string ItmRegistrationDate = 4;</code>
+         * @return This builder for chaining.
+         */
+        public Builder clearItmRegistrationDate() {
+          
+          itmRegistrationDate_ = getDefaultInstance().getItmRegistrationDate();
+          onChanged();
+          return this;
+        }
+        /**
+         * <code>string ItmRegistrationDate = 4;</code>
+         * @param value The bytes for itmRegistrationDate to set.
+         * @return This builder for chaining.
+         */
+        public Builder setItmRegistrationDateBytes(
+            com.google.protobuf.ByteString value) {
+          if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+          
+          itmRegistrationDate_ = value;
+          onChanged();
+          return this;
+        }
+
+        private java.lang.Object itmViewYn_ = "";
+        /**
+         * <code>string ItmViewYn = 5;</code>
+         * @return The itmViewYn.
+         */
+        public java.lang.String getItmViewYn() {
+          java.lang.Object ref = itmViewYn_;
+          if (!(ref instanceof java.lang.String)) {
+            com.google.protobuf.ByteString bs =
+                (com.google.protobuf.ByteString) ref;
+            java.lang.String s = bs.toStringUtf8();
+            itmViewYn_ = s;
+            return s;
+          } else {
+            return (java.lang.String) ref;
+          }
+        }
+        /**
+         * <code>string ItmViewYn = 5;</code>
+         * @return The bytes for itmViewYn.
+         */
+        public com.google.protobuf.ByteString
+            getItmViewYnBytes() {
+          java.lang.Object ref = itmViewYn_;
+          if (ref instanceof String) {
+            com.google.protobuf.ByteString b = 
+                com.google.protobuf.ByteString.copyFromUtf8(
+                    (java.lang.String) ref);
+            itmViewYn_ = b;
+            return b;
+          } else {
+            return (com.google.protobuf.ByteString) ref;
+          }
+        }
+        /**
+         * <code>string ItmViewYn = 5;</code>
+         * @param value The itmViewYn to set.
+         * @return This builder for chaining.
+         */
+        public Builder setItmViewYn(
+            java.lang.String value) {
+          if (value == null) {
+    throw new NullPointerException();
+  }
+  
+          itmViewYn_ = value;
+          onChanged();
+          return this;
+        }
+        /**
+         * <code>string ItmViewYn = 5;</code>
+         * @return This builder for chaining.
+         */
+        public Builder clearItmViewYn() {
+          
+          itmViewYn_ = getDefaultInstance().getItmViewYn();
+          onChanged();
+          return this;
+        }
+        /**
+         * <code>string ItmViewYn = 5;</code>
+         * @param value The bytes for itmViewYn to set.
+         * @return This builder for chaining.
+         */
+        public Builder setItmViewYnBytes(
+            com.google.protobuf.ByteString value) {
+          if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+          
+          itmViewYn_ = value;
+          onChanged();
+          return this;
+        }
+        @java.lang.Override
+        public final Builder setUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.setUnknownFields(unknownFields);
+        }
+
+        @java.lang.Override
+        public final Builder mergeUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.mergeUnknownFields(unknownFields);
+        }
+
+
+        // @@protoc_insertion_point(builder_scope:Classlink.LobbyHomeEnrollmentRequestListRes.LobbyHomeEnrollmentRequest)
+      }
+
+      // @@protoc_insertion_point(class_scope:Classlink.LobbyHomeEnrollmentRequestListRes.LobbyHomeEnrollmentRequest)
+      private static final com.classlink.websocket.api.lobby.home.domain.dto.proto.LobbyHomeEnrollmentRequestListResProto.LobbyHomeEnrollmentRequestListRes.LobbyHomeEnrollmentRequest DEFAULT_INSTANCE;
+      static {
+        DEFAULT_INSTANCE = new com.classlink.websocket.api.lobby.home.domain.dto.proto.LobbyHomeEnrollmentRequestListResProto.LobbyHomeEnrollmentRequestListRes.LobbyHomeEnrollmentRequest();
+      }
+
+      public static com.classlink.websocket.api.lobby.home.domain.dto.proto.LobbyHomeEnrollmentRequestListResProto.LobbyHomeEnrollmentRequestListRes.LobbyHomeEnrollmentRequest getDefaultInstance() {
+        return DEFAULT_INSTANCE;
+      }
+
+      private static final com.google.protobuf.Parser<LobbyHomeEnrollmentRequest>
+          PARSER = new com.google.protobuf.AbstractParser<LobbyHomeEnrollmentRequest>() {
+        @java.lang.Override
+        public LobbyHomeEnrollmentRequest parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
+        }
+      };
+
+      public static com.google.protobuf.Parser<LobbyHomeEnrollmentRequest> parser() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Parser<LobbyHomeEnrollmentRequest> getParserForType() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.classlink.websocket.api.lobby.home.domain.dto.proto.LobbyHomeEnrollmentRequestListResProto.LobbyHomeEnrollmentRequestListRes.LobbyHomeEnrollmentRequest getDefaultInstanceForType() {
+        return DEFAULT_INSTANCE;
+      }
+
     }
 
-    public static final int MEMIMG_FIELD_NUMBER = 2;
-    private volatile java.lang.Object memImg_;
+    public static final int LOBBYHOMEENROLLMENTREQUESTLIST_FIELD_NUMBER = 1;
+    private java.util.List<com.classlink.websocket.api.lobby.home.domain.dto.proto.LobbyHomeEnrollmentRequestListResProto.LobbyHomeEnrollmentRequestListRes.LobbyHomeEnrollmentRequest> lobbyHomeEnrollmentRequestList_;
     /**
-     * <code>string MemImg = 2;</code>
-     * @return The memImg.
+     * <code>repeated .Classlink.LobbyHomeEnrollmentRequestListRes.LobbyHomeEnrollmentRequest lobbyHomeEnrollmentRequestList = 1;</code>
      */
     @java.lang.Override
-    public java.lang.String getMemImg() {
-      java.lang.Object ref = memImg_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        memImg_ = s;
-        return s;
-      }
+    public java.util.List<com.classlink.websocket.api.lobby.home.domain.dto.proto.LobbyHomeEnrollmentRequestListResProto.LobbyHomeEnrollmentRequestListRes.LobbyHomeEnrollmentRequest> getLobbyHomeEnrollmentRequestListList() {
+      return lobbyHomeEnrollmentRequestList_;
     }
     /**
-     * <code>string MemImg = 2;</code>
-     * @return The bytes for memImg.
+     * <code>repeated .Classlink.LobbyHomeEnrollmentRequestListRes.LobbyHomeEnrollmentRequest lobbyHomeEnrollmentRequestList = 1;</code>
      */
     @java.lang.Override
-    public com.google.protobuf.ByteString
-        getMemImgBytes() {
-      java.lang.Object ref = memImg_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        memImg_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int MEMNAME_FIELD_NUMBER = 3;
-    private volatile java.lang.Object memName_;
-    /**
-     * <code>string MemName = 3;</code>
-     * @return The memName.
-     */
-    @java.lang.Override
-    public java.lang.String getMemName() {
-      java.lang.Object ref = memName_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        memName_ = s;
-        return s;
-      }
+    public java.util.List<? extends com.classlink.websocket.api.lobby.home.domain.dto.proto.LobbyHomeEnrollmentRequestListResProto.LobbyHomeEnrollmentRequestListRes.LobbyHomeEnrollmentRequestOrBuilder> 
+        getLobbyHomeEnrollmentRequestListOrBuilderList() {
+      return lobbyHomeEnrollmentRequestList_;
     }
     /**
-     * <code>string MemName = 3;</code>
-     * @return The bytes for memName.
+     * <code>repeated .Classlink.LobbyHomeEnrollmentRequestListRes.LobbyHomeEnrollmentRequest lobbyHomeEnrollmentRequestList = 1;</code>
      */
     @java.lang.Override
-    public com.google.protobuf.ByteString
-        getMemNameBytes() {
-      java.lang.Object ref = memName_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        memName_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int ITMREGISTRATIONDATE_FIELD_NUMBER = 4;
-    private volatile java.lang.Object itmRegistrationDate_;
-    /**
-     * <code>string ItmRegistrationDate = 4;</code>
-     * @return The itmRegistrationDate.
-     */
-    @java.lang.Override
-    public java.lang.String getItmRegistrationDate() {
-      java.lang.Object ref = itmRegistrationDate_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        itmRegistrationDate_ = s;
-        return s;
-      }
+    public int getLobbyHomeEnrollmentRequestListCount() {
+      return lobbyHomeEnrollmentRequestList_.size();
     }
     /**
-     * <code>string ItmRegistrationDate = 4;</code>
-     * @return The bytes for itmRegistrationDate.
+     * <code>repeated .Classlink.LobbyHomeEnrollmentRequestListRes.LobbyHomeEnrollmentRequest lobbyHomeEnrollmentRequestList = 1;</code>
      */
     @java.lang.Override
-    public com.google.protobuf.ByteString
-        getItmRegistrationDateBytes() {
-      java.lang.Object ref = itmRegistrationDate_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        itmRegistrationDate_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int ITMVIEWYN_FIELD_NUMBER = 5;
-    private volatile java.lang.Object itmViewYn_;
-    /**
-     * <code>string ItmViewYn = 5;</code>
-     * @return The itmViewYn.
-     */
-    @java.lang.Override
-    public java.lang.String getItmViewYn() {
-      java.lang.Object ref = itmViewYn_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        itmViewYn_ = s;
-        return s;
-      }
+    public com.classlink.websocket.api.lobby.home.domain.dto.proto.LobbyHomeEnrollmentRequestListResProto.LobbyHomeEnrollmentRequestListRes.LobbyHomeEnrollmentRequest getLobbyHomeEnrollmentRequestList(int index) {
+      return lobbyHomeEnrollmentRequestList_.get(index);
     }
     /**
-     * <code>string ItmViewYn = 5;</code>
-     * @return The bytes for itmViewYn.
+     * <code>repeated .Classlink.LobbyHomeEnrollmentRequestListRes.LobbyHomeEnrollmentRequest lobbyHomeEnrollmentRequestList = 1;</code>
      */
     @java.lang.Override
-    public com.google.protobuf.ByteString
-        getItmViewYnBytes() {
-      java.lang.Object ref = itmViewYn_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        itmViewYn_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
+    public com.classlink.websocket.api.lobby.home.domain.dto.proto.LobbyHomeEnrollmentRequestListResProto.LobbyHomeEnrollmentRequestListRes.LobbyHomeEnrollmentRequestOrBuilder getLobbyHomeEnrollmentRequestListOrBuilder(
+        int index) {
+      return lobbyHomeEnrollmentRequestList_.get(index);
     }
 
     private byte memoizedIsInitialized = -1;
@@ -327,20 +1282,8 @@ public final class LobbyHomeEnrollmentRequestListResProto {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(memId_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, memId_);
-      }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(memImg_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, memImg_);
-      }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(memName_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, memName_);
-      }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(itmRegistrationDate_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, itmRegistrationDate_);
-      }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(itmViewYn_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 5, itmViewYn_);
+      for (int i = 0; i < lobbyHomeEnrollmentRequestList_.size(); i++) {
+        output.writeMessage(1, lobbyHomeEnrollmentRequestList_.get(i));
       }
       getUnknownFields().writeTo(output);
     }
@@ -351,20 +1294,9 @@ public final class LobbyHomeEnrollmentRequestListResProto {
       if (size != -1) return size;
 
       size = 0;
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(memId_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, memId_);
-      }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(memImg_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, memImg_);
-      }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(memName_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, memName_);
-      }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(itmRegistrationDate_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, itmRegistrationDate_);
-      }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(itmViewYn_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, itmViewYn_);
+      for (int i = 0; i < lobbyHomeEnrollmentRequestList_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(1, lobbyHomeEnrollmentRequestList_.get(i));
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -381,16 +1313,8 @@ public final class LobbyHomeEnrollmentRequestListResProto {
       }
       com.classlink.websocket.api.lobby.home.domain.dto.proto.LobbyHomeEnrollmentRequestListResProto.LobbyHomeEnrollmentRequestListRes other = (com.classlink.websocket.api.lobby.home.domain.dto.proto.LobbyHomeEnrollmentRequestListResProto.LobbyHomeEnrollmentRequestListRes) obj;
 
-      if (!getMemId()
-          .equals(other.getMemId())) return false;
-      if (!getMemImg()
-          .equals(other.getMemImg())) return false;
-      if (!getMemName()
-          .equals(other.getMemName())) return false;
-      if (!getItmRegistrationDate()
-          .equals(other.getItmRegistrationDate())) return false;
-      if (!getItmViewYn()
-          .equals(other.getItmViewYn())) return false;
+      if (!getLobbyHomeEnrollmentRequestListList()
+          .equals(other.getLobbyHomeEnrollmentRequestListList())) return false;
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -402,16 +1326,10 @@ public final class LobbyHomeEnrollmentRequestListResProto {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + MEMID_FIELD_NUMBER;
-      hash = (53 * hash) + getMemId().hashCode();
-      hash = (37 * hash) + MEMIMG_FIELD_NUMBER;
-      hash = (53 * hash) + getMemImg().hashCode();
-      hash = (37 * hash) + MEMNAME_FIELD_NUMBER;
-      hash = (53 * hash) + getMemName().hashCode();
-      hash = (37 * hash) + ITMREGISTRATIONDATE_FIELD_NUMBER;
-      hash = (53 * hash) + getItmRegistrationDate().hashCode();
-      hash = (37 * hash) + ITMVIEWYN_FIELD_NUMBER;
-      hash = (53 * hash) + getItmViewYn().hashCode();
+      if (getLobbyHomeEnrollmentRequestListCount() > 0) {
+        hash = (37 * hash) + LOBBYHOMEENROLLMENTREQUESTLIST_FIELD_NUMBER;
+        hash = (53 * hash) + getLobbyHomeEnrollmentRequestListList().hashCode();
+      }
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -540,16 +1458,13 @@ public final class LobbyHomeEnrollmentRequestListResProto {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        memId_ = "";
-
-        memImg_ = "";
-
-        memName_ = "";
-
-        itmRegistrationDate_ = "";
-
-        itmViewYn_ = "";
-
+        if (lobbyHomeEnrollmentRequestListBuilder_ == null) {
+          lobbyHomeEnrollmentRequestList_ = java.util.Collections.emptyList();
+        } else {
+          lobbyHomeEnrollmentRequestList_ = null;
+          lobbyHomeEnrollmentRequestListBuilder_.clear();
+        }
+        bitField0_ = (bitField0_ & ~0x00000001);
         return this;
       }
 
@@ -576,11 +1491,16 @@ public final class LobbyHomeEnrollmentRequestListResProto {
       @java.lang.Override
       public com.classlink.websocket.api.lobby.home.domain.dto.proto.LobbyHomeEnrollmentRequestListResProto.LobbyHomeEnrollmentRequestListRes buildPartial() {
         com.classlink.websocket.api.lobby.home.domain.dto.proto.LobbyHomeEnrollmentRequestListResProto.LobbyHomeEnrollmentRequestListRes result = new com.classlink.websocket.api.lobby.home.domain.dto.proto.LobbyHomeEnrollmentRequestListResProto.LobbyHomeEnrollmentRequestListRes(this);
-        result.memId_ = memId_;
-        result.memImg_ = memImg_;
-        result.memName_ = memName_;
-        result.itmRegistrationDate_ = itmRegistrationDate_;
-        result.itmViewYn_ = itmViewYn_;
+        int from_bitField0_ = bitField0_;
+        if (lobbyHomeEnrollmentRequestListBuilder_ == null) {
+          if (((bitField0_ & 0x00000001) != 0)) {
+            lobbyHomeEnrollmentRequestList_ = java.util.Collections.unmodifiableList(lobbyHomeEnrollmentRequestList_);
+            bitField0_ = (bitField0_ & ~0x00000001);
+          }
+          result.lobbyHomeEnrollmentRequestList_ = lobbyHomeEnrollmentRequestList_;
+        } else {
+          result.lobbyHomeEnrollmentRequestList_ = lobbyHomeEnrollmentRequestListBuilder_.build();
+        }
         onBuilt();
         return result;
       }
@@ -629,25 +1549,31 @@ public final class LobbyHomeEnrollmentRequestListResProto {
 
       public Builder mergeFrom(com.classlink.websocket.api.lobby.home.domain.dto.proto.LobbyHomeEnrollmentRequestListResProto.LobbyHomeEnrollmentRequestListRes other) {
         if (other == com.classlink.websocket.api.lobby.home.domain.dto.proto.LobbyHomeEnrollmentRequestListResProto.LobbyHomeEnrollmentRequestListRes.getDefaultInstance()) return this;
-        if (!other.getMemId().isEmpty()) {
-          memId_ = other.memId_;
-          onChanged();
-        }
-        if (!other.getMemImg().isEmpty()) {
-          memImg_ = other.memImg_;
-          onChanged();
-        }
-        if (!other.getMemName().isEmpty()) {
-          memName_ = other.memName_;
-          onChanged();
-        }
-        if (!other.getItmRegistrationDate().isEmpty()) {
-          itmRegistrationDate_ = other.itmRegistrationDate_;
-          onChanged();
-        }
-        if (!other.getItmViewYn().isEmpty()) {
-          itmViewYn_ = other.itmViewYn_;
-          onChanged();
+        if (lobbyHomeEnrollmentRequestListBuilder_ == null) {
+          if (!other.lobbyHomeEnrollmentRequestList_.isEmpty()) {
+            if (lobbyHomeEnrollmentRequestList_.isEmpty()) {
+              lobbyHomeEnrollmentRequestList_ = other.lobbyHomeEnrollmentRequestList_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+            } else {
+              ensureLobbyHomeEnrollmentRequestListIsMutable();
+              lobbyHomeEnrollmentRequestList_.addAll(other.lobbyHomeEnrollmentRequestList_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.lobbyHomeEnrollmentRequestList_.isEmpty()) {
+            if (lobbyHomeEnrollmentRequestListBuilder_.isEmpty()) {
+              lobbyHomeEnrollmentRequestListBuilder_.dispose();
+              lobbyHomeEnrollmentRequestListBuilder_ = null;
+              lobbyHomeEnrollmentRequestList_ = other.lobbyHomeEnrollmentRequestList_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+              lobbyHomeEnrollmentRequestListBuilder_ = 
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                   getLobbyHomeEnrollmentRequestListFieldBuilder() : null;
+            } else {
+              lobbyHomeEnrollmentRequestListBuilder_.addAllMessages(other.lobbyHomeEnrollmentRequestList_);
+            }
+          }
         }
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
@@ -676,30 +1602,18 @@ public final class LobbyHomeEnrollmentRequestListResProto {
                 done = true;
                 break;
               case 10: {
-                memId_ = input.readStringRequireUtf8();
-
+                com.classlink.websocket.api.lobby.home.domain.dto.proto.LobbyHomeEnrollmentRequestListResProto.LobbyHomeEnrollmentRequestListRes.LobbyHomeEnrollmentRequest m =
+                    input.readMessage(
+                        com.classlink.websocket.api.lobby.home.domain.dto.proto.LobbyHomeEnrollmentRequestListResProto.LobbyHomeEnrollmentRequestListRes.LobbyHomeEnrollmentRequest.parser(),
+                        extensionRegistry);
+                if (lobbyHomeEnrollmentRequestListBuilder_ == null) {
+                  ensureLobbyHomeEnrollmentRequestListIsMutable();
+                  lobbyHomeEnrollmentRequestList_.add(m);
+                } else {
+                  lobbyHomeEnrollmentRequestListBuilder_.addMessage(m);
+                }
                 break;
               } // case 10
-              case 18: {
-                memImg_ = input.readStringRequireUtf8();
-
-                break;
-              } // case 18
-              case 26: {
-                memName_ = input.readStringRequireUtf8();
-
-                break;
-              } // case 26
-              case 34: {
-                itmRegistrationDate_ = input.readStringRequireUtf8();
-
-                break;
-              } // case 34
-              case 42: {
-                itmViewYn_ = input.readStringRequireUtf8();
-
-                break;
-              } // case 42
               default: {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                   done = true; // was an endgroup tag
@@ -715,385 +1629,246 @@ public final class LobbyHomeEnrollmentRequestListResProto {
         } // finally
         return this;
       }
+      private int bitField0_;
 
-      private java.lang.Object memId_ = "";
-      /**
-       * <code>string MemId = 1;</code>
-       * @return The memId.
-       */
-      public java.lang.String getMemId() {
-        java.lang.Object ref = memId_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          memId_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <code>string MemId = 1;</code>
-       * @return The bytes for memId.
-       */
-      public com.google.protobuf.ByteString
-          getMemIdBytes() {
-        java.lang.Object ref = memId_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          memId_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>string MemId = 1;</code>
-       * @param value The memId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setMemId(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        memId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string MemId = 1;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearMemId() {
-        
-        memId_ = getDefaultInstance().getMemId();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string MemId = 1;</code>
-       * @param value The bytes for memId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setMemIdBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        memId_ = value;
-        onChanged();
-        return this;
+      private java.util.List<com.classlink.websocket.api.lobby.home.domain.dto.proto.LobbyHomeEnrollmentRequestListResProto.LobbyHomeEnrollmentRequestListRes.LobbyHomeEnrollmentRequest> lobbyHomeEnrollmentRequestList_ =
+        java.util.Collections.emptyList();
+      private void ensureLobbyHomeEnrollmentRequestListIsMutable() {
+        if (!((bitField0_ & 0x00000001) != 0)) {
+          lobbyHomeEnrollmentRequestList_ = new java.util.ArrayList<com.classlink.websocket.api.lobby.home.domain.dto.proto.LobbyHomeEnrollmentRequestListResProto.LobbyHomeEnrollmentRequestListRes.LobbyHomeEnrollmentRequest>(lobbyHomeEnrollmentRequestList_);
+          bitField0_ |= 0x00000001;
+         }
       }
 
-      private java.lang.Object memImg_ = "";
-      /**
-       * <code>string MemImg = 2;</code>
-       * @return The memImg.
-       */
-      public java.lang.String getMemImg() {
-        java.lang.Object ref = memImg_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          memImg_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <code>string MemImg = 2;</code>
-       * @return The bytes for memImg.
-       */
-      public com.google.protobuf.ByteString
-          getMemImgBytes() {
-        java.lang.Object ref = memImg_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          memImg_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>string MemImg = 2;</code>
-       * @param value The memImg to set.
-       * @return This builder for chaining.
-       */
-      public Builder setMemImg(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        memImg_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string MemImg = 2;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearMemImg() {
-        
-        memImg_ = getDefaultInstance().getMemImg();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string MemImg = 2;</code>
-       * @param value The bytes for memImg to set.
-       * @return This builder for chaining.
-       */
-      public Builder setMemImgBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        memImg_ = value;
-        onChanged();
-        return this;
-      }
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          com.classlink.websocket.api.lobby.home.domain.dto.proto.LobbyHomeEnrollmentRequestListResProto.LobbyHomeEnrollmentRequestListRes.LobbyHomeEnrollmentRequest, com.classlink.websocket.api.lobby.home.domain.dto.proto.LobbyHomeEnrollmentRequestListResProto.LobbyHomeEnrollmentRequestListRes.LobbyHomeEnrollmentRequest.Builder, com.classlink.websocket.api.lobby.home.domain.dto.proto.LobbyHomeEnrollmentRequestListResProto.LobbyHomeEnrollmentRequestListRes.LobbyHomeEnrollmentRequestOrBuilder> lobbyHomeEnrollmentRequestListBuilder_;
 
-      private java.lang.Object memName_ = "";
       /**
-       * <code>string MemName = 3;</code>
-       * @return The memName.
+       * <code>repeated .Classlink.LobbyHomeEnrollmentRequestListRes.LobbyHomeEnrollmentRequest lobbyHomeEnrollmentRequestList = 1;</code>
        */
-      public java.lang.String getMemName() {
-        java.lang.Object ref = memName_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          memName_ = s;
-          return s;
+      public java.util.List<com.classlink.websocket.api.lobby.home.domain.dto.proto.LobbyHomeEnrollmentRequestListResProto.LobbyHomeEnrollmentRequestListRes.LobbyHomeEnrollmentRequest> getLobbyHomeEnrollmentRequestListList() {
+        if (lobbyHomeEnrollmentRequestListBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(lobbyHomeEnrollmentRequestList_);
         } else {
-          return (java.lang.String) ref;
+          return lobbyHomeEnrollmentRequestListBuilder_.getMessageList();
         }
       }
       /**
-       * <code>string MemName = 3;</code>
-       * @return The bytes for memName.
+       * <code>repeated .Classlink.LobbyHomeEnrollmentRequestListRes.LobbyHomeEnrollmentRequest lobbyHomeEnrollmentRequestList = 1;</code>
        */
-      public com.google.protobuf.ByteString
-          getMemNameBytes() {
-        java.lang.Object ref = memName_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          memName_ = b;
-          return b;
+      public int getLobbyHomeEnrollmentRequestListCount() {
+        if (lobbyHomeEnrollmentRequestListBuilder_ == null) {
+          return lobbyHomeEnrollmentRequestList_.size();
         } else {
-          return (com.google.protobuf.ByteString) ref;
+          return lobbyHomeEnrollmentRequestListBuilder_.getCount();
         }
       }
       /**
-       * <code>string MemName = 3;</code>
-       * @param value The memName to set.
-       * @return This builder for chaining.
+       * <code>repeated .Classlink.LobbyHomeEnrollmentRequestListRes.LobbyHomeEnrollmentRequest lobbyHomeEnrollmentRequestList = 1;</code>
        */
-      public Builder setMemName(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        memName_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string MemName = 3;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearMemName() {
-        
-        memName_ = getDefaultInstance().getMemName();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string MemName = 3;</code>
-       * @param value The bytes for memName to set.
-       * @return This builder for chaining.
-       */
-      public Builder setMemNameBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        memName_ = value;
-        onChanged();
-        return this;
-      }
-
-      private java.lang.Object itmRegistrationDate_ = "";
-      /**
-       * <code>string ItmRegistrationDate = 4;</code>
-       * @return The itmRegistrationDate.
-       */
-      public java.lang.String getItmRegistrationDate() {
-        java.lang.Object ref = itmRegistrationDate_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          itmRegistrationDate_ = s;
-          return s;
+      public com.classlink.websocket.api.lobby.home.domain.dto.proto.LobbyHomeEnrollmentRequestListResProto.LobbyHomeEnrollmentRequestListRes.LobbyHomeEnrollmentRequest getLobbyHomeEnrollmentRequestList(int index) {
+        if (lobbyHomeEnrollmentRequestListBuilder_ == null) {
+          return lobbyHomeEnrollmentRequestList_.get(index);
         } else {
-          return (java.lang.String) ref;
+          return lobbyHomeEnrollmentRequestListBuilder_.getMessage(index);
         }
       }
       /**
-       * <code>string ItmRegistrationDate = 4;</code>
-       * @return The bytes for itmRegistrationDate.
+       * <code>repeated .Classlink.LobbyHomeEnrollmentRequestListRes.LobbyHomeEnrollmentRequest lobbyHomeEnrollmentRequestList = 1;</code>
        */
-      public com.google.protobuf.ByteString
-          getItmRegistrationDateBytes() {
-        java.lang.Object ref = itmRegistrationDate_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          itmRegistrationDate_ = b;
-          return b;
+      public Builder setLobbyHomeEnrollmentRequestList(
+          int index, com.classlink.websocket.api.lobby.home.domain.dto.proto.LobbyHomeEnrollmentRequestListResProto.LobbyHomeEnrollmentRequestListRes.LobbyHomeEnrollmentRequest value) {
+        if (lobbyHomeEnrollmentRequestListBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureLobbyHomeEnrollmentRequestListIsMutable();
+          lobbyHomeEnrollmentRequestList_.set(index, value);
+          onChanged();
         } else {
-          return (com.google.protobuf.ByteString) ref;
+          lobbyHomeEnrollmentRequestListBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .Classlink.LobbyHomeEnrollmentRequestListRes.LobbyHomeEnrollmentRequest lobbyHomeEnrollmentRequestList = 1;</code>
+       */
+      public Builder setLobbyHomeEnrollmentRequestList(
+          int index, com.classlink.websocket.api.lobby.home.domain.dto.proto.LobbyHomeEnrollmentRequestListResProto.LobbyHomeEnrollmentRequestListRes.LobbyHomeEnrollmentRequest.Builder builderForValue) {
+        if (lobbyHomeEnrollmentRequestListBuilder_ == null) {
+          ensureLobbyHomeEnrollmentRequestListIsMutable();
+          lobbyHomeEnrollmentRequestList_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          lobbyHomeEnrollmentRequestListBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .Classlink.LobbyHomeEnrollmentRequestListRes.LobbyHomeEnrollmentRequest lobbyHomeEnrollmentRequestList = 1;</code>
+       */
+      public Builder addLobbyHomeEnrollmentRequestList(com.classlink.websocket.api.lobby.home.domain.dto.proto.LobbyHomeEnrollmentRequestListResProto.LobbyHomeEnrollmentRequestListRes.LobbyHomeEnrollmentRequest value) {
+        if (lobbyHomeEnrollmentRequestListBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureLobbyHomeEnrollmentRequestListIsMutable();
+          lobbyHomeEnrollmentRequestList_.add(value);
+          onChanged();
+        } else {
+          lobbyHomeEnrollmentRequestListBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .Classlink.LobbyHomeEnrollmentRequestListRes.LobbyHomeEnrollmentRequest lobbyHomeEnrollmentRequestList = 1;</code>
+       */
+      public Builder addLobbyHomeEnrollmentRequestList(
+          int index, com.classlink.websocket.api.lobby.home.domain.dto.proto.LobbyHomeEnrollmentRequestListResProto.LobbyHomeEnrollmentRequestListRes.LobbyHomeEnrollmentRequest value) {
+        if (lobbyHomeEnrollmentRequestListBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureLobbyHomeEnrollmentRequestListIsMutable();
+          lobbyHomeEnrollmentRequestList_.add(index, value);
+          onChanged();
+        } else {
+          lobbyHomeEnrollmentRequestListBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .Classlink.LobbyHomeEnrollmentRequestListRes.LobbyHomeEnrollmentRequest lobbyHomeEnrollmentRequestList = 1;</code>
+       */
+      public Builder addLobbyHomeEnrollmentRequestList(
+          com.classlink.websocket.api.lobby.home.domain.dto.proto.LobbyHomeEnrollmentRequestListResProto.LobbyHomeEnrollmentRequestListRes.LobbyHomeEnrollmentRequest.Builder builderForValue) {
+        if (lobbyHomeEnrollmentRequestListBuilder_ == null) {
+          ensureLobbyHomeEnrollmentRequestListIsMutable();
+          lobbyHomeEnrollmentRequestList_.add(builderForValue.build());
+          onChanged();
+        } else {
+          lobbyHomeEnrollmentRequestListBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .Classlink.LobbyHomeEnrollmentRequestListRes.LobbyHomeEnrollmentRequest lobbyHomeEnrollmentRequestList = 1;</code>
+       */
+      public Builder addLobbyHomeEnrollmentRequestList(
+          int index, com.classlink.websocket.api.lobby.home.domain.dto.proto.LobbyHomeEnrollmentRequestListResProto.LobbyHomeEnrollmentRequestListRes.LobbyHomeEnrollmentRequest.Builder builderForValue) {
+        if (lobbyHomeEnrollmentRequestListBuilder_ == null) {
+          ensureLobbyHomeEnrollmentRequestListIsMutable();
+          lobbyHomeEnrollmentRequestList_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          lobbyHomeEnrollmentRequestListBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .Classlink.LobbyHomeEnrollmentRequestListRes.LobbyHomeEnrollmentRequest lobbyHomeEnrollmentRequestList = 1;</code>
+       */
+      public Builder addAllLobbyHomeEnrollmentRequestList(
+          java.lang.Iterable<? extends com.classlink.websocket.api.lobby.home.domain.dto.proto.LobbyHomeEnrollmentRequestListResProto.LobbyHomeEnrollmentRequestListRes.LobbyHomeEnrollmentRequest> values) {
+        if (lobbyHomeEnrollmentRequestListBuilder_ == null) {
+          ensureLobbyHomeEnrollmentRequestListIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, lobbyHomeEnrollmentRequestList_);
+          onChanged();
+        } else {
+          lobbyHomeEnrollmentRequestListBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .Classlink.LobbyHomeEnrollmentRequestListRes.LobbyHomeEnrollmentRequest lobbyHomeEnrollmentRequestList = 1;</code>
+       */
+      public Builder clearLobbyHomeEnrollmentRequestList() {
+        if (lobbyHomeEnrollmentRequestListBuilder_ == null) {
+          lobbyHomeEnrollmentRequestList_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+          onChanged();
+        } else {
+          lobbyHomeEnrollmentRequestListBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .Classlink.LobbyHomeEnrollmentRequestListRes.LobbyHomeEnrollmentRequest lobbyHomeEnrollmentRequestList = 1;</code>
+       */
+      public Builder removeLobbyHomeEnrollmentRequestList(int index) {
+        if (lobbyHomeEnrollmentRequestListBuilder_ == null) {
+          ensureLobbyHomeEnrollmentRequestListIsMutable();
+          lobbyHomeEnrollmentRequestList_.remove(index);
+          onChanged();
+        } else {
+          lobbyHomeEnrollmentRequestListBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .Classlink.LobbyHomeEnrollmentRequestListRes.LobbyHomeEnrollmentRequest lobbyHomeEnrollmentRequestList = 1;</code>
+       */
+      public com.classlink.websocket.api.lobby.home.domain.dto.proto.LobbyHomeEnrollmentRequestListResProto.LobbyHomeEnrollmentRequestListRes.LobbyHomeEnrollmentRequest.Builder getLobbyHomeEnrollmentRequestListBuilder(
+          int index) {
+        return getLobbyHomeEnrollmentRequestListFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <code>repeated .Classlink.LobbyHomeEnrollmentRequestListRes.LobbyHomeEnrollmentRequest lobbyHomeEnrollmentRequestList = 1;</code>
+       */
+      public com.classlink.websocket.api.lobby.home.domain.dto.proto.LobbyHomeEnrollmentRequestListResProto.LobbyHomeEnrollmentRequestListRes.LobbyHomeEnrollmentRequestOrBuilder getLobbyHomeEnrollmentRequestListOrBuilder(
+          int index) {
+        if (lobbyHomeEnrollmentRequestListBuilder_ == null) {
+          return lobbyHomeEnrollmentRequestList_.get(index);  } else {
+          return lobbyHomeEnrollmentRequestListBuilder_.getMessageOrBuilder(index);
         }
       }
       /**
-       * <code>string ItmRegistrationDate = 4;</code>
-       * @param value The itmRegistrationDate to set.
-       * @return This builder for chaining.
+       * <code>repeated .Classlink.LobbyHomeEnrollmentRequestListRes.LobbyHomeEnrollmentRequest lobbyHomeEnrollmentRequestList = 1;</code>
        */
-      public Builder setItmRegistrationDate(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        itmRegistrationDate_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string ItmRegistrationDate = 4;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearItmRegistrationDate() {
-        
-        itmRegistrationDate_ = getDefaultInstance().getItmRegistrationDate();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string ItmRegistrationDate = 4;</code>
-       * @param value The bytes for itmRegistrationDate to set.
-       * @return This builder for chaining.
-       */
-      public Builder setItmRegistrationDateBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        itmRegistrationDate_ = value;
-        onChanged();
-        return this;
-      }
-
-      private java.lang.Object itmViewYn_ = "";
-      /**
-       * <code>string ItmViewYn = 5;</code>
-       * @return The itmViewYn.
-       */
-      public java.lang.String getItmViewYn() {
-        java.lang.Object ref = itmViewYn_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          itmViewYn_ = s;
-          return s;
+      public java.util.List<? extends com.classlink.websocket.api.lobby.home.domain.dto.proto.LobbyHomeEnrollmentRequestListResProto.LobbyHomeEnrollmentRequestListRes.LobbyHomeEnrollmentRequestOrBuilder> 
+           getLobbyHomeEnrollmentRequestListOrBuilderList() {
+        if (lobbyHomeEnrollmentRequestListBuilder_ != null) {
+          return lobbyHomeEnrollmentRequestListBuilder_.getMessageOrBuilderList();
         } else {
-          return (java.lang.String) ref;
+          return java.util.Collections.unmodifiableList(lobbyHomeEnrollmentRequestList_);
         }
       }
       /**
-       * <code>string ItmViewYn = 5;</code>
-       * @return The bytes for itmViewYn.
+       * <code>repeated .Classlink.LobbyHomeEnrollmentRequestListRes.LobbyHomeEnrollmentRequest lobbyHomeEnrollmentRequestList = 1;</code>
        */
-      public com.google.protobuf.ByteString
-          getItmViewYnBytes() {
-        java.lang.Object ref = itmViewYn_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          itmViewYn_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
+      public com.classlink.websocket.api.lobby.home.domain.dto.proto.LobbyHomeEnrollmentRequestListResProto.LobbyHomeEnrollmentRequestListRes.LobbyHomeEnrollmentRequest.Builder addLobbyHomeEnrollmentRequestListBuilder() {
+        return getLobbyHomeEnrollmentRequestListFieldBuilder().addBuilder(
+            com.classlink.websocket.api.lobby.home.domain.dto.proto.LobbyHomeEnrollmentRequestListResProto.LobbyHomeEnrollmentRequestListRes.LobbyHomeEnrollmentRequest.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .Classlink.LobbyHomeEnrollmentRequestListRes.LobbyHomeEnrollmentRequest lobbyHomeEnrollmentRequestList = 1;</code>
+       */
+      public com.classlink.websocket.api.lobby.home.domain.dto.proto.LobbyHomeEnrollmentRequestListResProto.LobbyHomeEnrollmentRequestListRes.LobbyHomeEnrollmentRequest.Builder addLobbyHomeEnrollmentRequestListBuilder(
+          int index) {
+        return getLobbyHomeEnrollmentRequestListFieldBuilder().addBuilder(
+            index, com.classlink.websocket.api.lobby.home.domain.dto.proto.LobbyHomeEnrollmentRequestListResProto.LobbyHomeEnrollmentRequestListRes.LobbyHomeEnrollmentRequest.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .Classlink.LobbyHomeEnrollmentRequestListRes.LobbyHomeEnrollmentRequest lobbyHomeEnrollmentRequestList = 1;</code>
+       */
+      public java.util.List<com.classlink.websocket.api.lobby.home.domain.dto.proto.LobbyHomeEnrollmentRequestListResProto.LobbyHomeEnrollmentRequestListRes.LobbyHomeEnrollmentRequest.Builder> 
+           getLobbyHomeEnrollmentRequestListBuilderList() {
+        return getLobbyHomeEnrollmentRequestListFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          com.classlink.websocket.api.lobby.home.domain.dto.proto.LobbyHomeEnrollmentRequestListResProto.LobbyHomeEnrollmentRequestListRes.LobbyHomeEnrollmentRequest, com.classlink.websocket.api.lobby.home.domain.dto.proto.LobbyHomeEnrollmentRequestListResProto.LobbyHomeEnrollmentRequestListRes.LobbyHomeEnrollmentRequest.Builder, com.classlink.websocket.api.lobby.home.domain.dto.proto.LobbyHomeEnrollmentRequestListResProto.LobbyHomeEnrollmentRequestListRes.LobbyHomeEnrollmentRequestOrBuilder> 
+          getLobbyHomeEnrollmentRequestListFieldBuilder() {
+        if (lobbyHomeEnrollmentRequestListBuilder_ == null) {
+          lobbyHomeEnrollmentRequestListBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              com.classlink.websocket.api.lobby.home.domain.dto.proto.LobbyHomeEnrollmentRequestListResProto.LobbyHomeEnrollmentRequestListRes.LobbyHomeEnrollmentRequest, com.classlink.websocket.api.lobby.home.domain.dto.proto.LobbyHomeEnrollmentRequestListResProto.LobbyHomeEnrollmentRequestListRes.LobbyHomeEnrollmentRequest.Builder, com.classlink.websocket.api.lobby.home.domain.dto.proto.LobbyHomeEnrollmentRequestListResProto.LobbyHomeEnrollmentRequestListRes.LobbyHomeEnrollmentRequestOrBuilder>(
+                  lobbyHomeEnrollmentRequestList_,
+                  ((bitField0_ & 0x00000001) != 0),
+                  getParentForChildren(),
+                  isClean());
+          lobbyHomeEnrollmentRequestList_ = null;
         }
-      }
-      /**
-       * <code>string ItmViewYn = 5;</code>
-       * @param value The itmViewYn to set.
-       * @return This builder for chaining.
-       */
-      public Builder setItmViewYn(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        itmViewYn_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string ItmViewYn = 5;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearItmViewYn() {
-        
-        itmViewYn_ = getDefaultInstance().getItmViewYn();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string ItmViewYn = 5;</code>
-       * @param value The bytes for itmViewYn to set.
-       * @return This builder for chaining.
-       */
-      public Builder setItmViewYnBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        itmViewYn_ = value;
-        onChanged();
-        return this;
+        return lobbyHomeEnrollmentRequestListBuilder_;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -1164,6 +1939,11 @@ public final class LobbyHomeEnrollmentRequestListResProto {
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_Classlink_LobbyHomeEnrollmentRequestListRes_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_Classlink_LobbyHomeEnrollmentRequestListRes_LobbyHomeEnrollmentRequest_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_Classlink_LobbyHomeEnrollmentRequestListRes_LobbyHomeEnrollmentRequest_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -1174,13 +1954,16 @@ public final class LobbyHomeEnrollmentRequestListResProto {
   static {
     java.lang.String[] descriptorData = {
       "\n\'LobbyHomeEnrollmentRequestListRes.prot" +
-      "o\022\tClasslink\"\203\001\n!LobbyHomeEnrollmentRequ" +
-      "estListRes\022\r\n\005MemId\030\001 \001(\t\022\016\n\006MemImg\030\002 \001(" +
-      "\t\022\017\n\007MemName\030\003 \001(\t\022\033\n\023ItmRegistrationDat" +
-      "e\030\004 \001(\t\022\021\n\tItmViewYn\030\005 \001(\tBa\n7com.classl" +
-      "ink.websocket.api.lobby.home.domain.dto." +
-      "protoB&LobbyHomeEnrollmentRequestListRes" +
-      "Protob\006proto3"
+      "o\022\tClasslink\"\222\002\n!LobbyHomeEnrollmentRequ" +
+      "estListRes\022o\n\036lobbyHomeEnrollmentRequest" +
+      "List\030\001 \003(\0132G.Classlink.LobbyHomeEnrollme" +
+      "ntRequestListRes.LobbyHomeEnrollmentRequ" +
+      "est\032|\n\032LobbyHomeEnrollmentRequest\022\r\n\005Mem" +
+      "Id\030\001 \001(\t\022\016\n\006MemImg\030\002 \001(\t\022\017\n\007MemName\030\003 \001(" +
+      "\t\022\033\n\023ItmRegistrationDate\030\004 \001(\t\022\021\n\tItmVie" +
+      "wYn\030\005 \001(\tBa\n7com.classlink.websocket.api" +
+      ".lobby.home.domain.dto.protoB&LobbyHomeE" +
+      "nrollmentRequestListResProtob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -1191,6 +1974,12 @@ public final class LobbyHomeEnrollmentRequestListResProto {
     internal_static_Classlink_LobbyHomeEnrollmentRequestListRes_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_Classlink_LobbyHomeEnrollmentRequestListRes_descriptor,
+        new java.lang.String[] { "LobbyHomeEnrollmentRequestList", });
+    internal_static_Classlink_LobbyHomeEnrollmentRequestListRes_LobbyHomeEnrollmentRequest_descriptor =
+      internal_static_Classlink_LobbyHomeEnrollmentRequestListRes_descriptor.getNestedTypes().get(0);
+    internal_static_Classlink_LobbyHomeEnrollmentRequestListRes_LobbyHomeEnrollmentRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_Classlink_LobbyHomeEnrollmentRequestListRes_LobbyHomeEnrollmentRequest_descriptor,
         new java.lang.String[] { "MemId", "MemImg", "MemName", "ItmRegistrationDate", "ItmViewYn", });
   }
 

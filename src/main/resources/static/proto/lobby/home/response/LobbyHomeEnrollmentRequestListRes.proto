@@ -1,0 +1,17 @@
+syntax = "proto3";
+package Classlink;
+option java_package = "com.classlink.websocket.api.lobby.home.domain.dto.proto";
+option java_outer_classname = "LobbyHomeEnrollmentRequestListResProto";
+
+message LobbyHomeEnrollmentRequestListRes {
+
+  repeated LobbyHomeEnrollmentRequest lobbyHomeEnrollmentRequestList = 1;
+
+  message LobbyHomeEnrollmentRequest {
+    string MemId = 1;
+    string MemImg = 2;
+    string MemName = 3;
+    string ItmRegistrationDate = 4;
+    string ItmViewYn = 5;
+  }
+}

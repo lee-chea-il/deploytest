@@ -157,7 +157,7 @@
                   loadMessage(root, IdentityAvatarDetailResName, "Classlink.IdentityAvatarDetailRes");
                   
                   const IdentityAvatarDetailReqObj = {
-                      //InsCode : 'testA',
+                      InsCode : 'testA',
                       IdentityType : 'P',
                     };
                   
@@ -210,7 +210,7 @@
 			    	  
               const PacketObj = {
                   OpCode : OpCode,
-                  AccessToken : "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2NzAwMzQwNzcsInVzZXJfbmFtZSI6InRlc3Q3Nzc3IiwianRpIjoiMTA0NmMyZTAtNWI5Ni00YzRkLWEzYTItNDg3N2M0NTQyOTkxIiwiY2xpZW50X2lkIjoiY2xhc3NsaW5rIiwic2NvcGUiOlsiY2xpZW50Il19.WsJ679RyHKaIJRV1inHdQHrqzoSB9fLaq8F2Rv3wLUA",
+                  AccessToken : "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2NzAyODg0NjcsInVzZXJfbmFtZSI6InRlc3Q3Nzc3IiwianRpIjoiMzIzNzE4MDEtY2VhZi00MzhjLWE1NmEtY2I5ZDBmMmQ2ZWQ1IiwiY2xpZW50X2lkIjoiY2xhc3NsaW5rIiwic2NvcGUiOlsiY2xpZW50Il19.hWfp-8AiThns1fzrHFJzBav7BTu7TmOZGtb6lVWKsQ0",
                   InstanceId : '2',
                   Data : Data
                 };

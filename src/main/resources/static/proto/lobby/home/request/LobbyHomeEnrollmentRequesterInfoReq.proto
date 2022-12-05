@@ -1,0 +1,9 @@
+syntax = "proto3";
+package Classlink;
+option java_package = "com.classlink.websocket.api.lobby.home.domain.param.proto";
+option java_outer_classname = "LobbyHomeEnrollmentRequesterInfoReqProto";
+
+message LobbyHomeEnrollmentRequesterInfoReq {
+  string InsCode = 1;
+  string MemId = 2;
+}

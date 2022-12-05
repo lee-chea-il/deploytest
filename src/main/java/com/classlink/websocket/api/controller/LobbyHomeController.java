@@ -20,31 +20,31 @@ import lombok.extern.slf4j.Slf4j;
 @RequiredArgsConstructor
 public class LobbyHomeController {
 	
-	private final LobbyHomeService homeService;
+	private final LobbyHomeService lobbyHomeService;
 	
 	
 	@OpCodeMapping(value = OpCode.INSTITUTION_ENROLLMENT_REQUEST_LIST)
-	public void IdentityInstitutionEnrollmentList(WebSocketSession session, PacketData packetReqProto, String userId) throws StreamReadException, DatabindException, IOException {
-		session.sendMessage(homeService.findInstitutionEnrollmentsByInsCode(packetReqProto, userId));
+	public void InstitutionEnrollmentList(WebSocketSession session, PacketData packetReqProto, String userId) throws StreamReadException, DatabindException, IOException {
+		session.sendMessage(lobbyHomeService.findInstitutionEnrollmentsByInsCode(packetReqProto, userId));
 	}
 	
 	@OpCodeMapping(value = OpCode.INSTITUTION_ENROLLMENT_REQUEST_VIEW_STATUS_CHANGE)
-	public void IdentityInstitutionEnrollmentViewStatusChange(WebSocketSession session, PacketData packetReqProto, String userId) throws StreamReadException, DatabindException, IOException {
-		session.sendMessage(homeService.modifyInstitutionEnrollmentViewStatus(packetReqProto, userId));
+	public void InstitutionEnrollmentViewStatusChange(WebSocketSession session, PacketData packetReqProto, String userId) throws StreamReadException, DatabindException, IOException {
+		session.sendMessage(lobbyHomeService.modifyInstitutionEnrollmentViewStatus(packetReqProto, userId));
 	}
 	
 	@OpCodeMapping(value = OpCode.INSTITUTION_ENROLLMENT_REQUESTER_INFO)
-	public void IdentityInstitutionEnrollmentRequestorInfo(WebSocketSession session, PacketData packetReqProto, String userId) throws StreamReadException, DatabindException, IOException {
-		session.sendMessage(homeService.findInstitutionEnrollmentRequestorInfo(packetReqProto, userId));
+	public void InstitutionEnrollmentRequestorInfo(WebSocketSession session, PacketData packetReqProto, String userId) throws StreamReadException, DatabindException, IOException {
+		session.sendMessage(lobbyHomeService.findInstitutionEnrollmentRequesterInfo(packetReqProto, userId));
 	}
 	
 	@OpCodeMapping(value = OpCode.INSTITUTION_ENROLLMENT_REQUEST_STATUS_CHANGE)
-	public void IdentityInstitutionEnrollmentRequestStatusChange(WebSocketSession session, PacketData packetReqProto, String userId) throws StreamReadException, DatabindException, IOException {
-		session.sendMessage(homeService.modifyInstitutionEnrollmentRequestStatus(packetReqProto, userId));
+	public void InstitutionEnrollmentRequestStatusChange(WebSocketSession session, PacketData packetReqProto, String userId) throws StreamReadException, DatabindException, IOException {
+		session.sendMessage(lobbyHomeService.modifyInstitutionEnrollmentRequestStatus(packetReqProto, userId));
 	}
 	
 	@OpCodeMapping(value = OpCode.INSTITUTION_MY_LIST)
 	public void myInstitutionList(WebSocketSession session, PacketData packetReqProto, String memId) throws IOException {
-		session.sendMessage(homeService.findMyInstitutionByMemId(packetReqProto, memId));
+		session.sendMessage(lobbyHomeService.findMyInstitutionByMemId(packetReqProto, memId));
 	}
 }

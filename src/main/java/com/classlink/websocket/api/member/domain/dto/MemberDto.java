@@ -10,7 +10,7 @@ public class MemberDto {
 	@Getter
 	@Setter
 	@Builder
-	public static class MemberIdentityDto{
+	public static class IdentityDto{
 		private String idt_code;
 		private String idt_name;
 		private String delete_yn;

@@ -17,10 +17,33 @@
   </select>
  
   <select id="selectInstitutionEnrollmentsByInsCode" resultType="com.classlink.websocket.api.lobby.home.domain.dto.LobbyHomeDto$InstitutionEnrollmentRequestListDto">
-   SELECT cm.mem_id, cm.mem_img, cm.mem_name, cim.itm_registration_date, cim.itm_view_yn
-   FROM cl_institution_member cim 
-   INNER JOIN cl_member cm
-   ON cim.mem_idx = cm.mem_idx 
-   WHERE cim.ins_code = #{ins_code};
+     SELECT cm.mem_id, cm.mem_img, cm.mem_name, cim.itm_registration_date, cim.itm_view_yn
+     FROM cl_institution_member cim 
+     INNER JOIN cl_member cm
+     ON cim.mem_idx = cm.mem_idx 
+     WHERE cim.ins_code = #{ins_code};
+     AND cim.itm_acc_yn = 'N'
+     AND cim.itm_status = '02'
   </select>
+  
+  <update id="updateAvartarByMemberId" 
+    parameterType="com.classlink.websocket.api.lobby.home.domain.param.LobbyHomeParam$InstitutionEnrollmentRequestConfirmParam">
+      UPDATE cl_institution_member cim 
+      inner join cl_member cm 
+      on cim.mem_idx = cm.mem_idx 
+      SET itm_view_yn = 'Y'
+      WHERE cm.mem_id = #{mem_id}
+      AND cm.delete_yn = 'N'
+      AND cim.ins_code = '#{ins_code}
+  </update>
+  
+    <select id="selectInstitutionEnrollmentRequesterInfo" resultType="com.classlink.websocket.api.lobby.home.domain.dto.LobbyHomeDto$InstitutionEnrollmentRequesterInfoDto">
+     SELECT cm.mem_id, cm.mem_img, cm.mem_name, cim.itm_registration_date, cim.itm_view_yn
+     FROM cl_institution_member cim 
+     INNER JOIN cl_member cm
+     ON cim.mem_idx = cm.mem_idx 
+     WHERE cim.ins_code = #{ins_code};
+  </select>
+  
+  
 </mapper>
