@@ -4,5 +4,5 @@ option java_package = "com.classlink.websocket.api.member.domain.param.proto";
 option java_outer_classname = "IdentityListReqProto";
 
 message IdentityListReq {
-  string InsCode = 1;
+	string	InsCode = 1;
 }

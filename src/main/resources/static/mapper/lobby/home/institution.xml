@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper namespace="com.classlink.websocket.api.lobby.home.HomeMapper">
+<mapper namespace="com.classlink.websocket.api.lobby.home.LobbyHomeMapper">
   <select id="selectMyInstitutionByMemId" resultType="com.classlink.websocket.api.lobby.home.domain.dto.LobbyHomeDto$MyInstitutionListDto">
     select cs.std_use_yn, ci.ins_name
     from cl_member cm
@@ -21,7 +21,7 @@
      FROM cl_institution_member cim 
      INNER JOIN cl_member cm
      ON cim.mem_idx = cm.mem_idx 
-     WHERE cim.ins_code = #{ins_code};
+     WHERE cim.ins_code = #{ins_code}
      AND cim.itm_acc_yn = 'N'
      AND cim.itm_status = '02'
   </select>
@@ -36,14 +36,35 @@
       AND cm.delete_yn = 'N'
       AND cim.ins_code = '#{ins_code}
   </update>
+ 
+  <resultMap id="institutionEnrollmentRequesterInfoDtoResultMap" type="com.classlink.websocket.api.lobby.home.domain.dto.LobbyHomeDto$InstitutionEnrollmentRequesterInfoDto">
+      <result column="mea_avatar_id" property="mea_avatar_id"/>
+      <result column="mem_img" property="mem_img"/>
+      <result column="mem_nickname" property="mem_nickname"/>
+      <result column="mem_name" property="mem_name"/>
+      <result column="mem_email" property="mem_email"/>
+      <result column="mem_phone" property="mem_phone"/>
+      <result column="itm_registration_date" property="itm_registration_date"/>
+      <collection property="rti_registration_dates" ofType="String">
+        <result column="rti_registration_date" property="rti_registration_date"/>
+      </collection>
+  </resultMap>
   
-    <select id="selectInstitutionEnrollmentRequesterInfo" resultType="com.classlink.websocket.api.lobby.home.domain.dto.LobbyHomeDto$InstitutionEnrollmentRequesterInfoDto">
-     SELECT cm.mem_id, cm.mem_img, cm.mem_name, cim.itm_registration_date, cim.itm_view_yn
-     FROM cl_institution_member cim 
-     INNER JOIN cl_member cm
-     ON cim.mem_idx = cm.mem_idx 
-     WHERE cim.ins_code = #{ins_code};
+  <select id="selectInstitutionEnrollmentRequesterInfo" resultMap="institutionEnrollmentRequesterInfoDtoResultMap">
+     SELECT cma.mea_avatar_id, cm.mem_img, cm.mem_nickname, cm.mem_name, cm.mem_email, cm.mem_phone, cim.itm_registration_date, cri.rti_registration_date
+     FROM cl_member cm 
+     inner join cl_institution_member cim
+     on cm.mem_idx = cim.mem_idx and cim.ins_code = #{ins_code} and cim.itm_acc_yn = 'N' and cim.itm_status = '02'
+     inner join cl_member_avatar cma 
+     on cm.mem_idx = cma.mem_idx and cma.ins_code = #{ins_code} and cma.identity_type = 'S' 
+     inner join cl_recent_institution cri 
+     on cim.itm_idx = cri.itm_idx
+     WHERE cm.mem_id = #{mem_id}
+     and cm.delete_yn = 'N'
+     and cm.live_yn = 'N'
+     ORDER BY cri.rti_idx DESC
+     LIMIT 0, 5;
   </select>
-  
+
   
 </mapper>

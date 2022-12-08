@@ -4,13 +4,35 @@ import java.lang.reflect.Field;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
+import java.util.function.Consumer;
 
 import org.apache.commons.lang3.StringUtils;
 
 import com.google.protobuf.Descriptors.FieldDescriptor;
 import com.google.protobuf.Message;
 
+import lombok.extern.slf4j.Slf4j;
+
+@Slf4j
 public class CommonUtil {
+	
+	public static <T> void nullSafeSet(T value, Consumer<T> setter) {
+		if( value != null) {
+			if( value.getClass() == List.class ) {
+				
+				List<?> listValue = (List<?>)value;
+				log.info("list value : {}",value);
+				if(!listValue.isEmpty()) {
+					setter.accept(value);
+				}
+				
+			}else {
+				log.info("value : {}",value);
+				setter.accept(value);
+			}
+		}
+		
+	}
 
 	public static <T extends Message> void checkIfProtoParamAvailable(T proto) {
 

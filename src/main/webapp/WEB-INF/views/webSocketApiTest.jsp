@@ -18,6 +18,10 @@
       <option value="104" >아바타 변경</option>
       <option value="105" >교육기관 조회</option>
       <option value="106" >교육기관 등록요청</option>
+      <option value="107" >가입신청 리스트</option>
+      <option value="108" >가입신청 확인</option>
+      <option value="109" >가입신청인 정보</option>
+      <option value="110" >가입신청 응답</option>
       <option value="201" >소속기관조회</option>
     </select>
     <button id="btnSend" class="btn btn-primary">Send Message</button>
@@ -35,9 +39,10 @@
     // window[]를 통해서 브라우저상에 전역변수(global)로 지정할때 사용하는 변수  
     
       //필수객체 및 에러관련 
-      const PacketName = "PacketData";
+      const RequestPacketName = "RequestPacket";
+      const ResponsePacketName = "ResponsePacket";
       const JwtExceptionName = "JwtException";
-    
+      // 신분생성flow--------------------------------------
       //신분
       const IdentityListReqName = "IdentityListReq";
       const IdentityListResName = "IdentityListRes";
@@ -58,8 +63,17 @@
       const IdentityInstitutionEnrollmentRequestReqName = "IdentityInstitutionEnrollmentRequestReq";
       const IdentityInstitutionEnrollmentRequestResName = "IdentityInstitutionEnrollmentRequestRes";
       
-      //로비
+      // 로비 --------------------------------------
+      // 홈
       const MyInstitutionListName = "MyInstitutionList";
+      const LobbyHomeEnrollmentRequestConfirmReqName = "LobbyHomeEnrollmentRequestConfirmReq";
+      const LobbyHomeEnrollmentRequestConfirmResName = "LobbyHomeEnrollmentRequestConfirmRes";
+      const LobbyHomeEnrollmentRequesterInfoReqName = "LobbyHomeEnrollmentRequesterInfoReq";
+      const LobbyHomeEnrollmentRequesterInfoResName = "LobbyHomeEnrollmentRequesterInfoRes";
+      const LobbyHomeEnrollmentRequestListReqName = "LobbyHomeEnrollmentRequestListReq";
+      const LobbyHomeEnrollmentRequestListResName = "LobbyHomeEnrollmentRequestListRes";
+      const LobbyHomeEnrollmentRequestReplyReqName = "LobbyHomeEnrollmentRequestReplyReq";
+      const LobbyHomeEnrollmentRequestReplyResName = "LobbyHomeEnrollmentRequestReplyRes";
 
     //---------------------------------------------------------------------------------------------------
     // protobuf.load시에 로딩할 protobuf 파일 경로 지정  
@@ -80,9 +94,18 @@
 				commonPath.concat("/member/response/IdentityInstitutionInfoRes.proto"),
 				commonPath.concat("/member/request/IdentityInstitutionEnrollmentRequestReq.proto"),
         commonPath.concat("/member/response/IdentityInstitutionEnrollmentRequestRes.proto"),
+        commonPath.concat("/lobby/home/request/LobbyHomeEnrollmentRequestConfirmReq.proto"),
+        commonPath.concat("/lobby/home/response/LobbyHomeEnrollmentRequestConfirmRes.proto"),
+        commonPath.concat("/lobby/home/request/LobbyHomeEnrollmentRequesterInfoReq.proto"),
+        commonPath.concat("/lobby/home/response/LobbyHomeEnrollmentRequesterInfoRes.proto"),
+        commonPath.concat("/lobby/home/request/LobbyHomeEnrollmentRequestListReq.proto"),
+        commonPath.concat("/lobby/home/response/LobbyHomeEnrollmentRequestListRes.proto"),
+        commonPath.concat("/lobby/home/request/LobbyHomeEnrollmentRequestReplyReq.proto"),
+        commonPath.concat("/lobby/home/response/LobbyHomeEnrollmentRequestReplyRes.proto"),
 				commonPath.concat("/member/request/SWclassIdentityInfo.proto"),
 				commonPath.concat("/lobby/home/response/SWclassMyInstitutionList.proto"),
-				commonPath.concat("/common/PacketData.proto"),
+				commonPath.concat("/common/RequestPacket.proto"),
+				commonPath.concat("/common/ResponsePacket.proto"),
 				commonPath.concat("/jwt/jwtException.proto")
 				];
 
@@ -110,7 +133,8 @@
 			     protobuf.load(protoFileList, function(err, root) {
 			    	  console.log("INFO: protobuf files loaded.");
 			    	  
-			    	  loadMessage(root, PacketName, "Classlink.PacketData");
+			    	  loadMessage(root, RequestPacketName, "Classlink.RequestPacket");
+			    	  loadMessage(root, ResponsePacketName, "Classlink.ResponsePacket");
 			    	  loadMessage(root, JwtExceptionName, "Classlink.JwtException");
 
 			    	  switch (OpCode) {
@@ -121,7 +145,7 @@
                   
                   const IdentityCreateReqObj = {
                   		InsCode : 'testA',
-                  		IdentityType : 'T'
+                  		SelectIdentityType : 'T'
                     };
                   
                   Data = setDataToSend(root, IdentityCreateReqName, IdentityCreateReqObj);
@@ -131,9 +155,8 @@
 			    	  		loadMessage(root, IdentityListReqName, "Classlink.IdentityListReq");
 			    	  		loadMessage(root, IdentityListResName, "Classlink.IdentityListRes");
 			    	  		
-			    	  		
 			    	  		const IdentityListReqObj = {
-                      InsCode : ''
+                      InsCode : 'testA'
                     };
                   
                   Data = setDataToSend(root, IdentityListReqName, IdentityListReqObj);
@@ -199,6 +222,53 @@
                   
                   Data = setDataToSend(root, IdentityInstitutionEnrollmentRequestReqName, IdentityInstitutionEnrollmentRequestReqObj);
                   break;
+                //-----------------------------------------------------------------------------------------
+                case 107 :
+                  loadMessage(root, LobbyHomeEnrollmentRequestListReqName, "Classlink.LobbyHomeEnrollmentRequestListReq");
+                  loadMessage(root, LobbyHomeEnrollmentRequestListResName, "Classlink.LobbyHomeEnrollmentRequestListRes");
+                  
+                  const LobbyHomeEnrollmentRequestListReqObj = {
+                      InsCode : 'testA'
+                    };
+                  
+                  Data = setDataToSend(root, LobbyHomeEnrollmentRequestListReqName, LobbyHomeEnrollmentRequestListReqObj);
+                  break; 
+                //-----------------------------------------------------------------------------------------
+                case 108 :
+                  loadMessage(root, LobbyHomeEnrollmentRequestConfirmReqName, "Classlink.LobbyHomeEnrollmentRequestConfirmReq");
+                  loadMessage(root, LobbyHomeEnrollmentRequestConfirmResName, "Classlink.LobbyHomeEnrollmentRequestConfirmRes");
+                  
+                  const LobbyHomeEnrollmentRequestConfirmReqObj = {
+                      InsCode : 'testA',
+                      MemId : 'test7777'
+                    };
+                  
+                  Data = setDataToSend(root, IdentityInstitutionEnrollmentRequestReqName, LobbyHomeEnrollmentRequestConfirmReqObj);
+                  break;
+                //-----------------------------------------------------------------------------------------
+                case 109 :
+                  loadMessage(root, LobbyHomeEnrollmentRequesterInfoReqName, "Classlink.LobbyHomeEnrollmentRequesterInfoReq");
+                  loadMessage(root, LobbyHomeEnrollmentRequesterInfoResName, "Classlink.LobbyHomeEnrollmentRequesterInfoRes");
+                  
+                  const LobbyHomeEnrollmentRequesterInfoReqObj = {
+                      InsCode : 'testA',
+                      MemId : 'test7777'
+                    };
+                  
+                  Data = setDataToSend(root, LobbyHomeEnrollmentRequesterInfoReqName, LobbyHomeEnrollmentRequesterInfoReqObj);
+                  break; 
+                //-----------------------------------------------------------------------------------------
+                case 110 :
+                  loadMessage(root, LobbyHomeEnrollmentRequestReplyReqName, "Classlink.LobbyHomeEnrollmentRequestReplyReq");
+                  loadMessage(root, LobbyHomeEnrollmentRequestReplyResName, "Classlink.LobbyHomeEnrollmentRequestReplyRes");
+                  
+                  const LobbyHomeEnrollmentRequestReplyReqObj = {
+                      InsCode : 'testA',
+                      MemId : 'test7777'
+                    };
+                  
+                  Data = setDataToSend(root, LobbyHomeEnrollmentRequestReplyReqName, LobbyHomeEnrollmentRequestReplyReqObj);
+                  break;  
                 //-----------------------------------------------------------------------------------------  
                 case 201 :
                   loadMessage(root, MyInstitutionListName, "Classlink.SWclassMyInstitutionList");
@@ -208,15 +278,15 @@
 			    	    	break;
 			    	  }
 			    	  
-              const PacketObj = {
+              const RequestPacketObj = {
                   OpCode : OpCode,
-                  AccessToken : "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2NzAyODg0NjcsInVzZXJfbmFtZSI6InRlc3Q3Nzc3IiwianRpIjoiMzIzNzE4MDEtY2VhZi00MzhjLWE1NmEtY2I5ZDBmMmQ2ZWQ1IiwiY2xpZW50X2lkIjoiY2xhc3NsaW5rIiwic2NvcGUiOlsiY2xpZW50Il19.hWfp-8AiThns1fzrHFJzBav7BTu7TmOZGtb6lVWKsQ0",
+                  AccessToken : "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2NzA0ODM0MjUsInVzZXJfbmFtZSI6InRlc3Q3Nzc3IiwianRpIjoiNDgzNWNjZGYtODY5OS00YzZkLWIxY2EtZDQ2MTAzOGZhNDIwIiwiY2xpZW50X2lkIjoiY2xhc3NsaW5rIiwic2NvcGUiOlsiY2xpZW50Il19.vWzVLj3cb0UQzGo-tXA_Aug6sDWRzPHsLYj-4ZRrHjQ",
                   InstanceId : '2',
                   Data : Data
                 };
 		          
               console.log("INFO: send triggered.");
-              socket.send(setDataToSend(root, PacketName, PacketObj));
+              socket.send(setDataToSend(root, RequestPacketName, RequestPacketObj));
               console.time("TIME");
 		          
 		          if (socket.readyState !== 1)
@@ -256,7 +326,7 @@
 					
 					let blob = event.data;
 					
-					const receivedPacketData = await readBlobDataAsync(blob, PacketName);
+					const receivedPacketData = await readBlobDataAsync(blob, ResponsePacketName);
 					
 					switch(receivedPacketData.OpCode) {
             case 100:
@@ -292,6 +362,26 @@
             case 106:   
               const receivedIdentityInstitutionEnrollmentRequestResData = window[IdentityInstitutionEnrollmentRequestResName].decode(receivedPacketData.Data);      
               console.log("receivedIdentityInstitutionEnrollmentRequestResData mmmmmmmmmmmm>>", receivedIdentityInstitutionEnrollmentRequestResData);
+              break;
+              
+            case 107:   
+              const receivedLobbyHomeEnrollmentRequestListResData = window[LobbyHomeEnrollmentRequestListResName].decode(receivedPacketData.Data);      
+              console.log("receivedLobbyHomeEnrollmentRequestListResData mmmmmmmmmmmm>>", receivedLobbyHomeEnrollmentRequestListResData);
+              break;
+              
+            case 108:   
+              const receivedLobbyHomeEnrollmentRequestConfirmResData = window[LobbyHomeEnrollmentRequestConfirmResName].decode(receivedPacketData.Data);      
+              console.log("receivedLobbyHomeEnrollmentRequestConfirmResData mmmmmmmmmmmm>>", receivedLobbyHomeEnrollmentRequestConfirmResData);
+              break;
+              
+            case 109:   
+              const receivedLobbyHomeEnrollmentRequesterInfoResData = window[LobbyHomeEnrollmentRequesterInfoResName].decode(receivedPacketData.Data);      
+              console.log("receivedLobbyHomeEnrollmentRequesterInfoResData mmmmmmmmmmmm>>", receivedLobbyHomeEnrollmentRequesterInfoResData);
+              break;
+              
+            case 110:   
+              const receivedLobbyHomeEnrollmentRequestReplyResData = window[LobbyHomeEnrollmentRequestReplyResName].decode(receivedPacketData.Data);      
+              console.log("receivedLobbyHomeEnrollmentRequestReplyResData mmmmmmmmmmmm>>", receivedLobbyHomeEnrollmentRequestReplyResData);
               break;
 	            
             case 201:   

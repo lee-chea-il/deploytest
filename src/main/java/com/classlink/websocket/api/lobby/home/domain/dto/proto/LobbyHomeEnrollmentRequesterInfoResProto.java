@@ -19,16 +19,10 @@ public final class LobbyHomeEnrollmentRequesterInfoResProto {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>string MeaAvartarId = 1;</code>
+     * <code>int32 MeaAvartarId = 1;</code>
      * @return The meaAvartarId.
      */
-    java.lang.String getMeaAvartarId();
-    /**
-     * <code>string MeaAvartarId = 1;</code>
-     * @return The bytes for meaAvartarId.
-     */
-    com.google.protobuf.ByteString
-        getMeaAvartarIdBytes();
+    int getMeaAvartarId();
 
     /**
      * <code>string MemImg = 2;</code>
@@ -140,7 +134,6 @@ public final class LobbyHomeEnrollmentRequesterInfoResProto {
       super(builder);
     }
     private LobbyHomeEnrollmentRequesterInfoRes() {
-      meaAvartarId_ = "";
       memImg_ = "";
       memNickName_ = "";
       memName_ = "";
@@ -176,41 +169,14 @@ public final class LobbyHomeEnrollmentRequesterInfoResProto {
     }
 
     public static final int MEAAVARTARID_FIELD_NUMBER = 1;
-    private volatile java.lang.Object meaAvartarId_;
+    private int meaAvartarId_;
     /**
-     * <code>string MeaAvartarId = 1;</code>
+     * <code>int32 MeaAvartarId = 1;</code>
      * @return The meaAvartarId.
      */
     @java.lang.Override
-    public java.lang.String getMeaAvartarId() {
-      java.lang.Object ref = meaAvartarId_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        meaAvartarId_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>string MeaAvartarId = 1;</code>
-     * @return The bytes for meaAvartarId.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getMeaAvartarIdBytes() {
-      java.lang.Object ref = meaAvartarId_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        meaAvartarId_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
+    public int getMeaAvartarId() {
+      return meaAvartarId_;
     }
 
     public static final int MEMIMG_FIELD_NUMBER = 2;
@@ -490,8 +456,8 @@ public final class LobbyHomeEnrollmentRequesterInfoResProto {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(meaAvartarId_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, meaAvartarId_);
+      if (meaAvartarId_ != 0) {
+        output.writeInt32(1, meaAvartarId_);
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(memImg_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, memImg_);
@@ -523,8 +489,9 @@ public final class LobbyHomeEnrollmentRequesterInfoResProto {
       if (size != -1) return size;
 
       size = 0;
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(meaAvartarId_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, meaAvartarId_);
+      if (meaAvartarId_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(1, meaAvartarId_);
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(memImg_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, memImg_);
@@ -567,8 +534,8 @@ public final class LobbyHomeEnrollmentRequesterInfoResProto {
       }
       com.classlink.websocket.api.lobby.home.domain.dto.proto.LobbyHomeEnrollmentRequesterInfoResProto.LobbyHomeEnrollmentRequesterInfoRes other = (com.classlink.websocket.api.lobby.home.domain.dto.proto.LobbyHomeEnrollmentRequesterInfoResProto.LobbyHomeEnrollmentRequesterInfoRes) obj;
 
-      if (!getMeaAvartarId()
-          .equals(other.getMeaAvartarId())) return false;
+      if (getMeaAvartarId()
+          != other.getMeaAvartarId()) return false;
       if (!getMemImg()
           .equals(other.getMemImg())) return false;
       if (!getMemNickName()
@@ -595,7 +562,7 @@ public final class LobbyHomeEnrollmentRequesterInfoResProto {
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + MEAAVARTARID_FIELD_NUMBER;
-      hash = (53 * hash) + getMeaAvartarId().hashCode();
+      hash = (53 * hash) + getMeaAvartarId();
       hash = (37 * hash) + MEMIMG_FIELD_NUMBER;
       hash = (53 * hash) + getMemImg().hashCode();
       hash = (37 * hash) + MEMNICKNAME_FIELD_NUMBER;
@@ -740,7 +707,7 @@ public final class LobbyHomeEnrollmentRequesterInfoResProto {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        meaAvartarId_ = "";
+        meaAvartarId_ = 0;
 
         memImg_ = "";
 
@@ -843,9 +810,8 @@ public final class LobbyHomeEnrollmentRequesterInfoResProto {
 
       public Builder mergeFrom(com.classlink.websocket.api.lobby.home.domain.dto.proto.LobbyHomeEnrollmentRequesterInfoResProto.LobbyHomeEnrollmentRequesterInfoRes other) {
         if (other == com.classlink.websocket.api.lobby.home.domain.dto.proto.LobbyHomeEnrollmentRequesterInfoResProto.LobbyHomeEnrollmentRequesterInfoRes.getDefaultInstance()) return this;
-        if (!other.getMeaAvartarId().isEmpty()) {
-          meaAvartarId_ = other.meaAvartarId_;
-          onChanged();
+        if (other.getMeaAvartarId() != 0) {
+          setMeaAvartarId(other.getMeaAvartarId());
         }
         if (!other.getMemImg().isEmpty()) {
           memImg_ = other.memImg_;
@@ -907,11 +873,11 @@ public final class LobbyHomeEnrollmentRequesterInfoResProto {
               case 0:
                 done = true;
                 break;
-              case 10: {
-                meaAvartarId_ = input.readStringRequireUtf8();
+              case 8: {
+                meaAvartarId_ = input.readInt32();
 
                 break;
-              } // case 10
+              } // case 8
               case 18: {
                 memImg_ = input.readStringRequireUtf8();
 
@@ -965,78 +931,33 @@ public final class LobbyHomeEnrollmentRequesterInfoResProto {
       }
       private int bitField0_;
 
-      private java.lang.Object meaAvartarId_ = "";
+      private int meaAvartarId_ ;
       /**
-       * <code>string MeaAvartarId = 1;</code>
+       * <code>int32 MeaAvartarId = 1;</code>
        * @return The meaAvartarId.
        */
-      public java.lang.String getMeaAvartarId() {
-        java.lang.Object ref = meaAvartarId_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          meaAvartarId_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
+      @java.lang.Override
+      public int getMeaAvartarId() {
+        return meaAvartarId_;
       }
       /**
-       * <code>string MeaAvartarId = 1;</code>
-       * @return The bytes for meaAvartarId.
-       */
-      public com.google.protobuf.ByteString
-          getMeaAvartarIdBytes() {
-        java.lang.Object ref = meaAvartarId_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          meaAvartarId_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>string MeaAvartarId = 1;</code>
+       * <code>int32 MeaAvartarId = 1;</code>
        * @param value The meaAvartarId to set.
        * @return This builder for chaining.
        */
-      public Builder setMeaAvartarId(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
+      public Builder setMeaAvartarId(int value) {
+        
         meaAvartarId_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>string MeaAvartarId = 1;</code>
+       * <code>int32 MeaAvartarId = 1;</code>
        * @return This builder for chaining.
        */
       public Builder clearMeaAvartarId() {
         
-        meaAvartarId_ = getDefaultInstance().getMeaAvartarId();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string MeaAvartarId = 1;</code>
-       * @param value The bytes for meaAvartarId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setMeaAvartarIdBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        meaAvartarId_ = value;
+        meaAvartarId_ = 0;
         onChanged();
         return this;
       }
@@ -1686,7 +1607,7 @@ public final class LobbyHomeEnrollmentRequesterInfoResProto {
     java.lang.String[] descriptorData = {
       "\n)LobbyHomeEnrollmentRequesterInfoRes.pr" +
       "oto\022\tClasslink\"\320\001\n#LobbyHomeEnrollmentRe" +
-      "questerInfoRes\022\024\n\014MeaAvartarId\030\001 \001(\t\022\016\n\006" +
+      "questerInfoRes\022\024\n\014MeaAvartarId\030\001 \001(\005\022\016\n\006" +
       "MemImg\030\002 \001(\t\022\023\n\013MemNickName\030\003 \001(\t\022\017\n\007Mem" +
       "Name\030\004 \001(\t\022\020\n\010MemEmail\030\005 \001(\t\022\020\n\010MemPhone" +
       "\030\006 \001(\t\022\033\n\023ItmRegistrationDate\030\007 \001(\t\022\034\n\024R" +

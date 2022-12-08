@@ -31,16 +31,16 @@ public final class IdentityCreateReqProto {
         getInsCodeBytes();
 
     /**
-     * <code>string IdentityType = 2;</code>
-     * @return The identityType.
+     * <code>string SelectIdentityType = 2;</code>
+     * @return The selectIdentityType.
      */
-    java.lang.String getIdentityType();
+    java.lang.String getSelectIdentityType();
     /**
-     * <code>string IdentityType = 2;</code>
-     * @return The bytes for identityType.
+     * <code>string SelectIdentityType = 2;</code>
+     * @return The bytes for selectIdentityType.
      */
     com.google.protobuf.ByteString
-        getIdentityTypeBytes();
+        getSelectIdentityTypeBytes();
   }
   /**
    * Protobuf type {@code Classlink.IdentityCreateReq}
@@ -56,7 +56,7 @@ public final class IdentityCreateReqProto {
     }
     private IdentityCreateReq() {
       insCode_ = "";
-      identityType_ = "";
+      selectIdentityType_ = "";
     }
 
     @java.lang.Override
@@ -122,38 +122,38 @@ public final class IdentityCreateReqProto {
       }
     }
 
-    public static final int IDENTITYTYPE_FIELD_NUMBER = 2;
-    private volatile java.lang.Object identityType_;
+    public static final int SELECTIDENTITYTYPE_FIELD_NUMBER = 2;
+    private volatile java.lang.Object selectIdentityType_;
     /**
-     * <code>string IdentityType = 2;</code>
-     * @return The identityType.
+     * <code>string SelectIdentityType = 2;</code>
+     * @return The selectIdentityType.
      */
     @java.lang.Override
-    public java.lang.String getIdentityType() {
-      java.lang.Object ref = identityType_;
+    public java.lang.String getSelectIdentityType() {
+      java.lang.Object ref = selectIdentityType_;
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        identityType_ = s;
+        selectIdentityType_ = s;
         return s;
       }
     }
     /**
-     * <code>string IdentityType = 2;</code>
-     * @return The bytes for identityType.
+     * <code>string SelectIdentityType = 2;</code>
+     * @return The bytes for selectIdentityType.
      */
     @java.lang.Override
     public com.google.protobuf.ByteString
-        getIdentityTypeBytes() {
-      java.lang.Object ref = identityType_;
+        getSelectIdentityTypeBytes() {
+      java.lang.Object ref = selectIdentityType_;
       if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        identityType_ = b;
+        selectIdentityType_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -177,8 +177,8 @@ public final class IdentityCreateReqProto {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(insCode_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, insCode_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(identityType_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, identityType_);
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(selectIdentityType_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, selectIdentityType_);
       }
       getUnknownFields().writeTo(output);
     }
@@ -192,8 +192,8 @@ public final class IdentityCreateReqProto {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(insCode_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, insCode_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(identityType_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, identityType_);
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(selectIdentityType_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, selectIdentityType_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -212,8 +212,8 @@ public final class IdentityCreateReqProto {
 
       if (!getInsCode()
           .equals(other.getInsCode())) return false;
-      if (!getIdentityType()
-          .equals(other.getIdentityType())) return false;
+      if (!getSelectIdentityType()
+          .equals(other.getSelectIdentityType())) return false;
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -227,8 +227,8 @@ public final class IdentityCreateReqProto {
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + INSCODE_FIELD_NUMBER;
       hash = (53 * hash) + getInsCode().hashCode();
-      hash = (37 * hash) + IDENTITYTYPE_FIELD_NUMBER;
-      hash = (53 * hash) + getIdentityType().hashCode();
+      hash = (37 * hash) + SELECTIDENTITYTYPE_FIELD_NUMBER;
+      hash = (53 * hash) + getSelectIdentityType().hashCode();
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -359,7 +359,7 @@ public final class IdentityCreateReqProto {
         super.clear();
         insCode_ = "";
 
-        identityType_ = "";
+        selectIdentityType_ = "";
 
         return this;
       }
@@ -388,7 +388,7 @@ public final class IdentityCreateReqProto {
       public com.classlink.websocket.api.member.domain.param.proto.IdentityCreateReqProto.IdentityCreateReq buildPartial() {
         com.classlink.websocket.api.member.domain.param.proto.IdentityCreateReqProto.IdentityCreateReq result = new com.classlink.websocket.api.member.domain.param.proto.IdentityCreateReqProto.IdentityCreateReq(this);
         result.insCode_ = insCode_;
-        result.identityType_ = identityType_;
+        result.selectIdentityType_ = selectIdentityType_;
         onBuilt();
         return result;
       }
@@ -441,8 +441,8 @@ public final class IdentityCreateReqProto {
           insCode_ = other.insCode_;
           onChanged();
         }
-        if (!other.getIdentityType().isEmpty()) {
-          identityType_ = other.identityType_;
+        if (!other.getSelectIdentityType().isEmpty()) {
+          selectIdentityType_ = other.selectIdentityType_;
           onChanged();
         }
         this.mergeUnknownFields(other.getUnknownFields());
@@ -477,7 +477,7 @@ public final class IdentityCreateReqProto {
                 break;
               } // case 10
               case 18: {
-                identityType_ = input.readStringRequireUtf8();
+                selectIdentityType_ = input.readStringRequireUtf8();
 
                 break;
               } // case 18
@@ -573,78 +573,78 @@ public final class IdentityCreateReqProto {
         return this;
       }
 
-      private java.lang.Object identityType_ = "";
+      private java.lang.Object selectIdentityType_ = "";
       /**
-       * <code>string IdentityType = 2;</code>
-       * @return The identityType.
+       * <code>string SelectIdentityType = 2;</code>
+       * @return The selectIdentityType.
        */
-      public java.lang.String getIdentityType() {
-        java.lang.Object ref = identityType_;
+      public java.lang.String getSelectIdentityType() {
+        java.lang.Object ref = selectIdentityType_;
         if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
-          identityType_ = s;
+          selectIdentityType_ = s;
           return s;
         } else {
           return (java.lang.String) ref;
         }
       }
       /**
-       * <code>string IdentityType = 2;</code>
-       * @return The bytes for identityType.
+       * <code>string SelectIdentityType = 2;</code>
+       * @return The bytes for selectIdentityType.
        */
       public com.google.protobuf.ByteString
-          getIdentityTypeBytes() {
-        java.lang.Object ref = identityType_;
+          getSelectIdentityTypeBytes() {
+        java.lang.Object ref = selectIdentityType_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
-          identityType_ = b;
+          selectIdentityType_ = b;
           return b;
         } else {
           return (com.google.protobuf.ByteString) ref;
         }
       }
       /**
-       * <code>string IdentityType = 2;</code>
-       * @param value The identityType to set.
+       * <code>string SelectIdentityType = 2;</code>
+       * @param value The selectIdentityType to set.
        * @return This builder for chaining.
        */
-      public Builder setIdentityType(
+      public Builder setSelectIdentityType(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
   
-        identityType_ = value;
+        selectIdentityType_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>string IdentityType = 2;</code>
+       * <code>string SelectIdentityType = 2;</code>
        * @return This builder for chaining.
        */
-      public Builder clearIdentityType() {
+      public Builder clearSelectIdentityType() {
         
-        identityType_ = getDefaultInstance().getIdentityType();
+        selectIdentityType_ = getDefaultInstance().getSelectIdentityType();
         onChanged();
         return this;
       }
       /**
-       * <code>string IdentityType = 2;</code>
-       * @param value The bytes for identityType to set.
+       * <code>string SelectIdentityType = 2;</code>
+       * @param value The bytes for selectIdentityType to set.
        * @return This builder for chaining.
        */
-      public Builder setIdentityTypeBytes(
+      public Builder setSelectIdentityTypeBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
         
-        identityType_ = value;
+        selectIdentityType_ = value;
         onChanged();
         return this;
       }
@@ -726,11 +726,11 @@ public final class IdentityCreateReqProto {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\027IdentityCreateReq.proto\022\tClasslink\":\n\021" +
-      "IdentityCreateReq\022\017\n\007InsCode\030\001 \001(\t\022\024\n\014Id" +
-      "entityType\030\002 \001(\tBO\n5com.classlink.websoc" +
-      "ket.api.member.domain.param.protoB\026Ident" +
-      "ityCreateReqProtob\006proto3"
+      "\n\027IdentityCreateReq.proto\022\tClasslink\"@\n\021" +
+      "IdentityCreateReq\022\017\n\007InsCode\030\001 \001(\t\022\032\n\022Se" +
+      "lectIdentityType\030\002 \001(\tBO\n5com.classlink." +
+      "websocket.api.member.domain.param.protoB" +
+      "\026IdentityCreateReqProtob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -741,7 +741,7 @@ public final class IdentityCreateReqProto {
     internal_static_Classlink_IdentityCreateReq_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_Classlink_IdentityCreateReq_descriptor,
-        new java.lang.String[] { "InsCode", "IdentityType", });
+        new java.lang.String[] { "InsCode", "SelectIdentityType", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

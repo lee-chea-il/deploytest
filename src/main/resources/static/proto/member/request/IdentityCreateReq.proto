@@ -4,6 +4,6 @@ option java_package = "com.classlink.websocket.api.member.domain.param.proto";
 option java_outer_classname = "IdentityCreateReqProto";
 
 message IdentityCreateReq {
-	string InsCode = 1;
-	string IdentityType = 2;
+	string	InsCode = 1;
+	string	SelectIdentityType = 2;
 }

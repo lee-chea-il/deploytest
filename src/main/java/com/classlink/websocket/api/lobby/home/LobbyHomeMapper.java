@@ -22,7 +22,7 @@ public interface LobbyHomeMapper {
 	int updateInstitutionEnrollmentViewStatus(
 			InstitutionEnrollmentRequestConfirmParam lobbyHomeEnrollmentRequestConfirmParam);
 
-	List<InstitutionEnrollmentRequesterInfoDto> selectInstitutionEnrollmentRequesterInfo(
+	InstitutionEnrollmentRequesterInfoDto selectInstitutionEnrollmentRequesterInfo(
 			InstitutionEnrollmentRequesterInfoParam lobbyHomeEnrollmentRequesterInfoParam);
 
 }

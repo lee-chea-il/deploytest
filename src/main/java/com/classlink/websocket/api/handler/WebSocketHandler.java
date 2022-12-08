@@ -16,7 +16,7 @@ import org.springframework.web.socket.handler.TextWebSocketHandler;
 
 import com.classlink.websocket.api.common.OpCode;
 import com.classlink.websocket.api.common.OpCodeMapping;
-import com.classlink.websocket.api.common.domain.proto.PacketDataProto.PacketData;
+import com.classlink.websocket.api.common.domain.proto.RequestPacketProto.RequestPacket;
 import com.classlink.websocket.api.jwt.JwtExceptionResponseController;
 import com.classlink.websocket.api.util.BeanUtils;
 import com.classlink.websocket.api.util.JwtTokenParser;
@@ -63,7 +63,7 @@ public class WebSocketHandler extends TextWebSocketHandler {
 		int opCode = 0;
 		String userId = null;
 		try {
-			PacketData deserializedParam = PacketData.newBuilder().mergeFrom(message.getPayload().array())
+			RequestPacket deserializedParam = RequestPacket.newBuilder().mergeFrom(message.getPayload().array())
 					.build();
 			log.info(String.valueOf(deserializedParam.getOpCode()));
 			log.info(deserializedParam.getAccessToken());

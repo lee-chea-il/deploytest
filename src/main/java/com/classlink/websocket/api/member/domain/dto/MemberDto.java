@@ -23,9 +23,7 @@ public class MemberDto {
 	@Setter
 	@Builder
 	public static class IdentityListDto {
-		private String ins_code;
 		private String identity_type;
-		private int mea_avatar_id;
 	}
 	
 	@Getter

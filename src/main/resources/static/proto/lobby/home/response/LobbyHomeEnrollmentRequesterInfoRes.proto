@@ -4,7 +4,7 @@ option java_package = "com.classlink.websocket.api.lobby.home.domain.dto.proto";
 option java_outer_classname = "LobbyHomeEnrollmentRequesterInfoResProto";
 
 message LobbyHomeEnrollmentRequesterInfoRes {
-  string MeaAvartarId = 1;
+  int32 MeaAvartarId = 1;
   string MemImg = 2;
   string MemNickName = 3;
   string MemName = 4;

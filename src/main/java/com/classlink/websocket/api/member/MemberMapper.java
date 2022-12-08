@@ -4,7 +4,6 @@ import java.util.List;
 
 import org.apache.ibatis.annotations.Mapper;
 
-import com.classlink.websocket.api.member.domain.dto.MemberDto;
 import com.classlink.websocket.api.member.domain.dto.MemberDto.AvatarDetailDto;
 import com.classlink.websocket.api.member.domain.dto.MemberDto.InstitutionInfoDto;
 import com.classlink.websocket.api.member.domain.param.MemberParam.AvatarChangeParam;
@@ -18,7 +17,7 @@ import com.classlink.websocket.api.member.domain.param.MemberParam.InstitutionIn
 @Mapper
 public interface MemberMapper {
 	
-	List<MemberDto.IdentityListDto> selectIdentitiesByMemberId(IdentityListParam identityListParam);
+	List<String> selectIdentitiesByMemberId(IdentityListParam identityListParam);
 
 	int insertIdentity(IdentityCreateParam IdentityParam);
 
