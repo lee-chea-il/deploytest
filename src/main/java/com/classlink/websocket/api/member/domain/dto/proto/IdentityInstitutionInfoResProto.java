@@ -19,40 +19,28 @@ public final class IdentityInstitutionInfoResProto {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>string InsCode = 1;</code>
-     * @return The insCode.
-     */
-    java.lang.String getInsCode();
-    /**
-     * <code>string InsCode = 1;</code>
-     * @return The bytes for insCode.
-     */
-    com.google.protobuf.ByteString
-        getInsCodeBytes();
-
-    /**
-     * <code>string InsName = 2;</code>
+     * <code>string InsName = 1;</code>
      * @return The insName.
      */
     java.lang.String getInsName();
     /**
-     * <code>string InsName = 2;</code>
+     * <code>string InsName = 1;</code>
      * @return The bytes for insName.
      */
     com.google.protobuf.ByteString
         getInsNameBytes();
 
     /**
-     * <code>string InsLogoImg = 3;</code>
-     * @return The insLogoImg.
+     * <code>string InsLogoImgUrl = 2;</code>
+     * @return The insLogoImgUrl.
      */
-    java.lang.String getInsLogoImg();
+    java.lang.String getInsLogoImgUrl();
     /**
-     * <code>string InsLogoImg = 3;</code>
-     * @return The bytes for insLogoImg.
+     * <code>string InsLogoImgUrl = 2;</code>
+     * @return The bytes for insLogoImgUrl.
      */
     com.google.protobuf.ByteString
-        getInsLogoImgBytes();
+        getInsLogoImgUrlBytes();
   }
   /**
    * Protobuf type {@code Classlink.IdentityInstitutionInfoRes}
@@ -67,9 +55,8 @@ public final class IdentityInstitutionInfoResProto {
       super(builder);
     }
     private IdentityInstitutionInfoRes() {
-      insCode_ = "";
       insName_ = "";
-      insLogoImg_ = "";
+      insLogoImgUrl_ = "";
     }
 
     @java.lang.Override
@@ -97,48 +84,10 @@ public final class IdentityInstitutionInfoResProto {
               com.classlink.websocket.api.member.domain.dto.proto.IdentityInstitutionInfoResProto.IdentityInstitutionInfoRes.class, com.classlink.websocket.api.member.domain.dto.proto.IdentityInstitutionInfoResProto.IdentityInstitutionInfoRes.Builder.class);
     }
 
-    public static final int INSCODE_FIELD_NUMBER = 1;
-    private volatile java.lang.Object insCode_;
-    /**
-     * <code>string InsCode = 1;</code>
-     * @return The insCode.
-     */
-    @java.lang.Override
-    public java.lang.String getInsCode() {
-      java.lang.Object ref = insCode_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        insCode_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>string InsCode = 1;</code>
-     * @return The bytes for insCode.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getInsCodeBytes() {
-      java.lang.Object ref = insCode_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        insCode_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int INSNAME_FIELD_NUMBER = 2;
+    public static final int INSNAME_FIELD_NUMBER = 1;
     private volatile java.lang.Object insName_;
     /**
-     * <code>string InsName = 2;</code>
+     * <code>string InsName = 1;</code>
      * @return The insName.
      */
     @java.lang.Override
@@ -155,7 +104,7 @@ public final class IdentityInstitutionInfoResProto {
       }
     }
     /**
-     * <code>string InsName = 2;</code>
+     * <code>string InsName = 1;</code>
      * @return The bytes for insName.
      */
     @java.lang.Override
@@ -173,38 +122,38 @@ public final class IdentityInstitutionInfoResProto {
       }
     }
 
-    public static final int INSLOGOIMG_FIELD_NUMBER = 3;
-    private volatile java.lang.Object insLogoImg_;
+    public static final int INSLOGOIMGURL_FIELD_NUMBER = 2;
+    private volatile java.lang.Object insLogoImgUrl_;
     /**
-     * <code>string InsLogoImg = 3;</code>
-     * @return The insLogoImg.
+     * <code>string InsLogoImgUrl = 2;</code>
+     * @return The insLogoImgUrl.
      */
     @java.lang.Override
-    public java.lang.String getInsLogoImg() {
-      java.lang.Object ref = insLogoImg_;
+    public java.lang.String getInsLogoImgUrl() {
+      java.lang.Object ref = insLogoImgUrl_;
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        insLogoImg_ = s;
+        insLogoImgUrl_ = s;
         return s;
       }
     }
     /**
-     * <code>string InsLogoImg = 3;</code>
-     * @return The bytes for insLogoImg.
+     * <code>string InsLogoImgUrl = 2;</code>
+     * @return The bytes for insLogoImgUrl.
      */
     @java.lang.Override
     public com.google.protobuf.ByteString
-        getInsLogoImgBytes() {
-      java.lang.Object ref = insLogoImg_;
+        getInsLogoImgUrlBytes() {
+      java.lang.Object ref = insLogoImgUrl_;
       if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        insLogoImg_ = b;
+        insLogoImgUrl_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -225,14 +174,11 @@ public final class IdentityInstitutionInfoResProto {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(insCode_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, insCode_);
-      }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(insName_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, insName_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, insName_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(insLogoImg_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, insLogoImg_);
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(insLogoImgUrl_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, insLogoImgUrl_);
       }
       getUnknownFields().writeTo(output);
     }
@@ -243,14 +189,11 @@ public final class IdentityInstitutionInfoResProto {
       if (size != -1) return size;
 
       size = 0;
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(insCode_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, insCode_);
-      }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(insName_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, insName_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, insName_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(insLogoImg_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, insLogoImg_);
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(insLogoImgUrl_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, insLogoImgUrl_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -267,12 +210,10 @@ public final class IdentityInstitutionInfoResProto {
       }
       com.classlink.websocket.api.member.domain.dto.proto.IdentityInstitutionInfoResProto.IdentityInstitutionInfoRes other = (com.classlink.websocket.api.member.domain.dto.proto.IdentityInstitutionInfoResProto.IdentityInstitutionInfoRes) obj;
 
-      if (!getInsCode()
-          .equals(other.getInsCode())) return false;
       if (!getInsName()
           .equals(other.getInsName())) return false;
-      if (!getInsLogoImg()
-          .equals(other.getInsLogoImg())) return false;
+      if (!getInsLogoImgUrl()
+          .equals(other.getInsLogoImgUrl())) return false;
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -284,12 +225,10 @@ public final class IdentityInstitutionInfoResProto {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + INSCODE_FIELD_NUMBER;
-      hash = (53 * hash) + getInsCode().hashCode();
       hash = (37 * hash) + INSNAME_FIELD_NUMBER;
       hash = (53 * hash) + getInsName().hashCode();
-      hash = (37 * hash) + INSLOGOIMG_FIELD_NUMBER;
-      hash = (53 * hash) + getInsLogoImg().hashCode();
+      hash = (37 * hash) + INSLOGOIMGURL_FIELD_NUMBER;
+      hash = (53 * hash) + getInsLogoImgUrl().hashCode();
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -418,11 +357,9 @@ public final class IdentityInstitutionInfoResProto {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        insCode_ = "";
-
         insName_ = "";
 
-        insLogoImg_ = "";
+        insLogoImgUrl_ = "";
 
         return this;
       }
@@ -450,9 +387,8 @@ public final class IdentityInstitutionInfoResProto {
       @java.lang.Override
       public com.classlink.websocket.api.member.domain.dto.proto.IdentityInstitutionInfoResProto.IdentityInstitutionInfoRes buildPartial() {
         com.classlink.websocket.api.member.domain.dto.proto.IdentityInstitutionInfoResProto.IdentityInstitutionInfoRes result = new com.classlink.websocket.api.member.domain.dto.proto.IdentityInstitutionInfoResProto.IdentityInstitutionInfoRes(this);
-        result.insCode_ = insCode_;
         result.insName_ = insName_;
-        result.insLogoImg_ = insLogoImg_;
+        result.insLogoImgUrl_ = insLogoImgUrl_;
         onBuilt();
         return result;
       }
@@ -501,16 +437,12 @@ public final class IdentityInstitutionInfoResProto {
 
       public Builder mergeFrom(com.classlink.websocket.api.member.domain.dto.proto.IdentityInstitutionInfoResProto.IdentityInstitutionInfoRes other) {
         if (other == com.classlink.websocket.api.member.domain.dto.proto.IdentityInstitutionInfoResProto.IdentityInstitutionInfoRes.getDefaultInstance()) return this;
-        if (!other.getInsCode().isEmpty()) {
-          insCode_ = other.insCode_;
-          onChanged();
-        }
         if (!other.getInsName().isEmpty()) {
           insName_ = other.insName_;
           onChanged();
         }
-        if (!other.getInsLogoImg().isEmpty()) {
-          insLogoImg_ = other.insLogoImg_;
+        if (!other.getInsLogoImgUrl().isEmpty()) {
+          insLogoImgUrl_ = other.insLogoImgUrl_;
           onChanged();
         }
         this.mergeUnknownFields(other.getUnknownFields());
@@ -540,20 +472,15 @@ public final class IdentityInstitutionInfoResProto {
                 done = true;
                 break;
               case 10: {
-                insCode_ = input.readStringRequireUtf8();
+                insName_ = input.readStringRequireUtf8();
 
                 break;
               } // case 10
               case 18: {
-                insName_ = input.readStringRequireUtf8();
+                insLogoImgUrl_ = input.readStringRequireUtf8();
 
                 break;
               } // case 18
-              case 26: {
-                insLogoImg_ = input.readStringRequireUtf8();
-
-                break;
-              } // case 26
               default: {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                   done = true; // was an endgroup tag
@@ -570,85 +497,9 @@ public final class IdentityInstitutionInfoResProto {
         return this;
       }
 
-      private java.lang.Object insCode_ = "";
-      /**
-       * <code>string InsCode = 1;</code>
-       * @return The insCode.
-       */
-      public java.lang.String getInsCode() {
-        java.lang.Object ref = insCode_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          insCode_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <code>string InsCode = 1;</code>
-       * @return The bytes for insCode.
-       */
-      public com.google.protobuf.ByteString
-          getInsCodeBytes() {
-        java.lang.Object ref = insCode_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          insCode_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>string InsCode = 1;</code>
-       * @param value The insCode to set.
-       * @return This builder for chaining.
-       */
-      public Builder setInsCode(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        insCode_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string InsCode = 1;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearInsCode() {
-        
-        insCode_ = getDefaultInstance().getInsCode();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string InsCode = 1;</code>
-       * @param value The bytes for insCode to set.
-       * @return This builder for chaining.
-       */
-      public Builder setInsCodeBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        insCode_ = value;
-        onChanged();
-        return this;
-      }
-
       private java.lang.Object insName_ = "";
       /**
-       * <code>string InsName = 2;</code>
+       * <code>string InsName = 1;</code>
        * @return The insName.
        */
       public java.lang.String getInsName() {
@@ -664,7 +515,7 @@ public final class IdentityInstitutionInfoResProto {
         }
       }
       /**
-       * <code>string InsName = 2;</code>
+       * <code>string InsName = 1;</code>
        * @return The bytes for insName.
        */
       public com.google.protobuf.ByteString
@@ -681,7 +532,7 @@ public final class IdentityInstitutionInfoResProto {
         }
       }
       /**
-       * <code>string InsName = 2;</code>
+       * <code>string InsName = 1;</code>
        * @param value The insName to set.
        * @return This builder for chaining.
        */
@@ -696,7 +547,7 @@ public final class IdentityInstitutionInfoResProto {
         return this;
       }
       /**
-       * <code>string InsName = 2;</code>
+       * <code>string InsName = 1;</code>
        * @return This builder for chaining.
        */
       public Builder clearInsName() {
@@ -706,7 +557,7 @@ public final class IdentityInstitutionInfoResProto {
         return this;
       }
       /**
-       * <code>string InsName = 2;</code>
+       * <code>string InsName = 1;</code>
        * @param value The bytes for insName to set.
        * @return This builder for chaining.
        */
@@ -722,78 +573,78 @@ public final class IdentityInstitutionInfoResProto {
         return this;
       }
 
-      private java.lang.Object insLogoImg_ = "";
+      private java.lang.Object insLogoImgUrl_ = "";
       /**
-       * <code>string InsLogoImg = 3;</code>
-       * @return The insLogoImg.
+       * <code>string InsLogoImgUrl = 2;</code>
+       * @return The insLogoImgUrl.
        */
-      public java.lang.String getInsLogoImg() {
-        java.lang.Object ref = insLogoImg_;
+      public java.lang.String getInsLogoImgUrl() {
+        java.lang.Object ref = insLogoImgUrl_;
         if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
-          insLogoImg_ = s;
+          insLogoImgUrl_ = s;
           return s;
         } else {
           return (java.lang.String) ref;
         }
       }
       /**
-       * <code>string InsLogoImg = 3;</code>
-       * @return The bytes for insLogoImg.
+       * <code>string InsLogoImgUrl = 2;</code>
+       * @return The bytes for insLogoImgUrl.
        */
       public com.google.protobuf.ByteString
-          getInsLogoImgBytes() {
-        java.lang.Object ref = insLogoImg_;
+          getInsLogoImgUrlBytes() {
+        java.lang.Object ref = insLogoImgUrl_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
-          insLogoImg_ = b;
+          insLogoImgUrl_ = b;
           return b;
         } else {
           return (com.google.protobuf.ByteString) ref;
         }
       }
       /**
-       * <code>string InsLogoImg = 3;</code>
-       * @param value The insLogoImg to set.
+       * <code>string InsLogoImgUrl = 2;</code>
+       * @param value The insLogoImgUrl to set.
        * @return This builder for chaining.
        */
-      public Builder setInsLogoImg(
+      public Builder setInsLogoImgUrl(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
   
-        insLogoImg_ = value;
+        insLogoImgUrl_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>string InsLogoImg = 3;</code>
+       * <code>string InsLogoImgUrl = 2;</code>
        * @return This builder for chaining.
        */
-      public Builder clearInsLogoImg() {
+      public Builder clearInsLogoImgUrl() {
         
-        insLogoImg_ = getDefaultInstance().getInsLogoImg();
+        insLogoImgUrl_ = getDefaultInstance().getInsLogoImgUrl();
         onChanged();
         return this;
       }
       /**
-       * <code>string InsLogoImg = 3;</code>
-       * @param value The bytes for insLogoImg to set.
+       * <code>string InsLogoImgUrl = 2;</code>
+       * @param value The bytes for insLogoImgUrl to set.
        * @return This builder for chaining.
        */
-      public Builder setInsLogoImgBytes(
+      public Builder setInsLogoImgUrlBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
         
-        insLogoImg_ = value;
+        insLogoImgUrl_ = value;
         onChanged();
         return this;
       }
@@ -876,11 +727,11 @@ public final class IdentityInstitutionInfoResProto {
   static {
     java.lang.String[] descriptorData = {
       "\n IdentityInstitutionInfoRes.proto\022\tClas" +
-      "slink\"R\n\032IdentityInstitutionInfoRes\022\017\n\007I" +
-      "nsCode\030\001 \001(\t\022\017\n\007InsName\030\002 \001(\t\022\022\n\nInsLogo" +
-      "Img\030\003 \001(\tBV\n3com.classlink.websocket.api" +
-      ".member.domain.dto.protoB\037IdentityInstit" +
-      "utionInfoResProtob\006proto3"
+      "slink\"D\n\032IdentityInstitutionInfoRes\022\017\n\007I" +
+      "nsName\030\001 \001(\t\022\025\n\rInsLogoImgUrl\030\002 \001(\tBV\n3c" +
+      "om.classlink.websocket.api.member.domain" +
+      ".dto.protoB\037IdentityInstitutionInfoResPr" +
+      "otob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -891,7 +742,7 @@ public final class IdentityInstitutionInfoResProto {
     internal_static_Classlink_IdentityInstitutionInfoRes_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_Classlink_IdentityInstitutionInfoRes_descriptor,
-        new java.lang.String[] { "InsCode", "InsName", "InsLogoImg", });
+        new java.lang.String[] { "InsName", "InsLogoImgUrl", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

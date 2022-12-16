@@ -22,7 +22,7 @@ public final class IdentityAvatarChangeReqProto {
      * <code>string InsCode = 1;</code>
      * @return The insCode.
      */
-    java.lang.String getInsCode();
+    String getInsCode();
     /**
      * <code>string InsCode = 1;</code>
      * @return The bytes for insCode.
@@ -34,7 +34,7 @@ public final class IdentityAvatarChangeReqProto {
      * <code>string IdentityType = 2;</code>
      * @return The identityType.
      */
-    java.lang.String getIdentityType();
+    String getIdentityType();
     /**
      * <code>string IdentityType = 2;</code>
      * @return The bytes for identityType.
@@ -65,46 +65,46 @@ public final class IdentityAvatarChangeReqProto {
       identityType_ = "";
     }
 
-    @java.lang.Override
+    @Override
     @SuppressWarnings({"unused"})
-    protected java.lang.Object newInstance(
+    protected Object newInstance(
         UnusedPrivateParameter unused) {
       return new IdentityAvatarChangeReq();
     }
 
-    @java.lang.Override
+    @Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.classlink.websocket.api.member.domain.param.proto.IdentityAvatarChangeReqProto.internal_static_Classlink_IdentityAvatarChangeReq_descriptor;
+      return IdentityAvatarChangeReqProto.internal_static_Classlink_IdentityAvatarChangeReq_descriptor;
     }
 
-    @java.lang.Override
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+    @Override
+    protected FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.classlink.websocket.api.member.domain.param.proto.IdentityAvatarChangeReqProto.internal_static_Classlink_IdentityAvatarChangeReq_fieldAccessorTable
+      return IdentityAvatarChangeReqProto.internal_static_Classlink_IdentityAvatarChangeReq_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.classlink.websocket.api.member.domain.param.proto.IdentityAvatarChangeReqProto.IdentityAvatarChangeReq.class, com.classlink.websocket.api.member.domain.param.proto.IdentityAvatarChangeReqProto.IdentityAvatarChangeReq.Builder.class);
+              IdentityAvatarChangeReq.class, Builder.class);
     }
 
     public static final int INSCODE_FIELD_NUMBER = 1;
-    private volatile java.lang.Object insCode_;
+    private volatile Object insCode_;
     /**
      * <code>string InsCode = 1;</code>
      * @return The insCode.
      */
-    @java.lang.Override
-    public java.lang.String getInsCode() {
-      java.lang.Object ref = insCode_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
+    @Override
+    public String getInsCode() {
+      Object ref = insCode_;
+      if (ref instanceof String) {
+        return (String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
+        String s = bs.toStringUtf8();
         insCode_ = s;
         return s;
       }
@@ -113,14 +113,14 @@ public final class IdentityAvatarChangeReqProto {
      * <code>string InsCode = 1;</code>
      * @return The bytes for insCode.
      */
-    @java.lang.Override
+    @Override
     public com.google.protobuf.ByteString
         getInsCodeBytes() {
-      java.lang.Object ref = insCode_;
-      if (ref instanceof java.lang.String) {
+      Object ref = insCode_;
+      if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+                (String) ref);
         insCode_ = b;
         return b;
       } else {
@@ -129,20 +129,20 @@ public final class IdentityAvatarChangeReqProto {
     }
 
     public static final int IDENTITYTYPE_FIELD_NUMBER = 2;
-    private volatile java.lang.Object identityType_;
+    private volatile Object identityType_;
     /**
      * <code>string IdentityType = 2;</code>
      * @return The identityType.
      */
-    @java.lang.Override
-    public java.lang.String getIdentityType() {
-      java.lang.Object ref = identityType_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
+    @Override
+    public String getIdentityType() {
+      Object ref = identityType_;
+      if (ref instanceof String) {
+        return (String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
+        String s = bs.toStringUtf8();
         identityType_ = s;
         return s;
       }
@@ -151,14 +151,14 @@ public final class IdentityAvatarChangeReqProto {
      * <code>string IdentityType = 2;</code>
      * @return The bytes for identityType.
      */
-    @java.lang.Override
+    @Override
     public com.google.protobuf.ByteString
         getIdentityTypeBytes() {
-      java.lang.Object ref = identityType_;
-      if (ref instanceof java.lang.String) {
+      Object ref = identityType_;
+      if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+                (String) ref);
         identityType_ = b;
         return b;
       } else {
@@ -172,13 +172,13 @@ public final class IdentityAvatarChangeReqProto {
      * <code>int32 AvatarId = 3;</code>
      * @return The avatarId.
      */
-    @java.lang.Override
+    @Override
     public int getAvatarId() {
       return avatarId_;
     }
 
     private byte memoizedIsInitialized = -1;
-    @java.lang.Override
+    @Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -188,7 +188,7 @@ public final class IdentityAvatarChangeReqProto {
       return true;
     }
 
-    @java.lang.Override
+    @Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(insCode_)) {
@@ -203,7 +203,7 @@ public final class IdentityAvatarChangeReqProto {
       getUnknownFields().writeTo(output);
     }
 
-    @java.lang.Override
+    @Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -224,15 +224,15 @@ public final class IdentityAvatarChangeReqProto {
       return size;
     }
 
-    @java.lang.Override
-    public boolean equals(final java.lang.Object obj) {
+    @Override
+    public boolean equals(final Object obj) {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof com.classlink.websocket.api.member.domain.param.proto.IdentityAvatarChangeReqProto.IdentityAvatarChangeReq)) {
+      if (!(obj instanceof IdentityAvatarChangeReq)) {
         return super.equals(obj);
       }
-      com.classlink.websocket.api.member.domain.param.proto.IdentityAvatarChangeReqProto.IdentityAvatarChangeReq other = (com.classlink.websocket.api.member.domain.param.proto.IdentityAvatarChangeReqProto.IdentityAvatarChangeReq) obj;
+      IdentityAvatarChangeReq other = (IdentityAvatarChangeReq) obj;
 
       if (!getInsCode()
           .equals(other.getInsCode())) return false;
@@ -244,7 +244,7 @@ public final class IdentityAvatarChangeReqProto {
       return true;
     }
 
-    @java.lang.Override
+    @Override
     public int hashCode() {
       if (memoizedHashCode != 0) {
         return memoizedHashCode;
@@ -262,69 +262,69 @@ public final class IdentityAvatarChangeReqProto {
       return hash;
     }
 
-    public static com.classlink.websocket.api.member.domain.param.proto.IdentityAvatarChangeReqProto.IdentityAvatarChangeReq parseFrom(
+    public static IdentityAvatarChangeReq parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.classlink.websocket.api.member.domain.param.proto.IdentityAvatarChangeReqProto.IdentityAvatarChangeReq parseFrom(
+    public static IdentityAvatarChangeReq parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.classlink.websocket.api.member.domain.param.proto.IdentityAvatarChangeReqProto.IdentityAvatarChangeReq parseFrom(
+    public static IdentityAvatarChangeReq parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.classlink.websocket.api.member.domain.param.proto.IdentityAvatarChangeReqProto.IdentityAvatarChangeReq parseFrom(
+    public static IdentityAvatarChangeReq parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.classlink.websocket.api.member.domain.param.proto.IdentityAvatarChangeReqProto.IdentityAvatarChangeReq parseFrom(byte[] data)
+    public static IdentityAvatarChangeReq parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.classlink.websocket.api.member.domain.param.proto.IdentityAvatarChangeReqProto.IdentityAvatarChangeReq parseFrom(
+    public static IdentityAvatarChangeReq parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.classlink.websocket.api.member.domain.param.proto.IdentityAvatarChangeReqProto.IdentityAvatarChangeReq parseFrom(java.io.InputStream input)
+    public static IdentityAvatarChangeReq parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static com.classlink.websocket.api.member.domain.param.proto.IdentityAvatarChangeReqProto.IdentityAvatarChangeReq parseFrom(
+    public static IdentityAvatarChangeReq parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static com.classlink.websocket.api.member.domain.param.proto.IdentityAvatarChangeReqProto.IdentityAvatarChangeReq parseDelimitedFrom(java.io.InputStream input)
+    public static IdentityAvatarChangeReq parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static com.classlink.websocket.api.member.domain.param.proto.IdentityAvatarChangeReqProto.IdentityAvatarChangeReq parseDelimitedFrom(
+    public static IdentityAvatarChangeReq parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static com.classlink.websocket.api.member.domain.param.proto.IdentityAvatarChangeReqProto.IdentityAvatarChangeReq parseFrom(
+    public static IdentityAvatarChangeReq parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static com.classlink.websocket.api.member.domain.param.proto.IdentityAvatarChangeReqProto.IdentityAvatarChangeReq parseFrom(
+    public static IdentityAvatarChangeReq parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -332,23 +332,23 @@ public final class IdentityAvatarChangeReqProto {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
-    @java.lang.Override
+    @Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(com.classlink.websocket.api.member.domain.param.proto.IdentityAvatarChangeReqProto.IdentityAvatarChangeReq prototype) {
+    public static Builder newBuilder(IdentityAvatarChangeReq prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
-    @java.lang.Override
+    @Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
     }
 
-    @java.lang.Override
+    @Override
     protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        BuilderParent parent) {
       Builder builder = new Builder(parent);
       return builder;
     }
@@ -358,18 +358,18 @@ public final class IdentityAvatarChangeReqProto {
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
         // @@protoc_insertion_point(builder_implements:Classlink.IdentityAvatarChangeReq)
-        com.classlink.websocket.api.member.domain.param.proto.IdentityAvatarChangeReqProto.IdentityAvatarChangeReqOrBuilder {
+        IdentityAvatarChangeReqOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return com.classlink.websocket.api.member.domain.param.proto.IdentityAvatarChangeReqProto.internal_static_Classlink_IdentityAvatarChangeReq_descriptor;
+        return IdentityAvatarChangeReqProto.internal_static_Classlink_IdentityAvatarChangeReq_descriptor;
       }
 
-      @java.lang.Override
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      @Override
+      protected FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return com.classlink.websocket.api.member.domain.param.proto.IdentityAvatarChangeReqProto.internal_static_Classlink_IdentityAvatarChangeReq_fieldAccessorTable
+        return IdentityAvatarChangeReqProto.internal_static_Classlink_IdentityAvatarChangeReq_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                com.classlink.websocket.api.member.domain.param.proto.IdentityAvatarChangeReqProto.IdentityAvatarChangeReq.class, com.classlink.websocket.api.member.domain.param.proto.IdentityAvatarChangeReqProto.IdentityAvatarChangeReq.Builder.class);
+                IdentityAvatarChangeReq.class, Builder.class);
       }
 
       // Construct using com.classlink.websocket.api.member.domain.param.proto.IdentityAvatarChangeReqProto.IdentityAvatarChangeReq.newBuilder()
@@ -378,11 +378,11 @@ public final class IdentityAvatarChangeReqProto {
       }
 
       private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+          BuilderParent parent) {
         super(parent);
 
       }
-      @java.lang.Override
+      @Override
       public Builder clear() {
         super.clear();
         insCode_ = "";
@@ -394,29 +394,29 @@ public final class IdentityAvatarChangeReqProto {
         return this;
       }
 
-      @java.lang.Override
+      @Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return com.classlink.websocket.api.member.domain.param.proto.IdentityAvatarChangeReqProto.internal_static_Classlink_IdentityAvatarChangeReq_descriptor;
+        return IdentityAvatarChangeReqProto.internal_static_Classlink_IdentityAvatarChangeReq_descriptor;
       }
 
-      @java.lang.Override
-      public com.classlink.websocket.api.member.domain.param.proto.IdentityAvatarChangeReqProto.IdentityAvatarChangeReq getDefaultInstanceForType() {
-        return com.classlink.websocket.api.member.domain.param.proto.IdentityAvatarChangeReqProto.IdentityAvatarChangeReq.getDefaultInstance();
+      @Override
+      public IdentityAvatarChangeReq getDefaultInstanceForType() {
+        return IdentityAvatarChangeReq.getDefaultInstance();
       }
 
-      @java.lang.Override
-      public com.classlink.websocket.api.member.domain.param.proto.IdentityAvatarChangeReqProto.IdentityAvatarChangeReq build() {
-        com.classlink.websocket.api.member.domain.param.proto.IdentityAvatarChangeReqProto.IdentityAvatarChangeReq result = buildPartial();
+      @Override
+      public IdentityAvatarChangeReq build() {
+        IdentityAvatarChangeReq result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
         return result;
       }
 
-      @java.lang.Override
-      public com.classlink.websocket.api.member.domain.param.proto.IdentityAvatarChangeReqProto.IdentityAvatarChangeReq buildPartial() {
-        com.classlink.websocket.api.member.domain.param.proto.IdentityAvatarChangeReqProto.IdentityAvatarChangeReq result = new com.classlink.websocket.api.member.domain.param.proto.IdentityAvatarChangeReqProto.IdentityAvatarChangeReq(this);
+      @Override
+      public IdentityAvatarChangeReq buildPartial() {
+        IdentityAvatarChangeReq result = new IdentityAvatarChangeReq(this);
         result.insCode_ = insCode_;
         result.identityType_ = identityType_;
         result.avatarId_ = avatarId_;
@@ -424,50 +424,50 @@ public final class IdentityAvatarChangeReqProto {
         return result;
       }
 
-      @java.lang.Override
+      @Override
       public Builder clone() {
         return super.clone();
       }
-      @java.lang.Override
+      @Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
+          Object value) {
         return super.setField(field, value);
       }
-      @java.lang.Override
+      @Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
         return super.clearField(field);
       }
-      @java.lang.Override
+      @Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
         return super.clearOneof(oneof);
       }
-      @java.lang.Override
+      @Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, java.lang.Object value) {
+          int index, Object value) {
         return super.setRepeatedField(field, index, value);
       }
-      @java.lang.Override
+      @Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
+          Object value) {
         return super.addRepeatedField(field, value);
       }
-      @java.lang.Override
+      @Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof com.classlink.websocket.api.member.domain.param.proto.IdentityAvatarChangeReqProto.IdentityAvatarChangeReq) {
-          return mergeFrom((com.classlink.websocket.api.member.domain.param.proto.IdentityAvatarChangeReqProto.IdentityAvatarChangeReq)other);
+        if (other instanceof IdentityAvatarChangeReq) {
+          return mergeFrom((IdentityAvatarChangeReq)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(com.classlink.websocket.api.member.domain.param.proto.IdentityAvatarChangeReqProto.IdentityAvatarChangeReq other) {
-        if (other == com.classlink.websocket.api.member.domain.param.proto.IdentityAvatarChangeReqProto.IdentityAvatarChangeReq.getDefaultInstance()) return this;
+      public Builder mergeFrom(IdentityAvatarChangeReq other) {
+        if (other == IdentityAvatarChangeReq.getDefaultInstance()) return this;
         if (!other.getInsCode().isEmpty()) {
           insCode_ = other.insCode_;
           onChanged();
@@ -484,18 +484,18 @@ public final class IdentityAvatarChangeReqProto {
         return this;
       }
 
-      @java.lang.Override
+      @Override
       public final boolean isInitialized() {
         return true;
       }
 
-      @java.lang.Override
+      @Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
         if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
+          throw new NullPointerException();
         }
         try {
           boolean done = false;
@@ -536,21 +536,21 @@ public final class IdentityAvatarChangeReqProto {
         return this;
       }
 
-      private java.lang.Object insCode_ = "";
+      private Object insCode_ = "";
       /**
        * <code>string InsCode = 1;</code>
        * @return The insCode.
        */
-      public java.lang.String getInsCode() {
-        java.lang.Object ref = insCode_;
-        if (!(ref instanceof java.lang.String)) {
+      public String getInsCode() {
+        Object ref = insCode_;
+        if (!(ref instanceof String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
+          String s = bs.toStringUtf8();
           insCode_ = s;
           return s;
         } else {
-          return (java.lang.String) ref;
+          return (String) ref;
         }
       }
       /**
@@ -559,11 +559,11 @@ public final class IdentityAvatarChangeReqProto {
        */
       public com.google.protobuf.ByteString
           getInsCodeBytes() {
-        java.lang.Object ref = insCode_;
+        Object ref = insCode_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
+                  (String) ref);
           insCode_ = b;
           return b;
         } else {
@@ -576,7 +576,7 @@ public final class IdentityAvatarChangeReqProto {
        * @return This builder for chaining.
        */
       public Builder setInsCode(
-          java.lang.String value) {
+          String value) {
         if (value == null) {
     throw new NullPointerException();
   }
@@ -612,21 +612,21 @@ public final class IdentityAvatarChangeReqProto {
         return this;
       }
 
-      private java.lang.Object identityType_ = "";
+      private Object identityType_ = "";
       /**
        * <code>string IdentityType = 2;</code>
        * @return The identityType.
        */
-      public java.lang.String getIdentityType() {
-        java.lang.Object ref = identityType_;
-        if (!(ref instanceof java.lang.String)) {
+      public String getIdentityType() {
+        Object ref = identityType_;
+        if (!(ref instanceof String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
+          String s = bs.toStringUtf8();
           identityType_ = s;
           return s;
         } else {
-          return (java.lang.String) ref;
+          return (String) ref;
         }
       }
       /**
@@ -635,11 +635,11 @@ public final class IdentityAvatarChangeReqProto {
        */
       public com.google.protobuf.ByteString
           getIdentityTypeBytes() {
-        java.lang.Object ref = identityType_;
+        Object ref = identityType_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
+                  (String) ref);
           identityType_ = b;
           return b;
         } else {
@@ -652,7 +652,7 @@ public final class IdentityAvatarChangeReqProto {
        * @return This builder for chaining.
        */
       public Builder setIdentityType(
-          java.lang.String value) {
+          String value) {
         if (value == null) {
     throw new NullPointerException();
   }
@@ -693,7 +693,7 @@ public final class IdentityAvatarChangeReqProto {
        * <code>int32 AvatarId = 3;</code>
        * @return The avatarId.
        */
-      @java.lang.Override
+      @Override
       public int getAvatarId() {
         return avatarId_;
       }
@@ -718,13 +718,13 @@ public final class IdentityAvatarChangeReqProto {
         onChanged();
         return this;
       }
-      @java.lang.Override
+      @Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.setUnknownFields(unknownFields);
       }
 
-      @java.lang.Override
+      @Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.mergeUnknownFields(unknownFields);
@@ -735,18 +735,18 @@ public final class IdentityAvatarChangeReqProto {
     }
 
     // @@protoc_insertion_point(class_scope:Classlink.IdentityAvatarChangeReq)
-    private static final com.classlink.websocket.api.member.domain.param.proto.IdentityAvatarChangeReqProto.IdentityAvatarChangeReq DEFAULT_INSTANCE;
+    private static final IdentityAvatarChangeReq DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new com.classlink.websocket.api.member.domain.param.proto.IdentityAvatarChangeReqProto.IdentityAvatarChangeReq();
+      DEFAULT_INSTANCE = new IdentityAvatarChangeReq();
     }
 
-    public static com.classlink.websocket.api.member.domain.param.proto.IdentityAvatarChangeReqProto.IdentityAvatarChangeReq getDefaultInstance() {
+    public static IdentityAvatarChangeReq getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
     private static final com.google.protobuf.Parser<IdentityAvatarChangeReq>
         PARSER = new com.google.protobuf.AbstractParser<IdentityAvatarChangeReq>() {
-      @java.lang.Override
+      @Override
       public IdentityAvatarChangeReq parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -770,13 +770,13 @@ public final class IdentityAvatarChangeReqProto {
       return PARSER;
     }
 
-    @java.lang.Override
+    @Override
     public com.google.protobuf.Parser<IdentityAvatarChangeReq> getParserForType() {
       return PARSER;
     }
 
-    @java.lang.Override
-    public com.classlink.websocket.api.member.domain.param.proto.IdentityAvatarChangeReqProto.IdentityAvatarChangeReq getDefaultInstanceForType() {
+    @Override
+    public IdentityAvatarChangeReq getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -795,7 +795,7 @@ public final class IdentityAvatarChangeReqProto {
   private static  com.google.protobuf.Descriptors.FileDescriptor
       descriptor;
   static {
-    java.lang.String[] descriptorData = {
+    String[] descriptorData = {
       "\n\035IdentityAvatarChangeReq.proto\022\tClassli" +
       "nk\"R\n\027IdentityAvatarChangeReq\022\017\n\007InsCode" +
       "\030\001 \001(\t\022\024\n\014IdentityType\030\002 \001(\t\022\020\n\010AvatarId" +
@@ -812,7 +812,7 @@ public final class IdentityAvatarChangeReqProto {
     internal_static_Classlink_IdentityAvatarChangeReq_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_Classlink_IdentityAvatarChangeReq_descriptor,
-        new java.lang.String[] { "InsCode", "IdentityType", "AvatarId", });
+        new String[] { "InsCode", "IdentityType", "AvatarId", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

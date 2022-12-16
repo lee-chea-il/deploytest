@@ -1,0 +1,14 @@
+syntax = "proto3"; 
+package classlink;
+message LobbyHomeScheduleListRes{
+   message ScheduleInfo
+   {
+      int32 ScheduleId = 1;
+      string ScheduleName = 2;
+      string StartTime = 3;
+      string EndTime = 4;
+      int32 ClassId = 5;
+   }
+
+   repeated ScheduleInfo ScheduleInfoList = 1;
+}

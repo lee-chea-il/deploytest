@@ -1,0 +1,16 @@
+syntax = "proto3"; 
+package classlink;
+option java_package = "com.classlink.websocket.api.member.domain.dto.proto";
+option java_outer_classname = "IdentityProfileDetailResProto";
+
+message IdentityProfileDetailRes{
+  int32 AvatarId = 1;
+  string MemId = 2;
+  string MemName = 3;
+  string MemNickName = 4;
+  string MemEmail = 5;
+  string MemPhone = 6;
+  string MemImgUrl = 7;
+  string MemBirthday = 8;
+  string MemSex = 9;
+}

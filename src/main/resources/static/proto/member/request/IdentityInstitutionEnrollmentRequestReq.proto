@@ -1,8 +1,0 @@
-syntax = "proto3";
-package Classlink;
-option java_package = "com.classlink.websocket.api.member.domain.param.proto";
-option java_outer_classname = "IdentityInstitutionEnrollmentRequestReqProto";
-
-message IdentityInstitutionEnrollmentRequestReq {
-  string InsCode = 1;
-}

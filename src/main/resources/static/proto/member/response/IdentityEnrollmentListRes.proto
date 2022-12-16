@@ -1,0 +1,19 @@
+syntax = "proto3";
+package Classlink;
+option java_package = "com.classlink.websocket.api.member.domain.dto.proto";
+option java_outer_classname = "IdentityEnrollmentListResProto";
+
+message IdentityEnrollmentListRes {
+
+  repeated EnrollmentRequest EnrollmentRequestes = 1;
+
+  message EnrollmentRequest {
+    int32 ItmIdx = 1;
+    string IdentityType = 2;
+    string MemImgUrl = 3;
+    string MemName = 4;
+    string ItmRegistrationDate = 5;
+    string ItmStatus = 6;
+    string ItmViewYn = 7;
+  }
+}

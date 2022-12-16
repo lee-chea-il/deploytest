@@ -1,213 +1,302 @@
 package com.classlink.websocket.api.member;
 
-import java.util.List;
-
+import com.classlink.websocket.api.common.ResultCode;
+import com.classlink.websocket.api.common.domain.proto.RequestPacketProto.RequestPacket;
+import com.classlink.websocket.api.common.domain.proto.ResponsePacketProto.ResponsePacket;
+import com.classlink.websocket.api.lobby.home.domain.dto.LobbyHomeDto;
+import com.classlink.websocket.api.member.domain.dto.MemberDto;
+import com.classlink.websocket.api.member.domain.dto.MemberDto.InstitutionInfoDto;
+import com.classlink.websocket.api.member.domain.dto.proto.*;
+import com.classlink.websocket.api.member.domain.param.MemberParam;
+import com.classlink.websocket.api.member.domain.param.MemberParam.*;
+import com.classlink.websocket.api.member.domain.param.proto.*;
+import com.classlink.websocket.api.util.CommonUtil;
+import com.google.protobuf.InvalidProtocolBufferException;
+import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.socket.BinaryMessage;
 
-import com.classlink.websocket.api.common.ResultCode;
-import com.classlink.websocket.api.common.domain.proto.RequestPacketProto.RequestPacket;
-import com.classlink.websocket.api.common.domain.proto.ResponsePacketProto.ResponsePacket;
-import com.classlink.websocket.api.member.domain.dto.MemberDto.AvatarDetailDto;
-import com.classlink.websocket.api.member.domain.dto.MemberDto.InstitutionInfoDto;
-import com.classlink.websocket.api.member.domain.dto.proto.IdentityAvatarChangeResProto.IdentityAvatarChangeRes;
-import com.classlink.websocket.api.member.domain.dto.proto.IdentityAvatarCreateResProto.IdentityAvatarCreateRes;
-import com.classlink.websocket.api.member.domain.dto.proto.IdentityAvatarDetailResProto.IdentityAvatarDetailRes;
-import com.classlink.websocket.api.member.domain.dto.proto.IdentityCreateResProto.IdentityCreateRes;
-import com.classlink.websocket.api.member.domain.dto.proto.IdentityInstitutionEnrollmentRequestResProto.IdentityInstitutionEnrollmentRequestRes;
-import com.classlink.websocket.api.member.domain.dto.proto.IdentityInstitutionInfoResProto.IdentityInstitutionInfoRes;
-import com.classlink.websocket.api.member.domain.dto.proto.IdentityListResProto.IdentityListRes;
-import com.classlink.websocket.api.member.domain.param.MemberParam.AvatarChangeParam;
-import com.classlink.websocket.api.member.domain.param.MemberParam.AvatarCreateParam;
-import com.classlink.websocket.api.member.domain.param.MemberParam.AvatarDetailParam;
-import com.classlink.websocket.api.member.domain.param.MemberParam.IdentityCreateParam;
-import com.classlink.websocket.api.member.domain.param.MemberParam.IdentityListParam;
-import com.classlink.websocket.api.member.domain.param.MemberParam.InstitutionEnrollmentRequestParam;
-import com.classlink.websocket.api.member.domain.param.MemberParam.InstitutionInfoParam;
-import com.classlink.websocket.api.member.domain.param.proto.IdentityAvatarChangeReqProto.IdentityAvatarChangeReq;
-import com.classlink.websocket.api.member.domain.param.proto.IdentityAvatarCreateReqProto.IdentityAvatarCreateReq;
-import com.classlink.websocket.api.member.domain.param.proto.IdentityAvatarDetailReqProto.IdentityAvatarDetailReq;
-import com.classlink.websocket.api.member.domain.param.proto.IdentityCreateReqProto.IdentityCreateReq;
-import com.classlink.websocket.api.member.domain.param.proto.IdentityInstitutionEnrollmentRequestReqProto.IdentityInstitutionEnrollmentRequestReq;
-import com.classlink.websocket.api.member.domain.param.proto.IdentityInstitutionInfoReqProto.IdentityInstitutionInfoReq;
-import com.classlink.websocket.api.member.domain.param.proto.IdentityListReqProto.IdentityListReq;
-import com.classlink.websocket.api.util.CommonUtil;
-import com.google.protobuf.InvalidProtocolBufferException;
-
-import lombok.RequiredArgsConstructor;
-import lombok.extern.slf4j.Slf4j;
+import java.util.List;
+import java.util.stream.Collectors;
 
 @Slf4j
 @Service
 @RequiredArgsConstructor
 public class MemberService {
 
-	private final MemberMapper memberMapper;
+    private final MemberMapper memberMapper;
 
-	public BinaryMessage findIdentitiesByMemberId(RequestPacket packetReqProto, String userId)
-			throws InvalidProtocolBufferException {
+    public BinaryMessage findIdentitiesByMemberId(RequestPacket packetReqProto, String userId)
+            throws InvalidProtocolBufferException {
 
-		IdentityListReq identityListReqProto = IdentityListReq.newBuilder().mergeFrom(packetReqProto.getData()).build();
-		IdentityListParam identityListParam = IdentityListParam.builder().ins_code(identityListReqProto.getInsCode())
-				.mem_id(userId).build();
-		
-		List<String> identityDtoList = memberMapper.selectIdentitiesByMemberId(identityListParam);
-	
-		IdentityListRes.Builder identityListRes = IdentityListRes.newBuilder();
-		
-		if(identityDtoList != null) {
-			CommonUtil.nullSafeSet(identityDtoList, identityListRes::addAllIdentityTypes);
-		}
-		
-		ResponsePacket packetResProto = ResponsePacket.newBuilder().setOpCode(packetReqProto.getOpCode())
-				.setAccessToken(packetReqProto.getAccessToken()).setInstanceId(packetReqProto.getInstanceId())
-				.setResultCode(identityDtoList.isEmpty() ? ResultCode.NOT_FOUND.getCode() : ResultCode.SUCCESS.getCode())
-				.setResultMessage(identityDtoList.isEmpty() ? ResultCode.NOT_FOUND.getMessage() : ResultCode.SUCCESS.getMessage())
-				.setData(identityListRes.build().toByteString())
-				.build();
-		
-		return new BinaryMessage(packetResProto.toByteArray());
-	}
+        IdentityListReqProto.IdentityListReq identityListReqProto = IdentityListReqProto.IdentityListReq.newBuilder().mergeFrom(packetReqProto.getData()).build();
+        IdentityListParam identityListParam = IdentityListParam.builder().ins_code(identityListReqProto.getInsCode())
+                .mem_id(userId).build();
 
-	@Transactional(rollbackFor = {Exception.class})
-	public BinaryMessage addIdentity(RequestPacket packetReqProto, String userId)
-			throws InvalidProtocolBufferException {
+        List<String> identityDtoList = memberMapper.selectIdentitiesByMemberId(identityListParam);
 
-		IdentityCreateReq identityCreateProto = IdentityCreateReq.newBuilder().mergeFrom(packetReqProto.getData())
-				.build();
-		IdentityCreateParam identityParam = IdentityCreateParam.builder().ins_code(identityCreateProto.getInsCode())
-				.mem_id(userId).identity_type(identityCreateProto.getSelectIdentityType()).build();
+        IdentityListResProto.IdentityListRes.Builder identityListRes = IdentityListResProto.IdentityListRes.newBuilder();
 
-		int result = memberMapper.insertIdentity(identityParam);
+        if (identityDtoList.isEmpty()) {
+            CommonUtil.nullSafeSet(identityDtoList, identityListRes::addAllIdentityTypes);
+        }
 
-		ResponsePacket packetResProto = ResponsePacket.newBuilder().setOpCode(packetReqProto.getOpCode())
-				.setAccessToken(packetReqProto.getAccessToken()).setInstanceId(packetReqProto.getInstanceId())
-				.setResultCode(result == 0 ? ResultCode.ADD_FAIL.getCode() : ResultCode.SUCCESS.getCode())
-				.setResultMessage(result == 0 ? ResultCode.ADD_FAIL.getMessage() : ResultCode.SUCCESS.getMessage())
-				.setData(IdentityCreateRes.newBuilder().build().toByteString())
-				.build();
+        ResponsePacket packetResProto = ResponsePacket.newBuilder().setOpCode(packetReqProto.getOpCode())
+                .setAccessToken(packetReqProto.getAccessToken()).setInstanceId(packetReqProto.getInstanceId())
+                .setResultCode(identityDtoList.isEmpty() ? ResultCode.NOT_FOUND.getCode() : ResultCode.SUCCESS.getCode())
+                .setResultMessage(identityDtoList.isEmpty() ? ResultCode.NOT_FOUND.getMessage() : ResultCode.SUCCESS.getMessage())
+                .setData(identityListRes.build().toByteString())
+                .build();
 
-		return new BinaryMessage(packetResProto.toByteArray());
-	}
+        return new BinaryMessage(packetResProto.toByteArray());
+    }
 
-	
-	@Transactional(rollbackFor = {Exception.class})
-	public BinaryMessage addAvartar(RequestPacket packetReqProto, String userId)
-			throws InvalidProtocolBufferException {
+    @Transactional(rollbackFor = {Exception.class})
+    public BinaryMessage addIdentity(RequestPacket packetReqProto, String userId)
+            throws InvalidProtocolBufferException {
 
-		IdentityAvatarCreateReq avartarCreateReqProto = IdentityAvatarCreateReq.newBuilder().mergeFrom(packetReqProto.getData())
-				.build();
-		AvatarCreateParam avatarParam = AvatarCreateParam.builder().mem_id(userId)
-				.ins_code(avartarCreateReqProto.getInsCode()).identity_type(avartarCreateReqProto.getIdentityType())
-				.mea_avatar_id(avartarCreateReqProto.getAvatarId()).build();
+        IdentityCreateReqProto.IdentityCreateReq identityCreateProto = IdentityCreateReqProto.IdentityCreateReq.newBuilder().mergeFrom(packetReqProto.getData())
+                .build();
+        IdentityCreateParam identityParam = IdentityCreateParam.builder().ins_code(identityCreateProto.getInsCode())
+                .mem_id(userId).identity_type(identityCreateProto.getTarIdentityType()).build();
 
-		int result = memberMapper.insertAvartar(avatarParam);
-		
-		ResponsePacket packetResProto = ResponsePacket.newBuilder().setOpCode(packetReqProto.getOpCode()).setAccessToken(packetReqProto.getAccessToken())
-				.setInstanceId(packetReqProto.getInstanceId())
-				.setResultCode(result == 0 ? ResultCode.ADD_FAIL.getCode() : ResultCode.SUCCESS.getCode())
-				.setResultMessage(result == 0 ? ResultCode.ADD_FAIL.getMessage() : ResultCode.SUCCESS.getMessage())
-				.setData(IdentityAvatarCreateRes.newBuilder().build().toByteString())
-				.build();
+        int result = memberMapper.insertIdentity(identityParam);
 
-		return new BinaryMessage(packetResProto.toByteArray());	
-	}
+        ResponsePacket packetResProto = ResponsePacket.newBuilder().setOpCode(packetReqProto.getOpCode())
+                .setAccessToken(packetReqProto.getAccessToken()).setInstanceId(packetReqProto.getInstanceId())
+                .setResultCode(result == 0 ? ResultCode.ADD_FAIL.getCode() : ResultCode.SUCCESS.getCode())
+                .setResultMessage(result == 0 ? ResultCode.ADD_FAIL.getMessage() : ResultCode.SUCCESS.getMessage())
+                .setData(IdentityCreateResProto.IdentityCreateRes.newBuilder().build().toByteString())
+                .build();
 
-	
-	public BinaryMessage findAvartarByMemberId(RequestPacket packetReqProto, String userId)
-			throws InvalidProtocolBufferException {
+        return new BinaryMessage(packetResProto.toByteArray());
+    }
 
-		IdentityAvatarDetailReq identityAvatarDetailReqProto = IdentityAvatarDetailReq.newBuilder().mergeFrom(packetReqProto.getData()).build();
-		
-		AvatarDetailParam identityAvatarDetailParam = AvatarDetailParam.builder().ins_code(identityAvatarDetailReqProto.getInsCode())
-				.identity_type(identityAvatarDetailReqProto.getIdentityType()).mem_id(userId).build();
-		
-		AvatarDetailDto identityAvatarDetailDto = memberMapper.selectAvartarByMemberId(identityAvatarDetailParam);
 
-		IdentityAvatarDetailRes.Builder IdentityAvatarDetailResBuilder = IdentityAvatarDetailRes.newBuilder();
+//	@Transactional(rollbackFor = {Exception.class})
+//	public BinaryMessage addAvatar(RequestPacket packetReqProto, String userId)
+//			throws InvalidProtocolBufferException {
+//
+//		IdentityAvatarCreateReq avatarCreateReqProto = IdentityAvatarCreateReq.newBuilder().mergeFrom(packetReqProto.getData())
+//				.build();
+//		AvatarCreateParam avatarParam = AvatarCreateParam.builder().mem_id(userId)
+//				.ins_code(avatarCreateReqProto.getInsCode()).identity_type(avatarCreateReqProto.getIdentityType())
+//				.mea_avatar_id(avatarCreateReqProto.getAvatarId()).build();
+//
+//		int result = memberMapper.insertAvatar(avatarParam);
+//
+//		ResponsePacket packetResProto = ResponsePacket.newBuilder().setOpCode(packetReqProto.getOpCode()).setAccessToken(packetReqProto.getAccessToken())
+//				.setInstanceId(packetReqProto.getInstanceId())
+//				.setResultCode(result == 0 ? ResultCode.ADD_FAIL.getCode() : ResultCode.SUCCESS.getCode())
+//				.setResultMessage(result == 0 ? ResultCode.ADD_FAIL.getMessage() : ResultCode.SUCCESS.getMessage())
+//				.setData(IdentityAvatarCreateRes.newBuilder().build().toByteString())
+//				.build();
+//
+//		return new BinaryMessage(packetResProto.toByteArray());
+//	}
 
-		if(identityAvatarDetailDto != null) {
-			CommonUtil.nullSafeSet(identityAvatarDetailDto.getIns_code(), IdentityAvatarDetailResBuilder::setInsCode);
-			CommonUtil.nullSafeSet(identityAvatarDetailDto.getIdentity_type(), IdentityAvatarDetailResBuilder::setIdentityType);
-			CommonUtil.nullSafeSet(identityAvatarDetailDto.getMea_avatar_id(), IdentityAvatarDetailResBuilder::setAvatarId);	
-		}
-		
-		ResponsePacket packetResProto = ResponsePacket.newBuilder().setOpCode(packetReqProto.getOpCode())
-				.setAccessToken(packetReqProto.getAccessToken()).setInstanceId(packetReqProto.getInstanceId())
-				.setResultCode(identityAvatarDetailDto == null ? ResultCode.NOT_FOUND.getCode() : ResultCode.SUCCESS.getCode())
-				.setResultMessage(identityAvatarDetailDto == null ? ResultCode.NOT_FOUND.getMessage() : ResultCode.SUCCESS.getMessage())
-				.setData(IdentityAvatarDetailResBuilder.build().toByteString())
-				.build();
 
-		return new BinaryMessage(packetResProto.toByteArray());
-	}
+    public BinaryMessage findAvatarListByMemberId(RequestPacket packetReqProto, String userId)
+            throws InvalidProtocolBufferException {
 
-	
-	@Transactional(rollbackFor = {Exception.class})
-	public BinaryMessage modifyAvartarByMemberId(RequestPacket packetReqProto, String userId)
-			throws InvalidProtocolBufferException {
-		
-		IdentityAvatarChangeReq identityAvatarChangeReqProto = IdentityAvatarChangeReq.newBuilder().mergeFrom(packetReqProto.getData()).build();
-		AvatarChangeParam avatarDetailParam = AvatarChangeParam.builder().mea_avatar_id(identityAvatarChangeReqProto.getAvatarId()).mem_id(userId).ins_code(identityAvatarChangeReqProto.getInsCode())
-				.identity_type(identityAvatarChangeReqProto.getIdentityType()).build();
-		
-		int result = memberMapper.updateAvartarByMemberId(avatarDetailParam);
-		
-		ResponsePacket packetResProto = ResponsePacket.newBuilder().setOpCode(packetReqProto.getOpCode())
-				.setAccessToken(packetReqProto.getAccessToken())
-				.setInstanceId(packetReqProto.getInstanceId())
-				.setResultCode(result == 0 ? ResultCode.MODIFY_FAIL.getCode() : ResultCode.SUCCESS.getCode())
-				.setResultMessage(result == 0 ? ResultCode.MODIFY_FAIL.getMessage() : ResultCode.SUCCESS.getMessage())
-				.setData(IdentityAvatarChangeRes.newBuilder().build().toByteString())
-				.build();
+        IdentityAvatarListReqProto.IdentityAvatarListReq identityAvatarDetailReqProto = IdentityAvatarListReqProto.IdentityAvatarListReq.newBuilder().mergeFrom(packetReqProto.getData()).build();
 
-		return new BinaryMessage(packetResProto.toByteArray());
-	}
+        MemberParam.AvatarListParam identityAvatarDetailParam = MemberParam.AvatarListParam.builder().ins_code(identityAvatarDetailReqProto.getInsCode())
+                .mem_id(userId).build();
 
-	
-	public BinaryMessage findInstitutionInfoByInsCode(RequestPacket packetReqProto, String userId) throws InvalidProtocolBufferException {
-		
-		IdentityInstitutionInfoReq identityInstitutionInfoReq = IdentityInstitutionInfoReq.newBuilder().mergeFrom(packetReqProto.getData()).build();
-		InstitutionInfoParam institutionInfoParam = InstitutionInfoParam.builder().ins_code(identityInstitutionInfoReq.getInsCode()).ins_invite_url(identityInstitutionInfoReq.getInsInviteUrl()).build();
-		
-		InstitutionInfoDto identityInstitutionInfoDto  = memberMapper.selectInstitutionInfoByInsCode(institutionInfoParam);
-		
-		IdentityInstitutionInfoRes.Builder IdentityInstitutionInfoResBuilder = IdentityInstitutionInfoRes.newBuilder();
-		
-		if(identityInstitutionInfoDto != null) {
-			CommonUtil.nullSafeSet(identityInstitutionInfoDto.getIns_code(), IdentityInstitutionInfoResBuilder::setInsCode);
-			CommonUtil.nullSafeSet(identityInstitutionInfoDto.getInsName(), IdentityInstitutionInfoResBuilder::setInsName);
-			CommonUtil.nullSafeSet(identityInstitutionInfoDto.getInsLogoImg(), IdentityInstitutionInfoResBuilder::setInsLogoImg);	
-		}
-		
-		ResponsePacket packetResProto = ResponsePacket.newBuilder().setOpCode(packetReqProto.getOpCode())
-					.setAccessToken(packetReqProto.getAccessToken()).setInstanceId(packetReqProto.getInstanceId())
-					.setResultCode(identityInstitutionInfoDto == null ? ResultCode.NOT_FOUND.getCode() : ResultCode.SUCCESS.getCode())
-					.setResultMessage(identityInstitutionInfoDto == null ? ResultCode.NOT_FOUND.getMessage() : ResultCode.SUCCESS.getMessage())
-					.setData(IdentityInstitutionInfoResBuilder.build().toByteString())
-					.build();
+        List<MemberDto.AvatarListDto> identityAvatarDtoList = memberMapper.selectAvatarByMemberId(identityAvatarDetailParam);
 
-		return new BinaryMessage(packetResProto.toByteArray());
-	}
+        List<IdentityAvatarListResProto.IdentityAvatarListRes.AvatarInfo> avatarInfos = null;
 
-	
-	@Transactional(rollbackFor = {Exception.class})
-	public BinaryMessage addInstitutionEnrollment(RequestPacket packetReqProto, String userId) throws InvalidProtocolBufferException {
-		
-		IdentityInstitutionEnrollmentRequestReq identityInstitutionEnrollmentRequestReq = IdentityInstitutionEnrollmentRequestReq.newBuilder().mergeFrom(packetReqProto.getData()).build();
-		InstitutionEnrollmentRequestParam institutionEnrollmentRequestParam = InstitutionEnrollmentRequestParam.builder().ins_code(identityInstitutionEnrollmentRequestReq.getInsCode()).mem_id(userId).build();
-		
-		int result = memberMapper.insertInstitutionEnrollmentRequest(institutionEnrollmentRequestParam);
-		
-		ResponsePacket packetResProto = ResponsePacket.newBuilder().setOpCode(packetReqProto.getOpCode()).setAccessToken(packetReqProto.getAccessToken())
-				.setInstanceId(packetReqProto.getInstanceId())
-				.setResultCode(result == 0 ? ResultCode.ADD_FAIL.getCode() : ResultCode.SUCCESS.getCode())
-				.setResultMessage(result == 0 ? ResultCode.ADD_FAIL.getMessage() : ResultCode.SUCCESS.getMessage())
-				.setData(IdentityInstitutionEnrollmentRequestRes.newBuilder().build().toByteString())
-				.build();
+        if (!identityAvatarDtoList.isEmpty()) {
+            avatarInfos = identityAvatarDtoList.stream().map(identityAvatarDto -> {
 
-		return new BinaryMessage(packetResProto.toByteArray());
-	}
+                IdentityAvatarListResProto.IdentityAvatarListRes.AvatarInfo.Builder avatarInfoBuilder = IdentityAvatarListResProto.IdentityAvatarListRes.AvatarInfo.newBuilder();
 
+                CommonUtil.nullSafeSet(identityAvatarDto.getIdentity_type(), avatarInfoBuilder::setSelectIdentityType);
+                CommonUtil.nullSafeSet(identityAvatarDto.getMea_avatar_id(), avatarInfoBuilder::setAvatarId);
+
+                return avatarInfoBuilder.build();
+
+            }).collect(Collectors.toList());
+        }
+
+        IdentityAvatarListResProto.IdentityAvatarListRes.Builder identityAvatarListResBuilder = IdentityAvatarListResProto.IdentityAvatarListRes.newBuilder();
+        CommonUtil.nullSafeSet(avatarInfos, identityAvatarListResBuilder::addAllAvatarInfos);
+
+        ResponsePacket packetResProto;
+
+        packetResProto = ResponsePacket.newBuilder().setOpCode(packetReqProto.getOpCode())
+                .setAccessToken(packetReqProto.getAccessToken()).setInstanceId(packetReqProto.getInstanceId())
+                .setResultCode(identityAvatarDtoList.isEmpty() ? ResultCode.NOT_FOUND.getCode() : ResultCode.SUCCESS.getCode())
+                .setResultMessage(identityAvatarDtoList.isEmpty() ? ResultCode.NOT_FOUND.getMessage() : ResultCode.SUCCESS.getMessage())
+                .setData(identityAvatarListResBuilder.build().toByteString())
+                .build();
+
+        return new BinaryMessage(packetResProto.toByteArray());
+    }
+
+
+    @Transactional(rollbackFor = {Exception.class})
+    public BinaryMessage modifyAvatarByMemberId(RequestPacket packetReqProto, String userId)
+            throws InvalidProtocolBufferException {
+
+        IdentityAvatarChangeReqProto.IdentityAvatarChangeReq identityAvatarChangeReqProto = IdentityAvatarChangeReqProto.IdentityAvatarChangeReq.newBuilder().mergeFrom(packetReqProto.getData()).build();
+        AvatarChangeParam avatarDetailParam = AvatarChangeParam.builder().mea_avatar_id(identityAvatarChangeReqProto.getAvatarId()).mem_id(userId).ins_code(identityAvatarChangeReqProto.getInsCode())
+                .identity_type(identityAvatarChangeReqProto.getIdentityType()).build();
+
+        int result = memberMapper.updateAvatarByMemberId(avatarDetailParam);
+
+        ResponsePacket packetResProto = ResponsePacket.newBuilder().setOpCode(packetReqProto.getOpCode())
+                .setAccessToken(packetReqProto.getAccessToken())
+                .setInstanceId(packetReqProto.getInstanceId())
+                .setResultCode(result == 0 ? ResultCode.MODIFY_FAIL.getCode() : ResultCode.SUCCESS.getCode())
+                .setResultMessage(result == 0 ? ResultCode.MODIFY_FAIL.getMessage() : ResultCode.SUCCESS.getMessage())
+                .setData(IdentityAvatarChangeResProto.IdentityAvatarChangeRes.newBuilder().build().toByteString())
+                .build();
+
+        return new BinaryMessage(packetResProto.toByteArray());
+    }
+
+
+    public BinaryMessage findInstitutionInfoByInsCode(RequestPacket packetReqProto, String userId) throws InvalidProtocolBufferException {
+
+        IdentityInstitutionInfoReqProto.IdentityInstitutionInfoReq identityInstitutionInfoReq = IdentityInstitutionInfoReqProto.IdentityInstitutionInfoReq.newBuilder().mergeFrom(packetReqProto.getData()).build();
+        InstitutionInfoParam institutionInfoParam = InstitutionInfoParam.builder().ins_code(identityInstitutionInfoReq.getInsCode()).ins_invite_url(identityInstitutionInfoReq.getInsInviteUrl()).build();
+
+        InstitutionInfoDto identityInstitutionInfoDto = memberMapper.selectInstitutionInfoByInsCode(institutionInfoParam);
+
+        IdentityInstitutionInfoResProto.IdentityInstitutionInfoRes.Builder IdentityInstitutionInfoResBuilder = IdentityInstitutionInfoResProto.IdentityInstitutionInfoRes.newBuilder();
+
+        if (identityInstitutionInfoDto != null) {
+            CommonUtil.nullSafeSet(identityInstitutionInfoDto.getInsName(), IdentityInstitutionInfoResBuilder::setInsName);
+            CommonUtil.nullSafeSet(identityInstitutionInfoDto.getInsLogoImg(), IdentityInstitutionInfoResBuilder::setInsLogoImgUrl);
+        }
+
+        ResponsePacket packetResProto = ResponsePacket.newBuilder().setOpCode(packetReqProto.getOpCode())
+                .setAccessToken(packetReqProto.getAccessToken()).setInstanceId(packetReqProto.getInstanceId())
+                .setResultCode(identityInstitutionInfoDto == null ? ResultCode.NOT_FOUND.getCode() : ResultCode.SUCCESS.getCode())
+                .setResultMessage(identityInstitutionInfoDto == null ? ResultCode.NOT_FOUND.getMessage() : ResultCode.SUCCESS.getMessage())
+                .setData(IdentityInstitutionInfoResBuilder.build().toByteString())
+                .build();
+
+        return new BinaryMessage(packetResProto.toByteArray());
+    }
+
+
+    @Transactional(rollbackFor = {Exception.class})
+    public BinaryMessage addInstitutionEnrollment(RequestPacket packetReqProto, String userId) throws InvalidProtocolBufferException {
+
+        IdentityInstitutionEnrollmentReqProto.IdentityInstitutionEnrollmentReq identityInstitutionEnrollmentRequestReq = IdentityInstitutionEnrollmentReqProto.IdentityInstitutionEnrollmentReq.newBuilder().mergeFrom(packetReqProto.getData()).build();
+        InstitutionEnrollmentRequestParam institutionEnrollmentRequestParam = InstitutionEnrollmentRequestParam.builder().ins_code(identityInstitutionEnrollmentRequestReq.getInsCode()).mem_id(userId).build();
+
+        int result = memberMapper.insertInstitutionEnrollmentRequest(institutionEnrollmentRequestParam);
+
+        ResponsePacket packetResProto = ResponsePacket.newBuilder().setOpCode(packetReqProto.getOpCode()).setAccessToken(packetReqProto.getAccessToken())
+                .setInstanceId(packetReqProto.getInstanceId())
+                .setResultCode(result == 0 ? ResultCode.ADD_FAIL.getCode() : ResultCode.SUCCESS.getCode())
+                .setResultMessage(result == 0 ? ResultCode.ADD_FAIL.getMessage() : ResultCode.SUCCESS.getMessage())
+                .setData(IdentityInstitutionEnrollmentResProto.IdentityInstitutionEnrollmentRes.newBuilder().build().toByteString())
+                .build();
+
+        return new BinaryMessage(packetResProto.toByteArray());
+    }
+
+    public BinaryMessage findInstitutionEnrollmentsByInsCode(RequestPacket packetReqProto, String userId) throws InvalidProtocolBufferException {
+
+        IdentityEnrollmentListReqProto.IdentityEnrollmentListReq lobbyHomeEnrollmentRequestListReq = IdentityEnrollmentListReqProto.IdentityEnrollmentListReq.newBuilder().mergeFrom(packetReqProto.getData()).build();
+        InstitutionEnrollmentRequestListParam institutionEnrollmentRequestListParam = InstitutionEnrollmentRequestListParam.builder().ins_code(lobbyHomeEnrollmentRequestListReq.getInsCode()).build();
+
+        List<MemberDto.InstitutionEnrollmentRequestListDto> institutionEnrollmentRequestDtoList = memberMapper.selectInstitutionEnrollmentsByInsCode(institutionEnrollmentRequestListParam);
+
+        List<IdentityEnrollmentListResProto.IdentityEnrollmentListRes.EnrollmentRequest> enrollmentRequestList= null;
+
+        if(!institutionEnrollmentRequestDtoList.isEmpty()) {
+            enrollmentRequestList = institutionEnrollmentRequestDtoList.stream().map(institutionEnrollmentRequestDto -> {
+
+                IdentityEnrollmentListResProto.IdentityEnrollmentListRes.EnrollmentRequest.Builder enrollmentRequestBuilder = IdentityEnrollmentListResProto.IdentityEnrollmentListRes.EnrollmentRequest.newBuilder();
+
+                CommonUtil.nullSafeSet(institutionEnrollmentRequestDto.getItm_idx(), enrollmentRequestBuilder::setItmIdx);
+                CommonUtil.nullSafeSet(institutionEnrollmentRequestDto.getIdentity_type(), enrollmentRequestBuilder::setIdentityType);
+                CommonUtil.nullSafeSet(institutionEnrollmentRequestDto.getMem_img(), enrollmentRequestBuilder::setMemImgUrl);
+                CommonUtil.nullSafeSet(institutionEnrollmentRequestDto.getMem_name(), enrollmentRequestBuilder::setMemName);
+                CommonUtil.nullSafeSet(institutionEnrollmentRequestDto.getItm_registration_date(), enrollmentRequestBuilder::setItmRegistrationDate);
+                CommonUtil.nullSafeSet(institutionEnrollmentRequestDto.getItm_view_yn(), enrollmentRequestBuilder::setItmViewYn);
+                CommonUtil.nullSafeSet(institutionEnrollmentRequestDto.getItm_status(), enrollmentRequestBuilder::setItmStatus);
+
+                return enrollmentRequestBuilder.build();
+
+            }).collect(Collectors.toList());
+        }
+
+        IdentityEnrollmentListResProto.IdentityEnrollmentListRes.Builder IdentityEnrollmentListResBuilder =  IdentityEnrollmentListResProto.IdentityEnrollmentListRes.newBuilder();
+        CommonUtil.nullSafeSet(enrollmentRequestList, IdentityEnrollmentListResBuilder::addAllEnrollmentRequestes);
+
+        ResponsePacket packetResProto = ResponsePacket.newBuilder().setOpCode(packetReqProto.getOpCode())
+                .setAccessToken(packetReqProto.getAccessToken()).setInstanceId(packetReqProto.getInstanceId())
+                .setResultCode(institutionEnrollmentRequestDtoList.isEmpty() ? ResultCode.NOT_FOUND.getCode() : ResultCode.SUCCESS.getCode())
+                .setResultMessage(institutionEnrollmentRequestDtoList.isEmpty() ? ResultCode.NOT_FOUND.getMessage() : ResultCode.SUCCESS.getMessage())
+                .setData(IdentityEnrollmentListResBuilder.build().toByteString())
+                .build();
+
+        return new BinaryMessage(packetResProto.toByteArray());
+    }
+
+    @Transactional(rollbackFor = {Exception.class})
+    public BinaryMessage modifyInstitutionEnrollmentViewStatus(RequestPacket packetReqProto, String userId) throws InvalidProtocolBufferException {
+
+        IdentityEnrollmentConfirmReqProto.IdentityEnrollmentConfirmReq identityEnrollmentConfirmReq = IdentityEnrollmentConfirmReqProto.IdentityEnrollmentConfirmReq.newBuilder().mergeFrom(packetReqProto.getData()).build();
+        InstitutionEnrollmentRequestConfirmParam lobbyHomeEnrollmentRequestConfirmParam = InstitutionEnrollmentRequestConfirmParam.builder().itm_idx(identityEnrollmentConfirmReq.getItmIdx())
+                .mem_id(userId).build();
+
+        int result = memberMapper.updateInstitutionEnrollmentViewStatus(lobbyHomeEnrollmentRequestConfirmParam);
+
+        ResponsePacket packetResProto = ResponsePacket.newBuilder().setOpCode(packetReqProto.getOpCode())
+                .setAccessToken(packetReqProto.getAccessToken())
+                .setInstanceId(packetReqProto.getInstanceId())
+                .setResultCode(result == 0 ? ResultCode.MODIFY_FAIL.getCode() : ResultCode.SUCCESS.getCode())
+                .setResultMessage(result == 0 ? ResultCode.MODIFY_FAIL.getMessage() : ResultCode.SUCCESS.getMessage())
+                .setData(IdentityEnrollmentConfirmResProto.IdentityEnrollmentConfirmRes.newBuilder().build().toByteString())
+                .build();
+
+        return new BinaryMessage(packetResProto.toByteArray());
+    }
+
+    public BinaryMessage findInstitutionEnrollmentRequesterInfo(RequestPacket packetReqProto, String userId) throws InvalidProtocolBufferException {
+
+        IdentityEnrollmenterInfoReqProto.IdentityEnrollmenterInfoReq identityEnrollmenterInfoReq = IdentityEnrollmenterInfoReqProto.IdentityEnrollmenterInfoReq.newBuilder().mergeFrom(packetReqProto.getData()).build();
+        InstitutionEnrollmentRequesterInfoParam lobbyHomeEnrollmentRequesterInfoParam = InstitutionEnrollmentRequesterInfoParam.builder().itm_idx(identityEnrollmenterInfoReq.getItmIdx()).mem_id(userId).build();
+
+        MemberDto.InstitutionEnrollmentRequesterInfoDto institutionEnrollmentRequesterInfoDto = memberMapper.selectInstitutionEnrollmentRequesterInfo(lobbyHomeEnrollmentRequesterInfoParam);
+
+        IdentityEnrollmenterInfoResProto.IdentityEnrollmenterInfoRes.Builder IdentityEnrollmenterInfoResBuilder = IdentityEnrollmenterInfoResProto.IdentityEnrollmenterInfoRes.newBuilder();
+
+        if(institutionEnrollmentRequesterInfoDto != null) {
+            CommonUtil.nullSafeSet(institutionEnrollmentRequesterInfoDto.getMea_avatar_id(), IdentityEnrollmenterInfoResBuilder::setMeaAvartarId);
+            CommonUtil.nullSafeSet(institutionEnrollmentRequesterInfoDto.getMem_img(), IdentityEnrollmenterInfoResBuilder::setMemImgUrl);
+            CommonUtil.nullSafeSet(institutionEnrollmentRequesterInfoDto.getMem_nickname(), IdentityEnrollmenterInfoResBuilder::setMemNickName);
+            CommonUtil.nullSafeSet(institutionEnrollmentRequesterInfoDto.getMem_name(), IdentityEnrollmenterInfoResBuilder::setMemName);
+            CommonUtil.nullSafeSet(institutionEnrollmentRequesterInfoDto.getMem_email(), IdentityEnrollmenterInfoResBuilder::setMemEmail);
+            CommonUtil.nullSafeSet(institutionEnrollmentRequesterInfoDto.getMem_phone(), IdentityEnrollmenterInfoResBuilder::setMemPhone);
+            CommonUtil.nullSafeSet(institutionEnrollmentRequesterInfoDto.getItm_registration_date(), IdentityEnrollmenterInfoResBuilder::setItmRegistrationDate);
+            CommonUtil.nullSafeSet(institutionEnrollmentRequesterInfoDto.getRti_registration_dates(), IdentityEnrollmenterInfoResBuilder::addAllRtiRegistrationDate);
+        }
+
+        ResponsePacket packetResProto = ResponsePacket.newBuilder().setOpCode(packetReqProto.getOpCode())
+                .setAccessToken(packetReqProto.getAccessToken()).setInstanceId(packetReqProto.getInstanceId())
+                .setResultCode(institutionEnrollmentRequesterInfoDto == null ? ResultCode.NOT_FOUND.getCode() : ResultCode.SUCCESS.getCode())
+                .setResultMessage(institutionEnrollmentRequesterInfoDto == null ? ResultCode.NOT_FOUND.getMessage() : ResultCode.SUCCESS.getMessage())
+                .setData(IdentityEnrollmenterInfoResBuilder.build().toByteString())
+                .build();
+
+        return new BinaryMessage(packetResProto.toByteArray());
+    }
+
+    @Transactional(rollbackFor = {Exception.class})
+    public BinaryMessage modifyInstitutionEnrollmentRequestStatus(RequestPacket packetReqProto, String userId) {
+        // TODO Auto-generated method stub
+        return null;
+    }
 }

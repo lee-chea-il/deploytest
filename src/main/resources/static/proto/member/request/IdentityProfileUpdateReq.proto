@@ -1,0 +1,13 @@
+syntax = "proto3"; 
+package classlink;
+option java_package = "com.classlink.websocket.api.member.domain.param.proto";
+option java_outer_classname = "IdentityProfileUpdateReqProto";
+
+message IdentityProfileUpdateReq{
+  string InsCode = 1;
+  string IdentityType = 2;
+  string MemName = 3;
+  string MemNickName = 4;
+  string MemEmail = 5;
+  string MemPhone = 6;
+}

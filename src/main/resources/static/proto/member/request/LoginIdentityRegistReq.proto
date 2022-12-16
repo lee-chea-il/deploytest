@@ -1,0 +1,9 @@
+syntax = "proto3"; 
+package classlink;
+option java_package = "com.classlink.websocket.api.member.domain.param.proto";
+option java_outer_classname = "LoginIdentityRegistReqProto";
+
+message LoginIdentityRegistReq{
+  string LastIdentityType = 1;
+  string InsCode = 2;
+}

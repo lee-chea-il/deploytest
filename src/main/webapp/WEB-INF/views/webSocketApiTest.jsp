@@ -1,413 +1,415 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<title>Hello2</title>
+    <meta charset="UTF-8"/>
+    <title>Hello2</title>
 </head>
 <body>
-  <h1>WebSocket API Test Page</h1>
+<h1>WebSocket API Test Page</h1>
 
-  <div class="well">
+<div class="well">
     <button id="btnOpen" class="btn btn-primary">open socket</button>
     <select id="OpCode" class="form-control">
-      <option value="100">신분 생성</option>
-      <option value="101" selected>신분 조회</option>
-      <option value="102" >아바타 생성</option>
-      <option value="103" >아바타 조회</option>
-      <option value="104" >아바타 변경</option>
-      <option value="105" >교육기관 조회</option>
-      <option value="106" >교육기관 등록요청</option>
-      <option value="107" >가입신청 리스트</option>
-      <option value="108" >가입신청 확인</option>
-      <option value="109" >가입신청인 정보</option>
-      <option value="110" >가입신청 응답</option>
-      <option value="201" >소속기관조회</option>
+        <option value="100">신분 생성</option>
+        <option value="101" selected>신분 조회</option>
+        <option value="102">아바타 생성</option>
+        <option value="103">아바타 조회</option>
+        <option value="104">아바타 변경</option>
+        <option value="105">교육기관 조회</option>
+        <option value="106">교육기관 등록요청</option>
+        <option value="107">가입신청 리스트</option>
+        <option value="108">가입신청 확인</option>
+        <option value="109">가입신청인 정보</option>
+        <option value="110">가입신청 응답</option>
+        <option value="201">소속기관조회</option>
     </select>
     <button id="btnSend" class="btn btn-primary">Send Message</button>
-  </div>
-  <div>Result</div>
+</div>
+<div>Result</div>
 
-  <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/sockjs-client/1.3.0/sockjs.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/stomp.js/2.3.3/stomp.min.js"></script>
-  <script src="//cdn.jsdelivr.net/npm/protobufjs@7.1.2/dist/protobuf.js"></script>
-  <script src="js/util.js"></script>
-  <script>
-  
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"
+        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/sockjs-client/1.3.0/sockjs.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/stomp.js/2.3.3/stomp.min.js"></script>
+<script src="//cdn.jsdelivr.net/npm/protobufjs@7.1.2/dist/protobuf.js"></script>
+<script src="js/util.js"></script>
+<script>
+
     //---------------------------------------------------------------------------------------------------
     // window[]를 통해서 브라우저상에 전역변수(global)로 지정할때 사용하는 변수  
-    
-      //필수객체 및 에러관련 
-      const RequestPacketName = "RequestPacket";
-      const ResponsePacketName = "ResponsePacket";
-      const JwtExceptionName = "JwtException";
-      // 신분생성flow--------------------------------------
-      //신분
-      const IdentityListReqName = "IdentityListReq";
-      const IdentityListResName = "IdentityListRes";
-      const IdentityCreateReqName = "IdentityCreateReq";
-      const IdentityCreateResName = "IdentityCreateRes";
-      
-      //아바타
-      const IdentityAvatarCreateReqName = "IdentityAvatarCreateReq";
-      const IdentityAvatarCreateResName = "IdentityAvatarCreateRes";
-      const IdentityAvatarDetailReqName = "IdentityAvatarDetailReq";
-      const IdentityAvatarDetailResName = "IdentityAvatarDetailRes";
-      const IdentityAvatarChangeReqName = "IdentityAvatarChangeReq";
-      const IdentityAvatarChangeResName = "IdentityAvatarChangeRes";
-      
-      //교육기관 등록요청
-      const IdentityInstitutionInfoReqName = "IdentityInstitutionInfoReq";
-      const IdentityInstitutionInfoResName = "IdentityInstitutionInfoRes";
-      const IdentityInstitutionEnrollmentRequestReqName = "IdentityInstitutionEnrollmentRequestReq";
-      const IdentityInstitutionEnrollmentRequestResName = "IdentityInstitutionEnrollmentRequestRes";
-      
-      // 로비 --------------------------------------
-      // 홈
-      const MyInstitutionListName = "MyInstitutionList";
-      const LobbyHomeEnrollmentRequestConfirmReqName = "LobbyHomeEnrollmentRequestConfirmReq";
-      const LobbyHomeEnrollmentRequestConfirmResName = "LobbyHomeEnrollmentRequestConfirmRes";
-      const LobbyHomeEnrollmentRequesterInfoReqName = "LobbyHomeEnrollmentRequesterInfoReq";
-      const LobbyHomeEnrollmentRequesterInfoResName = "LobbyHomeEnrollmentRequesterInfoRes";
-      const LobbyHomeEnrollmentRequestListReqName = "LobbyHomeEnrollmentRequestListReq";
-      const LobbyHomeEnrollmentRequestListResName = "LobbyHomeEnrollmentRequestListRes";
-      const LobbyHomeEnrollmentRequestReplyReqName = "LobbyHomeEnrollmentRequestReplyReq";
-      const LobbyHomeEnrollmentRequestReplyResName = "LobbyHomeEnrollmentRequestReplyRes";
+
+    //필수객체 및 에러관련
+    const RequestPacketName = "RequestPacket";
+    const ResponsePacketName = "ResponsePacket";
+    const JwtExceptionName = "JwtException";
+    // 신분생성flow--------------------------------------
+    //신분
+    const IdentityListReqName = "IdentityListReq";
+    const IdentityListResName = "IdentityListRes";
+    const IdentityCreateReqName = "IdentityCreateReq";
+    const IdentityCreateResName = "IdentityCreateRes";
+
+    //아바타
+    // const IdentityAvatarCreateReqName = "IdentityAvatarCreateReq";
+    // const IdentityAvatarCreateResName = "IdentityAvatarCreateRes";
+    const IdentityAvatarListReqName = "IdentityAvatarListReq";
+    const IdentityAvatarListResName = "IdentityAvatarListRes";
+    const IdentityAvatarChangeReqName = "IdentityAvatarChangeReq";
+    const IdentityAvatarChangeResName = "IdentityAvatarChangeRes";
+
+    //교육기관 등록요청
+    const IdentityInstitutionInfoReqName = "IdentityInstitutionInfoReq";
+    const IdentityInstitutionInfoResName = "IdentityInstitutionInfoRes";
+    const IdentityInstitutionEnrollmentReqName = "IdentityInstitutionEnrollmentReq";
+    const IdentityInstitutionEnrollmentResName = "IdentityInstitutionEnrollmentRes";
+
+    // 로비 --------------------------------------
+    // 홈
+    const MyInstitutionListName = "MyInstitutionList";
+    const IdentityEnrollmentConfirmReqName = "IdentityEnrollmentConfirmReq";
+    const IdentityEnrollmentConfirmResName = "IdentityEnrollmentConfirmRes";
+    const IdentityEnrollmenterInfoReqName = "IdentityEnrollmenterInfoReq";
+    const IdentityEnrollmenterInfoResName = "IdentityEnrollmenterInfoRes";
+    const IdentityEnrollmentListReqName = "IdentityEnrollmentListReq";
+    const IdentityEnrollmentListResName = "IdentityEnrollmentListRes";
+    const IdentityEnrollmentReplyReqName = "IdentityEnrollmentReplyReq";
+    const IdentityEnrollmentReplyResName = "IdentityEnrollmentReplyRes";
 
     //---------------------------------------------------------------------------------------------------
     // protobuf.load시에 로딩할 protobuf 파일 경로 지정  
-    
-			const commonPath = "../proto"
-			const protoFileList = [ 
-				commonPath.concat("/member/response/IdentityListRes.proto"),
-				commonPath.concat("/member/request/IdentityListReq.proto"),
-				commonPath.concat("/member/request/IdentityCreateReq.proto"),
-				commonPath.concat("/member/response/IdentityCreateRes.proto"),
+
+    const commonPath = "../proto"
+    const protoFileList = [
+        commonPath.concat("/member/response/IdentityListRes.proto"),
+        commonPath.concat("/member/request/IdentityListReq.proto"),
+        commonPath.concat("/member/request/IdentityCreateReq.proto"),
+        commonPath.concat("/member/response/IdentityCreateRes.proto"),
         commonPath.concat("/member/request/IdentityAvatarCreateReq.proto"),
         commonPath.concat("/member/response/IdentityAvatarCreateRes.proto"),
-        commonPath.concat("/member/request/IdentityAvatarDetailReq.proto"),
-        commonPath.concat("/member/response/IdentityAvatarDetailRes.proto"),
+        commonPath.concat("/member/request/IdentityAvatarListReq.proto"),
+        commonPath.concat("/member/response/IdentityAvatarListRes.proto"),
         commonPath.concat("/member/request/IdentityAvatarChangeReq.proto"),
-				commonPath.concat("/member/response/IdentityAvatarChangeRes.proto"),
-				commonPath.concat("/member/request/IdentityInstitutionInfoReq.proto"),
-				commonPath.concat("/member/response/IdentityInstitutionInfoRes.proto"),
-				commonPath.concat("/member/request/IdentityInstitutionEnrollmentRequestReq.proto"),
-        commonPath.concat("/member/response/IdentityInstitutionEnrollmentRequestRes.proto"),
-        commonPath.concat("/lobby/home/request/LobbyHomeEnrollmentRequestConfirmReq.proto"),
-        commonPath.concat("/lobby/home/response/LobbyHomeEnrollmentRequestConfirmRes.proto"),
-        commonPath.concat("/lobby/home/request/LobbyHomeEnrollmentRequesterInfoReq.proto"),
-        commonPath.concat("/lobby/home/response/LobbyHomeEnrollmentRequesterInfoRes.proto"),
-        commonPath.concat("/lobby/home/request/LobbyHomeEnrollmentRequestListReq.proto"),
-        commonPath.concat("/lobby/home/response/LobbyHomeEnrollmentRequestListRes.proto"),
-        commonPath.concat("/lobby/home/request/LobbyHomeEnrollmentRequestReplyReq.proto"),
-        commonPath.concat("/lobby/home/response/LobbyHomeEnrollmentRequestReplyRes.proto"),
-				commonPath.concat("/member/request/SWclassIdentityInfo.proto"),
-				commonPath.concat("/lobby/home/response/SWclassMyInstitutionList.proto"),
-				commonPath.concat("/common/RequestPacket.proto"),
-				commonPath.concat("/common/ResponsePacket.proto"),
-				commonPath.concat("/jwt/jwtException.proto")
-				];
+        commonPath.concat("/member/response/IdentityAvatarChangeRes.proto"),
+        commonPath.concat("/member/request/IdentityInstitutionInfoReq.proto"),
+        commonPath.concat("/member/response/IdentityInstitutionInfoRes.proto"),
+        commonPath.concat("/member/request/IdentityInstitutionEnrollmentReq.proto"),
+        commonPath.concat("/member/response/IdentityInstitutionEnrollmentRes.proto"),
+        commonPath.concat("/lobby/home/request/IdentityEnrollmentConfirmReq.proto"),
+        commonPath.concat("/lobby/home/response/IdentityEnrollmentConfirmRes.proto"),
+        commonPath.concat("/lobby/home/request/IdentityEnrollmenterInfoReq.proto"),
+        commonPath.concat("/lobby/home/response/IdentityEnrollmenterInfoRes.proto"),
+        commonPath.concat("/lobby/home/request/IdentityEnrollmentListReq.proto"),
+        commonPath.concat("/lobby/home/response/IdentityEnrollmentListRes.proto"),
+        commonPath.concat("/lobby/home/request/IdentityEnrollmentReplyReq.proto"),
+        commonPath.concat("/lobby/home/response/IdentityEnrollmentReplyRes.proto"),
+        commonPath.concat("/member/request/SWclassIdentityInfo.proto"),
+        commonPath.concat("/lobby/home/response/SWclassMyInstitutionList.proto"),
+        commonPath.concat("/common/RequestPacket.proto"),
+        commonPath.concat("/common/ResponsePacket.proto"),
+        commonPath.concat("/jwt/jwtException.proto")
+    ];
 
-			//---------------------------------------------------------------------------------------------------
-      // 아래 전체코드 flow
-			// 1.브라우저가 로딩되고나서 open socket 버튼 클릭시, connectWS()함수를 통해서 websocket 연결
-			// 2.Send Message 클릭시, document.getElementById("OpCode").value를 통해서 OpCode를 input 박스에서 가져옴
-			// 3.switch문을 통해서 OpCode에 따라 Packet에 데이터를 담거나 꺼낼때 사용하는 proto파일의 message를 전역변수에 담고,  
-			// 추가적으로 데이터를 Packet에 담아야하는 경우 setDataToSend를 통해서 데이터를 serialize한다.
-			// 4.PacketObj에 Data담는곳에 serialize한 데이터를 담는다.
-			// 5.PacketObj를 setDataToSend를 serialize해서 socket.send()에 담아서 서버에 전송한다.
-			
-			$(document).ready(function() {
-				$("#btnOpen").on("click", function(evt) {
-					connectWS();
-				});
+    //---------------------------------------------------------------------------------------------------
+    // 아래 전체코드 flow
+    // 1.브라우저가 로딩되고나서 open socket 버튼 클릭시, connectWS()함수를 통해서 websocket 연결
+    // 2.Send Message 클릭시, document.getElementById("OpCode").value를 통해서 OpCode를 input 박스에서 가져옴
+    // 3.switch문을 통해서 OpCode에 따라 Packet에 데이터를 담거나 꺼낼때 사용하는 proto파일의 message를 전역변수에 담고,
+    // 추가적으로 데이터를 Packet에 담아야하는 경우 setDataToSend를 통해서 데이터를 serialize한다.
+    // 4.PacketObj에 Data담는곳에 serialize한 데이터를 담는다.
+    // 5.PacketObj를 setDataToSend를 serialize해서 socket.send()에 담아서 서버에 전송한다.
 
-				$("#btnSend").on("click", function(evt) {
-					 console.clear();
-					
-					 let OpCode = getOpCodeFromSelectBox();
-					 
-					 let Data = new Uint8Array([]);
-					
-			     protobuf.load(protoFileList, function(err, root) {
-			    	  console.log("INFO: protobuf files loaded.");
-			    	  
-			    	  loadMessage(root, RequestPacketName, "Classlink.RequestPacket");
-			    	  loadMessage(root, ResponsePacketName, "Classlink.ResponsePacket");
-			    	  loadMessage(root, JwtExceptionName, "Classlink.JwtException");
+    $(document).ready(function () {
+        $("#btnOpen").on("click", function (evt) {
+            connectWS();
+        });
 
-			    	  switch (OpCode) {
-			    	    //신분생성-----------------------------------------------------------------------------------------
-                case 100 :
-                  loadMessage(root, IdentityCreateReqName, "Classlink.IdentityCreateReq");
-                  loadMessage(root, IdentityCreateResName, "Classlink.IdentityCreateRes");
-                  
-                  const IdentityCreateReqObj = {
-                  		InsCode : 'testA',
-                  		SelectIdentityType : 'T'
-                    };
-                  
-                  Data = setDataToSend(root, IdentityCreateReqName, IdentityCreateReqObj);
-                  break;
-                //신분조회-----------------------------------------------------------------------------------------
-			    	  	case 101 :
-			    	  		loadMessage(root, IdentityListReqName, "Classlink.IdentityListReq");
-			    	  		loadMessage(root, IdentityListResName, "Classlink.IdentityListRes");
-			    	  		
-			    	  		const IdentityListReqObj = {
-                      InsCode : 'testA'
-                    };
-                  
-                  Data = setDataToSend(root, IdentityListReqName, IdentityListReqObj);
-			    	  	  break;
-			    	  	//아바타생성-----------------------------------------------------------------------------------------
-			    	  	case 102 :
-                  loadMessage(root, IdentityAvatarCreateReqName, "Classlink.IdentityAvatarCreateReq");
-                  loadMessage(root, IdentityAvatarCreateResName, "Classlink.IdentityAvatarCreateRes");
-                  
-                  const IdentityAvatarCreateReqObj = {
-                      InsCode : 'testA',
-                      IdentityType : 'P',
-                      AvatarId : '150'
-                    };
-                  
-                  Data = setDataToSend(root, IdentityAvatarCreateReqName, IdentityAvatarCreateReqObj);
-                  break;
-                //아바타 조회-----------------------------------------------------------------------------------------
-			    	  	case 103 :
-                  loadMessage(root, IdentityAvatarDetailReqName, "Classlink.IdentityAvatarDetailReq");
-                  loadMessage(root, IdentityAvatarDetailResName, "Classlink.IdentityAvatarDetailRes");
-                  
-                  const IdentityAvatarDetailReqObj = {
-                      InsCode : 'testA',
-                      IdentityType : 'P',
-                    };
-                  
-                  Data = setDataToSend(root, IdentityAvatarDetailReqName, IdentityAvatarDetailReqObj);
-                  break;
-                //아바타 변경-----------------------------------------------------------------------------------------
-			    	  	case 104 :
-                  loadMessage(root, IdentityAvatarChangeReqName, "Classlink.IdentityAvatarChangeReq");
-                  loadMessage(root, IdentityAvatarChangeResName, "Classlink.IdentityAvatarChangeRes");
-                  
-                  const IdentityAvatarChangeReqObj = {
-                      InsCode : 'testA',
-                      IdentityType : 'P',
-                      AvatarId : '155'
-                    };
-                  
-                  Data = setDataToSend(root, IdentityAvatarChangeReqName, IdentityAvatarChangeReqObj);
-                  break;
-                //-----------------------------------------------------------------------------------------
-                case 105 :
-                  loadMessage(root, IdentityInstitutionInfoReqName, "Classlink.IdentityInstitutionInfoReq");
-                  loadMessage(root, IdentityInstitutionInfoResName, "Classlink.IdentityInstitutionInfoRes");
-                  
-                  const IdentityInstitutionInfoReqObj = {
-                      InsCode : 'testA',
-                      InsInviteUrl : '/img/url'
-                    };
-                  
-                  Data = setDataToSend(root, IdentityInstitutionInfoReqName, IdentityInstitutionInfoReqObj);
-                  break;
-                //-----------------------------------------------------------------------------------------
-                case 106 :
-                  loadMessage(root, IdentityInstitutionEnrollmentRequestReqName, "Classlink.IdentityInstitutionEnrollmentRequestReq");
-                  loadMessage(root, IdentityInstitutionEnrollmentRequestResName, "Classlink.IdentityInstitutionEnrollmentRequestRes");
-                  
-                  const IdentityInstitutionEnrollmentRequestReqObj = {
-                      InsCode : 'testA'
-                    };
-                  
-                  Data = setDataToSend(root, IdentityInstitutionEnrollmentRequestReqName, IdentityInstitutionEnrollmentRequestReqObj);
-                  break;
-                //-----------------------------------------------------------------------------------------
-                case 107 :
-                  loadMessage(root, LobbyHomeEnrollmentRequestListReqName, "Classlink.LobbyHomeEnrollmentRequestListReq");
-                  loadMessage(root, LobbyHomeEnrollmentRequestListResName, "Classlink.LobbyHomeEnrollmentRequestListRes");
-                  
-                  const LobbyHomeEnrollmentRequestListReqObj = {
-                      InsCode : 'testA'
-                    };
-                  
-                  Data = setDataToSend(root, LobbyHomeEnrollmentRequestListReqName, LobbyHomeEnrollmentRequestListReqObj);
-                  break; 
-                //-----------------------------------------------------------------------------------------
-                case 108 :
-                  loadMessage(root, LobbyHomeEnrollmentRequestConfirmReqName, "Classlink.LobbyHomeEnrollmentRequestConfirmReq");
-                  loadMessage(root, LobbyHomeEnrollmentRequestConfirmResName, "Classlink.LobbyHomeEnrollmentRequestConfirmRes");
-                  
-                  const LobbyHomeEnrollmentRequestConfirmReqObj = {
-                      InsCode : 'testA',
-                      MemId : 'test7777'
-                    };
-                  
-                  Data = setDataToSend(root, IdentityInstitutionEnrollmentRequestReqName, LobbyHomeEnrollmentRequestConfirmReqObj);
-                  break;
-                //-----------------------------------------------------------------------------------------
-                case 109 :
-                  loadMessage(root, LobbyHomeEnrollmentRequesterInfoReqName, "Classlink.LobbyHomeEnrollmentRequesterInfoReq");
-                  loadMessage(root, LobbyHomeEnrollmentRequesterInfoResName, "Classlink.LobbyHomeEnrollmentRequesterInfoRes");
-                  
-                  const LobbyHomeEnrollmentRequesterInfoReqObj = {
-                      InsCode : 'testA',
-                      MemId : 'test7777'
-                    };
-                  
-                  Data = setDataToSend(root, LobbyHomeEnrollmentRequesterInfoReqName, LobbyHomeEnrollmentRequesterInfoReqObj);
-                  break; 
-                //-----------------------------------------------------------------------------------------
-                case 110 :
-                  loadMessage(root, LobbyHomeEnrollmentRequestReplyReqName, "Classlink.LobbyHomeEnrollmentRequestReplyReq");
-                  loadMessage(root, LobbyHomeEnrollmentRequestReplyResName, "Classlink.LobbyHomeEnrollmentRequestReplyRes");
-                  
-                  const LobbyHomeEnrollmentRequestReplyReqObj = {
-                      InsCode : 'testA',
-                      MemId : 'test7777'
-                    };
-                  
-                  Data = setDataToSend(root, LobbyHomeEnrollmentRequestReplyReqName, LobbyHomeEnrollmentRequestReplyReqObj);
-                  break;  
-                //-----------------------------------------------------------------------------------------  
-                case 201 :
-                  loadMessage(root, MyInstitutionListName, "Classlink.SWclassMyInstitutionList");
-                  break;
-                  
-			    	    default:
-			    	    	break;
-			    	  }
-			    	  
-              const RequestPacketObj = {
-                  OpCode : OpCode,
-                  AccessToken : "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2NzA0ODM0MjUsInVzZXJfbmFtZSI6InRlc3Q3Nzc3IiwianRpIjoiNDgzNWNjZGYtODY5OS00YzZkLWIxY2EtZDQ2MTAzOGZhNDIwIiwiY2xpZW50X2lkIjoiY2xhc3NsaW5rIiwic2NvcGUiOlsiY2xpZW50Il19.vWzVLj3cb0UQzGo-tXA_Aug6sDWRzPHsLYj-4ZRrHjQ",
-                  InstanceId : '2',
-                  Data : Data
+        $("#btnSend").on("click", function (evt) {
+            console.clear();
+
+            let OpCode = getOpCodeFromSelectBox();
+
+            let Data = new Uint8Array([]);
+
+            protobuf.load(protoFileList, function (err, root) {
+                console.log("INFO: protobuf files loaded.");
+
+                loadMessage(root, RequestPacketName, "Classlink.RequestPacket");
+                loadMessage(root, ResponsePacketName, "Classlink.ResponsePacket");
+                loadMessage(root, JwtExceptionName, "Classlink.JwtException");
+
+                switch (OpCode) {
+                    //신분생성-----------------------------------------------------------------------------------------
+                    case 100 :
+                        loadMessage(root, IdentityCreateReqName, "Classlink.IdentityCreateReq");
+                        loadMessage(root, IdentityCreateResName, "Classlink.IdentityCreateRes");
+
+                        const IdentityCreateReqObj = {
+                            InsCode: 'testA',
+                            SelectIdentityType: 'T'
+                        };
+
+                        Data = setDataToSend(root, IdentityCreateReqName, IdentityCreateReqObj);
+                        break;
+                    //신분조회-----------------------------------------------------------------------------------------
+                    case 101 :
+                        loadMessage(root, IdentityListReqName, "Classlink.IdentityListReq");
+                        loadMessage(root, IdentityListResName, "Classlink.IdentityListRes");
+
+                        const IdentityListReqObj = {
+                            InsCode: 'testA'
+                        };
+
+                        Data = setDataToSend(root, IdentityListReqName, IdentityListReqObj);
+                        break;
+                    //아바타생성-----------------------------------------------------------------------------------------
+                    case 102 :
+                        loadMessage(root, IdentityAvatarCreateReqName, "Classlink.IdentityAvatarCreateReq");
+                        loadMessage(root, IdentityAvatarCreateResName, "Classlink.IdentityAvatarCreateRes");
+
+                        const IdentityAvatarCreateReqObj = {
+                            InsCode: 'testA',
+                            IdentityType: 'P',
+                            AvatarId: '150'
+                        };
+
+                        Data = setDataToSend(root, IdentityAvatarCreateReqName, IdentityAvatarCreateReqObj);
+                        break;
+                    //아바타 조회-----------------------------------------------------------------------------------------
+                    case 103 :
+                        loadMessage(root, IdentityAvatarListReqName, "Classlink.IdentityAvatarListReq");
+                        loadMessage(root, IdentityAvatarListResName, "Classlink.IdentityAvatarListRes");
+
+                        const IdentityAvatarListReqObj = {
+                            InsCode: 'testA',
+                            IdentityType: 'P',
+                        };
+
+                        Data = setDataToSend(root, IdentityAvatarListReqName, IdentityAvatarListReqObj);
+                        break;
+                    //아바타 변경-----------------------------------------------------------------------------------------
+                    case 104 :
+                        loadMessage(root, IdentityAvatarChangeReqName, "Classlink.IdentityAvatarChangeReq");
+                        loadMessage(root, IdentityAvatarChangeResName, "Classlink.IdentityAvatarChangeRes");
+
+                        const IdentityAvatarChangeReqObj = {
+                            InsCode: 'testA',
+                            IdentityType: 'P',
+                            AvatarId: '155'
+                        };
+
+                        Data = setDataToSend(root, IdentityAvatarChangeReqName, IdentityAvatarChangeReqObj);
+                        break;
+                    //-----------------------------------------------------------------------------------------
+                    case 105 :
+                        loadMessage(root, IdentityInstitutionInfoReqName, "Classlink.IdentityInstitutionInfoReq");
+                        loadMessage(root, IdentityInstitutionInfoResName, "Classlink.IdentityInstitutionInfoRes");
+
+                        const IdentityInstitutionInfoReqObj = {
+                            InsCode: 'testA',
+                            InsInviteUrl: '/img/url'
+                        };
+
+                        Data = setDataToSend(root, IdentityInstitutionInfoReqName, IdentityInstitutionInfoReqObj);
+                        break;
+                    //-----------------------------------------------------------------------------------------
+                    case 106 :
+                        loadMessage(root, IdentityInstitutionEnrollmentReqName, "Classlink.IdentityInstitutionEnrollmentReq");
+                        loadMessage(root, IdentityInstitutionEnrollmentResName, "Classlink.IdentityInstitutionEnrollmentRes");
+
+                        const IdentityInstitutionEnrollmentReqObj = {
+                            InsCode: 'testA'
+                        };
+
+                        Data = setDataToSend(root, IdentityInstitutionEnrollmentReqName, IdentityInstitutionEnrollmentReqObj);
+                        break;
+                    //-----------------------------------------------------------------------------------------
+                    case 107 :
+                        loadMessage(root, IdentityEnrollmentListReqName, "Classlink.IdentityEnrollmentListReq");
+                        loadMessage(root, IdentityEnrollmentListResName, "Classlink.IdentityEnrollmentListRes");
+
+                        const IdentityEnrollmentListReqObj = {
+                            InsCode: 'testA'
+                        };
+
+                        Data = setDataToSend(root, IdentityEnrollmentListReqName, IdentityEnrollmentListReqObj);
+                        break;
+                    //-----------------------------------------------------------------------------------------
+                    case 108 :
+                        loadMessage(root, IdentityEnrollmentConfirmReqName, "Classlink.IdentityEnrollmentConfirmReq");
+                        loadMessage(root, IdentityEnrollmentConfirmResName, "Classlink.IdentityEnrollmentConfirmRes");
+
+                        const IdentityEnrollmentConfirmReqObj = {
+                            InsCode: 'testA',
+                            MemId: 'test7777'
+                        };
+
+                        Data = setDataToSend(root, IdentityEnrollmentConfirmReqName, IdentityEnrollmentConfirmReqObj);
+                        break;
+                    //-----------------------------------------------------------------------------------------
+                    case 109 :
+                        loadMessage(root, IdentityEnrollmenterInfoReqName, "Classlink.IdentityEnrollmenterInfoReq");
+                        loadMessage(root, IdentityEnrollmenterInfoResName, "Classlink.IdentityEnrollmenterInfoRes");
+
+                        const IdentityEnrollmenterInfoReqObj = {
+                            InsCode: 'testA',
+                            MemId: 'test7777'
+                        };
+
+                        Data = setDataToSend(root, IdentityEnrollmenterInfoReqName, IdentityEnrollmenterInfoReqObj);
+                        break;
+                    //-----------------------------------------------------------------------------------------
+                    case 110 :
+                        loadMessage(root, IdentityEnrollmentReplyReqName, "Classlink.IdentityEnrollmentReplyReq");
+                        loadMessage(root, IdentityEnrollmentReplyResName, "Classlink.IdentityEnrollmentReplyRes");
+
+                        const IdentityEnrollmentReplyReqObj = {
+                            InsCode: 'testA',
+                            MemId: 'test7777'
+                        };
+
+                        Data = setDataToSend(root, IdentityEnrollmentReplyReqName, IdentityEnrollmentReplyReqObj);
+                        break;
+                    //-----------------------------------------------------------------------------------------
+                    case 201 :
+                        loadMessage(root, MyInstitutionListName, "Classlink.SWclassMyInstitutionList");
+                        break;
+
+                    default:
+                        break;
+                }
+
+                const RequestPacketObj = {
+                    OpCode: OpCode,
+                    AccessToken: "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2NzA0ODM0MjUsInVzZXJfbmFtZSI6InRlc3Q3Nzc3IiwianRpIjoiNDgzNWNjZGYtODY5OS00YzZkLWIxY2EtZDQ2MTAzOGZhNDIwIiwiY2xpZW50X2lkIjoiY2xhc3NsaW5rIiwic2NvcGUiOlsiY2xpZW50Il19.vWzVLj3cb0UQzGo-tXA_Aug6sDWRzPHsLYj-4ZRrHjQ",
+                    InstanceId: '2',
+                    Data: Data
                 };
-		          
-              console.log("INFO: send triggered.");
-              socket.send(setDataToSend(root, RequestPacketName, RequestPacketObj));
-              console.time("TIME");
-		          
-		          if (socket.readyState !== 1)
-		            return;
-		          });
 
-			      });
-				
-			});
-			
-		//---------------------------------------------------------------------------------------------------
+                console.log("INFO: send triggered.");
+                socket.send(setDataToSend(root, RequestPacketName, RequestPacketObj));
+                console.time("TIME");
+
+                if (socket.readyState !== 1)
+                    return;
+            });
+
+        });
+
+    });
+
+    //---------------------------------------------------------------------------------------------------
     // connectWS 전체적인 설명
     // 1. new WebSocket()을 통해서 서버와 소켓연결을 하고 socket변수에 담는다(나중에 socket.send할때 사용하기위함)
-		// 2. websocket이 연결이되면 ws.onopen()에 연결된 함수가 실행된다.
-		// 3. websocket을 통해 send를하면 ws:localhost:8301/api로 데이터를 보내고, ws:localhost:8301/api에 연결된 브라우저에게
-		// 스프링이 데이터를 보내는데, 그 데이터를 ws.onmessage에서 switch문에 opCode를 가져와서
-		// 분기되서 받아볼수있다.
-		// (자세한 부분은 readBlobDataAsync함수를 살펴보기!)
-		// 4. ws.onclose는 소켓통신이 중단되면 실행되는 함수이다.
-		
-			let socket = null;
+    // 2. websocket이 연결이되면 ws.onopen()에 연결된 함수가 실행된다.
+    // 3. websocket을 통해 send를하면 ws:localhost:8301/api로 데이터를 보내고, ws:localhost:8301/api에 연결된 브라우저에게
+    // 스프링이 데이터를 보내는데, 그 데이터를 ws.onmessage에서 switch문에 opCode를 가져와서
+    // 분기되서 받아볼수있다.
+    // (자세한 부분은 readBlobDataAsync함수를 살펴보기!)
+    // 4. ws.onclose는 소켓통신이 중단되면 실행되는 함수이다.
 
-		  let data = null;
-			// pure web-socket
-			function connectWS() {
-				//var ws = new WebSocket("ws:112.171.101.31:45170/api");
-				const ws = new WebSocket("ws:localhost:8301/api");
-				socket = ws;
+    let socket = null;
 
-				ws.onopen = function() {
-					console.log("INFO: connection opened.");
-				};
+    let data = null;
 
-				ws.onmessage = async function(event) {
-					console.timeEnd("TIME");
-					console.log("INFO: onmessage triggered.");
-					
-					let blob = event.data;
-					
-					const receivedPacketData = await readBlobDataAsync(blob, ResponsePacketName);
-					
-					switch(receivedPacketData.OpCode) {
-            case 100:
-            	const receivedIdentityCreateResData = window[IdentityCreateResName].decode(receivedPacketData.Data);
-            	console.log("receivedIdentityCreateResData mmmmmmmmmmmm>>", receivedIdentityCreateResData);
-            	break;
-              
-						case 101:		
-							const receivedIdentityListResData = window[IdentityListResName].decode(receivedPacketData.Data);			
-	            console.log("receivedIdentityListResData mmmmmmmmmmmm>>", receivedIdentityListResData);
-	            break;
-	            
-            case 102:   
-              const receivedIdentityAvatarCreateResData = window[IdentityAvatarCreateResName].decode(receivedPacketData.Data);      
-              console.log("receivedIdentityAvatarCreateResData mmmmmmmmmmmm>>", receivedIdentityAvatarCreateResData);
-              break;
-              
-            case 103:   
-              const receivedIdentityAvatarDetailResData = window[IdentityAvatarDetailResName].decode(receivedPacketData.Data);      
-              console.log("receivedIdentityAvatarDetailResData mmmmmmmmmmmm>>", receivedIdentityAvatarDetailResData);
-              break;
-              
-            case 104:   
-              const receivedIdentityAvatarChangeResData = window[IdentityAvatarChangeResName].decode(receivedPacketData.Data);      
-              console.log("receivedIdentityAvatarChangeResData mmmmmmmmmmmm>>", receivedIdentityAvatarChangeResData);
-              break;
-              
-            case 105:   
-              const receivedIdentityInstitutionInfoResData = window[IdentityInstitutionInfoResName].decode(receivedPacketData.Data);      
-              console.log("receivedIdentityInstitutionInfoResData mmmmmmmmmmmm>>", receivedIdentityInstitutionInfoResData);
-              break;
-              
-            case 106:   
-              const receivedIdentityInstitutionEnrollmentRequestResData = window[IdentityInstitutionEnrollmentRequestResName].decode(receivedPacketData.Data);      
-              console.log("receivedIdentityInstitutionEnrollmentRequestResData mmmmmmmmmmmm>>", receivedIdentityInstitutionEnrollmentRequestResData);
-              break;
-              
-            case 107:   
-              const receivedLobbyHomeEnrollmentRequestListResData = window[LobbyHomeEnrollmentRequestListResName].decode(receivedPacketData.Data);      
-              console.log("receivedLobbyHomeEnrollmentRequestListResData mmmmmmmmmmmm>>", receivedLobbyHomeEnrollmentRequestListResData);
-              break;
-              
-            case 108:   
-              const receivedLobbyHomeEnrollmentRequestConfirmResData = window[LobbyHomeEnrollmentRequestConfirmResName].decode(receivedPacketData.Data);      
-              console.log("receivedLobbyHomeEnrollmentRequestConfirmResData mmmmmmmmmmmm>>", receivedLobbyHomeEnrollmentRequestConfirmResData);
-              break;
-              
-            case 109:   
-              const receivedLobbyHomeEnrollmentRequesterInfoResData = window[LobbyHomeEnrollmentRequesterInfoResName].decode(receivedPacketData.Data);      
-              console.log("receivedLobbyHomeEnrollmentRequesterInfoResData mmmmmmmmmmmm>>", receivedLobbyHomeEnrollmentRequesterInfoResData);
-              break;
-              
-            case 110:   
-              const receivedLobbyHomeEnrollmentRequestReplyResData = window[LobbyHomeEnrollmentRequestReplyResName].decode(receivedPacketData.Data);      
-              console.log("receivedLobbyHomeEnrollmentRequestReplyResData mmmmmmmmmmmm>>", receivedLobbyHomeEnrollmentRequestReplyResData);
-              break;
-	            
-            case 201:   
-              const receivedMyInstitutionListData = window[MyInstitutionListName].decode(receivedPacketData.Data);
-              console.log("receivedMyInstitutionListData mmmmmmmmmmmm>>", receivedMyInstitutionListData);
-              break;
-	            
-	          case 401:   
-              const receivedJwtExceptionData = window[JwtExceptionName].decode(receivedPacketData.Data);    
-              console.log("receivedJwtExceptionData mmmmmmmmmmmm>>", receivedJwtExceptionData);
-              break;
-	            
-						default:
-							break;
-					}
-				};
+    // pure web-socket
+    function connectWS() {
+        //var ws = new WebSocket("ws:112.171.101.31:45170/api");
+        const ws = new WebSocket("ws:localhost:8301/api");
+        socket = ws;
 
-				ws.onclose = function(event) {
-					console.log("INFO: connection closed.");
-					//setTimeout( function(){ connect(); }, 1000); // retry connection!!
-				};
-				
-				ws.onerror = function(err) {
-					console.log("Error:", err);
-				};
-			}
-		</script>
+        ws.onopen = function () {
+            console.log("INFO: connection opened.");
+        };
+
+        ws.onmessage = async function (event) {
+            console.timeEnd("TIME");
+            console.log("INFO: onmessage triggered.");
+
+            let blob = event.data;
+
+            const receivedPacketData = await readBlobDataAsync(blob, ResponsePacketName);
+
+            switch (receivedPacketData.OpCode) {
+                case 100:
+                    const receivedIdentityCreateResData = window[IdentityCreateResName].decode(receivedPacketData.Data);
+                    console.log("receivedIdentityCreateResData mmmmmmmmmmmm>>", receivedIdentityCreateResData);
+                    break;
+
+                case 101:
+                    const receivedIdentityListResData = window[IdentityListResName].decode(receivedPacketData.Data);
+                    console.log("receivedIdentityListResData mmmmmmmmmmmm>>", receivedIdentityListResData);
+                    break;
+
+                case 102:
+                    const receivedIdentityAvatarCreateResData = window[IdentityAvatarCreateResName].decode(receivedPacketData.Data);
+                    console.log("receivedIdentityAvatarCreateResData mmmmmmmmmmmm>>", receivedIdentityAvatarCreateResData);
+                    break;
+
+                case 103:
+                    const receivedIdentityAvatarListResData = window[IdentityAvatarListResName].decode(receivedPacketData.Data);
+                    console.log("receivedIdentityAvatarListResData mmmmmmmmmmmm>>", receivedIdentityAvatarListResData);
+                    break;
+
+                case 104:
+                    const receivedIdentityAvatarChangeResData = window[IdentityAvatarChangeResName].decode(receivedPacketData.Data);
+                    console.log("receivedIdentityAvatarChangeResData mmmmmmmmmmmm>>", receivedIdentityAvatarChangeResData);
+                    break;
+
+                case 105:
+                    const receivedIdentityInstitutionInfoResData = window[IdentityInstitutionInfoResName].decode(receivedPacketData.Data);
+                    console.log("receivedIdentityInstitutionInfoResData mmmmmmmmmmmm>>", receivedIdentityInstitutionInfoResData);
+                    break;
+
+                case 106:
+                    const receivedIdentityInstitutionEnrollmentResData = window[IdentityInstitutionEnrollmentResName].decode(receivedPacketData.Data);
+                    console.log("receivedIdentityInstitutionEnrollmentResData mmmmmmmmmmmm>>", receivedIdentityInstitutionEnrollmentResData);
+                    break;
+
+                case 107:
+                    const receivedIdentityEnrollmentListResData = window[IdentityEnrollmentListResName].decode(receivedPacketData.Data);
+                    console.log("receivedIdentityEnrollmentListResData mmmmmmmmmmmm>>", receivedIdentityEnrollmentListResData);
+                    break;
+
+                case 108:
+                    const receivedIdentityEnrollmentConfirmResData = window[IdentityEnrollmentConfirmResName].decode(receivedPacketData.Data);
+                    console.log("receivedIdentityEnrollmentConfirmResData mmmmmmmmmmmm>>", receivedIdentityEnrollmentConfirmResData);
+                    break;
+
+                case 109:
+                    const receivedIdentityEnrollmenterInfoResData = window[IdentityEnrollmenterInfoResName].decode(receivedPacketData.Data);
+                    console.log("receivedIdentityEnrollmenterInfoResData mmmmmmmmmmmm>>", receivedIdentityEnrollmenterInfoResData);
+                    break;
+
+                case 110:
+                    const receivedIdentityEnrollmentReplyResData = window[IdentityEnrollmentReplyResName].decode(receivedPacketData.Data);
+                    console.log("receivedIdentityEnrollmentReplyResData mmmmmmmmmmmm>>", receivedIdentityEnrollmentReplyResData);
+                    break;
+
+                case 201:
+                    const receivedMyInstitutionListData = window[MyInstitutionListName].decode(receivedPacketData.Data);
+                    console.log("receivedMyInstitutionListData mmmmmmmmmmmm>>", receivedMyInstitutionListData);
+                    break;
+
+                case 401:
+                    const receivedJwtExceptionData = window[JwtExceptionName].decode(receivedPacketData.Data);
+                    console.log("receivedJwtExceptionData mmmmmmmmmmmm>>", receivedJwtExceptionData);
+                    break;
+
+                default:
+                    break;
+            }
+        };
+
+        ws.onclose = function (event) {
+            console.log("INFO: connection closed.");
+            //setTimeout( function(){ connect(); }, 1000); // retry connection!!
+        };
+
+        ws.onerror = function (err) {
+            console.log("Error:", err);
+        };
+    }
+</script>
 </body>
 </html>

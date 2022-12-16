@@ -2,76 +2,144 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="com.classlink.websocket.api.member.MemberMapper">
-  <select id="selectIdentitiesByMemberId" 
-   parameterType="com.classlink.websocket.api.member.domain.param.MemberParam$IdentityListParam"
-   resultType="String">
-    SELECT cma.identity_type
-    FROM cl_member cm
-    INNER JOIN cl_member_avatar cma
-    ON cm.mem_idx = cma.mem_idx AND cma.ins_code = #{ins_code}
-    WHERE cm.mem_id = #{mem_id}
-    AND cm.delete_yn = "N"
-  </select>
-  
-  <insert id="insertIdentity" parameterType="com.classlink.websocket.api.member.domain.param.MemberParam$IdentityCreateParam">
-     INSERT INTO cl_member_identity
-     ( ins_code, mem_idx, identity_type)
-     VALUES
-     ( #{ins_code}, (select cm.mem_idx from cl_member cm where cm.mem_id = #{mem_id}), #{identity_type}) 
-  </insert>
+    <select id="selectIdentitiesByMemberId"
+            parameterType="com.classlink.websocket.api.member.domain.param.MemberParam$IdentityListParam"
+            resultType="String">
+        SELECT cma.identity_type
+        FROM cl_member cm
+                 INNER JOIN cl_member_avatar cma
+                            ON cm.mem_idx = cma.mem_idx AND cma.ins_code = #{ins_code}
+        WHERE cm.mem_id = #{mem_id}
+          AND cm.delete_yn = 'N'
+    </select>
 
-  <insert id="insertAvartar" parameterType="com.classlink.websocket.api.member.domain.param.MemberParam$AvatarCreateParam" >
-    INSERT INTO cl_member_avatar
-     ( mem_idx, ins_code, mea_avatar_id, identity_type)
-     VALUES
-     ( (select cm.mem_idx from cl_member cm where cm.mem_id = #{mem_id}), #{ins_code}, #{mea_avatar_id}, #{identity_type})
-  </insert>
-  
-  <select id="selectAvartarByMemberId" 
-   parameterType="com.classlink.websocket.api.member.domain.param.MemberParam$IdentityListParam"
-   resultType="com.classlink.websocket.api.member.domain.dto.MemberDto$AvatarDetailDto">
-    SELECT cma.ins_code, cma.identity_type, cma.mea_avatar_id
-    FROM cl_member cm
-    INNER JOIN cl_member_avatar cma
-    ON cm.mem_idx = cma.mem_idx AND cma.ins_code = #{ins_code}
-    AND cma.identity_type = #{identity_type}
-    WHERE cm.mem_id = #{mem_id}
-    AND cm.delete_yn = "N"
-  </select>
-  
-  <update id="updateAvartarByMemberId" 
-  parameterType="com.classlink.websocket.api.member.domain.param.MemberParam$AvatarChangeParam">
-    UPDATE cl_member_avatar cma 
-    INNER join cl_member cm 
-    ON cma.mem_idx = cm.mem_idx 
-    SET mea_avatar_id = #{mea_avatar_id}
-    WHERE cm.mem_id = #{mem_id}
-    AND cm.delete_yn = 'N'
-    AND cma.ins_code = #{ins_code}
-    AND cma.identity_type = #{identity_type}
-  </update>
-  
-  
-  <select id="selectInstitutionInfoByInsCode" 
-   parameterType="com.classlink.websocket.api.member.domain.param.MemberParam$InstitutionInfoParam"
-   resultType="com.classlink.websocket.api.member.domain.dto.MemberDto$InstitutionInfoDto">
-    SELECT ci.ins_code, ci.ins_name, ci.ins_logo_img
-    FROM cl_institution ci
-    WHERE 1
-    <if test="ins_code != null">
-      AND ci.ins_code  = #{ins_code}
-    </if>
-    <if test="ins_invite_url != null">
-      AND ci.ins_invite_url  = #{ins_invite_url}
-    </if>
-    AND ci.ins_delete_yn = 'N'
-  </select>
+    <insert id="insertIdentity"
+            parameterType="com.classlink.websocket.api.member.domain.param.MemberParam$IdentityCreateParam">
+        INSERT INTO cl_member_identity
+            (ins_code, mem_idx, identity_type)
+        VALUES (#{ins_code}, (select cm.mem_idx from cl_member cm where cm.mem_id = #{mem_id}), #{identity_type})
+    </insert>
 
-  <insert id="insertInstitutionEnrollmentRequest" parameterType="com.classlink.websocket.api.member.domain.param.MemberParam$InstitutionEnrollmentRequestParam" >
-    INSERT INTO cl_institution_member
-    ( ins_code, mem_idx)
-    VALUES
-    ( #{ins_code}, (select cm.mem_idx from cl_member cm where cm.mem_id = #{mem_id}))
-  </insert>
+<!--    <insert id="insertAvartar"
+            parameterType="com.classlink.websocket.api.member.domain.param.MemberParam$AvatarCreateParam">
+        INSERT INTO cl_member_avatar
+            (mem_idx, ins_code, mea_avatar_id, identity_type)
+        VALUES ((select cm.mem_idx from cl_member cm where cm.mem_id = #{mem_id}), #{ins_code}, #{mea_avatar_id},
+                #{identity_type})
+    </insert>-->
+
+    <select id="selectAvartarByMemberId"
+            parameterType="com.classlink.websocket.api.member.domain.param.MemberParam$IdentityListParam"
+            resultType="com.classlink.websocket.api.member.domain.dto.MemberDto$AvatarListDto">
+        SELECT cma.ins_code, cma.identity_type, cma.mea_avatar_id
+        FROM cl_member cm
+                 INNER JOIN cl_member_avatar cma
+                            ON cm.mem_idx = cma.mem_idx AND cma.ins_code = #{ins_code}
+                                AND cma.identity_type = #{identity_type}
+        WHERE cm.mem_id = #{mem_id}
+          AND cm.delete_yn = 'N'
+    </select>
+
+    <insert id="updateAvatarByMemberId"
+            parameterType="com.classlink.websocket.api.member.domain.param.MemberParam$AvatarChangeParam">
+        INSERT INTO cl_member_avatar
+            (ins_code, mea_avatar_id, identity_type, mem_idx)
+        VALUES (#{ins_code}, #{mea_avatar_id}, #{identity_type}, (SELECT mem_idx
+                                                                  FROM cl_member cm
+                                                                  WHERE cm.mem_id = #{mem_id}
+                                                                    AND cm.delete_yn = 'N'))
+        ON DUPLICATE KEY UPDATE ins_code      = #{mem_idx},
+                                mea_avatar_id = #{mea_avatar_id},
+                                identity_type = #{identity_type},
+                                mem_idx       = (SELECT mem_idx
+                                                 FROM cl_member cm
+                                                 WHERE cm.mem_id = #{mem_id}
+                                                   AND cm.delete_yn = 'N');
+    </insert>
+
+
+    <select id="selectInstitutionInfoByInsCode"
+            parameterType="com.classlink.websocket.api.member.domain.param.MemberParam$InstitutionInfoParam"
+            resultType="com.classlink.websocket.api.member.domain.dto.MemberDto$InstitutionInfoDto">
+        SELECT ci.ins_code, ci.ins_name, ci.ins_logo_img
+        FROM cl_institution ci
+        WHERE 1
+        <if test="ins_code != null">
+            AND ci.ins_code = #{ins_code}
+        </if>
+        <if test="ins_invite_url != null">
+            AND ci.ins_invite_url = #{ins_invite_url}
+        </if>
+        AND ci.ins_delete_yn = 'N'
+    </select>
+
+    <insert id="insertInstitutionEnrollmentRequest"
+            parameterType="com.classlink.websocket.api.member.domain.param.MemberParam$InstitutionEnrollmentRequestParam">
+        INSERT INTO cl_institution_member
+            (ins_code, mem_idx)
+        VALUES (#{ins_code}, (select cm.mem_idx from cl_member cm where cm.mem_id = #{mem_id}))
+    </insert>
+
+
+    <select id="selectInstitutionEnrollmentsByInsCode"
+            resultType="com.classlink.websocket.api.member.domain.dto.MemberDto$InstitutionEnrollmentRequestListDto">
+        SELECT cm.mem_id, cm.mem_img, cm.mem_name, cim.itm_registration_date, cim.itm_view_yn
+        FROM cl_institution_member cim
+                 INNER JOIN cl_member cm
+                            ON cim.mem_idx = cm.mem_idx
+        WHERE cim.ins_code = #{ins_code}
+          AND cim.itm_acc_yn = 'N'
+          AND cim.itm_status = '02'
+    </select>
+
+    <update id="updateAvartarByMemberId"
+            parameterType="com.classlink.websocket.api.member.domain.param.MemberParam$InstitutionEnrollmentRequestConfirmParam">
+        UPDATE cl_institution_member cim
+            inner join cl_member cm
+            on cim.mem_idx = cm.mem_idx
+        SET itm_view_yn = 'Y'
+        WHERE cm.mem_id = #{mem_id}
+          AND cm.delete_yn = 'N'
+          AND cim.ins_code = #{ins_code}
+    </update>
+
+    <resultMap id="institutionEnrollmentRequesterInfoDtoResultMap"
+               type="com.classlink.websocket.api.member.domain.dto.MemberDto$InstitutionEnrollmentRequesterInfoDto">
+        <result column="mea_avatar_id" property="mea_avatar_id"/>
+        <result column="mem_img" property="mem_img"/>
+        <result column="mem_nickname" property="mem_nickname"/>
+        <result column="mem_name" property="mem_name"/>
+        <result column="mem_email" property="mem_email"/>
+        <result column="mem_phone" property="mem_phone"/>
+        <result column="itm_registration_date" property="itm_registration_date"/>
+        <collection property="rti_registration_dates" ofType="String">
+            <result column="rti_registration_date" property="rti_registration_date"/>
+        </collection>
+    </resultMap>
+
+    <select id="selectInstitutionEnrollmentRequesterInfo" resultMap="institutionEnrollmentRequesterInfoDtoResultMap">
+        SELECT cma.mea_avatar_id,
+               cm.mem_img,
+               cm.mem_nickname,
+               cm.mem_name,
+               cm.mem_email,
+               cm.mem_phone,
+               cim.itm_registration_date,
+               cri.rti_registration_date
+        FROM cl_member cm
+                 inner join cl_institution_member cim
+                            on cm.mem_idx = cim.mem_idx and cim.ins_code = #{ins_code} and cim.itm_acc_yn = 'N' and
+                               cim.itm_status = '02'
+                 inner join cl_member_avatar cma
+                            on cm.mem_idx = cma.mem_idx and cma.ins_code = #{ins_code} and cma.identity_type = 'S'
+                 inner join cl_recent_institution cri
+                            on cim.itm_idx = cri.itm_idx
+        WHERE cm.mem_id = #{mem_id}
+          and cm.delete_yn = 'N'
+          and cm.live_yn = 'N'
+        ORDER BY cri.rti_idx DESC
+        LIMIT 0, 5;
+    </select>
+
 
 </mapper>

@@ -1,6 +1,6 @@
 syntax = "proto3";
 package Classlink;
-option java_package = "com.classlink.websocket.api.lobby.home.domain.param.proto";
+option java_package = "com.classlink.websocket.api.lobby.home.domain.dto.proto";
 option java_outer_classname = "MyInstitutionList";
 
 message SWclassMyInstitutionList {

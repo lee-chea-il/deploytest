@@ -1,35 +1,38 @@
 package com.classlink.websocket.api.member;
 
-import java.util.List;
-
+import com.classlink.websocket.api.member.domain.dto.MemberDto;
+import com.classlink.websocket.api.member.domain.dto.MemberDto.InstitutionInfoDto;
+import com.classlink.websocket.api.member.domain.param.MemberParam;
+import com.classlink.websocket.api.member.domain.param.MemberParam.*;
 import org.apache.ibatis.annotations.Mapper;
 
-import com.classlink.websocket.api.member.domain.dto.MemberDto.AvatarDetailDto;
-import com.classlink.websocket.api.member.domain.dto.MemberDto.InstitutionInfoDto;
-import com.classlink.websocket.api.member.domain.param.MemberParam.AvatarChangeParam;
-import com.classlink.websocket.api.member.domain.param.MemberParam.AvatarCreateParam;
-import com.classlink.websocket.api.member.domain.param.MemberParam.AvatarDetailParam;
-import com.classlink.websocket.api.member.domain.param.MemberParam.IdentityCreateParam;
-import com.classlink.websocket.api.member.domain.param.MemberParam.IdentityListParam;
-import com.classlink.websocket.api.member.domain.param.MemberParam.InstitutionEnrollmentRequestParam;
-import com.classlink.websocket.api.member.domain.param.MemberParam.InstitutionInfoParam;
+import java.util.List;
 
 @Mapper
 public interface MemberMapper {
-	
-	List<String> selectIdentitiesByMemberId(IdentityListParam identityListParam);
 
-	int insertIdentity(IdentityCreateParam IdentityParam);
+    List<String> selectIdentitiesByMemberId(IdentityListParam identityListParam);
 
-	int insertAvartar(AvatarCreateParam avatarParam);
+    int insertIdentity(IdentityCreateParam IdentityParam);
 
-	AvatarDetailDto selectAvartarByMemberId(AvatarDetailParam avatarDetailParam);
+//	int insertAvatar(AvatarCreateParam avatarParam);
 
-	int updateAvartarByMemberId(AvatarChangeParam avatarDetailParam);
+    List<MemberDto.AvatarListDto> selectAvatarByMemberId(MemberParam.AvatarListParam avatarListParam);
 
-	InstitutionInfoDto selectInstitutionInfoByInsCode(
-			InstitutionInfoParam InstitutionInfoParam);
+    int updateAvatarByMemberId(AvatarChangeParam avatarDetailParam);
 
-	int insertInstitutionEnrollmentRequest(
-			InstitutionEnrollmentRequestParam InstitutionEnrollmentRequestParam);
+    InstitutionInfoDto selectInstitutionInfoByInsCode(
+            InstitutionInfoParam InstitutionInfoParam);
+
+    int insertInstitutionEnrollmentRequest(
+            InstitutionEnrollmentRequestParam InstitutionEnrollmentRequestParam);
+
+    List<MemberDto.InstitutionEnrollmentRequestListDto> selectInstitutionEnrollmentsByInsCode(
+            InstitutionEnrollmentRequestListParam institutionEnrollmentRequestListParam);
+
+    int updateInstitutionEnrollmentViewStatus(
+            InstitutionEnrollmentRequestConfirmParam lobbyHomeEnrollmentRequestConfirmParam);
+
+    MemberDto.InstitutionEnrollmentRequesterInfoDto selectInstitutionEnrollmentRequesterInfo(
+            InstitutionEnrollmentRequesterInfoParam lobbyHomeEnrollmentRequesterInfoParam);
 }

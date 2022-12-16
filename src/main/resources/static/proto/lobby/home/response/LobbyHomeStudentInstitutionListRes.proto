@@ -1,0 +1,19 @@
+syntax = "proto3"; 
+package classlink;
+option java_package = "com.classlink.websocket.api.lobby.home.domain.dto.proto";
+option java_outer_classname = "LobbyHomeStudentInstitutionListResProto";
+
+message LobbyHomeStudentInstitutionListRes{
+  message StudentInstitution {
+    string InsCode = 1;
+    string InsName = 2;
+    string InsLogoImgUrl = 3;
+    string insDesc = 4;
+    string InsImgUrl = 5;
+    bool ItmAccYn = 7;
+    string ItmStatus = 8;
+    string RtiRegistrationDate = 9;
+  }
+
+repeated StudentInstitution StudentInstitutions = 1;
+}

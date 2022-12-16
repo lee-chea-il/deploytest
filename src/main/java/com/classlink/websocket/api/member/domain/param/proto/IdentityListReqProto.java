@@ -22,7 +22,7 @@ public final class IdentityListReqProto {
      * <code>string InsCode = 1;</code>
      * @return The insCode.
      */
-    java.lang.String getInsCode();
+    String getInsCode();
     /**
      * <code>string InsCode = 1;</code>
      * @return The bytes for insCode.
@@ -46,46 +46,46 @@ public final class IdentityListReqProto {
       insCode_ = "";
     }
 
-    @java.lang.Override
+    @Override
     @SuppressWarnings({"unused"})
-    protected java.lang.Object newInstance(
+    protected Object newInstance(
         UnusedPrivateParameter unused) {
       return new IdentityListReq();
     }
 
-    @java.lang.Override
+    @Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.classlink.websocket.api.member.domain.param.proto.IdentityListReqProto.internal_static_Classlink_IdentityListReq_descriptor;
+      return IdentityListReqProto.internal_static_Classlink_IdentityListReq_descriptor;
     }
 
-    @java.lang.Override
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+    @Override
+    protected FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.classlink.websocket.api.member.domain.param.proto.IdentityListReqProto.internal_static_Classlink_IdentityListReq_fieldAccessorTable
+      return IdentityListReqProto.internal_static_Classlink_IdentityListReq_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.classlink.websocket.api.member.domain.param.proto.IdentityListReqProto.IdentityListReq.class, com.classlink.websocket.api.member.domain.param.proto.IdentityListReqProto.IdentityListReq.Builder.class);
+              IdentityListReq.class, Builder.class);
     }
 
     public static final int INSCODE_FIELD_NUMBER = 1;
-    private volatile java.lang.Object insCode_;
+    private volatile Object insCode_;
     /**
      * <code>string InsCode = 1;</code>
      * @return The insCode.
      */
-    @java.lang.Override
-    public java.lang.String getInsCode() {
-      java.lang.Object ref = insCode_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
+    @Override
+    public String getInsCode() {
+      Object ref = insCode_;
+      if (ref instanceof String) {
+        return (String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
+        String s = bs.toStringUtf8();
         insCode_ = s;
         return s;
       }
@@ -94,14 +94,14 @@ public final class IdentityListReqProto {
      * <code>string InsCode = 1;</code>
      * @return The bytes for insCode.
      */
-    @java.lang.Override
+    @Override
     public com.google.protobuf.ByteString
         getInsCodeBytes() {
-      java.lang.Object ref = insCode_;
-      if (ref instanceof java.lang.String) {
+      Object ref = insCode_;
+      if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+                (String) ref);
         insCode_ = b;
         return b;
       } else {
@@ -110,7 +110,7 @@ public final class IdentityListReqProto {
     }
 
     private byte memoizedIsInitialized = -1;
-    @java.lang.Override
+    @Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -120,7 +120,7 @@ public final class IdentityListReqProto {
       return true;
     }
 
-    @java.lang.Override
+    @Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(insCode_)) {
@@ -129,7 +129,7 @@ public final class IdentityListReqProto {
       getUnknownFields().writeTo(output);
     }
 
-    @java.lang.Override
+    @Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -143,15 +143,15 @@ public final class IdentityListReqProto {
       return size;
     }
 
-    @java.lang.Override
-    public boolean equals(final java.lang.Object obj) {
+    @Override
+    public boolean equals(final Object obj) {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof com.classlink.websocket.api.member.domain.param.proto.IdentityListReqProto.IdentityListReq)) {
+      if (!(obj instanceof IdentityListReq)) {
         return super.equals(obj);
       }
-      com.classlink.websocket.api.member.domain.param.proto.IdentityListReqProto.IdentityListReq other = (com.classlink.websocket.api.member.domain.param.proto.IdentityListReqProto.IdentityListReq) obj;
+      IdentityListReq other = (IdentityListReq) obj;
 
       if (!getInsCode()
           .equals(other.getInsCode())) return false;
@@ -159,7 +159,7 @@ public final class IdentityListReqProto {
       return true;
     }
 
-    @java.lang.Override
+    @Override
     public int hashCode() {
       if (memoizedHashCode != 0) {
         return memoizedHashCode;
@@ -173,69 +173,69 @@ public final class IdentityListReqProto {
       return hash;
     }
 
-    public static com.classlink.websocket.api.member.domain.param.proto.IdentityListReqProto.IdentityListReq parseFrom(
+    public static IdentityListReq parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.classlink.websocket.api.member.domain.param.proto.IdentityListReqProto.IdentityListReq parseFrom(
+    public static IdentityListReq parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.classlink.websocket.api.member.domain.param.proto.IdentityListReqProto.IdentityListReq parseFrom(
+    public static IdentityListReq parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.classlink.websocket.api.member.domain.param.proto.IdentityListReqProto.IdentityListReq parseFrom(
+    public static IdentityListReq parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.classlink.websocket.api.member.domain.param.proto.IdentityListReqProto.IdentityListReq parseFrom(byte[] data)
+    public static IdentityListReq parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.classlink.websocket.api.member.domain.param.proto.IdentityListReqProto.IdentityListReq parseFrom(
+    public static IdentityListReq parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.classlink.websocket.api.member.domain.param.proto.IdentityListReqProto.IdentityListReq parseFrom(java.io.InputStream input)
+    public static IdentityListReq parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static com.classlink.websocket.api.member.domain.param.proto.IdentityListReqProto.IdentityListReq parseFrom(
+    public static IdentityListReq parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static com.classlink.websocket.api.member.domain.param.proto.IdentityListReqProto.IdentityListReq parseDelimitedFrom(java.io.InputStream input)
+    public static IdentityListReq parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static com.classlink.websocket.api.member.domain.param.proto.IdentityListReqProto.IdentityListReq parseDelimitedFrom(
+    public static IdentityListReq parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static com.classlink.websocket.api.member.domain.param.proto.IdentityListReqProto.IdentityListReq parseFrom(
+    public static IdentityListReq parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static com.classlink.websocket.api.member.domain.param.proto.IdentityListReqProto.IdentityListReq parseFrom(
+    public static IdentityListReq parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -243,23 +243,23 @@ public final class IdentityListReqProto {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
-    @java.lang.Override
+    @Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(com.classlink.websocket.api.member.domain.param.proto.IdentityListReqProto.IdentityListReq prototype) {
+    public static Builder newBuilder(IdentityListReq prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
-    @java.lang.Override
+    @Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
     }
 
-    @java.lang.Override
+    @Override
     protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        BuilderParent parent) {
       Builder builder = new Builder(parent);
       return builder;
     }
@@ -269,18 +269,18 @@ public final class IdentityListReqProto {
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
         // @@protoc_insertion_point(builder_implements:Classlink.IdentityListReq)
-        com.classlink.websocket.api.member.domain.param.proto.IdentityListReqProto.IdentityListReqOrBuilder {
+        IdentityListReqOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return com.classlink.websocket.api.member.domain.param.proto.IdentityListReqProto.internal_static_Classlink_IdentityListReq_descriptor;
+        return IdentityListReqProto.internal_static_Classlink_IdentityListReq_descriptor;
       }
 
-      @java.lang.Override
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      @Override
+      protected FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return com.classlink.websocket.api.member.domain.param.proto.IdentityListReqProto.internal_static_Classlink_IdentityListReq_fieldAccessorTable
+        return IdentityListReqProto.internal_static_Classlink_IdentityListReq_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                com.classlink.websocket.api.member.domain.param.proto.IdentityListReqProto.IdentityListReq.class, com.classlink.websocket.api.member.domain.param.proto.IdentityListReqProto.IdentityListReq.Builder.class);
+                IdentityListReq.class, Builder.class);
       }
 
       // Construct using com.classlink.websocket.api.member.domain.param.proto.IdentityListReqProto.IdentityListReq.newBuilder()
@@ -289,11 +289,11 @@ public final class IdentityListReqProto {
       }
 
       private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+          BuilderParent parent) {
         super(parent);
 
       }
-      @java.lang.Override
+      @Override
       public Builder clear() {
         super.clear();
         insCode_ = "";
@@ -301,78 +301,78 @@ public final class IdentityListReqProto {
         return this;
       }
 
-      @java.lang.Override
+      @Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return com.classlink.websocket.api.member.domain.param.proto.IdentityListReqProto.internal_static_Classlink_IdentityListReq_descriptor;
+        return IdentityListReqProto.internal_static_Classlink_IdentityListReq_descriptor;
       }
 
-      @java.lang.Override
-      public com.classlink.websocket.api.member.domain.param.proto.IdentityListReqProto.IdentityListReq getDefaultInstanceForType() {
-        return com.classlink.websocket.api.member.domain.param.proto.IdentityListReqProto.IdentityListReq.getDefaultInstance();
+      @Override
+      public IdentityListReq getDefaultInstanceForType() {
+        return IdentityListReq.getDefaultInstance();
       }
 
-      @java.lang.Override
-      public com.classlink.websocket.api.member.domain.param.proto.IdentityListReqProto.IdentityListReq build() {
-        com.classlink.websocket.api.member.domain.param.proto.IdentityListReqProto.IdentityListReq result = buildPartial();
+      @Override
+      public IdentityListReq build() {
+        IdentityListReq result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
         return result;
       }
 
-      @java.lang.Override
-      public com.classlink.websocket.api.member.domain.param.proto.IdentityListReqProto.IdentityListReq buildPartial() {
-        com.classlink.websocket.api.member.domain.param.proto.IdentityListReqProto.IdentityListReq result = new com.classlink.websocket.api.member.domain.param.proto.IdentityListReqProto.IdentityListReq(this);
+      @Override
+      public IdentityListReq buildPartial() {
+        IdentityListReq result = new IdentityListReq(this);
         result.insCode_ = insCode_;
         onBuilt();
         return result;
       }
 
-      @java.lang.Override
+      @Override
       public Builder clone() {
         return super.clone();
       }
-      @java.lang.Override
+      @Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
+          Object value) {
         return super.setField(field, value);
       }
-      @java.lang.Override
+      @Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
         return super.clearField(field);
       }
-      @java.lang.Override
+      @Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
         return super.clearOneof(oneof);
       }
-      @java.lang.Override
+      @Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, java.lang.Object value) {
+          int index, Object value) {
         return super.setRepeatedField(field, index, value);
       }
-      @java.lang.Override
+      @Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
+          Object value) {
         return super.addRepeatedField(field, value);
       }
-      @java.lang.Override
+      @Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof com.classlink.websocket.api.member.domain.param.proto.IdentityListReqProto.IdentityListReq) {
-          return mergeFrom((com.classlink.websocket.api.member.domain.param.proto.IdentityListReqProto.IdentityListReq)other);
+        if (other instanceof IdentityListReq) {
+          return mergeFrom((IdentityListReq)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(com.classlink.websocket.api.member.domain.param.proto.IdentityListReqProto.IdentityListReq other) {
-        if (other == com.classlink.websocket.api.member.domain.param.proto.IdentityListReqProto.IdentityListReq.getDefaultInstance()) return this;
+      public Builder mergeFrom(IdentityListReq other) {
+        if (other == IdentityListReq.getDefaultInstance()) return this;
         if (!other.getInsCode().isEmpty()) {
           insCode_ = other.insCode_;
           onChanged();
@@ -382,18 +382,18 @@ public final class IdentityListReqProto {
         return this;
       }
 
-      @java.lang.Override
+      @Override
       public final boolean isInitialized() {
         return true;
       }
 
-      @java.lang.Override
+      @Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
         if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
+          throw new NullPointerException();
         }
         try {
           boolean done = false;
@@ -424,21 +424,21 @@ public final class IdentityListReqProto {
         return this;
       }
 
-      private java.lang.Object insCode_ = "";
+      private Object insCode_ = "";
       /**
        * <code>string InsCode = 1;</code>
        * @return The insCode.
        */
-      public java.lang.String getInsCode() {
-        java.lang.Object ref = insCode_;
-        if (!(ref instanceof java.lang.String)) {
+      public String getInsCode() {
+        Object ref = insCode_;
+        if (!(ref instanceof String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
+          String s = bs.toStringUtf8();
           insCode_ = s;
           return s;
         } else {
-          return (java.lang.String) ref;
+          return (String) ref;
         }
       }
       /**
@@ -447,11 +447,11 @@ public final class IdentityListReqProto {
        */
       public com.google.protobuf.ByteString
           getInsCodeBytes() {
-        java.lang.Object ref = insCode_;
+        Object ref = insCode_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
+                  (String) ref);
           insCode_ = b;
           return b;
         } else {
@@ -464,7 +464,7 @@ public final class IdentityListReqProto {
        * @return This builder for chaining.
        */
       public Builder setInsCode(
-          java.lang.String value) {
+          String value) {
         if (value == null) {
     throw new NullPointerException();
   }
@@ -499,13 +499,13 @@ public final class IdentityListReqProto {
         onChanged();
         return this;
       }
-      @java.lang.Override
+      @Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.setUnknownFields(unknownFields);
       }
 
-      @java.lang.Override
+      @Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.mergeUnknownFields(unknownFields);
@@ -516,18 +516,18 @@ public final class IdentityListReqProto {
     }
 
     // @@protoc_insertion_point(class_scope:Classlink.IdentityListReq)
-    private static final com.classlink.websocket.api.member.domain.param.proto.IdentityListReqProto.IdentityListReq DEFAULT_INSTANCE;
+    private static final IdentityListReq DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new com.classlink.websocket.api.member.domain.param.proto.IdentityListReqProto.IdentityListReq();
+      DEFAULT_INSTANCE = new IdentityListReq();
     }
 
-    public static com.classlink.websocket.api.member.domain.param.proto.IdentityListReqProto.IdentityListReq getDefaultInstance() {
+    public static IdentityListReq getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
     private static final com.google.protobuf.Parser<IdentityListReq>
         PARSER = new com.google.protobuf.AbstractParser<IdentityListReq>() {
-      @java.lang.Override
+      @Override
       public IdentityListReq parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -551,13 +551,13 @@ public final class IdentityListReqProto {
       return PARSER;
     }
 
-    @java.lang.Override
+    @Override
     public com.google.protobuf.Parser<IdentityListReq> getParserForType() {
       return PARSER;
     }
 
-    @java.lang.Override
-    public com.classlink.websocket.api.member.domain.param.proto.IdentityListReqProto.IdentityListReq getDefaultInstanceForType() {
+    @Override
+    public IdentityListReq getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -576,7 +576,7 @@ public final class IdentityListReqProto {
   private static  com.google.protobuf.Descriptors.FileDescriptor
       descriptor;
   static {
-    java.lang.String[] descriptorData = {
+    String[] descriptorData = {
       "\n\025IdentityListReq.proto\022\tClasslink\"\"\n\017Id" +
       "entityListReq\022\017\n\007InsCode\030\001 \001(\tBM\n5com.cl" +
       "asslink.websocket.api.member.domain.para" +
@@ -591,7 +591,7 @@ public final class IdentityListReqProto {
     internal_static_Classlink_IdentityListReq_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_Classlink_IdentityListReq_descriptor,
-        new java.lang.String[] { "InsCode", });
+        new String[] { "InsCode", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

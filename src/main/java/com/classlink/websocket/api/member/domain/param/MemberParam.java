@@ -23,23 +23,22 @@ public class MemberParam {
 		private String ins_code;
 	}
 	
-	@Getter
-	@Setter
-	@Builder
-	public static class AvatarCreateParam{
-		private String mem_id;
-		private String ins_code;
-		private String identity_type;
-		private int mea_avatar_id;		
-	}
+//	@Getter
+//	@Setter
+//	@Builder
+//	public static class AvatarCreateParam{
+//		private String mem_id;
+//		private String ins_code;
+//		private String identity_type;
+//		private int mea_avatar_id;
+//	}
 	
 	@Getter
 	@Setter
 	@Builder
-	public static class AvatarDetailParam{
+	public static class AvatarListParam{
 		private String mem_id;
 		private String ins_code;
-		private String identity_type;	
 	}
 	
 	@Getter
@@ -68,4 +67,26 @@ public class MemberParam {
 		private String mem_id;
 	}
 
+	@Getter
+	@Setter
+	@Builder
+	public static class InstitutionEnrollmentRequestListParam {
+		private String ins_code;
+	}
+
+	@Getter
+	@Setter
+	@Builder
+	public static class InstitutionEnrollmentRequestConfirmParam {
+		private int itm_idx;
+		private String mem_id;
+	}
+
+	@Getter
+	@Setter
+	@Builder
+	public static class InstitutionEnrollmentRequesterInfoParam {
+		int itm_idx;
+		private String mem_id;
+	}
 }

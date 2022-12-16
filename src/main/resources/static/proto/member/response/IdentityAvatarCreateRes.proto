@@ -1,7 +1,0 @@
-syntax = "proto3";
-package Classlink;
-option java_package = "com.classlink.websocket.api.member.domain.dto.proto";
-option java_outer_classname = "IdentityAvatarCreateResProto";
-
-message IdentityAvatarCreateRes {
-}

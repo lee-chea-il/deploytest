@@ -4,7 +4,6 @@ option java_package = "com.classlink.websocket.api.member.domain.dto.proto";
 option java_outer_classname = "IdentityInstitutionInfoResProto";
 
 message IdentityInstitutionInfoRes {
-  string InsCode = 1;
-  string InsName = 2;
-  string InsLogoImg = 3;
+  string InsName = 1;
+  string InsLogoImgUrl = 2;
 }
