@@ -1,0 +1,11 @@
+syntax = "proto3"; 
+package Classlink;
+option java_package = "com.classlink.websocket.api.system.domain.param.proto";
+option java_outer_classname = "SysWorldInterObjSetInitReqProto";
+
+message SysWorldInterObjSetInitReq{
+  string InsCode =1;
+  string WorldSetCode =2;
+  string WorldCode =3;
+  int32 CurriculumIdx =4; 
+}

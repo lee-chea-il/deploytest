@@ -11,9 +11,14 @@
 <div class="well">
     <button id="btnOpen" class="btn btn-primary">open socket</button>
     <select id="OpCode" class="form-control">
+        <option value="120">월드셋 리소스 정보</option>
+        <option value="127">월드셋 매핑 정보</option>
+        <option value="128">월드셋 자료실 정보</option>
+        <option value="112">최근 접속 교육기관 변경</option>
+        <option value="113">최근 접속 신분 변경</option>
         <option value="100">신분 생성</option>
         <option value="101" selected>신분 조회</option>
-        <option value="102">아바타 생성</option>
+<%--        <option value="102">아바타 생성</option>--%>
         <option value="103">아바타 조회</option>
         <option value="104">아바타 변경</option>
         <option value="105">교육기관 조회</option>
@@ -37,12 +42,28 @@
 <script>
 
     //---------------------------------------------------------------------------------------------------
-    // window[]를 통해서 브라우저상에 전역변수(global)로 지정할때 사용하는 변수  
+    // window[]를 통해서 브라우저상에 전역변수(global)로 지정할때 사용하는 변수
 
     //필수객체 및 에러관련
     const RequestPacketName = "RequestPacket";
     const ResponsePacketName = "ResponsePacket";
     const JwtExceptionName = "JwtException";
+
+    // 시스템--------------------------------------
+    //월드셋
+    const SysWorldSetInfoReqName = "SysWorldSetInfoReq";
+    const SysWorldSetInfoResName = "SysWorldSetInfoRes";
+    const SysWorldInterObjSetCreateReqName = "SysWorldInterObjSetCreateReq";
+    const SysWorldInterObjSetCreateResName = "SysWorldInterObjSetCreateRes";
+    const SysWorldInterObjSetInitReqName = "SysWorldInterObjSetInitReq";
+    const SysWorldInterObjSetInitResName = "SysWorldInterObjSetInitRes";
+
+    // 로그인 --------------------------------------------------------
+    const LoginInstituteRegistReqName = "LoginInstituteRegistReq";
+    const LoginInstituteRegistResName = "LoginInstituteRegistRes";
+    const LoginIdentityRegistReqName = "LoginIdentityRegistReq";
+    const LoginIdentityRegistResName = "LoginIdentityRegistRes";
+
     // 신분생성flow--------------------------------------
     //신분
     const IdentityListReqName = "IdentityListReq";
@@ -81,12 +102,24 @@
 
     const commonPath = "../proto"
     const protoFileList = [
-        commonPath.concat("/member/response/IdentityListRes.proto"),
+        commonPath.concat("/sys/request/SysWorldSetInfoReq.proto"),
+        commonPath.concat("/sys/response/SysWorldSetInfoRes.proto"),
+        commonPath.concat("/sys/request/SysWorldInterObjSetCreateReq.proto"),
+        commonPath.concat("/sys/response/SysWorldInterObjSetCreateRes.proto"),
+        commonPath.concat("/sys/request/SysWorldInterObjSetInitReq.proto"),
+        commonPath.concat("/sys/response/SysWorldInterObjSetInitRes.proto"),
+
+        commonPath.concat("/member/request/LoginInstituteRegistReq.proto"),
+        commonPath.concat("/member/response/LoginInstituteRegistRes.proto"),
+        commonPath.concat("/member/request/LoginIdentityRegistReq.proto"),
+        commonPath.concat("/member/response/LoginIdentityRegistRes.proto"),
+
         commonPath.concat("/member/request/IdentityListReq.proto"),
+        commonPath.concat("/member/response/IdentityListRes.proto"),
         commonPath.concat("/member/request/IdentityCreateReq.proto"),
         commonPath.concat("/member/response/IdentityCreateRes.proto"),
-        commonPath.concat("/member/request/IdentityAvatarCreateReq.proto"),
-        commonPath.concat("/member/response/IdentityAvatarCreateRes.proto"),
+        // commonPath.concat("/member/request/IdentityAvatarCreateReq.proto"),
+        // commonPath.concat("/member/response/IdentityAvatarCreateRes.proto"),
         commonPath.concat("/member/request/IdentityAvatarListReq.proto"),
         commonPath.concat("/member/response/IdentityAvatarListRes.proto"),
         commonPath.concat("/member/request/IdentityAvatarChangeReq.proto"),
@@ -95,14 +128,14 @@
         commonPath.concat("/member/response/IdentityInstitutionInfoRes.proto"),
         commonPath.concat("/member/request/IdentityInstitutionEnrollmentReq.proto"),
         commonPath.concat("/member/response/IdentityInstitutionEnrollmentRes.proto"),
-        commonPath.concat("/lobby/home/request/IdentityEnrollmentConfirmReq.proto"),
-        commonPath.concat("/lobby/home/response/IdentityEnrollmentConfirmRes.proto"),
-        commonPath.concat("/lobby/home/request/IdentityEnrollmenterInfoReq.proto"),
-        commonPath.concat("/lobby/home/response/IdentityEnrollmenterInfoRes.proto"),
-        commonPath.concat("/lobby/home/request/IdentityEnrollmentListReq.proto"),
-        commonPath.concat("/lobby/home/response/IdentityEnrollmentListRes.proto"),
-        commonPath.concat("/lobby/home/request/IdentityEnrollmentReplyReq.proto"),
-        commonPath.concat("/lobby/home/response/IdentityEnrollmentReplyRes.proto"),
+        commonPath.concat("/member/request/IdentityEnrollmentConfirmReq.proto"),
+        commonPath.concat("/member/response/IdentityEnrollmentConfirmRes.proto"),
+        commonPath.concat("/member/request/IdentityEnrollmenterInfoReq.proto"),
+        commonPath.concat("/member/response/IdentityEnrollmenterInfoRes.proto"),
+        commonPath.concat("/member/request/IdentityEnrollmentListReq.proto"),
+        commonPath.concat("/member/response/IdentityEnrollmentListRes.proto"),
+        commonPath.concat("/member/request/IdentityEnrollmentReplyReq.proto"),
+        commonPath.concat("/member/response/IdentityEnrollmentReplyRes.proto"),
         commonPath.concat("/member/request/SWclassIdentityInfo.proto"),
         commonPath.concat("/lobby/home/response/SWclassMyInstitutionList.proto"),
         commonPath.concat("/common/RequestPacket.proto"),
@@ -195,12 +228,12 @@
                         const IdentityAvatarChangeReqObj = {
                             InsCode: 'testA',
                             IdentityType: 'P',
-                            AvatarId: '155'
+                            AvatarId: 155
                         };
 
                         Data = setDataToSend(root, IdentityAvatarChangeReqName, IdentityAvatarChangeReqObj);
                         break;
-                    //-----------------------------------------------------------------------------------------
+                    //교육기관 조회-----------------------------------------------------------------------------------------
                     case 105 :
                         loadMessage(root, IdentityInstitutionInfoReqName, "Classlink.IdentityInstitutionInfoReq");
                         loadMessage(root, IdentityInstitutionInfoResName, "Classlink.IdentityInstitutionInfoRes");
@@ -240,8 +273,7 @@
                         loadMessage(root, IdentityEnrollmentConfirmResName, "Classlink.IdentityEnrollmentConfirmRes");
 
                         const IdentityEnrollmentConfirmReqObj = {
-                            InsCode: 'testA',
-                            MemId: 'test7777'
+                            ItmIdx: 7
                         };
 
                         Data = setDataToSend(root, IdentityEnrollmentConfirmReqName, IdentityEnrollmentConfirmReqObj);
@@ -252,8 +284,7 @@
                         loadMessage(root, IdentityEnrollmenterInfoResName, "Classlink.IdentityEnrollmenterInfoRes");
 
                         const IdentityEnrollmenterInfoReqObj = {
-                            InsCode: 'testA',
-                            MemId: 'test7777'
+                            ItmIdx: 7
                         };
 
                         Data = setDataToSend(root, IdentityEnrollmenterInfoReqName, IdentityEnrollmenterInfoReqObj);
@@ -271,6 +302,66 @@
                         Data = setDataToSend(root, IdentityEnrollmentReplyReqName, IdentityEnrollmentReplyReqObj);
                         break;
                     //-----------------------------------------------------------------------------------------
+                    case 112 :
+                        loadMessage(root, LoginInstituteRegistReqName, "Classlink.LoginInstituteRegistReq");
+                        loadMessage(root, LoginInstituteRegistResName, "Classlink.LoginInstituteRegistRes");
+
+                        const LoginInstituteRegistReqObj = {
+                            LastInsCode : 'testA'
+                        };
+
+                        Data = setDataToSend(root, LoginInstituteRegistReqName, LoginInstituteRegistReqObj);
+                        break;
+                    case 113 :
+                        loadMessage(root, LoginIdentityRegistReqName, "Classlink.LoginIdentityRegistReq");
+                        loadMessage(root, LoginIdentityRegistResName, "Classlink.LoginIdentityRegistRes");
+
+                        const LoginIdentityRegistReqObj = {
+                            InsCode : 'testA',
+                            LastIdentityType: 'S'
+                        };
+
+                        Data = setDataToSend(root, LoginIdentityRegistReqName, LoginIdentityRegistReqObj);
+                        break;
+                    //-----------------------------------------------------------------------------------------
+                    case 120 :
+                        loadMessage(root, SysWorldSetInfoReqName, "Classlink.SysWorldSetInfoReq");
+                        loadMessage(root, SysWorldSetInfoResName, "Classlink.SysWorldSetInfoRes");
+
+                        const SysWorldSetInfoReqObj = {
+                            InsCode: 'testA'
+                        };
+
+                        Data = setDataToSend(root, SysWorldSetInfoReqName, SysWorldSetInfoReqObj);
+                        break;
+                    //-----------------------------------------------------------------------------------------
+                    case 127 :
+                        loadMessage(root, SysWorldInterObjSetCreateReqName, "Classlink.SysWorldInterObjSetCreateReq");
+                        loadMessage(root, SysWorldInterObjSetCreateResName, "Classlink.SysWorldInterObjSetCreateRes");
+
+                        const SysWorldInterObjSetCreateReqObj = {
+                            InsCode: 'testA',
+                            WorldSetCode : 'WS001',
+                            WorldCode : 'CW001'
+                        };
+
+                        Data = setDataToSend(root, SysWorldInterObjSetCreateReqName, SysWorldInterObjSetCreateReqObj);
+                        break;
+                    //-----------------------------------------------------------------------------------------
+                    case 128 :
+                        loadMessage(root, SysWorldInterObjSetInitReqName, "Classlink.SysWorldInterObjSetInitReq");
+                        loadMessage(root, SysWorldInterObjSetInitResName, "Classlink.SysWorldInterObjSetInitRes");
+
+                        const SysWorldInterObjSetInitReqObj = {
+                            InsCode: 'testA',
+                            WorldSetCode : 'WS001',
+                            WorldCode : 'CW001',
+                            CurriculumIdx : 1
+                        };
+
+                        Data = setDataToSend(root, SysWorldInterObjSetInitReqName, SysWorldInterObjSetInitReqObj);
+                        break;
+                    //-----------------------------------------------------------------------------------------
                     case 201 :
                         loadMessage(root, MyInstitutionListName, "Classlink.SWclassMyInstitutionList");
                         break;
@@ -281,7 +372,7 @@
 
                 const RequestPacketObj = {
                     OpCode: OpCode,
-                    AccessToken: "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2NzA0ODM0MjUsInVzZXJfbmFtZSI6InRlc3Q3Nzc3IiwianRpIjoiNDgzNWNjZGYtODY5OS00YzZkLWIxY2EtZDQ2MTAzOGZhNDIwIiwiY2xpZW50X2lkIjoiY2xhc3NsaW5rIiwic2NvcGUiOlsiY2xpZW50Il19.vWzVLj3cb0UQzGo-tXA_Aug6sDWRzPHsLYj-4ZRrHjQ",
+                    AccessToken: "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2NzE2MjE2MzksInVzZXJfbmFtZSI6InRlc3Q3Nzc3IiwianRpIjoiZjJmMjk5ZjktNzc4ZS00ZDgyLWIyZjQtNGNkYjhkOGI5NDQxIiwiY2xpZW50X2lkIjoiY2xhc3NsaW5rIiwic2NvcGUiOlsiY2xpZW50Il19.cekHcRqzZYxc-Zs14zpdRJ0XdJvfNh-_J4WwGaMlfa8",
                     InstanceId: '2',
                     Data: Data
                 };
@@ -384,6 +475,31 @@
                 case 110:
                     const receivedIdentityEnrollmentReplyResData = window[IdentityEnrollmentReplyResName].decode(receivedPacketData.Data);
                     console.log("receivedIdentityEnrollmentReplyResData mmmmmmmmmmmm>>", receivedIdentityEnrollmentReplyResData);
+                    break;
+
+                case 112:
+                    const receivedLoginInstituteRegistResData = window[LoginInstituteRegistResName].decode(receivedPacketData.Data);
+                    console.log("receivedLoginInstituteRegistResData mmmmmmmmmmmm>>", receivedLoginInstituteRegistResData);
+                    break;
+
+                case 113:
+                    const receivedLoginIdentityRegistResData = window[LoginIdentityRegistResName].decode(receivedPacketData.Data);
+                    console.log("receivedLoginIdentityRegistResData mmmmmmmmmmmm>>", receivedLoginIdentityRegistResData);
+                    break;
+
+                case 120:
+                    const receivedSysWorldSetInfoResData = window[SysWorldSetInfoResName].decode(receivedPacketData.Data);
+                    console.log("receivedSysWorldSetInfoResData mmmmmmmmmmmm>>", receivedSysWorldSetInfoResData);
+                    break;
+
+                case 127:
+                    const receivedSysWorldInterObjSetCreateResData = window[SysWorldInterObjSetCreateResName].decode(receivedPacketData.Data);
+                    console.log("receivedSysWorldInterObjSetCreateResData mmmmmmmmmmmm>>", receivedSysWorldInterObjSetCreateResData);
+                    break;
+
+                case 128:
+                    const receivedSysWorldInterObjSetInitResData = window[SysWorldInterObjSetInitResName].decode(receivedPacketData.Data);
+                    console.log("receivedSysWorldInterObjSetInitResData mmmmmmmmmmmm>>", receivedSysWorldInterObjSetInitResData);
                     break;
 
                 case 201:

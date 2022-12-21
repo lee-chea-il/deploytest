@@ -38,7 +38,6 @@ public class MemberDto {
 	@Setter
 	@Builder
 	public static class InstitutionInfoDto{
-		private String ins_code;
 		private String InsName;	
 		private String InsLogoImg;
 	}

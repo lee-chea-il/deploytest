@@ -85,6 +85,14 @@ public class MemberController {
 		session.sendMessage(memberService.modifyInstitutionEnrollmentRequestStatus(packetReqProto, userId));
 	}
 
+	@OpCodeMapping(value = OpCode.LOGIN_INSTITUTE_REGISTRATION_CHANGE)
+	public void LoginInstituteRegistrationChange(WebSocketSession session, RequestPacket packetReqProto, String userId) throws StreamReadException, DatabindException, IOException {
+		session.sendMessage(memberService.modifyLoginInstituteRegistration(packetReqProto, userId));
+	}
 
+	@OpCodeMapping(value = OpCode.LOGIN_IDENTITY_REGISTRATION_CHANGE)
+	public void LoginIdentityRegistrationChange(WebSocketSession session, RequestPacket packetReqProto, String userId) throws StreamReadException, DatabindException, IOException {
+		session.sendMessage(memberService.modifyLoginIdentityRegistration(packetReqProto, userId));
+	}
 
 }

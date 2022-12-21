@@ -3,7 +3,6 @@ package com.classlink.websocket.api.member;
 import com.classlink.websocket.api.common.ResultCode;
 import com.classlink.websocket.api.common.domain.proto.RequestPacketProto.RequestPacket;
 import com.classlink.websocket.api.common.domain.proto.ResponsePacketProto.ResponsePacket;
-import com.classlink.websocket.api.lobby.home.domain.dto.LobbyHomeDto;
 import com.classlink.websocket.api.member.domain.dto.MemberDto;
 import com.classlink.websocket.api.member.domain.dto.MemberDto.InstitutionInfoDto;
 import com.classlink.websocket.api.member.domain.dto.proto.*;
@@ -37,9 +36,11 @@ public class MemberService {
 
         List<String> identityDtoList = memberMapper.selectIdentitiesByMemberId(identityListParam);
 
+        System.out.println(identityDtoList.toString());
+
         IdentityListResProto.IdentityListRes.Builder identityListRes = IdentityListResProto.IdentityListRes.newBuilder();
 
-        if (identityDtoList.isEmpty()) {
+        if (!identityDtoList.isEmpty()) {
             CommonUtil.nullSafeSet(identityDtoList, identityListRes::addAllIdentityTypes);
         }
 
@@ -211,9 +212,9 @@ public class MemberService {
 
         List<MemberDto.InstitutionEnrollmentRequestListDto> institutionEnrollmentRequestDtoList = memberMapper.selectInstitutionEnrollmentsByInsCode(institutionEnrollmentRequestListParam);
 
-        List<IdentityEnrollmentListResProto.IdentityEnrollmentListRes.EnrollmentRequest> enrollmentRequestList= null;
+        List<IdentityEnrollmentListResProto.IdentityEnrollmentListRes.EnrollmentRequest> enrollmentRequestList = null;
 
-        if(!institutionEnrollmentRequestDtoList.isEmpty()) {
+        if (!institutionEnrollmentRequestDtoList.isEmpty()) {
             enrollmentRequestList = institutionEnrollmentRequestDtoList.stream().map(institutionEnrollmentRequestDto -> {
 
                 IdentityEnrollmentListResProto.IdentityEnrollmentListRes.EnrollmentRequest.Builder enrollmentRequestBuilder = IdentityEnrollmentListResProto.IdentityEnrollmentListRes.EnrollmentRequest.newBuilder();
@@ -231,7 +232,7 @@ public class MemberService {
             }).collect(Collectors.toList());
         }
 
-        IdentityEnrollmentListResProto.IdentityEnrollmentListRes.Builder IdentityEnrollmentListResBuilder =  IdentityEnrollmentListResProto.IdentityEnrollmentListRes.newBuilder();
+        IdentityEnrollmentListResProto.IdentityEnrollmentListRes.Builder IdentityEnrollmentListResBuilder = IdentityEnrollmentListResProto.IdentityEnrollmentListRes.newBuilder();
         CommonUtil.nullSafeSet(enrollmentRequestList, IdentityEnrollmentListResBuilder::addAllEnrollmentRequestes);
 
         ResponsePacket packetResProto = ResponsePacket.newBuilder().setOpCode(packetReqProto.getOpCode())
@@ -248,8 +249,7 @@ public class MemberService {
     public BinaryMessage modifyInstitutionEnrollmentViewStatus(RequestPacket packetReqProto, String userId) throws InvalidProtocolBufferException {
 
         IdentityEnrollmentConfirmReqProto.IdentityEnrollmentConfirmReq identityEnrollmentConfirmReq = IdentityEnrollmentConfirmReqProto.IdentityEnrollmentConfirmReq.newBuilder().mergeFrom(packetReqProto.getData()).build();
-        InstitutionEnrollmentRequestConfirmParam lobbyHomeEnrollmentRequestConfirmParam = InstitutionEnrollmentRequestConfirmParam.builder().itm_idx(identityEnrollmentConfirmReq.getItmIdx())
-                .mem_id(userId).build();
+        InstitutionEnrollmentRequestConfirmParam lobbyHomeEnrollmentRequestConfirmParam = InstitutionEnrollmentRequestConfirmParam.builder().itm_idx(identityEnrollmentConfirmReq.getItmIdx()).build();
 
         int result = memberMapper.updateInstitutionEnrollmentViewStatus(lobbyHomeEnrollmentRequestConfirmParam);
 
@@ -273,7 +273,7 @@ public class MemberService {
 
         IdentityEnrollmenterInfoResProto.IdentityEnrollmenterInfoRes.Builder IdentityEnrollmenterInfoResBuilder = IdentityEnrollmenterInfoResProto.IdentityEnrollmenterInfoRes.newBuilder();
 
-        if(institutionEnrollmentRequesterInfoDto != null) {
+        if (institutionEnrollmentRequesterInfoDto != null) {
             CommonUtil.nullSafeSet(institutionEnrollmentRequesterInfoDto.getMea_avatar_id(), IdentityEnrollmenterInfoResBuilder::setMeaAvartarId);
             CommonUtil.nullSafeSet(institutionEnrollmentRequesterInfoDto.getMem_img(), IdentityEnrollmenterInfoResBuilder::setMemImgUrl);
             CommonUtil.nullSafeSet(institutionEnrollmentRequesterInfoDto.getMem_nickname(), IdentityEnrollmenterInfoResBuilder::setMemNickName);
@@ -294,9 +294,58 @@ public class MemberService {
         return new BinaryMessage(packetResProto.toByteArray());
     }
 
+    //교육기관 신청응답 mock 데이터처리
     @Transactional(rollbackFor = {Exception.class})
-    public BinaryMessage modifyInstitutionEnrollmentRequestStatus(RequestPacket packetReqProto, String userId) {
-        // TODO Auto-generated method stub
-        return null;
+    public BinaryMessage modifyInstitutionEnrollmentRequestStatus(RequestPacket packetReqProto, String userId) throws InvalidProtocolBufferException {
+
+        IdentityEnrollmentReplyReqProto.IdentityEnrollmentReplyReq identityEnrollmentReplyReq = IdentityEnrollmentReplyReqProto.IdentityEnrollmentReplyReq.newBuilder().mergeFrom(packetReqProto.getData()).build();
+        IdentityEnrollmentReplyParam identityEnrollmentReplyParam = IdentityEnrollmentReplyParam.builder().itm_idx(identityEnrollmentReplyReq.getItmIdx()).build();
+
+//        int result = memberMapper.updateIdentityEnrollmentReply(identityEnrollmentReplyParam);
+
+        ResponsePacket packetResProto = ResponsePacket.newBuilder().setOpCode(packetReqProto.getOpCode())
+                .setAccessToken(packetReqProto.getAccessToken())
+                .setInstanceId(packetReqProto.getInstanceId())
+//                .setResultCode(result == 0 ? ResultCode.MODIFY_FAIL.getCode() : ResultCode.SUCCESS.getCode())
+//                .setResultMessage(result == 0 ? ResultCode.MODIFY_FAIL.getMessage() : ResultCode.SUCCESS.getMessage())
+                .setResultCode(ResultCode.SUCCESS.getCode())
+                .setResultMessage(ResultCode.SUCCESS.getMessage())
+                .setData(IdentityEnrollmentConfirmResProto.IdentityEnrollmentConfirmRes.newBuilder().build().toByteString())
+                .build();
+
+        return new BinaryMessage(packetResProto.toByteArray());
+    }
+
+    @Transactional(rollbackFor = {Exception.class})
+    public BinaryMessage modifyLoginInstituteRegistration(RequestPacket packetReqProto, String userId) throws InvalidProtocolBufferException {
+        LoginInstituteRegistReqProto.LoginInstituteRegistReq loginInstituteRegistReq = LoginInstituteRegistReqProto.LoginInstituteRegistReq.newBuilder().mergeFrom(packetReqProto.getData()).build();
+
+        LoginInstituteRegistResProto.LoginInstituteRegistRes loginInstituteRegistRes = LoginInstituteRegistResProto.LoginInstituteRegistRes.newBuilder().build();
+
+        ResponsePacket packetResProto = ResponsePacket.newBuilder().setOpCode(packetReqProto.getOpCode())
+                .setAccessToken(packetReqProto.getAccessToken()).setInstanceId(packetReqProto.getInstanceId())
+                .setResultCode(ResultCode.SUCCESS.getCode())
+                .setResultMessage(ResultCode.SUCCESS.getMessage())
+                .setData(loginInstituteRegistRes.toByteString())
+                .build();
+
+        return new BinaryMessage(packetResProto.toByteArray());
+    }
+
+    @Transactional(rollbackFor = {Exception.class})
+    public BinaryMessage modifyLoginIdentityRegistration(RequestPacket packetReqProto, String userId) throws InvalidProtocolBufferException {
+
+        LoginIdentityRegistReqProto.LoginIdentityRegistReq loginIdentityRegistReq = LoginIdentityRegistReqProto.LoginIdentityRegistReq.newBuilder().mergeFrom(packetReqProto.getData()).build();
+
+        LoginIdentityRegistResProto.LoginIdentityRegistRes loginIdentityRegistRes = LoginIdentityRegistResProto.LoginIdentityRegistRes.newBuilder().build();
+
+        ResponsePacket packetResProto = ResponsePacket.newBuilder().setOpCode(packetReqProto.getOpCode())
+                .setAccessToken(packetReqProto.getAccessToken()).setInstanceId(packetReqProto.getInstanceId())
+                .setResultCode(ResultCode.SUCCESS.getCode())
+                .setResultMessage(ResultCode.SUCCESS.getMessage())
+                .setData(loginIdentityRegistRes.toByteString())
+                .build();
+
+        return new BinaryMessage(packetResProto.toByteArray());
     }
 }

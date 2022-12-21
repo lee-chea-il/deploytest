@@ -79,7 +79,6 @@ public class MemberParam {
 	@Builder
 	public static class InstitutionEnrollmentRequestConfirmParam {
 		private int itm_idx;
-		private String mem_id;
 	}
 
 	@Getter
@@ -88,5 +87,12 @@ public class MemberParam {
 	public static class InstitutionEnrollmentRequesterInfoParam {
 		int itm_idx;
 		private String mem_id;
+	}
+
+	@Getter
+	@Setter
+	@Builder
+	public static class IdentityEnrollmentReplyParam {
+		int itm_idx;
 	}
 }
