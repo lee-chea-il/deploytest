@@ -75,6 +75,48 @@ public class MemberService {
         return new BinaryMessage(packetResProto.toByteArray());
     }
 
+    public BinaryMessage findIdentityProfileDetailByMemberId(RequestPacket packetReqProto, String userId) throws InvalidProtocolBufferException {
+
+        IdentityProfileDetailReqProto.IdentityProfileDetailReq identityProfileDetailReq = IdentityProfileDetailReqProto.IdentityProfileDetailReq.newBuilder().mergeFrom(packetReqProto.getData()).build();
+
+        IdentityProfileDetailResProto.IdentityProfileDetailRes identityProfileDetailRes = IdentityProfileDetailResProto.IdentityProfileDetailRes.newBuilder()
+                .setAvatarId(1)
+                .setMemId("test7777")
+                .setMemName("방수영")
+                .setMemNickName("soo")
+                .setMemEmail("tpwls4555@gmail.com")
+                .setMemPhone("01055558888")
+                .setMemImgUrl("/img/profile/a1275sd.png")
+                .setMemBirthday("08-15")
+                .setMemSex("M")
+                .build();
+
+        ResponsePacket packetResProto = ResponsePacket.newBuilder().setOpCode(packetReqProto.getOpCode())
+                .setAccessToken(packetReqProto.getAccessToken()).setInstanceId(packetReqProto.getInstanceId())
+                .setResultCode(ResultCode.SUCCESS.getCode())
+                .setResultMessage(ResultCode.SUCCESS.getMessage())
+                .setData(identityProfileDetailRes.toByteString())
+                .build();
+
+        return new BinaryMessage(packetResProto.toByteArray());
+    }
+
+    public BinaryMessage modifyIdentityProfileByMemberId(RequestPacket packetReqProto, String userId) throws InvalidProtocolBufferException {
+
+        IdentityProfileUpdateReqProto.IdentityProfileUpdateReq identityProfileUpdateReq = IdentityProfileUpdateReqProto.IdentityProfileUpdateReq.newBuilder().mergeFrom(packetReqProto.getData()).build();
+
+        IdentityProfileUpdateResProto.IdentityProfileUpdateRes identityProfileUpdateRes = IdentityProfileUpdateResProto.IdentityProfileUpdateRes.newBuilder()
+                .build();
+
+        ResponsePacket packetResProto = ResponsePacket.newBuilder().setOpCode(packetReqProto.getOpCode())
+                .setAccessToken(packetReqProto.getAccessToken()).setInstanceId(packetReqProto.getInstanceId())
+                .setResultCode(ResultCode.SUCCESS.getCode())
+                .setResultMessage(ResultCode.SUCCESS.getMessage())
+                .setData(identityProfileUpdateRes.toByteString())
+                .build();
+
+        return new BinaryMessage(packetResProto.toByteArray());
+    }
 
 //	@Transactional(rollbackFor = {Exception.class})
 //	public BinaryMessage addAvatar(RequestPacket packetReqProto, String userId)
@@ -99,7 +141,7 @@ public class MemberService {
 //	}
 
 
-    public BinaryMessage findAvatarListByMemberId(RequestPacket packetReqProto, String userId)
+    public BinaryMessage findAvatarsByMemberId(RequestPacket packetReqProto, String userId)
             throws InvalidProtocolBufferException {
 
         IdentityAvatarListReqProto.IdentityAvatarListReq identityAvatarDetailReqProto = IdentityAvatarListReqProto.IdentityAvatarListReq.newBuilder().mergeFrom(packetReqProto.getData()).build();
@@ -348,4 +390,21 @@ public class MemberService {
 
         return new BinaryMessage(packetResProto.toByteArray());
     }
+
+    public BinaryMessage modifyIdentityByMemberId(RequestPacket packetReqProto, String userId) throws InvalidProtocolBufferException {
+
+        IdentityChangeReqProto.IdentityChangeReq identityChangeReq = IdentityChangeReqProto.IdentityChangeReq.newBuilder().mergeFrom(packetReqProto.getData()).build();
+
+        IdentityChangeResProto.IdentityChangeRes identityChangeRes = IdentityChangeResProto.IdentityChangeRes.newBuilder().build();
+
+        ResponsePacket packetResProto = ResponsePacket.newBuilder().setOpCode(packetReqProto.getOpCode())
+                .setAccessToken(packetReqProto.getAccessToken()).setInstanceId(packetReqProto.getInstanceId())
+                .setResultCode(ResultCode.SUCCESS.getCode())
+                .setResultMessage(ResultCode.SUCCESS.getMessage())
+                .setData(identityChangeRes.toByteString())
+                .build();
+
+        return new BinaryMessage(packetResProto.toByteArray());
+    }
+
 }

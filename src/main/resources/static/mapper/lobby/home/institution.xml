@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper namespace="com.classlink.websocket.api.lobby.home.LobbyHomeMapper">
-  <select id="selectMyInstitutionByMemId" resultType="com.classlink.websocket.api.lobby.home.domain.dto.LobbyHomeDto$MyInstitutionListDto">
-    select cs.std_use_yn, ci.ins_name
-    from cl_member cm
-    left join cl_student cs 
-    on cm.mem_idx = cs.mem_idx 
-    left join cl_classroom_student_map ccsm
-    on cs.std_idx  = ccsm.std_idx
-    left join cl_classroom cc 
-    on ccsm.csm_idx = cc.csm_idx
-    left join cl_institution ci 
-    on cc.ins_code = ci.ins_code 
-    where cm.mem_id = #{mem_id};
-  </select>
+<mapper namespace="com.classlink.websocket.api.lobby.LobbyHomeMapper">
+<!--  <select id="selectMyInstitutionByMemId" resultType="com.classlink.websocket.api.lobby.domain.dto.LobbyHomeDto$MyInstitutionListDto">-->
+<!--    select cs.std_use_yn, ci.ins_name-->
+<!--    from cl_member cm-->
+<!--    left join cl_student cs -->
+<!--    on cm.mem_idx = cs.mem_idx -->
+<!--    left join cl_classroom_student_map ccsm-->
+<!--    on cs.std_idx  = ccsm.std_idx-->
+<!--    left join cl_classroom cc -->
+<!--    on ccsm.csm_idx = cc.csm_idx-->
+<!--    left join cl_institution ci -->
+<!--    on cc.ins_code = ci.ins_code -->
+<!--    where cm.mem_id = #{mem_id};-->
+<!--  </select>-->
 
   
 </mapper>

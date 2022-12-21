@@ -24,7 +24,7 @@ public class MemberController {
 	private final MemberService memberService;
 
 	@OpCodeMapping(value = OpCode.IDENTITY_CREATE)
-	public void memberIdentityAdd(WebSocketSession session, RequestPacket packetReqProto, String userId) {
+	public void IdentityAdd(WebSocketSession session, RequestPacket packetReqProto, String userId) {
 		try {
 			session.sendMessage(memberService.addIdentity(packetReqProto, userId));
 		}catch (InvalidProtocolBufferException e){
@@ -35,8 +35,23 @@ public class MemberController {
 	}
 
 	@OpCodeMapping(value = OpCode.IDENTITY_LIST)
-	public void memberIdentityList(WebSocketSession session, RequestPacket packetReqProto, String userId) throws StreamReadException, DatabindException, IOException {
+	public void IdentityList(WebSocketSession session, RequestPacket packetReqProto, String userId) throws StreamReadException, DatabindException, IOException {
 		session.sendMessage(memberService.findIdentitiesByMemberId(packetReqProto, userId));
+	}
+
+	@OpCodeMapping(value = OpCode.IDENTITY_CHANGE)
+	public void IdentityChange(WebSocketSession session, RequestPacket packetReqProto, String userId) throws StreamReadException, DatabindException, IOException {
+		session.sendMessage(memberService.modifyIdentityByMemberId(packetReqProto, userId));
+	}
+
+	@OpCodeMapping(value = OpCode.IDENTITY_PROFILE_DETAIL)
+	public void IdentityProfileDetail(WebSocketSession session, RequestPacket packetReqProto, String userId) throws StreamReadException, DatabindException, IOException {
+		session.sendMessage(memberService.findIdentityProfileDetailByMemberId(packetReqProto, userId));
+	}
+
+	@OpCodeMapping(value = OpCode.IDENTITY_PROFILE_UPDATE)
+	public void IdentityProfileUpdate(WebSocketSession session, RequestPacket packetReqProto, String userId) throws StreamReadException, DatabindException, IOException {
+		session.sendMessage(memberService.modifyIdentityProfileByMemberId(packetReqProto, userId));
 	}
 
 //	@OpCodeMapping(value = OpCode.AVATAR_CREATE)
@@ -44,9 +59,9 @@ public class MemberController {
 //		session.sendMessage(memberService.addAvatar(packetReqProto, userId));
 //	}
 
-	@OpCodeMapping(value = OpCode.AVATAR_INFO)
-	public void IdentityAvatarInfo(WebSocketSession session, RequestPacket packetReqProto, String userId) throws StreamReadException, DatabindException, IOException {
-		session.sendMessage(memberService.findAvatarListByMemberId(packetReqProto, userId));
+	@OpCodeMapping(value = OpCode.AVATAR_LIST)
+	public void IdentityAvatarList(WebSocketSession session, RequestPacket packetReqProto, String userId) throws StreamReadException, DatabindException, IOException {
+		session.sendMessage(memberService.findAvatarsByMemberId(packetReqProto, userId));
 	}
 
 	@OpCodeMapping(value = OpCode.AVATAR_CHANGE)

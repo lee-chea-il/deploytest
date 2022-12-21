@@ -1,5 +1,5 @@
 syntax = "proto3"; 
-package classlink;
+package Classlink;
 option java_package = "com.classlink.websocket.api.member.domain.dto.proto";
 option java_outer_classname = "IdentityChangeResProto";
 

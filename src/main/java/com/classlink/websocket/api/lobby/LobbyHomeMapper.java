@@ -1,6 +1,6 @@
-package com.classlink.websocket.api.lobby.home;
+package com.classlink.websocket.api.lobby;
 
-import com.classlink.websocket.api.lobby.home.domain.dto.LobbyHomeDto.MyInstitutionListDto;
+import com.classlink.websocket.api.lobby.domain.dto.LobbyHomeDto.MyInstitutionListDto;
 import org.apache.ibatis.annotations.Mapper;
 
 import java.util.List;

@@ -1,9 +1,0 @@
-syntax = "proto3"; 
-package classlink;
-option java_package = "com.classlink.websocket.api.lobby.home.domain.param.proto";
-option java_outer_classname = "LobbyHomeFranchiseInstitutionListReqProto";
-
-message LobbyHomeFranchiseInstitutionListReq{
-  string InsCode = 1;
-  string TarIdentityType = 2;
-}
