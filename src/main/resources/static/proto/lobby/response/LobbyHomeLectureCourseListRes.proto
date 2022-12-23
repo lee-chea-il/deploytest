@@ -1,0 +1,21 @@
+syntax = "proto3"; 
+package Classlink;  
+option java_package = "com.classlink.websocket.api.lobby.domain.dto.proto"; 
+option java_outer_classname = "LobbyHomeLectureCourseListResProto"; 
+
+message LobbyHomeLectureCourseListRes{
+message LectureCourse {
+  int32 LecBidx = 1;
+//  string InsLogoImg 교육기관로고 필요
+  string LecImgUrl = 2;
+  string LecTitle = 3;
+  string SubjectTitle = 4; //  과목명 가져올수없음
+  string ClassName = 5; // 추가
+  string TeacherName = 6;
+  string LecTimeSdate = 7;
+  string LecTimeStime = 8;
+  bool isLive= 9; // 논의필요
+}
+
+repeated LectureCourse LectureCourseList = 1;
+}

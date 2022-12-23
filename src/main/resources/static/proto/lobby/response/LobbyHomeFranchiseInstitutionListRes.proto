@@ -1,7 +1,7 @@
 syntax = "proto3"; 
-package Classlink;
-option java_package = "com.classlink.websocket.api.lobby.domain.dto.proto";
-option java_outer_classname = "LobbyHomeFranchiseInstitutionListResProto";
+package Classlink;  
+option java_package = "com.classlink.websocket.api.lobby.domain.dto.proto"; 
+option java_outer_classname = "LobbyHomeFranchiseInstitutionListResProto"; 
 
 message LobbyHomeFranchiseInstitutionListRes{
 message FranchiseInstitution {
@@ -15,5 +15,5 @@ message FranchiseInstitution {
   string LinkUrl = 8;
 }
 
-repeated FranchiseInstitution FranchiseInstitutions = 1;
+repeated FranchiseInstitution FranchiseInstitutionList = 1;
 }

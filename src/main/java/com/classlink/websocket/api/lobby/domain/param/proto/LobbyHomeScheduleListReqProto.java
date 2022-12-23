@@ -15,46 +15,39 @@ public final class LobbyHomeScheduleListReqProto {
         (com.google.protobuf.ExtensionRegistryLite) registry);
   }
   public interface LobbyHomeScheduleListReqOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:classlink.LobbyHomeScheduleListReq)
+      // @@protoc_insertion_point(interface_extends:Classlink.LobbyHomeScheduleListReq)
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>int32 AvatarId = 1;</code>
-     * @return The avatarId.
+     * <code>string StartTime = 1;</code>
+     * @return The startTime.
      */
-    int getAvatarId();
-
+    java.lang.String getStartTime();
     /**
-     * <code>repeated string StartTimeList = 2;</code>
-     * @return A list containing the startTimeList.
-     */
-    java.util.List<String>
-        getStartTimeListList();
-    /**
-     * <code>repeated string StartTimeList = 2;</code>
-     * @return The count of startTimeList.
-     */
-    int getStartTimeListCount();
-    /**
-     * <code>repeated string StartTimeList = 2;</code>
-     * @param index The index of the element to return.
-     * @return The startTimeList at the given index.
-     */
-    String getStartTimeList(int index);
-    /**
-     * <code>repeated string StartTimeList = 2;</code>
-     * @param index The index of the value to return.
-     * @return The bytes of the startTimeList at the given index.
+     * <code>string StartTime = 1;</code>
+     * @return The bytes for startTime.
      */
     com.google.protobuf.ByteString
-        getStartTimeListBytes(int index);
+        getStartTimeBytes();
+
+    /**
+     * <code>string EndTime = 2;</code>
+     * @return The endTime.
+     */
+    java.lang.String getEndTime();
+    /**
+     * <code>string EndTime = 2;</code>
+     * @return The bytes for endTime.
+     */
+    com.google.protobuf.ByteString
+        getEndTimeBytes();
   }
   /**
-   * Protobuf type {@code classlink.LobbyHomeScheduleListReq}
+   * Protobuf type {@code Classlink.LobbyHomeScheduleListReq}
    */
   public static final class LobbyHomeScheduleListReq extends
       com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:classlink.LobbyHomeScheduleListReq)
+      // @@protoc_insertion_point(message_implements:Classlink.LobbyHomeScheduleListReq)
       LobbyHomeScheduleListReqOrBuilder {
   private static final long serialVersionUID = 0L;
     // Use LobbyHomeScheduleListReq.newBuilder() to construct.
@@ -62,82 +55,113 @@ public final class LobbyHomeScheduleListReqProto {
       super(builder);
     }
     private LobbyHomeScheduleListReq() {
-      startTimeList_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      startTime_ = "";
+      endTime_ = "";
     }
 
-    @Override
+    @java.lang.Override
     @SuppressWarnings({"unused"})
-    protected Object newInstance(
+    protected java.lang.Object newInstance(
         UnusedPrivateParameter unused) {
       return new LobbyHomeScheduleListReq();
     }
 
-    @Override
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return LobbyHomeScheduleListReqProto.internal_static_classlink_LobbyHomeScheduleListReq_descriptor;
+      return com.classlink.websocket.api.lobby.domain.param.proto.LobbyHomeScheduleListReqProto.internal_static_Classlink_LobbyHomeScheduleListReq_descriptor;
     }
 
-    @Override
-    protected FieldAccessorTable
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return LobbyHomeScheduleListReqProto.internal_static_classlink_LobbyHomeScheduleListReq_fieldAccessorTable
+      return com.classlink.websocket.api.lobby.domain.param.proto.LobbyHomeScheduleListReqProto.internal_static_Classlink_LobbyHomeScheduleListReq_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              LobbyHomeScheduleListReq.class, Builder.class);
+              com.classlink.websocket.api.lobby.domain.param.proto.LobbyHomeScheduleListReqProto.LobbyHomeScheduleListReq.class, com.classlink.websocket.api.lobby.domain.param.proto.LobbyHomeScheduleListReqProto.LobbyHomeScheduleListReq.Builder.class);
     }
 
-    public static final int AVATARID_FIELD_NUMBER = 1;
-    private int avatarId_;
+    public static final int STARTTIME_FIELD_NUMBER = 1;
+    private volatile java.lang.Object startTime_;
     /**
-     * <code>int32 AvatarId = 1;</code>
-     * @return The avatarId.
+     * <code>string StartTime = 1;</code>
+     * @return The startTime.
      */
-    @Override
-    public int getAvatarId() {
-      return avatarId_;
-    }
-
-    public static final int STARTTIMELIST_FIELD_NUMBER = 2;
-    private com.google.protobuf.LazyStringList startTimeList_;
-    /**
-     * <code>repeated string StartTimeList = 2;</code>
-     * @return A list containing the startTimeList.
-     */
-    public com.google.protobuf.ProtocolStringList
-        getStartTimeListList() {
-      return startTimeList_;
+    @java.lang.Override
+    public java.lang.String getStartTime() {
+      java.lang.Object ref = startTime_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        startTime_ = s;
+        return s;
+      }
     }
     /**
-     * <code>repeated string StartTimeList = 2;</code>
-     * @return The count of startTimeList.
+     * <code>string StartTime = 1;</code>
+     * @return The bytes for startTime.
      */
-    public int getStartTimeListCount() {
-      return startTimeList_.size();
-    }
-    /**
-     * <code>repeated string StartTimeList = 2;</code>
-     * @param index The index of the element to return.
-     * @return The startTimeList at the given index.
-     */
-    public String getStartTimeList(int index) {
-      return startTimeList_.get(index);
-    }
-    /**
-     * <code>repeated string StartTimeList = 2;</code>
-     * @param index The index of the value to return.
-     * @return The bytes of the startTimeList at the given index.
-     */
+    @java.lang.Override
     public com.google.protobuf.ByteString
-        getStartTimeListBytes(int index) {
-      return startTimeList_.getByteString(index);
+        getStartTimeBytes() {
+      java.lang.Object ref = startTime_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        startTime_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int ENDTIME_FIELD_NUMBER = 2;
+    private volatile java.lang.Object endTime_;
+    /**
+     * <code>string EndTime = 2;</code>
+     * @return The endTime.
+     */
+    @java.lang.Override
+    public java.lang.String getEndTime() {
+      java.lang.Object ref = endTime_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        endTime_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string EndTime = 2;</code>
+     * @return The bytes for endTime.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getEndTimeBytes() {
+      java.lang.Object ref = endTime_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        endTime_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
     }
 
     private byte memoizedIsInitialized = -1;
-    @Override
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -147,140 +171,132 @@ public final class LobbyHomeScheduleListReqProto {
       return true;
     }
 
-    @Override
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (avatarId_ != 0) {
-        output.writeInt32(1, avatarId_);
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(startTime_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, startTime_);
       }
-      for (int i = 0; i < startTimeList_.size(); i++) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, startTimeList_.getRaw(i));
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(endTime_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, endTime_);
       }
       getUnknownFields().writeTo(output);
     }
 
-    @Override
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
 
       size = 0;
-      if (avatarId_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(1, avatarId_);
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(startTime_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, startTime_);
       }
-      {
-        int dataSize = 0;
-        for (int i = 0; i < startTimeList_.size(); i++) {
-          dataSize += computeStringSizeNoTag(startTimeList_.getRaw(i));
-        }
-        size += dataSize;
-        size += 1 * getStartTimeListList().size();
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(endTime_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, endTime_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
 
-    @Override
-    public boolean equals(final Object obj) {
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof LobbyHomeScheduleListReq)) {
+      if (!(obj instanceof com.classlink.websocket.api.lobby.domain.param.proto.LobbyHomeScheduleListReqProto.LobbyHomeScheduleListReq)) {
         return super.equals(obj);
       }
-      LobbyHomeScheduleListReq other = (LobbyHomeScheduleListReq) obj;
+      com.classlink.websocket.api.lobby.domain.param.proto.LobbyHomeScheduleListReqProto.LobbyHomeScheduleListReq other = (com.classlink.websocket.api.lobby.domain.param.proto.LobbyHomeScheduleListReqProto.LobbyHomeScheduleListReq) obj;
 
-      if (getAvatarId()
-          != other.getAvatarId()) return false;
-      if (!getStartTimeListList()
-          .equals(other.getStartTimeListList())) return false;
+      if (!getStartTime()
+          .equals(other.getStartTime())) return false;
+      if (!getEndTime()
+          .equals(other.getEndTime())) return false;
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
-    @Override
+    @java.lang.Override
     public int hashCode() {
       if (memoizedHashCode != 0) {
         return memoizedHashCode;
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + AVATARID_FIELD_NUMBER;
-      hash = (53 * hash) + getAvatarId();
-      if (getStartTimeListCount() > 0) {
-        hash = (37 * hash) + STARTTIMELIST_FIELD_NUMBER;
-        hash = (53 * hash) + getStartTimeListList().hashCode();
-      }
+      hash = (37 * hash) + STARTTIME_FIELD_NUMBER;
+      hash = (53 * hash) + getStartTime().hashCode();
+      hash = (37 * hash) + ENDTIME_FIELD_NUMBER;
+      hash = (53 * hash) + getEndTime().hashCode();
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
 
-    public static LobbyHomeScheduleListReq parseFrom(
+    public static com.classlink.websocket.api.lobby.domain.param.proto.LobbyHomeScheduleListReqProto.LobbyHomeScheduleListReq parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static LobbyHomeScheduleListReq parseFrom(
+    public static com.classlink.websocket.api.lobby.domain.param.proto.LobbyHomeScheduleListReqProto.LobbyHomeScheduleListReq parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static LobbyHomeScheduleListReq parseFrom(
+    public static com.classlink.websocket.api.lobby.domain.param.proto.LobbyHomeScheduleListReqProto.LobbyHomeScheduleListReq parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static LobbyHomeScheduleListReq parseFrom(
+    public static com.classlink.websocket.api.lobby.domain.param.proto.LobbyHomeScheduleListReqProto.LobbyHomeScheduleListReq parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static LobbyHomeScheduleListReq parseFrom(byte[] data)
+    public static com.classlink.websocket.api.lobby.domain.param.proto.LobbyHomeScheduleListReqProto.LobbyHomeScheduleListReq parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static LobbyHomeScheduleListReq parseFrom(
+    public static com.classlink.websocket.api.lobby.domain.param.proto.LobbyHomeScheduleListReqProto.LobbyHomeScheduleListReq parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static LobbyHomeScheduleListReq parseFrom(java.io.InputStream input)
+    public static com.classlink.websocket.api.lobby.domain.param.proto.LobbyHomeScheduleListReqProto.LobbyHomeScheduleListReq parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static LobbyHomeScheduleListReq parseFrom(
+    public static com.classlink.websocket.api.lobby.domain.param.proto.LobbyHomeScheduleListReqProto.LobbyHomeScheduleListReq parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static LobbyHomeScheduleListReq parseDelimitedFrom(java.io.InputStream input)
+    public static com.classlink.websocket.api.lobby.domain.param.proto.LobbyHomeScheduleListReqProto.LobbyHomeScheduleListReq parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static LobbyHomeScheduleListReq parseDelimitedFrom(
+    public static com.classlink.websocket.api.lobby.domain.param.proto.LobbyHomeScheduleListReqProto.LobbyHomeScheduleListReq parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static LobbyHomeScheduleListReq parseFrom(
+    public static com.classlink.websocket.api.lobby.domain.param.proto.LobbyHomeScheduleListReqProto.LobbyHomeScheduleListReq parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static LobbyHomeScheduleListReq parseFrom(
+    public static com.classlink.websocket.api.lobby.domain.param.proto.LobbyHomeScheduleListReqProto.LobbyHomeScheduleListReq parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -288,44 +304,44 @@ public final class LobbyHomeScheduleListReqProto {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
-    @Override
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(LobbyHomeScheduleListReq prototype) {
+    public static Builder newBuilder(com.classlink.websocket.api.lobby.domain.param.proto.LobbyHomeScheduleListReqProto.LobbyHomeScheduleListReq prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
-    @Override
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
     }
 
-    @Override
+    @java.lang.Override
     protected Builder newBuilderForType(
-        BuilderParent parent) {
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       Builder builder = new Builder(parent);
       return builder;
     }
     /**
-     * Protobuf type {@code classlink.LobbyHomeScheduleListReq}
+     * Protobuf type {@code Classlink.LobbyHomeScheduleListReq}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:classlink.LobbyHomeScheduleListReq)
-        LobbyHomeScheduleListReqOrBuilder {
+        // @@protoc_insertion_point(builder_implements:Classlink.LobbyHomeScheduleListReq)
+        com.classlink.websocket.api.lobby.domain.param.proto.LobbyHomeScheduleListReqProto.LobbyHomeScheduleListReqOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return LobbyHomeScheduleListReqProto.internal_static_classlink_LobbyHomeScheduleListReq_descriptor;
+        return com.classlink.websocket.api.lobby.domain.param.proto.LobbyHomeScheduleListReqProto.internal_static_Classlink_LobbyHomeScheduleListReq_descriptor;
       }
 
-      @Override
-      protected FieldAccessorTable
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return LobbyHomeScheduleListReqProto.internal_static_classlink_LobbyHomeScheduleListReq_fieldAccessorTable
+        return com.classlink.websocket.api.lobby.domain.param.proto.LobbyHomeScheduleListReqProto.internal_static_Classlink_LobbyHomeScheduleListReq_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                LobbyHomeScheduleListReq.class, Builder.class);
+                com.classlink.websocket.api.lobby.domain.param.proto.LobbyHomeScheduleListReqProto.LobbyHomeScheduleListReq.class, com.classlink.websocket.api.lobby.domain.param.proto.LobbyHomeScheduleListReqProto.LobbyHomeScheduleListReq.Builder.class);
       }
 
       // Construct using com.classlink.websocket.api.lobby.domain.param.proto.LobbyHomeScheduleListReqProto.LobbyHomeScheduleListReq.newBuilder()
@@ -334,109 +350,99 @@ public final class LobbyHomeScheduleListReqProto {
       }
 
       private Builder(
-          BuilderParent parent) {
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
 
       }
-      @Override
+      @java.lang.Override
       public Builder clear() {
         super.clear();
-        avatarId_ = 0;
+        startTime_ = "";
 
-        startTimeList_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000001);
+        endTime_ = "";
+
         return this;
       }
 
-      @Override
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return LobbyHomeScheduleListReqProto.internal_static_classlink_LobbyHomeScheduleListReq_descriptor;
+        return com.classlink.websocket.api.lobby.domain.param.proto.LobbyHomeScheduleListReqProto.internal_static_Classlink_LobbyHomeScheduleListReq_descriptor;
       }
 
-      @Override
-      public LobbyHomeScheduleListReq getDefaultInstanceForType() {
-        return LobbyHomeScheduleListReq.getDefaultInstance();
+      @java.lang.Override
+      public com.classlink.websocket.api.lobby.domain.param.proto.LobbyHomeScheduleListReqProto.LobbyHomeScheduleListReq getDefaultInstanceForType() {
+        return com.classlink.websocket.api.lobby.domain.param.proto.LobbyHomeScheduleListReqProto.LobbyHomeScheduleListReq.getDefaultInstance();
       }
 
-      @Override
-      public LobbyHomeScheduleListReq build() {
-        LobbyHomeScheduleListReq result = buildPartial();
+      @java.lang.Override
+      public com.classlink.websocket.api.lobby.domain.param.proto.LobbyHomeScheduleListReqProto.LobbyHomeScheduleListReq build() {
+        com.classlink.websocket.api.lobby.domain.param.proto.LobbyHomeScheduleListReqProto.LobbyHomeScheduleListReq result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
         return result;
       }
 
-      @Override
-      public LobbyHomeScheduleListReq buildPartial() {
-        LobbyHomeScheduleListReq result = new LobbyHomeScheduleListReq(this);
-        int from_bitField0_ = bitField0_;
-        result.avatarId_ = avatarId_;
-        if (((bitField0_ & 0x00000001) != 0)) {
-          startTimeList_ = startTimeList_.getUnmodifiableView();
-          bitField0_ = (bitField0_ & ~0x00000001);
-        }
-        result.startTimeList_ = startTimeList_;
+      @java.lang.Override
+      public com.classlink.websocket.api.lobby.domain.param.proto.LobbyHomeScheduleListReqProto.LobbyHomeScheduleListReq buildPartial() {
+        com.classlink.websocket.api.lobby.domain.param.proto.LobbyHomeScheduleListReqProto.LobbyHomeScheduleListReq result = new com.classlink.websocket.api.lobby.domain.param.proto.LobbyHomeScheduleListReqProto.LobbyHomeScheduleListReq(this);
+        result.startTime_ = startTime_;
+        result.endTime_ = endTime_;
         onBuilt();
         return result;
       }
 
-      @Override
+      @java.lang.Override
       public Builder clone() {
         return super.clone();
       }
-      @Override
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
+          java.lang.Object value) {
         return super.setField(field, value);
       }
-      @Override
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
         return super.clearField(field);
       }
-      @Override
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
         return super.clearOneof(oneof);
       }
-      @Override
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, Object value) {
+          int index, java.lang.Object value) {
         return super.setRepeatedField(field, index, value);
       }
-      @Override
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
+          java.lang.Object value) {
         return super.addRepeatedField(field, value);
       }
-      @Override
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof LobbyHomeScheduleListReq) {
-          return mergeFrom((LobbyHomeScheduleListReq)other);
+        if (other instanceof com.classlink.websocket.api.lobby.domain.param.proto.LobbyHomeScheduleListReqProto.LobbyHomeScheduleListReq) {
+          return mergeFrom((com.classlink.websocket.api.lobby.domain.param.proto.LobbyHomeScheduleListReqProto.LobbyHomeScheduleListReq)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(LobbyHomeScheduleListReq other) {
-        if (other == LobbyHomeScheduleListReq.getDefaultInstance()) return this;
-        if (other.getAvatarId() != 0) {
-          setAvatarId(other.getAvatarId());
+      public Builder mergeFrom(com.classlink.websocket.api.lobby.domain.param.proto.LobbyHomeScheduleListReqProto.LobbyHomeScheduleListReq other) {
+        if (other == com.classlink.websocket.api.lobby.domain.param.proto.LobbyHomeScheduleListReqProto.LobbyHomeScheduleListReq.getDefaultInstance()) return this;
+        if (!other.getStartTime().isEmpty()) {
+          startTime_ = other.startTime_;
+          onChanged();
         }
-        if (!other.startTimeList_.isEmpty()) {
-          if (startTimeList_.isEmpty()) {
-            startTimeList_ = other.startTimeList_;
-            bitField0_ = (bitField0_ & ~0x00000001);
-          } else {
-            ensureStartTimeListIsMutable();
-            startTimeList_.addAll(other.startTimeList_);
-          }
+        if (!other.getEndTime().isEmpty()) {
+          endTime_ = other.endTime_;
           onChanged();
         }
         this.mergeUnknownFields(other.getUnknownFields());
@@ -444,18 +450,18 @@ public final class LobbyHomeScheduleListReqProto {
         return this;
       }
 
-      @Override
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
-      @Override
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
         if (extensionRegistry == null) {
-          throw new NullPointerException();
+          throw new java.lang.NullPointerException();
         }
         try {
           boolean done = false;
@@ -465,15 +471,14 @@ public final class LobbyHomeScheduleListReqProto {
               case 0:
                 done = true;
                 break;
-              case 8: {
-                avatarId_ = input.readInt32();
+              case 10: {
+                startTime_ = input.readStringRequireUtf8();
 
                 break;
-              } // case 8
+              } // case 10
               case 18: {
-                String s = input.readStringRequireUtf8();
-                ensureStartTimeListIsMutable();
-                startTimeList_.add(s);
+                endTime_ = input.readStringRequireUtf8();
+
                 break;
               } // case 18
               default: {
@@ -491,177 +496,187 @@ public final class LobbyHomeScheduleListReqProto {
         } // finally
         return this;
       }
-      private int bitField0_;
 
-      private int avatarId_ ;
+      private java.lang.Object startTime_ = "";
       /**
-       * <code>int32 AvatarId = 1;</code>
-       * @return The avatarId.
+       * <code>string StartTime = 1;</code>
+       * @return The startTime.
        */
-      @Override
-      public int getAvatarId() {
-        return avatarId_;
+      public java.lang.String getStartTime() {
+        java.lang.Object ref = startTime_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          startTime_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
       }
       /**
-       * <code>int32 AvatarId = 1;</code>
-       * @param value The avatarId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setAvatarId(int value) {
-        
-        avatarId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>int32 AvatarId = 1;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearAvatarId() {
-        
-        avatarId_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private com.google.protobuf.LazyStringList startTimeList_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      private void ensureStartTimeListIsMutable() {
-        if (!((bitField0_ & 0x00000001) != 0)) {
-          startTimeList_ = new com.google.protobuf.LazyStringArrayList(startTimeList_);
-          bitField0_ |= 0x00000001;
-         }
-      }
-      /**
-       * <code>repeated string StartTimeList = 2;</code>
-       * @return A list containing the startTimeList.
-       */
-      public com.google.protobuf.ProtocolStringList
-          getStartTimeListList() {
-        return startTimeList_.getUnmodifiableView();
-      }
-      /**
-       * <code>repeated string StartTimeList = 2;</code>
-       * @return The count of startTimeList.
-       */
-      public int getStartTimeListCount() {
-        return startTimeList_.size();
-      }
-      /**
-       * <code>repeated string StartTimeList = 2;</code>
-       * @param index The index of the element to return.
-       * @return The startTimeList at the given index.
-       */
-      public String getStartTimeList(int index) {
-        return startTimeList_.get(index);
-      }
-      /**
-       * <code>repeated string StartTimeList = 2;</code>
-       * @param index The index of the value to return.
-       * @return The bytes of the startTimeList at the given index.
+       * <code>string StartTime = 1;</code>
+       * @return The bytes for startTime.
        */
       public com.google.protobuf.ByteString
-          getStartTimeListBytes(int index) {
-        return startTimeList_.getByteString(index);
+          getStartTimeBytes() {
+        java.lang.Object ref = startTime_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          startTime_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
       }
       /**
-       * <code>repeated string StartTimeList = 2;</code>
-       * @param index The index to set the value at.
-       * @param value The startTimeList to set.
+       * <code>string StartTime = 1;</code>
+       * @param value The startTime to set.
        * @return This builder for chaining.
        */
-      public Builder setStartTimeList(
-          int index, String value) {
+      public Builder setStartTime(
+          java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
-  ensureStartTimeListIsMutable();
-        startTimeList_.set(index, value);
+  
+        startTime_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>repeated string StartTimeList = 2;</code>
-       * @param value The startTimeList to add.
+       * <code>string StartTime = 1;</code>
        * @return This builder for chaining.
        */
-      public Builder addStartTimeList(
-          String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  ensureStartTimeListIsMutable();
-        startTimeList_.add(value);
+      public Builder clearStartTime() {
+        
+        startTime_ = getDefaultInstance().getStartTime();
         onChanged();
         return this;
       }
       /**
-       * <code>repeated string StartTimeList = 2;</code>
-       * @param values The startTimeList to add.
+       * <code>string StartTime = 1;</code>
+       * @param value The bytes for startTime to set.
        * @return This builder for chaining.
        */
-      public Builder addAllStartTimeList(
-          Iterable<String> values) {
-        ensureStartTimeListIsMutable();
-        com.google.protobuf.AbstractMessageLite.Builder.addAll(
-            values, startTimeList_);
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>repeated string StartTimeList = 2;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearStartTimeList() {
-        startTimeList_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000001);
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>repeated string StartTimeList = 2;</code>
-       * @param value The bytes of the startTimeList to add.
-       * @return This builder for chaining.
-       */
-      public Builder addStartTimeListBytes(
+      public Builder setStartTimeBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
-        ensureStartTimeListIsMutable();
-        startTimeList_.add(value);
+        
+        startTime_ = value;
         onChanged();
         return this;
       }
-      @Override
+
+      private java.lang.Object endTime_ = "";
+      /**
+       * <code>string EndTime = 2;</code>
+       * @return The endTime.
+       */
+      public java.lang.String getEndTime() {
+        java.lang.Object ref = endTime_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          endTime_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string EndTime = 2;</code>
+       * @return The bytes for endTime.
+       */
+      public com.google.protobuf.ByteString
+          getEndTimeBytes() {
+        java.lang.Object ref = endTime_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          endTime_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string EndTime = 2;</code>
+       * @param value The endTime to set.
+       * @return This builder for chaining.
+       */
+      public Builder setEndTime(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        endTime_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string EndTime = 2;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearEndTime() {
+        
+        endTime_ = getDefaultInstance().getEndTime();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string EndTime = 2;</code>
+       * @param value The bytes for endTime to set.
+       * @return This builder for chaining.
+       */
+      public Builder setEndTimeBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        endTime_ = value;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.setUnknownFields(unknownFields);
       }
 
-      @Override
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.mergeUnknownFields(unknownFields);
       }
 
 
-      // @@protoc_insertion_point(builder_scope:classlink.LobbyHomeScheduleListReq)
+      // @@protoc_insertion_point(builder_scope:Classlink.LobbyHomeScheduleListReq)
     }
 
-    // @@protoc_insertion_point(class_scope:classlink.LobbyHomeScheduleListReq)
-    private static final LobbyHomeScheduleListReq DEFAULT_INSTANCE;
+    // @@protoc_insertion_point(class_scope:Classlink.LobbyHomeScheduleListReq)
+    private static final com.classlink.websocket.api.lobby.domain.param.proto.LobbyHomeScheduleListReqProto.LobbyHomeScheduleListReq DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new LobbyHomeScheduleListReq();
+      DEFAULT_INSTANCE = new com.classlink.websocket.api.lobby.domain.param.proto.LobbyHomeScheduleListReqProto.LobbyHomeScheduleListReq();
     }
 
-    public static LobbyHomeScheduleListReq getDefaultInstance() {
+    public static com.classlink.websocket.api.lobby.domain.param.proto.LobbyHomeScheduleListReqProto.LobbyHomeScheduleListReq getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
     private static final com.google.protobuf.Parser<LobbyHomeScheduleListReq>
         PARSER = new com.google.protobuf.AbstractParser<LobbyHomeScheduleListReq>() {
-      @Override
+      @java.lang.Override
       public LobbyHomeScheduleListReq parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -685,23 +700,23 @@ public final class LobbyHomeScheduleListReqProto {
       return PARSER;
     }
 
-    @Override
+    @java.lang.Override
     public com.google.protobuf.Parser<LobbyHomeScheduleListReq> getParserForType() {
       return PARSER;
     }
 
-    @Override
-    public LobbyHomeScheduleListReq getDefaultInstanceForType() {
+    @java.lang.Override
+    public com.classlink.websocket.api.lobby.domain.param.proto.LobbyHomeScheduleListReqProto.LobbyHomeScheduleListReq getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
   }
 
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_classlink_LobbyHomeScheduleListReq_descriptor;
+    internal_static_Classlink_LobbyHomeScheduleListReq_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_classlink_LobbyHomeScheduleListReq_fieldAccessorTable;
+      internal_static_Classlink_LobbyHomeScheduleListReq_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -710,24 +725,24 @@ public final class LobbyHomeScheduleListReqProto {
   private static  com.google.protobuf.Descriptors.FileDescriptor
       descriptor;
   static {
-    String[] descriptorData = {
-      "\n\036LobbyHomeScheduleListReq.proto\022\tclassl" +
-      "ink\"C\n\030LobbyHomeScheduleListReq\022\020\n\010Avata" +
-      "rId\030\001 \001(\005\022\025\n\rStartTimeList\030\002 \003(\tBU\n4com." +
-      "classlink.websocket.api.lobby.domain.par" +
-      "am.protoB\035LobbyHomeScheduleListReqProtob" +
-      "\006proto3"
+    java.lang.String[] descriptorData = {
+      "\n\036LobbyHomeScheduleListReq.proto\022\tClassl" +
+      "ink\">\n\030LobbyHomeScheduleListReq\022\021\n\tStart" +
+      "Time\030\001 \001(\t\022\017\n\007EndTime\030\002 \001(\tBU\n4com.class" +
+      "link.websocket.api.lobby.domain.param.pr" +
+      "otoB\035LobbyHomeScheduleListReqProtob\006prot" +
+      "o3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
         });
-    internal_static_classlink_LobbyHomeScheduleListReq_descriptor =
+    internal_static_Classlink_LobbyHomeScheduleListReq_descriptor =
       getDescriptor().getMessageTypes().get(0);
-    internal_static_classlink_LobbyHomeScheduleListReq_fieldAccessorTable = new
+    internal_static_Classlink_LobbyHomeScheduleListReq_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_classlink_LobbyHomeScheduleListReq_descriptor,
-        new String[] { "AvatarId", "StartTimeList", });
+        internal_static_Classlink_LobbyHomeScheduleListReq_descriptor,
+        new java.lang.String[] { "StartTime", "EndTime", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

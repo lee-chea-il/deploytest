@@ -1,0 +1,14 @@
+syntax = "proto3"; 
+package Classlink;  
+option java_package = "com.classlink.websocket.api.lobby.domain.dto.proto"; 
+option java_outer_classname = "LobbyInstitutionClassTeacherInfoResProto"; 
+
+message LobbyInstitutionClassTeacherInfoRes{
+string TeacherImgUrl =1;// 선생님목록에서 가져온 이미지 사용여부 확인필요
+string TeacherNickName =2;
+string TeacherName =3;
+string TeacherEmail =4;
+string TeacherPhone =5; // 이름 변경
+// repeated ClassInfo classInfoList = 6; 수업정보 데이터 부분 확인필요
+
+}

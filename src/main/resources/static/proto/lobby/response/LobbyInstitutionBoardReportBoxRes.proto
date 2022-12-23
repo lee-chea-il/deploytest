@@ -1,0 +1,16 @@
+syntax = "proto3"; 
+package Classlink;  
+option java_package = "com.classlink.websocket.api.lobby.domain.dto.proto"; 
+option java_outer_classname = "LobbyInstitutionBoardReportBoxResProto"; 
+
+message LobbyInstitutionBoardReportBoxRes{
+message ReportBox {
+ string ReportBoxTitle =1; // 과제 제목
+ bool IsSubmission =2;  // 과제 제출 유무칼럼이 현재없음
+ string HwbTimeEDate =3; // 과제 기간 종료일 추가
+ string ExaminerName =4; // 출제자 이름
+
+}
+
+repeated ReportBox ReportBoxList =1;
+}

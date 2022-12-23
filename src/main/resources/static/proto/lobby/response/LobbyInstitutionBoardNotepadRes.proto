@@ -1,0 +1,16 @@
+syntax = "proto3"; 
+package Classlink;  
+option java_package = "com.classlink.websocket.api.lobby.domain.dto.proto"; 
+option java_outer_classname = "LobbyInstitutionBoardNotepadResProto"; 
+
+message LobbyInstitutionBoardNotepadRes{
+message Notepad
+{
+ string NotepadFileName =1;
+ string InstiName =2;
+ string NotepadDate =3;
+ string DownloadUrl =4; // 다운로드 URL 추가
+}
+
+repeated Notepad NotepadList =1;
+}

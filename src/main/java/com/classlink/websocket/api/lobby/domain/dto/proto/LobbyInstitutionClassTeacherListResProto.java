@@ -15,39 +15,39 @@ public final class LobbyInstitutionClassTeacherListResProto {
         (com.google.protobuf.ExtensionRegistryLite) registry);
   }
   public interface LobbyInstitutionClassTeacherListResOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:classlink.LobbyInstitutionClassTeacherListRes)
+      // @@protoc_insertion_point(interface_extends:Classlink.LobbyInstitutionClassTeacherListRes)
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>repeated .classlink.LobbyInstitutionClassTeacherListRes.TeacherInfo TeacherInfos = 1;</code>
+     * <code>repeated .Classlink.LobbyInstitutionClassTeacherListRes.TeacherInfo TeacherInfoList = 1;</code>
      */
     java.util.List<com.classlink.websocket.api.lobby.domain.dto.proto.LobbyInstitutionClassTeacherListResProto.LobbyInstitutionClassTeacherListRes.TeacherInfo> 
-        getTeacherInfosList();
+        getTeacherInfoListList();
     /**
-     * <code>repeated .classlink.LobbyInstitutionClassTeacherListRes.TeacherInfo TeacherInfos = 1;</code>
+     * <code>repeated .Classlink.LobbyInstitutionClassTeacherListRes.TeacherInfo TeacherInfoList = 1;</code>
      */
-    com.classlink.websocket.api.lobby.domain.dto.proto.LobbyInstitutionClassTeacherListResProto.LobbyInstitutionClassTeacherListRes.TeacherInfo getTeacherInfos(int index);
+    com.classlink.websocket.api.lobby.domain.dto.proto.LobbyInstitutionClassTeacherListResProto.LobbyInstitutionClassTeacherListRes.TeacherInfo getTeacherInfoList(int index);
     /**
-     * <code>repeated .classlink.LobbyInstitutionClassTeacherListRes.TeacherInfo TeacherInfos = 1;</code>
+     * <code>repeated .Classlink.LobbyInstitutionClassTeacherListRes.TeacherInfo TeacherInfoList = 1;</code>
      */
-    int getTeacherInfosCount();
+    int getTeacherInfoListCount();
     /**
-     * <code>repeated .classlink.LobbyInstitutionClassTeacherListRes.TeacherInfo TeacherInfos = 1;</code>
+     * <code>repeated .Classlink.LobbyInstitutionClassTeacherListRes.TeacherInfo TeacherInfoList = 1;</code>
      */
     java.util.List<? extends com.classlink.websocket.api.lobby.domain.dto.proto.LobbyInstitutionClassTeacherListResProto.LobbyInstitutionClassTeacherListRes.TeacherInfoOrBuilder> 
-        getTeacherInfosOrBuilderList();
+        getTeacherInfoListOrBuilderList();
     /**
-     * <code>repeated .classlink.LobbyInstitutionClassTeacherListRes.TeacherInfo TeacherInfos = 1;</code>
+     * <code>repeated .Classlink.LobbyInstitutionClassTeacherListRes.TeacherInfo TeacherInfoList = 1;</code>
      */
-    com.classlink.websocket.api.lobby.domain.dto.proto.LobbyInstitutionClassTeacherListResProto.LobbyInstitutionClassTeacherListRes.TeacherInfoOrBuilder getTeacherInfosOrBuilder(
+    com.classlink.websocket.api.lobby.domain.dto.proto.LobbyInstitutionClassTeacherListResProto.LobbyInstitutionClassTeacherListRes.TeacherInfoOrBuilder getTeacherInfoListOrBuilder(
         int index);
   }
   /**
-   * Protobuf type {@code classlink.LobbyInstitutionClassTeacherListRes}
+   * Protobuf type {@code Classlink.LobbyInstitutionClassTeacherListRes}
    */
   public static final class LobbyInstitutionClassTeacherListRes extends
       com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:classlink.LobbyInstitutionClassTeacherListRes)
+      // @@protoc_insertion_point(message_implements:Classlink.LobbyInstitutionClassTeacherListRes)
       LobbyInstitutionClassTeacherListResOrBuilder {
   private static final long serialVersionUID = 0L;
     // Use LobbyInstitutionClassTeacherListRes.newBuilder() to construct.
@@ -55,7 +55,7 @@ public final class LobbyInstitutionClassTeacherListResProto {
       super(builder);
     }
     private LobbyInstitutionClassTeacherListRes() {
-      teacherInfos_ = java.util.Collections.emptyList();
+      teacherInfoList_ = java.util.Collections.emptyList();
     }
 
     @java.lang.Override
@@ -72,19 +72,19 @@ public final class LobbyInstitutionClassTeacherListResProto {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return internal_static_classlink_LobbyInstitutionClassTeacherListRes_descriptor;
+      return com.classlink.websocket.api.lobby.domain.dto.proto.LobbyInstitutionClassTeacherListResProto.internal_static_Classlink_LobbyInstitutionClassTeacherListRes_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return internal_static_classlink_LobbyInstitutionClassTeacherListRes_fieldAccessorTable
+      return com.classlink.websocket.api.lobby.domain.dto.proto.LobbyInstitutionClassTeacherListResProto.internal_static_Classlink_LobbyInstitutionClassTeacherListRes_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               com.classlink.websocket.api.lobby.domain.dto.proto.LobbyInstitutionClassTeacherListResProto.LobbyInstitutionClassTeacherListRes.class, com.classlink.websocket.api.lobby.domain.dto.proto.LobbyInstitutionClassTeacherListResProto.LobbyInstitutionClassTeacherListRes.Builder.class);
     }
 
     public interface TeacherInfoOrBuilder extends
-        // @@protoc_insertion_point(interface_extends:classlink.LobbyInstitutionClassTeacherListRes.TeacherInfo)
+        // @@protoc_insertion_point(interface_extends:Classlink.LobbyInstitutionClassTeacherListRes.TeacherInfo)
         com.google.protobuf.MessageOrBuilder {
 
       /**
@@ -142,11 +142,11 @@ public final class LobbyInstitutionClassTeacherListResProto {
           getInsNameBytes();
     }
     /**
-     * Protobuf type {@code classlink.LobbyInstitutionClassTeacherListRes.TeacherInfo}
+     * Protobuf type {@code Classlink.LobbyInstitutionClassTeacherListRes.TeacherInfo}
      */
     public static final class TeacherInfo extends
         com.google.protobuf.GeneratedMessageV3 implements
-        // @@protoc_insertion_point(message_implements:classlink.LobbyInstitutionClassTeacherListRes.TeacherInfo)
+        // @@protoc_insertion_point(message_implements:Classlink.LobbyInstitutionClassTeacherListRes.TeacherInfo)
         TeacherInfoOrBuilder {
     private static final long serialVersionUID = 0L;
       // Use TeacherInfo.newBuilder() to construct.
@@ -174,13 +174,13 @@ public final class LobbyInstitutionClassTeacherListResProto {
       }
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return internal_static_classlink_LobbyInstitutionClassTeacherListRes_TeacherInfo_descriptor;
+        return com.classlink.websocket.api.lobby.domain.dto.proto.LobbyInstitutionClassTeacherListResProto.internal_static_Classlink_LobbyInstitutionClassTeacherListRes_TeacherInfo_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return internal_static_classlink_LobbyInstitutionClassTeacherListRes_TeacherInfo_fieldAccessorTable
+        return com.classlink.websocket.api.lobby.domain.dto.proto.LobbyInstitutionClassTeacherListResProto.internal_static_Classlink_LobbyInstitutionClassTeacherListRes_TeacherInfo_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
                 com.classlink.websocket.api.lobby.domain.dto.proto.LobbyInstitutionClassTeacherListResProto.LobbyInstitutionClassTeacherListRes.TeacherInfo.class, com.classlink.websocket.api.lobby.domain.dto.proto.LobbyInstitutionClassTeacherListResProto.LobbyInstitutionClassTeacherListRes.TeacherInfo.Builder.class);
       }
@@ -544,21 +544,21 @@ public final class LobbyInstitutionClassTeacherListResProto {
         return builder;
       }
       /**
-       * Protobuf type {@code classlink.LobbyInstitutionClassTeacherListRes.TeacherInfo}
+       * Protobuf type {@code Classlink.LobbyInstitutionClassTeacherListRes.TeacherInfo}
        */
       public static final class Builder extends
           com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-          // @@protoc_insertion_point(builder_implements:classlink.LobbyInstitutionClassTeacherListRes.TeacherInfo)
+          // @@protoc_insertion_point(builder_implements:Classlink.LobbyInstitutionClassTeacherListRes.TeacherInfo)
           com.classlink.websocket.api.lobby.domain.dto.proto.LobbyInstitutionClassTeacherListResProto.LobbyInstitutionClassTeacherListRes.TeacherInfoOrBuilder {
         public static final com.google.protobuf.Descriptors.Descriptor
             getDescriptor() {
-          return internal_static_classlink_LobbyInstitutionClassTeacherListRes_TeacherInfo_descriptor;
+          return com.classlink.websocket.api.lobby.domain.dto.proto.LobbyInstitutionClassTeacherListResProto.internal_static_Classlink_LobbyInstitutionClassTeacherListRes_TeacherInfo_descriptor;
         }
 
         @java.lang.Override
         protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
             internalGetFieldAccessorTable() {
-          return internal_static_classlink_LobbyInstitutionClassTeacherListRes_TeacherInfo_fieldAccessorTable
+          return com.classlink.websocket.api.lobby.domain.dto.proto.LobbyInstitutionClassTeacherListResProto.internal_static_Classlink_LobbyInstitutionClassTeacherListRes_TeacherInfo_fieldAccessorTable
               .ensureFieldAccessorsInitialized(
                   com.classlink.websocket.api.lobby.domain.dto.proto.LobbyInstitutionClassTeacherListResProto.LobbyInstitutionClassTeacherListRes.TeacherInfo.class, com.classlink.websocket.api.lobby.domain.dto.proto.LobbyInstitutionClassTeacherListResProto.LobbyInstitutionClassTeacherListRes.TeacherInfo.Builder.class);
         }
@@ -592,12 +592,12 @@ public final class LobbyInstitutionClassTeacherListResProto {
         @java.lang.Override
         public com.google.protobuf.Descriptors.Descriptor
             getDescriptorForType() {
-          return internal_static_classlink_LobbyInstitutionClassTeacherListRes_TeacherInfo_descriptor;
+          return com.classlink.websocket.api.lobby.domain.dto.proto.LobbyInstitutionClassTeacherListResProto.internal_static_Classlink_LobbyInstitutionClassTeacherListRes_TeacherInfo_descriptor;
         }
 
         @java.lang.Override
         public com.classlink.websocket.api.lobby.domain.dto.proto.LobbyInstitutionClassTeacherListResProto.LobbyInstitutionClassTeacherListRes.TeacherInfo getDefaultInstanceForType() {
-          return getDefaultInstance();
+          return com.classlink.websocket.api.lobby.domain.dto.proto.LobbyInstitutionClassTeacherListResProto.LobbyInstitutionClassTeacherListRes.TeacherInfo.getDefaultInstance();
         }
 
         @java.lang.Override
@@ -664,7 +664,7 @@ public final class LobbyInstitutionClassTeacherListResProto {
         }
 
         public Builder mergeFrom(com.classlink.websocket.api.lobby.domain.dto.proto.LobbyInstitutionClassTeacherListResProto.LobbyInstitutionClassTeacherListRes.TeacherInfo other) {
-          if (other == getDefaultInstance()) return this;
+          if (other == com.classlink.websocket.api.lobby.domain.dto.proto.LobbyInstitutionClassTeacherListResProto.LobbyInstitutionClassTeacherListRes.TeacherInfo.getDefaultInstance()) return this;
           if (other.getTchIdx() != 0) {
             setTchIdx(other.getTchIdx());
           }
@@ -1098,10 +1098,10 @@ public final class LobbyInstitutionClassTeacherListResProto {
         }
 
 
-        // @@protoc_insertion_point(builder_scope:classlink.LobbyInstitutionClassTeacherListRes.TeacherInfo)
+        // @@protoc_insertion_point(builder_scope:Classlink.LobbyInstitutionClassTeacherListRes.TeacherInfo)
       }
 
-      // @@protoc_insertion_point(class_scope:classlink.LobbyInstitutionClassTeacherListRes.TeacherInfo)
+      // @@protoc_insertion_point(class_scope:Classlink.LobbyInstitutionClassTeacherListRes.TeacherInfo)
       private static final com.classlink.websocket.api.lobby.domain.dto.proto.LobbyInstitutionClassTeacherListResProto.LobbyInstitutionClassTeacherListRes.TeacherInfo DEFAULT_INSTANCE;
       static {
         DEFAULT_INSTANCE = new com.classlink.websocket.api.lobby.domain.dto.proto.LobbyInstitutionClassTeacherListResProto.LobbyInstitutionClassTeacherListRes.TeacherInfo();
@@ -1149,44 +1149,44 @@ public final class LobbyInstitutionClassTeacherListResProto {
 
     }
 
-    public static final int TEACHERINFOS_FIELD_NUMBER = 1;
-    private java.util.List<com.classlink.websocket.api.lobby.domain.dto.proto.LobbyInstitutionClassTeacherListResProto.LobbyInstitutionClassTeacherListRes.TeacherInfo> teacherInfos_;
+    public static final int TEACHERINFOLIST_FIELD_NUMBER = 1;
+    private java.util.List<com.classlink.websocket.api.lobby.domain.dto.proto.LobbyInstitutionClassTeacherListResProto.LobbyInstitutionClassTeacherListRes.TeacherInfo> teacherInfoList_;
     /**
-     * <code>repeated .classlink.LobbyInstitutionClassTeacherListRes.TeacherInfo TeacherInfos = 1;</code>
+     * <code>repeated .Classlink.LobbyInstitutionClassTeacherListRes.TeacherInfo TeacherInfoList = 1;</code>
      */
     @java.lang.Override
-    public java.util.List<com.classlink.websocket.api.lobby.domain.dto.proto.LobbyInstitutionClassTeacherListResProto.LobbyInstitutionClassTeacherListRes.TeacherInfo> getTeacherInfosList() {
-      return teacherInfos_;
+    public java.util.List<com.classlink.websocket.api.lobby.domain.dto.proto.LobbyInstitutionClassTeacherListResProto.LobbyInstitutionClassTeacherListRes.TeacherInfo> getTeacherInfoListList() {
+      return teacherInfoList_;
     }
     /**
-     * <code>repeated .classlink.LobbyInstitutionClassTeacherListRes.TeacherInfo TeacherInfos = 1;</code>
+     * <code>repeated .Classlink.LobbyInstitutionClassTeacherListRes.TeacherInfo TeacherInfoList = 1;</code>
      */
     @java.lang.Override
     public java.util.List<? extends com.classlink.websocket.api.lobby.domain.dto.proto.LobbyInstitutionClassTeacherListResProto.LobbyInstitutionClassTeacherListRes.TeacherInfoOrBuilder> 
-        getTeacherInfosOrBuilderList() {
-      return teacherInfos_;
+        getTeacherInfoListOrBuilderList() {
+      return teacherInfoList_;
     }
     /**
-     * <code>repeated .classlink.LobbyInstitutionClassTeacherListRes.TeacherInfo TeacherInfos = 1;</code>
+     * <code>repeated .Classlink.LobbyInstitutionClassTeacherListRes.TeacherInfo TeacherInfoList = 1;</code>
      */
     @java.lang.Override
-    public int getTeacherInfosCount() {
-      return teacherInfos_.size();
+    public int getTeacherInfoListCount() {
+      return teacherInfoList_.size();
     }
     /**
-     * <code>repeated .classlink.LobbyInstitutionClassTeacherListRes.TeacherInfo TeacherInfos = 1;</code>
+     * <code>repeated .Classlink.LobbyInstitutionClassTeacherListRes.TeacherInfo TeacherInfoList = 1;</code>
      */
     @java.lang.Override
-    public com.classlink.websocket.api.lobby.domain.dto.proto.LobbyInstitutionClassTeacherListResProto.LobbyInstitutionClassTeacherListRes.TeacherInfo getTeacherInfos(int index) {
-      return teacherInfos_.get(index);
+    public com.classlink.websocket.api.lobby.domain.dto.proto.LobbyInstitutionClassTeacherListResProto.LobbyInstitutionClassTeacherListRes.TeacherInfo getTeacherInfoList(int index) {
+      return teacherInfoList_.get(index);
     }
     /**
-     * <code>repeated .classlink.LobbyInstitutionClassTeacherListRes.TeacherInfo TeacherInfos = 1;</code>
+     * <code>repeated .Classlink.LobbyInstitutionClassTeacherListRes.TeacherInfo TeacherInfoList = 1;</code>
      */
     @java.lang.Override
-    public com.classlink.websocket.api.lobby.domain.dto.proto.LobbyInstitutionClassTeacherListResProto.LobbyInstitutionClassTeacherListRes.TeacherInfoOrBuilder getTeacherInfosOrBuilder(
+    public com.classlink.websocket.api.lobby.domain.dto.proto.LobbyInstitutionClassTeacherListResProto.LobbyInstitutionClassTeacherListRes.TeacherInfoOrBuilder getTeacherInfoListOrBuilder(
         int index) {
-      return teacherInfos_.get(index);
+      return teacherInfoList_.get(index);
     }
 
     private byte memoizedIsInitialized = -1;
@@ -1203,8 +1203,8 @@ public final class LobbyInstitutionClassTeacherListResProto {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      for (int i = 0; i < teacherInfos_.size(); i++) {
-        output.writeMessage(1, teacherInfos_.get(i));
+      for (int i = 0; i < teacherInfoList_.size(); i++) {
+        output.writeMessage(1, teacherInfoList_.get(i));
       }
       getUnknownFields().writeTo(output);
     }
@@ -1215,9 +1215,9 @@ public final class LobbyInstitutionClassTeacherListResProto {
       if (size != -1) return size;
 
       size = 0;
-      for (int i = 0; i < teacherInfos_.size(); i++) {
+      for (int i = 0; i < teacherInfoList_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(1, teacherInfos_.get(i));
+          .computeMessageSize(1, teacherInfoList_.get(i));
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -1234,8 +1234,8 @@ public final class LobbyInstitutionClassTeacherListResProto {
       }
       com.classlink.websocket.api.lobby.domain.dto.proto.LobbyInstitutionClassTeacherListResProto.LobbyInstitutionClassTeacherListRes other = (com.classlink.websocket.api.lobby.domain.dto.proto.LobbyInstitutionClassTeacherListResProto.LobbyInstitutionClassTeacherListRes) obj;
 
-      if (!getTeacherInfosList()
-          .equals(other.getTeacherInfosList())) return false;
+      if (!getTeacherInfoListList()
+          .equals(other.getTeacherInfoListList())) return false;
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -1247,9 +1247,9 @@ public final class LobbyInstitutionClassTeacherListResProto {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      if (getTeacherInfosCount() > 0) {
-        hash = (37 * hash) + TEACHERINFOS_FIELD_NUMBER;
-        hash = (53 * hash) + getTeacherInfosList().hashCode();
+      if (getTeacherInfoListCount() > 0) {
+        hash = (37 * hash) + TEACHERINFOLIST_FIELD_NUMBER;
+        hash = (53 * hash) + getTeacherInfoListList().hashCode();
       }
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
@@ -1347,21 +1347,21 @@ public final class LobbyInstitutionClassTeacherListResProto {
       return builder;
     }
     /**
-     * Protobuf type {@code classlink.LobbyInstitutionClassTeacherListRes}
+     * Protobuf type {@code Classlink.LobbyInstitutionClassTeacherListRes}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:classlink.LobbyInstitutionClassTeacherListRes)
+        // @@protoc_insertion_point(builder_implements:Classlink.LobbyInstitutionClassTeacherListRes)
         com.classlink.websocket.api.lobby.domain.dto.proto.LobbyInstitutionClassTeacherListResProto.LobbyInstitutionClassTeacherListResOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return internal_static_classlink_LobbyInstitutionClassTeacherListRes_descriptor;
+        return com.classlink.websocket.api.lobby.domain.dto.proto.LobbyInstitutionClassTeacherListResProto.internal_static_Classlink_LobbyInstitutionClassTeacherListRes_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return internal_static_classlink_LobbyInstitutionClassTeacherListRes_fieldAccessorTable
+        return com.classlink.websocket.api.lobby.domain.dto.proto.LobbyInstitutionClassTeacherListResProto.internal_static_Classlink_LobbyInstitutionClassTeacherListRes_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
                 com.classlink.websocket.api.lobby.domain.dto.proto.LobbyInstitutionClassTeacherListResProto.LobbyInstitutionClassTeacherListRes.class, com.classlink.websocket.api.lobby.domain.dto.proto.LobbyInstitutionClassTeacherListResProto.LobbyInstitutionClassTeacherListRes.Builder.class);
       }
@@ -1379,11 +1379,11 @@ public final class LobbyInstitutionClassTeacherListResProto {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        if (teacherInfosBuilder_ == null) {
-          teacherInfos_ = java.util.Collections.emptyList();
+        if (teacherInfoListBuilder_ == null) {
+          teacherInfoList_ = java.util.Collections.emptyList();
         } else {
-          teacherInfos_ = null;
-          teacherInfosBuilder_.clear();
+          teacherInfoList_ = null;
+          teacherInfoListBuilder_.clear();
         }
         bitField0_ = (bitField0_ & ~0x00000001);
         return this;
@@ -1392,12 +1392,12 @@ public final class LobbyInstitutionClassTeacherListResProto {
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return internal_static_classlink_LobbyInstitutionClassTeacherListRes_descriptor;
+        return com.classlink.websocket.api.lobby.domain.dto.proto.LobbyInstitutionClassTeacherListResProto.internal_static_Classlink_LobbyInstitutionClassTeacherListRes_descriptor;
       }
 
       @java.lang.Override
       public com.classlink.websocket.api.lobby.domain.dto.proto.LobbyInstitutionClassTeacherListResProto.LobbyInstitutionClassTeacherListRes getDefaultInstanceForType() {
-        return getDefaultInstance();
+        return com.classlink.websocket.api.lobby.domain.dto.proto.LobbyInstitutionClassTeacherListResProto.LobbyInstitutionClassTeacherListRes.getDefaultInstance();
       }
 
       @java.lang.Override
@@ -1413,14 +1413,14 @@ public final class LobbyInstitutionClassTeacherListResProto {
       public com.classlink.websocket.api.lobby.domain.dto.proto.LobbyInstitutionClassTeacherListResProto.LobbyInstitutionClassTeacherListRes buildPartial() {
         com.classlink.websocket.api.lobby.domain.dto.proto.LobbyInstitutionClassTeacherListResProto.LobbyInstitutionClassTeacherListRes result = new com.classlink.websocket.api.lobby.domain.dto.proto.LobbyInstitutionClassTeacherListResProto.LobbyInstitutionClassTeacherListRes(this);
         int from_bitField0_ = bitField0_;
-        if (teacherInfosBuilder_ == null) {
+        if (teacherInfoListBuilder_ == null) {
           if (((bitField0_ & 0x00000001) != 0)) {
-            teacherInfos_ = java.util.Collections.unmodifiableList(teacherInfos_);
+            teacherInfoList_ = java.util.Collections.unmodifiableList(teacherInfoList_);
             bitField0_ = (bitField0_ & ~0x00000001);
           }
-          result.teacherInfos_ = teacherInfos_;
+          result.teacherInfoList_ = teacherInfoList_;
         } else {
-          result.teacherInfos_ = teacherInfosBuilder_.build();
+          result.teacherInfoList_ = teacherInfoListBuilder_.build();
         }
         onBuilt();
         return result;
@@ -1469,30 +1469,30 @@ public final class LobbyInstitutionClassTeacherListResProto {
       }
 
       public Builder mergeFrom(com.classlink.websocket.api.lobby.domain.dto.proto.LobbyInstitutionClassTeacherListResProto.LobbyInstitutionClassTeacherListRes other) {
-        if (other == getDefaultInstance()) return this;
-        if (teacherInfosBuilder_ == null) {
-          if (!other.teacherInfos_.isEmpty()) {
-            if (teacherInfos_.isEmpty()) {
-              teacherInfos_ = other.teacherInfos_;
+        if (other == com.classlink.websocket.api.lobby.domain.dto.proto.LobbyInstitutionClassTeacherListResProto.LobbyInstitutionClassTeacherListRes.getDefaultInstance()) return this;
+        if (teacherInfoListBuilder_ == null) {
+          if (!other.teacherInfoList_.isEmpty()) {
+            if (teacherInfoList_.isEmpty()) {
+              teacherInfoList_ = other.teacherInfoList_;
               bitField0_ = (bitField0_ & ~0x00000001);
             } else {
-              ensureTeacherInfosIsMutable();
-              teacherInfos_.addAll(other.teacherInfos_);
+              ensureTeacherInfoListIsMutable();
+              teacherInfoList_.addAll(other.teacherInfoList_);
             }
             onChanged();
           }
         } else {
-          if (!other.teacherInfos_.isEmpty()) {
-            if (teacherInfosBuilder_.isEmpty()) {
-              teacherInfosBuilder_.dispose();
-              teacherInfosBuilder_ = null;
-              teacherInfos_ = other.teacherInfos_;
+          if (!other.teacherInfoList_.isEmpty()) {
+            if (teacherInfoListBuilder_.isEmpty()) {
+              teacherInfoListBuilder_.dispose();
+              teacherInfoListBuilder_ = null;
+              teacherInfoList_ = other.teacherInfoList_;
               bitField0_ = (bitField0_ & ~0x00000001);
-              teacherInfosBuilder_ = 
+              teacherInfoListBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                   getTeacherInfosFieldBuilder() : null;
+                   getTeacherInfoListFieldBuilder() : null;
             } else {
-              teacherInfosBuilder_.addAllMessages(other.teacherInfos_);
+              teacherInfoListBuilder_.addAllMessages(other.teacherInfoList_);
             }
           }
         }
@@ -1527,11 +1527,11 @@ public final class LobbyInstitutionClassTeacherListResProto {
                     input.readMessage(
                         com.classlink.websocket.api.lobby.domain.dto.proto.LobbyInstitutionClassTeacherListResProto.LobbyInstitutionClassTeacherListRes.TeacherInfo.parser(),
                         extensionRegistry);
-                if (teacherInfosBuilder_ == null) {
-                  ensureTeacherInfosIsMutable();
-                  teacherInfos_.add(m);
+                if (teacherInfoListBuilder_ == null) {
+                  ensureTeacherInfoListIsMutable();
+                  teacherInfoList_.add(m);
                 } else {
-                  teacherInfosBuilder_.addMessage(m);
+                  teacherInfoListBuilder_.addMessage(m);
                 }
                 break;
               } // case 10
@@ -1552,244 +1552,244 @@ public final class LobbyInstitutionClassTeacherListResProto {
       }
       private int bitField0_;
 
-      private java.util.List<com.classlink.websocket.api.lobby.domain.dto.proto.LobbyInstitutionClassTeacherListResProto.LobbyInstitutionClassTeacherListRes.TeacherInfo> teacherInfos_ =
+      private java.util.List<com.classlink.websocket.api.lobby.domain.dto.proto.LobbyInstitutionClassTeacherListResProto.LobbyInstitutionClassTeacherListRes.TeacherInfo> teacherInfoList_ =
         java.util.Collections.emptyList();
-      private void ensureTeacherInfosIsMutable() {
+      private void ensureTeacherInfoListIsMutable() {
         if (!((bitField0_ & 0x00000001) != 0)) {
-          teacherInfos_ = new java.util.ArrayList<com.classlink.websocket.api.lobby.domain.dto.proto.LobbyInstitutionClassTeacherListResProto.LobbyInstitutionClassTeacherListRes.TeacherInfo>(teacherInfos_);
+          teacherInfoList_ = new java.util.ArrayList<com.classlink.websocket.api.lobby.domain.dto.proto.LobbyInstitutionClassTeacherListResProto.LobbyInstitutionClassTeacherListRes.TeacherInfo>(teacherInfoList_);
           bitField0_ |= 0x00000001;
          }
       }
 
       private com.google.protobuf.RepeatedFieldBuilderV3<
-          com.classlink.websocket.api.lobby.domain.dto.proto.LobbyInstitutionClassTeacherListResProto.LobbyInstitutionClassTeacherListRes.TeacherInfo, com.classlink.websocket.api.lobby.domain.dto.proto.LobbyInstitutionClassTeacherListResProto.LobbyInstitutionClassTeacherListRes.TeacherInfo.Builder, com.classlink.websocket.api.lobby.domain.dto.proto.LobbyInstitutionClassTeacherListResProto.LobbyInstitutionClassTeacherListRes.TeacherInfoOrBuilder> teacherInfosBuilder_;
+          com.classlink.websocket.api.lobby.domain.dto.proto.LobbyInstitutionClassTeacherListResProto.LobbyInstitutionClassTeacherListRes.TeacherInfo, com.classlink.websocket.api.lobby.domain.dto.proto.LobbyInstitutionClassTeacherListResProto.LobbyInstitutionClassTeacherListRes.TeacherInfo.Builder, com.classlink.websocket.api.lobby.domain.dto.proto.LobbyInstitutionClassTeacherListResProto.LobbyInstitutionClassTeacherListRes.TeacherInfoOrBuilder> teacherInfoListBuilder_;
 
       /**
-       * <code>repeated .classlink.LobbyInstitutionClassTeacherListRes.TeacherInfo TeacherInfos = 1;</code>
+       * <code>repeated .Classlink.LobbyInstitutionClassTeacherListRes.TeacherInfo TeacherInfoList = 1;</code>
        */
-      public java.util.List<com.classlink.websocket.api.lobby.domain.dto.proto.LobbyInstitutionClassTeacherListResProto.LobbyInstitutionClassTeacherListRes.TeacherInfo> getTeacherInfosList() {
-        if (teacherInfosBuilder_ == null) {
-          return java.util.Collections.unmodifiableList(teacherInfos_);
+      public java.util.List<com.classlink.websocket.api.lobby.domain.dto.proto.LobbyInstitutionClassTeacherListResProto.LobbyInstitutionClassTeacherListRes.TeacherInfo> getTeacherInfoListList() {
+        if (teacherInfoListBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(teacherInfoList_);
         } else {
-          return teacherInfosBuilder_.getMessageList();
+          return teacherInfoListBuilder_.getMessageList();
         }
       }
       /**
-       * <code>repeated .classlink.LobbyInstitutionClassTeacherListRes.TeacherInfo TeacherInfos = 1;</code>
+       * <code>repeated .Classlink.LobbyInstitutionClassTeacherListRes.TeacherInfo TeacherInfoList = 1;</code>
        */
-      public int getTeacherInfosCount() {
-        if (teacherInfosBuilder_ == null) {
-          return teacherInfos_.size();
+      public int getTeacherInfoListCount() {
+        if (teacherInfoListBuilder_ == null) {
+          return teacherInfoList_.size();
         } else {
-          return teacherInfosBuilder_.getCount();
+          return teacherInfoListBuilder_.getCount();
         }
       }
       /**
-       * <code>repeated .classlink.LobbyInstitutionClassTeacherListRes.TeacherInfo TeacherInfos = 1;</code>
+       * <code>repeated .Classlink.LobbyInstitutionClassTeacherListRes.TeacherInfo TeacherInfoList = 1;</code>
        */
-      public com.classlink.websocket.api.lobby.domain.dto.proto.LobbyInstitutionClassTeacherListResProto.LobbyInstitutionClassTeacherListRes.TeacherInfo getTeacherInfos(int index) {
-        if (teacherInfosBuilder_ == null) {
-          return teacherInfos_.get(index);
+      public com.classlink.websocket.api.lobby.domain.dto.proto.LobbyInstitutionClassTeacherListResProto.LobbyInstitutionClassTeacherListRes.TeacherInfo getTeacherInfoList(int index) {
+        if (teacherInfoListBuilder_ == null) {
+          return teacherInfoList_.get(index);
         } else {
-          return teacherInfosBuilder_.getMessage(index);
+          return teacherInfoListBuilder_.getMessage(index);
         }
       }
       /**
-       * <code>repeated .classlink.LobbyInstitutionClassTeacherListRes.TeacherInfo TeacherInfos = 1;</code>
+       * <code>repeated .Classlink.LobbyInstitutionClassTeacherListRes.TeacherInfo TeacherInfoList = 1;</code>
        */
-      public Builder setTeacherInfos(
+      public Builder setTeacherInfoList(
           int index, com.classlink.websocket.api.lobby.domain.dto.proto.LobbyInstitutionClassTeacherListResProto.LobbyInstitutionClassTeacherListRes.TeacherInfo value) {
-        if (teacherInfosBuilder_ == null) {
+        if (teacherInfoListBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
           }
-          ensureTeacherInfosIsMutable();
-          teacherInfos_.set(index, value);
+          ensureTeacherInfoListIsMutable();
+          teacherInfoList_.set(index, value);
           onChanged();
         } else {
-          teacherInfosBuilder_.setMessage(index, value);
+          teacherInfoListBuilder_.setMessage(index, value);
         }
         return this;
       }
       /**
-       * <code>repeated .classlink.LobbyInstitutionClassTeacherListRes.TeacherInfo TeacherInfos = 1;</code>
+       * <code>repeated .Classlink.LobbyInstitutionClassTeacherListRes.TeacherInfo TeacherInfoList = 1;</code>
        */
-      public Builder setTeacherInfos(
+      public Builder setTeacherInfoList(
           int index, com.classlink.websocket.api.lobby.domain.dto.proto.LobbyInstitutionClassTeacherListResProto.LobbyInstitutionClassTeacherListRes.TeacherInfo.Builder builderForValue) {
-        if (teacherInfosBuilder_ == null) {
-          ensureTeacherInfosIsMutable();
-          teacherInfos_.set(index, builderForValue.build());
+        if (teacherInfoListBuilder_ == null) {
+          ensureTeacherInfoListIsMutable();
+          teacherInfoList_.set(index, builderForValue.build());
           onChanged();
         } else {
-          teacherInfosBuilder_.setMessage(index, builderForValue.build());
+          teacherInfoListBuilder_.setMessage(index, builderForValue.build());
         }
         return this;
       }
       /**
-       * <code>repeated .classlink.LobbyInstitutionClassTeacherListRes.TeacherInfo TeacherInfos = 1;</code>
+       * <code>repeated .Classlink.LobbyInstitutionClassTeacherListRes.TeacherInfo TeacherInfoList = 1;</code>
        */
-      public Builder addTeacherInfos(com.classlink.websocket.api.lobby.domain.dto.proto.LobbyInstitutionClassTeacherListResProto.LobbyInstitutionClassTeacherListRes.TeacherInfo value) {
-        if (teacherInfosBuilder_ == null) {
+      public Builder addTeacherInfoList(com.classlink.websocket.api.lobby.domain.dto.proto.LobbyInstitutionClassTeacherListResProto.LobbyInstitutionClassTeacherListRes.TeacherInfo value) {
+        if (teacherInfoListBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
           }
-          ensureTeacherInfosIsMutable();
-          teacherInfos_.add(value);
+          ensureTeacherInfoListIsMutable();
+          teacherInfoList_.add(value);
           onChanged();
         } else {
-          teacherInfosBuilder_.addMessage(value);
+          teacherInfoListBuilder_.addMessage(value);
         }
         return this;
       }
       /**
-       * <code>repeated .classlink.LobbyInstitutionClassTeacherListRes.TeacherInfo TeacherInfos = 1;</code>
+       * <code>repeated .Classlink.LobbyInstitutionClassTeacherListRes.TeacherInfo TeacherInfoList = 1;</code>
        */
-      public Builder addTeacherInfos(
+      public Builder addTeacherInfoList(
           int index, com.classlink.websocket.api.lobby.domain.dto.proto.LobbyInstitutionClassTeacherListResProto.LobbyInstitutionClassTeacherListRes.TeacherInfo value) {
-        if (teacherInfosBuilder_ == null) {
+        if (teacherInfoListBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
           }
-          ensureTeacherInfosIsMutable();
-          teacherInfos_.add(index, value);
+          ensureTeacherInfoListIsMutable();
+          teacherInfoList_.add(index, value);
           onChanged();
         } else {
-          teacherInfosBuilder_.addMessage(index, value);
+          teacherInfoListBuilder_.addMessage(index, value);
         }
         return this;
       }
       /**
-       * <code>repeated .classlink.LobbyInstitutionClassTeacherListRes.TeacherInfo TeacherInfos = 1;</code>
+       * <code>repeated .Classlink.LobbyInstitutionClassTeacherListRes.TeacherInfo TeacherInfoList = 1;</code>
        */
-      public Builder addTeacherInfos(
+      public Builder addTeacherInfoList(
           com.classlink.websocket.api.lobby.domain.dto.proto.LobbyInstitutionClassTeacherListResProto.LobbyInstitutionClassTeacherListRes.TeacherInfo.Builder builderForValue) {
-        if (teacherInfosBuilder_ == null) {
-          ensureTeacherInfosIsMutable();
-          teacherInfos_.add(builderForValue.build());
+        if (teacherInfoListBuilder_ == null) {
+          ensureTeacherInfoListIsMutable();
+          teacherInfoList_.add(builderForValue.build());
           onChanged();
         } else {
-          teacherInfosBuilder_.addMessage(builderForValue.build());
+          teacherInfoListBuilder_.addMessage(builderForValue.build());
         }
         return this;
       }
       /**
-       * <code>repeated .classlink.LobbyInstitutionClassTeacherListRes.TeacherInfo TeacherInfos = 1;</code>
+       * <code>repeated .Classlink.LobbyInstitutionClassTeacherListRes.TeacherInfo TeacherInfoList = 1;</code>
        */
-      public Builder addTeacherInfos(
+      public Builder addTeacherInfoList(
           int index, com.classlink.websocket.api.lobby.domain.dto.proto.LobbyInstitutionClassTeacherListResProto.LobbyInstitutionClassTeacherListRes.TeacherInfo.Builder builderForValue) {
-        if (teacherInfosBuilder_ == null) {
-          ensureTeacherInfosIsMutable();
-          teacherInfos_.add(index, builderForValue.build());
+        if (teacherInfoListBuilder_ == null) {
+          ensureTeacherInfoListIsMutable();
+          teacherInfoList_.add(index, builderForValue.build());
           onChanged();
         } else {
-          teacherInfosBuilder_.addMessage(index, builderForValue.build());
+          teacherInfoListBuilder_.addMessage(index, builderForValue.build());
         }
         return this;
       }
       /**
-       * <code>repeated .classlink.LobbyInstitutionClassTeacherListRes.TeacherInfo TeacherInfos = 1;</code>
+       * <code>repeated .Classlink.LobbyInstitutionClassTeacherListRes.TeacherInfo TeacherInfoList = 1;</code>
        */
-      public Builder addAllTeacherInfos(
+      public Builder addAllTeacherInfoList(
           java.lang.Iterable<? extends com.classlink.websocket.api.lobby.domain.dto.proto.LobbyInstitutionClassTeacherListResProto.LobbyInstitutionClassTeacherListRes.TeacherInfo> values) {
-        if (teacherInfosBuilder_ == null) {
-          ensureTeacherInfosIsMutable();
-          addAll(
-              values, teacherInfos_);
+        if (teacherInfoListBuilder_ == null) {
+          ensureTeacherInfoListIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, teacherInfoList_);
           onChanged();
         } else {
-          teacherInfosBuilder_.addAllMessages(values);
+          teacherInfoListBuilder_.addAllMessages(values);
         }
         return this;
       }
       /**
-       * <code>repeated .classlink.LobbyInstitutionClassTeacherListRes.TeacherInfo TeacherInfos = 1;</code>
+       * <code>repeated .Classlink.LobbyInstitutionClassTeacherListRes.TeacherInfo TeacherInfoList = 1;</code>
        */
-      public Builder clearTeacherInfos() {
-        if (teacherInfosBuilder_ == null) {
-          teacherInfos_ = java.util.Collections.emptyList();
+      public Builder clearTeacherInfoList() {
+        if (teacherInfoListBuilder_ == null) {
+          teacherInfoList_ = java.util.Collections.emptyList();
           bitField0_ = (bitField0_ & ~0x00000001);
           onChanged();
         } else {
-          teacherInfosBuilder_.clear();
+          teacherInfoListBuilder_.clear();
         }
         return this;
       }
       /**
-       * <code>repeated .classlink.LobbyInstitutionClassTeacherListRes.TeacherInfo TeacherInfos = 1;</code>
+       * <code>repeated .Classlink.LobbyInstitutionClassTeacherListRes.TeacherInfo TeacherInfoList = 1;</code>
        */
-      public Builder removeTeacherInfos(int index) {
-        if (teacherInfosBuilder_ == null) {
-          ensureTeacherInfosIsMutable();
-          teacherInfos_.remove(index);
+      public Builder removeTeacherInfoList(int index) {
+        if (teacherInfoListBuilder_ == null) {
+          ensureTeacherInfoListIsMutable();
+          teacherInfoList_.remove(index);
           onChanged();
         } else {
-          teacherInfosBuilder_.remove(index);
+          teacherInfoListBuilder_.remove(index);
         }
         return this;
       }
       /**
-       * <code>repeated .classlink.LobbyInstitutionClassTeacherListRes.TeacherInfo TeacherInfos = 1;</code>
+       * <code>repeated .Classlink.LobbyInstitutionClassTeacherListRes.TeacherInfo TeacherInfoList = 1;</code>
        */
-      public com.classlink.websocket.api.lobby.domain.dto.proto.LobbyInstitutionClassTeacherListResProto.LobbyInstitutionClassTeacherListRes.TeacherInfo.Builder getTeacherInfosBuilder(
+      public com.classlink.websocket.api.lobby.domain.dto.proto.LobbyInstitutionClassTeacherListResProto.LobbyInstitutionClassTeacherListRes.TeacherInfo.Builder getTeacherInfoListBuilder(
           int index) {
-        return getTeacherInfosFieldBuilder().getBuilder(index);
+        return getTeacherInfoListFieldBuilder().getBuilder(index);
       }
       /**
-       * <code>repeated .classlink.LobbyInstitutionClassTeacherListRes.TeacherInfo TeacherInfos = 1;</code>
+       * <code>repeated .Classlink.LobbyInstitutionClassTeacherListRes.TeacherInfo TeacherInfoList = 1;</code>
        */
-      public com.classlink.websocket.api.lobby.domain.dto.proto.LobbyInstitutionClassTeacherListResProto.LobbyInstitutionClassTeacherListRes.TeacherInfoOrBuilder getTeacherInfosOrBuilder(
+      public com.classlink.websocket.api.lobby.domain.dto.proto.LobbyInstitutionClassTeacherListResProto.LobbyInstitutionClassTeacherListRes.TeacherInfoOrBuilder getTeacherInfoListOrBuilder(
           int index) {
-        if (teacherInfosBuilder_ == null) {
-          return teacherInfos_.get(index);  } else {
-          return teacherInfosBuilder_.getMessageOrBuilder(index);
+        if (teacherInfoListBuilder_ == null) {
+          return teacherInfoList_.get(index);  } else {
+          return teacherInfoListBuilder_.getMessageOrBuilder(index);
         }
       }
       /**
-       * <code>repeated .classlink.LobbyInstitutionClassTeacherListRes.TeacherInfo TeacherInfos = 1;</code>
+       * <code>repeated .Classlink.LobbyInstitutionClassTeacherListRes.TeacherInfo TeacherInfoList = 1;</code>
        */
       public java.util.List<? extends com.classlink.websocket.api.lobby.domain.dto.proto.LobbyInstitutionClassTeacherListResProto.LobbyInstitutionClassTeacherListRes.TeacherInfoOrBuilder> 
-           getTeacherInfosOrBuilderList() {
-        if (teacherInfosBuilder_ != null) {
-          return teacherInfosBuilder_.getMessageOrBuilderList();
+           getTeacherInfoListOrBuilderList() {
+        if (teacherInfoListBuilder_ != null) {
+          return teacherInfoListBuilder_.getMessageOrBuilderList();
         } else {
-          return java.util.Collections.unmodifiableList(teacherInfos_);
+          return java.util.Collections.unmodifiableList(teacherInfoList_);
         }
       }
       /**
-       * <code>repeated .classlink.LobbyInstitutionClassTeacherListRes.TeacherInfo TeacherInfos = 1;</code>
+       * <code>repeated .Classlink.LobbyInstitutionClassTeacherListRes.TeacherInfo TeacherInfoList = 1;</code>
        */
-      public com.classlink.websocket.api.lobby.domain.dto.proto.LobbyInstitutionClassTeacherListResProto.LobbyInstitutionClassTeacherListRes.TeacherInfo.Builder addTeacherInfosBuilder() {
-        return getTeacherInfosFieldBuilder().addBuilder(
+      public com.classlink.websocket.api.lobby.domain.dto.proto.LobbyInstitutionClassTeacherListResProto.LobbyInstitutionClassTeacherListRes.TeacherInfo.Builder addTeacherInfoListBuilder() {
+        return getTeacherInfoListFieldBuilder().addBuilder(
             com.classlink.websocket.api.lobby.domain.dto.proto.LobbyInstitutionClassTeacherListResProto.LobbyInstitutionClassTeacherListRes.TeacherInfo.getDefaultInstance());
       }
       /**
-       * <code>repeated .classlink.LobbyInstitutionClassTeacherListRes.TeacherInfo TeacherInfos = 1;</code>
+       * <code>repeated .Classlink.LobbyInstitutionClassTeacherListRes.TeacherInfo TeacherInfoList = 1;</code>
        */
-      public com.classlink.websocket.api.lobby.domain.dto.proto.LobbyInstitutionClassTeacherListResProto.LobbyInstitutionClassTeacherListRes.TeacherInfo.Builder addTeacherInfosBuilder(
+      public com.classlink.websocket.api.lobby.domain.dto.proto.LobbyInstitutionClassTeacherListResProto.LobbyInstitutionClassTeacherListRes.TeacherInfo.Builder addTeacherInfoListBuilder(
           int index) {
-        return getTeacherInfosFieldBuilder().addBuilder(
+        return getTeacherInfoListFieldBuilder().addBuilder(
             index, com.classlink.websocket.api.lobby.domain.dto.proto.LobbyInstitutionClassTeacherListResProto.LobbyInstitutionClassTeacherListRes.TeacherInfo.getDefaultInstance());
       }
       /**
-       * <code>repeated .classlink.LobbyInstitutionClassTeacherListRes.TeacherInfo TeacherInfos = 1;</code>
+       * <code>repeated .Classlink.LobbyInstitutionClassTeacherListRes.TeacherInfo TeacherInfoList = 1;</code>
        */
       public java.util.List<com.classlink.websocket.api.lobby.domain.dto.proto.LobbyInstitutionClassTeacherListResProto.LobbyInstitutionClassTeacherListRes.TeacherInfo.Builder> 
-           getTeacherInfosBuilderList() {
-        return getTeacherInfosFieldBuilder().getBuilderList();
+           getTeacherInfoListBuilderList() {
+        return getTeacherInfoListFieldBuilder().getBuilderList();
       }
       private com.google.protobuf.RepeatedFieldBuilderV3<
           com.classlink.websocket.api.lobby.domain.dto.proto.LobbyInstitutionClassTeacherListResProto.LobbyInstitutionClassTeacherListRes.TeacherInfo, com.classlink.websocket.api.lobby.domain.dto.proto.LobbyInstitutionClassTeacherListResProto.LobbyInstitutionClassTeacherListRes.TeacherInfo.Builder, com.classlink.websocket.api.lobby.domain.dto.proto.LobbyInstitutionClassTeacherListResProto.LobbyInstitutionClassTeacherListRes.TeacherInfoOrBuilder> 
-          getTeacherInfosFieldBuilder() {
-        if (teacherInfosBuilder_ == null) {
-          teacherInfosBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+          getTeacherInfoListFieldBuilder() {
+        if (teacherInfoListBuilder_ == null) {
+          teacherInfoListBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               com.classlink.websocket.api.lobby.domain.dto.proto.LobbyInstitutionClassTeacherListResProto.LobbyInstitutionClassTeacherListRes.TeacherInfo, com.classlink.websocket.api.lobby.domain.dto.proto.LobbyInstitutionClassTeacherListResProto.LobbyInstitutionClassTeacherListRes.TeacherInfo.Builder, com.classlink.websocket.api.lobby.domain.dto.proto.LobbyInstitutionClassTeacherListResProto.LobbyInstitutionClassTeacherListRes.TeacherInfoOrBuilder>(
-                  teacherInfos_,
+                  teacherInfoList_,
                   ((bitField0_ & 0x00000001) != 0),
                   getParentForChildren(),
                   isClean());
-          teacherInfos_ = null;
+          teacherInfoList_ = null;
         }
-        return teacherInfosBuilder_;
+        return teacherInfoListBuilder_;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -1804,10 +1804,10 @@ public final class LobbyInstitutionClassTeacherListResProto {
       }
 
 
-      // @@protoc_insertion_point(builder_scope:classlink.LobbyInstitutionClassTeacherListRes)
+      // @@protoc_insertion_point(builder_scope:Classlink.LobbyInstitutionClassTeacherListRes)
     }
 
-    // @@protoc_insertion_point(class_scope:classlink.LobbyInstitutionClassTeacherListRes)
+    // @@protoc_insertion_point(class_scope:Classlink.LobbyInstitutionClassTeacherListRes)
     private static final com.classlink.websocket.api.lobby.domain.dto.proto.LobbyInstitutionClassTeacherListResProto.LobbyInstitutionClassTeacherListRes DEFAULT_INSTANCE;
     static {
       DEFAULT_INSTANCE = new com.classlink.websocket.api.lobby.domain.dto.proto.LobbyInstitutionClassTeacherListResProto.LobbyInstitutionClassTeacherListRes();
@@ -1856,15 +1856,15 @@ public final class LobbyInstitutionClassTeacherListResProto {
   }
 
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_classlink_LobbyInstitutionClassTeacherListRes_descriptor;
+    internal_static_Classlink_LobbyInstitutionClassTeacherListRes_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_classlink_LobbyInstitutionClassTeacherListRes_fieldAccessorTable;
+      internal_static_Classlink_LobbyInstitutionClassTeacherListRes_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_classlink_LobbyInstitutionClassTeacherListRes_TeacherInfo_descriptor;
+    internal_static_Classlink_LobbyInstitutionClassTeacherListRes_TeacherInfo_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_classlink_LobbyInstitutionClassTeacherListRes_TeacherInfo_fieldAccessorTable;
+      internal_static_Classlink_LobbyInstitutionClassTeacherListRes_TeacherInfo_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -1875,31 +1875,31 @@ public final class LobbyInstitutionClassTeacherListResProto {
   static {
     java.lang.String[] descriptorData = {
       "\n)LobbyInstitutionClassTeacherListRes.pr" +
-      "oto\022\tclasslink\"\346\001\n#LobbyInstitutionClass" +
-      "TeacherListRes\022P\n\014TeacherInfos\030\001 \003(\0132:.c" +
-      "lasslink.LobbyInstitutionClassTeacherLis" +
-      "tRes.TeacherInfo\032m\n\013TeacherInfo\022\016\n\006TchId" +
-      "x\030\001 \001(\005\022\025\n\rTeacherImgUrl\030\002 \001(\t\022\023\n\013Teache" +
-      "rName\030\003 \001(\t\022\021\n\tClassName\030\004 \001(\t\022\017\n\007InsNam" +
-      "e\030\005 \001(\tB^\n2com.classlink.websocket.api.l" +
-      "obby.domain.dto.protoB(LobbyInstitutionC" +
-      "lassTeacherListResProtob\006proto3"
+      "oto\022\tClasslink\"\351\001\n#LobbyInstitutionClass" +
+      "TeacherListRes\022S\n\017TeacherInfoList\030\001 \003(\0132" +
+      ":.Classlink.LobbyInstitutionClassTeacher" +
+      "ListRes.TeacherInfo\032m\n\013TeacherInfo\022\016\n\006Tc" +
+      "hIdx\030\001 \001(\005\022\025\n\rTeacherImgUrl\030\002 \001(\t\022\023\n\013Tea" +
+      "cherName\030\003 \001(\t\022\021\n\tClassName\030\004 \001(\t\022\017\n\007Ins" +
+      "Name\030\005 \001(\tB^\n2com.classlink.websocket.ap" +
+      "i.lobby.domain.dto.protoB(LobbyInstituti" +
+      "onClassTeacherListResProtob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
         });
-    internal_static_classlink_LobbyInstitutionClassTeacherListRes_descriptor =
+    internal_static_Classlink_LobbyInstitutionClassTeacherListRes_descriptor =
       getDescriptor().getMessageTypes().get(0);
-    internal_static_classlink_LobbyInstitutionClassTeacherListRes_fieldAccessorTable = new
+    internal_static_Classlink_LobbyInstitutionClassTeacherListRes_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_classlink_LobbyInstitutionClassTeacherListRes_descriptor,
-        new java.lang.String[] { "TeacherInfos", });
-    internal_static_classlink_LobbyInstitutionClassTeacherListRes_TeacherInfo_descriptor =
-      internal_static_classlink_LobbyInstitutionClassTeacherListRes_descriptor.getNestedTypes().get(0);
-    internal_static_classlink_LobbyInstitutionClassTeacherListRes_TeacherInfo_fieldAccessorTable = new
+        internal_static_Classlink_LobbyInstitutionClassTeacherListRes_descriptor,
+        new java.lang.String[] { "TeacherInfoList", });
+    internal_static_Classlink_LobbyInstitutionClassTeacherListRes_TeacherInfo_descriptor =
+      internal_static_Classlink_LobbyInstitutionClassTeacherListRes_descriptor.getNestedTypes().get(0);
+    internal_static_Classlink_LobbyInstitutionClassTeacherListRes_TeacherInfo_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_classlink_LobbyInstitutionClassTeacherListRes_TeacherInfo_descriptor,
+        internal_static_Classlink_LobbyInstitutionClassTeacherListRes_TeacherInfo_descriptor,
         new java.lang.String[] { "TchIdx", "TeacherImgUrl", "TeacherName", "ClassName", "InsName", });
   }
 

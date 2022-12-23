@@ -1,0 +1,9 @@
+syntax = "proto3"; 
+package Classlink; 
+option java_package = "com.classlink.websocket.api.lobby.domain.param.proto"; 
+option java_outer_classname = "LobbyInstitutionBoardNoteBoxReqProto"; 
+
+message LobbyInstitutionBoardNoteBoxReq{
+string InsCode = 1; //조회방식 미정
+string TarIdentityType = 2;//조회방식 미정
+}

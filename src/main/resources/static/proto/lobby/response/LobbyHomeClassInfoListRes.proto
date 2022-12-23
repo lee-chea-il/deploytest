@@ -1,0 +1,16 @@
+syntax = "proto3"; 
+package Classlink;  
+option java_package = "com.classlink.websocket.api.lobby.domain.dto.proto"; 
+option java_outer_classname = "LobbyHomeClassInfoListResProto"; 
+
+message LobbyHomeClassInfoListRes{
+message ClassInfo{
+ int32 LecBidx = 1;
+ string LecTitle = 2;
+ string TeacherName = 3;
+ string LecTimeStime = 4;
+ string LecTimeEtime = 5;
+}
+
+repeated ClassInfo ClassInfoList = 1;
+}

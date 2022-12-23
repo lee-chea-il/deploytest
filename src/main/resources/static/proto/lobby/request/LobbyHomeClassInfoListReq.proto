@@ -1,0 +1,11 @@
+syntax = "proto3"; 
+package Classlink; 
+option java_package = "com.classlink.websocket.api.lobby.domain.param.proto"; 
+option java_outer_classname = "LobbyHomeClassInfoListReqProto"; 
+
+message LobbyHomeClassInfoListReq{
+string InsCode = 1;
+string IdentityType = 2;
+string StartDate = 3;
+string EndDate = 4;
+}

@@ -15,39 +15,39 @@ public final class LobbyHomeFranchiseInstitutionListResProto {
         (com.google.protobuf.ExtensionRegistryLite) registry);
   }
   public interface LobbyHomeFranchiseInstitutionListResOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:classlink.LobbyHomeFranchiseInstitutionListRes)
+      // @@protoc_insertion_point(interface_extends:Classlink.LobbyHomeFranchiseInstitutionListRes)
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>repeated .classlink.LobbyHomeFranchiseInstitutionListRes.FranchiseInstitution FranchiseInstitutions = 1;</code>
+     * <code>repeated .Classlink.LobbyHomeFranchiseInstitutionListRes.FranchiseInstitution FranchiseInstitutionList = 1;</code>
      */
     java.util.List<com.classlink.websocket.api.lobby.domain.dto.proto.LobbyHomeFranchiseInstitutionListResProto.LobbyHomeFranchiseInstitutionListRes.FranchiseInstitution> 
-        getFranchiseInstitutionsList();
+        getFranchiseInstitutionListList();
     /**
-     * <code>repeated .classlink.LobbyHomeFranchiseInstitutionListRes.FranchiseInstitution FranchiseInstitutions = 1;</code>
+     * <code>repeated .Classlink.LobbyHomeFranchiseInstitutionListRes.FranchiseInstitution FranchiseInstitutionList = 1;</code>
      */
-    com.classlink.websocket.api.lobby.domain.dto.proto.LobbyHomeFranchiseInstitutionListResProto.LobbyHomeFranchiseInstitutionListRes.FranchiseInstitution getFranchiseInstitutions(int index);
+    com.classlink.websocket.api.lobby.domain.dto.proto.LobbyHomeFranchiseInstitutionListResProto.LobbyHomeFranchiseInstitutionListRes.FranchiseInstitution getFranchiseInstitutionList(int index);
     /**
-     * <code>repeated .classlink.LobbyHomeFranchiseInstitutionListRes.FranchiseInstitution FranchiseInstitutions = 1;</code>
+     * <code>repeated .Classlink.LobbyHomeFranchiseInstitutionListRes.FranchiseInstitution FranchiseInstitutionList = 1;</code>
      */
-    int getFranchiseInstitutionsCount();
+    int getFranchiseInstitutionListCount();
     /**
-     * <code>repeated .classlink.LobbyHomeFranchiseInstitutionListRes.FranchiseInstitution FranchiseInstitutions = 1;</code>
+     * <code>repeated .Classlink.LobbyHomeFranchiseInstitutionListRes.FranchiseInstitution FranchiseInstitutionList = 1;</code>
      */
     java.util.List<? extends com.classlink.websocket.api.lobby.domain.dto.proto.LobbyHomeFranchiseInstitutionListResProto.LobbyHomeFranchiseInstitutionListRes.FranchiseInstitutionOrBuilder> 
-        getFranchiseInstitutionsOrBuilderList();
+        getFranchiseInstitutionListOrBuilderList();
     /**
-     * <code>repeated .classlink.LobbyHomeFranchiseInstitutionListRes.FranchiseInstitution FranchiseInstitutions = 1;</code>
+     * <code>repeated .Classlink.LobbyHomeFranchiseInstitutionListRes.FranchiseInstitution FranchiseInstitutionList = 1;</code>
      */
-    com.classlink.websocket.api.lobby.domain.dto.proto.LobbyHomeFranchiseInstitutionListResProto.LobbyHomeFranchiseInstitutionListRes.FranchiseInstitutionOrBuilder getFranchiseInstitutionsOrBuilder(
+    com.classlink.websocket.api.lobby.domain.dto.proto.LobbyHomeFranchiseInstitutionListResProto.LobbyHomeFranchiseInstitutionListRes.FranchiseInstitutionOrBuilder getFranchiseInstitutionListOrBuilder(
         int index);
   }
   /**
-   * Protobuf type {@code classlink.LobbyHomeFranchiseInstitutionListRes}
+   * Protobuf type {@code Classlink.LobbyHomeFranchiseInstitutionListRes}
    */
   public static final class LobbyHomeFranchiseInstitutionListRes extends
       com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:classlink.LobbyHomeFranchiseInstitutionListRes)
+      // @@protoc_insertion_point(message_implements:Classlink.LobbyHomeFranchiseInstitutionListRes)
       LobbyHomeFranchiseInstitutionListResOrBuilder {
   private static final long serialVersionUID = 0L;
     // Use LobbyHomeFranchiseInstitutionListRes.newBuilder() to construct.
@@ -55,7 +55,7 @@ public final class LobbyHomeFranchiseInstitutionListResProto {
       super(builder);
     }
     private LobbyHomeFranchiseInstitutionListRes() {
-      franchiseInstitutions_ = java.util.Collections.emptyList();
+      franchiseInstitutionList_ = java.util.Collections.emptyList();
     }
 
     @java.lang.Override
@@ -72,19 +72,19 @@ public final class LobbyHomeFranchiseInstitutionListResProto {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return internal_static_classlink_LobbyHomeFranchiseInstitutionListRes_descriptor;
+      return com.classlink.websocket.api.lobby.domain.dto.proto.LobbyHomeFranchiseInstitutionListResProto.internal_static_Classlink_LobbyHomeFranchiseInstitutionListRes_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return internal_static_classlink_LobbyHomeFranchiseInstitutionListRes_fieldAccessorTable
+      return com.classlink.websocket.api.lobby.domain.dto.proto.LobbyHomeFranchiseInstitutionListResProto.internal_static_Classlink_LobbyHomeFranchiseInstitutionListRes_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               com.classlink.websocket.api.lobby.domain.dto.proto.LobbyHomeFranchiseInstitutionListResProto.LobbyHomeFranchiseInstitutionListRes.class, com.classlink.websocket.api.lobby.domain.dto.proto.LobbyHomeFranchiseInstitutionListResProto.LobbyHomeFranchiseInstitutionListRes.Builder.class);
     }
 
     public interface FranchiseInstitutionOrBuilder extends
-        // @@protoc_insertion_point(interface_extends:classlink.LobbyHomeFranchiseInstitutionListRes.FranchiseInstitution)
+        // @@protoc_insertion_point(interface_extends:Classlink.LobbyHomeFranchiseInstitutionListRes.FranchiseInstitution)
         com.google.protobuf.MessageOrBuilder {
 
       /**
@@ -166,11 +166,11 @@ public final class LobbyHomeFranchiseInstitutionListResProto {
           getLinkUrlBytes();
     }
     /**
-     * Protobuf type {@code classlink.LobbyHomeFranchiseInstitutionListRes.FranchiseInstitution}
+     * Protobuf type {@code Classlink.LobbyHomeFranchiseInstitutionListRes.FranchiseInstitution}
      */
     public static final class FranchiseInstitution extends
         com.google.protobuf.GeneratedMessageV3 implements
-        // @@protoc_insertion_point(message_implements:classlink.LobbyHomeFranchiseInstitutionListRes.FranchiseInstitution)
+        // @@protoc_insertion_point(message_implements:Classlink.LobbyHomeFranchiseInstitutionListRes.FranchiseInstitution)
         FranchiseInstitutionOrBuilder {
     private static final long serialVersionUID = 0L;
       // Use FranchiseInstitution.newBuilder() to construct.
@@ -199,13 +199,13 @@ public final class LobbyHomeFranchiseInstitutionListResProto {
       }
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return internal_static_classlink_LobbyHomeFranchiseInstitutionListRes_FranchiseInstitution_descriptor;
+        return com.classlink.websocket.api.lobby.domain.dto.proto.LobbyHomeFranchiseInstitutionListResProto.internal_static_Classlink_LobbyHomeFranchiseInstitutionListRes_FranchiseInstitution_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return internal_static_classlink_LobbyHomeFranchiseInstitutionListRes_FranchiseInstitution_fieldAccessorTable
+        return com.classlink.websocket.api.lobby.domain.dto.proto.LobbyHomeFranchiseInstitutionListResProto.internal_static_Classlink_LobbyHomeFranchiseInstitutionListRes_FranchiseInstitution_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
                 com.classlink.websocket.api.lobby.domain.dto.proto.LobbyHomeFranchiseInstitutionListResProto.LobbyHomeFranchiseInstitutionListRes.FranchiseInstitution.class, com.classlink.websocket.api.lobby.domain.dto.proto.LobbyHomeFranchiseInstitutionListResProto.LobbyHomeFranchiseInstitutionListRes.FranchiseInstitution.Builder.class);
       }
@@ -662,21 +662,21 @@ public final class LobbyHomeFranchiseInstitutionListResProto {
         return builder;
       }
       /**
-       * Protobuf type {@code classlink.LobbyHomeFranchiseInstitutionListRes.FranchiseInstitution}
+       * Protobuf type {@code Classlink.LobbyHomeFranchiseInstitutionListRes.FranchiseInstitution}
        */
       public static final class Builder extends
           com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-          // @@protoc_insertion_point(builder_implements:classlink.LobbyHomeFranchiseInstitutionListRes.FranchiseInstitution)
+          // @@protoc_insertion_point(builder_implements:Classlink.LobbyHomeFranchiseInstitutionListRes.FranchiseInstitution)
           com.classlink.websocket.api.lobby.domain.dto.proto.LobbyHomeFranchiseInstitutionListResProto.LobbyHomeFranchiseInstitutionListRes.FranchiseInstitutionOrBuilder {
         public static final com.google.protobuf.Descriptors.Descriptor
             getDescriptor() {
-          return internal_static_classlink_LobbyHomeFranchiseInstitutionListRes_FranchiseInstitution_descriptor;
+          return com.classlink.websocket.api.lobby.domain.dto.proto.LobbyHomeFranchiseInstitutionListResProto.internal_static_Classlink_LobbyHomeFranchiseInstitutionListRes_FranchiseInstitution_descriptor;
         }
 
         @java.lang.Override
         protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
             internalGetFieldAccessorTable() {
-          return internal_static_classlink_LobbyHomeFranchiseInstitutionListRes_FranchiseInstitution_fieldAccessorTable
+          return com.classlink.websocket.api.lobby.domain.dto.proto.LobbyHomeFranchiseInstitutionListResProto.internal_static_Classlink_LobbyHomeFranchiseInstitutionListRes_FranchiseInstitution_fieldAccessorTable
               .ensureFieldAccessorsInitialized(
                   com.classlink.websocket.api.lobby.domain.dto.proto.LobbyHomeFranchiseInstitutionListResProto.LobbyHomeFranchiseInstitutionListRes.FranchiseInstitution.class, com.classlink.websocket.api.lobby.domain.dto.proto.LobbyHomeFranchiseInstitutionListResProto.LobbyHomeFranchiseInstitutionListRes.FranchiseInstitution.Builder.class);
         }
@@ -716,12 +716,12 @@ public final class LobbyHomeFranchiseInstitutionListResProto {
         @java.lang.Override
         public com.google.protobuf.Descriptors.Descriptor
             getDescriptorForType() {
-          return internal_static_classlink_LobbyHomeFranchiseInstitutionListRes_FranchiseInstitution_descriptor;
+          return com.classlink.websocket.api.lobby.domain.dto.proto.LobbyHomeFranchiseInstitutionListResProto.internal_static_Classlink_LobbyHomeFranchiseInstitutionListRes_FranchiseInstitution_descriptor;
         }
 
         @java.lang.Override
         public com.classlink.websocket.api.lobby.domain.dto.proto.LobbyHomeFranchiseInstitutionListResProto.LobbyHomeFranchiseInstitutionListRes.FranchiseInstitution getDefaultInstanceForType() {
-          return getDefaultInstance();
+          return com.classlink.websocket.api.lobby.domain.dto.proto.LobbyHomeFranchiseInstitutionListResProto.LobbyHomeFranchiseInstitutionListRes.FranchiseInstitution.getDefaultInstance();
         }
 
         @java.lang.Override
@@ -791,7 +791,7 @@ public final class LobbyHomeFranchiseInstitutionListResProto {
         }
 
         public Builder mergeFrom(com.classlink.websocket.api.lobby.domain.dto.proto.LobbyHomeFranchiseInstitutionListResProto.LobbyHomeFranchiseInstitutionListRes.FranchiseInstitution other) {
-          if (other == getDefaultInstance()) return this;
+          if (other == com.classlink.websocket.api.lobby.domain.dto.proto.LobbyHomeFranchiseInstitutionListResProto.LobbyHomeFranchiseInstitutionListRes.FranchiseInstitution.getDefaultInstance()) return this;
           if (!other.getInsCode().isEmpty()) {
             insCode_ = other.insCode_;
             onChanged();
@@ -1388,10 +1388,10 @@ public final class LobbyHomeFranchiseInstitutionListResProto {
         }
 
 
-        // @@protoc_insertion_point(builder_scope:classlink.LobbyHomeFranchiseInstitutionListRes.FranchiseInstitution)
+        // @@protoc_insertion_point(builder_scope:Classlink.LobbyHomeFranchiseInstitutionListRes.FranchiseInstitution)
       }
 
-      // @@protoc_insertion_point(class_scope:classlink.LobbyHomeFranchiseInstitutionListRes.FranchiseInstitution)
+      // @@protoc_insertion_point(class_scope:Classlink.LobbyHomeFranchiseInstitutionListRes.FranchiseInstitution)
       private static final com.classlink.websocket.api.lobby.domain.dto.proto.LobbyHomeFranchiseInstitutionListResProto.LobbyHomeFranchiseInstitutionListRes.FranchiseInstitution DEFAULT_INSTANCE;
       static {
         DEFAULT_INSTANCE = new com.classlink.websocket.api.lobby.domain.dto.proto.LobbyHomeFranchiseInstitutionListResProto.LobbyHomeFranchiseInstitutionListRes.FranchiseInstitution();
@@ -1439,44 +1439,44 @@ public final class LobbyHomeFranchiseInstitutionListResProto {
 
     }
 
-    public static final int FRANCHISEINSTITUTIONS_FIELD_NUMBER = 1;
-    private java.util.List<com.classlink.websocket.api.lobby.domain.dto.proto.LobbyHomeFranchiseInstitutionListResProto.LobbyHomeFranchiseInstitutionListRes.FranchiseInstitution> franchiseInstitutions_;
+    public static final int FRANCHISEINSTITUTIONLIST_FIELD_NUMBER = 1;
+    private java.util.List<com.classlink.websocket.api.lobby.domain.dto.proto.LobbyHomeFranchiseInstitutionListResProto.LobbyHomeFranchiseInstitutionListRes.FranchiseInstitution> franchiseInstitutionList_;
     /**
-     * <code>repeated .classlink.LobbyHomeFranchiseInstitutionListRes.FranchiseInstitution FranchiseInstitutions = 1;</code>
+     * <code>repeated .Classlink.LobbyHomeFranchiseInstitutionListRes.FranchiseInstitution FranchiseInstitutionList = 1;</code>
      */
     @java.lang.Override
-    public java.util.List<com.classlink.websocket.api.lobby.domain.dto.proto.LobbyHomeFranchiseInstitutionListResProto.LobbyHomeFranchiseInstitutionListRes.FranchiseInstitution> getFranchiseInstitutionsList() {
-      return franchiseInstitutions_;
+    public java.util.List<com.classlink.websocket.api.lobby.domain.dto.proto.LobbyHomeFranchiseInstitutionListResProto.LobbyHomeFranchiseInstitutionListRes.FranchiseInstitution> getFranchiseInstitutionListList() {
+      return franchiseInstitutionList_;
     }
     /**
-     * <code>repeated .classlink.LobbyHomeFranchiseInstitutionListRes.FranchiseInstitution FranchiseInstitutions = 1;</code>
+     * <code>repeated .Classlink.LobbyHomeFranchiseInstitutionListRes.FranchiseInstitution FranchiseInstitutionList = 1;</code>
      */
     @java.lang.Override
     public java.util.List<? extends com.classlink.websocket.api.lobby.domain.dto.proto.LobbyHomeFranchiseInstitutionListResProto.LobbyHomeFranchiseInstitutionListRes.FranchiseInstitutionOrBuilder> 
-        getFranchiseInstitutionsOrBuilderList() {
-      return franchiseInstitutions_;
+        getFranchiseInstitutionListOrBuilderList() {
+      return franchiseInstitutionList_;
     }
     /**
-     * <code>repeated .classlink.LobbyHomeFranchiseInstitutionListRes.FranchiseInstitution FranchiseInstitutions = 1;</code>
+     * <code>repeated .Classlink.LobbyHomeFranchiseInstitutionListRes.FranchiseInstitution FranchiseInstitutionList = 1;</code>
      */
     @java.lang.Override
-    public int getFranchiseInstitutionsCount() {
-      return franchiseInstitutions_.size();
+    public int getFranchiseInstitutionListCount() {
+      return franchiseInstitutionList_.size();
     }
     /**
-     * <code>repeated .classlink.LobbyHomeFranchiseInstitutionListRes.FranchiseInstitution FranchiseInstitutions = 1;</code>
+     * <code>repeated .Classlink.LobbyHomeFranchiseInstitutionListRes.FranchiseInstitution FranchiseInstitutionList = 1;</code>
      */
     @java.lang.Override
-    public com.classlink.websocket.api.lobby.domain.dto.proto.LobbyHomeFranchiseInstitutionListResProto.LobbyHomeFranchiseInstitutionListRes.FranchiseInstitution getFranchiseInstitutions(int index) {
-      return franchiseInstitutions_.get(index);
+    public com.classlink.websocket.api.lobby.domain.dto.proto.LobbyHomeFranchiseInstitutionListResProto.LobbyHomeFranchiseInstitutionListRes.FranchiseInstitution getFranchiseInstitutionList(int index) {
+      return franchiseInstitutionList_.get(index);
     }
     /**
-     * <code>repeated .classlink.LobbyHomeFranchiseInstitutionListRes.FranchiseInstitution FranchiseInstitutions = 1;</code>
+     * <code>repeated .Classlink.LobbyHomeFranchiseInstitutionListRes.FranchiseInstitution FranchiseInstitutionList = 1;</code>
      */
     @java.lang.Override
-    public com.classlink.websocket.api.lobby.domain.dto.proto.LobbyHomeFranchiseInstitutionListResProto.LobbyHomeFranchiseInstitutionListRes.FranchiseInstitutionOrBuilder getFranchiseInstitutionsOrBuilder(
+    public com.classlink.websocket.api.lobby.domain.dto.proto.LobbyHomeFranchiseInstitutionListResProto.LobbyHomeFranchiseInstitutionListRes.FranchiseInstitutionOrBuilder getFranchiseInstitutionListOrBuilder(
         int index) {
-      return franchiseInstitutions_.get(index);
+      return franchiseInstitutionList_.get(index);
     }
 
     private byte memoizedIsInitialized = -1;
@@ -1493,8 +1493,8 @@ public final class LobbyHomeFranchiseInstitutionListResProto {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      for (int i = 0; i < franchiseInstitutions_.size(); i++) {
-        output.writeMessage(1, franchiseInstitutions_.get(i));
+      for (int i = 0; i < franchiseInstitutionList_.size(); i++) {
+        output.writeMessage(1, franchiseInstitutionList_.get(i));
       }
       getUnknownFields().writeTo(output);
     }
@@ -1505,9 +1505,9 @@ public final class LobbyHomeFranchiseInstitutionListResProto {
       if (size != -1) return size;
 
       size = 0;
-      for (int i = 0; i < franchiseInstitutions_.size(); i++) {
+      for (int i = 0; i < franchiseInstitutionList_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(1, franchiseInstitutions_.get(i));
+          .computeMessageSize(1, franchiseInstitutionList_.get(i));
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -1524,8 +1524,8 @@ public final class LobbyHomeFranchiseInstitutionListResProto {
       }
       com.classlink.websocket.api.lobby.domain.dto.proto.LobbyHomeFranchiseInstitutionListResProto.LobbyHomeFranchiseInstitutionListRes other = (com.classlink.websocket.api.lobby.domain.dto.proto.LobbyHomeFranchiseInstitutionListResProto.LobbyHomeFranchiseInstitutionListRes) obj;
 
-      if (!getFranchiseInstitutionsList()
-          .equals(other.getFranchiseInstitutionsList())) return false;
+      if (!getFranchiseInstitutionListList()
+          .equals(other.getFranchiseInstitutionListList())) return false;
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -1537,9 +1537,9 @@ public final class LobbyHomeFranchiseInstitutionListResProto {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      if (getFranchiseInstitutionsCount() > 0) {
-        hash = (37 * hash) + FRANCHISEINSTITUTIONS_FIELD_NUMBER;
-        hash = (53 * hash) + getFranchiseInstitutionsList().hashCode();
+      if (getFranchiseInstitutionListCount() > 0) {
+        hash = (37 * hash) + FRANCHISEINSTITUTIONLIST_FIELD_NUMBER;
+        hash = (53 * hash) + getFranchiseInstitutionListList().hashCode();
       }
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
@@ -1637,21 +1637,21 @@ public final class LobbyHomeFranchiseInstitutionListResProto {
       return builder;
     }
     /**
-     * Protobuf type {@code classlink.LobbyHomeFranchiseInstitutionListRes}
+     * Protobuf type {@code Classlink.LobbyHomeFranchiseInstitutionListRes}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:classlink.LobbyHomeFranchiseInstitutionListRes)
+        // @@protoc_insertion_point(builder_implements:Classlink.LobbyHomeFranchiseInstitutionListRes)
         com.classlink.websocket.api.lobby.domain.dto.proto.LobbyHomeFranchiseInstitutionListResProto.LobbyHomeFranchiseInstitutionListResOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return internal_static_classlink_LobbyHomeFranchiseInstitutionListRes_descriptor;
+        return com.classlink.websocket.api.lobby.domain.dto.proto.LobbyHomeFranchiseInstitutionListResProto.internal_static_Classlink_LobbyHomeFranchiseInstitutionListRes_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return internal_static_classlink_LobbyHomeFranchiseInstitutionListRes_fieldAccessorTable
+        return com.classlink.websocket.api.lobby.domain.dto.proto.LobbyHomeFranchiseInstitutionListResProto.internal_static_Classlink_LobbyHomeFranchiseInstitutionListRes_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
                 com.classlink.websocket.api.lobby.domain.dto.proto.LobbyHomeFranchiseInstitutionListResProto.LobbyHomeFranchiseInstitutionListRes.class, com.classlink.websocket.api.lobby.domain.dto.proto.LobbyHomeFranchiseInstitutionListResProto.LobbyHomeFranchiseInstitutionListRes.Builder.class);
       }
@@ -1669,11 +1669,11 @@ public final class LobbyHomeFranchiseInstitutionListResProto {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        if (franchiseInstitutionsBuilder_ == null) {
-          franchiseInstitutions_ = java.util.Collections.emptyList();
+        if (franchiseInstitutionListBuilder_ == null) {
+          franchiseInstitutionList_ = java.util.Collections.emptyList();
         } else {
-          franchiseInstitutions_ = null;
-          franchiseInstitutionsBuilder_.clear();
+          franchiseInstitutionList_ = null;
+          franchiseInstitutionListBuilder_.clear();
         }
         bitField0_ = (bitField0_ & ~0x00000001);
         return this;
@@ -1682,12 +1682,12 @@ public final class LobbyHomeFranchiseInstitutionListResProto {
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return internal_static_classlink_LobbyHomeFranchiseInstitutionListRes_descriptor;
+        return com.classlink.websocket.api.lobby.domain.dto.proto.LobbyHomeFranchiseInstitutionListResProto.internal_static_Classlink_LobbyHomeFranchiseInstitutionListRes_descriptor;
       }
 
       @java.lang.Override
       public com.classlink.websocket.api.lobby.domain.dto.proto.LobbyHomeFranchiseInstitutionListResProto.LobbyHomeFranchiseInstitutionListRes getDefaultInstanceForType() {
-        return getDefaultInstance();
+        return com.classlink.websocket.api.lobby.domain.dto.proto.LobbyHomeFranchiseInstitutionListResProto.LobbyHomeFranchiseInstitutionListRes.getDefaultInstance();
       }
 
       @java.lang.Override
@@ -1703,14 +1703,14 @@ public final class LobbyHomeFranchiseInstitutionListResProto {
       public com.classlink.websocket.api.lobby.domain.dto.proto.LobbyHomeFranchiseInstitutionListResProto.LobbyHomeFranchiseInstitutionListRes buildPartial() {
         com.classlink.websocket.api.lobby.domain.dto.proto.LobbyHomeFranchiseInstitutionListResProto.LobbyHomeFranchiseInstitutionListRes result = new com.classlink.websocket.api.lobby.domain.dto.proto.LobbyHomeFranchiseInstitutionListResProto.LobbyHomeFranchiseInstitutionListRes(this);
         int from_bitField0_ = bitField0_;
-        if (franchiseInstitutionsBuilder_ == null) {
+        if (franchiseInstitutionListBuilder_ == null) {
           if (((bitField0_ & 0x00000001) != 0)) {
-            franchiseInstitutions_ = java.util.Collections.unmodifiableList(franchiseInstitutions_);
+            franchiseInstitutionList_ = java.util.Collections.unmodifiableList(franchiseInstitutionList_);
             bitField0_ = (bitField0_ & ~0x00000001);
           }
-          result.franchiseInstitutions_ = franchiseInstitutions_;
+          result.franchiseInstitutionList_ = franchiseInstitutionList_;
         } else {
-          result.franchiseInstitutions_ = franchiseInstitutionsBuilder_.build();
+          result.franchiseInstitutionList_ = franchiseInstitutionListBuilder_.build();
         }
         onBuilt();
         return result;
@@ -1759,30 +1759,30 @@ public final class LobbyHomeFranchiseInstitutionListResProto {
       }
 
       public Builder mergeFrom(com.classlink.websocket.api.lobby.domain.dto.proto.LobbyHomeFranchiseInstitutionListResProto.LobbyHomeFranchiseInstitutionListRes other) {
-        if (other == getDefaultInstance()) return this;
-        if (franchiseInstitutionsBuilder_ == null) {
-          if (!other.franchiseInstitutions_.isEmpty()) {
-            if (franchiseInstitutions_.isEmpty()) {
-              franchiseInstitutions_ = other.franchiseInstitutions_;
+        if (other == com.classlink.websocket.api.lobby.domain.dto.proto.LobbyHomeFranchiseInstitutionListResProto.LobbyHomeFranchiseInstitutionListRes.getDefaultInstance()) return this;
+        if (franchiseInstitutionListBuilder_ == null) {
+          if (!other.franchiseInstitutionList_.isEmpty()) {
+            if (franchiseInstitutionList_.isEmpty()) {
+              franchiseInstitutionList_ = other.franchiseInstitutionList_;
               bitField0_ = (bitField0_ & ~0x00000001);
             } else {
-              ensureFranchiseInstitutionsIsMutable();
-              franchiseInstitutions_.addAll(other.franchiseInstitutions_);
+              ensureFranchiseInstitutionListIsMutable();
+              franchiseInstitutionList_.addAll(other.franchiseInstitutionList_);
             }
             onChanged();
           }
         } else {
-          if (!other.franchiseInstitutions_.isEmpty()) {
-            if (franchiseInstitutionsBuilder_.isEmpty()) {
-              franchiseInstitutionsBuilder_.dispose();
-              franchiseInstitutionsBuilder_ = null;
-              franchiseInstitutions_ = other.franchiseInstitutions_;
+          if (!other.franchiseInstitutionList_.isEmpty()) {
+            if (franchiseInstitutionListBuilder_.isEmpty()) {
+              franchiseInstitutionListBuilder_.dispose();
+              franchiseInstitutionListBuilder_ = null;
+              franchiseInstitutionList_ = other.franchiseInstitutionList_;
               bitField0_ = (bitField0_ & ~0x00000001);
-              franchiseInstitutionsBuilder_ = 
+              franchiseInstitutionListBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                   getFranchiseInstitutionsFieldBuilder() : null;
+                   getFranchiseInstitutionListFieldBuilder() : null;
             } else {
-              franchiseInstitutionsBuilder_.addAllMessages(other.franchiseInstitutions_);
+              franchiseInstitutionListBuilder_.addAllMessages(other.franchiseInstitutionList_);
             }
           }
         }
@@ -1817,11 +1817,11 @@ public final class LobbyHomeFranchiseInstitutionListResProto {
                     input.readMessage(
                         com.classlink.websocket.api.lobby.domain.dto.proto.LobbyHomeFranchiseInstitutionListResProto.LobbyHomeFranchiseInstitutionListRes.FranchiseInstitution.parser(),
                         extensionRegistry);
-                if (franchiseInstitutionsBuilder_ == null) {
-                  ensureFranchiseInstitutionsIsMutable();
-                  franchiseInstitutions_.add(m);
+                if (franchiseInstitutionListBuilder_ == null) {
+                  ensureFranchiseInstitutionListIsMutable();
+                  franchiseInstitutionList_.add(m);
                 } else {
-                  franchiseInstitutionsBuilder_.addMessage(m);
+                  franchiseInstitutionListBuilder_.addMessage(m);
                 }
                 break;
               } // case 10
@@ -1842,244 +1842,244 @@ public final class LobbyHomeFranchiseInstitutionListResProto {
       }
       private int bitField0_;
 
-      private java.util.List<com.classlink.websocket.api.lobby.domain.dto.proto.LobbyHomeFranchiseInstitutionListResProto.LobbyHomeFranchiseInstitutionListRes.FranchiseInstitution> franchiseInstitutions_ =
+      private java.util.List<com.classlink.websocket.api.lobby.domain.dto.proto.LobbyHomeFranchiseInstitutionListResProto.LobbyHomeFranchiseInstitutionListRes.FranchiseInstitution> franchiseInstitutionList_ =
         java.util.Collections.emptyList();
-      private void ensureFranchiseInstitutionsIsMutable() {
+      private void ensureFranchiseInstitutionListIsMutable() {
         if (!((bitField0_ & 0x00000001) != 0)) {
-          franchiseInstitutions_ = new java.util.ArrayList<com.classlink.websocket.api.lobby.domain.dto.proto.LobbyHomeFranchiseInstitutionListResProto.LobbyHomeFranchiseInstitutionListRes.FranchiseInstitution>(franchiseInstitutions_);
+          franchiseInstitutionList_ = new java.util.ArrayList<com.classlink.websocket.api.lobby.domain.dto.proto.LobbyHomeFranchiseInstitutionListResProto.LobbyHomeFranchiseInstitutionListRes.FranchiseInstitution>(franchiseInstitutionList_);
           bitField0_ |= 0x00000001;
          }
       }
 
       private com.google.protobuf.RepeatedFieldBuilderV3<
-          com.classlink.websocket.api.lobby.domain.dto.proto.LobbyHomeFranchiseInstitutionListResProto.LobbyHomeFranchiseInstitutionListRes.FranchiseInstitution, com.classlink.websocket.api.lobby.domain.dto.proto.LobbyHomeFranchiseInstitutionListResProto.LobbyHomeFranchiseInstitutionListRes.FranchiseInstitution.Builder, com.classlink.websocket.api.lobby.domain.dto.proto.LobbyHomeFranchiseInstitutionListResProto.LobbyHomeFranchiseInstitutionListRes.FranchiseInstitutionOrBuilder> franchiseInstitutionsBuilder_;
+          com.classlink.websocket.api.lobby.domain.dto.proto.LobbyHomeFranchiseInstitutionListResProto.LobbyHomeFranchiseInstitutionListRes.FranchiseInstitution, com.classlink.websocket.api.lobby.domain.dto.proto.LobbyHomeFranchiseInstitutionListResProto.LobbyHomeFranchiseInstitutionListRes.FranchiseInstitution.Builder, com.classlink.websocket.api.lobby.domain.dto.proto.LobbyHomeFranchiseInstitutionListResProto.LobbyHomeFranchiseInstitutionListRes.FranchiseInstitutionOrBuilder> franchiseInstitutionListBuilder_;
 
       /**
-       * <code>repeated .classlink.LobbyHomeFranchiseInstitutionListRes.FranchiseInstitution FranchiseInstitutions = 1;</code>
+       * <code>repeated .Classlink.LobbyHomeFranchiseInstitutionListRes.FranchiseInstitution FranchiseInstitutionList = 1;</code>
        */
-      public java.util.List<com.classlink.websocket.api.lobby.domain.dto.proto.LobbyHomeFranchiseInstitutionListResProto.LobbyHomeFranchiseInstitutionListRes.FranchiseInstitution> getFranchiseInstitutionsList() {
-        if (franchiseInstitutionsBuilder_ == null) {
-          return java.util.Collections.unmodifiableList(franchiseInstitutions_);
+      public java.util.List<com.classlink.websocket.api.lobby.domain.dto.proto.LobbyHomeFranchiseInstitutionListResProto.LobbyHomeFranchiseInstitutionListRes.FranchiseInstitution> getFranchiseInstitutionListList() {
+        if (franchiseInstitutionListBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(franchiseInstitutionList_);
         } else {
-          return franchiseInstitutionsBuilder_.getMessageList();
+          return franchiseInstitutionListBuilder_.getMessageList();
         }
       }
       /**
-       * <code>repeated .classlink.LobbyHomeFranchiseInstitutionListRes.FranchiseInstitution FranchiseInstitutions = 1;</code>
+       * <code>repeated .Classlink.LobbyHomeFranchiseInstitutionListRes.FranchiseInstitution FranchiseInstitutionList = 1;</code>
        */
-      public int getFranchiseInstitutionsCount() {
-        if (franchiseInstitutionsBuilder_ == null) {
-          return franchiseInstitutions_.size();
+      public int getFranchiseInstitutionListCount() {
+        if (franchiseInstitutionListBuilder_ == null) {
+          return franchiseInstitutionList_.size();
         } else {
-          return franchiseInstitutionsBuilder_.getCount();
+          return franchiseInstitutionListBuilder_.getCount();
         }
       }
       /**
-       * <code>repeated .classlink.LobbyHomeFranchiseInstitutionListRes.FranchiseInstitution FranchiseInstitutions = 1;</code>
+       * <code>repeated .Classlink.LobbyHomeFranchiseInstitutionListRes.FranchiseInstitution FranchiseInstitutionList = 1;</code>
        */
-      public com.classlink.websocket.api.lobby.domain.dto.proto.LobbyHomeFranchiseInstitutionListResProto.LobbyHomeFranchiseInstitutionListRes.FranchiseInstitution getFranchiseInstitutions(int index) {
-        if (franchiseInstitutionsBuilder_ == null) {
-          return franchiseInstitutions_.get(index);
+      public com.classlink.websocket.api.lobby.domain.dto.proto.LobbyHomeFranchiseInstitutionListResProto.LobbyHomeFranchiseInstitutionListRes.FranchiseInstitution getFranchiseInstitutionList(int index) {
+        if (franchiseInstitutionListBuilder_ == null) {
+          return franchiseInstitutionList_.get(index);
         } else {
-          return franchiseInstitutionsBuilder_.getMessage(index);
+          return franchiseInstitutionListBuilder_.getMessage(index);
         }
       }
       /**
-       * <code>repeated .classlink.LobbyHomeFranchiseInstitutionListRes.FranchiseInstitution FranchiseInstitutions = 1;</code>
+       * <code>repeated .Classlink.LobbyHomeFranchiseInstitutionListRes.FranchiseInstitution FranchiseInstitutionList = 1;</code>
        */
-      public Builder setFranchiseInstitutions(
+      public Builder setFranchiseInstitutionList(
           int index, com.classlink.websocket.api.lobby.domain.dto.proto.LobbyHomeFranchiseInstitutionListResProto.LobbyHomeFranchiseInstitutionListRes.FranchiseInstitution value) {
-        if (franchiseInstitutionsBuilder_ == null) {
+        if (franchiseInstitutionListBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
           }
-          ensureFranchiseInstitutionsIsMutable();
-          franchiseInstitutions_.set(index, value);
+          ensureFranchiseInstitutionListIsMutable();
+          franchiseInstitutionList_.set(index, value);
           onChanged();
         } else {
-          franchiseInstitutionsBuilder_.setMessage(index, value);
+          franchiseInstitutionListBuilder_.setMessage(index, value);
         }
         return this;
       }
       /**
-       * <code>repeated .classlink.LobbyHomeFranchiseInstitutionListRes.FranchiseInstitution FranchiseInstitutions = 1;</code>
+       * <code>repeated .Classlink.LobbyHomeFranchiseInstitutionListRes.FranchiseInstitution FranchiseInstitutionList = 1;</code>
        */
-      public Builder setFranchiseInstitutions(
+      public Builder setFranchiseInstitutionList(
           int index, com.classlink.websocket.api.lobby.domain.dto.proto.LobbyHomeFranchiseInstitutionListResProto.LobbyHomeFranchiseInstitutionListRes.FranchiseInstitution.Builder builderForValue) {
-        if (franchiseInstitutionsBuilder_ == null) {
-          ensureFranchiseInstitutionsIsMutable();
-          franchiseInstitutions_.set(index, builderForValue.build());
+        if (franchiseInstitutionListBuilder_ == null) {
+          ensureFranchiseInstitutionListIsMutable();
+          franchiseInstitutionList_.set(index, builderForValue.build());
           onChanged();
         } else {
-          franchiseInstitutionsBuilder_.setMessage(index, builderForValue.build());
+          franchiseInstitutionListBuilder_.setMessage(index, builderForValue.build());
         }
         return this;
       }
       /**
-       * <code>repeated .classlink.LobbyHomeFranchiseInstitutionListRes.FranchiseInstitution FranchiseInstitutions = 1;</code>
+       * <code>repeated .Classlink.LobbyHomeFranchiseInstitutionListRes.FranchiseInstitution FranchiseInstitutionList = 1;</code>
        */
-      public Builder addFranchiseInstitutions(com.classlink.websocket.api.lobby.domain.dto.proto.LobbyHomeFranchiseInstitutionListResProto.LobbyHomeFranchiseInstitutionListRes.FranchiseInstitution value) {
-        if (franchiseInstitutionsBuilder_ == null) {
+      public Builder addFranchiseInstitutionList(com.classlink.websocket.api.lobby.domain.dto.proto.LobbyHomeFranchiseInstitutionListResProto.LobbyHomeFranchiseInstitutionListRes.FranchiseInstitution value) {
+        if (franchiseInstitutionListBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
           }
-          ensureFranchiseInstitutionsIsMutable();
-          franchiseInstitutions_.add(value);
+          ensureFranchiseInstitutionListIsMutable();
+          franchiseInstitutionList_.add(value);
           onChanged();
         } else {
-          franchiseInstitutionsBuilder_.addMessage(value);
+          franchiseInstitutionListBuilder_.addMessage(value);
         }
         return this;
       }
       /**
-       * <code>repeated .classlink.LobbyHomeFranchiseInstitutionListRes.FranchiseInstitution FranchiseInstitutions = 1;</code>
+       * <code>repeated .Classlink.LobbyHomeFranchiseInstitutionListRes.FranchiseInstitution FranchiseInstitutionList = 1;</code>
        */
-      public Builder addFranchiseInstitutions(
+      public Builder addFranchiseInstitutionList(
           int index, com.classlink.websocket.api.lobby.domain.dto.proto.LobbyHomeFranchiseInstitutionListResProto.LobbyHomeFranchiseInstitutionListRes.FranchiseInstitution value) {
-        if (franchiseInstitutionsBuilder_ == null) {
+        if (franchiseInstitutionListBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
           }
-          ensureFranchiseInstitutionsIsMutable();
-          franchiseInstitutions_.add(index, value);
+          ensureFranchiseInstitutionListIsMutable();
+          franchiseInstitutionList_.add(index, value);
           onChanged();
         } else {
-          franchiseInstitutionsBuilder_.addMessage(index, value);
+          franchiseInstitutionListBuilder_.addMessage(index, value);
         }
         return this;
       }
       /**
-       * <code>repeated .classlink.LobbyHomeFranchiseInstitutionListRes.FranchiseInstitution FranchiseInstitutions = 1;</code>
+       * <code>repeated .Classlink.LobbyHomeFranchiseInstitutionListRes.FranchiseInstitution FranchiseInstitutionList = 1;</code>
        */
-      public Builder addFranchiseInstitutions(
+      public Builder addFranchiseInstitutionList(
           com.classlink.websocket.api.lobby.domain.dto.proto.LobbyHomeFranchiseInstitutionListResProto.LobbyHomeFranchiseInstitutionListRes.FranchiseInstitution.Builder builderForValue) {
-        if (franchiseInstitutionsBuilder_ == null) {
-          ensureFranchiseInstitutionsIsMutable();
-          franchiseInstitutions_.add(builderForValue.build());
+        if (franchiseInstitutionListBuilder_ == null) {
+          ensureFranchiseInstitutionListIsMutable();
+          franchiseInstitutionList_.add(builderForValue.build());
           onChanged();
         } else {
-          franchiseInstitutionsBuilder_.addMessage(builderForValue.build());
+          franchiseInstitutionListBuilder_.addMessage(builderForValue.build());
         }
         return this;
       }
       /**
-       * <code>repeated .classlink.LobbyHomeFranchiseInstitutionListRes.FranchiseInstitution FranchiseInstitutions = 1;</code>
+       * <code>repeated .Classlink.LobbyHomeFranchiseInstitutionListRes.FranchiseInstitution FranchiseInstitutionList = 1;</code>
        */
-      public Builder addFranchiseInstitutions(
+      public Builder addFranchiseInstitutionList(
           int index, com.classlink.websocket.api.lobby.domain.dto.proto.LobbyHomeFranchiseInstitutionListResProto.LobbyHomeFranchiseInstitutionListRes.FranchiseInstitution.Builder builderForValue) {
-        if (franchiseInstitutionsBuilder_ == null) {
-          ensureFranchiseInstitutionsIsMutable();
-          franchiseInstitutions_.add(index, builderForValue.build());
+        if (franchiseInstitutionListBuilder_ == null) {
+          ensureFranchiseInstitutionListIsMutable();
+          franchiseInstitutionList_.add(index, builderForValue.build());
           onChanged();
         } else {
-          franchiseInstitutionsBuilder_.addMessage(index, builderForValue.build());
+          franchiseInstitutionListBuilder_.addMessage(index, builderForValue.build());
         }
         return this;
       }
       /**
-       * <code>repeated .classlink.LobbyHomeFranchiseInstitutionListRes.FranchiseInstitution FranchiseInstitutions = 1;</code>
+       * <code>repeated .Classlink.LobbyHomeFranchiseInstitutionListRes.FranchiseInstitution FranchiseInstitutionList = 1;</code>
        */
-      public Builder addAllFranchiseInstitutions(
+      public Builder addAllFranchiseInstitutionList(
           java.lang.Iterable<? extends com.classlink.websocket.api.lobby.domain.dto.proto.LobbyHomeFranchiseInstitutionListResProto.LobbyHomeFranchiseInstitutionListRes.FranchiseInstitution> values) {
-        if (franchiseInstitutionsBuilder_ == null) {
-          ensureFranchiseInstitutionsIsMutable();
-          addAll(
-              values, franchiseInstitutions_);
+        if (franchiseInstitutionListBuilder_ == null) {
+          ensureFranchiseInstitutionListIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, franchiseInstitutionList_);
           onChanged();
         } else {
-          franchiseInstitutionsBuilder_.addAllMessages(values);
+          franchiseInstitutionListBuilder_.addAllMessages(values);
         }
         return this;
       }
       /**
-       * <code>repeated .classlink.LobbyHomeFranchiseInstitutionListRes.FranchiseInstitution FranchiseInstitutions = 1;</code>
+       * <code>repeated .Classlink.LobbyHomeFranchiseInstitutionListRes.FranchiseInstitution FranchiseInstitutionList = 1;</code>
        */
-      public Builder clearFranchiseInstitutions() {
-        if (franchiseInstitutionsBuilder_ == null) {
-          franchiseInstitutions_ = java.util.Collections.emptyList();
+      public Builder clearFranchiseInstitutionList() {
+        if (franchiseInstitutionListBuilder_ == null) {
+          franchiseInstitutionList_ = java.util.Collections.emptyList();
           bitField0_ = (bitField0_ & ~0x00000001);
           onChanged();
         } else {
-          franchiseInstitutionsBuilder_.clear();
+          franchiseInstitutionListBuilder_.clear();
         }
         return this;
       }
       /**
-       * <code>repeated .classlink.LobbyHomeFranchiseInstitutionListRes.FranchiseInstitution FranchiseInstitutions = 1;</code>
+       * <code>repeated .Classlink.LobbyHomeFranchiseInstitutionListRes.FranchiseInstitution FranchiseInstitutionList = 1;</code>
        */
-      public Builder removeFranchiseInstitutions(int index) {
-        if (franchiseInstitutionsBuilder_ == null) {
-          ensureFranchiseInstitutionsIsMutable();
-          franchiseInstitutions_.remove(index);
+      public Builder removeFranchiseInstitutionList(int index) {
+        if (franchiseInstitutionListBuilder_ == null) {
+          ensureFranchiseInstitutionListIsMutable();
+          franchiseInstitutionList_.remove(index);
           onChanged();
         } else {
-          franchiseInstitutionsBuilder_.remove(index);
+          franchiseInstitutionListBuilder_.remove(index);
         }
         return this;
       }
       /**
-       * <code>repeated .classlink.LobbyHomeFranchiseInstitutionListRes.FranchiseInstitution FranchiseInstitutions = 1;</code>
+       * <code>repeated .Classlink.LobbyHomeFranchiseInstitutionListRes.FranchiseInstitution FranchiseInstitutionList = 1;</code>
        */
-      public com.classlink.websocket.api.lobby.domain.dto.proto.LobbyHomeFranchiseInstitutionListResProto.LobbyHomeFranchiseInstitutionListRes.FranchiseInstitution.Builder getFranchiseInstitutionsBuilder(
+      public com.classlink.websocket.api.lobby.domain.dto.proto.LobbyHomeFranchiseInstitutionListResProto.LobbyHomeFranchiseInstitutionListRes.FranchiseInstitution.Builder getFranchiseInstitutionListBuilder(
           int index) {
-        return getFranchiseInstitutionsFieldBuilder().getBuilder(index);
+        return getFranchiseInstitutionListFieldBuilder().getBuilder(index);
       }
       /**
-       * <code>repeated .classlink.LobbyHomeFranchiseInstitutionListRes.FranchiseInstitution FranchiseInstitutions = 1;</code>
+       * <code>repeated .Classlink.LobbyHomeFranchiseInstitutionListRes.FranchiseInstitution FranchiseInstitutionList = 1;</code>
        */
-      public com.classlink.websocket.api.lobby.domain.dto.proto.LobbyHomeFranchiseInstitutionListResProto.LobbyHomeFranchiseInstitutionListRes.FranchiseInstitutionOrBuilder getFranchiseInstitutionsOrBuilder(
+      public com.classlink.websocket.api.lobby.domain.dto.proto.LobbyHomeFranchiseInstitutionListResProto.LobbyHomeFranchiseInstitutionListRes.FranchiseInstitutionOrBuilder getFranchiseInstitutionListOrBuilder(
           int index) {
-        if (franchiseInstitutionsBuilder_ == null) {
-          return franchiseInstitutions_.get(index);  } else {
-          return franchiseInstitutionsBuilder_.getMessageOrBuilder(index);
+        if (franchiseInstitutionListBuilder_ == null) {
+          return franchiseInstitutionList_.get(index);  } else {
+          return franchiseInstitutionListBuilder_.getMessageOrBuilder(index);
         }
       }
       /**
-       * <code>repeated .classlink.LobbyHomeFranchiseInstitutionListRes.FranchiseInstitution FranchiseInstitutions = 1;</code>
+       * <code>repeated .Classlink.LobbyHomeFranchiseInstitutionListRes.FranchiseInstitution FranchiseInstitutionList = 1;</code>
        */
       public java.util.List<? extends com.classlink.websocket.api.lobby.domain.dto.proto.LobbyHomeFranchiseInstitutionListResProto.LobbyHomeFranchiseInstitutionListRes.FranchiseInstitutionOrBuilder> 
-           getFranchiseInstitutionsOrBuilderList() {
-        if (franchiseInstitutionsBuilder_ != null) {
-          return franchiseInstitutionsBuilder_.getMessageOrBuilderList();
+           getFranchiseInstitutionListOrBuilderList() {
+        if (franchiseInstitutionListBuilder_ != null) {
+          return franchiseInstitutionListBuilder_.getMessageOrBuilderList();
         } else {
-          return java.util.Collections.unmodifiableList(franchiseInstitutions_);
+          return java.util.Collections.unmodifiableList(franchiseInstitutionList_);
         }
       }
       /**
-       * <code>repeated .classlink.LobbyHomeFranchiseInstitutionListRes.FranchiseInstitution FranchiseInstitutions = 1;</code>
+       * <code>repeated .Classlink.LobbyHomeFranchiseInstitutionListRes.FranchiseInstitution FranchiseInstitutionList = 1;</code>
        */
-      public com.classlink.websocket.api.lobby.domain.dto.proto.LobbyHomeFranchiseInstitutionListResProto.LobbyHomeFranchiseInstitutionListRes.FranchiseInstitution.Builder addFranchiseInstitutionsBuilder() {
-        return getFranchiseInstitutionsFieldBuilder().addBuilder(
+      public com.classlink.websocket.api.lobby.domain.dto.proto.LobbyHomeFranchiseInstitutionListResProto.LobbyHomeFranchiseInstitutionListRes.FranchiseInstitution.Builder addFranchiseInstitutionListBuilder() {
+        return getFranchiseInstitutionListFieldBuilder().addBuilder(
             com.classlink.websocket.api.lobby.domain.dto.proto.LobbyHomeFranchiseInstitutionListResProto.LobbyHomeFranchiseInstitutionListRes.FranchiseInstitution.getDefaultInstance());
       }
       /**
-       * <code>repeated .classlink.LobbyHomeFranchiseInstitutionListRes.FranchiseInstitution FranchiseInstitutions = 1;</code>
+       * <code>repeated .Classlink.LobbyHomeFranchiseInstitutionListRes.FranchiseInstitution FranchiseInstitutionList = 1;</code>
        */
-      public com.classlink.websocket.api.lobby.domain.dto.proto.LobbyHomeFranchiseInstitutionListResProto.LobbyHomeFranchiseInstitutionListRes.FranchiseInstitution.Builder addFranchiseInstitutionsBuilder(
+      public com.classlink.websocket.api.lobby.domain.dto.proto.LobbyHomeFranchiseInstitutionListResProto.LobbyHomeFranchiseInstitutionListRes.FranchiseInstitution.Builder addFranchiseInstitutionListBuilder(
           int index) {
-        return getFranchiseInstitutionsFieldBuilder().addBuilder(
+        return getFranchiseInstitutionListFieldBuilder().addBuilder(
             index, com.classlink.websocket.api.lobby.domain.dto.proto.LobbyHomeFranchiseInstitutionListResProto.LobbyHomeFranchiseInstitutionListRes.FranchiseInstitution.getDefaultInstance());
       }
       /**
-       * <code>repeated .classlink.LobbyHomeFranchiseInstitutionListRes.FranchiseInstitution FranchiseInstitutions = 1;</code>
+       * <code>repeated .Classlink.LobbyHomeFranchiseInstitutionListRes.FranchiseInstitution FranchiseInstitutionList = 1;</code>
        */
       public java.util.List<com.classlink.websocket.api.lobby.domain.dto.proto.LobbyHomeFranchiseInstitutionListResProto.LobbyHomeFranchiseInstitutionListRes.FranchiseInstitution.Builder> 
-           getFranchiseInstitutionsBuilderList() {
-        return getFranchiseInstitutionsFieldBuilder().getBuilderList();
+           getFranchiseInstitutionListBuilderList() {
+        return getFranchiseInstitutionListFieldBuilder().getBuilderList();
       }
       private com.google.protobuf.RepeatedFieldBuilderV3<
           com.classlink.websocket.api.lobby.domain.dto.proto.LobbyHomeFranchiseInstitutionListResProto.LobbyHomeFranchiseInstitutionListRes.FranchiseInstitution, com.classlink.websocket.api.lobby.domain.dto.proto.LobbyHomeFranchiseInstitutionListResProto.LobbyHomeFranchiseInstitutionListRes.FranchiseInstitution.Builder, com.classlink.websocket.api.lobby.domain.dto.proto.LobbyHomeFranchiseInstitutionListResProto.LobbyHomeFranchiseInstitutionListRes.FranchiseInstitutionOrBuilder> 
-          getFranchiseInstitutionsFieldBuilder() {
-        if (franchiseInstitutionsBuilder_ == null) {
-          franchiseInstitutionsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+          getFranchiseInstitutionListFieldBuilder() {
+        if (franchiseInstitutionListBuilder_ == null) {
+          franchiseInstitutionListBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               com.classlink.websocket.api.lobby.domain.dto.proto.LobbyHomeFranchiseInstitutionListResProto.LobbyHomeFranchiseInstitutionListRes.FranchiseInstitution, com.classlink.websocket.api.lobby.domain.dto.proto.LobbyHomeFranchiseInstitutionListResProto.LobbyHomeFranchiseInstitutionListRes.FranchiseInstitution.Builder, com.classlink.websocket.api.lobby.domain.dto.proto.LobbyHomeFranchiseInstitutionListResProto.LobbyHomeFranchiseInstitutionListRes.FranchiseInstitutionOrBuilder>(
-                  franchiseInstitutions_,
+                  franchiseInstitutionList_,
                   ((bitField0_ & 0x00000001) != 0),
                   getParentForChildren(),
                   isClean());
-          franchiseInstitutions_ = null;
+          franchiseInstitutionList_ = null;
         }
-        return franchiseInstitutionsBuilder_;
+        return franchiseInstitutionListBuilder_;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -2094,10 +2094,10 @@ public final class LobbyHomeFranchiseInstitutionListResProto {
       }
 
 
-      // @@protoc_insertion_point(builder_scope:classlink.LobbyHomeFranchiseInstitutionListRes)
+      // @@protoc_insertion_point(builder_scope:Classlink.LobbyHomeFranchiseInstitutionListRes)
     }
 
-    // @@protoc_insertion_point(class_scope:classlink.LobbyHomeFranchiseInstitutionListRes)
+    // @@protoc_insertion_point(class_scope:Classlink.LobbyHomeFranchiseInstitutionListRes)
     private static final com.classlink.websocket.api.lobby.domain.dto.proto.LobbyHomeFranchiseInstitutionListResProto.LobbyHomeFranchiseInstitutionListRes DEFAULT_INSTANCE;
     static {
       DEFAULT_INSTANCE = new com.classlink.websocket.api.lobby.domain.dto.proto.LobbyHomeFranchiseInstitutionListResProto.LobbyHomeFranchiseInstitutionListRes();
@@ -2146,15 +2146,15 @@ public final class LobbyHomeFranchiseInstitutionListResProto {
   }
 
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_classlink_LobbyHomeFranchiseInstitutionListRes_descriptor;
+    internal_static_Classlink_LobbyHomeFranchiseInstitutionListRes_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_classlink_LobbyHomeFranchiseInstitutionListRes_fieldAccessorTable;
+      internal_static_Classlink_LobbyHomeFranchiseInstitutionListRes_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_classlink_LobbyHomeFranchiseInstitutionListRes_FranchiseInstitution_descriptor;
+    internal_static_Classlink_LobbyHomeFranchiseInstitutionListRes_FranchiseInstitution_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_classlink_LobbyHomeFranchiseInstitutionListRes_FranchiseInstitution_fieldAccessorTable;
+      internal_static_Classlink_LobbyHomeFranchiseInstitutionListRes_FranchiseInstitution_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -2165,34 +2165,34 @@ public final class LobbyHomeFranchiseInstitutionListResProto {
   static {
     java.lang.String[] descriptorData = {
       "\n*LobbyHomeFranchiseInstitutionListRes.p" +
-      "roto\022\tclasslink\"\306\002\n$LobbyHomeFranchiseIn" +
-      "stitutionListRes\022c\n\025FranchiseInstitution" +
-      "s\030\001 \003(\0132D.classlink.LobbyHomeFranchiseIn" +
-      "stitutionListRes.FranchiseInstitution\032\270\001" +
-      "\n\024FranchiseInstitution\022\017\n\007InsCode\030\001 \001(\t\022" +
-      "\017\n\007InsName\030\002 \001(\t\022\022\n\nInsLogoUrl\030\003 \001(\t\022\024\n\014" +
-      "TotalUserCnt\030\004 \001(\005\022\026\n\016ChangedUserCnt\030\005 \001" +
-      "(\005\022\025\n\rRequestedDate\030\006 \001(\t\022\024\n\014IsPermissio" +
-      "n\030\007 \001(\010\022\017\n\007LinkUrl\030\010 \001(\tB_\n2com.classlin" +
-      "k.websocket.api.lobby.domain.dto.protoB)" +
-      "LobbyHomeFranchiseInstitutionListResProt" +
-      "ob\006proto3"
+      "roto\022\tClasslink\"\311\002\n$LobbyHomeFranchiseIn" +
+      "stitutionListRes\022f\n\030FranchiseInstitution" +
+      "List\030\001 \003(\0132D.Classlink.LobbyHomeFranchis" +
+      "eInstitutionListRes.FranchiseInstitution" +
+      "\032\270\001\n\024FranchiseInstitution\022\017\n\007InsCode\030\001 \001" +
+      "(\t\022\017\n\007InsName\030\002 \001(\t\022\022\n\nInsLogoUrl\030\003 \001(\t\022" +
+      "\024\n\014TotalUserCnt\030\004 \001(\005\022\026\n\016ChangedUserCnt\030" +
+      "\005 \001(\005\022\025\n\rRequestedDate\030\006 \001(\t\022\024\n\014IsPermis" +
+      "sion\030\007 \001(\010\022\017\n\007LinkUrl\030\010 \001(\tB_\n2com.class" +
+      "link.websocket.api.lobby.domain.dto.prot" +
+      "oB)LobbyHomeFranchiseInstitutionListResP" +
+      "rotob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
         });
-    internal_static_classlink_LobbyHomeFranchiseInstitutionListRes_descriptor =
+    internal_static_Classlink_LobbyHomeFranchiseInstitutionListRes_descriptor =
       getDescriptor().getMessageTypes().get(0);
-    internal_static_classlink_LobbyHomeFranchiseInstitutionListRes_fieldAccessorTable = new
+    internal_static_Classlink_LobbyHomeFranchiseInstitutionListRes_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_classlink_LobbyHomeFranchiseInstitutionListRes_descriptor,
-        new java.lang.String[] { "FranchiseInstitutions", });
-    internal_static_classlink_LobbyHomeFranchiseInstitutionListRes_FranchiseInstitution_descriptor =
-      internal_static_classlink_LobbyHomeFranchiseInstitutionListRes_descriptor.getNestedTypes().get(0);
-    internal_static_classlink_LobbyHomeFranchiseInstitutionListRes_FranchiseInstitution_fieldAccessorTable = new
+        internal_static_Classlink_LobbyHomeFranchiseInstitutionListRes_descriptor,
+        new java.lang.String[] { "FranchiseInstitutionList", });
+    internal_static_Classlink_LobbyHomeFranchiseInstitutionListRes_FranchiseInstitution_descriptor =
+      internal_static_Classlink_LobbyHomeFranchiseInstitutionListRes_descriptor.getNestedTypes().get(0);
+    internal_static_Classlink_LobbyHomeFranchiseInstitutionListRes_FranchiseInstitution_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_classlink_LobbyHomeFranchiseInstitutionListRes_FranchiseInstitution_descriptor,
+        internal_static_Classlink_LobbyHomeFranchiseInstitutionListRes_FranchiseInstitution_descriptor,
         new java.lang.String[] { "InsCode", "InsName", "InsLogoUrl", "TotalUserCnt", "ChangedUserCnt", "RequestedDate", "IsPermission", "LinkUrl", });
   }
 

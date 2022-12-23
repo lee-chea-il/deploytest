@@ -1,0 +1,15 @@
+syntax = "proto3"; 
+package Classlink;  
+option java_package = "com.classlink.websocket.api.lobby.domain.dto.proto"; 
+option java_outer_classname = "LobbyCalenderScheduleResProto"; 
+
+message LobbyCalenderScheduleRes{
+message Schedule
+{
+ string ScheduleType =1;
+ string ScheduleText =2;
+ string ScheduleDate =3;
+}
+
+repeated Schedule ScheduleList =1;
+}

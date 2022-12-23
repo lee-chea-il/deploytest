@@ -15,39 +15,39 @@ public final class LobbyHomeScheduleListResProto {
         (com.google.protobuf.ExtensionRegistryLite) registry);
   }
   public interface LobbyHomeScheduleListResOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:classlink.LobbyHomeScheduleListRes)
+      // @@protoc_insertion_point(interface_extends:Classlink.LobbyHomeScheduleListRes)
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>repeated .classlink.LobbyHomeScheduleListRes.ScheduleInfo ScheduleInfoList = 1;</code>
+     * <code>repeated .Classlink.LobbyHomeScheduleListRes.ScheduleInfo ScheduleInfoList = 1;</code>
      */
     java.util.List<com.classlink.websocket.api.lobby.domain.dto.proto.LobbyHomeScheduleListResProto.LobbyHomeScheduleListRes.ScheduleInfo> 
         getScheduleInfoListList();
     /**
-     * <code>repeated .classlink.LobbyHomeScheduleListRes.ScheduleInfo ScheduleInfoList = 1;</code>
+     * <code>repeated .Classlink.LobbyHomeScheduleListRes.ScheduleInfo ScheduleInfoList = 1;</code>
      */
     com.classlink.websocket.api.lobby.domain.dto.proto.LobbyHomeScheduleListResProto.LobbyHomeScheduleListRes.ScheduleInfo getScheduleInfoList(int index);
     /**
-     * <code>repeated .classlink.LobbyHomeScheduleListRes.ScheduleInfo ScheduleInfoList = 1;</code>
+     * <code>repeated .Classlink.LobbyHomeScheduleListRes.ScheduleInfo ScheduleInfoList = 1;</code>
      */
     int getScheduleInfoListCount();
     /**
-     * <code>repeated .classlink.LobbyHomeScheduleListRes.ScheduleInfo ScheduleInfoList = 1;</code>
+     * <code>repeated .Classlink.LobbyHomeScheduleListRes.ScheduleInfo ScheduleInfoList = 1;</code>
      */
     java.util.List<? extends com.classlink.websocket.api.lobby.domain.dto.proto.LobbyHomeScheduleListResProto.LobbyHomeScheduleListRes.ScheduleInfoOrBuilder> 
         getScheduleInfoListOrBuilderList();
     /**
-     * <code>repeated .classlink.LobbyHomeScheduleListRes.ScheduleInfo ScheduleInfoList = 1;</code>
+     * <code>repeated .Classlink.LobbyHomeScheduleListRes.ScheduleInfo ScheduleInfoList = 1;</code>
      */
     com.classlink.websocket.api.lobby.domain.dto.proto.LobbyHomeScheduleListResProto.LobbyHomeScheduleListRes.ScheduleInfoOrBuilder getScheduleInfoListOrBuilder(
         int index);
   }
   /**
-   * Protobuf type {@code classlink.LobbyHomeScheduleListRes}
+   * Protobuf type {@code Classlink.LobbyHomeScheduleListRes}
    */
   public static final class LobbyHomeScheduleListRes extends
       com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:classlink.LobbyHomeScheduleListRes)
+      // @@protoc_insertion_point(message_implements:Classlink.LobbyHomeScheduleListRes)
       LobbyHomeScheduleListResOrBuilder {
   private static final long serialVersionUID = 0L;
     // Use LobbyHomeScheduleListRes.newBuilder() to construct.
@@ -72,19 +72,19 @@ public final class LobbyHomeScheduleListResProto {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return internal_static_classlink_LobbyHomeScheduleListRes_descriptor;
+      return com.classlink.websocket.api.lobby.domain.dto.proto.LobbyHomeScheduleListResProto.internal_static_Classlink_LobbyHomeScheduleListRes_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return internal_static_classlink_LobbyHomeScheduleListRes_fieldAccessorTable
+      return com.classlink.websocket.api.lobby.domain.dto.proto.LobbyHomeScheduleListResProto.internal_static_Classlink_LobbyHomeScheduleListRes_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               com.classlink.websocket.api.lobby.domain.dto.proto.LobbyHomeScheduleListResProto.LobbyHomeScheduleListRes.class, com.classlink.websocket.api.lobby.domain.dto.proto.LobbyHomeScheduleListResProto.LobbyHomeScheduleListRes.Builder.class);
     }
 
     public interface ScheduleInfoOrBuilder extends
-        // @@protoc_insertion_point(interface_extends:classlink.LobbyHomeScheduleListRes.ScheduleInfo)
+        // @@protoc_insertion_point(interface_extends:Classlink.LobbyHomeScheduleListRes.ScheduleInfo)
         com.google.protobuf.MessageOrBuilder {
 
       /**
@@ -128,19 +128,13 @@ public final class LobbyHomeScheduleListResProto {
        */
       com.google.protobuf.ByteString
           getEndTimeBytes();
-
-      /**
-       * <code>int32 ClassId = 5;</code>
-       * @return The classId.
-       */
-      int getClassId();
     }
     /**
-     * Protobuf type {@code classlink.LobbyHomeScheduleListRes.ScheduleInfo}
+     * Protobuf type {@code Classlink.LobbyHomeScheduleListRes.ScheduleInfo}
      */
     public static final class ScheduleInfo extends
         com.google.protobuf.GeneratedMessageV3 implements
-        // @@protoc_insertion_point(message_implements:classlink.LobbyHomeScheduleListRes.ScheduleInfo)
+        // @@protoc_insertion_point(message_implements:Classlink.LobbyHomeScheduleListRes.ScheduleInfo)
         ScheduleInfoOrBuilder {
     private static final long serialVersionUID = 0L;
       // Use ScheduleInfo.newBuilder() to construct.
@@ -167,13 +161,13 @@ public final class LobbyHomeScheduleListResProto {
       }
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return internal_static_classlink_LobbyHomeScheduleListRes_ScheduleInfo_descriptor;
+        return com.classlink.websocket.api.lobby.domain.dto.proto.LobbyHomeScheduleListResProto.internal_static_Classlink_LobbyHomeScheduleListRes_ScheduleInfo_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return internal_static_classlink_LobbyHomeScheduleListRes_ScheduleInfo_fieldAccessorTable
+        return com.classlink.websocket.api.lobby.domain.dto.proto.LobbyHomeScheduleListResProto.internal_static_Classlink_LobbyHomeScheduleListRes_ScheduleInfo_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
                 com.classlink.websocket.api.lobby.domain.dto.proto.LobbyHomeScheduleListResProto.LobbyHomeScheduleListRes.ScheduleInfo.class, com.classlink.websocket.api.lobby.domain.dto.proto.LobbyHomeScheduleListResProto.LobbyHomeScheduleListRes.ScheduleInfo.Builder.class);
       }
@@ -303,17 +297,6 @@ public final class LobbyHomeScheduleListResProto {
         }
       }
 
-      public static final int CLASSID_FIELD_NUMBER = 5;
-      private int classId_;
-      /**
-       * <code>int32 ClassId = 5;</code>
-       * @return The classId.
-       */
-      @java.lang.Override
-      public int getClassId() {
-        return classId_;
-      }
-
       private byte memoizedIsInitialized = -1;
       @java.lang.Override
       public final boolean isInitialized() {
@@ -340,9 +323,6 @@ public final class LobbyHomeScheduleListResProto {
         if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(endTime_)) {
           com.google.protobuf.GeneratedMessageV3.writeString(output, 4, endTime_);
         }
-        if (classId_ != 0) {
-          output.writeInt32(5, classId_);
-        }
         getUnknownFields().writeTo(output);
       }
 
@@ -364,10 +344,6 @@ public final class LobbyHomeScheduleListResProto {
         }
         if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(endTime_)) {
           size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, endTime_);
-        }
-        if (classId_ != 0) {
-          size += com.google.protobuf.CodedOutputStream
-            .computeInt32Size(5, classId_);
         }
         size += getUnknownFields().getSerializedSize();
         memoizedSize = size;
@@ -392,8 +368,6 @@ public final class LobbyHomeScheduleListResProto {
             .equals(other.getStartTime())) return false;
         if (!getEndTime()
             .equals(other.getEndTime())) return false;
-        if (getClassId()
-            != other.getClassId()) return false;
         if (!getUnknownFields().equals(other.getUnknownFields())) return false;
         return true;
       }
@@ -413,8 +387,6 @@ public final class LobbyHomeScheduleListResProto {
         hash = (53 * hash) + getStartTime().hashCode();
         hash = (37 * hash) + ENDTIME_FIELD_NUMBER;
         hash = (53 * hash) + getEndTime().hashCode();
-        hash = (37 * hash) + CLASSID_FIELD_NUMBER;
-        hash = (53 * hash) + getClassId();
         hash = (29 * hash) + getUnknownFields().hashCode();
         memoizedHashCode = hash;
         return hash;
@@ -511,21 +483,21 @@ public final class LobbyHomeScheduleListResProto {
         return builder;
       }
       /**
-       * Protobuf type {@code classlink.LobbyHomeScheduleListRes.ScheduleInfo}
+       * Protobuf type {@code Classlink.LobbyHomeScheduleListRes.ScheduleInfo}
        */
       public static final class Builder extends
           com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-          // @@protoc_insertion_point(builder_implements:classlink.LobbyHomeScheduleListRes.ScheduleInfo)
+          // @@protoc_insertion_point(builder_implements:Classlink.LobbyHomeScheduleListRes.ScheduleInfo)
           com.classlink.websocket.api.lobby.domain.dto.proto.LobbyHomeScheduleListResProto.LobbyHomeScheduleListRes.ScheduleInfoOrBuilder {
         public static final com.google.protobuf.Descriptors.Descriptor
             getDescriptor() {
-          return internal_static_classlink_LobbyHomeScheduleListRes_ScheduleInfo_descriptor;
+          return com.classlink.websocket.api.lobby.domain.dto.proto.LobbyHomeScheduleListResProto.internal_static_Classlink_LobbyHomeScheduleListRes_ScheduleInfo_descriptor;
         }
 
         @java.lang.Override
         protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
             internalGetFieldAccessorTable() {
-          return internal_static_classlink_LobbyHomeScheduleListRes_ScheduleInfo_fieldAccessorTable
+          return com.classlink.websocket.api.lobby.domain.dto.proto.LobbyHomeScheduleListResProto.internal_static_Classlink_LobbyHomeScheduleListRes_ScheduleInfo_fieldAccessorTable
               .ensureFieldAccessorsInitialized(
                   com.classlink.websocket.api.lobby.domain.dto.proto.LobbyHomeScheduleListResProto.LobbyHomeScheduleListRes.ScheduleInfo.class, com.classlink.websocket.api.lobby.domain.dto.proto.LobbyHomeScheduleListResProto.LobbyHomeScheduleListRes.ScheduleInfo.Builder.class);
         }
@@ -551,20 +523,18 @@ public final class LobbyHomeScheduleListResProto {
 
           endTime_ = "";
 
-          classId_ = 0;
-
           return this;
         }
 
         @java.lang.Override
         public com.google.protobuf.Descriptors.Descriptor
             getDescriptorForType() {
-          return internal_static_classlink_LobbyHomeScheduleListRes_ScheduleInfo_descriptor;
+          return com.classlink.websocket.api.lobby.domain.dto.proto.LobbyHomeScheduleListResProto.internal_static_Classlink_LobbyHomeScheduleListRes_ScheduleInfo_descriptor;
         }
 
         @java.lang.Override
         public com.classlink.websocket.api.lobby.domain.dto.proto.LobbyHomeScheduleListResProto.LobbyHomeScheduleListRes.ScheduleInfo getDefaultInstanceForType() {
-          return getDefaultInstance();
+          return com.classlink.websocket.api.lobby.domain.dto.proto.LobbyHomeScheduleListResProto.LobbyHomeScheduleListRes.ScheduleInfo.getDefaultInstance();
         }
 
         @java.lang.Override
@@ -583,7 +553,6 @@ public final class LobbyHomeScheduleListResProto {
           result.scheduleName_ = scheduleName_;
           result.startTime_ = startTime_;
           result.endTime_ = endTime_;
-          result.classId_ = classId_;
           onBuilt();
           return result;
         }
@@ -631,7 +600,7 @@ public final class LobbyHomeScheduleListResProto {
         }
 
         public Builder mergeFrom(com.classlink.websocket.api.lobby.domain.dto.proto.LobbyHomeScheduleListResProto.LobbyHomeScheduleListRes.ScheduleInfo other) {
-          if (other == getDefaultInstance()) return this;
+          if (other == com.classlink.websocket.api.lobby.domain.dto.proto.LobbyHomeScheduleListResProto.LobbyHomeScheduleListRes.ScheduleInfo.getDefaultInstance()) return this;
           if (other.getScheduleId() != 0) {
             setScheduleId(other.getScheduleId());
           }
@@ -646,9 +615,6 @@ public final class LobbyHomeScheduleListResProto {
           if (!other.getEndTime().isEmpty()) {
             endTime_ = other.endTime_;
             onChanged();
-          }
-          if (other.getClassId() != 0) {
-            setClassId(other.getClassId());
           }
           this.mergeUnknownFields(other.getUnknownFields());
           onChanged();
@@ -696,11 +662,6 @@ public final class LobbyHomeScheduleListResProto {
 
                   break;
                 } // case 34
-                case 40: {
-                  classId_ = input.readInt32();
-
-                  break;
-                } // case 40
                 default: {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                     done = true; // was an endgroup tag
@@ -975,37 +936,6 @@ public final class LobbyHomeScheduleListResProto {
           onChanged();
           return this;
         }
-
-        private int classId_ ;
-        /**
-         * <code>int32 ClassId = 5;</code>
-         * @return The classId.
-         */
-        @java.lang.Override
-        public int getClassId() {
-          return classId_;
-        }
-        /**
-         * <code>int32 ClassId = 5;</code>
-         * @param value The classId to set.
-         * @return This builder for chaining.
-         */
-        public Builder setClassId(int value) {
-          
-          classId_ = value;
-          onChanged();
-          return this;
-        }
-        /**
-         * <code>int32 ClassId = 5;</code>
-         * @return This builder for chaining.
-         */
-        public Builder clearClassId() {
-          
-          classId_ = 0;
-          onChanged();
-          return this;
-        }
         @java.lang.Override
         public final Builder setUnknownFields(
             final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -1019,10 +949,10 @@ public final class LobbyHomeScheduleListResProto {
         }
 
 
-        // @@protoc_insertion_point(builder_scope:classlink.LobbyHomeScheduleListRes.ScheduleInfo)
+        // @@protoc_insertion_point(builder_scope:Classlink.LobbyHomeScheduleListRes.ScheduleInfo)
       }
 
-      // @@protoc_insertion_point(class_scope:classlink.LobbyHomeScheduleListRes.ScheduleInfo)
+      // @@protoc_insertion_point(class_scope:Classlink.LobbyHomeScheduleListRes.ScheduleInfo)
       private static final com.classlink.websocket.api.lobby.domain.dto.proto.LobbyHomeScheduleListResProto.LobbyHomeScheduleListRes.ScheduleInfo DEFAULT_INSTANCE;
       static {
         DEFAULT_INSTANCE = new com.classlink.websocket.api.lobby.domain.dto.proto.LobbyHomeScheduleListResProto.LobbyHomeScheduleListRes.ScheduleInfo();
@@ -1073,14 +1003,14 @@ public final class LobbyHomeScheduleListResProto {
     public static final int SCHEDULEINFOLIST_FIELD_NUMBER = 1;
     private java.util.List<com.classlink.websocket.api.lobby.domain.dto.proto.LobbyHomeScheduleListResProto.LobbyHomeScheduleListRes.ScheduleInfo> scheduleInfoList_;
     /**
-     * <code>repeated .classlink.LobbyHomeScheduleListRes.ScheduleInfo ScheduleInfoList = 1;</code>
+     * <code>repeated .Classlink.LobbyHomeScheduleListRes.ScheduleInfo ScheduleInfoList = 1;</code>
      */
     @java.lang.Override
     public java.util.List<com.classlink.websocket.api.lobby.domain.dto.proto.LobbyHomeScheduleListResProto.LobbyHomeScheduleListRes.ScheduleInfo> getScheduleInfoListList() {
       return scheduleInfoList_;
     }
     /**
-     * <code>repeated .classlink.LobbyHomeScheduleListRes.ScheduleInfo ScheduleInfoList = 1;</code>
+     * <code>repeated .Classlink.LobbyHomeScheduleListRes.ScheduleInfo ScheduleInfoList = 1;</code>
      */
     @java.lang.Override
     public java.util.List<? extends com.classlink.websocket.api.lobby.domain.dto.proto.LobbyHomeScheduleListResProto.LobbyHomeScheduleListRes.ScheduleInfoOrBuilder> 
@@ -1088,21 +1018,21 @@ public final class LobbyHomeScheduleListResProto {
       return scheduleInfoList_;
     }
     /**
-     * <code>repeated .classlink.LobbyHomeScheduleListRes.ScheduleInfo ScheduleInfoList = 1;</code>
+     * <code>repeated .Classlink.LobbyHomeScheduleListRes.ScheduleInfo ScheduleInfoList = 1;</code>
      */
     @java.lang.Override
     public int getScheduleInfoListCount() {
       return scheduleInfoList_.size();
     }
     /**
-     * <code>repeated .classlink.LobbyHomeScheduleListRes.ScheduleInfo ScheduleInfoList = 1;</code>
+     * <code>repeated .Classlink.LobbyHomeScheduleListRes.ScheduleInfo ScheduleInfoList = 1;</code>
      */
     @java.lang.Override
     public com.classlink.websocket.api.lobby.domain.dto.proto.LobbyHomeScheduleListResProto.LobbyHomeScheduleListRes.ScheduleInfo getScheduleInfoList(int index) {
       return scheduleInfoList_.get(index);
     }
     /**
-     * <code>repeated .classlink.LobbyHomeScheduleListRes.ScheduleInfo ScheduleInfoList = 1;</code>
+     * <code>repeated .Classlink.LobbyHomeScheduleListRes.ScheduleInfo ScheduleInfoList = 1;</code>
      */
     @java.lang.Override
     public com.classlink.websocket.api.lobby.domain.dto.proto.LobbyHomeScheduleListResProto.LobbyHomeScheduleListRes.ScheduleInfoOrBuilder getScheduleInfoListOrBuilder(
@@ -1268,21 +1198,21 @@ public final class LobbyHomeScheduleListResProto {
       return builder;
     }
     /**
-     * Protobuf type {@code classlink.LobbyHomeScheduleListRes}
+     * Protobuf type {@code Classlink.LobbyHomeScheduleListRes}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:classlink.LobbyHomeScheduleListRes)
+        // @@protoc_insertion_point(builder_implements:Classlink.LobbyHomeScheduleListRes)
         com.classlink.websocket.api.lobby.domain.dto.proto.LobbyHomeScheduleListResProto.LobbyHomeScheduleListResOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return internal_static_classlink_LobbyHomeScheduleListRes_descriptor;
+        return com.classlink.websocket.api.lobby.domain.dto.proto.LobbyHomeScheduleListResProto.internal_static_Classlink_LobbyHomeScheduleListRes_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return internal_static_classlink_LobbyHomeScheduleListRes_fieldAccessorTable
+        return com.classlink.websocket.api.lobby.domain.dto.proto.LobbyHomeScheduleListResProto.internal_static_Classlink_LobbyHomeScheduleListRes_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
                 com.classlink.websocket.api.lobby.domain.dto.proto.LobbyHomeScheduleListResProto.LobbyHomeScheduleListRes.class, com.classlink.websocket.api.lobby.domain.dto.proto.LobbyHomeScheduleListResProto.LobbyHomeScheduleListRes.Builder.class);
       }
@@ -1313,12 +1243,12 @@ public final class LobbyHomeScheduleListResProto {
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return internal_static_classlink_LobbyHomeScheduleListRes_descriptor;
+        return com.classlink.websocket.api.lobby.domain.dto.proto.LobbyHomeScheduleListResProto.internal_static_Classlink_LobbyHomeScheduleListRes_descriptor;
       }
 
       @java.lang.Override
       public com.classlink.websocket.api.lobby.domain.dto.proto.LobbyHomeScheduleListResProto.LobbyHomeScheduleListRes getDefaultInstanceForType() {
-        return getDefaultInstance();
+        return com.classlink.websocket.api.lobby.domain.dto.proto.LobbyHomeScheduleListResProto.LobbyHomeScheduleListRes.getDefaultInstance();
       }
 
       @java.lang.Override
@@ -1390,7 +1320,7 @@ public final class LobbyHomeScheduleListResProto {
       }
 
       public Builder mergeFrom(com.classlink.websocket.api.lobby.domain.dto.proto.LobbyHomeScheduleListResProto.LobbyHomeScheduleListRes other) {
-        if (other == getDefaultInstance()) return this;
+        if (other == com.classlink.websocket.api.lobby.domain.dto.proto.LobbyHomeScheduleListResProto.LobbyHomeScheduleListRes.getDefaultInstance()) return this;
         if (scheduleInfoListBuilder_ == null) {
           if (!other.scheduleInfoList_.isEmpty()) {
             if (scheduleInfoList_.isEmpty()) {
@@ -1486,7 +1416,7 @@ public final class LobbyHomeScheduleListResProto {
           com.classlink.websocket.api.lobby.domain.dto.proto.LobbyHomeScheduleListResProto.LobbyHomeScheduleListRes.ScheduleInfo, com.classlink.websocket.api.lobby.domain.dto.proto.LobbyHomeScheduleListResProto.LobbyHomeScheduleListRes.ScheduleInfo.Builder, com.classlink.websocket.api.lobby.domain.dto.proto.LobbyHomeScheduleListResProto.LobbyHomeScheduleListRes.ScheduleInfoOrBuilder> scheduleInfoListBuilder_;
 
       /**
-       * <code>repeated .classlink.LobbyHomeScheduleListRes.ScheduleInfo ScheduleInfoList = 1;</code>
+       * <code>repeated .Classlink.LobbyHomeScheduleListRes.ScheduleInfo ScheduleInfoList = 1;</code>
        */
       public java.util.List<com.classlink.websocket.api.lobby.domain.dto.proto.LobbyHomeScheduleListResProto.LobbyHomeScheduleListRes.ScheduleInfo> getScheduleInfoListList() {
         if (scheduleInfoListBuilder_ == null) {
@@ -1496,7 +1426,7 @@ public final class LobbyHomeScheduleListResProto {
         }
       }
       /**
-       * <code>repeated .classlink.LobbyHomeScheduleListRes.ScheduleInfo ScheduleInfoList = 1;</code>
+       * <code>repeated .Classlink.LobbyHomeScheduleListRes.ScheduleInfo ScheduleInfoList = 1;</code>
        */
       public int getScheduleInfoListCount() {
         if (scheduleInfoListBuilder_ == null) {
@@ -1506,7 +1436,7 @@ public final class LobbyHomeScheduleListResProto {
         }
       }
       /**
-       * <code>repeated .classlink.LobbyHomeScheduleListRes.ScheduleInfo ScheduleInfoList = 1;</code>
+       * <code>repeated .Classlink.LobbyHomeScheduleListRes.ScheduleInfo ScheduleInfoList = 1;</code>
        */
       public com.classlink.websocket.api.lobby.domain.dto.proto.LobbyHomeScheduleListResProto.LobbyHomeScheduleListRes.ScheduleInfo getScheduleInfoList(int index) {
         if (scheduleInfoListBuilder_ == null) {
@@ -1516,7 +1446,7 @@ public final class LobbyHomeScheduleListResProto {
         }
       }
       /**
-       * <code>repeated .classlink.LobbyHomeScheduleListRes.ScheduleInfo ScheduleInfoList = 1;</code>
+       * <code>repeated .Classlink.LobbyHomeScheduleListRes.ScheduleInfo ScheduleInfoList = 1;</code>
        */
       public Builder setScheduleInfoList(
           int index, com.classlink.websocket.api.lobby.domain.dto.proto.LobbyHomeScheduleListResProto.LobbyHomeScheduleListRes.ScheduleInfo value) {
@@ -1533,7 +1463,7 @@ public final class LobbyHomeScheduleListResProto {
         return this;
       }
       /**
-       * <code>repeated .classlink.LobbyHomeScheduleListRes.ScheduleInfo ScheduleInfoList = 1;</code>
+       * <code>repeated .Classlink.LobbyHomeScheduleListRes.ScheduleInfo ScheduleInfoList = 1;</code>
        */
       public Builder setScheduleInfoList(
           int index, com.classlink.websocket.api.lobby.domain.dto.proto.LobbyHomeScheduleListResProto.LobbyHomeScheduleListRes.ScheduleInfo.Builder builderForValue) {
@@ -1547,7 +1477,7 @@ public final class LobbyHomeScheduleListResProto {
         return this;
       }
       /**
-       * <code>repeated .classlink.LobbyHomeScheduleListRes.ScheduleInfo ScheduleInfoList = 1;</code>
+       * <code>repeated .Classlink.LobbyHomeScheduleListRes.ScheduleInfo ScheduleInfoList = 1;</code>
        */
       public Builder addScheduleInfoList(com.classlink.websocket.api.lobby.domain.dto.proto.LobbyHomeScheduleListResProto.LobbyHomeScheduleListRes.ScheduleInfo value) {
         if (scheduleInfoListBuilder_ == null) {
@@ -1563,7 +1493,7 @@ public final class LobbyHomeScheduleListResProto {
         return this;
       }
       /**
-       * <code>repeated .classlink.LobbyHomeScheduleListRes.ScheduleInfo ScheduleInfoList = 1;</code>
+       * <code>repeated .Classlink.LobbyHomeScheduleListRes.ScheduleInfo ScheduleInfoList = 1;</code>
        */
       public Builder addScheduleInfoList(
           int index, com.classlink.websocket.api.lobby.domain.dto.proto.LobbyHomeScheduleListResProto.LobbyHomeScheduleListRes.ScheduleInfo value) {
@@ -1580,7 +1510,7 @@ public final class LobbyHomeScheduleListResProto {
         return this;
       }
       /**
-       * <code>repeated .classlink.LobbyHomeScheduleListRes.ScheduleInfo ScheduleInfoList = 1;</code>
+       * <code>repeated .Classlink.LobbyHomeScheduleListRes.ScheduleInfo ScheduleInfoList = 1;</code>
        */
       public Builder addScheduleInfoList(
           com.classlink.websocket.api.lobby.domain.dto.proto.LobbyHomeScheduleListResProto.LobbyHomeScheduleListRes.ScheduleInfo.Builder builderForValue) {
@@ -1594,7 +1524,7 @@ public final class LobbyHomeScheduleListResProto {
         return this;
       }
       /**
-       * <code>repeated .classlink.LobbyHomeScheduleListRes.ScheduleInfo ScheduleInfoList = 1;</code>
+       * <code>repeated .Classlink.LobbyHomeScheduleListRes.ScheduleInfo ScheduleInfoList = 1;</code>
        */
       public Builder addScheduleInfoList(
           int index, com.classlink.websocket.api.lobby.domain.dto.proto.LobbyHomeScheduleListResProto.LobbyHomeScheduleListRes.ScheduleInfo.Builder builderForValue) {
@@ -1608,13 +1538,13 @@ public final class LobbyHomeScheduleListResProto {
         return this;
       }
       /**
-       * <code>repeated .classlink.LobbyHomeScheduleListRes.ScheduleInfo ScheduleInfoList = 1;</code>
+       * <code>repeated .Classlink.LobbyHomeScheduleListRes.ScheduleInfo ScheduleInfoList = 1;</code>
        */
       public Builder addAllScheduleInfoList(
           java.lang.Iterable<? extends com.classlink.websocket.api.lobby.domain.dto.proto.LobbyHomeScheduleListResProto.LobbyHomeScheduleListRes.ScheduleInfo> values) {
         if (scheduleInfoListBuilder_ == null) {
           ensureScheduleInfoListIsMutable();
-          addAll(
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
               values, scheduleInfoList_);
           onChanged();
         } else {
@@ -1623,7 +1553,7 @@ public final class LobbyHomeScheduleListResProto {
         return this;
       }
       /**
-       * <code>repeated .classlink.LobbyHomeScheduleListRes.ScheduleInfo ScheduleInfoList = 1;</code>
+       * <code>repeated .Classlink.LobbyHomeScheduleListRes.ScheduleInfo ScheduleInfoList = 1;</code>
        */
       public Builder clearScheduleInfoList() {
         if (scheduleInfoListBuilder_ == null) {
@@ -1636,7 +1566,7 @@ public final class LobbyHomeScheduleListResProto {
         return this;
       }
       /**
-       * <code>repeated .classlink.LobbyHomeScheduleListRes.ScheduleInfo ScheduleInfoList = 1;</code>
+       * <code>repeated .Classlink.LobbyHomeScheduleListRes.ScheduleInfo ScheduleInfoList = 1;</code>
        */
       public Builder removeScheduleInfoList(int index) {
         if (scheduleInfoListBuilder_ == null) {
@@ -1649,14 +1579,14 @@ public final class LobbyHomeScheduleListResProto {
         return this;
       }
       /**
-       * <code>repeated .classlink.LobbyHomeScheduleListRes.ScheduleInfo ScheduleInfoList = 1;</code>
+       * <code>repeated .Classlink.LobbyHomeScheduleListRes.ScheduleInfo ScheduleInfoList = 1;</code>
        */
       public com.classlink.websocket.api.lobby.domain.dto.proto.LobbyHomeScheduleListResProto.LobbyHomeScheduleListRes.ScheduleInfo.Builder getScheduleInfoListBuilder(
           int index) {
         return getScheduleInfoListFieldBuilder().getBuilder(index);
       }
       /**
-       * <code>repeated .classlink.LobbyHomeScheduleListRes.ScheduleInfo ScheduleInfoList = 1;</code>
+       * <code>repeated .Classlink.LobbyHomeScheduleListRes.ScheduleInfo ScheduleInfoList = 1;</code>
        */
       public com.classlink.websocket.api.lobby.domain.dto.proto.LobbyHomeScheduleListResProto.LobbyHomeScheduleListRes.ScheduleInfoOrBuilder getScheduleInfoListOrBuilder(
           int index) {
@@ -1666,7 +1596,7 @@ public final class LobbyHomeScheduleListResProto {
         }
       }
       /**
-       * <code>repeated .classlink.LobbyHomeScheduleListRes.ScheduleInfo ScheduleInfoList = 1;</code>
+       * <code>repeated .Classlink.LobbyHomeScheduleListRes.ScheduleInfo ScheduleInfoList = 1;</code>
        */
       public java.util.List<? extends com.classlink.websocket.api.lobby.domain.dto.proto.LobbyHomeScheduleListResProto.LobbyHomeScheduleListRes.ScheduleInfoOrBuilder> 
            getScheduleInfoListOrBuilderList() {
@@ -1677,14 +1607,14 @@ public final class LobbyHomeScheduleListResProto {
         }
       }
       /**
-       * <code>repeated .classlink.LobbyHomeScheduleListRes.ScheduleInfo ScheduleInfoList = 1;</code>
+       * <code>repeated .Classlink.LobbyHomeScheduleListRes.ScheduleInfo ScheduleInfoList = 1;</code>
        */
       public com.classlink.websocket.api.lobby.domain.dto.proto.LobbyHomeScheduleListResProto.LobbyHomeScheduleListRes.ScheduleInfo.Builder addScheduleInfoListBuilder() {
         return getScheduleInfoListFieldBuilder().addBuilder(
             com.classlink.websocket.api.lobby.domain.dto.proto.LobbyHomeScheduleListResProto.LobbyHomeScheduleListRes.ScheduleInfo.getDefaultInstance());
       }
       /**
-       * <code>repeated .classlink.LobbyHomeScheduleListRes.ScheduleInfo ScheduleInfoList = 1;</code>
+       * <code>repeated .Classlink.LobbyHomeScheduleListRes.ScheduleInfo ScheduleInfoList = 1;</code>
        */
       public com.classlink.websocket.api.lobby.domain.dto.proto.LobbyHomeScheduleListResProto.LobbyHomeScheduleListRes.ScheduleInfo.Builder addScheduleInfoListBuilder(
           int index) {
@@ -1692,7 +1622,7 @@ public final class LobbyHomeScheduleListResProto {
             index, com.classlink.websocket.api.lobby.domain.dto.proto.LobbyHomeScheduleListResProto.LobbyHomeScheduleListRes.ScheduleInfo.getDefaultInstance());
       }
       /**
-       * <code>repeated .classlink.LobbyHomeScheduleListRes.ScheduleInfo ScheduleInfoList = 1;</code>
+       * <code>repeated .Classlink.LobbyHomeScheduleListRes.ScheduleInfo ScheduleInfoList = 1;</code>
        */
       public java.util.List<com.classlink.websocket.api.lobby.domain.dto.proto.LobbyHomeScheduleListResProto.LobbyHomeScheduleListRes.ScheduleInfo.Builder> 
            getScheduleInfoListBuilderList() {
@@ -1725,10 +1655,10 @@ public final class LobbyHomeScheduleListResProto {
       }
 
 
-      // @@protoc_insertion_point(builder_scope:classlink.LobbyHomeScheduleListRes)
+      // @@protoc_insertion_point(builder_scope:Classlink.LobbyHomeScheduleListRes)
     }
 
-    // @@protoc_insertion_point(class_scope:classlink.LobbyHomeScheduleListRes)
+    // @@protoc_insertion_point(class_scope:Classlink.LobbyHomeScheduleListRes)
     private static final com.classlink.websocket.api.lobby.domain.dto.proto.LobbyHomeScheduleListResProto.LobbyHomeScheduleListRes DEFAULT_INSTANCE;
     static {
       DEFAULT_INSTANCE = new com.classlink.websocket.api.lobby.domain.dto.proto.LobbyHomeScheduleListResProto.LobbyHomeScheduleListRes();
@@ -1777,15 +1707,15 @@ public final class LobbyHomeScheduleListResProto {
   }
 
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_classlink_LobbyHomeScheduleListRes_descriptor;
+    internal_static_Classlink_LobbyHomeScheduleListRes_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_classlink_LobbyHomeScheduleListRes_fieldAccessorTable;
+      internal_static_Classlink_LobbyHomeScheduleListRes_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_classlink_LobbyHomeScheduleListRes_ScheduleInfo_descriptor;
+    internal_static_Classlink_LobbyHomeScheduleListRes_ScheduleInfo_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_classlink_LobbyHomeScheduleListRes_ScheduleInfo_fieldAccessorTable;
+      internal_static_Classlink_LobbyHomeScheduleListRes_ScheduleInfo_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -1795,32 +1725,32 @@ public final class LobbyHomeScheduleListResProto {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\036LobbyHomeScheduleListRes.proto\022\tclassl" +
-      "ink\"\325\001\n\030LobbyHomeScheduleListRes\022J\n\020Sche" +
-      "duleInfoList\030\001 \003(\01320.classlink.LobbyHome" +
-      "ScheduleListRes.ScheduleInfo\032m\n\014Schedule" +
+      "\n\036LobbyHomeScheduleListRes.proto\022\tClassl" +
+      "ink\"\304\001\n\030LobbyHomeScheduleListRes\022J\n\020Sche" +
+      "duleInfoList\030\001 \003(\01320.Classlink.LobbyHome" +
+      "ScheduleListRes.ScheduleInfo\032\\\n\014Schedule" +
       "Info\022\022\n\nScheduleId\030\001 \001(\005\022\024\n\014ScheduleName" +
       "\030\002 \001(\t\022\021\n\tStartTime\030\003 \001(\t\022\017\n\007EndTime\030\004 \001" +
-      "(\t\022\017\n\007ClassId\030\005 \001(\005BS\n2com.classlink.web" +
-      "socket.api.lobby.domain.dto.protoB\035Lobby" +
-      "HomeScheduleListResProtob\006proto3"
+      "(\tBS\n2com.classlink.websocket.api.lobby." +
+      "domain.dto.protoB\035LobbyHomeScheduleListR" +
+      "esProtob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
         });
-    internal_static_classlink_LobbyHomeScheduleListRes_descriptor =
+    internal_static_Classlink_LobbyHomeScheduleListRes_descriptor =
       getDescriptor().getMessageTypes().get(0);
-    internal_static_classlink_LobbyHomeScheduleListRes_fieldAccessorTable = new
+    internal_static_Classlink_LobbyHomeScheduleListRes_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_classlink_LobbyHomeScheduleListRes_descriptor,
+        internal_static_Classlink_LobbyHomeScheduleListRes_descriptor,
         new java.lang.String[] { "ScheduleInfoList", });
-    internal_static_classlink_LobbyHomeScheduleListRes_ScheduleInfo_descriptor =
-      internal_static_classlink_LobbyHomeScheduleListRes_descriptor.getNestedTypes().get(0);
-    internal_static_classlink_LobbyHomeScheduleListRes_ScheduleInfo_fieldAccessorTable = new
+    internal_static_Classlink_LobbyHomeScheduleListRes_ScheduleInfo_descriptor =
+      internal_static_Classlink_LobbyHomeScheduleListRes_descriptor.getNestedTypes().get(0);
+    internal_static_Classlink_LobbyHomeScheduleListRes_ScheduleInfo_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_classlink_LobbyHomeScheduleListRes_ScheduleInfo_descriptor,
-        new java.lang.String[] { "ScheduleId", "ScheduleName", "StartTime", "EndTime", "ClassId", });
+        internal_static_Classlink_LobbyHomeScheduleListRes_ScheduleInfo_descriptor,
+        new java.lang.String[] { "ScheduleId", "ScheduleName", "StartTime", "EndTime", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

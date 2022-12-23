@@ -1,17 +1,17 @@
 syntax = "proto3"; 
-package Classlink;
-option java_package = "com.classlink.websocket.api.lobby.domain.dto.proto";
-option java_outer_classname = "LobbyInstitutionClassTeacherListResProto";
+package Classlink;  
+option java_package = "com.classlink.websocket.api.lobby.domain.dto.proto"; 
+option java_outer_classname = "LobbyInstitutionClassTeacherListResProto"; 
 
 message LobbyInstitutionClassTeacherListRes{
-   message TeacherInfo
-   {
-      int32 TchIdx = 1;
-      string TeacherImgUrl = 2;
-      string TeacherName = 3;
-      string ClassName = 4;
-      string InsName = 5;
-   }
+message TeacherInfo
+{
+ int32 TchIdx = 1;
+ string TeacherImgUrl = 2;
+ string TeacherName = 3;
+ string ClassName = 4;
+ string InsName = 5; 
+}
 
-   repeated TeacherInfo TeacherInfos = 1;
+repeated TeacherInfo TeacherInfoList = 1;
 }

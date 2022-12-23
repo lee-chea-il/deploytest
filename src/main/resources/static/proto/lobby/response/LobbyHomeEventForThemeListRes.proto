@@ -1,0 +1,13 @@
+syntax = "proto3"; 
+package Classlink;  
+option java_package = "com.classlink.websocket.api.lobby.domain.dto.proto"; 
+option java_outer_classname = "LobbyHomeEventForThemeListResProto"; 
+
+message LobbyHomeEventForThemeListRes{
+message EventForTheme{
+ string EventTheme = 1;
+ string EventImgUrl =2;
+ string EventTitle = 3;
+}
+repeated EventForTheme EventForThemeList= 1;
+}

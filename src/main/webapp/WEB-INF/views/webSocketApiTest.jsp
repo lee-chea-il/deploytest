@@ -19,7 +19,7 @@
         <option value="100">신분 생성</option>
         <option value="101" selected>신분 조회</option>
         <option value="102">신분 선택</option>
-<%--        <option value="102">아바타 생성</option>--%>
+        <%--        <option value="102">아바타 생성</option>--%>
         <option value="103">아바타 조회</option>
         <option value="104">아바타 변경</option>
         <option value="129">사용자 정보 조회</option>
@@ -65,120 +65,159 @@
     const SysWorldInterObjSetInitReqName = "SysWorldInterObjSetInitReq";
     const SysWorldInterObjSetInitResName = "SysWorldInterObjSetInitRes";
 
-    // 로그인 --------------------------------------------------------
+    // SW 및 로비 --------------------------------------------------------
     const LoginInstituteRegistReqName = "LoginInstituteRegistReq";
     const LoginInstituteRegistResName = "LoginInstituteRegistRes";
     const LoginIdentityRegistReqName = "LoginIdentityRegistReq";
     const LoginIdentityRegistResName = "LoginIdentityRegistRes";
-
-    // 신분생성flow--------------------------------------
-    //신분
-    const IdentityListReqName = "IdentityListReq";
-    const IdentityListResName = "IdentityListRes";
     const IdentityCreateReqName = "IdentityCreateReq";
     const IdentityCreateResName = "IdentityCreateRes";
+    const IdentityListReqName = "IdentityListReq";
+    const IdentityListResName = "IdentityListRes";
     const IdentityChangeReqName = "IdentityChangeReq";
     const IdentityChangeResName = "IdentityChangeRes";
-
-    const IdentityProfileDetailReqName = "IdentityProfileDetailReq";
-    const IdentityProfileDetailResName = "IdentityProfileDetailRes";
-    const IdentityProfileUpdateReqName = "IdentityProfileUpdateReq";
-    const IdentityProfileUpdateResName = "IdentityProfileUpdateRes";
-
-    const IdentityEnrollmentConfirmReqName = "IdentityEnrollmentConfirmReq";
-    const IdentityEnrollmentConfirmResName = "IdentityEnrollmentConfirmRes";
-    const IdentityEnrollmenterInfoReqName = "IdentityEnrollmenterInfoReq";
-    const IdentityEnrollmenterInfoResName = "IdentityEnrollmenterInfoRes";
+    const IdentityInstitutionEnrollmentReqName = "IdentityInstitutionEnrollmentReq";
+    const IdentityInstitutionEnrollmentResName = "IdentityInstitutionEnrollmentRes";
+    const IdentityInstitutionInfoReqName = "IdentityInstitutionInfoReq";
+    const IdentityInstitutionInfoResName = "IdentityInstitutionInfoRes";
     const IdentityEnrollmentListReqName = "IdentityEnrollmentListReq";
     const IdentityEnrollmentListResName = "IdentityEnrollmentListRes";
+    const IdentityEnrollmentConfirmReqName = "IdentityEnrollmentConfirmReq";
+    const IdentityEnrollmentConfirmResName = "IdentityEnrollmentConfirmRes";
+    const IdentityEnrollmentInfoReqName = "IdentityEnrollmentInfoReq";
+    const IdentityEnrollmentInfoResName = "IdentityEnrollmentInfoRes";
     const IdentityEnrollmentReplyReqName = "IdentityEnrollmentReplyReq";
     const IdentityEnrollmentReplyResName = "IdentityEnrollmentReplyRes";
-
-
-    //아바타
-    // const IdentityAvatarCreateReqName = "IdentityAvatarCreateReq";
-    // const IdentityAvatarCreateResName = "IdentityAvatarCreateRes";
     const IdentityAvatarListReqName = "IdentityAvatarListReq";
     const IdentityAvatarListResName = "IdentityAvatarListRes";
     const IdentityAvatarChangeReqName = "IdentityAvatarChangeReq";
     const IdentityAvatarChangeResName = "IdentityAvatarChangeRes";
-
-    //교육기관 등록요청
-    const IdentityInstitutionInfoReqName = "IdentityInstitutionInfoReq";
-    const IdentityInstitutionInfoResName = "IdentityInstitutionInfoRes";
-    const IdentityInstitutionEnrollmentReqName = "IdentityInstitutionEnrollmentReq";
-    const IdentityInstitutionEnrollmentResName = "IdentityInstitutionEnrollmentRes";
-
-    // 로비 --------------------------------------
-    // 홈
+    const IdentityProfileDetailReqName = "IdentityProfileDetailReq";
+    const IdentityProfileDetailResName = "IdentityProfileDetailRes";
+    const IdentityProfileUpdateReqName = "IdentityProfileUpdateReq";
+    const IdentityProfileUpdateResName = "IdentityProfileUpdateRes";
+    const LobbyHomeStatisticsReqName = "LobbyHomeStatisticsReq";
+    const LobbyHomeStatisticsResName = "LobbyHomeStatisticsRes";
     const LobbyHomeStudentInstitutionListReqName = "LobbyHomeStudentInstitutionListReq";
     const LobbyHomeStudentInstitutionListResName = "LobbyHomeStudentInstitutionListRes";
     const LobbyHomeFranchiseInstitutionListReqName = "LobbyHomeFranchiseInstitutionListReq";
     const LobbyHomeFranchiseInstitutionListResName = "LobbyHomeFranchiseInstitutionListRes";
+    const LobbyHomeNoticeListReqName = "LobbyHomeNoticeListReq";
+    const LobbyHomeNoticeListResName = "LobbyHomeNoticeListRes";
     const LobbyHomeScheduleListReqName = "LobbyHomeScheduleListReq";
     const LobbyHomeScheduleListResName = "LobbyHomeScheduleListRes";
+    const LobbyHomeClassInfoListReqName = "LobbyHomeClassInfoListReq";
+    const LobbyHomeClassInfoListResName = "LobbyHomeClassInfoListRes";
+    const LobbyHomeTodayClassDetailReqName = "LobbyHomeTodayClassDetailReq";
+    const LobbyHomeTodayClassDetailResName = "LobbyHomeTodayClassDetailRes";
+    const LobbyHomeLectureCourseListReqName = "LobbyHomeLectureCourseListReq";
+    const LobbyHomeLectureCourseListResName = "LobbyHomeLectureCourseListRes";
+    const LobbyHomeEventForThemeListReqName = "LobbyHomeEventForThemeListReq";
+    const LobbyHomeEventForThemeListResName = "LobbyHomeEventForThemeListRes";
+    const SWclassInstitutionSystemNoticeListReqName = "SWclassInstitutionSystemNoticeListReq";
+    const SWclassInstitutionSystemNoticeListResName = "SWclassInstitutionSystemNoticeListRes";
+    const SWclassInstitutionInstitutionNoticeListReqName = "SWclassInstitutionInstitutionNoticeListReq";
+    const SWclassInstitutionInstitutionNoticeListResName = "SWclassInstitutionInstitutionNoticeListRes";
+    const SWclassInstitutionfranchiseNoticeListReqName = "SWclassInstitutionfranchiseNoticeListReq";
+    const SWclassInstitutionfranchiseNoticeListResName = "SWclassInstitutionfranchiseNoticeListRes";
+    const SWclassInstitutionAttendanceReqName = "SWclassInstitutionAttendanceReq";
+    const SWclassInstitutionAttendanceResName = "SWclassInstitutionAttendanceRes";
     const LobbyInstitutionClassTeacherListReqName = "LobbyInstitutionClassTeacherListReq";
     const LobbyInstitutionClassTeacherListResName = "LobbyInstitutionClassTeacherListRes";
+    const LobbyInstitutionClassTeacherInfoReqName = "LobbyInstitutionClassTeacherInfoReq";
+    const LobbyInstitutionClassTeacherInfoResName = "LobbyInstitutionClassTeacherInfoRes";
+    const LobbyInstitutionBoardNoteBoxReqName = "LobbyInstitutionBoardNoteBoxReq";
+    const LobbyInstitutionBoardNoteBoxResName = "LobbyInstitutionBoardNoteBoxRes";
+    const LobbyInstitutionBoardNotepadReqName = "LobbyInstitutionBoardNotepadReq";
+    const LobbyInstitutionBoardNotepadResName = "LobbyInstitutionBoardNotepadRes";
+    const LobbyInstitutionBoardReportBoxReqName = "LobbyInstitutionBoardReportBoxReq";
+    const LobbyInstitutionBoardReportBoxResName = "LobbyInstitutionBoardReportBoxRes";
+    const LobbyInstitutionBoardQuestionBoxReqName = "LobbyInstitutionBoardQuestionBoxReq";
+    const LobbyInstitutionBoardQuestionBoxResName = "LobbyInstitutionBoardQuestionBoxRes";
+    const LobbyCalenderScheduleReqName = "LobbyCalenderScheduleReq";
+    const LobbyCalenderScheduleResName = "LobbyCalenderScheduleRes";
+    const LobbyCalenderUrlReqName = "LobbyCalenderUrlReq";
+    const LobbyCalenderUrlResName = "LobbyCalenderUrlRes";
+
 
     //---------------------------------------------------------------------------------------------------
     // protobuf.load시에 로딩할 protobuf 파일 경로 지정  
 
     const commonPath = "../proto"
     const protoFileList = [
-        commonPath.concat("/sys/request/SysWorldSetInfoReq.proto"),
-        commonPath.concat("/sys/response/SysWorldSetInfoRes.proto"),
-        commonPath.concat("/sys/request/SysWorldInterObjSetCreateReq.proto"),
-        commonPath.concat("/sys/response/SysWorldInterObjSetCreateRes.proto"),
-        commonPath.concat("/sys/request/SysWorldInterObjSetInitReq.proto"),
-        commonPath.concat("/sys/response/SysWorldInterObjSetInitRes.proto"),
-
         commonPath.concat("/member/request/LoginInstituteRegistReq.proto"),
         commonPath.concat("/member/response/LoginInstituteRegistRes.proto"),
         commonPath.concat("/member/request/LoginIdentityRegistReq.proto"),
         commonPath.concat("/member/response/LoginIdentityRegistRes.proto"),
-
-        commonPath.concat("/member/request/IdentityListReq.proto"),
-        commonPath.concat("/member/response/IdentityListRes.proto"),
         commonPath.concat("/member/request/IdentityCreateReq.proto"),
         commonPath.concat("/member/response/IdentityCreateRes.proto"),
+        commonPath.concat("/member/request/IdentityListReq.proto"),
+        commonPath.concat("/member/response/IdentityListRes.proto"),
         commonPath.concat("/member/request/IdentityChangeReq.proto"),
         commonPath.concat("/member/response/IdentityChangeRes.proto"),
-
-        // commonPath.concat("/member/request/IdentityAvatarCreateReq.proto"),
-        // commonPath.concat("/member/response/IdentityAvatarCreateRes.proto"),
+        commonPath.concat("/member/request/IdentityInstitutionEnrollmentReq.proto"),
+        commonPath.concat("/member/response/IdentityInstitutionEnrollmentRes.proto"),
+        commonPath.concat("/member/request/IdentityInstitutionInfoReq.proto"),
+        commonPath.concat("/member/response/IdentityInstitutionInfoRes.proto"),
+        commonPath.concat("/member/request/IdentityEnrollmentListReq.proto"),
+        commonPath.concat("/member/response/IdentityEnrollmentListRes.proto"),
+        commonPath.concat("/member/request/IdentityEnrollmentConfirmReq.proto"),
+        commonPath.concat("/member/response/IdentityEnrollmentConfirmRes.proto"),
+        commonPath.concat("/member/request/IdentityEnrollmentInfoReq.proto"),
+        commonPath.concat("/member/response/IdentityEnrollmentInfoRes.proto"),
+        commonPath.concat("/member/request/IdentityEnrollmentReplyReq.proto"),
+        commonPath.concat("/member/response/IdentityEnrollmentReplyRes.proto"),
         commonPath.concat("/member/request/IdentityAvatarListReq.proto"),
         commonPath.concat("/member/response/IdentityAvatarListRes.proto"),
         commonPath.concat("/member/request/IdentityAvatarChangeReq.proto"),
         commonPath.concat("/member/response/IdentityAvatarChangeRes.proto"),
-
         commonPath.concat("/member/request/IdentityProfileDetailReq.proto"),
         commonPath.concat("/member/response/IdentityProfileDetailRes.proto"),
         commonPath.concat("/member/request/IdentityProfileUpdateReq.proto"),
         commonPath.concat("/member/response/IdentityProfileUpdateRes.proto"),
-
-        commonPath.concat("/member/request/IdentityInstitutionInfoReq.proto"),
-        commonPath.concat("/member/response/IdentityInstitutionInfoRes.proto"),
-        commonPath.concat("/member/request/IdentityInstitutionEnrollmentReq.proto"),
-        commonPath.concat("/member/response/IdentityInstitutionEnrollmentRes.proto"),
-        commonPath.concat("/member/request/IdentityEnrollmentConfirmReq.proto"),
-        commonPath.concat("/member/response/IdentityEnrollmentConfirmRes.proto"),
-        commonPath.concat("/member/request/IdentityEnrollmenterInfoReq.proto"),
-        commonPath.concat("/member/response/IdentityEnrollmenterInfoRes.proto"),
-        commonPath.concat("/member/request/IdentityEnrollmentListReq.proto"),
-        commonPath.concat("/member/response/IdentityEnrollmentListRes.proto"),
-        commonPath.concat("/member/request/IdentityEnrollmentReplyReq.proto"),
-        commonPath.concat("/member/response/IdentityEnrollmentReplyRes.proto"),
-
+        commonPath.concat("/lobby/request/LobbyHomeStatisticsReq.proto"),
+        commonPath.concat("/lobby/response/LobbyHomeStatisticsRes.proto"),
         commonPath.concat("/lobby/request/LobbyHomeStudentInstitutionListReq.proto"),
         commonPath.concat("/lobby/response/LobbyHomeStudentInstitutionListRes.proto"),
         commonPath.concat("/lobby/request/LobbyHomeFranchiseInstitutionListReq.proto"),
         commonPath.concat("/lobby/response/LobbyHomeFranchiseInstitutionListRes.proto"),
+        commonPath.concat("/lobby/request/LobbyHomeNoticeListReq.proto"),
+        commonPath.concat("/lobby/response/LobbyHomeNoticeListRes.proto"),
         commonPath.concat("/lobby/request/LobbyHomeScheduleListReq.proto"),
         commonPath.concat("/lobby/response/LobbyHomeScheduleListRes.proto"),
+        commonPath.concat("/lobby/request/LobbyHomeClassInfoListReq.proto"),
+        commonPath.concat("/lobby/response/LobbyHomeClassInfoListRes.proto"),
+        commonPath.concat("/lobby/request/LobbyHomeTodayClassDetailReq.proto"),
+        commonPath.concat("/lobby/response/LobbyHomeTodayClassDetailRes.proto"),
+        commonPath.concat("/lobby/request/LobbyHomeLectureCourseListReq.proto"),
+        commonPath.concat("/lobby/response/LobbyHomeLectureCourseListRes.proto"),
+        commonPath.concat("/lobby/request/LobbyHomeEventForThemeListReq.proto"),
+        commonPath.concat("/lobby/response/LobbyHomeEventForThemeListRes.proto"),
+        commonPath.concat("/lobby/request/SWclassInstitutionSystemNoticeListReq.proto"),
+        commonPath.concat("/lobby/response/SWclassInstitutionSystemNoticeListRes.proto"),
+        commonPath.concat("/lobby/request/SWclassInstitutionInstitutionNoticeListReq.proto"),
+        commonPath.concat("/lobby/response/SWclassInstitutionInstitutionNoticeListRes.proto"),
+        commonPath.concat("/lobby/request/SWclassInstitutionfranchiseNoticeListReq.proto"),
+        commonPath.concat("/lobby/response/SWclassInstitutionfranchiseNoticeListRes.proto"),
+        commonPath.concat("/lobby/request/SWclassInstitutionAttendanceReq.proto"),
+        commonPath.concat("/lobby/response/SWclassInstitutionAttendanceRes.proto"),
         commonPath.concat("/lobby/request/LobbyInstitutionClassTeacherListReq.proto"),
         commonPath.concat("/lobby/response/LobbyInstitutionClassTeacherListRes.proto"),
+        commonPath.concat("/lobby/request/LobbyInstitutionClassTeacherInfoReq.proto"),
+        commonPath.concat("/lobby/response/LobbyInstitutionClassTeacherInfoRes.proto"),
+        commonPath.concat("/lobby/request/LobbyInstitutionBoardNoteBoxReq.proto"),
+        commonPath.concat("/lobby/response/LobbyInstitutionBoardNoteBoxRes.proto"),
+        commonPath.concat("/lobby/request/LobbyInstitutionBoardNotepadReq.proto"),
+        commonPath.concat("/lobby/response/LobbyInstitutionBoardNotepadRes.proto"),
+        commonPath.concat("/lobby/request/LobbyInstitutionBoardReportBoxReq.proto"),
+        commonPath.concat("/lobby/response/LobbyInstitutionBoardReportBoxRes.proto"),
+        commonPath.concat("/lobby/request/LobbyInstitutionBoardQuestionBoxReq.proto"),
+        commonPath.concat("/lobby/response/LobbyInstitutionBoardQuestionBoxRes.proto"),
+        commonPath.concat("/lobby/request/LobbyCalenderScheduleReq.proto"),
+        commonPath.concat("/lobby/response/LobbyCalenderScheduleRes.proto"),
+        commonPath.concat("/lobby/request/LobbyCalenderUrlReq.proto"),
+        commonPath.concat("/lobby/response/LobbyCalenderUrlRes.proto"),
 
-        commonPath.concat("/member/request/SWclassIdentityInfo.proto"),
         commonPath.concat("/common/RequestPacket.proto"),
         commonPath.concat("/common/ResponsePacket.proto"),
         commonPath.concat("/jwt/jwtException.proto")
@@ -213,271 +252,467 @@
                 loadMessage(root, JwtExceptionName, "Classlink.JwtException");
 
                 switch (OpCode) {
-                    //신분생성-----------------------------------------------------------------------------------------
+//최근 접속 교육기관 update-----------------------------------------------------------------------------------------
+                    case 112 :
+                        loadMessage(root, LoginInstituteRegistReqName, 'Classlink.LoginInstituteRegistReq');
+                        loadMessage(root, LoginInstituteRegistResName, 'Classlink.LoginInstituteRegistRes');
+
+                        const LoginInstituteRegistReqObj = {
+                            LastInsCode: 'LastInsCode',
+                        };
+
+                        Data = setDataToSend(root, LoginInstituteRegistReqName, LoginInstituteRegistReqObj);
+                        break;
+
+//최근 접속 신분 update-----------------------------------------------------------------------------------------
+                    case 113 :
+                        loadMessage(root, LoginIdentityRegistReqName, 'Classlink.LoginIdentityRegistReq');
+                        loadMessage(root, LoginIdentityRegistResName, 'Classlink.LoginIdentityRegistRes');
+
+                        const LoginIdentityRegistReqObj = {
+                            LastIdentityType: 'LastIdentityType',
+                            InsCode: 'InsCode',
+                        };
+
+                        Data = setDataToSend(root, LoginIdentityRegistReqName, LoginIdentityRegistReqObj);
+                        break;
+
+//신분 생성-----------------------------------------------------------------------------------------
                     case 100 :
-                        loadMessage(root, IdentityCreateReqName, "Classlink.IdentityCreateReq");
-                        loadMessage(root, IdentityCreateResName, "Classlink.IdentityCreateRes");
+                        loadMessage(root, IdentityCreateReqName, 'Classlink.IdentityCreateReq');
+                        loadMessage(root, IdentityCreateResName, 'Classlink.IdentityCreateRes');
 
                         const IdentityCreateReqObj = {
-                            InsCode: 'testA',
-                            SelectIdentityType: 'T'
+                            InsCode: 'InsCode',
+                            TarIdentityType: 'TarIdentityType',
                         };
 
                         Data = setDataToSend(root, IdentityCreateReqName, IdentityCreateReqObj);
                         break;
-                    //신분조회-----------------------------------------------------------------------------------------
+
+//신분 조회-----------------------------------------------------------------------------------------
                     case 101 :
-                        loadMessage(root, IdentityListReqName, "Classlink.IdentityListReq");
-                        loadMessage(root, IdentityListResName, "Classlink.IdentityListRes");
+                        loadMessage(root, IdentityListReqName, 'Classlink.IdentityListReq');
+                        loadMessage(root, IdentityListResName, 'Classlink.IdentityListRes');
 
                         const IdentityListReqObj = {
-                            InsCode: 'testA'
+                            InsCode: 'InsCode',
                         };
 
                         Data = setDataToSend(root, IdentityListReqName, IdentityListReqObj);
                         break;
+
+//신분 선택-----------------------------------------------------------------------------------------
                     case 102 :
-                        loadMessage(root, IdentityChangeReqName, "Classlink.IdentityChangeReq");
-                        loadMessage(root, IdentityChangeResName, "Classlink.IdentityChangeRes");
+                        loadMessage(root, IdentityChangeReqName, 'Classlink.IdentityChangeReq');
+                        loadMessage(root, IdentityChangeResName, 'Classlink.IdentityChangeRes');
 
                         const IdentityChangeReqObj = {
-                            InsCode : 'testA',
-                            TarIdentityType : 'P',
+                            InsCode: 'InsCode',
+                            TarIdentityType: 'TarIdentityType',
                         };
 
                         Data = setDataToSend(root, IdentityChangeReqName, IdentityChangeReqObj);
                         break;
-                    //아바타생성-----------------------------------------------------------------------------------------
-                    // case 102 :
-                    //     loadMessage(root, IdentityAvatarCreateReqName, "Classlink.IdentityAvatarCreateReq");
-                    //     loadMessage(root, IdentityAvatarCreateResName, "Classlink.IdentityAvatarCreateRes");
-                    //
-                    //     const IdentityAvatarCreateReqObj = {
-                    //         InsCode: 'testA',
-                    //         IdentityType: 'P',
-                    //         AvatarId: '150'
-                    //     };
-                    //
-                    //     Data = setDataToSend(root, IdentityAvatarCreateReqName, IdentityAvatarCreateReqObj);
-                    //     break;
-                    //아바타 조회-----------------------------------------------------------------------------------------
+
+//교육기관 등록 요청-----------------------------------------------------------------------------------------
+                    case 106 :
+                        loadMessage(root, IdentityInstitutionEnrollmentReqName, 'Classlink.IdentityInstitutionEnrollmentReq');
+                        loadMessage(root, IdentityInstitutionEnrollmentResName, 'Classlink.IdentityInstitutionEnrollmentRes');
+
+                        const IdentityInstitutionEnrollmentReqObj = {
+                            InsCode: 'InsCode',
+                        };
+
+                        Data = setDataToSend(root, IdentityInstitutionEnrollmentReqName, IdentityInstitutionEnrollmentReqObj);
+                        break;
+
+//입력한 교육기관 정보 확인-----------------------------------------------------------------------------------------
+                    case 105 :
+                        loadMessage(root, IdentityInstitutionInfoReqName, 'Classlink.IdentityInstitutionInfoReq');
+                        loadMessage(root, IdentityInstitutionInfoResName, 'Classlink.IdentityInstitutionInfoRes');
+
+                        const IdentityInstitutionInfoReqObj = {
+                            InsCode: 'InsCode',
+                            InsInviteUrl: 'InsInviteUrl',
+                        };
+
+                        Data = setDataToSend(root, IdentityInstitutionInfoReqName, IdentityInstitutionInfoReqObj);
+                        break;
+
+//가입 신청 리스트-----------------------------------------------------------------------------------------
+                    case 107 :
+                        loadMessage(root, IdentityEnrollmentListReqName, 'Classlink.IdentityEnrollmentListReq');
+                        loadMessage(root, IdentityEnrollmentListResName, 'Classlink.IdentityEnrollmentListRes');
+
+                        const IdentityEnrollmentListReqObj = {
+                            InsCode: 'InsCode',
+                        };
+
+                        Data = setDataToSend(root, IdentityEnrollmentListReqName, IdentityEnrollmentListReqObj);
+                        break;
+
+//가입 신청 확인-----------------------------------------------------------------------------------------
+                    case 108 :
+                        loadMessage(root, IdentityEnrollmentConfirmReqName, 'Classlink.IdentityEnrollmentConfirmReq');
+                        loadMessage(root, IdentityEnrollmentConfirmResName, 'Classlink.IdentityEnrollmentConfirmRes');
+
+                        const IdentityEnrollmentConfirmReqObj = {
+                            ItmIdx: 'ItmIdx',
+                        };
+
+                        Data = setDataToSend(root, IdentityEnrollmentConfirmReqName, IdentityEnrollmentConfirmReqObj);
+                        break;
+
+//가입 신청인 정보-----------------------------------------------------------------------------------------
+                    case 109 :
+                        loadMessage(root, IdentityEnrollmentInfoReqName, 'Classlink.IdentityEnrollmentInfoReq');
+                        loadMessage(root, IdentityEnrollmentInfoResName, 'Classlink.IdentityEnrollmentInfoRes');
+
+                        const IdentityEnrollmentInfoReqObj = {
+                            ItmIdx: 'ItmIdx',
+                        };
+
+                        Data = setDataToSend(root, IdentityEnrollmentInfoReqName, IdentityEnrollmentInfoReqObj);
+                        break;
+
+//가입 신청 응답-----------------------------------------------------------------------------------------
+                    case 110 :
+                        loadMessage(root, IdentityEnrollmentReplyReqName, 'Classlink.IdentityEnrollmentReplyReq');
+                        loadMessage(root, IdentityEnrollmentReplyResName, 'Classlink.IdentityEnrollmentReplyRes');
+
+                        const IdentityEnrollmentReplyReqObj = {
+                            ItmIdx: 'ItmIdx',
+                            IsPermission: 'IsPermission',
+                        };
+
+                        Data = setDataToSend(root, IdentityEnrollmentReplyReqName, IdentityEnrollmentReplyReqObj);
+                        break;
+
+//아바타 조회-----------------------------------------------------------------------------------------
                     case 103 :
-                        loadMessage(root, IdentityAvatarListReqName, "Classlink.IdentityAvatarListReq");
-                        loadMessage(root, IdentityAvatarListResName, "Classlink.IdentityAvatarListRes");
+                        loadMessage(root, IdentityAvatarListReqName, 'Classlink.IdentityAvatarListReq');
+                        loadMessage(root, IdentityAvatarListResName, 'Classlink.IdentityAvatarListRes');
 
                         const IdentityAvatarListReqObj = {
-                            InsCode: 'testA',
-                            IdentityType: 'P',
+                            InsCode: 'InsCode',
                         };
 
                         Data = setDataToSend(root, IdentityAvatarListReqName, IdentityAvatarListReqObj);
                         break;
-                    //아바타 변경-----------------------------------------------------------------------------------------
+
+//아바타 변경-----------------------------------------------------------------------------------------
                     case 104 :
-                        loadMessage(root, IdentityAvatarChangeReqName, "Classlink.IdentityAvatarChangeReq");
-                        loadMessage(root, IdentityAvatarChangeResName, "Classlink.IdentityAvatarChangeRes");
+                        loadMessage(root, IdentityAvatarChangeReqName, 'Classlink.IdentityAvatarChangeReq');
+                        loadMessage(root, IdentityAvatarChangeResName, 'Classlink.IdentityAvatarChangeRes');
 
                         const IdentityAvatarChangeReqObj = {
-                            InsCode: 'testA',
-                            IdentityType: 'P',
-                            AvatarId: 155
+                            InsCode: 'InsCode',
+                            IdentityType: 'IdentityType',
+                            AvatarId: 'AvatarId',
                         };
 
                         Data = setDataToSend(root, IdentityAvatarChangeReqName, IdentityAvatarChangeReqObj);
                         break;
-                    //사용자 정보 조회-----------------------------------------------------------------------------------------
-                    case 129 :
-                        loadMessage(root, IdentityProfileDetailReqName, "Classlink.IdentityProfileDetailReq");
-                        loadMessage(root, IdentityProfileDetailResName, "Classlink.IdentityProfileDetailRes");
 
-                        const IdentityProfileDetailReqNameObj = {
-                            InsCode: 'testA',
-                            IdentityType: 'P'
+//사용자 정보 조회-----------------------------------------------------------------------------------------
+                    case 129 :
+                        loadMessage(root, IdentityProfileDetailReqName, 'Classlink.IdentityProfileDetailReq');
+                        loadMessage(root, IdentityProfileDetailResName, 'Classlink.IdentityProfileDetailRes');
+
+                        const IdentityProfileDetailReqObj = {
+                            InsCode: 'InsCode',
+                            IdentityType: 'IdentityType',
                         };
 
-                        Data = setDataToSend(root, IdentityProfileDetailReqName, IdentityProfileDetailReqNameObj);
+                        Data = setDataToSend(root, IdentityProfileDetailReqName, IdentityProfileDetailReqObj);
                         break;
-                    //사용자 정보 입력-----------------------------------------------------------------------------------------
+
+//사용자 정보 입력-----------------------------------------------------------------------------------------
                     case 111 :
-                        loadMessage(root, IdentityProfileUpdateReqName, "Classlink.IdentityProfileUpdateReq");
-                        loadMessage(root, IdentityProfileUpdateResName, "Classlink.IdentityProfileUpdateRes");
+                        loadMessage(root, IdentityProfileUpdateReqName, 'Classlink.IdentityProfileUpdateReq');
+                        loadMessage(root, IdentityProfileUpdateResName, 'Classlink.IdentityProfileUpdateRes');
 
                         const IdentityProfileUpdateReqObj = {
-                            InsCode: 'testA',
-                            IdentityType: 'P',
-                            MemNickName : '방수영',
-                            MemEmail : 'qkdtpwls_@naver.com',
-                            MemPhone : '01055212785'
+                            InsCode: 'InsCode',
+                            IdentityType: 'IdentityType',
+                            MemName: 'MemName',
+                            MemNickName: 'MemNickName',
+                            MemEmail: 'MemEmail',
+                            MemPhone: 'MemPhone',
                         };
+
                         Data = setDataToSend(root, IdentityProfileUpdateReqName, IdentityProfileUpdateReqObj);
-                    //학생 소속 교육기관 목록-----------------------------------------------------------------------------------------
+                        break;
+
+//통계-----------------------------------------------------------------------------------------
+                    case 132 :
+                        loadMessage(root, LobbyHomeStatisticsReqName, 'Classlink.LobbyHomeStatisticsReq');
+                        loadMessage(root, LobbyHomeStatisticsResName, 'Classlink.LobbyHomeStatisticsRes');
+
+                        const LobbyHomeStatisticsReqObj = {
+                            InsCode: 'InsCode',
+                            IdentityType: 'IdentityType',
+                        };
+
+                        Data = setDataToSend(root, LobbyHomeStatisticsReqName, LobbyHomeStatisticsReqObj);
+                        break;
+
+//학생 소속 교육기관 목록-----------------------------------------------------------------------------------------
                     case 117 :
-                        loadMessage(root, LobbyHomeStudentInstitutionListReqName, "Classlink.LobbyHomeStudentInstitutionListReq");
-                        loadMessage(root, LobbyHomeStudentInstitutionListResName, "Classlink.LobbyHomeStudentInstitutionListRes");
+                        loadMessage(root, LobbyHomeStudentInstitutionListReqName, 'Classlink.LobbyHomeStudentInstitutionListReq');
+                        loadMessage(root, LobbyHomeStudentInstitutionListResName, 'Classlink.LobbyHomeStudentInstitutionListRes');
 
                         const LobbyHomeStudentInstitutionListReqObj = {};
 
                         Data = setDataToSend(root, LobbyHomeStudentInstitutionListReqName, LobbyHomeStudentInstitutionListReqObj);
                         break;
 
-                    //프랜차이즈장 보유 교육기관 목록-----------------------------------------------------------------------------------------
+//프랜차이즈장 보유 교육기관 목록-----------------------------------------------------------------------------------------
                     case 118 :
-                        loadMessage(root, LobbyHomeFranchiseInstitutionListReqName, "Classlink.LobbyHomeFranchiseInstitutionListReq");
-                        loadMessage(root, LobbyHomeFranchiseInstitutionListResName, "Classlink.LobbyHomeFranchiseInstitutionListRes");
+                        loadMessage(root, LobbyHomeFranchiseInstitutionListReqName, 'Classlink.LobbyHomeFranchiseInstitutionListReq');
+                        loadMessage(root, LobbyHomeFranchiseInstitutionListResName, 'Classlink.LobbyHomeFranchiseInstitutionListRes');
 
                         const LobbyHomeFranchiseInstitutionListReqObj = {};
 
                         Data = setDataToSend(root, LobbyHomeFranchiseInstitutionListReqName, LobbyHomeFranchiseInstitutionListReqObj);
                         break;
 
-                    //기간별 일정 목록-----------------------------------------------------------------------------------------
-                    case 134 :
-                        loadMessage(root, LobbyHomeScheduleListReqName, "Classlink.LobbyHomeScheduleListReq");
-                        loadMessage(root, LobbyHomeScheduleListResName, "Classlink.LobbyHomeScheduleListRes");
+//알림-----------------------------------------------------------------------------------------
+                    case 133 :
+                        loadMessage(root, LobbyHomeNoticeListReqName, 'Classlink.LobbyHomeNoticeListReq');
+                        loadMessage(root, LobbyHomeNoticeListResName, 'Classlink.LobbyHomeNoticeListRes');
 
-                        const LobbyHomeScheduleListReqNameObj = {};
+                        const LobbyHomeNoticeListReqObj = {
+                            InsCode: 'InsCode',
+                            TarIdentityType: 'TarIdentityType',
+                        };
 
-                        Data = setDataToSend(root, LobbyHomeScheduleListReqName, LobbyHomeScheduleListReqNameObj);
+                        Data = setDataToSend(root, LobbyHomeNoticeListReqName, LobbyHomeNoticeListReqObj);
                         break;
 
-                    //선생님 목록-----------------------------------------------------------------------------------------
-                    case 119 :
-                        loadMessage(root, LobbyInstitutionClassTeacherListReqName, "Classlink.LobbyInstitutionClassTeacherListReq");
-                        loadMessage(root, LobbyInstitutionClassTeacherListResName, "Classlink.LobbyInstitutionClassTeacherListRes");
+//기간별 일정 목록-----------------------------------------------------------------------------------------
+                    case 134 :
+                        loadMessage(root, LobbyHomeScheduleListReqName, 'Classlink.LobbyHomeScheduleListReq');
+                        loadMessage(root, LobbyHomeScheduleListResName, 'Classlink.LobbyHomeScheduleListRes');
 
-                        const LobbyInstitutionClassTeacherListReqObj = {};
+                        const LobbyHomeScheduleListReqObj = {
+                            StartTime: 'StartTime',
+                            EndTime: 'EndTime',
+                        };
+
+                        Data = setDataToSend(root, LobbyHomeScheduleListReqName, LobbyHomeScheduleListReqObj);
+                        break;
+
+//기간별 수업 목록-----------------------------------------------------------------------------------------
+                    case 114 :
+                        loadMessage(root, LobbyHomeClassInfoListReqName, 'Classlink.LobbyHomeClassInfoListReq');
+                        loadMessage(root, LobbyHomeClassInfoListResName, 'Classlink.LobbyHomeClassInfoListRes');
+
+                        const LobbyHomeClassInfoListReqObj = {
+                            InsCode: 'InsCode',
+                            IdentityType: 'IdentityType',
+                            StartDate: 'StartDate',
+                            EndDate: 'EndDate',
+                        };
+
+                        Data = setDataToSend(root, LobbyHomeClassInfoListReqName, LobbyHomeClassInfoListReqObj);
+                        break;
+
+//오늘의 수업 상세보기-----------------------------------------------------------------------------------------
+                    case 115 :
+                        loadMessage(root, LobbyHomeTodayClassDetailReqName, 'Classlink.LobbyHomeTodayClassDetailReq');
+                        loadMessage(root, LobbyHomeTodayClassDetailResName, 'Classlink.LobbyHomeTodayClassDetailRes');
+
+                        const LobbyHomeTodayClassDetailReqObj = {
+                            InsCode: 'InsCode',
+                            IdentityType: 'IdentityType',
+                        };
+
+                        Data = setDataToSend(root, LobbyHomeTodayClassDetailReqName, LobbyHomeTodayClassDetailReqObj);
+                        break;
+
+//강의 코스 목록-----------------------------------------------------------------------------------------
+                    case 116 :
+                        loadMessage(root, LobbyHomeLectureCourseListReqName, 'Classlink.LobbyHomeLectureCourseListReq');
+                        loadMessage(root, LobbyHomeLectureCourseListResName, 'Classlink.LobbyHomeLectureCourseListRes');
+
+                        const LobbyHomeLectureCourseListReqObj = {
+                            InsCode: 'InsCode',
+                            IdentityType: 'IdentityType',
+                        };
+
+                        Data = setDataToSend(root, LobbyHomeLectureCourseListReqName, LobbyHomeLectureCourseListReqObj);
+                        break;
+
+//테마별 이벤트-----------------------------------------------------------------------------------------
+                    case 135 :
+                        loadMessage(root, LobbyHomeEventForThemeListReqName, 'Classlink.LobbyHomeEventForThemeListReq');
+                        loadMessage(root, LobbyHomeEventForThemeListResName, 'Classlink.LobbyHomeEventForThemeListRes');
+
+                        const LobbyHomeEventForThemeListReqObj = {
+                            InsCode: 'InsCode',
+                            TarIdentityType: 'TarIdentityType',
+                        };
+
+                        Data = setDataToSend(root, LobbyHomeEventForThemeListReqName, LobbyHomeEventForThemeListReqObj);
+                        break;
+
+//시스템 공지 리스트-----------------------------------------------------------------------------------------
+                    case 136 :
+                        loadMessage(root, SWclassInstitutionSystemNoticeListReqName, 'Classlink.SWclassInstitutionSystemNoticeListReq');
+                        loadMessage(root, SWclassInstitutionSystemNoticeListResName, 'Classlink.SWclassInstitutionSystemNoticeListRes');
+
+                        const SWclassInstitutionSystemNoticeListReqObj = {
+                            InsCode: 'InsCode',
+                            TarIdentityType: 'TarIdentityType',
+                        };
+
+                        Data = setDataToSend(root, SWclassInstitutionSystemNoticeListReqName, SWclassInstitutionSystemNoticeListReqObj);
+                        break;
+
+//교육기관 공지 리스트-----------------------------------------------------------------------------------------
+                    case 137 :
+                        loadMessage(root, SWclassInstitutionInstitutionNoticeListReqName, 'Classlink.SWclassInstitutionInstitutionNoticeListReq');
+                        loadMessage(root, SWclassInstitutionInstitutionNoticeListResName, 'Classlink.SWclassInstitutionInstitutionNoticeListRes');
+
+                        const SWclassInstitutionInstitutionNoticeListReqObj = {
+                            InsCode: 'InsCode',
+                            TarIdentityType: 'TarIdentityType',
+                        };
+
+                        Data = setDataToSend(root, SWclassInstitutionInstitutionNoticeListReqName, SWclassInstitutionInstitutionNoticeListReqObj);
+                        break;
+
+//프렌차이즈 공지 리스트-----------------------------------------------------------------------------------------
+                    case 138 :
+                        loadMessage(root, SWclassInstitutionfranchiseNoticeListReqName, 'Classlink.SWclassInstitutionfranchiseNoticeListReq');
+                        loadMessage(root, SWclassInstitutionfranchiseNoticeListResName, 'Classlink.SWclassInstitutionfranchiseNoticeListRes');
+
+                        const SWclassInstitutionfranchiseNoticeListReqObj = {
+                            InsCode: 'InsCode',
+                            TarIdentityType: 'TarIdentityType',
+                        };
+
+                        Data = setDataToSend(root, SWclassInstitutionfranchiseNoticeListReqName, SWclassInstitutionfranchiseNoticeListReqObj);
+                        break;
+
+//출결-----------------------------------------------------------------------------------------
+                    case 139 :
+                        loadMessage(root, SWclassInstitutionAttendanceReqName, 'Classlink.SWclassInstitutionAttendanceReq');
+                        loadMessage(root, SWclassInstitutionAttendanceResName, 'Classlink.SWclassInstitutionAttendanceRes');
+
+                        const SWclassInstitutionAttendanceReqObj = {
+                            InsCode: 'InsCode',
+                            TarIdentityType: 'TarIdentityType',
+                        };
+
+                        Data = setDataToSend(root, SWclassInstitutionAttendanceReqName, SWclassInstitutionAttendanceReqObj);
+                        break;
+
+//선생님 목록-----------------------------------------------------------------------------------------
+                    case 119 :
+                        loadMessage(root, LobbyInstitutionClassTeacherListReqName, 'Classlink.LobbyInstitutionClassTeacherListReq');
+                        loadMessage(root, LobbyInstitutionClassTeacherListResName, 'Classlink.LobbyInstitutionClassTeacherListRes');
+
+                        const LobbyInstitutionClassTeacherListReqObj = {
+                            InsCode: 'InsCode',
+                            TarIdentityType: 'TarIdentityType',
+                        };
 
                         Data = setDataToSend(root, LobbyInstitutionClassTeacherListReqName, LobbyInstitutionClassTeacherListReqObj);
                         break;
 
-                    //교육기관 조회-----------------------------------------------------------------------------------------
-                    case 105 :
-                        loadMessage(root, IdentityInstitutionInfoReqName, "Classlink.IdentityInstitutionInfoReq");
-                        loadMessage(root, IdentityInstitutionInfoResName, "Classlink.IdentityInstitutionInfoRes");
+//선생님 정보-----------------------------------------------------------------------------------------
+                    case 140 :
+                        loadMessage(root, LobbyInstitutionClassTeacherInfoReqName, 'Classlink.LobbyInstitutionClassTeacherInfoReq');
+                        loadMessage(root, LobbyInstitutionClassTeacherInfoResName, 'Classlink.LobbyInstitutionClassTeacherInfoRes');
 
-                        const IdentityInstitutionInfoReqObj = {
-                            InsCode: 'testA',
-                            InsInviteUrl: '/img/url'
+                        const LobbyInstitutionClassTeacherInfoReqObj = {
+                            TchIdx: 'TchIdx',
                         };
 
-                        Data = setDataToSend(root, IdentityInstitutionInfoReqName, IdentityInstitutionInfoReqObj);
+                        Data = setDataToSend(root, LobbyInstitutionClassTeacherInfoReqName, LobbyInstitutionClassTeacherInfoReqObj);
                         break;
-                    //-----------------------------------------------------------------------------------------
-                    case 106 :
-                        loadMessage(root, IdentityInstitutionEnrollmentReqName, "Classlink.IdentityInstitutionEnrollmentReq");
-                        loadMessage(root, IdentityInstitutionEnrollmentResName, "Classlink.IdentityInstitutionEnrollmentRes");
 
-                        const IdentityInstitutionEnrollmentReqObj = {
-                            InsCode: 'testA'
+//노트함-----------------------------------------------------------------------------------------
+                    case 141 :
+                        loadMessage(root, LobbyInstitutionBoardNoteBoxReqName, 'Classlink.LobbyInstitutionBoardNoteBoxReq');
+                        loadMessage(root, LobbyInstitutionBoardNoteBoxResName, 'Classlink.LobbyInstitutionBoardNoteBoxRes');
+
+                        const LobbyInstitutionBoardNoteBoxReqObj = {
+                            InsCode: 'InsCode', //조회방식 미정
+                            TarIdentityType: 'TarIdentityType',//조회방식 미정
                         };
 
-                        Data = setDataToSend(root, IdentityInstitutionEnrollmentReqName, IdentityInstitutionEnrollmentReqObj);
+                        Data = setDataToSend(root, LobbyInstitutionBoardNoteBoxReqName, LobbyInstitutionBoardNoteBoxReqObj);
                         break;
-                    //-----------------------------------------------------------------------------------------
-                    case 107 :
-                        loadMessage(root, IdentityEnrollmentListReqName, "Classlink.IdentityEnrollmentListReq");
-                        loadMessage(root, IdentityEnrollmentListResName, "Classlink.IdentityEnrollmentListRes");
 
-                        const IdentityEnrollmentListReqObj = {
-                            InsCode: 'testA'
+//필기함-----------------------------------------------------------------------------------------
+                    case 142 :
+                        loadMessage(root, LobbyInstitutionBoardNotepadReqName, 'Classlink.LobbyInstitutionBoardNotepadReq');
+                        loadMessage(root, LobbyInstitutionBoardNotepadResName, 'Classlink.LobbyInstitutionBoardNotepadRes');
+
+                        const LobbyInstitutionBoardNotepadReqObj = {
+                            InsCode: 'InsCode', //조회방식 미정
+                            TarIdentityType: 'TarIdentityType', //조회방식 미정
                         };
 
-                        Data = setDataToSend(root, IdentityEnrollmentListReqName, IdentityEnrollmentListReqObj);
+                        Data = setDataToSend(root, LobbyInstitutionBoardNotepadReqName, LobbyInstitutionBoardNotepadReqObj);
                         break;
-                    //-----------------------------------------------------------------------------------------
-                    case 108 :
-                        loadMessage(root, IdentityEnrollmentConfirmReqName, "Classlink.IdentityEnrollmentConfirmReq");
-                        loadMessage(root, IdentityEnrollmentConfirmResName, "Classlink.IdentityEnrollmentConfirmRes");
 
-                        const IdentityEnrollmentConfirmReqObj = {
-                            ItmIdx: 7
+//과제함-----------------------------------------------------------------------------------------
+                    case 143 :
+                        loadMessage(root, LobbyInstitutionBoardReportBoxReqName, 'Classlink.LobbyInstitutionBoardReportBoxReq');
+                        loadMessage(root, LobbyInstitutionBoardReportBoxResName, 'Classlink.LobbyInstitutionBoardReportBoxRes');
+
+                        const LobbyInstitutionBoardReportBoxReqObj = {
+                            InsCode: 'InsCode',
+                            TarIdentityType: 'TarIdentityType',
                         };
 
-                        Data = setDataToSend(root, IdentityEnrollmentConfirmReqName, IdentityEnrollmentConfirmReqObj);
+                        Data = setDataToSend(root, LobbyInstitutionBoardReportBoxReqName, LobbyInstitutionBoardReportBoxReqObj);
                         break;
-                    //-----------------------------------------------------------------------------------------
-                    case 109 :
-                        loadMessage(root, IdentityEnrollmenterInfoReqName, "Classlink.IdentityEnrollmenterInfoReq");
-                        loadMessage(root, IdentityEnrollmenterInfoResName, "Classlink.IdentityEnrollmenterInfoRes");
 
-                        const IdentityEnrollmenterInfoReqObj = {
-                            ItmIdx: 7
+//질문함-----------------------------------------------------------------------------------------
+                    case 144 :
+                        loadMessage(root, LobbyInstitutionBoardQuestionBoxReqName, 'Classlink.LobbyInstitutionBoardQuestionBoxReq');
+                        loadMessage(root, LobbyInstitutionBoardQuestionBoxResName, 'Classlink.LobbyInstitutionBoardQuestionBoxRes');
+
+                        const LobbyInstitutionBoardQuestionBoxReqObj = {
+                            InsCode: 'InsCode',
+                            TarIdentityType: 'TarIdentityType',
                         };
 
-                        Data = setDataToSend(root, IdentityEnrollmenterInfoReqName, IdentityEnrollmenterInfoReqObj);
+                        Data = setDataToSend(root, LobbyInstitutionBoardQuestionBoxReqName, LobbyInstitutionBoardQuestionBoxReqObj);
                         break;
-                    //-----------------------------------------------------------------------------------------
-                    case 110 :
-                        loadMessage(root, IdentityEnrollmentReplyReqName, "Classlink.IdentityEnrollmentReplyReq");
-                        loadMessage(root, IdentityEnrollmentReplyResName, "Classlink.IdentityEnrollmentReplyRes");
 
-                        const IdentityEnrollmentReplyReqObj = {
-                            InsCode: 'testA',
-                            MemId: 'test7777'
+//일정-----------------------------------------------------------------------------------------
+                    case 145 :
+                        loadMessage(root, LobbyCalenderScheduleReqName, 'Classlink.LobbyCalenderScheduleReq');
+                        loadMessage(root, LobbyCalenderScheduleResName, 'Classlink.LobbyCalenderScheduleRes');
+
+                        const LobbyCalenderScheduleReqObj = {
+                            InsCode: 'InsCode',
+                            TarIdentityType: 'TarIdentityType',
                         };
 
-                        Data = setDataToSend(root, IdentityEnrollmentReplyReqName, IdentityEnrollmentReplyReqObj);
+                        Data = setDataToSend(root, LobbyCalenderScheduleReqName, LobbyCalenderScheduleReqObj);
                         break;
-                    //-----------------------------------------------------------------------------------------
-                    case 112 :
-                        loadMessage(root, LoginInstituteRegistReqName, "Classlink.LoginInstituteRegistReq");
-                        loadMessage(root, LoginInstituteRegistResName, "Classlink.LoginInstituteRegistRes");
 
-                        const LoginInstituteRegistReqObj = {
-                            LastInsCode : 'testA'
+//리포트-----------------------------------------------------------------------------------------
+                    case 146 :
+                        loadMessage(root, LobbyCalenderUrlReqName, 'Classlink.LobbyCalenderUrlReq');
+                        loadMessage(root, LobbyCalenderUrlResName, 'Classlink.LobbyCalenderUrlRes');
+
+                        const LobbyCalenderUrlReqObj = {
+                            InsCode: 'InsCode',
+                            TarIdentityType: 'TarIdentityType',
                         };
 
-                        Data = setDataToSend(root, LoginInstituteRegistReqName, LoginInstituteRegistReqObj);
+                        Data = setDataToSend(root, LobbyCalenderUrlReqName, LobbyCalenderUrlReqObj);
                         break;
-                    case 113 :
-                        loadMessage(root, LoginIdentityRegistReqName, "Classlink.LoginIdentityRegistReq");
-                        loadMessage(root, LoginIdentityRegistResName, "Classlink.LoginIdentityRegistRes");
 
-                        const LoginIdentityRegistReqObj = {
-                            InsCode : 'testA',
-                            LastIdentityType: 'S'
-                        };
-
-                        Data = setDataToSend(root, LoginIdentityRegistReqName, LoginIdentityRegistReqObj);
-                        break;
-                    //-----------------------------------------------------------------------------------------
-                    case 120 :
-                        loadMessage(root, SysWorldSetInfoReqName, "Classlink.SysWorldSetInfoReq");
-                        loadMessage(root, SysWorldSetInfoResName, "Classlink.SysWorldSetInfoRes");
-
-                        const SysWorldSetInfoReqObj = {
-                            InsCode: 'testA'
-                        };
-
-                        Data = setDataToSend(root, SysWorldSetInfoReqName, SysWorldSetInfoReqObj);
-                        break;
-                    //-----------------------------------------------------------------------------------------
-                    case 127 :
-                        loadMessage(root, SysWorldInterObjSetCreateReqName, "Classlink.SysWorldInterObjSetCreateReq");
-                        loadMessage(root, SysWorldInterObjSetCreateResName, "Classlink.SysWorldInterObjSetCreateRes");
-
-                        const SysWorldInterObjSetCreateReqObj = {
-                            InsCode: 'testA',
-                            WorldSetCode : 'WS001',
-                            WorldCode : 'CW001'
-                        };
-
-                        Data = setDataToSend(root, SysWorldInterObjSetCreateReqName, SysWorldInterObjSetCreateReqObj);
-                        break;
-                    //-----------------------------------------------------------------------------------------
-                    case 128 :
-                        loadMessage(root, SysWorldInterObjSetInitReqName, "Classlink.SysWorldInterObjSetInitReq");
-                        loadMessage(root, SysWorldInterObjSetInitResName, "Classlink.SysWorldInterObjSetInitRes");
-
-                        const SysWorldInterObjSetInitReqObj = {
-                            InsCode: 'testA',
-                            WorldSetCode : 'WS001',
-                            WorldCode : 'CW001',
-                            CurriculumIdx : 1
-                        };
-
-                        Data = setDataToSend(root, SysWorldInterObjSetInitReqName, SysWorldInterObjSetInitReqObj);
-                        break;
 
                 }
 
@@ -533,130 +768,222 @@
             const receivedPacketData = await readBlobDataAsync(blob, ResponsePacketName);
 
             switch (receivedPacketData.OpCode) {
-                case 100:
-                    const receivedIdentityCreateResData = window[IdentityCreateResName].decode(receivedPacketData.Data);
-                    console.log("receivedIdentityCreateResData mmmmmmmmmmmm>>", receivedIdentityCreateResData);
-                    break;
-
-                case 101:
-                    const receivedIdentityListResData = window[IdentityListResName].decode(receivedPacketData.Data);
-                    console.log("receivedIdentityListResData mmmmmmmmmmmm>>", receivedIdentityListResData);
-                    break;
-
-                case 102:
-                    const receivedIdentityChangeResData = window[IdentityChangeResName].decode(receivedPacketData.Data);
-                    console.log("receivedIdentityChangeResData mmmmmmmmmmmm>>", receivedIdentityChangeResData);
-                    break;
-
-                // case 102:
-                //     const receivedIdentityAvatarCreateResData = window[IdentityAvatarCreateResName].decode(receivedPacketData.Data);
-                //     console.log("receivedIdentityAvatarCreateResData mmmmmmmmmmmm>>", receivedIdentityAvatarCreateResData);
-                //     break;
-
-                case 103:
-                    const receivedIdentityAvatarListResData = window[IdentityAvatarListResName].decode(receivedPacketData.Data);
-                    console.log("receivedIdentityAvatarListResData mmmmmmmmmmmm>>", receivedIdentityAvatarListResData);
-                    break;
-
-                case 104:
-                    const receivedIdentityAvatarChangeResData = window[IdentityAvatarChangeResName].decode(receivedPacketData.Data);
-                    console.log("receivedIdentityAvatarChangeResData mmmmmmmmmmmm>>", receivedIdentityAvatarChangeResData);
-                    break;
-
-                case 129:
-                    const receivedIdentityProfileDetailResData = window[IdentityProfileDetailResName].decode(receivedPacketData.Data);
-                    console.log("receivedIdentityProfileDetailResData mmmmmmmmmmmm>>", receivedIdentityProfileDetailResData);
-                    break;
-
-                case 111:
-                    const receivedIdentityProfileUpdateResData = window[IdentityProfileUpdateResName].decode(receivedPacketData.Data);
-                    console.log("receivedIdentityProfileUpdateResData mmmmmmmmmmmm>>", receivedIdentityProfileUpdateResData);
-                    break;
-
-                case 117:
-                    const LobbyHomeStudentInstitutionListResData = window[LobbyHomeStudentInstitutionListResName].decode(receivedPacketData.Data);
-                    console.log("LobbyHomeStudentInstitutionListResData mmmmmmmmmmmm>>", LobbyHomeStudentInstitutionListResData);
-                    break;
-
-                case 118:
-                    const LobbyHomeFranchiseInstitutionListResData = window[LobbyHomeFranchiseInstitutionListResName].decode(receivedPacketData.Data);
-                    console.log("LobbyHomeFranchiseInstitutionListResData mmmmmmmmmmmm>>", LobbyHomeFranchiseInstitutionListResData);
-                    break;
-
-                case 134:
-                    const LobbyHomeScheduleListResData = window[LobbyHomeScheduleListResName].decode(receivedPacketData.Data);
-                    console.log("LobbyHomeScheduleListResData mmmmmmmmmmmm>>", LobbyHomeScheduleListResData);
-                    break;
-
-                case 119:
-                    const LobbyInstitutionClassTeacherListResData = window[LobbyInstitutionClassTeacherListResName].decode(receivedPacketData.Data);
-                    console.log("LobbyInstitutionClassTeacherListResData mmmmmmmmmmmm>>", LobbyInstitutionClassTeacherListResData);
-                    break;
-
-                case 105:
-                    const receivedIdentityInstitutionInfoResData = window[IdentityInstitutionInfoResName].decode(receivedPacketData.Data);
-                    console.log("receivedIdentityInstitutionInfoResData mmmmmmmmmmmm>>", receivedIdentityInstitutionInfoResData);
-                    break;
-
-                case 106:
-                    const receivedIdentityInstitutionEnrollmentResData = window[IdentityInstitutionEnrollmentResName].decode(receivedPacketData.Data);
-                    console.log("receivedIdentityInstitutionEnrollmentResData mmmmmmmmmmmm>>", receivedIdentityInstitutionEnrollmentResData);
-                    break;
-
-                case 107:
-                    const receivedIdentityEnrollmentListResData = window[IdentityEnrollmentListResName].decode(receivedPacketData.Data);
-                    console.log("receivedIdentityEnrollmentListResData mmmmmmmmmmmm>>", receivedIdentityEnrollmentListResData);
-                    break;
-
-                case 108:
-                    const receivedIdentityEnrollmentConfirmResData = window[IdentityEnrollmentConfirmResName].decode(receivedPacketData.Data);
-                    console.log("receivedIdentityEnrollmentConfirmResData mmmmmmmmmmmm>>", receivedIdentityEnrollmentConfirmResData);
-                    break;
-
-                case 109:
-                    const receivedIdentityEnrollmenterInfoResData = window[IdentityEnrollmenterInfoResName].decode(receivedPacketData.Data);
-                    console.log("receivedIdentityEnrollmenterInfoResData mmmmmmmmmmmm>>", receivedIdentityEnrollmenterInfoResData);
-                    break;
-
-                case 110:
-                    const receivedIdentityEnrollmentReplyResData = window[IdentityEnrollmentReplyResName].decode(receivedPacketData.Data);
-                    console.log("receivedIdentityEnrollmentReplyResData mmmmmmmmmmmm>>", receivedIdentityEnrollmentReplyResData);
-                    break;
-
-                case 112:
+//최근 접속 교육기관 update-----------------------------------------------------------------------------------------
+                case 112 :
                     const receivedLoginInstituteRegistResData = window[LoginInstituteRegistResName].decode(receivedPacketData.Data);
-                    console.log("receivedLoginInstituteRegistResData mmmmmmmmmmmm>>", receivedLoginInstituteRegistResData);
+                    console.log('receivedLoginInstituteRegistResData mmmmmmmmmmmm>>', receivedLoginInstituteRegistResData);
                     break;
 
-                case 113:
+//최근 접속 신분 update-----------------------------------------------------------------------------------------
+                case 113 :
                     const receivedLoginIdentityRegistResData = window[LoginIdentityRegistResName].decode(receivedPacketData.Data);
-                    console.log("receivedLoginIdentityRegistResData mmmmmmmmmmmm>>", receivedLoginIdentityRegistResData);
+                    console.log('receivedLoginIdentityRegistResData mmmmmmmmmmmm>>', receivedLoginIdentityRegistResData);
                     break;
 
-                case 120:
-                    const receivedSysWorldSetInfoResData = window[SysWorldSetInfoResName].decode(receivedPacketData.Data);
-                    console.log("receivedSysWorldSetInfoResData mmmmmmmmmmmm>>", receivedSysWorldSetInfoResData);
+//신분 생성-----------------------------------------------------------------------------------------
+                case 100 :
+                    const receivedIdentityCreateResData = window[IdentityCreateResName].decode(receivedPacketData.Data);
+                    console.log('receivedIdentityCreateResData mmmmmmmmmmmm>>', receivedIdentityCreateResData);
                     break;
 
-                case 127:
-                    const receivedSysWorldInterObjSetCreateResData = window[SysWorldInterObjSetCreateResName].decode(receivedPacketData.Data);
-                    console.log("receivedSysWorldInterObjSetCreateResData mmmmmmmmmmmm>>", receivedSysWorldInterObjSetCreateResData);
+//신분 조회-----------------------------------------------------------------------------------------
+                case 101 :
+                    const receivedIdentityListResData = window[IdentityListResName].decode(receivedPacketData.Data);
+                    console.log('receivedIdentityListResData mmmmmmmmmmmm>>', receivedIdentityListResData);
                     break;
 
-                case 128:
-                    const receivedSysWorldInterObjSetInitResData = window[SysWorldInterObjSetInitResName].decode(receivedPacketData.Data);
-                    console.log("receivedSysWorldInterObjSetInitResData mmmmmmmmmmmm>>", receivedSysWorldInterObjSetInitResData);
+//신분 선택-----------------------------------------------------------------------------------------
+                case 102 :
+                    const receivedIdentityChangeResData = window[IdentityChangeResName].decode(receivedPacketData.Data);
+                    console.log('receivedIdentityChangeResData mmmmmmmmmmmm>>', receivedIdentityChangeResData);
                     break;
 
-                case 201:
-                    const receivedMyInstitutionListData = window[MyInstitutionListName].decode(receivedPacketData.Data);
-                    console.log("receivedMyInstitutionListData mmmmmmmmmmmm>>", receivedMyInstitutionListData);
+//교육기관 등록 요청-----------------------------------------------------------------------------------------
+                case 106 :
+                    const receivedIdentityInstitutionEnrollmentResData = window[IdentityInstitutionEnrollmentResName].decode(receivedPacketData.Data);
+                    console.log('receivedIdentityInstitutionEnrollmentResData mmmmmmmmmmmm>>', receivedIdentityInstitutionEnrollmentResData);
                     break;
 
-                case 401:
-                    const receivedJwtExceptionData = window[JwtExceptionName].decode(receivedPacketData.Data);
-                    console.log("receivedJwtExceptionData mmmmmmmmmmmm>>", receivedJwtExceptionData);
+//입력한 교육기관 정보 확인-----------------------------------------------------------------------------------------
+                case 105 :
+                    const receivedIdentityInstitutionInfoResData = window[IdentityInstitutionInfoResName].decode(receivedPacketData.Data);
+                    console.log('receivedIdentityInstitutionInfoResData mmmmmmmmmmmm>>', receivedIdentityInstitutionInfoResData);
                     break;
+
+//가입 신청 리스트-----------------------------------------------------------------------------------------
+                case 107 :
+                    const receivedIdentityEnrollmentListResData = window[IdentityEnrollmentListResName].decode(receivedPacketData.Data);
+                    console.log('receivedIdentityEnrollmentListResData mmmmmmmmmmmm>>', receivedIdentityEnrollmentListResData);
+                    break;
+
+//가입 신청 확인-----------------------------------------------------------------------------------------
+                case 108 :
+                    const receivedIdentityEnrollmentConfirmResData = window[IdentityEnrollmentConfirmResName].decode(receivedPacketData.Data);
+                    console.log('receivedIdentityEnrollmentConfirmResData mmmmmmmmmmmm>>', receivedIdentityEnrollmentConfirmResData);
+                    break;
+
+//가입 신청인 정보-----------------------------------------------------------------------------------------
+                case 109 :
+                    const receivedIdentityEnrollmentInfoResData = window[IdentityEnrollmentInfoResName].decode(receivedPacketData.Data);
+                    console.log('receivedIdentityEnrollmentInfoResData mmmmmmmmmmmm>>', receivedIdentityEnrollmentInfoResData);
+                    break;
+
+//가입 신청 응답-----------------------------------------------------------------------------------------
+                case 110 :
+                    const receivedIdentityEnrollmentReplyResData = window[IdentityEnrollmentReplyResName].decode(receivedPacketData.Data);
+                    console.log('receivedIdentityEnrollmentReplyResData mmmmmmmmmmmm>>', receivedIdentityEnrollmentReplyResData);
+                    break;
+
+//아바타 조회-----------------------------------------------------------------------------------------
+                case 103 :
+                    const receivedIdentityAvatarListResData = window[IdentityAvatarListResName].decode(receivedPacketData.Data);
+                    console.log('receivedIdentityAvatarListResData mmmmmmmmmmmm>>', receivedIdentityAvatarListResData);
+                    break;
+
+//아바타 변경-----------------------------------------------------------------------------------------
+                case 104 :
+                    const receivedIdentityAvatarChangeResData = window[IdentityAvatarChangeResName].decode(receivedPacketData.Data);
+                    console.log('receivedIdentityAvatarChangeResData mmmmmmmmmmmm>>', receivedIdentityAvatarChangeResData);
+                    break;
+
+//사용자 정보 조회-----------------------------------------------------------------------------------------
+                case 129 :
+                    const receivedIdentityProfileDetailResData = window[IdentityProfileDetailResName].decode(receivedPacketData.Data);
+                    console.log('receivedIdentityProfileDetailResData mmmmmmmmmmmm>>', receivedIdentityProfileDetailResData);
+                    break;
+
+//사용자 정보 입력-----------------------------------------------------------------------------------------
+                case 111 :
+                    const receivedIdentityProfileUpdateResData = window[IdentityProfileUpdateResName].decode(receivedPacketData.Data);
+                    console.log('receivedIdentityProfileUpdateResData mmmmmmmmmmmm>>', receivedIdentityProfileUpdateResData);
+                    break;
+
+//통계-----------------------------------------------------------------------------------------
+                case 132 :
+                    const receivedLobbyHomeStatisticsResData = window[LobbyHomeStatisticsResName].decode(receivedPacketData.Data);
+                    console.log('receivedLobbyHomeStatisticsResData mmmmmmmmmmmm>>', receivedLobbyHomeStatisticsResData);
+                    break;
+
+//학생 소속 교육기관 목록-----------------------------------------------------------------------------------------
+                case 117 :
+                    const receivedLobbyHomeStudentInstitutionListResData = window[LobbyHomeStudentInstitutionListResName].decode(receivedPacketData.Data);
+                    console.log('receivedLobbyHomeStudentInstitutionListResData mmmmmmmmmmmm>>', receivedLobbyHomeStudentInstitutionListResData);
+                    break;
+
+//프랜차이즈장 보유 교육기관 목록-----------------------------------------------------------------------------------------
+                case 118 :
+                    const receivedLobbyHomeFranchiseInstitutionListResData = window[LobbyHomeFranchiseInstitutionListResName].decode(receivedPacketData.Data);
+                    console.log('receivedLobbyHomeFranchiseInstitutionListResData mmmmmmmmmmmm>>', receivedLobbyHomeFranchiseInstitutionListResData);
+                    break;
+
+//알림-----------------------------------------------------------------------------------------
+                case 133 :
+                    const receivedLobbyHomeNoticeListResData = window[LobbyHomeNoticeListResName].decode(receivedPacketData.Data);
+                    console.log('receivedLobbyHomeNoticeListResData mmmmmmmmmmmm>>', receivedLobbyHomeNoticeListResData);
+                    break;
+
+//기간별 일정 목록-----------------------------------------------------------------------------------------
+                case 134 :
+                    const receivedLobbyHomeScheduleListResData = window[LobbyHomeScheduleListResName].decode(receivedPacketData.Data);
+                    console.log('receivedLobbyHomeScheduleListResData mmmmmmmmmmmm>>', receivedLobbyHomeScheduleListResData);
+                    break;
+
+//기간별 수업 목록-----------------------------------------------------------------------------------------
+                case 114 :
+                    const receivedLobbyHomeClassInfoListResData = window[LobbyHomeClassInfoListResName].decode(receivedPacketData.Data);
+                    console.log('receivedLobbyHomeClassInfoListResData mmmmmmmmmmmm>>', receivedLobbyHomeClassInfoListResData);
+                    break;
+
+//오늘의 수업 상세보기-----------------------------------------------------------------------------------------
+                case 115 :
+                    const receivedLobbyHomeTodayClassDetailResData = window[LobbyHomeTodayClassDetailResName].decode(receivedPacketData.Data);
+                    console.log('receivedLobbyHomeTodayClassDetailResData mmmmmmmmmmmm>>', receivedLobbyHomeTodayClassDetailResData);
+                    break;
+
+//강의 코스 목록-----------------------------------------------------------------------------------------
+                case 116 :
+                    const receivedLobbyHomeLectureCourseListResData = window[LobbyHomeLectureCourseListResName].decode(receivedPacketData.Data);
+                    console.log('receivedLobbyHomeLectureCourseListResData mmmmmmmmmmmm>>', receivedLobbyHomeLectureCourseListResData);
+                    break;
+
+//테마별 이벤트-----------------------------------------------------------------------------------------
+                case 135 :
+                    const receivedLobbyHomeEventForThemeListResData = window[LobbyHomeEventForThemeListResName].decode(receivedPacketData.Data);
+                    console.log('receivedLobbyHomeEventForThemeListResData mmmmmmmmmmmm>>', receivedLobbyHomeEventForThemeListResData);
+                    break;
+
+//시스템 공지 리스트-----------------------------------------------------------------------------------------
+                case 136 :
+                    const receivedSWclassInstitutionSystemNoticeListResData = window[SWclassInstitutionSystemNoticeListResName].decode(receivedPacketData.Data);
+                    console.log('receivedSWclassInstitutionSystemNoticeListResData mmmmmmmmmmmm>>', receivedSWclassInstitutionSystemNoticeListResData);
+                    break;
+
+//교육기관 공지 리스트-----------------------------------------------------------------------------------------
+                case 137 :
+                    const receivedSWclassInstitutionInstitutionNoticeListResData = window[SWclassInstitutionInstitutionNoticeListResName].decode(receivedPacketData.Data);
+                    console.log('receivedSWclassInstitutionInstitutionNoticeListResData mmmmmmmmmmmm>>', receivedSWclassInstitutionInstitutionNoticeListResData);
+                    break;
+
+//프렌차이즈 공지 리스트-----------------------------------------------------------------------------------------
+                case 138 :
+                    const receivedSWclassInstitutionfranchiseNoticeListResData = window[SWclassInstitutionfranchiseNoticeListResName].decode(receivedPacketData.Data);
+                    console.log('receivedSWclassInstitutionfranchiseNoticeListResData mmmmmmmmmmmm>>', receivedSWclassInstitutionfranchiseNoticeListResData);
+                    break;
+
+//출결-----------------------------------------------------------------------------------------
+                case 139 :
+                    const receivedSWclassInstitutionAttendanceResData = window[SWclassInstitutionAttendanceResName].decode(receivedPacketData.Data);
+                    console.log('receivedSWclassInstitutionAttendanceResData mmmmmmmmmmmm>>', receivedSWclassInstitutionAttendanceResData);
+                    break;
+
+//선생님 목록-----------------------------------------------------------------------------------------
+                case 119 :
+                    const receivedLobbyInstitutionClassTeacherListResData = window[LobbyInstitutionClassTeacherListResName].decode(receivedPacketData.Data);
+                    console.log('receivedLobbyInstitutionClassTeacherListResData mmmmmmmmmmmm>>', receivedLobbyInstitutionClassTeacherListResData);
+                    break;
+
+//선생님 정보-----------------------------------------------------------------------------------------
+                case 140 :
+                    const receivedLobbyInstitutionClassTeacherInfoResData = window[LobbyInstitutionClassTeacherInfoResName].decode(receivedPacketData.Data);
+                    console.log('receivedLobbyInstitutionClassTeacherInfoResData mmmmmmmmmmmm>>', receivedLobbyInstitutionClassTeacherInfoResData);
+                    break;
+
+//노트함-----------------------------------------------------------------------------------------
+                case 141 :
+                    const receivedLobbyInstitutionBoardNoteBoxResData = window[LobbyInstitutionBoardNoteBoxResName].decode(receivedPacketData.Data);
+                    console.log('receivedLobbyInstitutionBoardNoteBoxResData mmmmmmmmmmmm>>', receivedLobbyInstitutionBoardNoteBoxResData);
+                    break;
+
+//필기함-----------------------------------------------------------------------------------------
+                case 142 :
+                    const receivedLobbyInstitutionBoardNotepadResData = window[LobbyInstitutionBoardNotepadResName].decode(receivedPacketData.Data);
+                    console.log('receivedLobbyInstitutionBoardNotepadResData mmmmmmmmmmmm>>', receivedLobbyInstitutionBoardNotepadResData);
+                    break;
+
+//과제함-----------------------------------------------------------------------------------------
+                case 143 :
+                    const receivedLobbyInstitutionBoardReportBoxResData = window[LobbyInstitutionBoardReportBoxResName].decode(receivedPacketData.Data);
+                    console.log('receivedLobbyInstitutionBoardReportBoxResData mmmmmmmmmmmm>>', receivedLobbyInstitutionBoardReportBoxResData);
+                    break;
+
+//질문함-----------------------------------------------------------------------------------------
+                case 144 :
+                    const receivedLobbyInstitutionBoardQuestionBoxResData = window[LobbyInstitutionBoardQuestionBoxResName].decode(receivedPacketData.Data);
+                    console.log('receivedLobbyInstitutionBoardQuestionBoxResData mmmmmmmmmmmm>>', receivedLobbyInstitutionBoardQuestionBoxResData);
+                    break;
+
+//일정-----------------------------------------------------------------------------------------
+                case 145 :
+                    const receivedLobbyCalenderScheduleResData = window[LobbyCalenderScheduleResName].decode(receivedPacketData.Data);
+                    console.log('receivedLobbyCalenderScheduleResData mmmmmmmmmmmm>>', receivedLobbyCalenderScheduleResData);
+                    break;
+
+//리포트-----------------------------------------------------------------------------------------
+                case 146 :
+                    const receivedLobbyCalenderUrlResData = window[LobbyCalenderUrlResName].decode(receivedPacketData.Data);
+                    console.log('receivedLobbyCalenderUrlResData mmmmmmmmmmmm>>', receivedLobbyCalenderUrlResData);
+                    break;
+
 
                 default:
                     break;

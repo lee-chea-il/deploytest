@@ -1,0 +1,17 @@
+syntax = "proto3"; 
+package Classlink;  
+option java_package = "com.classlink.websocket.api.lobby.domain.dto.proto"; 
+option java_outer_classname = "SWclassInstitutionfranchiseNoticeListResProto"; 
+
+message SWclassInstitutionfranchiseNoticeListRes{
+message FranchiseNotice {
+string BrdId = 1;
+ string FranNtcType = 2; // 어떤데이터인지 확인필요
+ string FranNtcTitle = 3; // 게시판 제목?
+ string FranNtcDate = 4; // 작성날짜?
+ string UserType = 5; // 어떤데이터인지 확인필요
+ string DetailInfoUrl = 6; // 상세 정보 URL 추가 필요
+}
+
+repeated FranchiseNotice FranchiseNoticeList= 1;
+}

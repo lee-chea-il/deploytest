@@ -1,0 +1,15 @@
+syntax = "proto3"; 
+package Classlink;  
+option java_package = "com.classlink.websocket.api.lobby.domain.dto.proto"; 
+option java_outer_classname = "SWclassInstitutionSystemNoticeListResProto"; 
+
+message SWclassInstitutionSystemNoticeListRes{
+message SystemNotice {
+ string BrdId =1;
+ string SysNtcImgUrl = 2; // 시스템공지 이미지 어디서 가져오는지 확인필요
+ string SysNtcTitle = 3; // 시스템공지 내용표시 확인필요
+ string DetailInfoUrl = 4; // 상세 정보 URL 추가
+}
+
+repeated SystemNotice SystemNoticeList= 1;
+}

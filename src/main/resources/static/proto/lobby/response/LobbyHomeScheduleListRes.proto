@@ -1,17 +1,16 @@
 syntax = "proto3"; 
-package Classlink;
-option java_package = "com.classlink.websocket.api.lobby.domain.dto.proto";
-option java_outer_classname = "LobbyHomeScheduleListResProto";
+package Classlink;  
+option java_package = "com.classlink.websocket.api.lobby.domain.dto.proto"; 
+option java_outer_classname = "LobbyHomeScheduleListResProto"; 
 
 message LobbyHomeScheduleListRes{
-   message ScheduleInfo
-   {
-      int32 ScheduleId = 1;
-      string ScheduleName = 2;
-      string StartTime = 3;
-      string EndTime = 4;
-      int32 ClassId = 5;
-   }
+message ScheduleInfo
+{
+   int32 ScheduleId = 1;
+   string ScheduleName = 2;
+   string StartTime = 3;
+   string EndTime = 4;
+}
 
-   repeated ScheduleInfo ScheduleInfoList = 1;
+repeated ScheduleInfo ScheduleInfoList = 1;
 }

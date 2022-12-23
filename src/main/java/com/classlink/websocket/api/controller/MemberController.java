@@ -24,14 +24,8 @@ public class MemberController {
 	private final MemberService memberService;
 
 	@OpCodeMapping(value = OpCode.IDENTITY_CREATE)
-	public void IdentityAdd(WebSocketSession session, RequestPacket packetReqProto, String userId) {
-		try {
+	public void IdentityAdd(WebSocketSession session, RequestPacket packetReqProto, String userId) throws StreamReadException, DatabindException, IOException {
 			session.sendMessage(memberService.addIdentity(packetReqProto, userId));
-		}catch (InvalidProtocolBufferException e){
-			throw new ProtoParseException(session, packetReqProto, ErrorCode.PROTO_PARSE_ERROR);
-		} catch (IOException e) {
-			throw new RuntimeException(e);
-		}
 	}
 
 	@OpCodeMapping(value = OpCode.IDENTITY_LIST)
@@ -54,58 +48,53 @@ public class MemberController {
 		session.sendMessage(memberService.modifyIdentityProfileByMemberId(packetReqProto, userId));
 	}
 
-//	@OpCodeMapping(value = OpCode.AVATAR_CREATE)
-//	public void IdentityAvatarAdd(WebSocketSession session, RequestPacket packetReqProto, String userId) throws StreamReadException, DatabindException, IOException {
-//		session.sendMessage(memberService.addAvatar(packetReqProto, userId));
-//	}
-
-	@OpCodeMapping(value = OpCode.AVATAR_LIST)
+	@OpCodeMapping(value = OpCode.IDENTITY_AVATAR_LIST)
 	public void IdentityAvatarList(WebSocketSession session, RequestPacket packetReqProto, String userId) throws StreamReadException, DatabindException, IOException {
 		session.sendMessage(memberService.findAvatarsByMemberId(packetReqProto, userId));
 	}
 
-	@OpCodeMapping(value = OpCode.AVATAR_CHANGE)
+	@OpCodeMapping(value = OpCode.IDENTITY_AVATAR_CHANGE)
 	public void IdentityAvatarChange(WebSocketSession session, RequestPacket packetReqProto, String userId) throws StreamReadException, DatabindException, IOException {
 		session.sendMessage(memberService.modifyAvatarByMemberId(packetReqProto, userId));
 	}
 
-	@OpCodeMapping(value = OpCode.INSTITUTION_INFO)
+	@OpCodeMapping(value = OpCode.IDENTITY_INSTITUTION_INFO)
 	public void IdentityInstitutionInfo(WebSocketSession session, RequestPacket packetReqProto, String userId) throws StreamReadException, DatabindException, IOException {
 		session.sendMessage(memberService.findInstitutionInfoByInsCode(packetReqProto, userId));
 	}
 
-	@OpCodeMapping(value = OpCode.INSTITUTION_ENROLLMENT_REQUEST_CREATE)
+	@OpCodeMapping(value = OpCode.IDENTITY_INSTITUTION_ENROLLMENT)
 	public void IdentityInstitutionEnrollmentAdd(WebSocketSession session, RequestPacket packetReqProto, String userId) throws StreamReadException, DatabindException, IOException {
 		session.sendMessage(memberService.addInstitutionEnrollment(packetReqProto, userId));
 	}
 
 	//from lobby
-	@OpCodeMapping(value = OpCode.INSTITUTION_ENROLLMENT_REQUEST_LIST)
+	@OpCodeMapping(value = OpCode.IDENTITY_ENROLLMENT_LIST)
 	public void InstitutionEnrollmentList(WebSocketSession session, RequestPacket packetReqProto, String userId) throws StreamReadException, DatabindException, IOException {
 		session.sendMessage(memberService.findInstitutionEnrollmentsByInsCode(packetReqProto, userId));
 	}
 
-	@OpCodeMapping(value = OpCode.INSTITUTION_ENROLLMENT_REQUEST_VIEW_STATUS_CHANGE)
+	@OpCodeMapping(value = OpCode.IDENTITY_ENROLLMENT_CONFIRM)
 	public void InstitutionEnrollmentViewStatusChange(WebSocketSession session, RequestPacket packetReqProto, String userId) throws StreamReadException, DatabindException, IOException {
 		session.sendMessage(memberService.modifyInstitutionEnrollmentViewStatus(packetReqProto, userId));
 	}
 
-	@OpCodeMapping(value = OpCode.INSTITUTION_ENROLLMENT_REQUESTER_INFO)
+	@OpCodeMapping(value = OpCode.IDENTITY_ENROLLMENT_INFO)
 	public void InstitutionEnrollmentRequestorInfo(WebSocketSession session, RequestPacket packetReqProto, String userId) throws StreamReadException, DatabindException, IOException {
 		session.sendMessage(memberService.findInstitutionEnrollmentRequesterInfo(packetReqProto, userId));
 	}
 
-	@OpCodeMapping(value = OpCode.INSTITUTION_ENROLLMENT_REQUEST_STATUS_CHANGE)
+	@OpCodeMapping(value = OpCode.IDENTITY_ENROLLMENT_REPLY)
 	public void InstitutionEnrollmentRequestStatusChange(WebSocketSession session, RequestPacket packetReqProto, String userId) throws StreamReadException, DatabindException, IOException {
 		session.sendMessage(memberService.modifyInstitutionEnrollmentRequestStatus(packetReqProto, userId));
 	}
 
-	@OpCodeMapping(value = OpCode.LOGIN_INSTITUTE_REGISTRATION_CHANGE)
+	@OpCodeMapping(value = OpCode.LOGIN_INSTITUTE_REGIST)
 	public void LoginInstituteRegistrationChange(WebSocketSession session, RequestPacket packetReqProto, String userId) throws StreamReadException, DatabindException, IOException {
 		session.sendMessage(memberService.modifyLoginInstituteRegistration(packetReqProto, userId));
 	}
 
-	@OpCodeMapping(value = OpCode.LOGIN_IDENTITY_REGISTRATION_CHANGE)
+	@OpCodeMapping(value = OpCode.LOGIN_IDENTITY_REGIST)
 	public void LoginIdentityRegistrationChange(WebSocketSession session, RequestPacket packetReqProto, String userId) throws StreamReadException, DatabindException, IOException {
 		session.sendMessage(memberService.modifyLoginIdentityRegistration(packetReqProto, userId));
 	}

@@ -1,0 +1,16 @@
+syntax = "proto3"; 
+package Classlink;  
+option java_package = "com.classlink.websocket.api.lobby.domain.dto.proto"; 
+option java_outer_classname = "SWclassInstitutionInstitutionNoticeListResProto"; 
+
+message SWclassInstitutionInstitutionNoticeListRes{
+message InstitutionNotice {
+ string BrdId = 1;
+ string InstiNtcType = 2; // 어떤데이터인지 확인필요
+ string InstiNtcTitle = 3; // 게시판 제목?
+ string InstiNtcDate = 4;  // 작성날짜?
+ string DetailInfoUrl = 5; // 상세 정보 URL 추가
+}
+
+repeated InstitutionNotice InstitutionNoticeList = 1;
+}

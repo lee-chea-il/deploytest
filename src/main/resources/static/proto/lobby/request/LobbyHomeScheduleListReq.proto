@@ -1,9 +1,9 @@
 syntax = "proto3"; 
-package Classlink;
-option java_package = "com.classlink.websocket.api.lobby.domain.param.proto";
-option java_outer_classname = "LobbyHomeScheduleListReqProto";
+package Classlink; 
+option java_package = "com.classlink.websocket.api.lobby.domain.param.proto"; 
+option java_outer_classname = "LobbyHomeScheduleListReqProto"; 
 
 message LobbyHomeScheduleListReq{
-  int32 AvatarId = 1;
-  repeated string StartTimeList = 2;
+string StartTime = 1;
+string EndTime = 2;
 }

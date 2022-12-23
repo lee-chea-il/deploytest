@@ -1,0 +1,16 @@
+syntax = "proto3"; 
+package Classlink;  
+option java_package = "com.classlink.websocket.api.lobby.domain.dto.proto"; 
+option java_outer_classname = "LobbyInstitutionBoardQuestionBoxResProto"; 
+
+message LobbyInstitutionBoardQuestionBoxRes{
+message QuestionBox {
+ string QuestionTitle =1; // 질문 제목
+ bool IsAnswer =2; // 답변완료 여부
+ string Subject =3; //  과목명을 가져올수없음
+ string QuestionerName =4; // 질문자 이름 추가
+ string  AnswererName =5; // 답변자 이름 변경
+}
+
+repeated QuestionBox QuestionBoxeList =1;
+}

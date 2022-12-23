@@ -15,39 +15,39 @@ public final class LobbyHomeStudentInstitutionListResProto {
         (com.google.protobuf.ExtensionRegistryLite) registry);
   }
   public interface LobbyHomeStudentInstitutionListResOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:classlink.LobbyHomeStudentInstitutionListRes)
+      // @@protoc_insertion_point(interface_extends:Classlink.LobbyHomeStudentInstitutionListRes)
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>repeated .classlink.LobbyHomeStudentInstitutionListRes.StudentInstitution StudentInstitutions = 1;</code>
+     * <code>repeated .Classlink.LobbyHomeStudentInstitutionListRes.StudentInstitution StudentInstitutionList = 1;</code>
      */
     java.util.List<com.classlink.websocket.api.lobby.domain.dto.proto.LobbyHomeStudentInstitutionListResProto.LobbyHomeStudentInstitutionListRes.StudentInstitution> 
-        getStudentInstitutionsList();
+        getStudentInstitutionListList();
     /**
-     * <code>repeated .classlink.LobbyHomeStudentInstitutionListRes.StudentInstitution StudentInstitutions = 1;</code>
+     * <code>repeated .Classlink.LobbyHomeStudentInstitutionListRes.StudentInstitution StudentInstitutionList = 1;</code>
      */
-    com.classlink.websocket.api.lobby.domain.dto.proto.LobbyHomeStudentInstitutionListResProto.LobbyHomeStudentInstitutionListRes.StudentInstitution getStudentInstitutions(int index);
+    com.classlink.websocket.api.lobby.domain.dto.proto.LobbyHomeStudentInstitutionListResProto.LobbyHomeStudentInstitutionListRes.StudentInstitution getStudentInstitutionList(int index);
     /**
-     * <code>repeated .classlink.LobbyHomeStudentInstitutionListRes.StudentInstitution StudentInstitutions = 1;</code>
+     * <code>repeated .Classlink.LobbyHomeStudentInstitutionListRes.StudentInstitution StudentInstitutionList = 1;</code>
      */
-    int getStudentInstitutionsCount();
+    int getStudentInstitutionListCount();
     /**
-     * <code>repeated .classlink.LobbyHomeStudentInstitutionListRes.StudentInstitution StudentInstitutions = 1;</code>
+     * <code>repeated .Classlink.LobbyHomeStudentInstitutionListRes.StudentInstitution StudentInstitutionList = 1;</code>
      */
     java.util.List<? extends com.classlink.websocket.api.lobby.domain.dto.proto.LobbyHomeStudentInstitutionListResProto.LobbyHomeStudentInstitutionListRes.StudentInstitutionOrBuilder> 
-        getStudentInstitutionsOrBuilderList();
+        getStudentInstitutionListOrBuilderList();
     /**
-     * <code>repeated .classlink.LobbyHomeStudentInstitutionListRes.StudentInstitution StudentInstitutions = 1;</code>
+     * <code>repeated .Classlink.LobbyHomeStudentInstitutionListRes.StudentInstitution StudentInstitutionList = 1;</code>
      */
-    com.classlink.websocket.api.lobby.domain.dto.proto.LobbyHomeStudentInstitutionListResProto.LobbyHomeStudentInstitutionListRes.StudentInstitutionOrBuilder getStudentInstitutionsOrBuilder(
+    com.classlink.websocket.api.lobby.domain.dto.proto.LobbyHomeStudentInstitutionListResProto.LobbyHomeStudentInstitutionListRes.StudentInstitutionOrBuilder getStudentInstitutionListOrBuilder(
         int index);
   }
   /**
-   * Protobuf type {@code classlink.LobbyHomeStudentInstitutionListRes}
+   * Protobuf type {@code Classlink.LobbyHomeStudentInstitutionListRes}
    */
   public static final class LobbyHomeStudentInstitutionListRes extends
       com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:classlink.LobbyHomeStudentInstitutionListRes)
+      // @@protoc_insertion_point(message_implements:Classlink.LobbyHomeStudentInstitutionListRes)
       LobbyHomeStudentInstitutionListResOrBuilder {
   private static final long serialVersionUID = 0L;
     // Use LobbyHomeStudentInstitutionListRes.newBuilder() to construct.
@@ -55,7 +55,7 @@ public final class LobbyHomeStudentInstitutionListResProto {
       super(builder);
     }
     private LobbyHomeStudentInstitutionListRes() {
-      studentInstitutions_ = java.util.Collections.emptyList();
+      studentInstitutionList_ = java.util.Collections.emptyList();
     }
 
     @java.lang.Override
@@ -72,19 +72,19 @@ public final class LobbyHomeStudentInstitutionListResProto {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return internal_static_classlink_LobbyHomeStudentInstitutionListRes_descriptor;
+      return com.classlink.websocket.api.lobby.domain.dto.proto.LobbyHomeStudentInstitutionListResProto.internal_static_Classlink_LobbyHomeStudentInstitutionListRes_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return internal_static_classlink_LobbyHomeStudentInstitutionListRes_fieldAccessorTable
+      return com.classlink.websocket.api.lobby.domain.dto.proto.LobbyHomeStudentInstitutionListResProto.internal_static_Classlink_LobbyHomeStudentInstitutionListRes_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               com.classlink.websocket.api.lobby.domain.dto.proto.LobbyHomeStudentInstitutionListResProto.LobbyHomeStudentInstitutionListRes.class, com.classlink.websocket.api.lobby.domain.dto.proto.LobbyHomeStudentInstitutionListResProto.LobbyHomeStudentInstitutionListRes.Builder.class);
     }
 
     public interface StudentInstitutionOrBuilder extends
-        // @@protoc_insertion_point(interface_extends:classlink.LobbyHomeStudentInstitutionListRes.StudentInstitution)
+        // @@protoc_insertion_point(interface_extends:Classlink.LobbyHomeStudentInstitutionListRes.StudentInstitution)
         com.google.protobuf.MessageOrBuilder {
 
       /**
@@ -178,11 +178,11 @@ public final class LobbyHomeStudentInstitutionListResProto {
           getRtiRegistrationDateBytes();
     }
     /**
-     * Protobuf type {@code classlink.LobbyHomeStudentInstitutionListRes.StudentInstitution}
+     * Protobuf type {@code Classlink.LobbyHomeStudentInstitutionListRes.StudentInstitution}
      */
     public static final class StudentInstitution extends
         com.google.protobuf.GeneratedMessageV3 implements
-        // @@protoc_insertion_point(message_implements:classlink.LobbyHomeStudentInstitutionListRes.StudentInstitution)
+        // @@protoc_insertion_point(message_implements:Classlink.LobbyHomeStudentInstitutionListRes.StudentInstitution)
         StudentInstitutionOrBuilder {
     private static final long serialVersionUID = 0L;
       // Use StudentInstitution.newBuilder() to construct.
@@ -213,13 +213,13 @@ public final class LobbyHomeStudentInstitutionListResProto {
       }
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return internal_static_classlink_LobbyHomeStudentInstitutionListRes_StudentInstitution_descriptor;
+        return com.classlink.websocket.api.lobby.domain.dto.proto.LobbyHomeStudentInstitutionListResProto.internal_static_Classlink_LobbyHomeStudentInstitutionListRes_StudentInstitution_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return internal_static_classlink_LobbyHomeStudentInstitutionListRes_StudentInstitution_fieldAccessorTable
+        return com.classlink.websocket.api.lobby.domain.dto.proto.LobbyHomeStudentInstitutionListResProto.internal_static_Classlink_LobbyHomeStudentInstitutionListRes_StudentInstitution_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
                 com.classlink.websocket.api.lobby.domain.dto.proto.LobbyHomeStudentInstitutionListResProto.LobbyHomeStudentInstitutionListRes.StudentInstitution.class, com.classlink.websocket.api.lobby.domain.dto.proto.LobbyHomeStudentInstitutionListResProto.LobbyHomeStudentInstitutionListRes.StudentInstitution.Builder.class);
       }
@@ -728,21 +728,21 @@ public final class LobbyHomeStudentInstitutionListResProto {
         return builder;
       }
       /**
-       * Protobuf type {@code classlink.LobbyHomeStudentInstitutionListRes.StudentInstitution}
+       * Protobuf type {@code Classlink.LobbyHomeStudentInstitutionListRes.StudentInstitution}
        */
       public static final class Builder extends
           com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-          // @@protoc_insertion_point(builder_implements:classlink.LobbyHomeStudentInstitutionListRes.StudentInstitution)
+          // @@protoc_insertion_point(builder_implements:Classlink.LobbyHomeStudentInstitutionListRes.StudentInstitution)
           com.classlink.websocket.api.lobby.domain.dto.proto.LobbyHomeStudentInstitutionListResProto.LobbyHomeStudentInstitutionListRes.StudentInstitutionOrBuilder {
         public static final com.google.protobuf.Descriptors.Descriptor
             getDescriptor() {
-          return internal_static_classlink_LobbyHomeStudentInstitutionListRes_StudentInstitution_descriptor;
+          return com.classlink.websocket.api.lobby.domain.dto.proto.LobbyHomeStudentInstitutionListResProto.internal_static_Classlink_LobbyHomeStudentInstitutionListRes_StudentInstitution_descriptor;
         }
 
         @java.lang.Override
         protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
             internalGetFieldAccessorTable() {
-          return internal_static_classlink_LobbyHomeStudentInstitutionListRes_StudentInstitution_fieldAccessorTable
+          return com.classlink.websocket.api.lobby.domain.dto.proto.LobbyHomeStudentInstitutionListResProto.internal_static_Classlink_LobbyHomeStudentInstitutionListRes_StudentInstitution_fieldAccessorTable
               .ensureFieldAccessorsInitialized(
                   com.classlink.websocket.api.lobby.domain.dto.proto.LobbyHomeStudentInstitutionListResProto.LobbyHomeStudentInstitutionListRes.StudentInstitution.class, com.classlink.websocket.api.lobby.domain.dto.proto.LobbyHomeStudentInstitutionListResProto.LobbyHomeStudentInstitutionListRes.StudentInstitution.Builder.class);
         }
@@ -782,12 +782,12 @@ public final class LobbyHomeStudentInstitutionListResProto {
         @java.lang.Override
         public com.google.protobuf.Descriptors.Descriptor
             getDescriptorForType() {
-          return internal_static_classlink_LobbyHomeStudentInstitutionListRes_StudentInstitution_descriptor;
+          return com.classlink.websocket.api.lobby.domain.dto.proto.LobbyHomeStudentInstitutionListResProto.internal_static_Classlink_LobbyHomeStudentInstitutionListRes_StudentInstitution_descriptor;
         }
 
         @java.lang.Override
         public com.classlink.websocket.api.lobby.domain.dto.proto.LobbyHomeStudentInstitutionListResProto.LobbyHomeStudentInstitutionListRes.StudentInstitution getDefaultInstanceForType() {
-          return getDefaultInstance();
+          return com.classlink.websocket.api.lobby.domain.dto.proto.LobbyHomeStudentInstitutionListResProto.LobbyHomeStudentInstitutionListRes.StudentInstitution.getDefaultInstance();
         }
 
         @java.lang.Override
@@ -857,7 +857,7 @@ public final class LobbyHomeStudentInstitutionListResProto {
         }
 
         public Builder mergeFrom(com.classlink.websocket.api.lobby.domain.dto.proto.LobbyHomeStudentInstitutionListResProto.LobbyHomeStudentInstitutionListRes.StudentInstitution other) {
-          if (other == getDefaultInstance()) return this;
+          if (other == com.classlink.websocket.api.lobby.domain.dto.proto.LobbyHomeStudentInstitutionListResProto.LobbyHomeStudentInstitutionListRes.StudentInstitution.getDefaultInstance()) return this;
           if (!other.getInsCode().isEmpty()) {
             insCode_ = other.insCode_;
             onChanged();
@@ -1546,10 +1546,10 @@ public final class LobbyHomeStudentInstitutionListResProto {
         }
 
 
-        // @@protoc_insertion_point(builder_scope:classlink.LobbyHomeStudentInstitutionListRes.StudentInstitution)
+        // @@protoc_insertion_point(builder_scope:Classlink.LobbyHomeStudentInstitutionListRes.StudentInstitution)
       }
 
-      // @@protoc_insertion_point(class_scope:classlink.LobbyHomeStudentInstitutionListRes.StudentInstitution)
+      // @@protoc_insertion_point(class_scope:Classlink.LobbyHomeStudentInstitutionListRes.StudentInstitution)
       private static final com.classlink.websocket.api.lobby.domain.dto.proto.LobbyHomeStudentInstitutionListResProto.LobbyHomeStudentInstitutionListRes.StudentInstitution DEFAULT_INSTANCE;
       static {
         DEFAULT_INSTANCE = new com.classlink.websocket.api.lobby.domain.dto.proto.LobbyHomeStudentInstitutionListResProto.LobbyHomeStudentInstitutionListRes.StudentInstitution();
@@ -1597,44 +1597,44 @@ public final class LobbyHomeStudentInstitutionListResProto {
 
     }
 
-    public static final int STUDENTINSTITUTIONS_FIELD_NUMBER = 1;
-    private java.util.List<com.classlink.websocket.api.lobby.domain.dto.proto.LobbyHomeStudentInstitutionListResProto.LobbyHomeStudentInstitutionListRes.StudentInstitution> studentInstitutions_;
+    public static final int STUDENTINSTITUTIONLIST_FIELD_NUMBER = 1;
+    private java.util.List<com.classlink.websocket.api.lobby.domain.dto.proto.LobbyHomeStudentInstitutionListResProto.LobbyHomeStudentInstitutionListRes.StudentInstitution> studentInstitutionList_;
     /**
-     * <code>repeated .classlink.LobbyHomeStudentInstitutionListRes.StudentInstitution StudentInstitutions = 1;</code>
+     * <code>repeated .Classlink.LobbyHomeStudentInstitutionListRes.StudentInstitution StudentInstitutionList = 1;</code>
      */
     @java.lang.Override
-    public java.util.List<com.classlink.websocket.api.lobby.domain.dto.proto.LobbyHomeStudentInstitutionListResProto.LobbyHomeStudentInstitutionListRes.StudentInstitution> getStudentInstitutionsList() {
-      return studentInstitutions_;
+    public java.util.List<com.classlink.websocket.api.lobby.domain.dto.proto.LobbyHomeStudentInstitutionListResProto.LobbyHomeStudentInstitutionListRes.StudentInstitution> getStudentInstitutionListList() {
+      return studentInstitutionList_;
     }
     /**
-     * <code>repeated .classlink.LobbyHomeStudentInstitutionListRes.StudentInstitution StudentInstitutions = 1;</code>
+     * <code>repeated .Classlink.LobbyHomeStudentInstitutionListRes.StudentInstitution StudentInstitutionList = 1;</code>
      */
     @java.lang.Override
     public java.util.List<? extends com.classlink.websocket.api.lobby.domain.dto.proto.LobbyHomeStudentInstitutionListResProto.LobbyHomeStudentInstitutionListRes.StudentInstitutionOrBuilder> 
-        getStudentInstitutionsOrBuilderList() {
-      return studentInstitutions_;
+        getStudentInstitutionListOrBuilderList() {
+      return studentInstitutionList_;
     }
     /**
-     * <code>repeated .classlink.LobbyHomeStudentInstitutionListRes.StudentInstitution StudentInstitutions = 1;</code>
+     * <code>repeated .Classlink.LobbyHomeStudentInstitutionListRes.StudentInstitution StudentInstitutionList = 1;</code>
      */
     @java.lang.Override
-    public int getStudentInstitutionsCount() {
-      return studentInstitutions_.size();
+    public int getStudentInstitutionListCount() {
+      return studentInstitutionList_.size();
     }
     /**
-     * <code>repeated .classlink.LobbyHomeStudentInstitutionListRes.StudentInstitution StudentInstitutions = 1;</code>
+     * <code>repeated .Classlink.LobbyHomeStudentInstitutionListRes.StudentInstitution StudentInstitutionList = 1;</code>
      */
     @java.lang.Override
-    public com.classlink.websocket.api.lobby.domain.dto.proto.LobbyHomeStudentInstitutionListResProto.LobbyHomeStudentInstitutionListRes.StudentInstitution getStudentInstitutions(int index) {
-      return studentInstitutions_.get(index);
+    public com.classlink.websocket.api.lobby.domain.dto.proto.LobbyHomeStudentInstitutionListResProto.LobbyHomeStudentInstitutionListRes.StudentInstitution getStudentInstitutionList(int index) {
+      return studentInstitutionList_.get(index);
     }
     /**
-     * <code>repeated .classlink.LobbyHomeStudentInstitutionListRes.StudentInstitution StudentInstitutions = 1;</code>
+     * <code>repeated .Classlink.LobbyHomeStudentInstitutionListRes.StudentInstitution StudentInstitutionList = 1;</code>
      */
     @java.lang.Override
-    public com.classlink.websocket.api.lobby.domain.dto.proto.LobbyHomeStudentInstitutionListResProto.LobbyHomeStudentInstitutionListRes.StudentInstitutionOrBuilder getStudentInstitutionsOrBuilder(
+    public com.classlink.websocket.api.lobby.domain.dto.proto.LobbyHomeStudentInstitutionListResProto.LobbyHomeStudentInstitutionListRes.StudentInstitutionOrBuilder getStudentInstitutionListOrBuilder(
         int index) {
-      return studentInstitutions_.get(index);
+      return studentInstitutionList_.get(index);
     }
 
     private byte memoizedIsInitialized = -1;
@@ -1651,8 +1651,8 @@ public final class LobbyHomeStudentInstitutionListResProto {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      for (int i = 0; i < studentInstitutions_.size(); i++) {
-        output.writeMessage(1, studentInstitutions_.get(i));
+      for (int i = 0; i < studentInstitutionList_.size(); i++) {
+        output.writeMessage(1, studentInstitutionList_.get(i));
       }
       getUnknownFields().writeTo(output);
     }
@@ -1663,9 +1663,9 @@ public final class LobbyHomeStudentInstitutionListResProto {
       if (size != -1) return size;
 
       size = 0;
-      for (int i = 0; i < studentInstitutions_.size(); i++) {
+      for (int i = 0; i < studentInstitutionList_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(1, studentInstitutions_.get(i));
+          .computeMessageSize(1, studentInstitutionList_.get(i));
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -1682,8 +1682,8 @@ public final class LobbyHomeStudentInstitutionListResProto {
       }
       com.classlink.websocket.api.lobby.domain.dto.proto.LobbyHomeStudentInstitutionListResProto.LobbyHomeStudentInstitutionListRes other = (com.classlink.websocket.api.lobby.domain.dto.proto.LobbyHomeStudentInstitutionListResProto.LobbyHomeStudentInstitutionListRes) obj;
 
-      if (!getStudentInstitutionsList()
-          .equals(other.getStudentInstitutionsList())) return false;
+      if (!getStudentInstitutionListList()
+          .equals(other.getStudentInstitutionListList())) return false;
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -1695,9 +1695,9 @@ public final class LobbyHomeStudentInstitutionListResProto {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      if (getStudentInstitutionsCount() > 0) {
-        hash = (37 * hash) + STUDENTINSTITUTIONS_FIELD_NUMBER;
-        hash = (53 * hash) + getStudentInstitutionsList().hashCode();
+      if (getStudentInstitutionListCount() > 0) {
+        hash = (37 * hash) + STUDENTINSTITUTIONLIST_FIELD_NUMBER;
+        hash = (53 * hash) + getStudentInstitutionListList().hashCode();
       }
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
@@ -1795,21 +1795,21 @@ public final class LobbyHomeStudentInstitutionListResProto {
       return builder;
     }
     /**
-     * Protobuf type {@code classlink.LobbyHomeStudentInstitutionListRes}
+     * Protobuf type {@code Classlink.LobbyHomeStudentInstitutionListRes}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:classlink.LobbyHomeStudentInstitutionListRes)
+        // @@protoc_insertion_point(builder_implements:Classlink.LobbyHomeStudentInstitutionListRes)
         com.classlink.websocket.api.lobby.domain.dto.proto.LobbyHomeStudentInstitutionListResProto.LobbyHomeStudentInstitutionListResOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return internal_static_classlink_LobbyHomeStudentInstitutionListRes_descriptor;
+        return com.classlink.websocket.api.lobby.domain.dto.proto.LobbyHomeStudentInstitutionListResProto.internal_static_Classlink_LobbyHomeStudentInstitutionListRes_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return internal_static_classlink_LobbyHomeStudentInstitutionListRes_fieldAccessorTable
+        return com.classlink.websocket.api.lobby.domain.dto.proto.LobbyHomeStudentInstitutionListResProto.internal_static_Classlink_LobbyHomeStudentInstitutionListRes_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
                 com.classlink.websocket.api.lobby.domain.dto.proto.LobbyHomeStudentInstitutionListResProto.LobbyHomeStudentInstitutionListRes.class, com.classlink.websocket.api.lobby.domain.dto.proto.LobbyHomeStudentInstitutionListResProto.LobbyHomeStudentInstitutionListRes.Builder.class);
       }
@@ -1827,11 +1827,11 @@ public final class LobbyHomeStudentInstitutionListResProto {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        if (studentInstitutionsBuilder_ == null) {
-          studentInstitutions_ = java.util.Collections.emptyList();
+        if (studentInstitutionListBuilder_ == null) {
+          studentInstitutionList_ = java.util.Collections.emptyList();
         } else {
-          studentInstitutions_ = null;
-          studentInstitutionsBuilder_.clear();
+          studentInstitutionList_ = null;
+          studentInstitutionListBuilder_.clear();
         }
         bitField0_ = (bitField0_ & ~0x00000001);
         return this;
@@ -1840,12 +1840,12 @@ public final class LobbyHomeStudentInstitutionListResProto {
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return internal_static_classlink_LobbyHomeStudentInstitutionListRes_descriptor;
+        return com.classlink.websocket.api.lobby.domain.dto.proto.LobbyHomeStudentInstitutionListResProto.internal_static_Classlink_LobbyHomeStudentInstitutionListRes_descriptor;
       }
 
       @java.lang.Override
       public com.classlink.websocket.api.lobby.domain.dto.proto.LobbyHomeStudentInstitutionListResProto.LobbyHomeStudentInstitutionListRes getDefaultInstanceForType() {
-        return getDefaultInstance();
+        return com.classlink.websocket.api.lobby.domain.dto.proto.LobbyHomeStudentInstitutionListResProto.LobbyHomeStudentInstitutionListRes.getDefaultInstance();
       }
 
       @java.lang.Override
@@ -1861,14 +1861,14 @@ public final class LobbyHomeStudentInstitutionListResProto {
       public com.classlink.websocket.api.lobby.domain.dto.proto.LobbyHomeStudentInstitutionListResProto.LobbyHomeStudentInstitutionListRes buildPartial() {
         com.classlink.websocket.api.lobby.domain.dto.proto.LobbyHomeStudentInstitutionListResProto.LobbyHomeStudentInstitutionListRes result = new com.classlink.websocket.api.lobby.domain.dto.proto.LobbyHomeStudentInstitutionListResProto.LobbyHomeStudentInstitutionListRes(this);
         int from_bitField0_ = bitField0_;
-        if (studentInstitutionsBuilder_ == null) {
+        if (studentInstitutionListBuilder_ == null) {
           if (((bitField0_ & 0x00000001) != 0)) {
-            studentInstitutions_ = java.util.Collections.unmodifiableList(studentInstitutions_);
+            studentInstitutionList_ = java.util.Collections.unmodifiableList(studentInstitutionList_);
             bitField0_ = (bitField0_ & ~0x00000001);
           }
-          result.studentInstitutions_ = studentInstitutions_;
+          result.studentInstitutionList_ = studentInstitutionList_;
         } else {
-          result.studentInstitutions_ = studentInstitutionsBuilder_.build();
+          result.studentInstitutionList_ = studentInstitutionListBuilder_.build();
         }
         onBuilt();
         return result;
@@ -1917,30 +1917,30 @@ public final class LobbyHomeStudentInstitutionListResProto {
       }
 
       public Builder mergeFrom(com.classlink.websocket.api.lobby.domain.dto.proto.LobbyHomeStudentInstitutionListResProto.LobbyHomeStudentInstitutionListRes other) {
-        if (other == getDefaultInstance()) return this;
-        if (studentInstitutionsBuilder_ == null) {
-          if (!other.studentInstitutions_.isEmpty()) {
-            if (studentInstitutions_.isEmpty()) {
-              studentInstitutions_ = other.studentInstitutions_;
+        if (other == com.classlink.websocket.api.lobby.domain.dto.proto.LobbyHomeStudentInstitutionListResProto.LobbyHomeStudentInstitutionListRes.getDefaultInstance()) return this;
+        if (studentInstitutionListBuilder_ == null) {
+          if (!other.studentInstitutionList_.isEmpty()) {
+            if (studentInstitutionList_.isEmpty()) {
+              studentInstitutionList_ = other.studentInstitutionList_;
               bitField0_ = (bitField0_ & ~0x00000001);
             } else {
-              ensureStudentInstitutionsIsMutable();
-              studentInstitutions_.addAll(other.studentInstitutions_);
+              ensureStudentInstitutionListIsMutable();
+              studentInstitutionList_.addAll(other.studentInstitutionList_);
             }
             onChanged();
           }
         } else {
-          if (!other.studentInstitutions_.isEmpty()) {
-            if (studentInstitutionsBuilder_.isEmpty()) {
-              studentInstitutionsBuilder_.dispose();
-              studentInstitutionsBuilder_ = null;
-              studentInstitutions_ = other.studentInstitutions_;
+          if (!other.studentInstitutionList_.isEmpty()) {
+            if (studentInstitutionListBuilder_.isEmpty()) {
+              studentInstitutionListBuilder_.dispose();
+              studentInstitutionListBuilder_ = null;
+              studentInstitutionList_ = other.studentInstitutionList_;
               bitField0_ = (bitField0_ & ~0x00000001);
-              studentInstitutionsBuilder_ = 
+              studentInstitutionListBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                   getStudentInstitutionsFieldBuilder() : null;
+                   getStudentInstitutionListFieldBuilder() : null;
             } else {
-              studentInstitutionsBuilder_.addAllMessages(other.studentInstitutions_);
+              studentInstitutionListBuilder_.addAllMessages(other.studentInstitutionList_);
             }
           }
         }
@@ -1975,11 +1975,11 @@ public final class LobbyHomeStudentInstitutionListResProto {
                     input.readMessage(
                         com.classlink.websocket.api.lobby.domain.dto.proto.LobbyHomeStudentInstitutionListResProto.LobbyHomeStudentInstitutionListRes.StudentInstitution.parser(),
                         extensionRegistry);
-                if (studentInstitutionsBuilder_ == null) {
-                  ensureStudentInstitutionsIsMutable();
-                  studentInstitutions_.add(m);
+                if (studentInstitutionListBuilder_ == null) {
+                  ensureStudentInstitutionListIsMutable();
+                  studentInstitutionList_.add(m);
                 } else {
-                  studentInstitutionsBuilder_.addMessage(m);
+                  studentInstitutionListBuilder_.addMessage(m);
                 }
                 break;
               } // case 10
@@ -2000,244 +2000,244 @@ public final class LobbyHomeStudentInstitutionListResProto {
       }
       private int bitField0_;
 
-      private java.util.List<com.classlink.websocket.api.lobby.domain.dto.proto.LobbyHomeStudentInstitutionListResProto.LobbyHomeStudentInstitutionListRes.StudentInstitution> studentInstitutions_ =
+      private java.util.List<com.classlink.websocket.api.lobby.domain.dto.proto.LobbyHomeStudentInstitutionListResProto.LobbyHomeStudentInstitutionListRes.StudentInstitution> studentInstitutionList_ =
         java.util.Collections.emptyList();
-      private void ensureStudentInstitutionsIsMutable() {
+      private void ensureStudentInstitutionListIsMutable() {
         if (!((bitField0_ & 0x00000001) != 0)) {
-          studentInstitutions_ = new java.util.ArrayList<com.classlink.websocket.api.lobby.domain.dto.proto.LobbyHomeStudentInstitutionListResProto.LobbyHomeStudentInstitutionListRes.StudentInstitution>(studentInstitutions_);
+          studentInstitutionList_ = new java.util.ArrayList<com.classlink.websocket.api.lobby.domain.dto.proto.LobbyHomeStudentInstitutionListResProto.LobbyHomeStudentInstitutionListRes.StudentInstitution>(studentInstitutionList_);
           bitField0_ |= 0x00000001;
          }
       }
 
       private com.google.protobuf.RepeatedFieldBuilderV3<
-          com.classlink.websocket.api.lobby.domain.dto.proto.LobbyHomeStudentInstitutionListResProto.LobbyHomeStudentInstitutionListRes.StudentInstitution, com.classlink.websocket.api.lobby.domain.dto.proto.LobbyHomeStudentInstitutionListResProto.LobbyHomeStudentInstitutionListRes.StudentInstitution.Builder, com.classlink.websocket.api.lobby.domain.dto.proto.LobbyHomeStudentInstitutionListResProto.LobbyHomeStudentInstitutionListRes.StudentInstitutionOrBuilder> studentInstitutionsBuilder_;
+          com.classlink.websocket.api.lobby.domain.dto.proto.LobbyHomeStudentInstitutionListResProto.LobbyHomeStudentInstitutionListRes.StudentInstitution, com.classlink.websocket.api.lobby.domain.dto.proto.LobbyHomeStudentInstitutionListResProto.LobbyHomeStudentInstitutionListRes.StudentInstitution.Builder, com.classlink.websocket.api.lobby.domain.dto.proto.LobbyHomeStudentInstitutionListResProto.LobbyHomeStudentInstitutionListRes.StudentInstitutionOrBuilder> studentInstitutionListBuilder_;
 
       /**
-       * <code>repeated .classlink.LobbyHomeStudentInstitutionListRes.StudentInstitution StudentInstitutions = 1;</code>
+       * <code>repeated .Classlink.LobbyHomeStudentInstitutionListRes.StudentInstitution StudentInstitutionList = 1;</code>
        */
-      public java.util.List<com.classlink.websocket.api.lobby.domain.dto.proto.LobbyHomeStudentInstitutionListResProto.LobbyHomeStudentInstitutionListRes.StudentInstitution> getStudentInstitutionsList() {
-        if (studentInstitutionsBuilder_ == null) {
-          return java.util.Collections.unmodifiableList(studentInstitutions_);
+      public java.util.List<com.classlink.websocket.api.lobby.domain.dto.proto.LobbyHomeStudentInstitutionListResProto.LobbyHomeStudentInstitutionListRes.StudentInstitution> getStudentInstitutionListList() {
+        if (studentInstitutionListBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(studentInstitutionList_);
         } else {
-          return studentInstitutionsBuilder_.getMessageList();
+          return studentInstitutionListBuilder_.getMessageList();
         }
       }
       /**
-       * <code>repeated .classlink.LobbyHomeStudentInstitutionListRes.StudentInstitution StudentInstitutions = 1;</code>
+       * <code>repeated .Classlink.LobbyHomeStudentInstitutionListRes.StudentInstitution StudentInstitutionList = 1;</code>
        */
-      public int getStudentInstitutionsCount() {
-        if (studentInstitutionsBuilder_ == null) {
-          return studentInstitutions_.size();
+      public int getStudentInstitutionListCount() {
+        if (studentInstitutionListBuilder_ == null) {
+          return studentInstitutionList_.size();
         } else {
-          return studentInstitutionsBuilder_.getCount();
+          return studentInstitutionListBuilder_.getCount();
         }
       }
       /**
-       * <code>repeated .classlink.LobbyHomeStudentInstitutionListRes.StudentInstitution StudentInstitutions = 1;</code>
+       * <code>repeated .Classlink.LobbyHomeStudentInstitutionListRes.StudentInstitution StudentInstitutionList = 1;</code>
        */
-      public com.classlink.websocket.api.lobby.domain.dto.proto.LobbyHomeStudentInstitutionListResProto.LobbyHomeStudentInstitutionListRes.StudentInstitution getStudentInstitutions(int index) {
-        if (studentInstitutionsBuilder_ == null) {
-          return studentInstitutions_.get(index);
+      public com.classlink.websocket.api.lobby.domain.dto.proto.LobbyHomeStudentInstitutionListResProto.LobbyHomeStudentInstitutionListRes.StudentInstitution getStudentInstitutionList(int index) {
+        if (studentInstitutionListBuilder_ == null) {
+          return studentInstitutionList_.get(index);
         } else {
-          return studentInstitutionsBuilder_.getMessage(index);
+          return studentInstitutionListBuilder_.getMessage(index);
         }
       }
       /**
-       * <code>repeated .classlink.LobbyHomeStudentInstitutionListRes.StudentInstitution StudentInstitutions = 1;</code>
+       * <code>repeated .Classlink.LobbyHomeStudentInstitutionListRes.StudentInstitution StudentInstitutionList = 1;</code>
        */
-      public Builder setStudentInstitutions(
+      public Builder setStudentInstitutionList(
           int index, com.classlink.websocket.api.lobby.domain.dto.proto.LobbyHomeStudentInstitutionListResProto.LobbyHomeStudentInstitutionListRes.StudentInstitution value) {
-        if (studentInstitutionsBuilder_ == null) {
+        if (studentInstitutionListBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
           }
-          ensureStudentInstitutionsIsMutable();
-          studentInstitutions_.set(index, value);
+          ensureStudentInstitutionListIsMutable();
+          studentInstitutionList_.set(index, value);
           onChanged();
         } else {
-          studentInstitutionsBuilder_.setMessage(index, value);
+          studentInstitutionListBuilder_.setMessage(index, value);
         }
         return this;
       }
       /**
-       * <code>repeated .classlink.LobbyHomeStudentInstitutionListRes.StudentInstitution StudentInstitutions = 1;</code>
+       * <code>repeated .Classlink.LobbyHomeStudentInstitutionListRes.StudentInstitution StudentInstitutionList = 1;</code>
        */
-      public Builder setStudentInstitutions(
+      public Builder setStudentInstitutionList(
           int index, com.classlink.websocket.api.lobby.domain.dto.proto.LobbyHomeStudentInstitutionListResProto.LobbyHomeStudentInstitutionListRes.StudentInstitution.Builder builderForValue) {
-        if (studentInstitutionsBuilder_ == null) {
-          ensureStudentInstitutionsIsMutable();
-          studentInstitutions_.set(index, builderForValue.build());
+        if (studentInstitutionListBuilder_ == null) {
+          ensureStudentInstitutionListIsMutable();
+          studentInstitutionList_.set(index, builderForValue.build());
           onChanged();
         } else {
-          studentInstitutionsBuilder_.setMessage(index, builderForValue.build());
+          studentInstitutionListBuilder_.setMessage(index, builderForValue.build());
         }
         return this;
       }
       /**
-       * <code>repeated .classlink.LobbyHomeStudentInstitutionListRes.StudentInstitution StudentInstitutions = 1;</code>
+       * <code>repeated .Classlink.LobbyHomeStudentInstitutionListRes.StudentInstitution StudentInstitutionList = 1;</code>
        */
-      public Builder addStudentInstitutions(com.classlink.websocket.api.lobby.domain.dto.proto.LobbyHomeStudentInstitutionListResProto.LobbyHomeStudentInstitutionListRes.StudentInstitution value) {
-        if (studentInstitutionsBuilder_ == null) {
+      public Builder addStudentInstitutionList(com.classlink.websocket.api.lobby.domain.dto.proto.LobbyHomeStudentInstitutionListResProto.LobbyHomeStudentInstitutionListRes.StudentInstitution value) {
+        if (studentInstitutionListBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
           }
-          ensureStudentInstitutionsIsMutable();
-          studentInstitutions_.add(value);
+          ensureStudentInstitutionListIsMutable();
+          studentInstitutionList_.add(value);
           onChanged();
         } else {
-          studentInstitutionsBuilder_.addMessage(value);
+          studentInstitutionListBuilder_.addMessage(value);
         }
         return this;
       }
       /**
-       * <code>repeated .classlink.LobbyHomeStudentInstitutionListRes.StudentInstitution StudentInstitutions = 1;</code>
+       * <code>repeated .Classlink.LobbyHomeStudentInstitutionListRes.StudentInstitution StudentInstitutionList = 1;</code>
        */
-      public Builder addStudentInstitutions(
+      public Builder addStudentInstitutionList(
           int index, com.classlink.websocket.api.lobby.domain.dto.proto.LobbyHomeStudentInstitutionListResProto.LobbyHomeStudentInstitutionListRes.StudentInstitution value) {
-        if (studentInstitutionsBuilder_ == null) {
+        if (studentInstitutionListBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
           }
-          ensureStudentInstitutionsIsMutable();
-          studentInstitutions_.add(index, value);
+          ensureStudentInstitutionListIsMutable();
+          studentInstitutionList_.add(index, value);
           onChanged();
         } else {
-          studentInstitutionsBuilder_.addMessage(index, value);
+          studentInstitutionListBuilder_.addMessage(index, value);
         }
         return this;
       }
       /**
-       * <code>repeated .classlink.LobbyHomeStudentInstitutionListRes.StudentInstitution StudentInstitutions = 1;</code>
+       * <code>repeated .Classlink.LobbyHomeStudentInstitutionListRes.StudentInstitution StudentInstitutionList = 1;</code>
        */
-      public Builder addStudentInstitutions(
+      public Builder addStudentInstitutionList(
           com.classlink.websocket.api.lobby.domain.dto.proto.LobbyHomeStudentInstitutionListResProto.LobbyHomeStudentInstitutionListRes.StudentInstitution.Builder builderForValue) {
-        if (studentInstitutionsBuilder_ == null) {
-          ensureStudentInstitutionsIsMutable();
-          studentInstitutions_.add(builderForValue.build());
+        if (studentInstitutionListBuilder_ == null) {
+          ensureStudentInstitutionListIsMutable();
+          studentInstitutionList_.add(builderForValue.build());
           onChanged();
         } else {
-          studentInstitutionsBuilder_.addMessage(builderForValue.build());
+          studentInstitutionListBuilder_.addMessage(builderForValue.build());
         }
         return this;
       }
       /**
-       * <code>repeated .classlink.LobbyHomeStudentInstitutionListRes.StudentInstitution StudentInstitutions = 1;</code>
+       * <code>repeated .Classlink.LobbyHomeStudentInstitutionListRes.StudentInstitution StudentInstitutionList = 1;</code>
        */
-      public Builder addStudentInstitutions(
+      public Builder addStudentInstitutionList(
           int index, com.classlink.websocket.api.lobby.domain.dto.proto.LobbyHomeStudentInstitutionListResProto.LobbyHomeStudentInstitutionListRes.StudentInstitution.Builder builderForValue) {
-        if (studentInstitutionsBuilder_ == null) {
-          ensureStudentInstitutionsIsMutable();
-          studentInstitutions_.add(index, builderForValue.build());
+        if (studentInstitutionListBuilder_ == null) {
+          ensureStudentInstitutionListIsMutable();
+          studentInstitutionList_.add(index, builderForValue.build());
           onChanged();
         } else {
-          studentInstitutionsBuilder_.addMessage(index, builderForValue.build());
+          studentInstitutionListBuilder_.addMessage(index, builderForValue.build());
         }
         return this;
       }
       /**
-       * <code>repeated .classlink.LobbyHomeStudentInstitutionListRes.StudentInstitution StudentInstitutions = 1;</code>
+       * <code>repeated .Classlink.LobbyHomeStudentInstitutionListRes.StudentInstitution StudentInstitutionList = 1;</code>
        */
-      public Builder addAllStudentInstitutions(
+      public Builder addAllStudentInstitutionList(
           java.lang.Iterable<? extends com.classlink.websocket.api.lobby.domain.dto.proto.LobbyHomeStudentInstitutionListResProto.LobbyHomeStudentInstitutionListRes.StudentInstitution> values) {
-        if (studentInstitutionsBuilder_ == null) {
-          ensureStudentInstitutionsIsMutable();
-          addAll(
-              values, studentInstitutions_);
+        if (studentInstitutionListBuilder_ == null) {
+          ensureStudentInstitutionListIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, studentInstitutionList_);
           onChanged();
         } else {
-          studentInstitutionsBuilder_.addAllMessages(values);
+          studentInstitutionListBuilder_.addAllMessages(values);
         }
         return this;
       }
       /**
-       * <code>repeated .classlink.LobbyHomeStudentInstitutionListRes.StudentInstitution StudentInstitutions = 1;</code>
+       * <code>repeated .Classlink.LobbyHomeStudentInstitutionListRes.StudentInstitution StudentInstitutionList = 1;</code>
        */
-      public Builder clearStudentInstitutions() {
-        if (studentInstitutionsBuilder_ == null) {
-          studentInstitutions_ = java.util.Collections.emptyList();
+      public Builder clearStudentInstitutionList() {
+        if (studentInstitutionListBuilder_ == null) {
+          studentInstitutionList_ = java.util.Collections.emptyList();
           bitField0_ = (bitField0_ & ~0x00000001);
           onChanged();
         } else {
-          studentInstitutionsBuilder_.clear();
+          studentInstitutionListBuilder_.clear();
         }
         return this;
       }
       /**
-       * <code>repeated .classlink.LobbyHomeStudentInstitutionListRes.StudentInstitution StudentInstitutions = 1;</code>
+       * <code>repeated .Classlink.LobbyHomeStudentInstitutionListRes.StudentInstitution StudentInstitutionList = 1;</code>
        */
-      public Builder removeStudentInstitutions(int index) {
-        if (studentInstitutionsBuilder_ == null) {
-          ensureStudentInstitutionsIsMutable();
-          studentInstitutions_.remove(index);
+      public Builder removeStudentInstitutionList(int index) {
+        if (studentInstitutionListBuilder_ == null) {
+          ensureStudentInstitutionListIsMutable();
+          studentInstitutionList_.remove(index);
           onChanged();
         } else {
-          studentInstitutionsBuilder_.remove(index);
+          studentInstitutionListBuilder_.remove(index);
         }
         return this;
       }
       /**
-       * <code>repeated .classlink.LobbyHomeStudentInstitutionListRes.StudentInstitution StudentInstitutions = 1;</code>
+       * <code>repeated .Classlink.LobbyHomeStudentInstitutionListRes.StudentInstitution StudentInstitutionList = 1;</code>
        */
-      public com.classlink.websocket.api.lobby.domain.dto.proto.LobbyHomeStudentInstitutionListResProto.LobbyHomeStudentInstitutionListRes.StudentInstitution.Builder getStudentInstitutionsBuilder(
+      public com.classlink.websocket.api.lobby.domain.dto.proto.LobbyHomeStudentInstitutionListResProto.LobbyHomeStudentInstitutionListRes.StudentInstitution.Builder getStudentInstitutionListBuilder(
           int index) {
-        return getStudentInstitutionsFieldBuilder().getBuilder(index);
+        return getStudentInstitutionListFieldBuilder().getBuilder(index);
       }
       /**
-       * <code>repeated .classlink.LobbyHomeStudentInstitutionListRes.StudentInstitution StudentInstitutions = 1;</code>
+       * <code>repeated .Classlink.LobbyHomeStudentInstitutionListRes.StudentInstitution StudentInstitutionList = 1;</code>
        */
-      public com.classlink.websocket.api.lobby.domain.dto.proto.LobbyHomeStudentInstitutionListResProto.LobbyHomeStudentInstitutionListRes.StudentInstitutionOrBuilder getStudentInstitutionsOrBuilder(
+      public com.classlink.websocket.api.lobby.domain.dto.proto.LobbyHomeStudentInstitutionListResProto.LobbyHomeStudentInstitutionListRes.StudentInstitutionOrBuilder getStudentInstitutionListOrBuilder(
           int index) {
-        if (studentInstitutionsBuilder_ == null) {
-          return studentInstitutions_.get(index);  } else {
-          return studentInstitutionsBuilder_.getMessageOrBuilder(index);
+        if (studentInstitutionListBuilder_ == null) {
+          return studentInstitutionList_.get(index);  } else {
+          return studentInstitutionListBuilder_.getMessageOrBuilder(index);
         }
       }
       /**
-       * <code>repeated .classlink.LobbyHomeStudentInstitutionListRes.StudentInstitution StudentInstitutions = 1;</code>
+       * <code>repeated .Classlink.LobbyHomeStudentInstitutionListRes.StudentInstitution StudentInstitutionList = 1;</code>
        */
       public java.util.List<? extends com.classlink.websocket.api.lobby.domain.dto.proto.LobbyHomeStudentInstitutionListResProto.LobbyHomeStudentInstitutionListRes.StudentInstitutionOrBuilder> 
-           getStudentInstitutionsOrBuilderList() {
-        if (studentInstitutionsBuilder_ != null) {
-          return studentInstitutionsBuilder_.getMessageOrBuilderList();
+           getStudentInstitutionListOrBuilderList() {
+        if (studentInstitutionListBuilder_ != null) {
+          return studentInstitutionListBuilder_.getMessageOrBuilderList();
         } else {
-          return java.util.Collections.unmodifiableList(studentInstitutions_);
+          return java.util.Collections.unmodifiableList(studentInstitutionList_);
         }
       }
       /**
-       * <code>repeated .classlink.LobbyHomeStudentInstitutionListRes.StudentInstitution StudentInstitutions = 1;</code>
+       * <code>repeated .Classlink.LobbyHomeStudentInstitutionListRes.StudentInstitution StudentInstitutionList = 1;</code>
        */
-      public com.classlink.websocket.api.lobby.domain.dto.proto.LobbyHomeStudentInstitutionListResProto.LobbyHomeStudentInstitutionListRes.StudentInstitution.Builder addStudentInstitutionsBuilder() {
-        return getStudentInstitutionsFieldBuilder().addBuilder(
+      public com.classlink.websocket.api.lobby.domain.dto.proto.LobbyHomeStudentInstitutionListResProto.LobbyHomeStudentInstitutionListRes.StudentInstitution.Builder addStudentInstitutionListBuilder() {
+        return getStudentInstitutionListFieldBuilder().addBuilder(
             com.classlink.websocket.api.lobby.domain.dto.proto.LobbyHomeStudentInstitutionListResProto.LobbyHomeStudentInstitutionListRes.StudentInstitution.getDefaultInstance());
       }
       /**
-       * <code>repeated .classlink.LobbyHomeStudentInstitutionListRes.StudentInstitution StudentInstitutions = 1;</code>
+       * <code>repeated .Classlink.LobbyHomeStudentInstitutionListRes.StudentInstitution StudentInstitutionList = 1;</code>
        */
-      public com.classlink.websocket.api.lobby.domain.dto.proto.LobbyHomeStudentInstitutionListResProto.LobbyHomeStudentInstitutionListRes.StudentInstitution.Builder addStudentInstitutionsBuilder(
+      public com.classlink.websocket.api.lobby.domain.dto.proto.LobbyHomeStudentInstitutionListResProto.LobbyHomeStudentInstitutionListRes.StudentInstitution.Builder addStudentInstitutionListBuilder(
           int index) {
-        return getStudentInstitutionsFieldBuilder().addBuilder(
+        return getStudentInstitutionListFieldBuilder().addBuilder(
             index, com.classlink.websocket.api.lobby.domain.dto.proto.LobbyHomeStudentInstitutionListResProto.LobbyHomeStudentInstitutionListRes.StudentInstitution.getDefaultInstance());
       }
       /**
-       * <code>repeated .classlink.LobbyHomeStudentInstitutionListRes.StudentInstitution StudentInstitutions = 1;</code>
+       * <code>repeated .Classlink.LobbyHomeStudentInstitutionListRes.StudentInstitution StudentInstitutionList = 1;</code>
        */
       public java.util.List<com.classlink.websocket.api.lobby.domain.dto.proto.LobbyHomeStudentInstitutionListResProto.LobbyHomeStudentInstitutionListRes.StudentInstitution.Builder> 
-           getStudentInstitutionsBuilderList() {
-        return getStudentInstitutionsFieldBuilder().getBuilderList();
+           getStudentInstitutionListBuilderList() {
+        return getStudentInstitutionListFieldBuilder().getBuilderList();
       }
       private com.google.protobuf.RepeatedFieldBuilderV3<
           com.classlink.websocket.api.lobby.domain.dto.proto.LobbyHomeStudentInstitutionListResProto.LobbyHomeStudentInstitutionListRes.StudentInstitution, com.classlink.websocket.api.lobby.domain.dto.proto.LobbyHomeStudentInstitutionListResProto.LobbyHomeStudentInstitutionListRes.StudentInstitution.Builder, com.classlink.websocket.api.lobby.domain.dto.proto.LobbyHomeStudentInstitutionListResProto.LobbyHomeStudentInstitutionListRes.StudentInstitutionOrBuilder> 
-          getStudentInstitutionsFieldBuilder() {
-        if (studentInstitutionsBuilder_ == null) {
-          studentInstitutionsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+          getStudentInstitutionListFieldBuilder() {
+        if (studentInstitutionListBuilder_ == null) {
+          studentInstitutionListBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               com.classlink.websocket.api.lobby.domain.dto.proto.LobbyHomeStudentInstitutionListResProto.LobbyHomeStudentInstitutionListRes.StudentInstitution, com.classlink.websocket.api.lobby.domain.dto.proto.LobbyHomeStudentInstitutionListResProto.LobbyHomeStudentInstitutionListRes.StudentInstitution.Builder, com.classlink.websocket.api.lobby.domain.dto.proto.LobbyHomeStudentInstitutionListResProto.LobbyHomeStudentInstitutionListRes.StudentInstitutionOrBuilder>(
-                  studentInstitutions_,
+                  studentInstitutionList_,
                   ((bitField0_ & 0x00000001) != 0),
                   getParentForChildren(),
                   isClean());
-          studentInstitutions_ = null;
+          studentInstitutionList_ = null;
         }
-        return studentInstitutionsBuilder_;
+        return studentInstitutionListBuilder_;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -2252,10 +2252,10 @@ public final class LobbyHomeStudentInstitutionListResProto {
       }
 
 
-      // @@protoc_insertion_point(builder_scope:classlink.LobbyHomeStudentInstitutionListRes)
+      // @@protoc_insertion_point(builder_scope:Classlink.LobbyHomeStudentInstitutionListRes)
     }
 
-    // @@protoc_insertion_point(class_scope:classlink.LobbyHomeStudentInstitutionListRes)
+    // @@protoc_insertion_point(class_scope:Classlink.LobbyHomeStudentInstitutionListRes)
     private static final com.classlink.websocket.api.lobby.domain.dto.proto.LobbyHomeStudentInstitutionListResProto.LobbyHomeStudentInstitutionListRes DEFAULT_INSTANCE;
     static {
       DEFAULT_INSTANCE = new com.classlink.websocket.api.lobby.domain.dto.proto.LobbyHomeStudentInstitutionListResProto.LobbyHomeStudentInstitutionListRes();
@@ -2304,15 +2304,15 @@ public final class LobbyHomeStudentInstitutionListResProto {
   }
 
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_classlink_LobbyHomeStudentInstitutionListRes_descriptor;
+    internal_static_Classlink_LobbyHomeStudentInstitutionListRes_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_classlink_LobbyHomeStudentInstitutionListRes_fieldAccessorTable;
+      internal_static_Classlink_LobbyHomeStudentInstitutionListRes_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_classlink_LobbyHomeStudentInstitutionListRes_StudentInstitution_descriptor;
+    internal_static_Classlink_LobbyHomeStudentInstitutionListRes_StudentInstitution_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_classlink_LobbyHomeStudentInstitutionListRes_StudentInstitution_fieldAccessorTable;
+      internal_static_Classlink_LobbyHomeStudentInstitutionListRes_StudentInstitution_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -2323,33 +2323,33 @@ public final class LobbyHomeStudentInstitutionListResProto {
   static {
     java.lang.String[] descriptorData = {
       "\n(LobbyHomeStudentInstitutionListRes.pro" +
-      "to\022\tclasslink\"\271\002\n\"LobbyHomeStudentInstit" +
-      "utionListRes\022]\n\023StudentInstitutions\030\001 \003(" +
-      "\0132@.classlink.LobbyHomeStudentInstitutio" +
-      "nListRes.StudentInstitution\032\263\001\n\022StudentI" +
-      "nstitution\022\017\n\007InsCode\030\001 \001(\t\022\017\n\007InsName\030\002" +
-      " \001(\t\022\025\n\rInsLogoImgUrl\030\003 \001(\t\022\017\n\007insDesc\030\004" +
-      " \001(\t\022\021\n\tInsImgUrl\030\005 \001(\t\022\020\n\010ItmAccYn\030\007 \001(" +
-      "\010\022\021\n\tItmStatus\030\010 \001(\t\022\033\n\023RtiRegistrationD" +
-      "ate\030\t \001(\tB]\n2com.classlink.websocket.api" +
-      ".lobby.domain.dto.protoB\'LobbyHomeStuden" +
-      "tInstitutionListResProtob\006proto3"
+      "to\022\tClasslink\"\274\002\n\"LobbyHomeStudentInstit" +
+      "utionListRes\022`\n\026StudentInstitutionList\030\001" +
+      " \003(\0132@.Classlink.LobbyHomeStudentInstitu" +
+      "tionListRes.StudentInstitution\032\263\001\n\022Stude" +
+      "ntInstitution\022\017\n\007InsCode\030\001 \001(\t\022\017\n\007InsNam" +
+      "e\030\002 \001(\t\022\025\n\rInsLogoImgUrl\030\003 \001(\t\022\017\n\007insDes" +
+      "c\030\004 \001(\t\022\021\n\tInsImgUrl\030\005 \001(\t\022\020\n\010ItmAccYn\030\007" +
+      " \001(\010\022\021\n\tItmStatus\030\010 \001(\t\022\033\n\023RtiRegistrati" +
+      "onDate\030\t \001(\tB]\n2com.classlink.websocket." +
+      "api.lobby.domain.dto.protoB\'LobbyHomeStu" +
+      "dentInstitutionListResProtob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
         });
-    internal_static_classlink_LobbyHomeStudentInstitutionListRes_descriptor =
+    internal_static_Classlink_LobbyHomeStudentInstitutionListRes_descriptor =
       getDescriptor().getMessageTypes().get(0);
-    internal_static_classlink_LobbyHomeStudentInstitutionListRes_fieldAccessorTable = new
+    internal_static_Classlink_LobbyHomeStudentInstitutionListRes_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_classlink_LobbyHomeStudentInstitutionListRes_descriptor,
-        new java.lang.String[] { "StudentInstitutions", });
-    internal_static_classlink_LobbyHomeStudentInstitutionListRes_StudentInstitution_descriptor =
-      internal_static_classlink_LobbyHomeStudentInstitutionListRes_descriptor.getNestedTypes().get(0);
-    internal_static_classlink_LobbyHomeStudentInstitutionListRes_StudentInstitution_fieldAccessorTable = new
+        internal_static_Classlink_LobbyHomeStudentInstitutionListRes_descriptor,
+        new java.lang.String[] { "StudentInstitutionList", });
+    internal_static_Classlink_LobbyHomeStudentInstitutionListRes_StudentInstitution_descriptor =
+      internal_static_Classlink_LobbyHomeStudentInstitutionListRes_descriptor.getNestedTypes().get(0);
+    internal_static_Classlink_LobbyHomeStudentInstitutionListRes_StudentInstitution_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_classlink_LobbyHomeStudentInstitutionListRes_StudentInstitution_descriptor,
+        internal_static_Classlink_LobbyHomeStudentInstitutionListRes_StudentInstitution_descriptor,
         new java.lang.String[] { "InsCode", "InsName", "InsLogoImgUrl", "InsDesc", "InsImgUrl", "ItmAccYn", "ItmStatus", "RtiRegistrationDate", });
   }
 

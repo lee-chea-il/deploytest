@@ -1,0 +1,21 @@
+syntax = "proto3"; 
+package Classlink;  
+option java_package = "com.classlink.websocket.api.lobby.domain.dto.proto"; 
+option java_outer_classname = "SWclassInstitutionAttendanceResProto"; 
+
+message SWclassInstitutionAttendanceRes{
+message Attendance {
+ string BrdId = 1; // 게시판(공지) 아이디 필요 여부 확인필요
+ string InstiLogoImg = 2;
+ string InsName = 3;
+ string Temperature =4;
+ string AttendanceDate= 5;
+ string AttendanceOutDate= 6;
+ string DetailInfoUrl = 7; // 기획상에서 상세 정보 URL이 확인되지않음
+ // string ItmStatus;  가입 상태 필요
+ // bool ItmAccYn;  교육기관에 대한 승인여부 필요
+ // string RtiRegistrationDate; 교육기관 방문일자 필요
+}
+
+repeated Attendance AttendanceList =1;
+}

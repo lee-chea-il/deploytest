@@ -1,0 +1,18 @@
+syntax = "proto3"; 
+package Classlink;  
+option java_package = "com.classlink.websocket.api.lobby.domain.dto.proto"; 
+option java_outer_classname = "LobbyHomeTodayClassDetailResProto"; 
+
+message LobbyHomeTodayClassDetailRes{
+message TodayClass {
+  string LecTitle = 1;
+  string TeacherName = 2;
+  string TeacherImgUrl = 3;
+  string LecTimeStime = 4;
+  string LecTimeEtime = 5;
+  string LecImgUrl = 6;
+   bool isLive = 7; // 논의필요
+}
+
+TodayClass TodayClassData = 1;
+}

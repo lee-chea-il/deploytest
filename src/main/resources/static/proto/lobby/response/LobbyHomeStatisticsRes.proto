@@ -1,0 +1,22 @@
+syntax = "proto3"; 
+package Classlink;  
+option java_package = "com.classlink.websocket.api.lobby.domain.dto.proto"; 
+option java_outer_classname = "LobbyHomeStatisticsResProto"; 
+
+message LobbyHomeStatisticsRes{
+message InsStatisticInfo
+{
+    int32 JoinInsCnt = 1;
+    int32 UserCnt = 2; 
+    int32 EnrollmentCnt = 3; 
+    int32 SearchInsCode = 4;
+    int32 DataCnt = 5;
+    int32 LessonCnt = 6;
+    int32 CurriculumCnt = 7;
+    int32 WorldSetCnt = 8; 
+}
+
+repeated InsStatisticInfo MonthInsStatisticInfoList = 1;
+repeated InsStatisticInfo YearInsStatisticInfoList = 2;
+string StatisticsDetailUrl = 3;
+}

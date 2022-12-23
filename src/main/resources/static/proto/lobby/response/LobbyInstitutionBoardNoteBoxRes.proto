@@ -1,0 +1,15 @@
+syntax = "proto3"; 
+package Classlink;  
+option java_package = "com.classlink.websocket.api.lobby.domain.dto.proto"; 
+option java_outer_classname = "LobbyInstitutionBoardNoteBoxResProto"; 
+
+message LobbyInstitutionBoardNoteBoxRes{
+message NoteBox {
+ string NoteBoxFileName = 1;
+ string InstName = 2;
+ string NoteBoxDate =3;
+ string DownloadUrl = 4;
+}
+
+repeated NoteBox NoteBoxeList =1;
+}
