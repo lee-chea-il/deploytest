@@ -9,5 +9,5 @@ message IdentityAvatarListRes {
     string SelectIdentityType = 1;
     int32 AvatarId = 2;
   }
-  repeated AvatarInfo AvatarInfos = 1;
+  repeated AvatarInfo AvatarInfoList = 1;
 }

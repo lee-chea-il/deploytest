@@ -42,7 +42,7 @@ public class MemberService {
         IdentityListResProto.IdentityListRes.Builder identityListRes = IdentityListResProto.IdentityListRes.newBuilder();
 
         if (!identityDtoList.isEmpty()) {
-            CommonUtil.nullSafeSet(identityDtoList, identityListRes::addAllIdentityTypes);
+            CommonUtil.nullSafeSet(identityDtoList, identityListRes::addAllIdentityTypeList);
         }
 
         ResponsePacket packetResProto = ResponsePacket.newBuilder().setOpCode(packetReqProto.getOpCode())
@@ -168,7 +168,7 @@ public class MemberService {
         }
 
         IdentityAvatarListResProto.IdentityAvatarListRes.Builder identityAvatarListResBuilder = IdentityAvatarListResProto.IdentityAvatarListRes.newBuilder();
-        CommonUtil.nullSafeSet(avatarInfos, identityAvatarListResBuilder::addAllAvatarInfos);
+        CommonUtil.nullSafeSet(avatarInfos, identityAvatarListResBuilder::addAllAvatarInfoList);
 
         ResponsePacket packetResProto;
 

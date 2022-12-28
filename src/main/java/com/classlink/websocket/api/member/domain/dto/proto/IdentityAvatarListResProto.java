@@ -19,27 +19,27 @@ public final class IdentityAvatarListResProto {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>repeated .Classlink.IdentityAvatarListRes.AvatarInfo AvatarInfos = 1;</code>
+     * <code>repeated .Classlink.IdentityAvatarListRes.AvatarInfo AvatarInfoList = 1;</code>
      */
-    java.util.List<com.classlink.websocket.api.member.domain.dto.proto.IdentityAvatarListResProto.IdentityAvatarListRes.AvatarInfo> 
-        getAvatarInfosList();
+    java.util.List<IdentityAvatarListRes.AvatarInfo>
+        getAvatarInfoListList();
     /**
-     * <code>repeated .Classlink.IdentityAvatarListRes.AvatarInfo AvatarInfos = 1;</code>
+     * <code>repeated .Classlink.IdentityAvatarListRes.AvatarInfo AvatarInfoList = 1;</code>
      */
-    com.classlink.websocket.api.member.domain.dto.proto.IdentityAvatarListResProto.IdentityAvatarListRes.AvatarInfo getAvatarInfos(int index);
+    IdentityAvatarListRes.AvatarInfo getAvatarInfoList(int index);
     /**
-     * <code>repeated .Classlink.IdentityAvatarListRes.AvatarInfo AvatarInfos = 1;</code>
+     * <code>repeated .Classlink.IdentityAvatarListRes.AvatarInfo AvatarInfoList = 1;</code>
      */
-    int getAvatarInfosCount();
+    int getAvatarInfoListCount();
     /**
-     * <code>repeated .Classlink.IdentityAvatarListRes.AvatarInfo AvatarInfos = 1;</code>
+     * <code>repeated .Classlink.IdentityAvatarListRes.AvatarInfo AvatarInfoList = 1;</code>
      */
-    java.util.List<? extends com.classlink.websocket.api.member.domain.dto.proto.IdentityAvatarListResProto.IdentityAvatarListRes.AvatarInfoOrBuilder> 
-        getAvatarInfosOrBuilderList();
+    java.util.List<? extends IdentityAvatarListRes.AvatarInfoOrBuilder>
+        getAvatarInfoListOrBuilderList();
     /**
-     * <code>repeated .Classlink.IdentityAvatarListRes.AvatarInfo AvatarInfos = 1;</code>
+     * <code>repeated .Classlink.IdentityAvatarListRes.AvatarInfo AvatarInfoList = 1;</code>
      */
-    com.classlink.websocket.api.member.domain.dto.proto.IdentityAvatarListResProto.IdentityAvatarListRes.AvatarInfoOrBuilder getAvatarInfosOrBuilder(
+    IdentityAvatarListRes.AvatarInfoOrBuilder getAvatarInfoListOrBuilder(
         int index);
   }
   /**
@@ -55,32 +55,32 @@ public final class IdentityAvatarListResProto {
       super(builder);
     }
     private IdentityAvatarListRes() {
-      avatarInfos_ = java.util.Collections.emptyList();
+      avatarInfoList_ = java.util.Collections.emptyList();
     }
 
-    @java.lang.Override
+    @Override
     @SuppressWarnings({"unused"})
-    protected java.lang.Object newInstance(
+    protected Object newInstance(
         UnusedPrivateParameter unused) {
       return new IdentityAvatarListRes();
     }
 
-    @java.lang.Override
+    @Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.classlink.websocket.api.member.domain.dto.proto.IdentityAvatarListResProto.internal_static_Classlink_IdentityAvatarListRes_descriptor;
+      return IdentityAvatarListResProto.internal_static_Classlink_IdentityAvatarListRes_descriptor;
     }
 
-    @java.lang.Override
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+    @Override
+    protected FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.classlink.websocket.api.member.domain.dto.proto.IdentityAvatarListResProto.internal_static_Classlink_IdentityAvatarListRes_fieldAccessorTable
+      return IdentityAvatarListResProto.internal_static_Classlink_IdentityAvatarListRes_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.classlink.websocket.api.member.domain.dto.proto.IdentityAvatarListResProto.IdentityAvatarListRes.class, com.classlink.websocket.api.member.domain.dto.proto.IdentityAvatarListResProto.IdentityAvatarListRes.Builder.class);
+              IdentityAvatarListRes.class, Builder.class);
     }
 
     public interface AvatarInfoOrBuilder extends
@@ -91,7 +91,7 @@ public final class IdentityAvatarListResProto {
        * <code>string SelectIdentityType = 1;</code>
        * @return The selectIdentityType.
        */
-      java.lang.String getSelectIdentityType();
+      String getSelectIdentityType();
       /**
        * <code>string SelectIdentityType = 1;</code>
        * @return The bytes for selectIdentityType.
@@ -121,46 +121,46 @@ public final class IdentityAvatarListResProto {
         selectIdentityType_ = "";
       }
 
-      @java.lang.Override
+      @Override
       @SuppressWarnings({"unused"})
-      protected java.lang.Object newInstance(
+      protected Object newInstance(
           UnusedPrivateParameter unused) {
         return new AvatarInfo();
       }
 
-      @java.lang.Override
+      @Override
       public final com.google.protobuf.UnknownFieldSet
       getUnknownFields() {
         return this.unknownFields;
       }
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return com.classlink.websocket.api.member.domain.dto.proto.IdentityAvatarListResProto.internal_static_Classlink_IdentityAvatarListRes_AvatarInfo_descriptor;
+        return IdentityAvatarListResProto.internal_static_Classlink_IdentityAvatarListRes_AvatarInfo_descriptor;
       }
 
-      @java.lang.Override
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      @Override
+      protected FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return com.classlink.websocket.api.member.domain.dto.proto.IdentityAvatarListResProto.internal_static_Classlink_IdentityAvatarListRes_AvatarInfo_fieldAccessorTable
+        return IdentityAvatarListResProto.internal_static_Classlink_IdentityAvatarListRes_AvatarInfo_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                com.classlink.websocket.api.member.domain.dto.proto.IdentityAvatarListResProto.IdentityAvatarListRes.AvatarInfo.class, com.classlink.websocket.api.member.domain.dto.proto.IdentityAvatarListResProto.IdentityAvatarListRes.AvatarInfo.Builder.class);
+                AvatarInfo.class, Builder.class);
       }
 
       public static final int SELECTIDENTITYTYPE_FIELD_NUMBER = 1;
-      private volatile java.lang.Object selectIdentityType_;
+      private volatile Object selectIdentityType_;
       /**
        * <code>string SelectIdentityType = 1;</code>
        * @return The selectIdentityType.
        */
-      @java.lang.Override
-      public java.lang.String getSelectIdentityType() {
-        java.lang.Object ref = selectIdentityType_;
-        if (ref instanceof java.lang.String) {
-          return (java.lang.String) ref;
+      @Override
+      public String getSelectIdentityType() {
+        Object ref = selectIdentityType_;
+        if (ref instanceof String) {
+          return (String) ref;
         } else {
           com.google.protobuf.ByteString bs = 
               (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
+          String s = bs.toStringUtf8();
           selectIdentityType_ = s;
           return s;
         }
@@ -169,14 +169,14 @@ public final class IdentityAvatarListResProto {
        * <code>string SelectIdentityType = 1;</code>
        * @return The bytes for selectIdentityType.
        */
-      @java.lang.Override
+      @Override
       public com.google.protobuf.ByteString
           getSelectIdentityTypeBytes() {
-        java.lang.Object ref = selectIdentityType_;
-        if (ref instanceof java.lang.String) {
+        Object ref = selectIdentityType_;
+        if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
+                  (String) ref);
           selectIdentityType_ = b;
           return b;
         } else {
@@ -190,13 +190,13 @@ public final class IdentityAvatarListResProto {
        * <code>int32 AvatarId = 2;</code>
        * @return The avatarId.
        */
-      @java.lang.Override
+      @Override
       public int getAvatarId() {
         return avatarId_;
       }
 
       private byte memoizedIsInitialized = -1;
-      @java.lang.Override
+      @Override
       public final boolean isInitialized() {
         byte isInitialized = memoizedIsInitialized;
         if (isInitialized == 1) return true;
@@ -206,7 +206,7 @@ public final class IdentityAvatarListResProto {
         return true;
       }
 
-      @java.lang.Override
+      @Override
       public void writeTo(com.google.protobuf.CodedOutputStream output)
                           throws java.io.IOException {
         if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(selectIdentityType_)) {
@@ -218,7 +218,7 @@ public final class IdentityAvatarListResProto {
         getUnknownFields().writeTo(output);
       }
 
-      @java.lang.Override
+      @Override
       public int getSerializedSize() {
         int size = memoizedSize;
         if (size != -1) return size;
@@ -236,15 +236,15 @@ public final class IdentityAvatarListResProto {
         return size;
       }
 
-      @java.lang.Override
-      public boolean equals(final java.lang.Object obj) {
+      @Override
+      public boolean equals(final Object obj) {
         if (obj == this) {
          return true;
         }
-        if (!(obj instanceof com.classlink.websocket.api.member.domain.dto.proto.IdentityAvatarListResProto.IdentityAvatarListRes.AvatarInfo)) {
+        if (!(obj instanceof AvatarInfo)) {
           return super.equals(obj);
         }
-        com.classlink.websocket.api.member.domain.dto.proto.IdentityAvatarListResProto.IdentityAvatarListRes.AvatarInfo other = (com.classlink.websocket.api.member.domain.dto.proto.IdentityAvatarListResProto.IdentityAvatarListRes.AvatarInfo) obj;
+        AvatarInfo other = (AvatarInfo) obj;
 
         if (!getSelectIdentityType()
             .equals(other.getSelectIdentityType())) return false;
@@ -254,7 +254,7 @@ public final class IdentityAvatarListResProto {
         return true;
       }
 
-      @java.lang.Override
+      @Override
       public int hashCode() {
         if (memoizedHashCode != 0) {
           return memoizedHashCode;
@@ -270,69 +270,69 @@ public final class IdentityAvatarListResProto {
         return hash;
       }
 
-      public static com.classlink.websocket.api.member.domain.dto.proto.IdentityAvatarListResProto.IdentityAvatarListRes.AvatarInfo parseFrom(
+      public static AvatarInfo parseFrom(
           java.nio.ByteBuffer data)
           throws com.google.protobuf.InvalidProtocolBufferException {
         return PARSER.parseFrom(data);
       }
-      public static com.classlink.websocket.api.member.domain.dto.proto.IdentityAvatarListResProto.IdentityAvatarListRes.AvatarInfo parseFrom(
+      public static AvatarInfo parseFrom(
           java.nio.ByteBuffer data,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
         return PARSER.parseFrom(data, extensionRegistry);
       }
-      public static com.classlink.websocket.api.member.domain.dto.proto.IdentityAvatarListResProto.IdentityAvatarListRes.AvatarInfo parseFrom(
+      public static AvatarInfo parseFrom(
           com.google.protobuf.ByteString data)
           throws com.google.protobuf.InvalidProtocolBufferException {
         return PARSER.parseFrom(data);
       }
-      public static com.classlink.websocket.api.member.domain.dto.proto.IdentityAvatarListResProto.IdentityAvatarListRes.AvatarInfo parseFrom(
+      public static AvatarInfo parseFrom(
           com.google.protobuf.ByteString data,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
         return PARSER.parseFrom(data, extensionRegistry);
       }
-      public static com.classlink.websocket.api.member.domain.dto.proto.IdentityAvatarListResProto.IdentityAvatarListRes.AvatarInfo parseFrom(byte[] data)
+      public static AvatarInfo parseFrom(byte[] data)
           throws com.google.protobuf.InvalidProtocolBufferException {
         return PARSER.parseFrom(data);
       }
-      public static com.classlink.websocket.api.member.domain.dto.proto.IdentityAvatarListResProto.IdentityAvatarListRes.AvatarInfo parseFrom(
+      public static AvatarInfo parseFrom(
           byte[] data,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
         return PARSER.parseFrom(data, extensionRegistry);
       }
-      public static com.classlink.websocket.api.member.domain.dto.proto.IdentityAvatarListResProto.IdentityAvatarListRes.AvatarInfo parseFrom(java.io.InputStream input)
+      public static AvatarInfo parseFrom(java.io.InputStream input)
           throws java.io.IOException {
         return com.google.protobuf.GeneratedMessageV3
             .parseWithIOException(PARSER, input);
       }
-      public static com.classlink.websocket.api.member.domain.dto.proto.IdentityAvatarListResProto.IdentityAvatarListRes.AvatarInfo parseFrom(
+      public static AvatarInfo parseFrom(
           java.io.InputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
         return com.google.protobuf.GeneratedMessageV3
             .parseWithIOException(PARSER, input, extensionRegistry);
       }
-      public static com.classlink.websocket.api.member.domain.dto.proto.IdentityAvatarListResProto.IdentityAvatarListRes.AvatarInfo parseDelimitedFrom(java.io.InputStream input)
+      public static AvatarInfo parseDelimitedFrom(java.io.InputStream input)
           throws java.io.IOException {
         return com.google.protobuf.GeneratedMessageV3
             .parseDelimitedWithIOException(PARSER, input);
       }
-      public static com.classlink.websocket.api.member.domain.dto.proto.IdentityAvatarListResProto.IdentityAvatarListRes.AvatarInfo parseDelimitedFrom(
+      public static AvatarInfo parseDelimitedFrom(
           java.io.InputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
         return com.google.protobuf.GeneratedMessageV3
             .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
       }
-      public static com.classlink.websocket.api.member.domain.dto.proto.IdentityAvatarListResProto.IdentityAvatarListRes.AvatarInfo parseFrom(
+      public static AvatarInfo parseFrom(
           com.google.protobuf.CodedInputStream input)
           throws java.io.IOException {
         return com.google.protobuf.GeneratedMessageV3
             .parseWithIOException(PARSER, input);
       }
-      public static com.classlink.websocket.api.member.domain.dto.proto.IdentityAvatarListResProto.IdentityAvatarListRes.AvatarInfo parseFrom(
+      public static AvatarInfo parseFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
@@ -340,23 +340,23 @@ public final class IdentityAvatarListResProto {
             .parseWithIOException(PARSER, input, extensionRegistry);
       }
 
-      @java.lang.Override
+      @Override
       public Builder newBuilderForType() { return newBuilder(); }
       public static Builder newBuilder() {
         return DEFAULT_INSTANCE.toBuilder();
       }
-      public static Builder newBuilder(com.classlink.websocket.api.member.domain.dto.proto.IdentityAvatarListResProto.IdentityAvatarListRes.AvatarInfo prototype) {
+      public static Builder newBuilder(AvatarInfo prototype) {
         return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
       }
-      @java.lang.Override
+      @Override
       public Builder toBuilder() {
         return this == DEFAULT_INSTANCE
             ? new Builder() : new Builder().mergeFrom(this);
       }
 
-      @java.lang.Override
+      @Override
       protected Builder newBuilderForType(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+          BuilderParent parent) {
         Builder builder = new Builder(parent);
         return builder;
       }
@@ -366,18 +366,18 @@ public final class IdentityAvatarListResProto {
       public static final class Builder extends
           com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
           // @@protoc_insertion_point(builder_implements:Classlink.IdentityAvatarListRes.AvatarInfo)
-          com.classlink.websocket.api.member.domain.dto.proto.IdentityAvatarListResProto.IdentityAvatarListRes.AvatarInfoOrBuilder {
+          AvatarInfoOrBuilder {
         public static final com.google.protobuf.Descriptors.Descriptor
             getDescriptor() {
-          return com.classlink.websocket.api.member.domain.dto.proto.IdentityAvatarListResProto.internal_static_Classlink_IdentityAvatarListRes_AvatarInfo_descriptor;
+          return IdentityAvatarListResProto.internal_static_Classlink_IdentityAvatarListRes_AvatarInfo_descriptor;
         }
 
-        @java.lang.Override
-        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        @Override
+        protected FieldAccessorTable
             internalGetFieldAccessorTable() {
-          return com.classlink.websocket.api.member.domain.dto.proto.IdentityAvatarListResProto.internal_static_Classlink_IdentityAvatarListRes_AvatarInfo_fieldAccessorTable
+          return IdentityAvatarListResProto.internal_static_Classlink_IdentityAvatarListRes_AvatarInfo_fieldAccessorTable
               .ensureFieldAccessorsInitialized(
-                  com.classlink.websocket.api.member.domain.dto.proto.IdentityAvatarListResProto.IdentityAvatarListRes.AvatarInfo.class, com.classlink.websocket.api.member.domain.dto.proto.IdentityAvatarListResProto.IdentityAvatarListRes.AvatarInfo.Builder.class);
+                  AvatarInfo.class, Builder.class);
         }
 
         // Construct using com.classlink.websocket.api.member.domain.dto.proto.IdentityAvatarListResProto.IdentityAvatarListRes.AvatarInfo.newBuilder()
@@ -386,11 +386,11 @@ public final class IdentityAvatarListResProto {
         }
 
         private Builder(
-            com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+            BuilderParent parent) {
           super(parent);
 
         }
-        @java.lang.Override
+        @Override
         public Builder clear() {
           super.clear();
           selectIdentityType_ = "";
@@ -400,79 +400,79 @@ public final class IdentityAvatarListResProto {
           return this;
         }
 
-        @java.lang.Override
+        @Override
         public com.google.protobuf.Descriptors.Descriptor
             getDescriptorForType() {
-          return com.classlink.websocket.api.member.domain.dto.proto.IdentityAvatarListResProto.internal_static_Classlink_IdentityAvatarListRes_AvatarInfo_descriptor;
+          return IdentityAvatarListResProto.internal_static_Classlink_IdentityAvatarListRes_AvatarInfo_descriptor;
         }
 
-        @java.lang.Override
-        public com.classlink.websocket.api.member.domain.dto.proto.IdentityAvatarListResProto.IdentityAvatarListRes.AvatarInfo getDefaultInstanceForType() {
-          return com.classlink.websocket.api.member.domain.dto.proto.IdentityAvatarListResProto.IdentityAvatarListRes.AvatarInfo.getDefaultInstance();
+        @Override
+        public AvatarInfo getDefaultInstanceForType() {
+          return AvatarInfo.getDefaultInstance();
         }
 
-        @java.lang.Override
-        public com.classlink.websocket.api.member.domain.dto.proto.IdentityAvatarListResProto.IdentityAvatarListRes.AvatarInfo build() {
-          com.classlink.websocket.api.member.domain.dto.proto.IdentityAvatarListResProto.IdentityAvatarListRes.AvatarInfo result = buildPartial();
+        @Override
+        public AvatarInfo build() {
+          AvatarInfo result = buildPartial();
           if (!result.isInitialized()) {
             throw newUninitializedMessageException(result);
           }
           return result;
         }
 
-        @java.lang.Override
-        public com.classlink.websocket.api.member.domain.dto.proto.IdentityAvatarListResProto.IdentityAvatarListRes.AvatarInfo buildPartial() {
-          com.classlink.websocket.api.member.domain.dto.proto.IdentityAvatarListResProto.IdentityAvatarListRes.AvatarInfo result = new com.classlink.websocket.api.member.domain.dto.proto.IdentityAvatarListResProto.IdentityAvatarListRes.AvatarInfo(this);
+        @Override
+        public AvatarInfo buildPartial() {
+          AvatarInfo result = new AvatarInfo(this);
           result.selectIdentityType_ = selectIdentityType_;
           result.avatarId_ = avatarId_;
           onBuilt();
           return result;
         }
 
-        @java.lang.Override
+        @Override
         public Builder clone() {
           return super.clone();
         }
-        @java.lang.Override
+        @Override
         public Builder setField(
             com.google.protobuf.Descriptors.FieldDescriptor field,
-            java.lang.Object value) {
+            Object value) {
           return super.setField(field, value);
         }
-        @java.lang.Override
+        @Override
         public Builder clearField(
             com.google.protobuf.Descriptors.FieldDescriptor field) {
           return super.clearField(field);
         }
-        @java.lang.Override
+        @Override
         public Builder clearOneof(
             com.google.protobuf.Descriptors.OneofDescriptor oneof) {
           return super.clearOneof(oneof);
         }
-        @java.lang.Override
+        @Override
         public Builder setRepeatedField(
             com.google.protobuf.Descriptors.FieldDescriptor field,
-            int index, java.lang.Object value) {
+            int index, Object value) {
           return super.setRepeatedField(field, index, value);
         }
-        @java.lang.Override
+        @Override
         public Builder addRepeatedField(
             com.google.protobuf.Descriptors.FieldDescriptor field,
-            java.lang.Object value) {
+            Object value) {
           return super.addRepeatedField(field, value);
         }
-        @java.lang.Override
+        @Override
         public Builder mergeFrom(com.google.protobuf.Message other) {
-          if (other instanceof com.classlink.websocket.api.member.domain.dto.proto.IdentityAvatarListResProto.IdentityAvatarListRes.AvatarInfo) {
-            return mergeFrom((com.classlink.websocket.api.member.domain.dto.proto.IdentityAvatarListResProto.IdentityAvatarListRes.AvatarInfo)other);
+          if (other instanceof AvatarInfo) {
+            return mergeFrom((AvatarInfo)other);
           } else {
             super.mergeFrom(other);
             return this;
           }
         }
 
-        public Builder mergeFrom(com.classlink.websocket.api.member.domain.dto.proto.IdentityAvatarListResProto.IdentityAvatarListRes.AvatarInfo other) {
-          if (other == com.classlink.websocket.api.member.domain.dto.proto.IdentityAvatarListResProto.IdentityAvatarListRes.AvatarInfo.getDefaultInstance()) return this;
+        public Builder mergeFrom(AvatarInfo other) {
+          if (other == AvatarInfo.getDefaultInstance()) return this;
           if (!other.getSelectIdentityType().isEmpty()) {
             selectIdentityType_ = other.selectIdentityType_;
             onChanged();
@@ -485,18 +485,18 @@ public final class IdentityAvatarListResProto {
           return this;
         }
 
-        @java.lang.Override
+        @Override
         public final boolean isInitialized() {
           return true;
         }
 
-        @java.lang.Override
+        @Override
         public Builder mergeFrom(
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws java.io.IOException {
           if (extensionRegistry == null) {
-            throw new java.lang.NullPointerException();
+            throw new NullPointerException();
           }
           try {
             boolean done = false;
@@ -532,21 +532,21 @@ public final class IdentityAvatarListResProto {
           return this;
         }
 
-        private java.lang.Object selectIdentityType_ = "";
+        private Object selectIdentityType_ = "";
         /**
          * <code>string SelectIdentityType = 1;</code>
          * @return The selectIdentityType.
          */
-        public java.lang.String getSelectIdentityType() {
-          java.lang.Object ref = selectIdentityType_;
-          if (!(ref instanceof java.lang.String)) {
+        public String getSelectIdentityType() {
+          Object ref = selectIdentityType_;
+          if (!(ref instanceof String)) {
             com.google.protobuf.ByteString bs =
                 (com.google.protobuf.ByteString) ref;
-            java.lang.String s = bs.toStringUtf8();
+            String s = bs.toStringUtf8();
             selectIdentityType_ = s;
             return s;
           } else {
-            return (java.lang.String) ref;
+            return (String) ref;
           }
         }
         /**
@@ -555,11 +555,11 @@ public final class IdentityAvatarListResProto {
          */
         public com.google.protobuf.ByteString
             getSelectIdentityTypeBytes() {
-          java.lang.Object ref = selectIdentityType_;
+          Object ref = selectIdentityType_;
           if (ref instanceof String) {
             com.google.protobuf.ByteString b = 
                 com.google.protobuf.ByteString.copyFromUtf8(
-                    (java.lang.String) ref);
+                    (String) ref);
             selectIdentityType_ = b;
             return b;
           } else {
@@ -572,7 +572,7 @@ public final class IdentityAvatarListResProto {
          * @return This builder for chaining.
          */
         public Builder setSelectIdentityType(
-            java.lang.String value) {
+            String value) {
           if (value == null) {
     throw new NullPointerException();
   }
@@ -613,7 +613,7 @@ public final class IdentityAvatarListResProto {
          * <code>int32 AvatarId = 2;</code>
          * @return The avatarId.
          */
-        @java.lang.Override
+        @Override
         public int getAvatarId() {
           return avatarId_;
         }
@@ -638,13 +638,13 @@ public final class IdentityAvatarListResProto {
           onChanged();
           return this;
         }
-        @java.lang.Override
+        @Override
         public final Builder setUnknownFields(
             final com.google.protobuf.UnknownFieldSet unknownFields) {
           return super.setUnknownFields(unknownFields);
         }
 
-        @java.lang.Override
+        @Override
         public final Builder mergeUnknownFields(
             final com.google.protobuf.UnknownFieldSet unknownFields) {
           return super.mergeUnknownFields(unknownFields);
@@ -655,18 +655,18 @@ public final class IdentityAvatarListResProto {
       }
 
       // @@protoc_insertion_point(class_scope:Classlink.IdentityAvatarListRes.AvatarInfo)
-      private static final com.classlink.websocket.api.member.domain.dto.proto.IdentityAvatarListResProto.IdentityAvatarListRes.AvatarInfo DEFAULT_INSTANCE;
+      private static final AvatarInfo DEFAULT_INSTANCE;
       static {
-        DEFAULT_INSTANCE = new com.classlink.websocket.api.member.domain.dto.proto.IdentityAvatarListResProto.IdentityAvatarListRes.AvatarInfo();
+        DEFAULT_INSTANCE = new AvatarInfo();
       }
 
-      public static com.classlink.websocket.api.member.domain.dto.proto.IdentityAvatarListResProto.IdentityAvatarListRes.AvatarInfo getDefaultInstance() {
+      public static AvatarInfo getDefaultInstance() {
         return DEFAULT_INSTANCE;
       }
 
       private static final com.google.protobuf.Parser<AvatarInfo>
           PARSER = new com.google.protobuf.AbstractParser<AvatarInfo>() {
-        @java.lang.Override
+        @Override
         public AvatarInfo parsePartialFrom(
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -690,60 +690,60 @@ public final class IdentityAvatarListResProto {
         return PARSER;
       }
 
-      @java.lang.Override
+      @Override
       public com.google.protobuf.Parser<AvatarInfo> getParserForType() {
         return PARSER;
       }
 
-      @java.lang.Override
-      public com.classlink.websocket.api.member.domain.dto.proto.IdentityAvatarListResProto.IdentityAvatarListRes.AvatarInfo getDefaultInstanceForType() {
+      @Override
+      public AvatarInfo getDefaultInstanceForType() {
         return DEFAULT_INSTANCE;
       }
 
     }
 
-    public static final int AVATARINFOS_FIELD_NUMBER = 1;
-    private java.util.List<com.classlink.websocket.api.member.domain.dto.proto.IdentityAvatarListResProto.IdentityAvatarListRes.AvatarInfo> avatarInfos_;
+    public static final int AVATARINFOLIST_FIELD_NUMBER = 1;
+    private java.util.List<AvatarInfo> avatarInfoList_;
     /**
-     * <code>repeated .Classlink.IdentityAvatarListRes.AvatarInfo AvatarInfos = 1;</code>
+     * <code>repeated .Classlink.IdentityAvatarListRes.AvatarInfo AvatarInfoList = 1;</code>
      */
-    @java.lang.Override
-    public java.util.List<com.classlink.websocket.api.member.domain.dto.proto.IdentityAvatarListResProto.IdentityAvatarListRes.AvatarInfo> getAvatarInfosList() {
-      return avatarInfos_;
+    @Override
+    public java.util.List<AvatarInfo> getAvatarInfoListList() {
+      return avatarInfoList_;
     }
     /**
-     * <code>repeated .Classlink.IdentityAvatarListRes.AvatarInfo AvatarInfos = 1;</code>
+     * <code>repeated .Classlink.IdentityAvatarListRes.AvatarInfo AvatarInfoList = 1;</code>
      */
-    @java.lang.Override
-    public java.util.List<? extends com.classlink.websocket.api.member.domain.dto.proto.IdentityAvatarListResProto.IdentityAvatarListRes.AvatarInfoOrBuilder> 
-        getAvatarInfosOrBuilderList() {
-      return avatarInfos_;
+    @Override
+    public java.util.List<? extends AvatarInfoOrBuilder>
+        getAvatarInfoListOrBuilderList() {
+      return avatarInfoList_;
     }
     /**
-     * <code>repeated .Classlink.IdentityAvatarListRes.AvatarInfo AvatarInfos = 1;</code>
+     * <code>repeated .Classlink.IdentityAvatarListRes.AvatarInfo AvatarInfoList = 1;</code>
      */
-    @java.lang.Override
-    public int getAvatarInfosCount() {
-      return avatarInfos_.size();
+    @Override
+    public int getAvatarInfoListCount() {
+      return avatarInfoList_.size();
     }
     /**
-     * <code>repeated .Classlink.IdentityAvatarListRes.AvatarInfo AvatarInfos = 1;</code>
+     * <code>repeated .Classlink.IdentityAvatarListRes.AvatarInfo AvatarInfoList = 1;</code>
      */
-    @java.lang.Override
-    public com.classlink.websocket.api.member.domain.dto.proto.IdentityAvatarListResProto.IdentityAvatarListRes.AvatarInfo getAvatarInfos(int index) {
-      return avatarInfos_.get(index);
+    @Override
+    public AvatarInfo getAvatarInfoList(int index) {
+      return avatarInfoList_.get(index);
     }
     /**
-     * <code>repeated .Classlink.IdentityAvatarListRes.AvatarInfo AvatarInfos = 1;</code>
+     * <code>repeated .Classlink.IdentityAvatarListRes.AvatarInfo AvatarInfoList = 1;</code>
      */
-    @java.lang.Override
-    public com.classlink.websocket.api.member.domain.dto.proto.IdentityAvatarListResProto.IdentityAvatarListRes.AvatarInfoOrBuilder getAvatarInfosOrBuilder(
+    @Override
+    public AvatarInfoOrBuilder getAvatarInfoListOrBuilder(
         int index) {
-      return avatarInfos_.get(index);
+      return avatarInfoList_.get(index);
     }
 
     private byte memoizedIsInitialized = -1;
-    @java.lang.Override
+    @Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -753,125 +753,125 @@ public final class IdentityAvatarListResProto {
       return true;
     }
 
-    @java.lang.Override
+    @Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      for (int i = 0; i < avatarInfos_.size(); i++) {
-        output.writeMessage(1, avatarInfos_.get(i));
+      for (int i = 0; i < avatarInfoList_.size(); i++) {
+        output.writeMessage(1, avatarInfoList_.get(i));
       }
       getUnknownFields().writeTo(output);
     }
 
-    @java.lang.Override
+    @Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
 
       size = 0;
-      for (int i = 0; i < avatarInfos_.size(); i++) {
+      for (int i = 0; i < avatarInfoList_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(1, avatarInfos_.get(i));
+          .computeMessageSize(1, avatarInfoList_.get(i));
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
 
-    @java.lang.Override
-    public boolean equals(final java.lang.Object obj) {
+    @Override
+    public boolean equals(final Object obj) {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof com.classlink.websocket.api.member.domain.dto.proto.IdentityAvatarListResProto.IdentityAvatarListRes)) {
+      if (!(obj instanceof IdentityAvatarListRes)) {
         return super.equals(obj);
       }
-      com.classlink.websocket.api.member.domain.dto.proto.IdentityAvatarListResProto.IdentityAvatarListRes other = (com.classlink.websocket.api.member.domain.dto.proto.IdentityAvatarListResProto.IdentityAvatarListRes) obj;
+      IdentityAvatarListRes other = (IdentityAvatarListRes) obj;
 
-      if (!getAvatarInfosList()
-          .equals(other.getAvatarInfosList())) return false;
+      if (!getAvatarInfoListList()
+          .equals(other.getAvatarInfoListList())) return false;
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
-    @java.lang.Override
+    @Override
     public int hashCode() {
       if (memoizedHashCode != 0) {
         return memoizedHashCode;
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      if (getAvatarInfosCount() > 0) {
-        hash = (37 * hash) + AVATARINFOS_FIELD_NUMBER;
-        hash = (53 * hash) + getAvatarInfosList().hashCode();
+      if (getAvatarInfoListCount() > 0) {
+        hash = (37 * hash) + AVATARINFOLIST_FIELD_NUMBER;
+        hash = (53 * hash) + getAvatarInfoListList().hashCode();
       }
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
 
-    public static com.classlink.websocket.api.member.domain.dto.proto.IdentityAvatarListResProto.IdentityAvatarListRes parseFrom(
+    public static IdentityAvatarListRes parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.classlink.websocket.api.member.domain.dto.proto.IdentityAvatarListResProto.IdentityAvatarListRes parseFrom(
+    public static IdentityAvatarListRes parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.classlink.websocket.api.member.domain.dto.proto.IdentityAvatarListResProto.IdentityAvatarListRes parseFrom(
+    public static IdentityAvatarListRes parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.classlink.websocket.api.member.domain.dto.proto.IdentityAvatarListResProto.IdentityAvatarListRes parseFrom(
+    public static IdentityAvatarListRes parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.classlink.websocket.api.member.domain.dto.proto.IdentityAvatarListResProto.IdentityAvatarListRes parseFrom(byte[] data)
+    public static IdentityAvatarListRes parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.classlink.websocket.api.member.domain.dto.proto.IdentityAvatarListResProto.IdentityAvatarListRes parseFrom(
+    public static IdentityAvatarListRes parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.classlink.websocket.api.member.domain.dto.proto.IdentityAvatarListResProto.IdentityAvatarListRes parseFrom(java.io.InputStream input)
+    public static IdentityAvatarListRes parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static com.classlink.websocket.api.member.domain.dto.proto.IdentityAvatarListResProto.IdentityAvatarListRes parseFrom(
+    public static IdentityAvatarListRes parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static com.classlink.websocket.api.member.domain.dto.proto.IdentityAvatarListResProto.IdentityAvatarListRes parseDelimitedFrom(java.io.InputStream input)
+    public static IdentityAvatarListRes parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static com.classlink.websocket.api.member.domain.dto.proto.IdentityAvatarListResProto.IdentityAvatarListRes parseDelimitedFrom(
+    public static IdentityAvatarListRes parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static com.classlink.websocket.api.member.domain.dto.proto.IdentityAvatarListResProto.IdentityAvatarListRes parseFrom(
+    public static IdentityAvatarListRes parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static com.classlink.websocket.api.member.domain.dto.proto.IdentityAvatarListResProto.IdentityAvatarListRes parseFrom(
+    public static IdentityAvatarListRes parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -879,23 +879,23 @@ public final class IdentityAvatarListResProto {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
-    @java.lang.Override
+    @Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(com.classlink.websocket.api.member.domain.dto.proto.IdentityAvatarListResProto.IdentityAvatarListRes prototype) {
+    public static Builder newBuilder(IdentityAvatarListRes prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
-    @java.lang.Override
+    @Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
     }
 
-    @java.lang.Override
+    @Override
     protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        BuilderParent parent) {
       Builder builder = new Builder(parent);
       return builder;
     }
@@ -905,18 +905,18 @@ public final class IdentityAvatarListResProto {
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
         // @@protoc_insertion_point(builder_implements:Classlink.IdentityAvatarListRes)
-        com.classlink.websocket.api.member.domain.dto.proto.IdentityAvatarListResProto.IdentityAvatarListResOrBuilder {
+        IdentityAvatarListResOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return com.classlink.websocket.api.member.domain.dto.proto.IdentityAvatarListResProto.internal_static_Classlink_IdentityAvatarListRes_descriptor;
+        return IdentityAvatarListResProto.internal_static_Classlink_IdentityAvatarListRes_descriptor;
       }
 
-      @java.lang.Override
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      @Override
+      protected FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return com.classlink.websocket.api.member.domain.dto.proto.IdentityAvatarListResProto.internal_static_Classlink_IdentityAvatarListRes_fieldAccessorTable
+        return IdentityAvatarListResProto.internal_static_Classlink_IdentityAvatarListRes_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                com.classlink.websocket.api.member.domain.dto.proto.IdentityAvatarListResProto.IdentityAvatarListRes.class, com.classlink.websocket.api.member.domain.dto.proto.IdentityAvatarListResProto.IdentityAvatarListRes.Builder.class);
+                IdentityAvatarListRes.class, Builder.class);
       }
 
       // Construct using com.classlink.websocket.api.member.domain.dto.proto.IdentityAvatarListResProto.IdentityAvatarListRes.newBuilder()
@@ -925,127 +925,127 @@ public final class IdentityAvatarListResProto {
       }
 
       private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+          BuilderParent parent) {
         super(parent);
 
       }
-      @java.lang.Override
+      @Override
       public Builder clear() {
         super.clear();
-        if (avatarInfosBuilder_ == null) {
-          avatarInfos_ = java.util.Collections.emptyList();
+        if (avatarInfoListBuilder_ == null) {
+          avatarInfoList_ = java.util.Collections.emptyList();
         } else {
-          avatarInfos_ = null;
-          avatarInfosBuilder_.clear();
+          avatarInfoList_ = null;
+          avatarInfoListBuilder_.clear();
         }
         bitField0_ = (bitField0_ & ~0x00000001);
         return this;
       }
 
-      @java.lang.Override
+      @Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return com.classlink.websocket.api.member.domain.dto.proto.IdentityAvatarListResProto.internal_static_Classlink_IdentityAvatarListRes_descriptor;
+        return IdentityAvatarListResProto.internal_static_Classlink_IdentityAvatarListRes_descriptor;
       }
 
-      @java.lang.Override
-      public com.classlink.websocket.api.member.domain.dto.proto.IdentityAvatarListResProto.IdentityAvatarListRes getDefaultInstanceForType() {
-        return com.classlink.websocket.api.member.domain.dto.proto.IdentityAvatarListResProto.IdentityAvatarListRes.getDefaultInstance();
+      @Override
+      public IdentityAvatarListRes getDefaultInstanceForType() {
+        return IdentityAvatarListRes.getDefaultInstance();
       }
 
-      @java.lang.Override
-      public com.classlink.websocket.api.member.domain.dto.proto.IdentityAvatarListResProto.IdentityAvatarListRes build() {
-        com.classlink.websocket.api.member.domain.dto.proto.IdentityAvatarListResProto.IdentityAvatarListRes result = buildPartial();
+      @Override
+      public IdentityAvatarListRes build() {
+        IdentityAvatarListRes result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
         return result;
       }
 
-      @java.lang.Override
-      public com.classlink.websocket.api.member.domain.dto.proto.IdentityAvatarListResProto.IdentityAvatarListRes buildPartial() {
-        com.classlink.websocket.api.member.domain.dto.proto.IdentityAvatarListResProto.IdentityAvatarListRes result = new com.classlink.websocket.api.member.domain.dto.proto.IdentityAvatarListResProto.IdentityAvatarListRes(this);
+      @Override
+      public IdentityAvatarListRes buildPartial() {
+        IdentityAvatarListRes result = new IdentityAvatarListRes(this);
         int from_bitField0_ = bitField0_;
-        if (avatarInfosBuilder_ == null) {
+        if (avatarInfoListBuilder_ == null) {
           if (((bitField0_ & 0x00000001) != 0)) {
-            avatarInfos_ = java.util.Collections.unmodifiableList(avatarInfos_);
+            avatarInfoList_ = java.util.Collections.unmodifiableList(avatarInfoList_);
             bitField0_ = (bitField0_ & ~0x00000001);
           }
-          result.avatarInfos_ = avatarInfos_;
+          result.avatarInfoList_ = avatarInfoList_;
         } else {
-          result.avatarInfos_ = avatarInfosBuilder_.build();
+          result.avatarInfoList_ = avatarInfoListBuilder_.build();
         }
         onBuilt();
         return result;
       }
 
-      @java.lang.Override
+      @Override
       public Builder clone() {
         return super.clone();
       }
-      @java.lang.Override
+      @Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
+          Object value) {
         return super.setField(field, value);
       }
-      @java.lang.Override
+      @Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
         return super.clearField(field);
       }
-      @java.lang.Override
+      @Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
         return super.clearOneof(oneof);
       }
-      @java.lang.Override
+      @Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, java.lang.Object value) {
+          int index, Object value) {
         return super.setRepeatedField(field, index, value);
       }
-      @java.lang.Override
+      @Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
+          Object value) {
         return super.addRepeatedField(field, value);
       }
-      @java.lang.Override
+      @Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof com.classlink.websocket.api.member.domain.dto.proto.IdentityAvatarListResProto.IdentityAvatarListRes) {
-          return mergeFrom((com.classlink.websocket.api.member.domain.dto.proto.IdentityAvatarListResProto.IdentityAvatarListRes)other);
+        if (other instanceof IdentityAvatarListRes) {
+          return mergeFrom((IdentityAvatarListRes)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(com.classlink.websocket.api.member.domain.dto.proto.IdentityAvatarListResProto.IdentityAvatarListRes other) {
-        if (other == com.classlink.websocket.api.member.domain.dto.proto.IdentityAvatarListResProto.IdentityAvatarListRes.getDefaultInstance()) return this;
-        if (avatarInfosBuilder_ == null) {
-          if (!other.avatarInfos_.isEmpty()) {
-            if (avatarInfos_.isEmpty()) {
-              avatarInfos_ = other.avatarInfos_;
+      public Builder mergeFrom(IdentityAvatarListRes other) {
+        if (other == IdentityAvatarListRes.getDefaultInstance()) return this;
+        if (avatarInfoListBuilder_ == null) {
+          if (!other.avatarInfoList_.isEmpty()) {
+            if (avatarInfoList_.isEmpty()) {
+              avatarInfoList_ = other.avatarInfoList_;
               bitField0_ = (bitField0_ & ~0x00000001);
             } else {
-              ensureAvatarInfosIsMutable();
-              avatarInfos_.addAll(other.avatarInfos_);
+              ensureAvatarInfoListIsMutable();
+              avatarInfoList_.addAll(other.avatarInfoList_);
             }
             onChanged();
           }
         } else {
-          if (!other.avatarInfos_.isEmpty()) {
-            if (avatarInfosBuilder_.isEmpty()) {
-              avatarInfosBuilder_.dispose();
-              avatarInfosBuilder_ = null;
-              avatarInfos_ = other.avatarInfos_;
+          if (!other.avatarInfoList_.isEmpty()) {
+            if (avatarInfoListBuilder_.isEmpty()) {
+              avatarInfoListBuilder_.dispose();
+              avatarInfoListBuilder_ = null;
+              avatarInfoList_ = other.avatarInfoList_;
               bitField0_ = (bitField0_ & ~0x00000001);
-              avatarInfosBuilder_ = 
+              avatarInfoListBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                   getAvatarInfosFieldBuilder() : null;
+                   getAvatarInfoListFieldBuilder() : null;
             } else {
-              avatarInfosBuilder_.addAllMessages(other.avatarInfos_);
+              avatarInfoListBuilder_.addAllMessages(other.avatarInfoList_);
             }
           }
         }
@@ -1054,18 +1054,18 @@ public final class IdentityAvatarListResProto {
         return this;
       }
 
-      @java.lang.Override
+      @Override
       public final boolean isInitialized() {
         return true;
       }
 
-      @java.lang.Override
+      @Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
         if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
+          throw new NullPointerException();
         }
         try {
           boolean done = false;
@@ -1076,15 +1076,15 @@ public final class IdentityAvatarListResProto {
                 done = true;
                 break;
               case 10: {
-                com.classlink.websocket.api.member.domain.dto.proto.IdentityAvatarListResProto.IdentityAvatarListRes.AvatarInfo m =
+                AvatarInfo m =
                     input.readMessage(
-                        com.classlink.websocket.api.member.domain.dto.proto.IdentityAvatarListResProto.IdentityAvatarListRes.AvatarInfo.parser(),
+                        AvatarInfo.parser(),
                         extensionRegistry);
-                if (avatarInfosBuilder_ == null) {
-                  ensureAvatarInfosIsMutable();
-                  avatarInfos_.add(m);
+                if (avatarInfoListBuilder_ == null) {
+                  ensureAvatarInfoListIsMutable();
+                  avatarInfoList_.add(m);
                 } else {
-                  avatarInfosBuilder_.addMessage(m);
+                  avatarInfoListBuilder_.addMessage(m);
                 }
                 break;
               } // case 10
@@ -1105,252 +1105,252 @@ public final class IdentityAvatarListResProto {
       }
       private int bitField0_;
 
-      private java.util.List<com.classlink.websocket.api.member.domain.dto.proto.IdentityAvatarListResProto.IdentityAvatarListRes.AvatarInfo> avatarInfos_ =
+      private java.util.List<AvatarInfo> avatarInfoList_ =
         java.util.Collections.emptyList();
-      private void ensureAvatarInfosIsMutable() {
+      private void ensureAvatarInfoListIsMutable() {
         if (!((bitField0_ & 0x00000001) != 0)) {
-          avatarInfos_ = new java.util.ArrayList<com.classlink.websocket.api.member.domain.dto.proto.IdentityAvatarListResProto.IdentityAvatarListRes.AvatarInfo>(avatarInfos_);
+          avatarInfoList_ = new java.util.ArrayList<AvatarInfo>(avatarInfoList_);
           bitField0_ |= 0x00000001;
          }
       }
 
       private com.google.protobuf.RepeatedFieldBuilderV3<
-          com.classlink.websocket.api.member.domain.dto.proto.IdentityAvatarListResProto.IdentityAvatarListRes.AvatarInfo, com.classlink.websocket.api.member.domain.dto.proto.IdentityAvatarListResProto.IdentityAvatarListRes.AvatarInfo.Builder, com.classlink.websocket.api.member.domain.dto.proto.IdentityAvatarListResProto.IdentityAvatarListRes.AvatarInfoOrBuilder> avatarInfosBuilder_;
+          AvatarInfo, AvatarInfo.Builder, AvatarInfoOrBuilder> avatarInfoListBuilder_;
 
       /**
-       * <code>repeated .Classlink.IdentityAvatarListRes.AvatarInfo AvatarInfos = 1;</code>
+       * <code>repeated .Classlink.IdentityAvatarListRes.AvatarInfo AvatarInfoList = 1;</code>
        */
-      public java.util.List<com.classlink.websocket.api.member.domain.dto.proto.IdentityAvatarListResProto.IdentityAvatarListRes.AvatarInfo> getAvatarInfosList() {
-        if (avatarInfosBuilder_ == null) {
-          return java.util.Collections.unmodifiableList(avatarInfos_);
+      public java.util.List<AvatarInfo> getAvatarInfoListList() {
+        if (avatarInfoListBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(avatarInfoList_);
         } else {
-          return avatarInfosBuilder_.getMessageList();
+          return avatarInfoListBuilder_.getMessageList();
         }
       }
       /**
-       * <code>repeated .Classlink.IdentityAvatarListRes.AvatarInfo AvatarInfos = 1;</code>
+       * <code>repeated .Classlink.IdentityAvatarListRes.AvatarInfo AvatarInfoList = 1;</code>
        */
-      public int getAvatarInfosCount() {
-        if (avatarInfosBuilder_ == null) {
-          return avatarInfos_.size();
+      public int getAvatarInfoListCount() {
+        if (avatarInfoListBuilder_ == null) {
+          return avatarInfoList_.size();
         } else {
-          return avatarInfosBuilder_.getCount();
+          return avatarInfoListBuilder_.getCount();
         }
       }
       /**
-       * <code>repeated .Classlink.IdentityAvatarListRes.AvatarInfo AvatarInfos = 1;</code>
+       * <code>repeated .Classlink.IdentityAvatarListRes.AvatarInfo AvatarInfoList = 1;</code>
        */
-      public com.classlink.websocket.api.member.domain.dto.proto.IdentityAvatarListResProto.IdentityAvatarListRes.AvatarInfo getAvatarInfos(int index) {
-        if (avatarInfosBuilder_ == null) {
-          return avatarInfos_.get(index);
+      public AvatarInfo getAvatarInfoList(int index) {
+        if (avatarInfoListBuilder_ == null) {
+          return avatarInfoList_.get(index);
         } else {
-          return avatarInfosBuilder_.getMessage(index);
+          return avatarInfoListBuilder_.getMessage(index);
         }
       }
       /**
-       * <code>repeated .Classlink.IdentityAvatarListRes.AvatarInfo AvatarInfos = 1;</code>
+       * <code>repeated .Classlink.IdentityAvatarListRes.AvatarInfo AvatarInfoList = 1;</code>
        */
-      public Builder setAvatarInfos(
-          int index, com.classlink.websocket.api.member.domain.dto.proto.IdentityAvatarListResProto.IdentityAvatarListRes.AvatarInfo value) {
-        if (avatarInfosBuilder_ == null) {
+      public Builder setAvatarInfoList(
+          int index, AvatarInfo value) {
+        if (avatarInfoListBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
           }
-          ensureAvatarInfosIsMutable();
-          avatarInfos_.set(index, value);
+          ensureAvatarInfoListIsMutable();
+          avatarInfoList_.set(index, value);
           onChanged();
         } else {
-          avatarInfosBuilder_.setMessage(index, value);
+          avatarInfoListBuilder_.setMessage(index, value);
         }
         return this;
       }
       /**
-       * <code>repeated .Classlink.IdentityAvatarListRes.AvatarInfo AvatarInfos = 1;</code>
+       * <code>repeated .Classlink.IdentityAvatarListRes.AvatarInfo AvatarInfoList = 1;</code>
        */
-      public Builder setAvatarInfos(
-          int index, com.classlink.websocket.api.member.domain.dto.proto.IdentityAvatarListResProto.IdentityAvatarListRes.AvatarInfo.Builder builderForValue) {
-        if (avatarInfosBuilder_ == null) {
-          ensureAvatarInfosIsMutable();
-          avatarInfos_.set(index, builderForValue.build());
+      public Builder setAvatarInfoList(
+          int index, AvatarInfo.Builder builderForValue) {
+        if (avatarInfoListBuilder_ == null) {
+          ensureAvatarInfoListIsMutable();
+          avatarInfoList_.set(index, builderForValue.build());
           onChanged();
         } else {
-          avatarInfosBuilder_.setMessage(index, builderForValue.build());
+          avatarInfoListBuilder_.setMessage(index, builderForValue.build());
         }
         return this;
       }
       /**
-       * <code>repeated .Classlink.IdentityAvatarListRes.AvatarInfo AvatarInfos = 1;</code>
+       * <code>repeated .Classlink.IdentityAvatarListRes.AvatarInfo AvatarInfoList = 1;</code>
        */
-      public Builder addAvatarInfos(com.classlink.websocket.api.member.domain.dto.proto.IdentityAvatarListResProto.IdentityAvatarListRes.AvatarInfo value) {
-        if (avatarInfosBuilder_ == null) {
+      public Builder addAvatarInfoList(AvatarInfo value) {
+        if (avatarInfoListBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
           }
-          ensureAvatarInfosIsMutable();
-          avatarInfos_.add(value);
+          ensureAvatarInfoListIsMutable();
+          avatarInfoList_.add(value);
           onChanged();
         } else {
-          avatarInfosBuilder_.addMessage(value);
+          avatarInfoListBuilder_.addMessage(value);
         }
         return this;
       }
       /**
-       * <code>repeated .Classlink.IdentityAvatarListRes.AvatarInfo AvatarInfos = 1;</code>
+       * <code>repeated .Classlink.IdentityAvatarListRes.AvatarInfo AvatarInfoList = 1;</code>
        */
-      public Builder addAvatarInfos(
-          int index, com.classlink.websocket.api.member.domain.dto.proto.IdentityAvatarListResProto.IdentityAvatarListRes.AvatarInfo value) {
-        if (avatarInfosBuilder_ == null) {
+      public Builder addAvatarInfoList(
+          int index, AvatarInfo value) {
+        if (avatarInfoListBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
           }
-          ensureAvatarInfosIsMutable();
-          avatarInfos_.add(index, value);
+          ensureAvatarInfoListIsMutable();
+          avatarInfoList_.add(index, value);
           onChanged();
         } else {
-          avatarInfosBuilder_.addMessage(index, value);
+          avatarInfoListBuilder_.addMessage(index, value);
         }
         return this;
       }
       /**
-       * <code>repeated .Classlink.IdentityAvatarListRes.AvatarInfo AvatarInfos = 1;</code>
+       * <code>repeated .Classlink.IdentityAvatarListRes.AvatarInfo AvatarInfoList = 1;</code>
        */
-      public Builder addAvatarInfos(
-          com.classlink.websocket.api.member.domain.dto.proto.IdentityAvatarListResProto.IdentityAvatarListRes.AvatarInfo.Builder builderForValue) {
-        if (avatarInfosBuilder_ == null) {
-          ensureAvatarInfosIsMutable();
-          avatarInfos_.add(builderForValue.build());
+      public Builder addAvatarInfoList(
+          AvatarInfo.Builder builderForValue) {
+        if (avatarInfoListBuilder_ == null) {
+          ensureAvatarInfoListIsMutable();
+          avatarInfoList_.add(builderForValue.build());
           onChanged();
         } else {
-          avatarInfosBuilder_.addMessage(builderForValue.build());
+          avatarInfoListBuilder_.addMessage(builderForValue.build());
         }
         return this;
       }
       /**
-       * <code>repeated .Classlink.IdentityAvatarListRes.AvatarInfo AvatarInfos = 1;</code>
+       * <code>repeated .Classlink.IdentityAvatarListRes.AvatarInfo AvatarInfoList = 1;</code>
        */
-      public Builder addAvatarInfos(
-          int index, com.classlink.websocket.api.member.domain.dto.proto.IdentityAvatarListResProto.IdentityAvatarListRes.AvatarInfo.Builder builderForValue) {
-        if (avatarInfosBuilder_ == null) {
-          ensureAvatarInfosIsMutable();
-          avatarInfos_.add(index, builderForValue.build());
+      public Builder addAvatarInfoList(
+          int index, AvatarInfo.Builder builderForValue) {
+        if (avatarInfoListBuilder_ == null) {
+          ensureAvatarInfoListIsMutable();
+          avatarInfoList_.add(index, builderForValue.build());
           onChanged();
         } else {
-          avatarInfosBuilder_.addMessage(index, builderForValue.build());
+          avatarInfoListBuilder_.addMessage(index, builderForValue.build());
         }
         return this;
       }
       /**
-       * <code>repeated .Classlink.IdentityAvatarListRes.AvatarInfo AvatarInfos = 1;</code>
+       * <code>repeated .Classlink.IdentityAvatarListRes.AvatarInfo AvatarInfoList = 1;</code>
        */
-      public Builder addAllAvatarInfos(
-          java.lang.Iterable<? extends com.classlink.websocket.api.member.domain.dto.proto.IdentityAvatarListResProto.IdentityAvatarListRes.AvatarInfo> values) {
-        if (avatarInfosBuilder_ == null) {
-          ensureAvatarInfosIsMutable();
+      public Builder addAllAvatarInfoList(
+          Iterable<? extends AvatarInfo> values) {
+        if (avatarInfoListBuilder_ == null) {
+          ensureAvatarInfoListIsMutable();
           com.google.protobuf.AbstractMessageLite.Builder.addAll(
-              values, avatarInfos_);
+              values, avatarInfoList_);
           onChanged();
         } else {
-          avatarInfosBuilder_.addAllMessages(values);
+          avatarInfoListBuilder_.addAllMessages(values);
         }
         return this;
       }
       /**
-       * <code>repeated .Classlink.IdentityAvatarListRes.AvatarInfo AvatarInfos = 1;</code>
+       * <code>repeated .Classlink.IdentityAvatarListRes.AvatarInfo AvatarInfoList = 1;</code>
        */
-      public Builder clearAvatarInfos() {
-        if (avatarInfosBuilder_ == null) {
-          avatarInfos_ = java.util.Collections.emptyList();
+      public Builder clearAvatarInfoList() {
+        if (avatarInfoListBuilder_ == null) {
+          avatarInfoList_ = java.util.Collections.emptyList();
           bitField0_ = (bitField0_ & ~0x00000001);
           onChanged();
         } else {
-          avatarInfosBuilder_.clear();
+          avatarInfoListBuilder_.clear();
         }
         return this;
       }
       /**
-       * <code>repeated .Classlink.IdentityAvatarListRes.AvatarInfo AvatarInfos = 1;</code>
+       * <code>repeated .Classlink.IdentityAvatarListRes.AvatarInfo AvatarInfoList = 1;</code>
        */
-      public Builder removeAvatarInfos(int index) {
-        if (avatarInfosBuilder_ == null) {
-          ensureAvatarInfosIsMutable();
-          avatarInfos_.remove(index);
+      public Builder removeAvatarInfoList(int index) {
+        if (avatarInfoListBuilder_ == null) {
+          ensureAvatarInfoListIsMutable();
+          avatarInfoList_.remove(index);
           onChanged();
         } else {
-          avatarInfosBuilder_.remove(index);
+          avatarInfoListBuilder_.remove(index);
         }
         return this;
       }
       /**
-       * <code>repeated .Classlink.IdentityAvatarListRes.AvatarInfo AvatarInfos = 1;</code>
+       * <code>repeated .Classlink.IdentityAvatarListRes.AvatarInfo AvatarInfoList = 1;</code>
        */
-      public com.classlink.websocket.api.member.domain.dto.proto.IdentityAvatarListResProto.IdentityAvatarListRes.AvatarInfo.Builder getAvatarInfosBuilder(
+      public AvatarInfo.Builder getAvatarInfoListBuilder(
           int index) {
-        return getAvatarInfosFieldBuilder().getBuilder(index);
+        return getAvatarInfoListFieldBuilder().getBuilder(index);
       }
       /**
-       * <code>repeated .Classlink.IdentityAvatarListRes.AvatarInfo AvatarInfos = 1;</code>
+       * <code>repeated .Classlink.IdentityAvatarListRes.AvatarInfo AvatarInfoList = 1;</code>
        */
-      public com.classlink.websocket.api.member.domain.dto.proto.IdentityAvatarListResProto.IdentityAvatarListRes.AvatarInfoOrBuilder getAvatarInfosOrBuilder(
+      public AvatarInfoOrBuilder getAvatarInfoListOrBuilder(
           int index) {
-        if (avatarInfosBuilder_ == null) {
-          return avatarInfos_.get(index);  } else {
-          return avatarInfosBuilder_.getMessageOrBuilder(index);
+        if (avatarInfoListBuilder_ == null) {
+          return avatarInfoList_.get(index);  } else {
+          return avatarInfoListBuilder_.getMessageOrBuilder(index);
         }
       }
       /**
-       * <code>repeated .Classlink.IdentityAvatarListRes.AvatarInfo AvatarInfos = 1;</code>
+       * <code>repeated .Classlink.IdentityAvatarListRes.AvatarInfo AvatarInfoList = 1;</code>
        */
-      public java.util.List<? extends com.classlink.websocket.api.member.domain.dto.proto.IdentityAvatarListResProto.IdentityAvatarListRes.AvatarInfoOrBuilder> 
-           getAvatarInfosOrBuilderList() {
-        if (avatarInfosBuilder_ != null) {
-          return avatarInfosBuilder_.getMessageOrBuilderList();
+      public java.util.List<? extends AvatarInfoOrBuilder>
+           getAvatarInfoListOrBuilderList() {
+        if (avatarInfoListBuilder_ != null) {
+          return avatarInfoListBuilder_.getMessageOrBuilderList();
         } else {
-          return java.util.Collections.unmodifiableList(avatarInfos_);
+          return java.util.Collections.unmodifiableList(avatarInfoList_);
         }
       }
       /**
-       * <code>repeated .Classlink.IdentityAvatarListRes.AvatarInfo AvatarInfos = 1;</code>
+       * <code>repeated .Classlink.IdentityAvatarListRes.AvatarInfo AvatarInfoList = 1;</code>
        */
-      public com.classlink.websocket.api.member.domain.dto.proto.IdentityAvatarListResProto.IdentityAvatarListRes.AvatarInfo.Builder addAvatarInfosBuilder() {
-        return getAvatarInfosFieldBuilder().addBuilder(
-            com.classlink.websocket.api.member.domain.dto.proto.IdentityAvatarListResProto.IdentityAvatarListRes.AvatarInfo.getDefaultInstance());
+      public AvatarInfo.Builder addAvatarInfoListBuilder() {
+        return getAvatarInfoListFieldBuilder().addBuilder(
+            AvatarInfo.getDefaultInstance());
       }
       /**
-       * <code>repeated .Classlink.IdentityAvatarListRes.AvatarInfo AvatarInfos = 1;</code>
+       * <code>repeated .Classlink.IdentityAvatarListRes.AvatarInfo AvatarInfoList = 1;</code>
        */
-      public com.classlink.websocket.api.member.domain.dto.proto.IdentityAvatarListResProto.IdentityAvatarListRes.AvatarInfo.Builder addAvatarInfosBuilder(
+      public AvatarInfo.Builder addAvatarInfoListBuilder(
           int index) {
-        return getAvatarInfosFieldBuilder().addBuilder(
-            index, com.classlink.websocket.api.member.domain.dto.proto.IdentityAvatarListResProto.IdentityAvatarListRes.AvatarInfo.getDefaultInstance());
+        return getAvatarInfoListFieldBuilder().addBuilder(
+            index, AvatarInfo.getDefaultInstance());
       }
       /**
-       * <code>repeated .Classlink.IdentityAvatarListRes.AvatarInfo AvatarInfos = 1;</code>
+       * <code>repeated .Classlink.IdentityAvatarListRes.AvatarInfo AvatarInfoList = 1;</code>
        */
-      public java.util.List<com.classlink.websocket.api.member.domain.dto.proto.IdentityAvatarListResProto.IdentityAvatarListRes.AvatarInfo.Builder> 
-           getAvatarInfosBuilderList() {
-        return getAvatarInfosFieldBuilder().getBuilderList();
+      public java.util.List<AvatarInfo.Builder>
+           getAvatarInfoListBuilderList() {
+        return getAvatarInfoListFieldBuilder().getBuilderList();
       }
       private com.google.protobuf.RepeatedFieldBuilderV3<
-          com.classlink.websocket.api.member.domain.dto.proto.IdentityAvatarListResProto.IdentityAvatarListRes.AvatarInfo, com.classlink.websocket.api.member.domain.dto.proto.IdentityAvatarListResProto.IdentityAvatarListRes.AvatarInfo.Builder, com.classlink.websocket.api.member.domain.dto.proto.IdentityAvatarListResProto.IdentityAvatarListRes.AvatarInfoOrBuilder> 
-          getAvatarInfosFieldBuilder() {
-        if (avatarInfosBuilder_ == null) {
-          avatarInfosBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-              com.classlink.websocket.api.member.domain.dto.proto.IdentityAvatarListResProto.IdentityAvatarListRes.AvatarInfo, com.classlink.websocket.api.member.domain.dto.proto.IdentityAvatarListResProto.IdentityAvatarListRes.AvatarInfo.Builder, com.classlink.websocket.api.member.domain.dto.proto.IdentityAvatarListResProto.IdentityAvatarListRes.AvatarInfoOrBuilder>(
-                  avatarInfos_,
+          AvatarInfo, AvatarInfo.Builder, AvatarInfoOrBuilder>
+          getAvatarInfoListFieldBuilder() {
+        if (avatarInfoListBuilder_ == null) {
+          avatarInfoListBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              AvatarInfo, AvatarInfo.Builder, AvatarInfoOrBuilder>(
+                  avatarInfoList_,
                   ((bitField0_ & 0x00000001) != 0),
                   getParentForChildren(),
                   isClean());
-          avatarInfos_ = null;
+          avatarInfoList_ = null;
         }
-        return avatarInfosBuilder_;
+        return avatarInfoListBuilder_;
       }
-      @java.lang.Override
+      @Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.setUnknownFields(unknownFields);
       }
 
-      @java.lang.Override
+      @Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.mergeUnknownFields(unknownFields);
@@ -1361,18 +1361,18 @@ public final class IdentityAvatarListResProto {
     }
 
     // @@protoc_insertion_point(class_scope:Classlink.IdentityAvatarListRes)
-    private static final com.classlink.websocket.api.member.domain.dto.proto.IdentityAvatarListResProto.IdentityAvatarListRes DEFAULT_INSTANCE;
+    private static final IdentityAvatarListRes DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new com.classlink.websocket.api.member.domain.dto.proto.IdentityAvatarListResProto.IdentityAvatarListRes();
+      DEFAULT_INSTANCE = new IdentityAvatarListRes();
     }
 
-    public static com.classlink.websocket.api.member.domain.dto.proto.IdentityAvatarListResProto.IdentityAvatarListRes getDefaultInstance() {
+    public static IdentityAvatarListRes getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
     private static final com.google.protobuf.Parser<IdentityAvatarListRes>
         PARSER = new com.google.protobuf.AbstractParser<IdentityAvatarListRes>() {
-      @java.lang.Override
+      @Override
       public IdentityAvatarListRes parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -1396,13 +1396,13 @@ public final class IdentityAvatarListResProto {
       return PARSER;
     }
 
-    @java.lang.Override
+    @Override
     public com.google.protobuf.Parser<IdentityAvatarListRes> getParserForType() {
       return PARSER;
     }
 
-    @java.lang.Override
-    public com.classlink.websocket.api.member.domain.dto.proto.IdentityAvatarListResProto.IdentityAvatarListRes getDefaultInstanceForType() {
+    @Override
+    public IdentityAvatarListRes getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -1426,15 +1426,15 @@ public final class IdentityAvatarListResProto {
   private static  com.google.protobuf.Descriptors.FileDescriptor
       descriptor;
   static {
-    java.lang.String[] descriptorData = {
+    String[] descriptorData = {
       "\n\033IdentityAvatarListRes.proto\022\tClasslink" +
-      "\"\225\001\n\025IdentityAvatarListRes\022@\n\013AvatarInfo" +
-      "s\030\001 \003(\0132+.Classlink.IdentityAvatarListRe" +
-      "s.AvatarInfo\032:\n\nAvatarInfo\022\032\n\022SelectIden" +
-      "tityType\030\001 \001(\t\022\020\n\010AvatarId\030\002 \001(\005BQ\n3com." +
-      "classlink.websocket.api.member.domain.dt" +
-      "o.protoB\032IdentityAvatarListResProtob\006pro" +
-      "to3"
+      "\"\230\001\n\025IdentityAvatarListRes\022C\n\016AvatarInfo" +
+      "List\030\001 \003(\0132+.Classlink.IdentityAvatarLis" +
+      "tRes.AvatarInfo\032:\n\nAvatarInfo\022\032\n\022SelectI" +
+      "dentityType\030\001 \001(\t\022\020\n\010AvatarId\030\002 \001(\005BQ\n3c" +
+      "om.classlink.websocket.api.member.domain" +
+      ".dto.protoB\032IdentityAvatarListResProtob\006" +
+      "proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -1445,13 +1445,13 @@ public final class IdentityAvatarListResProto {
     internal_static_Classlink_IdentityAvatarListRes_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_Classlink_IdentityAvatarListRes_descriptor,
-        new java.lang.String[] { "AvatarInfos", });
+        new String[] { "AvatarInfoList", });
     internal_static_Classlink_IdentityAvatarListRes_AvatarInfo_descriptor =
       internal_static_Classlink_IdentityAvatarListRes_descriptor.getNestedTypes().get(0);
     internal_static_Classlink_IdentityAvatarListRes_AvatarInfo_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_Classlink_IdentityAvatarListRes_AvatarInfo_descriptor,
-        new java.lang.String[] { "SelectIdentityType", "AvatarId", });
+        new String[] { "SelectIdentityType", "AvatarId", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

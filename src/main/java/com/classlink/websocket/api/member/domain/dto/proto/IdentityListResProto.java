@@ -19,29 +19,29 @@ public final class IdentityListResProto {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>repeated string IdentityTypes = 1;</code>
-     * @return A list containing the identityTypes.
+     * <code>repeated string IdentityTypeList = 1;</code>
+     * @return A list containing the identityTypeList.
      */
-    java.util.List<java.lang.String>
-        getIdentityTypesList();
+    java.util.List<String>
+        getIdentityTypeListList();
     /**
-     * <code>repeated string IdentityTypes = 1;</code>
-     * @return The count of identityTypes.
+     * <code>repeated string IdentityTypeList = 1;</code>
+     * @return The count of identityTypeList.
      */
-    int getIdentityTypesCount();
+    int getIdentityTypeListCount();
     /**
-     * <code>repeated string IdentityTypes = 1;</code>
+     * <code>repeated string IdentityTypeList = 1;</code>
      * @param index The index of the element to return.
-     * @return The identityTypes at the given index.
+     * @return The identityTypeList at the given index.
      */
-    java.lang.String getIdentityTypes(int index);
+    String getIdentityTypeList(int index);
     /**
-     * <code>repeated string IdentityTypes = 1;</code>
+     * <code>repeated string IdentityTypeList = 1;</code>
      * @param index The index of the value to return.
-     * @return The bytes of the identityTypes at the given index.
+     * @return The bytes of the identityTypeList at the given index.
      */
     com.google.protobuf.ByteString
-        getIdentityTypesBytes(int index);
+        getIdentityTypeListBytes(int index);
   }
   /**
    * Protobuf type {@code Classlink.IdentityListRes}
@@ -56,71 +56,71 @@ public final class IdentityListResProto {
       super(builder);
     }
     private IdentityListRes() {
-      identityTypes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      identityTypeList_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     }
 
-    @java.lang.Override
+    @Override
     @SuppressWarnings({"unused"})
-    protected java.lang.Object newInstance(
+    protected Object newInstance(
         UnusedPrivateParameter unused) {
       return new IdentityListRes();
     }
 
-    @java.lang.Override
+    @Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.classlink.websocket.api.member.domain.dto.proto.IdentityListResProto.internal_static_Classlink_IdentityListRes_descriptor;
+      return IdentityListResProto.internal_static_Classlink_IdentityListRes_descriptor;
     }
 
-    @java.lang.Override
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+    @Override
+    protected FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.classlink.websocket.api.member.domain.dto.proto.IdentityListResProto.internal_static_Classlink_IdentityListRes_fieldAccessorTable
+      return IdentityListResProto.internal_static_Classlink_IdentityListRes_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.classlink.websocket.api.member.domain.dto.proto.IdentityListResProto.IdentityListRes.class, com.classlink.websocket.api.member.domain.dto.proto.IdentityListResProto.IdentityListRes.Builder.class);
+              IdentityListRes.class, Builder.class);
     }
 
-    public static final int IDENTITYTYPES_FIELD_NUMBER = 1;
-    private com.google.protobuf.LazyStringList identityTypes_;
+    public static final int IDENTITYTYPELIST_FIELD_NUMBER = 1;
+    private com.google.protobuf.LazyStringList identityTypeList_;
     /**
-     * <code>repeated string IdentityTypes = 1;</code>
-     * @return A list containing the identityTypes.
+     * <code>repeated string IdentityTypeList = 1;</code>
+     * @return A list containing the identityTypeList.
      */
     public com.google.protobuf.ProtocolStringList
-        getIdentityTypesList() {
-      return identityTypes_;
+        getIdentityTypeListList() {
+      return identityTypeList_;
     }
     /**
-     * <code>repeated string IdentityTypes = 1;</code>
-     * @return The count of identityTypes.
+     * <code>repeated string IdentityTypeList = 1;</code>
+     * @return The count of identityTypeList.
      */
-    public int getIdentityTypesCount() {
-      return identityTypes_.size();
+    public int getIdentityTypeListCount() {
+      return identityTypeList_.size();
     }
     /**
-     * <code>repeated string IdentityTypes = 1;</code>
+     * <code>repeated string IdentityTypeList = 1;</code>
      * @param index The index of the element to return.
-     * @return The identityTypes at the given index.
+     * @return The identityTypeList at the given index.
      */
-    public java.lang.String getIdentityTypes(int index) {
-      return identityTypes_.get(index);
+    public String getIdentityTypeList(int index) {
+      return identityTypeList_.get(index);
     }
     /**
-     * <code>repeated string IdentityTypes = 1;</code>
+     * <code>repeated string IdentityTypeList = 1;</code>
      * @param index The index of the value to return.
-     * @return The bytes of the identityTypes at the given index.
+     * @return The bytes of the identityTypeList at the given index.
      */
     public com.google.protobuf.ByteString
-        getIdentityTypesBytes(int index) {
-      return identityTypes_.getByteString(index);
+        getIdentityTypeListBytes(int index) {
+      return identityTypeList_.getByteString(index);
     }
 
     private byte memoizedIsInitialized = -1;
-    @java.lang.Override
+    @Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -130,16 +130,16 @@ public final class IdentityListResProto {
       return true;
     }
 
-    @java.lang.Override
+    @Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      for (int i = 0; i < identityTypes_.size(); i++) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, identityTypes_.getRaw(i));
+      for (int i = 0; i < identityTypeList_.size(); i++) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, identityTypeList_.getRaw(i));
       }
       getUnknownFields().writeTo(output);
     }
 
-    @java.lang.Override
+    @Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -147,112 +147,112 @@ public final class IdentityListResProto {
       size = 0;
       {
         int dataSize = 0;
-        for (int i = 0; i < identityTypes_.size(); i++) {
-          dataSize += computeStringSizeNoTag(identityTypes_.getRaw(i));
+        for (int i = 0; i < identityTypeList_.size(); i++) {
+          dataSize += computeStringSizeNoTag(identityTypeList_.getRaw(i));
         }
         size += dataSize;
-        size += 1 * getIdentityTypesList().size();
+        size += 1 * getIdentityTypeListList().size();
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
 
-    @java.lang.Override
-    public boolean equals(final java.lang.Object obj) {
+    @Override
+    public boolean equals(final Object obj) {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof com.classlink.websocket.api.member.domain.dto.proto.IdentityListResProto.IdentityListRes)) {
+      if (!(obj instanceof IdentityListRes)) {
         return super.equals(obj);
       }
-      com.classlink.websocket.api.member.domain.dto.proto.IdentityListResProto.IdentityListRes other = (com.classlink.websocket.api.member.domain.dto.proto.IdentityListResProto.IdentityListRes) obj;
+      IdentityListRes other = (IdentityListRes) obj;
 
-      if (!getIdentityTypesList()
-          .equals(other.getIdentityTypesList())) return false;
+      if (!getIdentityTypeListList()
+          .equals(other.getIdentityTypeListList())) return false;
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
-    @java.lang.Override
+    @Override
     public int hashCode() {
       if (memoizedHashCode != 0) {
         return memoizedHashCode;
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      if (getIdentityTypesCount() > 0) {
-        hash = (37 * hash) + IDENTITYTYPES_FIELD_NUMBER;
-        hash = (53 * hash) + getIdentityTypesList().hashCode();
+      if (getIdentityTypeListCount() > 0) {
+        hash = (37 * hash) + IDENTITYTYPELIST_FIELD_NUMBER;
+        hash = (53 * hash) + getIdentityTypeListList().hashCode();
       }
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
 
-    public static com.classlink.websocket.api.member.domain.dto.proto.IdentityListResProto.IdentityListRes parseFrom(
+    public static IdentityListRes parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.classlink.websocket.api.member.domain.dto.proto.IdentityListResProto.IdentityListRes parseFrom(
+    public static IdentityListRes parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.classlink.websocket.api.member.domain.dto.proto.IdentityListResProto.IdentityListRes parseFrom(
+    public static IdentityListRes parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.classlink.websocket.api.member.domain.dto.proto.IdentityListResProto.IdentityListRes parseFrom(
+    public static IdentityListRes parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.classlink.websocket.api.member.domain.dto.proto.IdentityListResProto.IdentityListRes parseFrom(byte[] data)
+    public static IdentityListRes parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.classlink.websocket.api.member.domain.dto.proto.IdentityListResProto.IdentityListRes parseFrom(
+    public static IdentityListRes parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.classlink.websocket.api.member.domain.dto.proto.IdentityListResProto.IdentityListRes parseFrom(java.io.InputStream input)
+    public static IdentityListRes parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static com.classlink.websocket.api.member.domain.dto.proto.IdentityListResProto.IdentityListRes parseFrom(
+    public static IdentityListRes parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static com.classlink.websocket.api.member.domain.dto.proto.IdentityListResProto.IdentityListRes parseDelimitedFrom(java.io.InputStream input)
+    public static IdentityListRes parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static com.classlink.websocket.api.member.domain.dto.proto.IdentityListResProto.IdentityListRes parseDelimitedFrom(
+    public static IdentityListRes parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static com.classlink.websocket.api.member.domain.dto.proto.IdentityListResProto.IdentityListRes parseFrom(
+    public static IdentityListRes parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static com.classlink.websocket.api.member.domain.dto.proto.IdentityListResProto.IdentityListRes parseFrom(
+    public static IdentityListRes parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -260,23 +260,23 @@ public final class IdentityListResProto {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
-    @java.lang.Override
+    @Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(com.classlink.websocket.api.member.domain.dto.proto.IdentityListResProto.IdentityListRes prototype) {
+    public static Builder newBuilder(IdentityListRes prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
-    @java.lang.Override
+    @Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
     }
 
-    @java.lang.Override
+    @Override
     protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        BuilderParent parent) {
       Builder builder = new Builder(parent);
       return builder;
     }
@@ -286,18 +286,18 @@ public final class IdentityListResProto {
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
         // @@protoc_insertion_point(builder_implements:Classlink.IdentityListRes)
-        com.classlink.websocket.api.member.domain.dto.proto.IdentityListResProto.IdentityListResOrBuilder {
+        IdentityListResOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return com.classlink.websocket.api.member.domain.dto.proto.IdentityListResProto.internal_static_Classlink_IdentityListRes_descriptor;
+        return IdentityListResProto.internal_static_Classlink_IdentityListRes_descriptor;
       }
 
-      @java.lang.Override
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      @Override
+      protected FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return com.classlink.websocket.api.member.domain.dto.proto.IdentityListResProto.internal_static_Classlink_IdentityListRes_fieldAccessorTable
+        return IdentityListResProto.internal_static_Classlink_IdentityListRes_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                com.classlink.websocket.api.member.domain.dto.proto.IdentityListResProto.IdentityListRes.class, com.classlink.websocket.api.member.domain.dto.proto.IdentityListResProto.IdentityListRes.Builder.class);
+                IdentityListRes.class, Builder.class);
       }
 
       // Construct using com.classlink.websocket.api.member.domain.dto.proto.IdentityListResProto.IdentityListRes.newBuilder()
@@ -306,102 +306,102 @@ public final class IdentityListResProto {
       }
 
       private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+          BuilderParent parent) {
         super(parent);
 
       }
-      @java.lang.Override
+      @Override
       public Builder clear() {
         super.clear();
-        identityTypes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        identityTypeList_ = com.google.protobuf.LazyStringArrayList.EMPTY;
         bitField0_ = (bitField0_ & ~0x00000001);
         return this;
       }
 
-      @java.lang.Override
+      @Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return com.classlink.websocket.api.member.domain.dto.proto.IdentityListResProto.internal_static_Classlink_IdentityListRes_descriptor;
+        return IdentityListResProto.internal_static_Classlink_IdentityListRes_descriptor;
       }
 
-      @java.lang.Override
-      public com.classlink.websocket.api.member.domain.dto.proto.IdentityListResProto.IdentityListRes getDefaultInstanceForType() {
-        return com.classlink.websocket.api.member.domain.dto.proto.IdentityListResProto.IdentityListRes.getDefaultInstance();
+      @Override
+      public IdentityListRes getDefaultInstanceForType() {
+        return IdentityListRes.getDefaultInstance();
       }
 
-      @java.lang.Override
-      public com.classlink.websocket.api.member.domain.dto.proto.IdentityListResProto.IdentityListRes build() {
-        com.classlink.websocket.api.member.domain.dto.proto.IdentityListResProto.IdentityListRes result = buildPartial();
+      @Override
+      public IdentityListRes build() {
+        IdentityListRes result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
         return result;
       }
 
-      @java.lang.Override
-      public com.classlink.websocket.api.member.domain.dto.proto.IdentityListResProto.IdentityListRes buildPartial() {
-        com.classlink.websocket.api.member.domain.dto.proto.IdentityListResProto.IdentityListRes result = new com.classlink.websocket.api.member.domain.dto.proto.IdentityListResProto.IdentityListRes(this);
+      @Override
+      public IdentityListRes buildPartial() {
+        IdentityListRes result = new IdentityListRes(this);
         int from_bitField0_ = bitField0_;
         if (((bitField0_ & 0x00000001) != 0)) {
-          identityTypes_ = identityTypes_.getUnmodifiableView();
+          identityTypeList_ = identityTypeList_.getUnmodifiableView();
           bitField0_ = (bitField0_ & ~0x00000001);
         }
-        result.identityTypes_ = identityTypes_;
+        result.identityTypeList_ = identityTypeList_;
         onBuilt();
         return result;
       }
 
-      @java.lang.Override
+      @Override
       public Builder clone() {
         return super.clone();
       }
-      @java.lang.Override
+      @Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
+          Object value) {
         return super.setField(field, value);
       }
-      @java.lang.Override
+      @Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
         return super.clearField(field);
       }
-      @java.lang.Override
+      @Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
         return super.clearOneof(oneof);
       }
-      @java.lang.Override
+      @Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, java.lang.Object value) {
+          int index, Object value) {
         return super.setRepeatedField(field, index, value);
       }
-      @java.lang.Override
+      @Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
+          Object value) {
         return super.addRepeatedField(field, value);
       }
-      @java.lang.Override
+      @Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof com.classlink.websocket.api.member.domain.dto.proto.IdentityListResProto.IdentityListRes) {
-          return mergeFrom((com.classlink.websocket.api.member.domain.dto.proto.IdentityListResProto.IdentityListRes)other);
+        if (other instanceof IdentityListRes) {
+          return mergeFrom((IdentityListRes)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(com.classlink.websocket.api.member.domain.dto.proto.IdentityListResProto.IdentityListRes other) {
-        if (other == com.classlink.websocket.api.member.domain.dto.proto.IdentityListResProto.IdentityListRes.getDefaultInstance()) return this;
-        if (!other.identityTypes_.isEmpty()) {
-          if (identityTypes_.isEmpty()) {
-            identityTypes_ = other.identityTypes_;
+      public Builder mergeFrom(IdentityListRes other) {
+        if (other == IdentityListRes.getDefaultInstance()) return this;
+        if (!other.identityTypeList_.isEmpty()) {
+          if (identityTypeList_.isEmpty()) {
+            identityTypeList_ = other.identityTypeList_;
             bitField0_ = (bitField0_ & ~0x00000001);
           } else {
-            ensureIdentityTypesIsMutable();
-            identityTypes_.addAll(other.identityTypes_);
+            ensureIdentityTypeListIsMutable();
+            identityTypeList_.addAll(other.identityTypeList_);
           }
           onChanged();
         }
@@ -410,18 +410,18 @@ public final class IdentityListResProto {
         return this;
       }
 
-      @java.lang.Override
+      @Override
       public final boolean isInitialized() {
         return true;
       }
 
-      @java.lang.Override
+      @Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
         if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
+          throw new NullPointerException();
         }
         try {
           boolean done = false;
@@ -432,9 +432,9 @@ public final class IdentityListResProto {
                 done = true;
                 break;
               case 10: {
-                java.lang.String s = input.readStringRequireUtf8();
-                ensureIdentityTypesIsMutable();
-                identityTypes_.add(s);
+                String s = input.readStringRequireUtf8();
+                ensureIdentityTypeListIsMutable();
+                identityTypeList_.add(s);
                 break;
               } // case 10
               default: {
@@ -454,122 +454,122 @@ public final class IdentityListResProto {
       }
       private int bitField0_;
 
-      private com.google.protobuf.LazyStringList identityTypes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      private void ensureIdentityTypesIsMutable() {
+      private com.google.protobuf.LazyStringList identityTypeList_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      private void ensureIdentityTypeListIsMutable() {
         if (!((bitField0_ & 0x00000001) != 0)) {
-          identityTypes_ = new com.google.protobuf.LazyStringArrayList(identityTypes_);
+          identityTypeList_ = new com.google.protobuf.LazyStringArrayList(identityTypeList_);
           bitField0_ |= 0x00000001;
          }
       }
       /**
-       * <code>repeated string IdentityTypes = 1;</code>
-       * @return A list containing the identityTypes.
+       * <code>repeated string IdentityTypeList = 1;</code>
+       * @return A list containing the identityTypeList.
        */
       public com.google.protobuf.ProtocolStringList
-          getIdentityTypesList() {
-        return identityTypes_.getUnmodifiableView();
+          getIdentityTypeListList() {
+        return identityTypeList_.getUnmodifiableView();
       }
       /**
-       * <code>repeated string IdentityTypes = 1;</code>
-       * @return The count of identityTypes.
+       * <code>repeated string IdentityTypeList = 1;</code>
+       * @return The count of identityTypeList.
        */
-      public int getIdentityTypesCount() {
-        return identityTypes_.size();
+      public int getIdentityTypeListCount() {
+        return identityTypeList_.size();
       }
       /**
-       * <code>repeated string IdentityTypes = 1;</code>
+       * <code>repeated string IdentityTypeList = 1;</code>
        * @param index The index of the element to return.
-       * @return The identityTypes at the given index.
+       * @return The identityTypeList at the given index.
        */
-      public java.lang.String getIdentityTypes(int index) {
-        return identityTypes_.get(index);
+      public String getIdentityTypeList(int index) {
+        return identityTypeList_.get(index);
       }
       /**
-       * <code>repeated string IdentityTypes = 1;</code>
+       * <code>repeated string IdentityTypeList = 1;</code>
        * @param index The index of the value to return.
-       * @return The bytes of the identityTypes at the given index.
+       * @return The bytes of the identityTypeList at the given index.
        */
       public com.google.protobuf.ByteString
-          getIdentityTypesBytes(int index) {
-        return identityTypes_.getByteString(index);
+          getIdentityTypeListBytes(int index) {
+        return identityTypeList_.getByteString(index);
       }
       /**
-       * <code>repeated string IdentityTypes = 1;</code>
+       * <code>repeated string IdentityTypeList = 1;</code>
        * @param index The index to set the value at.
-       * @param value The identityTypes to set.
+       * @param value The identityTypeList to set.
        * @return This builder for chaining.
        */
-      public Builder setIdentityTypes(
-          int index, java.lang.String value) {
+      public Builder setIdentityTypeList(
+          int index, String value) {
         if (value == null) {
     throw new NullPointerException();
   }
-  ensureIdentityTypesIsMutable();
-        identityTypes_.set(index, value);
+  ensureIdentityTypeListIsMutable();
+        identityTypeList_.set(index, value);
         onChanged();
         return this;
       }
       /**
-       * <code>repeated string IdentityTypes = 1;</code>
-       * @param value The identityTypes to add.
+       * <code>repeated string IdentityTypeList = 1;</code>
+       * @param value The identityTypeList to add.
        * @return This builder for chaining.
        */
-      public Builder addIdentityTypes(
-          java.lang.String value) {
+      public Builder addIdentityTypeList(
+          String value) {
         if (value == null) {
     throw new NullPointerException();
   }
-  ensureIdentityTypesIsMutable();
-        identityTypes_.add(value);
+  ensureIdentityTypeListIsMutable();
+        identityTypeList_.add(value);
         onChanged();
         return this;
       }
       /**
-       * <code>repeated string IdentityTypes = 1;</code>
-       * @param values The identityTypes to add.
+       * <code>repeated string IdentityTypeList = 1;</code>
+       * @param values The identityTypeList to add.
        * @return This builder for chaining.
        */
-      public Builder addAllIdentityTypes(
-          java.lang.Iterable<java.lang.String> values) {
-        ensureIdentityTypesIsMutable();
+      public Builder addAllIdentityTypeList(
+          Iterable<String> values) {
+        ensureIdentityTypeListIsMutable();
         com.google.protobuf.AbstractMessageLite.Builder.addAll(
-            values, identityTypes_);
+            values, identityTypeList_);
         onChanged();
         return this;
       }
       /**
-       * <code>repeated string IdentityTypes = 1;</code>
+       * <code>repeated string IdentityTypeList = 1;</code>
        * @return This builder for chaining.
        */
-      public Builder clearIdentityTypes() {
-        identityTypes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      public Builder clearIdentityTypeList() {
+        identityTypeList_ = com.google.protobuf.LazyStringArrayList.EMPTY;
         bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
       /**
-       * <code>repeated string IdentityTypes = 1;</code>
-       * @param value The bytes of the identityTypes to add.
+       * <code>repeated string IdentityTypeList = 1;</code>
+       * @param value The bytes of the identityTypeList to add.
        * @return This builder for chaining.
        */
-      public Builder addIdentityTypesBytes(
+      public Builder addIdentityTypeListBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
-        ensureIdentityTypesIsMutable();
-        identityTypes_.add(value);
+        ensureIdentityTypeListIsMutable();
+        identityTypeList_.add(value);
         onChanged();
         return this;
       }
-      @java.lang.Override
+      @Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.setUnknownFields(unknownFields);
       }
 
-      @java.lang.Override
+      @Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.mergeUnknownFields(unknownFields);
@@ -580,18 +580,18 @@ public final class IdentityListResProto {
     }
 
     // @@protoc_insertion_point(class_scope:Classlink.IdentityListRes)
-    private static final com.classlink.websocket.api.member.domain.dto.proto.IdentityListResProto.IdentityListRes DEFAULT_INSTANCE;
+    private static final IdentityListRes DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new com.classlink.websocket.api.member.domain.dto.proto.IdentityListResProto.IdentityListRes();
+      DEFAULT_INSTANCE = new IdentityListRes();
     }
 
-    public static com.classlink.websocket.api.member.domain.dto.proto.IdentityListResProto.IdentityListRes getDefaultInstance() {
+    public static IdentityListRes getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
     private static final com.google.protobuf.Parser<IdentityListRes>
         PARSER = new com.google.protobuf.AbstractParser<IdentityListRes>() {
-      @java.lang.Override
+      @Override
       public IdentityListRes parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -615,13 +615,13 @@ public final class IdentityListResProto {
       return PARSER;
     }
 
-    @java.lang.Override
+    @Override
     public com.google.protobuf.Parser<IdentityListRes> getParserForType() {
       return PARSER;
     }
 
-    @java.lang.Override
-    public com.classlink.websocket.api.member.domain.dto.proto.IdentityListResProto.IdentityListRes getDefaultInstanceForType() {
+    @Override
+    public IdentityListRes getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -640,12 +640,12 @@ public final class IdentityListResProto {
   private static  com.google.protobuf.Descriptors.FileDescriptor
       descriptor;
   static {
-    java.lang.String[] descriptorData = {
-      "\n\025IdentityListRes.proto\022\tClasslink\"(\n\017Id" +
-      "entityListRes\022\025\n\rIdentityTypes\030\001 \003(\tBK\n3" +
-      "com.classlink.websocket.api.member.domai" +
-      "n.dto.protoB\024IdentityListResProtob\006proto" +
-      "3"
+    String[] descriptorData = {
+      "\n\025IdentityListRes.proto\022\tClasslink\"+\n\017Id" +
+      "entityListRes\022\030\n\020IdentityTypeList\030\001 \003(\tB" +
+      "K\n3com.classlink.websocket.api.member.do" +
+      "main.dto.protoB\024IdentityListResProtob\006pr" +
+      "oto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -656,7 +656,7 @@ public final class IdentityListResProto {
     internal_static_Classlink_IdentityListRes_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_Classlink_IdentityListRes_descriptor,
-        new java.lang.String[] { "IdentityTypes", });
+        new String[] { "IdentityTypeList", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

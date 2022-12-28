@@ -55,7 +55,18 @@
         <option value="144">질문함</option>
         <option value="145">일정</option>
         <option value="146">리포트</option>
-
+        <%--cw관련--%>
+        <option value="149">퀴즈 문제 은행 리스트</option>
+        <option value="150">퀴즈 활성화</option>
+        <option value="152">쪽지 시험 활성화</option>
+        <option value="156">질문 등록</option>
+        <option value="157">내 질문 리스트</option>
+        <option value="158">내 질문</option>
+        <option value="159">수업반 기본 정보</option>
+        <option value="202">커리큘럼 리스트</option>
+        <option value="160">커리큘럼 변경 적용</option>
+        <option value="200">채팅창 유저 정보</option>
+        <option value="161">내 정보</option>
     </select>
     <button id="btnSend" class="btn btn-primary">Send Message</button>
 </div>
@@ -72,7 +83,7 @@
     //---------------------------------------------------------------------------------------------------
     // window[]를 통해서 브라우저상에 전역변수(global)로 지정할때 사용하는 변수
 
-    //필수객체 및 에러관련
+    //packet,jwt
     const RequestPacketName = "RequestPacket";
     const ResponsePacketName = "ResponsePacket";
     const JwtExceptionName = "JwtException";
@@ -165,12 +176,39 @@
     const LobbyReportUrlReqName = "LobbyReportUrlReq";
     const LobbyReportUrlResName = "LobbyReportUrlRes";
 
+    //cw
+    const CWExamQuizListReqName = "CWExamQuizListReq";
+    const CWExamQuizListResName = "CWExamQuizListRes";
+    const CWExamQuizActivateReqName = "CWExamQuizActivateReq";
+    const CWExamQuizActivateResName = "CWExamQuizActivateRes";
+    const QuizAnswerDoneResName = "QuizAnswerDoneRes";
+    const CWExamNoteExamActiveReqName = "CWExamNoteExamActiveReq";
+    const CWExamNoteExamActiveResName = "CWExamNoteExamActiveRes";
+    const CWExamNoteExamAnswerDoneResName = "CWExamNoteExamAnswerDoneRes";
+    const CWQuestionBoxCreateReqName = "CWQuestionBoxCreateReq";
+    const CWQuestionBoxCreateResName = "CWQuestionBoxCreateRes";
+    const CWQuestionBoxListReqName = "CWQuestionBoxListReq";
+    const CWQuestionBoxListResName = "CWQuestionBoxListRes";
+    const CWQuestionBoxQuestionDetailReqName = "CWQuestionBoxQuestionDetailReq";
+    const CWQuestionBoxQuestionDetailResName = "CWQuestionBoxQuestionDetailRes";
+    const CWInfoBasicInfoReqName = "CWInfoBasicInfoReq";
+    const CWInfoBasicInfoResName = "CWInfoBasicInfoRes";
+    const CWCurriculumListReqName = "CWCurriculumListReq";
+    const CWCurriculumListResName = "CWCurriculumListRes";
+    const CWCurriculumChangeReqName = "CWCurriculumChangeReq";
+    const CWCurriculumChangeResName = "CWCurriculumChangeRes";
+    const CWMessengerChatUserInfoReqName = "CWMessengerChatUserInfoReq";
+    const CWMessengerChatUserInfoResName = "CWMessengerChatUserInfoRes";
+    const CWMyInfoChangeReqName = "CWMyInfoChangeReq";
+    const CWMyInfoChangeResName = "CWMyInfoChangeRes";
 
     //---------------------------------------------------------------------------------------------------
     // protobuf.load시에 로딩할 protobuf 파일 경로 지정  
 
     const commonPath = "../proto"
     const protoFileList = [
+
+        //월드셋관련
         commonPath.concat("/system/request/SysWorldSetInfoReq.proto"),
         commonPath.concat("/system/response/SysWorldSetInfoRes.proto"),
         commonPath.concat("/system/request/SysWorldInterObjSetPackageCreateReq.proto"),
@@ -180,6 +218,7 @@
         commonPath.concat("/system/request/SysWorldInterObjSetCurriculumInitReq.proto"),
         commonPath.concat("/system/response/SysWorldInterObjSetCurriculumInitRes.proto"),
 
+        //회원관련
         commonPath.concat("/member/request/LoginInstituteRegistReq.proto"),
         commonPath.concat("/member/response/LoginInstituteRegistRes.proto"),
         commonPath.concat("/member/request/LoginIdentityRegistReq.proto"),
@@ -210,6 +249,8 @@
         commonPath.concat("/member/response/IdentityProfileDetailRes.proto"),
         commonPath.concat("/member/request/IdentityProfileUpdateReq.proto"),
         commonPath.concat("/member/response/IdentityProfileUpdateRes.proto"),
+
+        //로비
         commonPath.concat("/lobby/request/LobbyHomeStatisticsReq.proto"),
         commonPath.concat("/lobby/response/LobbyHomeStatisticsRes.proto"),
         commonPath.concat("/lobby/request/LobbyHomeStudentInstitutionListReq.proto"),
@@ -253,6 +294,33 @@
         commonPath.concat("/lobby/request/LobbyReportUrlReq.proto"),
         commonPath.concat("/lobby/response/LobbyReportUrlRes.proto"),
 
+        //cw
+        commonPath.concat("/cw/request/CWExamQuizListReq.proto"),
+        commonPath.concat("/cw/response/CWExamQuizListRes.proto"),
+        commonPath.concat("/cw/request/CWExamQuizActivateReq.proto"),
+        commonPath.concat("/cw/response/CWExamQuizActivateRes.proto"),
+        commonPath.concat("/cw/response/QuizAnswerDoneRes.proto"),
+        commonPath.concat("/cw/request/CWExamNoteExamActiveReq.proto"),
+        commonPath.concat("/cw/response/CWExamNoteExamActiveRes.proto"),
+        commonPath.concat("/cw/response/CWExamNoteExamAnswerDoneRes.proto"),
+        commonPath.concat("/cw/request/CWQuestionBoxCreateReq.proto"),
+        commonPath.concat("/cw/response/CWQuestionBoxCreateRes.proto"),
+        commonPath.concat("/cw/request/CWQuestionBoxListReq.proto"),
+        commonPath.concat("/cw/response/CWQuestionBoxListRes.proto"),
+        commonPath.concat("/cw/request/CWQuestionBoxQuestionDetailReq.proto"),
+        commonPath.concat("/cw/response/CWQuestionBoxQuestionDetailRes.proto"),
+        commonPath.concat("/cw/request/CWInfoBasicInfoReq.proto"),
+        commonPath.concat("/cw/response/CWInfoBasicInfoRes.proto"),
+        commonPath.concat("/cw/request/CWCurriculumListReq.proto"),
+        commonPath.concat("/cw/response/CWCurriculumListRes.proto"),
+        commonPath.concat("/cw/request/CWCurriculumChangeReq.proto"),
+        commonPath.concat("/cw/response/CWCurriculumChangeRes.proto"),
+        commonPath.concat("/cw/request/CWMessengerChatUserInfoReq.proto"),
+        commonPath.concat("/cw/response/CWMessengerChatUserInfoRes.proto"),
+        commonPath.concat("/cw/request/CWMyInfoChangeReq.proto"),
+        commonPath.concat("/cw/response/CWMyInfoChangeRes.proto"),
+
+        //packet,jwt
         commonPath.concat("/common/RequestPacket.proto"),
         commonPath.concat("/common/ResponsePacket.proto"),
         commonPath.concat("/jwt/jwtException.proto")
@@ -443,7 +511,7 @@
                         loadMessage(root, IdentityEnrollmentConfirmResName, 'Classlink.IdentityEnrollmentConfirmRes');
 
                         const IdentityEnrollmentConfirmReqObj = {
-                            ItmIdx: 'ItmIdx',
+                            ItmIdx: 1,
                         };
 
                         Data = setDataToSend(root, IdentityEnrollmentConfirmReqName, IdentityEnrollmentConfirmReqObj);
@@ -455,7 +523,7 @@
                         loadMessage(root, IdentityEnrollmentInfoResName, 'Classlink.IdentityEnrollmentInfoRes');
 
                         const IdentityEnrollmentInfoReqObj = {
-                            ItmIdx: 'ItmIdx',
+                            ItmIdx: 1,
                         };
 
                         Data = setDataToSend(root, IdentityEnrollmentInfoReqName, IdentityEnrollmentInfoReqObj);
@@ -467,7 +535,7 @@
                         loadMessage(root, IdentityEnrollmentReplyResName, 'Classlink.IdentityEnrollmentReplyRes');
 
                         const IdentityEnrollmentReplyReqObj = {
-                            ItmIdx: 'ItmIdx',
+                            ItmIdx: 1,
                             IsPermission: 'IsPermission',
                         };
 
@@ -797,13 +865,150 @@
 
                         Data = setDataToSend(root, LobbyReportUrlReqName, LobbyReportUrlReqObj);
                         break;
+//CW 관련--------------------------------------------------------------------------------------------------------------------------------------
+//퀴즈 문제 은행 리스트-----------------------------------------------------------------------------------------
+                    case 149 :
+                        loadMessage(root, CWExamQuizListReqName, 'Classlink.CWExamQuizListReq');
+                        loadMessage(root, CWExamQuizListResName, 'Classlink.CWExamQuizListRes');
 
+                        const CWExamQuizListReqObj = {
+
+                        };
+
+                        Data = setDataToSend(root, CWExamQuizListReqName, CWExamQuizListReqObj);
+                        break;
+//퀴즈 활성화-----------------------------------------------------------------------------------------
+                    case 150 :
+                        loadMessage(root, CWExamQuizActivateReqName, 'Classlink.CWExamQuizActivateReq');
+                        loadMessage(root, CWExamQuizActivateResName, 'Classlink.CWExamQuizActivateRes');
+
+                        const CWExamQuizActivateReqObj = {
+                            DataTableType :'DataTableType',
+                            QuizSetIdx :1,
+                            QuestionCount :1,
+                            LimitTime :1,
+                            IsShowCorrectAnswer :true,
+                        };
+
+                        Data = setDataToSend(root, CWExamQuizActivateReqName, CWExamQuizActivateReqObj);
+                        break;
+//쪽지 시험 활성화-----------------------------------------------------------------------------------------
+                    case 152 :
+                        loadMessage(root, CWExamNoteExamActiveReqName, 'Classlink.CWExamNoteExamActiveReq');
+                        loadMessage(root, CWExamNoteExamActiveResName, 'Classlink.CWExamNoteExamActiveRes');
+
+                        const CWExamNoteExamActiveReqObj = {
+                            DataTableType : 'DataTableType',
+                            QuizSetIdx : 1,
+                        };
+
+                        Data = setDataToSend(root, CWExamNoteExamActiveReqName, CWExamNoteExamActiveReqObj);
+                        break;
+//질문 등록-----------------------------------------------------------------------------------------
+                    case 156 :
+                        loadMessage(root, CWQuestionBoxCreateReqName, 'Classlink.CWQuestionBoxCreateReq');
+                        loadMessage(root, CWQuestionBoxCreateResName, 'Classlink.CWQuestionBoxCreateRes');
+
+                        const CWQuestionBoxCreateReqObj = {
+                            Title : 'Title',
+                            Question : 'Question',
+                            TeacherIdx : 1,
+//repeated FileMetaInfo FileMetaInfoList : 4,
+                        };
+
+                        Data = setDataToSend(root, CWQuestionBoxCreateReqName, CWQuestionBoxCreateReqObj);
+                        break;
+//내 질문 리스트-----------------------------------------------------------------------------------------
+                    case 157 :
+                        loadMessage(root, CWQuestionBoxListReqName, 'Classlink.CWQuestionBoxListReq');
+                        loadMessage(root, CWQuestionBoxListResName, 'Classlink.CWQuestionBoxListRes');
+
+                        const CWQuestionBoxListReqObj = {
+
+                        };
+
+                        Data = setDataToSend(root, CWQuestionBoxListReqName, CWQuestionBoxListReqObj);
+                        break;
+//내 질문-----------------------------------------------------------------------------------------
+                    case 158 :
+                        loadMessage(root, CWQuestionBoxQuestionDetailReqName, 'Classlink.CWQuestionBoxQuestionDetailReq');
+                        loadMessage(root, CWQuestionBoxQuestionDetailResName, 'Classlink.CWQuestionBoxQuestionDetailRes');
+
+                        const CWQuestionBoxQuestionDetailReqObj = {
+                            QuestionIdx : 1,
+                        };
+
+                        Data = setDataToSend(root, CWQuestionBoxQuestionDetailReqName, CWQuestionBoxQuestionDetailReqObj);
+                        break;
+//수업반 기본 정보-----------------------------------------------------------------------------------------
+                    case 159 :
+                        loadMessage(root, CWInfoBasicInfoReqName, 'Classlink.CWInfoBasicInfoReq');
+                        loadMessage(root, CWInfoBasicInfoResName, 'Classlink.CWInfoBasicInfoRes');
+
+                        const CWInfoBasicInfoReqObj = {
+
+                            LecBidx : 1,
+
+                        };
+
+                        Data = setDataToSend(root, CWInfoBasicInfoReqName, CWInfoBasicInfoReqObj);
+                        break;
+//커리큘럼 리스트-----------------------------------------------------------------------------------------
+                    case 202 :
+                        loadMessage(root, CWCurriculumListReqName, 'Classlink.CWCurriculumListReq');
+                        loadMessage(root, CWCurriculumListResName, 'Classlink.CWCurriculumListRes');
+
+                        const CWCurriculumListReqObj = {
+
+                            LecBidx : 1,
+
+                        };
+
+                        Data = setDataToSend(root, CWCurriculumListReqName, CWCurriculumListReqObj);
+                        break;
+//커리큘럼 변경 적용-----------------------------------------------------------------------------------------
+                    case 160 :
+                        loadMessage(root, CWCurriculumChangeReqName, 'Classlink.CWCurriculumChangeReq');
+                        loadMessage(root, CWCurriculumChangeResName, 'Classlink.CWCurriculumChangeRes');
+
+                        const CWCurriculumChangeReqObj = {
+                            CurriculumIdx : 1,
+                        };
+
+                        Data = setDataToSend(root, CWCurriculumChangeReqName, CWCurriculumChangeReqObj);
+                        break;
+//채팅창 유저 정보-----------------------------------------------------------------------------------------
+                    case 200 :
+                        loadMessage(root, CWMessengerChatUserInfoReqName, 'Classlink.CWMessengerChatUserInfoReq');
+                        loadMessage(root, CWMessengerChatUserInfoResName, 'Classlink.CWMessengerChatUserInfoRes');
+
+                        const CWMessengerChatUserInfoReqObj = {
+                            MemIdx : 1,
+                            IdentityType : 'IdentityType',
+                        };
+
+                        Data = setDataToSend(root, CWMessengerChatUserInfoReqName, CWMessengerChatUserInfoReqObj);
+                        break;
+//내 정보-----------------------------------------------------------------------------------------
+                    case 161 :
+                        loadMessage(root, CWMyInfoChangeReqName, 'Classlink.CWMyInfoChangeReq');
+                        loadMessage(root, CWMyInfoChangeResName, 'Classlink.CWMyInfoChangeRes');
+
+                        const CWMyInfoChangeReqObj = {
+                            IdentityType : 'IdentityType',
+                            NickName : 'NickName',
+                            Email : 'Email',
+                            Phone: 'Phone',
+                        };
+
+                        Data = setDataToSend(root, CWMyInfoChangeReqName, CWMyInfoChangeReqObj);
+                        break;
 
                 }
 
                 const RequestPacketObj = {
                     OpCode: OpCode,
-                    AccessToken: "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2NzIyMTU0MjYsInVzZXJfbmFtZSI6InRlc3Q3Nzc3IiwianRpIjoiMGRmZjM1MzQtNTVjNS00NDUzLWJjYjMtMzA2MjVhZTgwODE5IiwiY2xpZW50X2lkIjoiY2xhc3NsaW5rIiwic2NvcGUiOlsiY2xpZW50Il19.vIWPHQJdbOKm9ksk-iDegmdI0-ORH8eJluRW4G30ZzY",
+                    AccessToken: "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2NzIzMDgzNTgsInVzZXJfbmFtZSI6InRlc3Q3Nzc3IiwianRpIjoiNTdjOTFmY2YtODlhYi00YWVlLThhOTMtOGQ1ZGY5MDg1MzliIiwiY2xpZW50X2lkIjoiY2xhc3NsaW5rIiwic2NvcGUiOlsiY2xpZW50Il19.mDtGORT9yMbF4Gg9XUNBWmgjfR7IxXx36V99TnCNoik",
                     InstanceId: '2',
                     Data: Data
                 };
@@ -836,7 +1041,7 @@
 
     // pure web-socket
     function connectWS() {
-        //var ws = new WebSocket("ws:112.171.101.31:45170/api");
+        // var ws = new WebSocket("ws:112.171.101.31:45170/api");
         const ws = new WebSocket("ws:localhost:8301/api");
         socket = ws;
 
@@ -1089,7 +1294,62 @@
                     const receivedLobbyReportUrlResData = window[LobbyReportUrlResName].decode(receivedPacketData.Data);
                     console.log('receivedLobbyReportUrlResData mmmmmmmmmmmm>>', receivedLobbyReportUrlResData);
                     break;
-
+//cw-------------------------------------------------------------------------------------------------------------------------------
+//퀴즈 문제 은행 리스트-----------------------------------------------------------------------------------------
+                case 149 :
+                    const receivedCWExamQuizListResData = window[CWExamQuizListResName].decode(receivedPacketData.Data);
+                    console.log('receivedCWExamQuizListResData mmmmmmmmmmmm>>', receivedCWExamQuizListResData);
+                    break;
+//퀴즈 활성화-----------------------------------------------------------------------------------------
+                case 150 :
+                    const receivedCWExamQuizActivateResData = window[CWExamQuizActivateResName].decode(receivedPacketData.Data);
+                    console.log('receivedCWExamQuizActivateResData mmmmmmmmmmmm>>', receivedCWExamQuizActivateResData);
+                    break;
+//쪽지 시험 활성화-----------------------------------------------------------------------------------------
+                case 152 :
+                    const receivedCWExamNoteExamActiveResData = window[CWExamNoteExamActiveResName].decode(receivedPacketData.Data);
+                    console.log('receivedCWExamNoteExamActiveResData mmmmmmmmmmmm>>', receivedCWExamNoteExamActiveResData);
+                    break;
+//질문 등록-----------------------------------------------------------------------------------------
+                case 156 :
+                    const receivedCWQuestionBoxCreateResData = window[CWQuestionBoxCreateResName].decode(receivedPacketData.Data);
+                    console.log('receivedCWQuestionBoxCreateResData mmmmmmmmmmmm>>', receivedCWQuestionBoxCreateResData);
+                    break;
+//내 질문 리스트-----------------------------------------------------------------------------------------
+                case 157 :
+                    const receivedCWQuestionBoxListResData = window[CWQuestionBoxListResName].decode(receivedPacketData.Data);
+                    console.log('receivedCWQuestionBoxListResData mmmmmmmmmmmm>>', receivedCWQuestionBoxListResData);
+                    break;
+//내 질문-----------------------------------------------------------------------------------------
+                case 158 :
+                    const receivedCWQuestionBoxQuestionDetailResData = window[CWQuestionBoxQuestionDetailResName].decode(receivedPacketData.Data);
+                    console.log('receivedCWQuestionBoxQuestionDetailResData mmmmmmmmmmmm>>', receivedCWQuestionBoxQuestionDetailResData);
+                    break;
+//수업반 기본 정보-----------------------------------------------------------------------------------------
+                case 159 :
+                    const receivedCWInfoBasicInfoResData = window[CWInfoBasicInfoResName].decode(receivedPacketData.Data);
+                    console.log('receivedCWInfoBasicInfoResData mmmmmmmmmmmm>>', receivedCWInfoBasicInfoResData);
+                    break;
+//커리큘럼 리스트-----------------------------------------------------------------------------------------
+                case 202 :
+                    const receivedCWCurriculumListResData = window[CWCurriculumListResName].decode(receivedPacketData.Data);
+                    console.log('receivedCWCurriculumListResData mmmmmmmmmmmm>>', receivedCWCurriculumListResData);
+                    break;
+//커리큘럼 변경 적용-----------------------------------------------------------------------------------------
+                case 160 :
+                    const receivedCWCurriculumChangeResData = window[CWCurriculumChangeResName].decode(receivedPacketData.Data);
+                    console.log('receivedCWCurriculumChangeResData mmmmmmmmmmmm>>', receivedCWCurriculumChangeResData);
+                    break;
+//채팅창 유저 정보-----------------------------------------------------------------------------------------
+                case 200 :
+                    const receivedCWMessengerChatUserInfoResData = window[CWMessengerChatUserInfoResName].decode(receivedPacketData.Data);
+                    console.log('receivedCWMessengerChatUserInfoResData mmmmmmmmmmmm>>', receivedCWMessengerChatUserInfoResData);
+                    break;
+//내 정보-----------------------------------------------------------------------------------------
+                case 161 :
+                    const receivedCWMyInfoChangeResData = window[CWMyInfoChangeResName].decode(receivedPacketData.Data);
+                    console.log('receivedCWMyInfoChangeResData mmmmmmmmmmmm>>', receivedCWMyInfoChangeResData);
+                    break;
 
                 default:
                     break;
