@@ -1,0 +1,29 @@
+syntax = "proto3"; 
+package Classlink;  
+option java_package = "com.classlink.websocket.api.system.domain.dto.proto"; 
+option java_outer_classname = "SysWorldSetInfoResProto"; 
+
+message SysWorldSetInfoRes{
+message WorldSlot
+{
+    string Code = 1;
+    int32 ConnectedWorldSetIdx = 2; 
+}
+message World
+{
+    int32  Idx = 1;
+    string Code = 2;
+    string WorldType = 3;
+    repeated WorldSlot WorldSlotList = 4;
+}
+message WorldSet
+{
+    int32 Idx =1;
+    string Code = 2;
+    World Outdoor = 3;
+    World Indoor = 4;
+}
+
+repeated WorldSet  WorldSetList = 1;
+int32 CurWorldSetIdx = 2; // Code 에서 Idx 로 변경
+}

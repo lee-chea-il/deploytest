@@ -309,12 +309,12 @@ public class MemberService {
 
     public BinaryMessage findInstitutionEnrollmentRequesterInfo(RequestPacket packetReqProto, String userId) throws InvalidProtocolBufferException {
 
-        IdentityEnrollmenterInfoReqProto.IdentityEnrollmenterInfoReq identityEnrollmenterInfoReq = IdentityEnrollmenterInfoReqProto.IdentityEnrollmenterInfoReq.newBuilder().mergeFrom(packetReqProto.getData()).build();
+        IdentityEnrollmentInfoReqProto.IdentityEnrollmentInfoReq identityEnrollmenterInfoReq = IdentityEnrollmentInfoReqProto.IdentityEnrollmentInfoReq.newBuilder().mergeFrom(packetReqProto.getData()).build();
         InstitutionEnrollmentRequesterInfoParam lobbyHomeEnrollmentRequesterInfoParam = InstitutionEnrollmentRequesterInfoParam.builder().itm_idx(identityEnrollmenterInfoReq.getItmIdx()).mem_id(userId).build();
 
         MemberDto.InstitutionEnrollmentRequesterInfoDto institutionEnrollmentRequesterInfoDto = memberMapper.selectInstitutionEnrollmentRequesterInfo(lobbyHomeEnrollmentRequesterInfoParam);
 
-        IdentityEnrollmenterInfoResProto.IdentityEnrollmenterInfoRes.Builder IdentityEnrollmenterInfoResBuilder = IdentityEnrollmenterInfoResProto.IdentityEnrollmenterInfoRes.newBuilder();
+        IdentityEnrollmentInfoResProto.IdentityEnrollmentInfoRes.Builder IdentityEnrollmenterInfoResBuilder = IdentityEnrollmentInfoResProto.IdentityEnrollmentInfoRes.newBuilder();
 
         if (institutionEnrollmentRequesterInfoDto != null) {
             CommonUtil.nullSafeSet(institutionEnrollmentRequesterInfoDto.getMea_avatar_id(), IdentityEnrollmenterInfoResBuilder::setMeaAvartarId);
@@ -324,7 +324,7 @@ public class MemberService {
             CommonUtil.nullSafeSet(institutionEnrollmentRequesterInfoDto.getMem_email(), IdentityEnrollmenterInfoResBuilder::setMemEmail);
             CommonUtil.nullSafeSet(institutionEnrollmentRequesterInfoDto.getMem_phone(), IdentityEnrollmenterInfoResBuilder::setMemPhone);
             CommonUtil.nullSafeSet(institutionEnrollmentRequesterInfoDto.getItm_registration_date(), IdentityEnrollmenterInfoResBuilder::setItmRegistrationDate);
-            CommonUtil.nullSafeSet(institutionEnrollmentRequesterInfoDto.getRti_registration_dates(), IdentityEnrollmenterInfoResBuilder::addAllRtiRegistrationDate);
+            CommonUtil.nullSafeSet(institutionEnrollmentRequesterInfoDto.getRti_registration_dates(), IdentityEnrollmenterInfoResBuilder::addAllRtiRegistrationDateList);
         }
 
         ResponsePacket packetResProto = ResponsePacket.newBuilder().setOpCode(packetReqProto.getOpCode())

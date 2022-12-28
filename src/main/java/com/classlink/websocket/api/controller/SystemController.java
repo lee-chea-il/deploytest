@@ -19,18 +19,25 @@ public class SystemController {
 	private final SystemService systemService;
 
 	@OpCodeMapping(value = OpCode.SYS_WORLD_SET_INFO)
-	public void SysWorldSetInfo(WebSocketSession session, RequestPacket packetReqProto, String memId) throws IOException {
+	public void sysWorldSetInfo(WebSocketSession session, RequestPacket packetReqProto, String memId) throws IOException {
 		session.sendMessage(systemService.findSysWorldSetInfo(packetReqProto, memId));
 	}
 
-	@OpCodeMapping(value = OpCode.SYS_WORLD_OBJ_SET_CREATE_LIST)
-	public void SysWorldObjCreateSetList(WebSocketSession session, RequestPacket packetReqProto, String memId) throws IOException {
-		session.sendMessage(systemService.findSysWorldObjCreateSet(packetReqProto, memId));
+	@OpCodeMapping(value = OpCode.SYS_WORLD_INTER_OBJ_SET_PACKAGE_CREATE)
+	public void sysWorldInterObjSetPackageCreate(WebSocketSession session, RequestPacket packetReqProto, String memId) throws IOException {
+		session.sendMessage(systemService.findSysWorldInterObjSetPackageCreate(packetReqProto, memId));
 	}
 
-	@OpCodeMapping(value = OpCode.SYS_WORLD_OBJ_SET_INIT_LIST)
-	public void SysWorldObjSetInitList(WebSocketSession session, RequestPacket packetReqProto, String memId) throws IOException {
-		session.sendMessage(systemService.findSysWorldObjSetInit(packetReqProto, memId));
+	@OpCodeMapping(value = OpCode.SYS_WORLD_INTER_OBJ_SET_CURRICULUM_CREATE)
+	public void sysWorldInterObjSetCurriculumCreate(WebSocketSession session, RequestPacket packetReqProto, String memId) throws IOException {
+		session.sendMessage(systemService.findSysWorldInterObjSetCurriculumCreate(packetReqProto, memId));
 	}
+
+	@OpCodeMapping(value = OpCode.SYS_WORLD_INTER_OBJ_SET_CURRICULUM_INIT)
+	public void sysWorldInterObjSetCurriculumInit(WebSocketSession session, RequestPacket packetReqProto, String memId) throws IOException {
+		session.sendMessage(systemService.findSysWorldInterObjSetCurriculumInit(packetReqProto, memId));
+	}
+
+
 
 }

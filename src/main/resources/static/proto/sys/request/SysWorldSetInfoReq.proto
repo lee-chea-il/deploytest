@@ -1,8 +1,0 @@
-syntax = "proto3"; 
-package Classlink;
-option java_package = "com.classlink.websocket.api.system.domain.param.proto";
-option java_outer_classname = "SysWorldSetInfoReqProto";
-
-message SysWorldSetInfoReq {
-  string InsCode = 1;
-}

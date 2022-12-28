@@ -1,0 +1,18 @@
+syntax = "proto3"; 
+package Classlink;  
+option java_package = "com.classlink.websocket.api.system.domain.dto.proto"; 
+option java_outer_classname = "SysWorldInterObjSetCurriculumInitResProto"; 
+
+message SysWorldInterObjSetCurriculumInitRes{
+message InteractionObject
+{
+    int32  Idx = 1; //자료실과 연결필요
+    string Code = 2; //오브젝트코드값인지 오브젝트 ID인지 확인필요
+    string  DataTableType = 3; //자료실과 연결필요 & int가아닌 string 값이 되어야함
+    int32  DataIdx =4;
+    string  DataType = 5; //자료실과 연결필요 & int가아닌 string 값이 되어야함
+    string Data = 6; //자료실과 연결필요
+}
+
+repeated InteractionObject InteractionObjectList =1;
+}

@@ -1,0 +1,11 @@
+syntax = "proto3"; 
+package Classlink; 
+option java_package = "com.classlink.websocket.api.cw.domain.param.proto"; 
+option java_outer_classname = "CWMyInfoChangeReqProto"; 
+
+message CWMyInfoChangeReq{
+string IdentityType = 1;
+string NickName = 2;
+string Email = 3;
+string Phone= 4;
+}

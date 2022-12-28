@@ -1,0 +1,8 @@
+syntax = "proto3"; 
+package Classlink;  
+option java_package = "com.classlink.websocket.api.cw.domain.dto.proto"; 
+option java_outer_classname = "CWCurriculumChangeResProto"; 
+
+message CWCurriculumChangeRes{
+
+}

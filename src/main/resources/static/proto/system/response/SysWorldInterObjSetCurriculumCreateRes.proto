@@ -1,0 +1,15 @@
+syntax = "proto3"; 
+package Classlink;  
+option java_package = "com.classlink.websocket.api.system.domain.dto.proto"; 
+option java_outer_classname = "SysWorldInterObjSetCurriculumCreateResProto"; 
+
+message SysWorldInterObjSetCurriculumCreateRes{
+message InteractionObject
+{
+    int32 Idx  = 1; // 추가
+    string Code  =2; // 이름 변경
+}
+
+repeated InteractionObject InteractionObjectList = 1;
+
+}

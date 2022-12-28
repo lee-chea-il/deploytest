@@ -1,0 +1,18 @@
+syntax = "proto3"; 
+package Classlink;  
+option java_package = "com.classlink.websocket.api.cw.domain.dto.proto"; 
+option java_outer_classname = "CWExamQuizListResProto"; 
+
+message CWExamQuizListRes{
+message QuizSet
+{
+   string  DataTableType =1;
+   int32 Idx =2;
+   string Category =3;
+   string Title =4;
+   int32  LimitTime =5;
+   int32 Level =6;
+}
+
+repeated QuizSet QuizSetList =1;
+}

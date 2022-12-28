@@ -11,29 +11,50 @@
 <div class="well">
     <button id="btnOpen" class="btn btn-primary">open socket</button>
     <select id="OpCode" class="form-control">
-        <option value="120">월드셋 리소스 정보</option>
-        <option value="127">월드셋 매핑 정보</option>
-        <option value="128">월드셋 자료실 정보</option>
-        <option value="112">최근 접속 교육기관 변경</option>
-        <option value="113">최근 접속 신분 변경</option>
+        <%--SysWorld 관련--%>
+        <option value="120">WorldSet 정보</option>
+        <option value="127">Interaction Package Create</option>
+        <option value="201">Interaction Curriculum Create</option>
+        <option value="128">Interaction Object Init</option>
+        <%--로그인 관련--%>
+        <option value="112">최근 접속 교육기관 update</option>
+        <option value="113">최근 접속 신분 update</option>
+        <%--신분생성flow 관련--%>
         <option value="100">신분 생성</option>
         <option value="101" selected>신분 조회</option>
         <option value="102">신분 선택</option>
-        <%--        <option value="102">아바타 생성</option>--%>
+        <option value="106">교육기관 등록 요청</option>
+        <option value="105">입력한 교육기관 정보 확인</option>
+        <option value="107">가입 신청 리스트</option>
+        <option value="108">가입 신청 확인</option>
+        <option value="109">가입 신청인 정보</option>
+        <option value="110">가입 신청 응답</option>
         <option value="103">아바타 조회</option>
         <option value="104">아바타 변경</option>
         <option value="129">사용자 정보 조회</option>
         <option value="111">사용자 정보 입력</option>
-        <option value="105">교육기관 조회</option>
-        <option value="106">교육기관 등록요청</option>
-        <option value="107">가입신청 리스트</option>
-        <option value="108">가입신청 확인</option>
-        <option value="109">가입신청인 정보</option>
-        <option value="110">가입신청 응답</option>
+        <%--lobby관련--%>
+        <option value="132">통계</option>
         <option value="117">학생 소속 교육기관 목록</option>
         <option value="118">프랜차이즈장 보유 교육기관 목록</option>
+        <option value="133">알림</option>
         <option value="134">기간별 일정 목록</option>
+        <option value="114">기간별 수업 목록</option>
+        <option value="115">오늘의 수업 상세보기</option>
+        <option value="116">강의 코스 목록</option>
+        <option value="135">테마별 이벤트</option>
+        <option value="136">시스템 공지 리스트</option>
+        <option value="137">교육기관 공지 리스트</option>
+        <option value="138">프렌차이즈 공지 리스트</option>
+        <option value="139">출결</option>
         <option value="119">선생님 목록</option>
+        <option value="140">선생님 정보</option>
+        <option value="141">노트함</option>
+        <option value="142">필기함</option>
+        <option value="143">과제함</option>
+        <option value="144">질문함</option>
+        <option value="145">일정</option>
+        <option value="146">리포트</option>
 
     </select>
     <button id="btnSend" class="btn btn-primary">Send Message</button>
@@ -60,10 +81,15 @@
     //월드셋
     const SysWorldSetInfoReqName = "SysWorldSetInfoReq";
     const SysWorldSetInfoResName = "SysWorldSetInfoRes";
-    const SysWorldInterObjSetCreateReqName = "SysWorldInterObjSetCreateReq";
-    const SysWorldInterObjSetCreateResName = "SysWorldInterObjSetCreateRes";
-    const SysWorldInterObjSetInitReqName = "SysWorldInterObjSetInitReq";
-    const SysWorldInterObjSetInitResName = "SysWorldInterObjSetInitRes";
+
+    const SysWorldInterObjSetPackageCreateReqName = "SysWorldInterObjSetPackageCreateReq";
+    const SysWorldInterObjSetPackageCreateResName = "SysWorldInterObjSetPackageCreateRes";
+
+    const SysWorldInterObjSetCurriculumCreateReqName = "SysWorldInterObjSetCurriculumCreateReq";
+    const SysWorldInterObjSetCurriculumCreateResName = "SysWorldInterObjSetCurriculumCreateRes";
+
+    const SysWorldInterObjSetCurriculumInitReqName = "SysWorldInterObjSetCurriculumInitReq";
+    const SysWorldInterObjSetCurriculumInitResName = "SysWorldInterObjSetCurriculumInitRes";
 
     // SW 및 로비 --------------------------------------------------------
     const LoginInstituteRegistReqName = "LoginInstituteRegistReq";
@@ -136,8 +162,8 @@
     const LobbyInstitutionBoardQuestionBoxResName = "LobbyInstitutionBoardQuestionBoxRes";
     const LobbyCalenderScheduleReqName = "LobbyCalenderScheduleReq";
     const LobbyCalenderScheduleResName = "LobbyCalenderScheduleRes";
-    const LobbyCalenderUrlReqName = "LobbyCalenderUrlReq";
-    const LobbyCalenderUrlResName = "LobbyCalenderUrlRes";
+    const LobbyReportUrlReqName = "LobbyReportUrlReq";
+    const LobbyReportUrlResName = "LobbyReportUrlRes";
 
 
     //---------------------------------------------------------------------------------------------------
@@ -145,6 +171,15 @@
 
     const commonPath = "../proto"
     const protoFileList = [
+        commonPath.concat("/system/request/SysWorldSetInfoReq.proto"),
+        commonPath.concat("/system/response/SysWorldSetInfoRes.proto"),
+        commonPath.concat("/system/request/SysWorldInterObjSetPackageCreateReq.proto"),
+        commonPath.concat("/system/response/SysWorldInterObjSetPackageCreateRes.proto"),
+        commonPath.concat("/system/request/SysWorldInterObjSetCurriculumCreateReq.proto"),
+        commonPath.concat("/system/response/SysWorldInterObjSetCurriculumCreateRes.proto"),
+        commonPath.concat("/system/request/SysWorldInterObjSetCurriculumInitReq.proto"),
+        commonPath.concat("/system/response/SysWorldInterObjSetCurriculumInitRes.proto"),
+
         commonPath.concat("/member/request/LoginInstituteRegistReq.proto"),
         commonPath.concat("/member/response/LoginInstituteRegistRes.proto"),
         commonPath.concat("/member/request/LoginIdentityRegistReq.proto"),
@@ -215,8 +250,8 @@
         commonPath.concat("/lobby/response/LobbyInstitutionBoardQuestionBoxRes.proto"),
         commonPath.concat("/lobby/request/LobbyCalenderScheduleReq.proto"),
         commonPath.concat("/lobby/response/LobbyCalenderScheduleRes.proto"),
-        commonPath.concat("/lobby/request/LobbyCalenderUrlReq.proto"),
-        commonPath.concat("/lobby/response/LobbyCalenderUrlRes.proto"),
+        commonPath.concat("/lobby/request/LobbyReportUrlReq.proto"),
+        commonPath.concat("/lobby/response/LobbyReportUrlRes.proto"),
 
         commonPath.concat("/common/RequestPacket.proto"),
         commonPath.concat("/common/ResponsePacket.proto"),
@@ -252,6 +287,56 @@
                 loadMessage(root, JwtExceptionName, "Classlink.JwtException");
 
                 switch (OpCode) {
+//WorldSet 정보-----------------------------------------------------------------------------------------
+                    case 120 :
+                        loadMessage(root, SysWorldSetInfoReqName, 'Classlink.SysWorldSetInfoReq');
+                        loadMessage(root, SysWorldSetInfoResName, 'Classlink.SysWorldSetInfoRes');
+
+                        const SysWorldSetInfoReqObj = {
+                            InsCode : 'InsCode',
+                        };
+
+                        Data = setDataToSend(root, SysWorldSetInfoReqName, SysWorldSetInfoReqObj);
+                        break;
+//Interaction Object Create-----------------------------------------------------------------------------------------
+                    case 127 :
+                        loadMessage(root, SysWorldInterObjSetPackageCreateReqName, 'Classlink.SysWorldInterObjSetPackageCreateReq');
+                        loadMessage(root, SysWorldInterObjSetPackageCreateResName, 'Classlink.SysWorldInterObjSetPackageCreateRes');
+
+                        const SysWorldInterObjSetPackageCreateReqObj = {
+                            InsCode : 'InsCode',
+                            WorldIdx : 1,
+                        };
+
+                        Data = setDataToSend(root, SysWorldInterObjSetPackageCreateReqName, SysWorldInterObjSetPackageCreateReqObj);
+                        break;
+//Interaction Object Create-----------------------------------------------------------------------------------------
+                    case 201 :
+                        loadMessage(root, SysWorldInterObjSetCurriculumCreateReqName, 'Classlink.SysWorldInterObjSetCurriculumCreateReq');
+                        loadMessage(root, SysWorldInterObjSetCurriculumCreateResName, 'Classlink.SysWorldInterObjSetCurriculumCreateRes');
+
+                        const SysWorldInterObjSetCurriculumCreateReqObj = {
+                            InsCode : 'InsCode',
+                            WorldIdx : 2, // 추가
+                        };
+
+                        Data = setDataToSend(root, SysWorldInterObjSetCurriculumCreateReqName, SysWorldInterObjSetCurriculumCreateReqObj);
+                        break;
+//Interaction Object Init-----------------------------------------------------------------------------------------
+                    case 128 :
+                        loadMessage(root, SysWorldInterObjSetCurriculumInitReqName, 'Classlink.SysWorldInterObjSetCurriculumInitReq');
+                        loadMessage(root, SysWorldInterObjSetCurriculumInitResName, 'Classlink.SysWorldInterObjSetCurriculumInitRes');
+
+                        const SysWorldInterObjSetCurriculumInitReqObj = {
+                            InsCode :'InsCode',
+                            WorldIdx :1,
+                            CurriculumIdx :3,
+
+                        };
+
+                        Data = setDataToSend(root, SysWorldInterObjSetCurriculumInitReqName, SysWorldInterObjSetCurriculumInitReqObj);
+                        break;
+
 //최근 접속 교육기관 update-----------------------------------------------------------------------------------------
                     case 112 :
                         loadMessage(root, LoginInstituteRegistReqName, 'Classlink.LoginInstituteRegistReq');
@@ -629,7 +714,7 @@
                         loadMessage(root, LobbyInstitutionClassTeacherInfoResName, 'Classlink.LobbyInstitutionClassTeacherInfoRes');
 
                         const LobbyInstitutionClassTeacherInfoReqObj = {
-                            TchIdx: 'TchIdx',
+                            TchIdx: 1,
                         };
 
                         Data = setDataToSend(root, LobbyInstitutionClassTeacherInfoReqName, LobbyInstitutionClassTeacherInfoReqObj);
@@ -702,15 +787,15 @@
 
 //리포트-----------------------------------------------------------------------------------------
                     case 146 :
-                        loadMessage(root, LobbyCalenderUrlReqName, 'Classlink.LobbyCalenderUrlReq');
-                        loadMessage(root, LobbyCalenderUrlResName, 'Classlink.LobbyCalenderUrlRes');
+                        loadMessage(root, LobbyReportUrlReqName, 'Classlink.LobbyReportUrlReq');
+                        loadMessage(root, LobbyReportUrlResName, 'Classlink.LobbyReportUrlRes');
 
-                        const LobbyCalenderUrlReqObj = {
+                        const LobbyReportUrlReqObj = {
                             InsCode: 'InsCode',
                             TarIdentityType: 'TarIdentityType',
                         };
 
-                        Data = setDataToSend(root, LobbyCalenderUrlReqName, LobbyCalenderUrlReqObj);
+                        Data = setDataToSend(root, LobbyReportUrlReqName, LobbyReportUrlReqObj);
                         break;
 
 
@@ -718,7 +803,7 @@
 
                 const RequestPacketObj = {
                     OpCode: OpCode,
-                    AccessToken: "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2NzE2MjE2MzksInVzZXJfbmFtZSI6InRlc3Q3Nzc3IiwianRpIjoiZjJmMjk5ZjktNzc4ZS00ZDgyLWIyZjQtNGNkYjhkOGI5NDQxIiwiY2xpZW50X2lkIjoiY2xhc3NsaW5rIiwic2NvcGUiOlsiY2xpZW50Il19.cekHcRqzZYxc-Zs14zpdRJ0XdJvfNh-_J4WwGaMlfa8",
+                    AccessToken: "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2NzIyMTU0MjYsInVzZXJfbmFtZSI6InRlc3Q3Nzc3IiwianRpIjoiMGRmZjM1MzQtNTVjNS00NDUzLWJjYjMtMzA2MjVhZTgwODE5IiwiY2xpZW50X2lkIjoiY2xhc3NsaW5rIiwic2NvcGUiOlsiY2xpZW50Il19.vIWPHQJdbOKm9ksk-iDegmdI0-ORH8eJluRW4G30ZzY",
                     InstanceId: '2',
                     Data: Data
                 };
@@ -768,6 +853,27 @@
             const receivedPacketData = await readBlobDataAsync(blob, ResponsePacketName);
 
             switch (receivedPacketData.OpCode) {
+//WorldSet 정보-----------------------------------------------------------------------------------------
+                case 120 :
+                    const receivedSysWorldSetInfoResData = window[SysWorldSetInfoResName].decode(receivedPacketData.Data);
+                    console.log('receivedSysWorldSetInfoResData mmmmmmmmmmmm>>', receivedSysWorldSetInfoResData);
+                    break;
+//Interaction Object Create-----------------------------------------------------------------------------------------
+                case 127 :
+                    const receivedSysWorldInterObjSetPackageCreateResData = window[SysWorldInterObjSetPackageCreateResName].decode(receivedPacketData.Data);
+                    console.log('receivedSysWorldInterObjSetPackageCreateResData mmmmmmmmmmmm>>', receivedSysWorldInterObjSetPackageCreateResData);
+                    break;
+//Interaction Object Create-----------------------------------------------------------------------------------------
+                case 201 :
+                    const receivedSysWorldInterObjSetCurriculumCreateResData = window[SysWorldInterObjSetCurriculumCreateResName].decode(receivedPacketData.Data);
+                    console.log('receivedSysWorldInterObjSetCurriculumCreateResData mmmmmmmmmmmm>>', receivedSysWorldInterObjSetCurriculumCreateResData);
+                    break;
+//Interaction Object Init-----------------------------------------------------------------------------------------
+                case 128 :
+                    const receivedSysWorldInterObjSetCurriculumInitResData = window[SysWorldInterObjSetCurriculumInitResName].decode(receivedPacketData.Data);
+                    console.log('receivedSysWorldInterObjSetCurriculumInitResData mmmmmmmmmmmm>>', receivedSysWorldInterObjSetCurriculumInitResData);
+                    break;
+
 //최근 접속 교육기관 update-----------------------------------------------------------------------------------------
                 case 112 :
                     const receivedLoginInstituteRegistResData = window[LoginInstituteRegistResName].decode(receivedPacketData.Data);
@@ -980,8 +1086,8 @@
 
 //리포트-----------------------------------------------------------------------------------------
                 case 146 :
-                    const receivedLobbyCalenderUrlResData = window[LobbyCalenderUrlResName].decode(receivedPacketData.Data);
-                    console.log('receivedLobbyCalenderUrlResData mmmmmmmmmmmm>>', receivedLobbyCalenderUrlResData);
+                    const receivedLobbyReportUrlResData = window[LobbyReportUrlResName].decode(receivedPacketData.Data);
+                    console.log('receivedLobbyReportUrlResData mmmmmmmmmmmm>>', receivedLobbyReportUrlResData);
                     break;
 
 

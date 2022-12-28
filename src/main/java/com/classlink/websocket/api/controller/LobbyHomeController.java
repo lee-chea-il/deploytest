@@ -119,9 +119,9 @@ public class LobbyHomeController {
 		session.sendMessage(lobbyHomeService.findLobbyCalenderSchedule(packetReqProto, memId));
 	}
 
-	@OpCodeMapping(value = OpCode.LOBBY_CALENDER_URL)
-	public void lobbyCalenderUrl(WebSocketSession session, RequestPacket packetReqProto, String memId) throws IOException {
-		session.sendMessage(lobbyHomeService.findLobbyCalenderUrl(packetReqProto, memId));
+	@OpCodeMapping(value = OpCode.LOBBY_REPORT_URL)
+	public void lobbyLobbyReportUrl(WebSocketSession session, RequestPacket packetReqProto, String memId) throws IOException {
+		session.sendMessage(lobbyHomeService.findLobbyReportUrl(packetReqProto, memId));
 	}
 
 }

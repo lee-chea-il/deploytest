@@ -15,51 +15,49 @@ public final class SysWorldSetInfoResProto {
         (com.google.protobuf.ExtensionRegistryLite) registry);
   }
   public interface SysWorldSetInfoResOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:classlink.SysWorldSetInfoRes)
+      // @@protoc_insertion_point(interface_extends:Classlink.SysWorldSetInfoRes)
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>repeated .classlink.SysWorldSetInfoRes.WorldSet WorldSets = 1;</code>
+     * <code>repeated .Classlink.SysWorldSetInfoRes.WorldSet WorldSetList = 1;</code>
      */
     java.util.List<SysWorldSetInfoRes.WorldSet>
-        getWorldSetsList();
+        getWorldSetListList();
     /**
-     * <code>repeated .classlink.SysWorldSetInfoRes.WorldSet WorldSets = 1;</code>
+     * <code>repeated .Classlink.SysWorldSetInfoRes.WorldSet WorldSetList = 1;</code>
      */
-    SysWorldSetInfoRes.WorldSet getWorldSets(int index);
+    SysWorldSetInfoRes.WorldSet getWorldSetList(int index);
     /**
-     * <code>repeated .classlink.SysWorldSetInfoRes.WorldSet WorldSets = 1;</code>
+     * <code>repeated .Classlink.SysWorldSetInfoRes.WorldSet WorldSetList = 1;</code>
      */
-    int getWorldSetsCount();
+    int getWorldSetListCount();
     /**
-     * <code>repeated .classlink.SysWorldSetInfoRes.WorldSet WorldSets = 1;</code>
+     * <code>repeated .Classlink.SysWorldSetInfoRes.WorldSet WorldSetList = 1;</code>
      */
     java.util.List<? extends SysWorldSetInfoRes.WorldSetOrBuilder>
-        getWorldSetsOrBuilderList();
+        getWorldSetListOrBuilderList();
     /**
-     * <code>repeated .classlink.SysWorldSetInfoRes.WorldSet WorldSets = 1;</code>
+     * <code>repeated .Classlink.SysWorldSetInfoRes.WorldSet WorldSetList = 1;</code>
      */
-    SysWorldSetInfoRes.WorldSetOrBuilder getWorldSetsOrBuilder(
+    SysWorldSetInfoRes.WorldSetOrBuilder getWorldSetListOrBuilder(
         int index);
 
     /**
-     * <code>string CurWorldSetCode = 2;</code>
-     * @return The curWorldSetCode.
+     * <pre>
+     * Code 에서 Idx 로 변경
+     * </pre>
+     *
+     * <code>int32 CurWorldSetIdx = 2;</code>
+     * @return The curWorldSetIdx.
      */
-    String getCurWorldSetCode();
-    /**
-     * <code>string CurWorldSetCode = 2;</code>
-     * @return The bytes for curWorldSetCode.
-     */
-    com.google.protobuf.ByteString
-        getCurWorldSetCodeBytes();
+    int getCurWorldSetIdx();
   }
   /**
-   * Protobuf type {@code classlink.SysWorldSetInfoRes}
+   * Protobuf type {@code Classlink.SysWorldSetInfoRes}
    */
   public static final class SysWorldSetInfoRes extends
       com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:classlink.SysWorldSetInfoRes)
+      // @@protoc_insertion_point(message_implements:Classlink.SysWorldSetInfoRes)
       SysWorldSetInfoResOrBuilder {
   private static final long serialVersionUID = 0L;
     // Use SysWorldSetInfoRes.newBuilder() to construct.
@@ -67,8 +65,7 @@ public final class SysWorldSetInfoResProto {
       super(builder);
     }
     private SysWorldSetInfoRes() {
-      worldSets_ = java.util.Collections.emptyList();
-      curWorldSetCode_ = "";
+      worldSetList_ = java.util.Collections.emptyList();
     }
 
     @Override
@@ -85,51 +82,45 @@ public final class SysWorldSetInfoResProto {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return SysWorldSetInfoResProto.internal_static_classlink_SysWorldSetInfoRes_descriptor;
+      return SysWorldSetInfoResProto.internal_static_Classlink_SysWorldSetInfoRes_descriptor;
     }
 
     @Override
     protected FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return SysWorldSetInfoResProto.internal_static_classlink_SysWorldSetInfoRes_fieldAccessorTable
+      return SysWorldSetInfoResProto.internal_static_Classlink_SysWorldSetInfoRes_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               SysWorldSetInfoRes.class, Builder.class);
     }
 
     public interface WorldSlotOrBuilder extends
-        // @@protoc_insertion_point(interface_extends:classlink.SysWorldSetInfoRes.WorldSlot)
+        // @@protoc_insertion_point(interface_extends:Classlink.SysWorldSetInfoRes.WorldSlot)
         com.google.protobuf.MessageOrBuilder {
 
       /**
-       * <code>string WorldSlotCode = 1;</code>
-       * @return The worldSlotCode.
+       * <code>string Code = 1;</code>
+       * @return The code.
        */
-      String getWorldSlotCode();
+      String getCode();
       /**
-       * <code>string WorldSlotCode = 1;</code>
-       * @return The bytes for worldSlotCode.
+       * <code>string Code = 1;</code>
+       * @return The bytes for code.
        */
       com.google.protobuf.ByteString
-          getWorldSlotCodeBytes();
+          getCodeBytes();
 
       /**
-       * <code>string ConnectedWorldSetCode = 2;</code>
-       * @return The connectedWorldSetCode.
+       * <code>int32 ConnectedWorldSetIdx = 2;</code>
+       * @return The connectedWorldSetIdx.
        */
-      String getConnectedWorldSetCode();
-      /**
-       * <code>string ConnectedWorldSetCode = 2;</code>
-       * @return The bytes for connectedWorldSetCode.
-       */
-      com.google.protobuf.ByteString
-          getConnectedWorldSetCodeBytes();
+      int getConnectedWorldSetIdx();
     }
     /**
-     * Protobuf type {@code classlink.SysWorldSetInfoRes.WorldSlot}
+     * Protobuf type {@code Classlink.SysWorldSetInfoRes.WorldSlot}
      */
     public static final class WorldSlot extends
         com.google.protobuf.GeneratedMessageV3 implements
-        // @@protoc_insertion_point(message_implements:classlink.SysWorldSetInfoRes.WorldSlot)
+        // @@protoc_insertion_point(message_implements:Classlink.SysWorldSetInfoRes.WorldSlot)
         WorldSlotOrBuilder {
     private static final long serialVersionUID = 0L;
       // Use WorldSlot.newBuilder() to construct.
@@ -137,8 +128,7 @@ public final class SysWorldSetInfoResProto {
         super(builder);
       }
       private WorldSlot() {
-        worldSlotCode_ = "";
-        connectedWorldSetCode_ = "";
+        code_ = "";
       }
 
       @Override
@@ -155,91 +145,64 @@ public final class SysWorldSetInfoResProto {
       }
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return SysWorldSetInfoResProto.internal_static_classlink_SysWorldSetInfoRes_WorldSlot_descriptor;
+        return SysWorldSetInfoResProto.internal_static_Classlink_SysWorldSetInfoRes_WorldSlot_descriptor;
       }
 
       @Override
       protected FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return SysWorldSetInfoResProto.internal_static_classlink_SysWorldSetInfoRes_WorldSlot_fieldAccessorTable
+        return SysWorldSetInfoResProto.internal_static_Classlink_SysWorldSetInfoRes_WorldSlot_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
                 WorldSlot.class, Builder.class);
       }
 
-      public static final int WORLDSLOTCODE_FIELD_NUMBER = 1;
-      private volatile Object worldSlotCode_;
+      public static final int CODE_FIELD_NUMBER = 1;
+      private volatile Object code_;
       /**
-       * <code>string WorldSlotCode = 1;</code>
-       * @return The worldSlotCode.
+       * <code>string Code = 1;</code>
+       * @return The code.
        */
       @Override
-      public String getWorldSlotCode() {
-        Object ref = worldSlotCode_;
+      public String getCode() {
+        Object ref = code_;
         if (ref instanceof String) {
           return (String) ref;
         } else {
           com.google.protobuf.ByteString bs = 
               (com.google.protobuf.ByteString) ref;
           String s = bs.toStringUtf8();
-          worldSlotCode_ = s;
+          code_ = s;
           return s;
         }
       }
       /**
-       * <code>string WorldSlotCode = 1;</code>
-       * @return The bytes for worldSlotCode.
+       * <code>string Code = 1;</code>
+       * @return The bytes for code.
        */
       @Override
       public com.google.protobuf.ByteString
-          getWorldSlotCodeBytes() {
-        Object ref = worldSlotCode_;
+          getCodeBytes() {
+        Object ref = code_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
                   (String) ref);
-          worldSlotCode_ = b;
+          code_ = b;
           return b;
         } else {
           return (com.google.protobuf.ByteString) ref;
         }
       }
 
-      public static final int CONNECTEDWORLDSETCODE_FIELD_NUMBER = 2;
-      private volatile Object connectedWorldSetCode_;
+      public static final int CONNECTEDWORLDSETIDX_FIELD_NUMBER = 2;
+      private int connectedWorldSetIdx_;
       /**
-       * <code>string ConnectedWorldSetCode = 2;</code>
-       * @return The connectedWorldSetCode.
+       * <code>int32 ConnectedWorldSetIdx = 2;</code>
+       * @return The connectedWorldSetIdx.
        */
       @Override
-      public String getConnectedWorldSetCode() {
-        Object ref = connectedWorldSetCode_;
-        if (ref instanceof String) {
-          return (String) ref;
-        } else {
-          com.google.protobuf.ByteString bs = 
-              (com.google.protobuf.ByteString) ref;
-          String s = bs.toStringUtf8();
-          connectedWorldSetCode_ = s;
-          return s;
-        }
-      }
-      /**
-       * <code>string ConnectedWorldSetCode = 2;</code>
-       * @return The bytes for connectedWorldSetCode.
-       */
-      @Override
-      public com.google.protobuf.ByteString
-          getConnectedWorldSetCodeBytes() {
-        Object ref = connectedWorldSetCode_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (String) ref);
-          connectedWorldSetCode_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
+      public int getConnectedWorldSetIdx() {
+        return connectedWorldSetIdx_;
       }
 
       private byte memoizedIsInitialized = -1;
@@ -256,11 +219,11 @@ public final class SysWorldSetInfoResProto {
       @Override
       public void writeTo(com.google.protobuf.CodedOutputStream output)
                           throws java.io.IOException {
-        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(worldSlotCode_)) {
-          com.google.protobuf.GeneratedMessageV3.writeString(output, 1, worldSlotCode_);
+        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(code_)) {
+          com.google.protobuf.GeneratedMessageV3.writeString(output, 1, code_);
         }
-        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(connectedWorldSetCode_)) {
-          com.google.protobuf.GeneratedMessageV3.writeString(output, 2, connectedWorldSetCode_);
+        if (connectedWorldSetIdx_ != 0) {
+          output.writeInt32(2, connectedWorldSetIdx_);
         }
         getUnknownFields().writeTo(output);
       }
@@ -271,11 +234,12 @@ public final class SysWorldSetInfoResProto {
         if (size != -1) return size;
 
         size = 0;
-        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(worldSlotCode_)) {
-          size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, worldSlotCode_);
+        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(code_)) {
+          size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, code_);
         }
-        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(connectedWorldSetCode_)) {
-          size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, connectedWorldSetCode_);
+        if (connectedWorldSetIdx_ != 0) {
+          size += com.google.protobuf.CodedOutputStream
+            .computeInt32Size(2, connectedWorldSetIdx_);
         }
         size += getUnknownFields().getSerializedSize();
         memoizedSize = size;
@@ -292,10 +256,10 @@ public final class SysWorldSetInfoResProto {
         }
         WorldSlot other = (WorldSlot) obj;
 
-        if (!getWorldSlotCode()
-            .equals(other.getWorldSlotCode())) return false;
-        if (!getConnectedWorldSetCode()
-            .equals(other.getConnectedWorldSetCode())) return false;
+        if (!getCode()
+            .equals(other.getCode())) return false;
+        if (getConnectedWorldSetIdx()
+            != other.getConnectedWorldSetIdx()) return false;
         if (!getUnknownFields().equals(other.getUnknownFields())) return false;
         return true;
       }
@@ -307,10 +271,10 @@ public final class SysWorldSetInfoResProto {
         }
         int hash = 41;
         hash = (19 * hash) + getDescriptor().hashCode();
-        hash = (37 * hash) + WORLDSLOTCODE_FIELD_NUMBER;
-        hash = (53 * hash) + getWorldSlotCode().hashCode();
-        hash = (37 * hash) + CONNECTEDWORLDSETCODE_FIELD_NUMBER;
-        hash = (53 * hash) + getConnectedWorldSetCode().hashCode();
+        hash = (37 * hash) + CODE_FIELD_NUMBER;
+        hash = (53 * hash) + getCode().hashCode();
+        hash = (37 * hash) + CONNECTEDWORLDSETIDX_FIELD_NUMBER;
+        hash = (53 * hash) + getConnectedWorldSetIdx();
         hash = (29 * hash) + getUnknownFields().hashCode();
         memoizedHashCode = hash;
         return hash;
@@ -407,21 +371,21 @@ public final class SysWorldSetInfoResProto {
         return builder;
       }
       /**
-       * Protobuf type {@code classlink.SysWorldSetInfoRes.WorldSlot}
+       * Protobuf type {@code Classlink.SysWorldSetInfoRes.WorldSlot}
        */
       public static final class Builder extends
           com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-          // @@protoc_insertion_point(builder_implements:classlink.SysWorldSetInfoRes.WorldSlot)
+          // @@protoc_insertion_point(builder_implements:Classlink.SysWorldSetInfoRes.WorldSlot)
           WorldSlotOrBuilder {
         public static final com.google.protobuf.Descriptors.Descriptor
             getDescriptor() {
-          return SysWorldSetInfoResProto.internal_static_classlink_SysWorldSetInfoRes_WorldSlot_descriptor;
+          return SysWorldSetInfoResProto.internal_static_Classlink_SysWorldSetInfoRes_WorldSlot_descriptor;
         }
 
         @Override
         protected FieldAccessorTable
             internalGetFieldAccessorTable() {
-          return SysWorldSetInfoResProto.internal_static_classlink_SysWorldSetInfoRes_WorldSlot_fieldAccessorTable
+          return SysWorldSetInfoResProto.internal_static_Classlink_SysWorldSetInfoRes_WorldSlot_fieldAccessorTable
               .ensureFieldAccessorsInitialized(
                   WorldSlot.class, Builder.class);
         }
@@ -439,9 +403,9 @@ public final class SysWorldSetInfoResProto {
         @Override
         public Builder clear() {
           super.clear();
-          worldSlotCode_ = "";
+          code_ = "";
 
-          connectedWorldSetCode_ = "";
+          connectedWorldSetIdx_ = 0;
 
           return this;
         }
@@ -449,7 +413,7 @@ public final class SysWorldSetInfoResProto {
         @Override
         public com.google.protobuf.Descriptors.Descriptor
             getDescriptorForType() {
-          return SysWorldSetInfoResProto.internal_static_classlink_SysWorldSetInfoRes_WorldSlot_descriptor;
+          return SysWorldSetInfoResProto.internal_static_Classlink_SysWorldSetInfoRes_WorldSlot_descriptor;
         }
 
         @Override
@@ -469,8 +433,8 @@ public final class SysWorldSetInfoResProto {
         @Override
         public WorldSlot buildPartial() {
           WorldSlot result = new WorldSlot(this);
-          result.worldSlotCode_ = worldSlotCode_;
-          result.connectedWorldSetCode_ = connectedWorldSetCode_;
+          result.code_ = code_;
+          result.connectedWorldSetIdx_ = connectedWorldSetIdx_;
           onBuilt();
           return result;
         }
@@ -519,13 +483,12 @@ public final class SysWorldSetInfoResProto {
 
         public Builder mergeFrom(WorldSlot other) {
           if (other == WorldSlot.getDefaultInstance()) return this;
-          if (!other.getWorldSlotCode().isEmpty()) {
-            worldSlotCode_ = other.worldSlotCode_;
+          if (!other.getCode().isEmpty()) {
+            code_ = other.code_;
             onChanged();
           }
-          if (!other.getConnectedWorldSetCode().isEmpty()) {
-            connectedWorldSetCode_ = other.connectedWorldSetCode_;
-            onChanged();
+          if (other.getConnectedWorldSetIdx() != 0) {
+            setConnectedWorldSetIdx(other.getConnectedWorldSetIdx());
           }
           this.mergeUnknownFields(other.getUnknownFields());
           onChanged();
@@ -554,15 +517,15 @@ public final class SysWorldSetInfoResProto {
                   done = true;
                   break;
                 case 10: {
-                  worldSlotCode_ = input.readStringRequireUtf8();
+                  code_ = input.readStringRequireUtf8();
 
                   break;
                 } // case 10
-                case 18: {
-                  connectedWorldSetCode_ = input.readStringRequireUtf8();
+                case 16: {
+                  connectedWorldSetIdx_ = input.readInt32();
 
                   break;
-                } // case 18
+                } // case 16
                 default: {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                     done = true; // was an endgroup tag
@@ -579,154 +542,109 @@ public final class SysWorldSetInfoResProto {
           return this;
         }
 
-        private Object worldSlotCode_ = "";
+        private Object code_ = "";
         /**
-         * <code>string WorldSlotCode = 1;</code>
-         * @return The worldSlotCode.
+         * <code>string Code = 1;</code>
+         * @return The code.
          */
-        public String getWorldSlotCode() {
-          Object ref = worldSlotCode_;
+        public String getCode() {
+          Object ref = code_;
           if (!(ref instanceof String)) {
             com.google.protobuf.ByteString bs =
                 (com.google.protobuf.ByteString) ref;
             String s = bs.toStringUtf8();
-            worldSlotCode_ = s;
+            code_ = s;
             return s;
           } else {
             return (String) ref;
           }
         }
         /**
-         * <code>string WorldSlotCode = 1;</code>
-         * @return The bytes for worldSlotCode.
+         * <code>string Code = 1;</code>
+         * @return The bytes for code.
          */
         public com.google.protobuf.ByteString
-            getWorldSlotCodeBytes() {
-          Object ref = worldSlotCode_;
+            getCodeBytes() {
+          Object ref = code_;
           if (ref instanceof String) {
             com.google.protobuf.ByteString b = 
                 com.google.protobuf.ByteString.copyFromUtf8(
                     (String) ref);
-            worldSlotCode_ = b;
+            code_ = b;
             return b;
           } else {
             return (com.google.protobuf.ByteString) ref;
           }
         }
         /**
-         * <code>string WorldSlotCode = 1;</code>
-         * @param value The worldSlotCode to set.
+         * <code>string Code = 1;</code>
+         * @param value The code to set.
          * @return This builder for chaining.
          */
-        public Builder setWorldSlotCode(
+        public Builder setCode(
             String value) {
           if (value == null) {
     throw new NullPointerException();
   }
   
-          worldSlotCode_ = value;
+          code_ = value;
           onChanged();
           return this;
         }
         /**
-         * <code>string WorldSlotCode = 1;</code>
+         * <code>string Code = 1;</code>
          * @return This builder for chaining.
          */
-        public Builder clearWorldSlotCode() {
+        public Builder clearCode() {
           
-          worldSlotCode_ = getDefaultInstance().getWorldSlotCode();
+          code_ = getDefaultInstance().getCode();
           onChanged();
           return this;
         }
         /**
-         * <code>string WorldSlotCode = 1;</code>
-         * @param value The bytes for worldSlotCode to set.
+         * <code>string Code = 1;</code>
+         * @param value The bytes for code to set.
          * @return This builder for chaining.
          */
-        public Builder setWorldSlotCodeBytes(
+        public Builder setCodeBytes(
             com.google.protobuf.ByteString value) {
           if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
           
-          worldSlotCode_ = value;
+          code_ = value;
           onChanged();
           return this;
         }
 
-        private Object connectedWorldSetCode_ = "";
+        private int connectedWorldSetIdx_ ;
         /**
-         * <code>string ConnectedWorldSetCode = 2;</code>
-         * @return The connectedWorldSetCode.
+         * <code>int32 ConnectedWorldSetIdx = 2;</code>
+         * @return The connectedWorldSetIdx.
          */
-        public String getConnectedWorldSetCode() {
-          Object ref = connectedWorldSetCode_;
-          if (!(ref instanceof String)) {
-            com.google.protobuf.ByteString bs =
-                (com.google.protobuf.ByteString) ref;
-            String s = bs.toStringUtf8();
-            connectedWorldSetCode_ = s;
-            return s;
-          } else {
-            return (String) ref;
-          }
+        @Override
+        public int getConnectedWorldSetIdx() {
+          return connectedWorldSetIdx_;
         }
         /**
-         * <code>string ConnectedWorldSetCode = 2;</code>
-         * @return The bytes for connectedWorldSetCode.
-         */
-        public com.google.protobuf.ByteString
-            getConnectedWorldSetCodeBytes() {
-          Object ref = connectedWorldSetCode_;
-          if (ref instanceof String) {
-            com.google.protobuf.ByteString b = 
-                com.google.protobuf.ByteString.copyFromUtf8(
-                    (String) ref);
-            connectedWorldSetCode_ = b;
-            return b;
-          } else {
-            return (com.google.protobuf.ByteString) ref;
-          }
-        }
-        /**
-         * <code>string ConnectedWorldSetCode = 2;</code>
-         * @param value The connectedWorldSetCode to set.
+         * <code>int32 ConnectedWorldSetIdx = 2;</code>
+         * @param value The connectedWorldSetIdx to set.
          * @return This builder for chaining.
          */
-        public Builder setConnectedWorldSetCode(
-            String value) {
-          if (value == null) {
-    throw new NullPointerException();
-  }
-  
-          connectedWorldSetCode_ = value;
+        public Builder setConnectedWorldSetIdx(int value) {
+          
+          connectedWorldSetIdx_ = value;
           onChanged();
           return this;
         }
         /**
-         * <code>string ConnectedWorldSetCode = 2;</code>
+         * <code>int32 ConnectedWorldSetIdx = 2;</code>
          * @return This builder for chaining.
          */
-        public Builder clearConnectedWorldSetCode() {
+        public Builder clearConnectedWorldSetIdx() {
           
-          connectedWorldSetCode_ = getDefaultInstance().getConnectedWorldSetCode();
-          onChanged();
-          return this;
-        }
-        /**
-         * <code>string ConnectedWorldSetCode = 2;</code>
-         * @param value The bytes for connectedWorldSetCode to set.
-         * @return This builder for chaining.
-         */
-        public Builder setConnectedWorldSetCodeBytes(
-            com.google.protobuf.ByteString value) {
-          if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-          
-          connectedWorldSetCode_ = value;
+          connectedWorldSetIdx_ = 0;
           onChanged();
           return this;
         }
@@ -743,10 +661,10 @@ public final class SysWorldSetInfoResProto {
         }
 
 
-        // @@protoc_insertion_point(builder_scope:classlink.SysWorldSetInfoRes.WorldSlot)
+        // @@protoc_insertion_point(builder_scope:Classlink.SysWorldSetInfoRes.WorldSlot)
       }
 
-      // @@protoc_insertion_point(class_scope:classlink.SysWorldSetInfoRes.WorldSlot)
+      // @@protoc_insertion_point(class_scope:Classlink.SysWorldSetInfoRes.WorldSlot)
       private static final WorldSlot DEFAULT_INSTANCE;
       static {
         DEFAULT_INSTANCE = new WorldSlot();
@@ -795,63 +713,69 @@ public final class SysWorldSetInfoResProto {
     }
 
     public interface WorldOrBuilder extends
-        // @@protoc_insertion_point(interface_extends:classlink.SysWorldSetInfoRes.World)
+        // @@protoc_insertion_point(interface_extends:Classlink.SysWorldSetInfoRes.World)
         com.google.protobuf.MessageOrBuilder {
 
       /**
-       * <code>string WorldCode = 1;</code>
-       * @return The worldCode.
+       * <code>int32 Idx = 1;</code>
+       * @return The idx.
        */
-      String getWorldCode();
-      /**
-       * <code>string WorldCode = 1;</code>
-       * @return The bytes for worldCode.
-       */
-      com.google.protobuf.ByteString
-          getWorldCodeBytes();
+      int getIdx();
 
       /**
-       * <code>string WorldType = 2;</code>
+       * <code>string Code = 2;</code>
+       * @return The code.
+       */
+      String getCode();
+      /**
+       * <code>string Code = 2;</code>
+       * @return The bytes for code.
+       */
+      com.google.protobuf.ByteString
+          getCodeBytes();
+
+      /**
+       * <code>string WorldType = 3;</code>
        * @return The worldType.
        */
       String getWorldType();
       /**
-       * <code>string WorldType = 2;</code>
+       * <code>string WorldType = 3;</code>
        * @return The bytes for worldType.
        */
       com.google.protobuf.ByteString
           getWorldTypeBytes();
 
       /**
-       * <code>repeated .classlink.SysWorldSetInfoRes.WorldSlot WorldSlots = 3;</code>
+       * <code>repeated .Classlink.SysWorldSetInfoRes.WorldSlot WorldSlotList = 4;</code>
        */
       java.util.List<WorldSlot>
-          getWorldSlotsList();
+          getWorldSlotListList();
       /**
-       * <code>repeated .classlink.SysWorldSetInfoRes.WorldSlot WorldSlots = 3;</code>
+       * <code>repeated .Classlink.SysWorldSetInfoRes.WorldSlot WorldSlotList = 4;</code>
        */
-      WorldSlot getWorldSlots(int index);
+      WorldSlot getWorldSlotList(int index);
       /**
-       * <code>repeated .classlink.SysWorldSetInfoRes.WorldSlot WorldSlots = 3;</code>
+       * <code>repeated .Classlink.SysWorldSetInfoRes.WorldSlot WorldSlotList = 4;</code>
        */
-      int getWorldSlotsCount();
+      int getWorldSlotListCount();
       /**
-       * <code>repeated .classlink.SysWorldSetInfoRes.WorldSlot WorldSlots = 3;</code>
+       * <code>repeated .Classlink.SysWorldSetInfoRes.WorldSlot WorldSlotList = 4;</code>
        */
       java.util.List<? extends WorldSlotOrBuilder>
-          getWorldSlotsOrBuilderList();
+          getWorldSlotListOrBuilderList();
       /**
-       * <code>repeated .classlink.SysWorldSetInfoRes.WorldSlot WorldSlots = 3;</code>
+       * <code>repeated .Classlink.SysWorldSetInfoRes.WorldSlot WorldSlotList = 4;</code>
        */
-      WorldSlotOrBuilder getWorldSlotsOrBuilder(
+      WorldSlotOrBuilder getWorldSlotListOrBuilder(
           int index);
     }
     /**
-     * Protobuf type {@code classlink.SysWorldSetInfoRes.World}
+     * Protobuf type {@code Classlink.SysWorldSetInfoRes.World}
      */
     public static final class World extends
         com.google.protobuf.GeneratedMessageV3 implements
-        // @@protoc_insertion_point(message_implements:classlink.SysWorldSetInfoRes.World)
+        // @@protoc_insertion_point(message_implements:Classlink.SysWorldSetInfoRes.World)
         WorldOrBuilder {
     private static final long serialVersionUID = 0L;
       // Use World.newBuilder() to construct.
@@ -859,9 +783,9 @@ public final class SysWorldSetInfoResProto {
         super(builder);
       }
       private World() {
-        worldCode_ = "";
+        code_ = "";
         worldType_ = "";
-        worldSlots_ = java.util.Collections.emptyList();
+        worldSlotList_ = java.util.Collections.emptyList();
       }
 
       @Override
@@ -878,59 +802,70 @@ public final class SysWorldSetInfoResProto {
       }
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return SysWorldSetInfoResProto.internal_static_classlink_SysWorldSetInfoRes_World_descriptor;
+        return SysWorldSetInfoResProto.internal_static_Classlink_SysWorldSetInfoRes_World_descriptor;
       }
 
       @Override
       protected FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return SysWorldSetInfoResProto.internal_static_classlink_SysWorldSetInfoRes_World_fieldAccessorTable
+        return SysWorldSetInfoResProto.internal_static_Classlink_SysWorldSetInfoRes_World_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
                 World.class, Builder.class);
       }
 
-      public static final int WORLDCODE_FIELD_NUMBER = 1;
-      private volatile Object worldCode_;
+      public static final int IDX_FIELD_NUMBER = 1;
+      private int idx_;
       /**
-       * <code>string WorldCode = 1;</code>
-       * @return The worldCode.
+       * <code>int32 Idx = 1;</code>
+       * @return The idx.
        */
       @Override
-      public String getWorldCode() {
-        Object ref = worldCode_;
+      public int getIdx() {
+        return idx_;
+      }
+
+      public static final int CODE_FIELD_NUMBER = 2;
+      private volatile Object code_;
+      /**
+       * <code>string Code = 2;</code>
+       * @return The code.
+       */
+      @Override
+      public String getCode() {
+        Object ref = code_;
         if (ref instanceof String) {
           return (String) ref;
         } else {
           com.google.protobuf.ByteString bs = 
               (com.google.protobuf.ByteString) ref;
           String s = bs.toStringUtf8();
-          worldCode_ = s;
+          code_ = s;
           return s;
         }
       }
       /**
-       * <code>string WorldCode = 1;</code>
-       * @return The bytes for worldCode.
+       * <code>string Code = 2;</code>
+       * @return The bytes for code.
        */
       @Override
       public com.google.protobuf.ByteString
-          getWorldCodeBytes() {
-        Object ref = worldCode_;
+          getCodeBytes() {
+        Object ref = code_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
                   (String) ref);
-          worldCode_ = b;
+          code_ = b;
           return b;
         } else {
           return (com.google.protobuf.ByteString) ref;
         }
       }
 
-      public static final int WORLDTYPE_FIELD_NUMBER = 2;
+      public static final int WORLDTYPE_FIELD_NUMBER = 3;
       private volatile Object worldType_;
       /**
-       * <code>string WorldType = 2;</code>
+       * <code>string WorldType = 3;</code>
        * @return The worldType.
        */
       @Override
@@ -947,7 +882,7 @@ public final class SysWorldSetInfoResProto {
         }
       }
       /**
-       * <code>string WorldType = 2;</code>
+       * <code>string WorldType = 3;</code>
        * @return The bytes for worldType.
        */
       @Override
@@ -965,44 +900,44 @@ public final class SysWorldSetInfoResProto {
         }
       }
 
-      public static final int WORLDSLOTS_FIELD_NUMBER = 3;
-      private java.util.List<WorldSlot> worldSlots_;
+      public static final int WORLDSLOTLIST_FIELD_NUMBER = 4;
+      private java.util.List<WorldSlot> worldSlotList_;
       /**
-       * <code>repeated .classlink.SysWorldSetInfoRes.WorldSlot WorldSlots = 3;</code>
+       * <code>repeated .Classlink.SysWorldSetInfoRes.WorldSlot WorldSlotList = 4;</code>
        */
       @Override
-      public java.util.List<WorldSlot> getWorldSlotsList() {
-        return worldSlots_;
+      public java.util.List<WorldSlot> getWorldSlotListList() {
+        return worldSlotList_;
       }
       /**
-       * <code>repeated .classlink.SysWorldSetInfoRes.WorldSlot WorldSlots = 3;</code>
+       * <code>repeated .Classlink.SysWorldSetInfoRes.WorldSlot WorldSlotList = 4;</code>
        */
       @Override
       public java.util.List<? extends WorldSlotOrBuilder>
-          getWorldSlotsOrBuilderList() {
-        return worldSlots_;
+          getWorldSlotListOrBuilderList() {
+        return worldSlotList_;
       }
       /**
-       * <code>repeated .classlink.SysWorldSetInfoRes.WorldSlot WorldSlots = 3;</code>
+       * <code>repeated .Classlink.SysWorldSetInfoRes.WorldSlot WorldSlotList = 4;</code>
        */
       @Override
-      public int getWorldSlotsCount() {
-        return worldSlots_.size();
+      public int getWorldSlotListCount() {
+        return worldSlotList_.size();
       }
       /**
-       * <code>repeated .classlink.SysWorldSetInfoRes.WorldSlot WorldSlots = 3;</code>
+       * <code>repeated .Classlink.SysWorldSetInfoRes.WorldSlot WorldSlotList = 4;</code>
        */
       @Override
-      public WorldSlot getWorldSlots(int index) {
-        return worldSlots_.get(index);
+      public WorldSlot getWorldSlotList(int index) {
+        return worldSlotList_.get(index);
       }
       /**
-       * <code>repeated .classlink.SysWorldSetInfoRes.WorldSlot WorldSlots = 3;</code>
+       * <code>repeated .Classlink.SysWorldSetInfoRes.WorldSlot WorldSlotList = 4;</code>
        */
       @Override
-      public WorldSlotOrBuilder getWorldSlotsOrBuilder(
+      public WorldSlotOrBuilder getWorldSlotListOrBuilder(
           int index) {
-        return worldSlots_.get(index);
+        return worldSlotList_.get(index);
       }
 
       private byte memoizedIsInitialized = -1;
@@ -1019,14 +954,17 @@ public final class SysWorldSetInfoResProto {
       @Override
       public void writeTo(com.google.protobuf.CodedOutputStream output)
                           throws java.io.IOException {
-        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(worldCode_)) {
-          com.google.protobuf.GeneratedMessageV3.writeString(output, 1, worldCode_);
+        if (idx_ != 0) {
+          output.writeInt32(1, idx_);
+        }
+        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(code_)) {
+          com.google.protobuf.GeneratedMessageV3.writeString(output, 2, code_);
         }
         if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(worldType_)) {
-          com.google.protobuf.GeneratedMessageV3.writeString(output, 2, worldType_);
+          com.google.protobuf.GeneratedMessageV3.writeString(output, 3, worldType_);
         }
-        for (int i = 0; i < worldSlots_.size(); i++) {
-          output.writeMessage(3, worldSlots_.get(i));
+        for (int i = 0; i < worldSlotList_.size(); i++) {
+          output.writeMessage(4, worldSlotList_.get(i));
         }
         getUnknownFields().writeTo(output);
       }
@@ -1037,15 +975,19 @@ public final class SysWorldSetInfoResProto {
         if (size != -1) return size;
 
         size = 0;
-        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(worldCode_)) {
-          size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, worldCode_);
+        if (idx_ != 0) {
+          size += com.google.protobuf.CodedOutputStream
+            .computeInt32Size(1, idx_);
+        }
+        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(code_)) {
+          size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, code_);
         }
         if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(worldType_)) {
-          size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, worldType_);
+          size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, worldType_);
         }
-        for (int i = 0; i < worldSlots_.size(); i++) {
+        for (int i = 0; i < worldSlotList_.size(); i++) {
           size += com.google.protobuf.CodedOutputStream
-            .computeMessageSize(3, worldSlots_.get(i));
+            .computeMessageSize(4, worldSlotList_.get(i));
         }
         size += getUnknownFields().getSerializedSize();
         memoizedSize = size;
@@ -1062,12 +1004,14 @@ public final class SysWorldSetInfoResProto {
         }
         World other = (World) obj;
 
-        if (!getWorldCode()
-            .equals(other.getWorldCode())) return false;
+        if (getIdx()
+            != other.getIdx()) return false;
+        if (!getCode()
+            .equals(other.getCode())) return false;
         if (!getWorldType()
             .equals(other.getWorldType())) return false;
-        if (!getWorldSlotsList()
-            .equals(other.getWorldSlotsList())) return false;
+        if (!getWorldSlotListList()
+            .equals(other.getWorldSlotListList())) return false;
         if (!getUnknownFields().equals(other.getUnknownFields())) return false;
         return true;
       }
@@ -1079,13 +1023,15 @@ public final class SysWorldSetInfoResProto {
         }
         int hash = 41;
         hash = (19 * hash) + getDescriptor().hashCode();
-        hash = (37 * hash) + WORLDCODE_FIELD_NUMBER;
-        hash = (53 * hash) + getWorldCode().hashCode();
+        hash = (37 * hash) + IDX_FIELD_NUMBER;
+        hash = (53 * hash) + getIdx();
+        hash = (37 * hash) + CODE_FIELD_NUMBER;
+        hash = (53 * hash) + getCode().hashCode();
         hash = (37 * hash) + WORLDTYPE_FIELD_NUMBER;
         hash = (53 * hash) + getWorldType().hashCode();
-        if (getWorldSlotsCount() > 0) {
-          hash = (37 * hash) + WORLDSLOTS_FIELD_NUMBER;
-          hash = (53 * hash) + getWorldSlotsList().hashCode();
+        if (getWorldSlotListCount() > 0) {
+          hash = (37 * hash) + WORLDSLOTLIST_FIELD_NUMBER;
+          hash = (53 * hash) + getWorldSlotListList().hashCode();
         }
         hash = (29 * hash) + getUnknownFields().hashCode();
         memoizedHashCode = hash;
@@ -1183,21 +1129,21 @@ public final class SysWorldSetInfoResProto {
         return builder;
       }
       /**
-       * Protobuf type {@code classlink.SysWorldSetInfoRes.World}
+       * Protobuf type {@code Classlink.SysWorldSetInfoRes.World}
        */
       public static final class Builder extends
           com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-          // @@protoc_insertion_point(builder_implements:classlink.SysWorldSetInfoRes.World)
+          // @@protoc_insertion_point(builder_implements:Classlink.SysWorldSetInfoRes.World)
           WorldOrBuilder {
         public static final com.google.protobuf.Descriptors.Descriptor
             getDescriptor() {
-          return SysWorldSetInfoResProto.internal_static_classlink_SysWorldSetInfoRes_World_descriptor;
+          return SysWorldSetInfoResProto.internal_static_Classlink_SysWorldSetInfoRes_World_descriptor;
         }
 
         @Override
         protected FieldAccessorTable
             internalGetFieldAccessorTable() {
-          return SysWorldSetInfoResProto.internal_static_classlink_SysWorldSetInfoRes_World_fieldAccessorTable
+          return SysWorldSetInfoResProto.internal_static_Classlink_SysWorldSetInfoRes_World_fieldAccessorTable
               .ensureFieldAccessorsInitialized(
                   World.class, Builder.class);
         }
@@ -1215,15 +1161,17 @@ public final class SysWorldSetInfoResProto {
         @Override
         public Builder clear() {
           super.clear();
-          worldCode_ = "";
+          idx_ = 0;
+
+          code_ = "";
 
           worldType_ = "";
 
-          if (worldSlotsBuilder_ == null) {
-            worldSlots_ = java.util.Collections.emptyList();
+          if (worldSlotListBuilder_ == null) {
+            worldSlotList_ = java.util.Collections.emptyList();
           } else {
-            worldSlots_ = null;
-            worldSlotsBuilder_.clear();
+            worldSlotList_ = null;
+            worldSlotListBuilder_.clear();
           }
           bitField0_ = (bitField0_ & ~0x00000001);
           return this;
@@ -1232,7 +1180,7 @@ public final class SysWorldSetInfoResProto {
         @Override
         public com.google.protobuf.Descriptors.Descriptor
             getDescriptorForType() {
-          return SysWorldSetInfoResProto.internal_static_classlink_SysWorldSetInfoRes_World_descriptor;
+          return SysWorldSetInfoResProto.internal_static_Classlink_SysWorldSetInfoRes_World_descriptor;
         }
 
         @Override
@@ -1253,16 +1201,17 @@ public final class SysWorldSetInfoResProto {
         public World buildPartial() {
           World result = new World(this);
           int from_bitField0_ = bitField0_;
-          result.worldCode_ = worldCode_;
+          result.idx_ = idx_;
+          result.code_ = code_;
           result.worldType_ = worldType_;
-          if (worldSlotsBuilder_ == null) {
+          if (worldSlotListBuilder_ == null) {
             if (((bitField0_ & 0x00000001) != 0)) {
-              worldSlots_ = java.util.Collections.unmodifiableList(worldSlots_);
+              worldSlotList_ = java.util.Collections.unmodifiableList(worldSlotList_);
               bitField0_ = (bitField0_ & ~0x00000001);
             }
-            result.worldSlots_ = worldSlots_;
+            result.worldSlotList_ = worldSlotList_;
           } else {
-            result.worldSlots_ = worldSlotsBuilder_.build();
+            result.worldSlotList_ = worldSlotListBuilder_.build();
           }
           onBuilt();
           return result;
@@ -1312,37 +1261,40 @@ public final class SysWorldSetInfoResProto {
 
         public Builder mergeFrom(World other) {
           if (other == World.getDefaultInstance()) return this;
-          if (!other.getWorldCode().isEmpty()) {
-            worldCode_ = other.worldCode_;
+          if (other.getIdx() != 0) {
+            setIdx(other.getIdx());
+          }
+          if (!other.getCode().isEmpty()) {
+            code_ = other.code_;
             onChanged();
           }
           if (!other.getWorldType().isEmpty()) {
             worldType_ = other.worldType_;
             onChanged();
           }
-          if (worldSlotsBuilder_ == null) {
-            if (!other.worldSlots_.isEmpty()) {
-              if (worldSlots_.isEmpty()) {
-                worldSlots_ = other.worldSlots_;
+          if (worldSlotListBuilder_ == null) {
+            if (!other.worldSlotList_.isEmpty()) {
+              if (worldSlotList_.isEmpty()) {
+                worldSlotList_ = other.worldSlotList_;
                 bitField0_ = (bitField0_ & ~0x00000001);
               } else {
-                ensureWorldSlotsIsMutable();
-                worldSlots_.addAll(other.worldSlots_);
+                ensureWorldSlotListIsMutable();
+                worldSlotList_.addAll(other.worldSlotList_);
               }
               onChanged();
             }
           } else {
-            if (!other.worldSlots_.isEmpty()) {
-              if (worldSlotsBuilder_.isEmpty()) {
-                worldSlotsBuilder_.dispose();
-                worldSlotsBuilder_ = null;
-                worldSlots_ = other.worldSlots_;
+            if (!other.worldSlotList_.isEmpty()) {
+              if (worldSlotListBuilder_.isEmpty()) {
+                worldSlotListBuilder_.dispose();
+                worldSlotListBuilder_ = null;
+                worldSlotList_ = other.worldSlotList_;
                 bitField0_ = (bitField0_ & ~0x00000001);
-                worldSlotsBuilder_ = 
+                worldSlotListBuilder_ = 
                   com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                     getWorldSlotsFieldBuilder() : null;
+                     getWorldSlotListFieldBuilder() : null;
               } else {
-                worldSlotsBuilder_.addAllMessages(other.worldSlots_);
+                worldSlotListBuilder_.addAllMessages(other.worldSlotList_);
               }
             }
           }
@@ -1372,29 +1324,34 @@ public final class SysWorldSetInfoResProto {
                 case 0:
                   done = true;
                   break;
-                case 10: {
-                  worldCode_ = input.readStringRequireUtf8();
+                case 8: {
+                  idx_ = input.readInt32();
 
                   break;
-                } // case 10
+                } // case 8
                 case 18: {
-                  worldType_ = input.readStringRequireUtf8();
+                  code_ = input.readStringRequireUtf8();
 
                   break;
                 } // case 18
                 case 26: {
+                  worldType_ = input.readStringRequireUtf8();
+
+                  break;
+                } // case 26
+                case 34: {
                   WorldSlot m =
                       input.readMessage(
                           WorldSlot.parser(),
                           extensionRegistry);
-                  if (worldSlotsBuilder_ == null) {
-                    ensureWorldSlotsIsMutable();
-                    worldSlots_.add(m);
+                  if (worldSlotListBuilder_ == null) {
+                    ensureWorldSlotListIsMutable();
+                    worldSlotList_.add(m);
                   } else {
-                    worldSlotsBuilder_.addMessage(m);
+                    worldSlotListBuilder_.addMessage(m);
                   }
                   break;
-                } // case 26
+                } // case 34
                 default: {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                     done = true; // was an endgroup tag
@@ -1412,85 +1369,116 @@ public final class SysWorldSetInfoResProto {
         }
         private int bitField0_;
 
-        private Object worldCode_ = "";
+        private int idx_ ;
         /**
-         * <code>string WorldCode = 1;</code>
-         * @return The worldCode.
+         * <code>int32 Idx = 1;</code>
+         * @return The idx.
          */
-        public String getWorldCode() {
-          Object ref = worldCode_;
+        @Override
+        public int getIdx() {
+          return idx_;
+        }
+        /**
+         * <code>int32 Idx = 1;</code>
+         * @param value The idx to set.
+         * @return This builder for chaining.
+         */
+        public Builder setIdx(int value) {
+          
+          idx_ = value;
+          onChanged();
+          return this;
+        }
+        /**
+         * <code>int32 Idx = 1;</code>
+         * @return This builder for chaining.
+         */
+        public Builder clearIdx() {
+          
+          idx_ = 0;
+          onChanged();
+          return this;
+        }
+
+        private Object code_ = "";
+        /**
+         * <code>string Code = 2;</code>
+         * @return The code.
+         */
+        public String getCode() {
+          Object ref = code_;
           if (!(ref instanceof String)) {
             com.google.protobuf.ByteString bs =
                 (com.google.protobuf.ByteString) ref;
             String s = bs.toStringUtf8();
-            worldCode_ = s;
+            code_ = s;
             return s;
           } else {
             return (String) ref;
           }
         }
         /**
-         * <code>string WorldCode = 1;</code>
-         * @return The bytes for worldCode.
+         * <code>string Code = 2;</code>
+         * @return The bytes for code.
          */
         public com.google.protobuf.ByteString
-            getWorldCodeBytes() {
-          Object ref = worldCode_;
+            getCodeBytes() {
+          Object ref = code_;
           if (ref instanceof String) {
             com.google.protobuf.ByteString b = 
                 com.google.protobuf.ByteString.copyFromUtf8(
                     (String) ref);
-            worldCode_ = b;
+            code_ = b;
             return b;
           } else {
             return (com.google.protobuf.ByteString) ref;
           }
         }
         /**
-         * <code>string WorldCode = 1;</code>
-         * @param value The worldCode to set.
+         * <code>string Code = 2;</code>
+         * @param value The code to set.
          * @return This builder for chaining.
          */
-        public Builder setWorldCode(
+        public Builder setCode(
             String value) {
           if (value == null) {
     throw new NullPointerException();
   }
   
-          worldCode_ = value;
+          code_ = value;
           onChanged();
           return this;
         }
         /**
-         * <code>string WorldCode = 1;</code>
+         * <code>string Code = 2;</code>
          * @return This builder for chaining.
          */
-        public Builder clearWorldCode() {
+        public Builder clearCode() {
           
-          worldCode_ = getDefaultInstance().getWorldCode();
+          code_ = getDefaultInstance().getCode();
           onChanged();
           return this;
         }
         /**
-         * <code>string WorldCode = 1;</code>
-         * @param value The bytes for worldCode to set.
+         * <code>string Code = 2;</code>
+         * @param value The bytes for code to set.
          * @return This builder for chaining.
          */
-        public Builder setWorldCodeBytes(
+        public Builder setCodeBytes(
             com.google.protobuf.ByteString value) {
           if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
           
-          worldCode_ = value;
+          code_ = value;
           onChanged();
           return this;
         }
 
         private Object worldType_ = "";
         /**
-         * <code>string WorldType = 2;</code>
+         * <code>string WorldType = 3;</code>
          * @return The worldType.
          */
         public String getWorldType() {
@@ -1506,7 +1494,7 @@ public final class SysWorldSetInfoResProto {
           }
         }
         /**
-         * <code>string WorldType = 2;</code>
+         * <code>string WorldType = 3;</code>
          * @return The bytes for worldType.
          */
         public com.google.protobuf.ByteString
@@ -1523,7 +1511,7 @@ public final class SysWorldSetInfoResProto {
           }
         }
         /**
-         * <code>string WorldType = 2;</code>
+         * <code>string WorldType = 3;</code>
          * @param value The worldType to set.
          * @return This builder for chaining.
          */
@@ -1538,7 +1526,7 @@ public final class SysWorldSetInfoResProto {
           return this;
         }
         /**
-         * <code>string WorldType = 2;</code>
+         * <code>string WorldType = 3;</code>
          * @return This builder for chaining.
          */
         public Builder clearWorldType() {
@@ -1548,7 +1536,7 @@ public final class SysWorldSetInfoResProto {
           return this;
         }
         /**
-         * <code>string WorldType = 2;</code>
+         * <code>string WorldType = 3;</code>
          * @param value The bytes for worldType to set.
          * @return This builder for chaining.
          */
@@ -1564,244 +1552,244 @@ public final class SysWorldSetInfoResProto {
           return this;
         }
 
-        private java.util.List<WorldSlot> worldSlots_ =
+        private java.util.List<WorldSlot> worldSlotList_ =
           java.util.Collections.emptyList();
-        private void ensureWorldSlotsIsMutable() {
+        private void ensureWorldSlotListIsMutable() {
           if (!((bitField0_ & 0x00000001) != 0)) {
-            worldSlots_ = new java.util.ArrayList<WorldSlot>(worldSlots_);
+            worldSlotList_ = new java.util.ArrayList<WorldSlot>(worldSlotList_);
             bitField0_ |= 0x00000001;
            }
         }
 
         private com.google.protobuf.RepeatedFieldBuilderV3<
-            WorldSlot, WorldSlot.Builder, WorldSlotOrBuilder> worldSlotsBuilder_;
+            WorldSlot, WorldSlot.Builder, WorldSlotOrBuilder> worldSlotListBuilder_;
 
         /**
-         * <code>repeated .classlink.SysWorldSetInfoRes.WorldSlot WorldSlots = 3;</code>
+         * <code>repeated .Classlink.SysWorldSetInfoRes.WorldSlot WorldSlotList = 4;</code>
          */
-        public java.util.List<WorldSlot> getWorldSlotsList() {
-          if (worldSlotsBuilder_ == null) {
-            return java.util.Collections.unmodifiableList(worldSlots_);
+        public java.util.List<WorldSlot> getWorldSlotListList() {
+          if (worldSlotListBuilder_ == null) {
+            return java.util.Collections.unmodifiableList(worldSlotList_);
           } else {
-            return worldSlotsBuilder_.getMessageList();
+            return worldSlotListBuilder_.getMessageList();
           }
         }
         /**
-         * <code>repeated .classlink.SysWorldSetInfoRes.WorldSlot WorldSlots = 3;</code>
+         * <code>repeated .Classlink.SysWorldSetInfoRes.WorldSlot WorldSlotList = 4;</code>
          */
-        public int getWorldSlotsCount() {
-          if (worldSlotsBuilder_ == null) {
-            return worldSlots_.size();
+        public int getWorldSlotListCount() {
+          if (worldSlotListBuilder_ == null) {
+            return worldSlotList_.size();
           } else {
-            return worldSlotsBuilder_.getCount();
+            return worldSlotListBuilder_.getCount();
           }
         }
         /**
-         * <code>repeated .classlink.SysWorldSetInfoRes.WorldSlot WorldSlots = 3;</code>
+         * <code>repeated .Classlink.SysWorldSetInfoRes.WorldSlot WorldSlotList = 4;</code>
          */
-        public WorldSlot getWorldSlots(int index) {
-          if (worldSlotsBuilder_ == null) {
-            return worldSlots_.get(index);
+        public WorldSlot getWorldSlotList(int index) {
+          if (worldSlotListBuilder_ == null) {
+            return worldSlotList_.get(index);
           } else {
-            return worldSlotsBuilder_.getMessage(index);
+            return worldSlotListBuilder_.getMessage(index);
           }
         }
         /**
-         * <code>repeated .classlink.SysWorldSetInfoRes.WorldSlot WorldSlots = 3;</code>
+         * <code>repeated .Classlink.SysWorldSetInfoRes.WorldSlot WorldSlotList = 4;</code>
          */
-        public Builder setWorldSlots(
+        public Builder setWorldSlotList(
             int index, WorldSlot value) {
-          if (worldSlotsBuilder_ == null) {
+          if (worldSlotListBuilder_ == null) {
             if (value == null) {
               throw new NullPointerException();
             }
-            ensureWorldSlotsIsMutable();
-            worldSlots_.set(index, value);
+            ensureWorldSlotListIsMutable();
+            worldSlotList_.set(index, value);
             onChanged();
           } else {
-            worldSlotsBuilder_.setMessage(index, value);
+            worldSlotListBuilder_.setMessage(index, value);
           }
           return this;
         }
         /**
-         * <code>repeated .classlink.SysWorldSetInfoRes.WorldSlot WorldSlots = 3;</code>
+         * <code>repeated .Classlink.SysWorldSetInfoRes.WorldSlot WorldSlotList = 4;</code>
          */
-        public Builder setWorldSlots(
+        public Builder setWorldSlotList(
             int index, WorldSlot.Builder builderForValue) {
-          if (worldSlotsBuilder_ == null) {
-            ensureWorldSlotsIsMutable();
-            worldSlots_.set(index, builderForValue.build());
+          if (worldSlotListBuilder_ == null) {
+            ensureWorldSlotListIsMutable();
+            worldSlotList_.set(index, builderForValue.build());
             onChanged();
           } else {
-            worldSlotsBuilder_.setMessage(index, builderForValue.build());
+            worldSlotListBuilder_.setMessage(index, builderForValue.build());
           }
           return this;
         }
         /**
-         * <code>repeated .classlink.SysWorldSetInfoRes.WorldSlot WorldSlots = 3;</code>
+         * <code>repeated .Classlink.SysWorldSetInfoRes.WorldSlot WorldSlotList = 4;</code>
          */
-        public Builder addWorldSlots(WorldSlot value) {
-          if (worldSlotsBuilder_ == null) {
+        public Builder addWorldSlotList(WorldSlot value) {
+          if (worldSlotListBuilder_ == null) {
             if (value == null) {
               throw new NullPointerException();
             }
-            ensureWorldSlotsIsMutable();
-            worldSlots_.add(value);
+            ensureWorldSlotListIsMutable();
+            worldSlotList_.add(value);
             onChanged();
           } else {
-            worldSlotsBuilder_.addMessage(value);
+            worldSlotListBuilder_.addMessage(value);
           }
           return this;
         }
         /**
-         * <code>repeated .classlink.SysWorldSetInfoRes.WorldSlot WorldSlots = 3;</code>
+         * <code>repeated .Classlink.SysWorldSetInfoRes.WorldSlot WorldSlotList = 4;</code>
          */
-        public Builder addWorldSlots(
+        public Builder addWorldSlotList(
             int index, WorldSlot value) {
-          if (worldSlotsBuilder_ == null) {
+          if (worldSlotListBuilder_ == null) {
             if (value == null) {
               throw new NullPointerException();
             }
-            ensureWorldSlotsIsMutable();
-            worldSlots_.add(index, value);
+            ensureWorldSlotListIsMutable();
+            worldSlotList_.add(index, value);
             onChanged();
           } else {
-            worldSlotsBuilder_.addMessage(index, value);
+            worldSlotListBuilder_.addMessage(index, value);
           }
           return this;
         }
         /**
-         * <code>repeated .classlink.SysWorldSetInfoRes.WorldSlot WorldSlots = 3;</code>
+         * <code>repeated .Classlink.SysWorldSetInfoRes.WorldSlot WorldSlotList = 4;</code>
          */
-        public Builder addWorldSlots(
+        public Builder addWorldSlotList(
             WorldSlot.Builder builderForValue) {
-          if (worldSlotsBuilder_ == null) {
-            ensureWorldSlotsIsMutable();
-            worldSlots_.add(builderForValue.build());
+          if (worldSlotListBuilder_ == null) {
+            ensureWorldSlotListIsMutable();
+            worldSlotList_.add(builderForValue.build());
             onChanged();
           } else {
-            worldSlotsBuilder_.addMessage(builderForValue.build());
+            worldSlotListBuilder_.addMessage(builderForValue.build());
           }
           return this;
         }
         /**
-         * <code>repeated .classlink.SysWorldSetInfoRes.WorldSlot WorldSlots = 3;</code>
+         * <code>repeated .Classlink.SysWorldSetInfoRes.WorldSlot WorldSlotList = 4;</code>
          */
-        public Builder addWorldSlots(
+        public Builder addWorldSlotList(
             int index, WorldSlot.Builder builderForValue) {
-          if (worldSlotsBuilder_ == null) {
-            ensureWorldSlotsIsMutable();
-            worldSlots_.add(index, builderForValue.build());
+          if (worldSlotListBuilder_ == null) {
+            ensureWorldSlotListIsMutable();
+            worldSlotList_.add(index, builderForValue.build());
             onChanged();
           } else {
-            worldSlotsBuilder_.addMessage(index, builderForValue.build());
+            worldSlotListBuilder_.addMessage(index, builderForValue.build());
           }
           return this;
         }
         /**
-         * <code>repeated .classlink.SysWorldSetInfoRes.WorldSlot WorldSlots = 3;</code>
+         * <code>repeated .Classlink.SysWorldSetInfoRes.WorldSlot WorldSlotList = 4;</code>
          */
-        public Builder addAllWorldSlots(
+        public Builder addAllWorldSlotList(
             Iterable<? extends WorldSlot> values) {
-          if (worldSlotsBuilder_ == null) {
-            ensureWorldSlotsIsMutable();
+          if (worldSlotListBuilder_ == null) {
+            ensureWorldSlotListIsMutable();
             com.google.protobuf.AbstractMessageLite.Builder.addAll(
-                values, worldSlots_);
+                values, worldSlotList_);
             onChanged();
           } else {
-            worldSlotsBuilder_.addAllMessages(values);
+            worldSlotListBuilder_.addAllMessages(values);
           }
           return this;
         }
         /**
-         * <code>repeated .classlink.SysWorldSetInfoRes.WorldSlot WorldSlots = 3;</code>
+         * <code>repeated .Classlink.SysWorldSetInfoRes.WorldSlot WorldSlotList = 4;</code>
          */
-        public Builder clearWorldSlots() {
-          if (worldSlotsBuilder_ == null) {
-            worldSlots_ = java.util.Collections.emptyList();
+        public Builder clearWorldSlotList() {
+          if (worldSlotListBuilder_ == null) {
+            worldSlotList_ = java.util.Collections.emptyList();
             bitField0_ = (bitField0_ & ~0x00000001);
             onChanged();
           } else {
-            worldSlotsBuilder_.clear();
+            worldSlotListBuilder_.clear();
           }
           return this;
         }
         /**
-         * <code>repeated .classlink.SysWorldSetInfoRes.WorldSlot WorldSlots = 3;</code>
+         * <code>repeated .Classlink.SysWorldSetInfoRes.WorldSlot WorldSlotList = 4;</code>
          */
-        public Builder removeWorldSlots(int index) {
-          if (worldSlotsBuilder_ == null) {
-            ensureWorldSlotsIsMutable();
-            worldSlots_.remove(index);
+        public Builder removeWorldSlotList(int index) {
+          if (worldSlotListBuilder_ == null) {
+            ensureWorldSlotListIsMutable();
+            worldSlotList_.remove(index);
             onChanged();
           } else {
-            worldSlotsBuilder_.remove(index);
+            worldSlotListBuilder_.remove(index);
           }
           return this;
         }
         /**
-         * <code>repeated .classlink.SysWorldSetInfoRes.WorldSlot WorldSlots = 3;</code>
+         * <code>repeated .Classlink.SysWorldSetInfoRes.WorldSlot WorldSlotList = 4;</code>
          */
-        public WorldSlot.Builder getWorldSlotsBuilder(
+        public WorldSlot.Builder getWorldSlotListBuilder(
             int index) {
-          return getWorldSlotsFieldBuilder().getBuilder(index);
+          return getWorldSlotListFieldBuilder().getBuilder(index);
         }
         /**
-         * <code>repeated .classlink.SysWorldSetInfoRes.WorldSlot WorldSlots = 3;</code>
+         * <code>repeated .Classlink.SysWorldSetInfoRes.WorldSlot WorldSlotList = 4;</code>
          */
-        public WorldSlotOrBuilder getWorldSlotsOrBuilder(
+        public WorldSlotOrBuilder getWorldSlotListOrBuilder(
             int index) {
-          if (worldSlotsBuilder_ == null) {
-            return worldSlots_.get(index);  } else {
-            return worldSlotsBuilder_.getMessageOrBuilder(index);
+          if (worldSlotListBuilder_ == null) {
+            return worldSlotList_.get(index);  } else {
+            return worldSlotListBuilder_.getMessageOrBuilder(index);
           }
         }
         /**
-         * <code>repeated .classlink.SysWorldSetInfoRes.WorldSlot WorldSlots = 3;</code>
+         * <code>repeated .Classlink.SysWorldSetInfoRes.WorldSlot WorldSlotList = 4;</code>
          */
         public java.util.List<? extends WorldSlotOrBuilder>
-             getWorldSlotsOrBuilderList() {
-          if (worldSlotsBuilder_ != null) {
-            return worldSlotsBuilder_.getMessageOrBuilderList();
+             getWorldSlotListOrBuilderList() {
+          if (worldSlotListBuilder_ != null) {
+            return worldSlotListBuilder_.getMessageOrBuilderList();
           } else {
-            return java.util.Collections.unmodifiableList(worldSlots_);
+            return java.util.Collections.unmodifiableList(worldSlotList_);
           }
         }
         /**
-         * <code>repeated .classlink.SysWorldSetInfoRes.WorldSlot WorldSlots = 3;</code>
+         * <code>repeated .Classlink.SysWorldSetInfoRes.WorldSlot WorldSlotList = 4;</code>
          */
-        public WorldSlot.Builder addWorldSlotsBuilder() {
-          return getWorldSlotsFieldBuilder().addBuilder(
+        public WorldSlot.Builder addWorldSlotListBuilder() {
+          return getWorldSlotListFieldBuilder().addBuilder(
               WorldSlot.getDefaultInstance());
         }
         /**
-         * <code>repeated .classlink.SysWorldSetInfoRes.WorldSlot WorldSlots = 3;</code>
+         * <code>repeated .Classlink.SysWorldSetInfoRes.WorldSlot WorldSlotList = 4;</code>
          */
-        public WorldSlot.Builder addWorldSlotsBuilder(
+        public WorldSlot.Builder addWorldSlotListBuilder(
             int index) {
-          return getWorldSlotsFieldBuilder().addBuilder(
+          return getWorldSlotListFieldBuilder().addBuilder(
               index, WorldSlot.getDefaultInstance());
         }
         /**
-         * <code>repeated .classlink.SysWorldSetInfoRes.WorldSlot WorldSlots = 3;</code>
+         * <code>repeated .Classlink.SysWorldSetInfoRes.WorldSlot WorldSlotList = 4;</code>
          */
         public java.util.List<WorldSlot.Builder>
-             getWorldSlotsBuilderList() {
-          return getWorldSlotsFieldBuilder().getBuilderList();
+             getWorldSlotListBuilderList() {
+          return getWorldSlotListFieldBuilder().getBuilderList();
         }
         private com.google.protobuf.RepeatedFieldBuilderV3<
             WorldSlot, WorldSlot.Builder, WorldSlotOrBuilder>
-            getWorldSlotsFieldBuilder() {
-          if (worldSlotsBuilder_ == null) {
-            worldSlotsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+            getWorldSlotListFieldBuilder() {
+          if (worldSlotListBuilder_ == null) {
+            worldSlotListBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
                 WorldSlot, WorldSlot.Builder, WorldSlotOrBuilder>(
-                    worldSlots_,
+                    worldSlotList_,
                     ((bitField0_ & 0x00000001) != 0),
                     getParentForChildren(),
                     isClean());
-            worldSlots_ = null;
+            worldSlotList_ = null;
           }
-          return worldSlotsBuilder_;
+          return worldSlotListBuilder_;
         }
         @Override
         public final Builder setUnknownFields(
@@ -1816,10 +1804,10 @@ public final class SysWorldSetInfoResProto {
         }
 
 
-        // @@protoc_insertion_point(builder_scope:classlink.SysWorldSetInfoRes.World)
+        // @@protoc_insertion_point(builder_scope:Classlink.SysWorldSetInfoRes.World)
       }
 
-      // @@protoc_insertion_point(class_scope:classlink.SysWorldSetInfoRes.World)
+      // @@protoc_insertion_point(class_scope:Classlink.SysWorldSetInfoRes.World)
       private static final World DEFAULT_INSTANCE;
       static {
         DEFAULT_INSTANCE = new World();
@@ -1868,57 +1856,63 @@ public final class SysWorldSetInfoResProto {
     }
 
     public interface WorldSetOrBuilder extends
-        // @@protoc_insertion_point(interface_extends:classlink.SysWorldSetInfoRes.WorldSet)
+        // @@protoc_insertion_point(interface_extends:Classlink.SysWorldSetInfoRes.WorldSet)
         com.google.protobuf.MessageOrBuilder {
 
       /**
-       * <code>string WorldSetCode = 1;</code>
-       * @return The worldSetCode.
+       * <code>int32 Idx = 1;</code>
+       * @return The idx.
        */
-      String getWorldSetCode();
-      /**
-       * <code>string WorldSetCode = 1;</code>
-       * @return The bytes for worldSetCode.
-       */
-      com.google.protobuf.ByteString
-          getWorldSetCodeBytes();
+      int getIdx();
 
       /**
-       * <code>.classlink.SysWorldSetInfoRes.World Outdoor = 2;</code>
+       * <code>string Code = 2;</code>
+       * @return The code.
+       */
+      String getCode();
+      /**
+       * <code>string Code = 2;</code>
+       * @return The bytes for code.
+       */
+      com.google.protobuf.ByteString
+          getCodeBytes();
+
+      /**
+       * <code>.Classlink.SysWorldSetInfoRes.World Outdoor = 3;</code>
        * @return Whether the outdoor field is set.
        */
       boolean hasOutdoor();
       /**
-       * <code>.classlink.SysWorldSetInfoRes.World Outdoor = 2;</code>
+       * <code>.Classlink.SysWorldSetInfoRes.World Outdoor = 3;</code>
        * @return The outdoor.
        */
       World getOutdoor();
       /**
-       * <code>.classlink.SysWorldSetInfoRes.World Outdoor = 2;</code>
+       * <code>.Classlink.SysWorldSetInfoRes.World Outdoor = 3;</code>
        */
       WorldOrBuilder getOutdoorOrBuilder();
 
       /**
-       * <code>.classlink.SysWorldSetInfoRes.World Indoor = 3;</code>
+       * <code>.Classlink.SysWorldSetInfoRes.World Indoor = 4;</code>
        * @return Whether the indoor field is set.
        */
       boolean hasIndoor();
       /**
-       * <code>.classlink.SysWorldSetInfoRes.World Indoor = 3;</code>
+       * <code>.Classlink.SysWorldSetInfoRes.World Indoor = 4;</code>
        * @return The indoor.
        */
       World getIndoor();
       /**
-       * <code>.classlink.SysWorldSetInfoRes.World Indoor = 3;</code>
+       * <code>.Classlink.SysWorldSetInfoRes.World Indoor = 4;</code>
        */
       WorldOrBuilder getIndoorOrBuilder();
     }
     /**
-     * Protobuf type {@code classlink.SysWorldSetInfoRes.WorldSet}
+     * Protobuf type {@code Classlink.SysWorldSetInfoRes.WorldSet}
      */
     public static final class WorldSet extends
         com.google.protobuf.GeneratedMessageV3 implements
-        // @@protoc_insertion_point(message_implements:classlink.SysWorldSetInfoRes.WorldSet)
+        // @@protoc_insertion_point(message_implements:Classlink.SysWorldSetInfoRes.WorldSet)
         WorldSetOrBuilder {
     private static final long serialVersionUID = 0L;
       // Use WorldSet.newBuilder() to construct.
@@ -1926,7 +1920,7 @@ public final class SysWorldSetInfoResProto {
         super(builder);
       }
       private WorldSet() {
-        worldSetCode_ = "";
+        code_ = "";
       }
 
       @Override
@@ -1943,59 +1937,70 @@ public final class SysWorldSetInfoResProto {
       }
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return SysWorldSetInfoResProto.internal_static_classlink_SysWorldSetInfoRes_WorldSet_descriptor;
+        return SysWorldSetInfoResProto.internal_static_Classlink_SysWorldSetInfoRes_WorldSet_descriptor;
       }
 
       @Override
       protected FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return SysWorldSetInfoResProto.internal_static_classlink_SysWorldSetInfoRes_WorldSet_fieldAccessorTable
+        return SysWorldSetInfoResProto.internal_static_Classlink_SysWorldSetInfoRes_WorldSet_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
                 WorldSet.class, Builder.class);
       }
 
-      public static final int WORLDSETCODE_FIELD_NUMBER = 1;
-      private volatile Object worldSetCode_;
+      public static final int IDX_FIELD_NUMBER = 1;
+      private int idx_;
       /**
-       * <code>string WorldSetCode = 1;</code>
-       * @return The worldSetCode.
+       * <code>int32 Idx = 1;</code>
+       * @return The idx.
        */
       @Override
-      public String getWorldSetCode() {
-        Object ref = worldSetCode_;
+      public int getIdx() {
+        return idx_;
+      }
+
+      public static final int CODE_FIELD_NUMBER = 2;
+      private volatile Object code_;
+      /**
+       * <code>string Code = 2;</code>
+       * @return The code.
+       */
+      @Override
+      public String getCode() {
+        Object ref = code_;
         if (ref instanceof String) {
           return (String) ref;
         } else {
           com.google.protobuf.ByteString bs = 
               (com.google.protobuf.ByteString) ref;
           String s = bs.toStringUtf8();
-          worldSetCode_ = s;
+          code_ = s;
           return s;
         }
       }
       /**
-       * <code>string WorldSetCode = 1;</code>
-       * @return The bytes for worldSetCode.
+       * <code>string Code = 2;</code>
+       * @return The bytes for code.
        */
       @Override
       public com.google.protobuf.ByteString
-          getWorldSetCodeBytes() {
-        Object ref = worldSetCode_;
+          getCodeBytes() {
+        Object ref = code_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
                   (String) ref);
-          worldSetCode_ = b;
+          code_ = b;
           return b;
         } else {
           return (com.google.protobuf.ByteString) ref;
         }
       }
 
-      public static final int OUTDOOR_FIELD_NUMBER = 2;
+      public static final int OUTDOOR_FIELD_NUMBER = 3;
       private World outdoor_;
       /**
-       * <code>.classlink.SysWorldSetInfoRes.World Outdoor = 2;</code>
+       * <code>.Classlink.SysWorldSetInfoRes.World Outdoor = 3;</code>
        * @return Whether the outdoor field is set.
        */
       @Override
@@ -2003,7 +2008,7 @@ public final class SysWorldSetInfoResProto {
         return outdoor_ != null;
       }
       /**
-       * <code>.classlink.SysWorldSetInfoRes.World Outdoor = 2;</code>
+       * <code>.Classlink.SysWorldSetInfoRes.World Outdoor = 3;</code>
        * @return The outdoor.
        */
       @Override
@@ -2011,17 +2016,17 @@ public final class SysWorldSetInfoResProto {
         return outdoor_ == null ? World.getDefaultInstance() : outdoor_;
       }
       /**
-       * <code>.classlink.SysWorldSetInfoRes.World Outdoor = 2;</code>
+       * <code>.Classlink.SysWorldSetInfoRes.World Outdoor = 3;</code>
        */
       @Override
       public WorldOrBuilder getOutdoorOrBuilder() {
         return getOutdoor();
       }
 
-      public static final int INDOOR_FIELD_NUMBER = 3;
+      public static final int INDOOR_FIELD_NUMBER = 4;
       private World indoor_;
       /**
-       * <code>.classlink.SysWorldSetInfoRes.World Indoor = 3;</code>
+       * <code>.Classlink.SysWorldSetInfoRes.World Indoor = 4;</code>
        * @return Whether the indoor field is set.
        */
       @Override
@@ -2029,7 +2034,7 @@ public final class SysWorldSetInfoResProto {
         return indoor_ != null;
       }
       /**
-       * <code>.classlink.SysWorldSetInfoRes.World Indoor = 3;</code>
+       * <code>.Classlink.SysWorldSetInfoRes.World Indoor = 4;</code>
        * @return The indoor.
        */
       @Override
@@ -2037,7 +2042,7 @@ public final class SysWorldSetInfoResProto {
         return indoor_ == null ? World.getDefaultInstance() : indoor_;
       }
       /**
-       * <code>.classlink.SysWorldSetInfoRes.World Indoor = 3;</code>
+       * <code>.Classlink.SysWorldSetInfoRes.World Indoor = 4;</code>
        */
       @Override
       public WorldOrBuilder getIndoorOrBuilder() {
@@ -2058,14 +2063,17 @@ public final class SysWorldSetInfoResProto {
       @Override
       public void writeTo(com.google.protobuf.CodedOutputStream output)
                           throws java.io.IOException {
-        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(worldSetCode_)) {
-          com.google.protobuf.GeneratedMessageV3.writeString(output, 1, worldSetCode_);
+        if (idx_ != 0) {
+          output.writeInt32(1, idx_);
+        }
+        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(code_)) {
+          com.google.protobuf.GeneratedMessageV3.writeString(output, 2, code_);
         }
         if (outdoor_ != null) {
-          output.writeMessage(2, getOutdoor());
+          output.writeMessage(3, getOutdoor());
         }
         if (indoor_ != null) {
-          output.writeMessage(3, getIndoor());
+          output.writeMessage(4, getIndoor());
         }
         getUnknownFields().writeTo(output);
       }
@@ -2076,16 +2084,20 @@ public final class SysWorldSetInfoResProto {
         if (size != -1) return size;
 
         size = 0;
-        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(worldSetCode_)) {
-          size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, worldSetCode_);
+        if (idx_ != 0) {
+          size += com.google.protobuf.CodedOutputStream
+            .computeInt32Size(1, idx_);
+        }
+        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(code_)) {
+          size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, code_);
         }
         if (outdoor_ != null) {
           size += com.google.protobuf.CodedOutputStream
-            .computeMessageSize(2, getOutdoor());
+            .computeMessageSize(3, getOutdoor());
         }
         if (indoor_ != null) {
           size += com.google.protobuf.CodedOutputStream
-            .computeMessageSize(3, getIndoor());
+            .computeMessageSize(4, getIndoor());
         }
         size += getUnknownFields().getSerializedSize();
         memoizedSize = size;
@@ -2102,8 +2114,10 @@ public final class SysWorldSetInfoResProto {
         }
         WorldSet other = (WorldSet) obj;
 
-        if (!getWorldSetCode()
-            .equals(other.getWorldSetCode())) return false;
+        if (getIdx()
+            != other.getIdx()) return false;
+        if (!getCode()
+            .equals(other.getCode())) return false;
         if (hasOutdoor() != other.hasOutdoor()) return false;
         if (hasOutdoor()) {
           if (!getOutdoor()
@@ -2125,8 +2139,10 @@ public final class SysWorldSetInfoResProto {
         }
         int hash = 41;
         hash = (19 * hash) + getDescriptor().hashCode();
-        hash = (37 * hash) + WORLDSETCODE_FIELD_NUMBER;
-        hash = (53 * hash) + getWorldSetCode().hashCode();
+        hash = (37 * hash) + IDX_FIELD_NUMBER;
+        hash = (53 * hash) + getIdx();
+        hash = (37 * hash) + CODE_FIELD_NUMBER;
+        hash = (53 * hash) + getCode().hashCode();
         if (hasOutdoor()) {
           hash = (37 * hash) + OUTDOOR_FIELD_NUMBER;
           hash = (53 * hash) + getOutdoor().hashCode();
@@ -2231,21 +2247,21 @@ public final class SysWorldSetInfoResProto {
         return builder;
       }
       /**
-       * Protobuf type {@code classlink.SysWorldSetInfoRes.WorldSet}
+       * Protobuf type {@code Classlink.SysWorldSetInfoRes.WorldSet}
        */
       public static final class Builder extends
           com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-          // @@protoc_insertion_point(builder_implements:classlink.SysWorldSetInfoRes.WorldSet)
+          // @@protoc_insertion_point(builder_implements:Classlink.SysWorldSetInfoRes.WorldSet)
           WorldSetOrBuilder {
         public static final com.google.protobuf.Descriptors.Descriptor
             getDescriptor() {
-          return SysWorldSetInfoResProto.internal_static_classlink_SysWorldSetInfoRes_WorldSet_descriptor;
+          return SysWorldSetInfoResProto.internal_static_Classlink_SysWorldSetInfoRes_WorldSet_descriptor;
         }
 
         @Override
         protected FieldAccessorTable
             internalGetFieldAccessorTable() {
-          return SysWorldSetInfoResProto.internal_static_classlink_SysWorldSetInfoRes_WorldSet_fieldAccessorTable
+          return SysWorldSetInfoResProto.internal_static_Classlink_SysWorldSetInfoRes_WorldSet_fieldAccessorTable
               .ensureFieldAccessorsInitialized(
                   WorldSet.class, Builder.class);
         }
@@ -2263,7 +2279,9 @@ public final class SysWorldSetInfoResProto {
         @Override
         public Builder clear() {
           super.clear();
-          worldSetCode_ = "";
+          idx_ = 0;
+
+          code_ = "";
 
           if (outdoorBuilder_ == null) {
             outdoor_ = null;
@@ -2283,7 +2301,7 @@ public final class SysWorldSetInfoResProto {
         @Override
         public com.google.protobuf.Descriptors.Descriptor
             getDescriptorForType() {
-          return SysWorldSetInfoResProto.internal_static_classlink_SysWorldSetInfoRes_WorldSet_descriptor;
+          return SysWorldSetInfoResProto.internal_static_Classlink_SysWorldSetInfoRes_WorldSet_descriptor;
         }
 
         @Override
@@ -2303,7 +2321,8 @@ public final class SysWorldSetInfoResProto {
         @Override
         public WorldSet buildPartial() {
           WorldSet result = new WorldSet(this);
-          result.worldSetCode_ = worldSetCode_;
+          result.idx_ = idx_;
+          result.code_ = code_;
           if (outdoorBuilder_ == null) {
             result.outdoor_ = outdoor_;
           } else {
@@ -2362,8 +2381,11 @@ public final class SysWorldSetInfoResProto {
 
         public Builder mergeFrom(WorldSet other) {
           if (other == WorldSet.getDefaultInstance()) return this;
-          if (!other.getWorldSetCode().isEmpty()) {
-            worldSetCode_ = other.worldSetCode_;
+          if (other.getIdx() != 0) {
+            setIdx(other.getIdx());
+          }
+          if (!other.getCode().isEmpty()) {
+            code_ = other.code_;
             onChanged();
           }
           if (other.hasOutdoor()) {
@@ -2398,25 +2420,30 @@ public final class SysWorldSetInfoResProto {
                 case 0:
                   done = true;
                   break;
-                case 10: {
-                  worldSetCode_ = input.readStringRequireUtf8();
+                case 8: {
+                  idx_ = input.readInt32();
 
                   break;
-                } // case 10
+                } // case 8
                 case 18: {
-                  input.readMessage(
-                      getOutdoorFieldBuilder().getBuilder(),
-                      extensionRegistry);
+                  code_ = input.readStringRequireUtf8();
 
                   break;
                 } // case 18
                 case 26: {
                   input.readMessage(
-                      getIndoorFieldBuilder().getBuilder(),
+                      getOutdoorFieldBuilder().getBuilder(),
                       extensionRegistry);
 
                   break;
                 } // case 26
+                case 34: {
+                  input.readMessage(
+                      getIndoorFieldBuilder().getBuilder(),
+                      extensionRegistry);
+
+                  break;
+                } // case 34
                 default: {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                     done = true; // was an endgroup tag
@@ -2433,78 +2460,109 @@ public final class SysWorldSetInfoResProto {
           return this;
         }
 
-        private Object worldSetCode_ = "";
+        private int idx_ ;
         /**
-         * <code>string WorldSetCode = 1;</code>
-         * @return The worldSetCode.
+         * <code>int32 Idx = 1;</code>
+         * @return The idx.
          */
-        public String getWorldSetCode() {
-          Object ref = worldSetCode_;
+        @Override
+        public int getIdx() {
+          return idx_;
+        }
+        /**
+         * <code>int32 Idx = 1;</code>
+         * @param value The idx to set.
+         * @return This builder for chaining.
+         */
+        public Builder setIdx(int value) {
+          
+          idx_ = value;
+          onChanged();
+          return this;
+        }
+        /**
+         * <code>int32 Idx = 1;</code>
+         * @return This builder for chaining.
+         */
+        public Builder clearIdx() {
+          
+          idx_ = 0;
+          onChanged();
+          return this;
+        }
+
+        private Object code_ = "";
+        /**
+         * <code>string Code = 2;</code>
+         * @return The code.
+         */
+        public String getCode() {
+          Object ref = code_;
           if (!(ref instanceof String)) {
             com.google.protobuf.ByteString bs =
                 (com.google.protobuf.ByteString) ref;
             String s = bs.toStringUtf8();
-            worldSetCode_ = s;
+            code_ = s;
             return s;
           } else {
             return (String) ref;
           }
         }
         /**
-         * <code>string WorldSetCode = 1;</code>
-         * @return The bytes for worldSetCode.
+         * <code>string Code = 2;</code>
+         * @return The bytes for code.
          */
         public com.google.protobuf.ByteString
-            getWorldSetCodeBytes() {
-          Object ref = worldSetCode_;
+            getCodeBytes() {
+          Object ref = code_;
           if (ref instanceof String) {
             com.google.protobuf.ByteString b = 
                 com.google.protobuf.ByteString.copyFromUtf8(
                     (String) ref);
-            worldSetCode_ = b;
+            code_ = b;
             return b;
           } else {
             return (com.google.protobuf.ByteString) ref;
           }
         }
         /**
-         * <code>string WorldSetCode = 1;</code>
-         * @param value The worldSetCode to set.
+         * <code>string Code = 2;</code>
+         * @param value The code to set.
          * @return This builder for chaining.
          */
-        public Builder setWorldSetCode(
+        public Builder setCode(
             String value) {
           if (value == null) {
     throw new NullPointerException();
   }
   
-          worldSetCode_ = value;
+          code_ = value;
           onChanged();
           return this;
         }
         /**
-         * <code>string WorldSetCode = 1;</code>
+         * <code>string Code = 2;</code>
          * @return This builder for chaining.
          */
-        public Builder clearWorldSetCode() {
+        public Builder clearCode() {
           
-          worldSetCode_ = getDefaultInstance().getWorldSetCode();
+          code_ = getDefaultInstance().getCode();
           onChanged();
           return this;
         }
         /**
-         * <code>string WorldSetCode = 1;</code>
-         * @param value The bytes for worldSetCode to set.
+         * <code>string Code = 2;</code>
+         * @param value The bytes for code to set.
          * @return This builder for chaining.
          */
-        public Builder setWorldSetCodeBytes(
+        public Builder setCodeBytes(
             com.google.protobuf.ByteString value) {
           if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
           
-          worldSetCode_ = value;
+          code_ = value;
           onChanged();
           return this;
         }
@@ -2513,14 +2571,14 @@ public final class SysWorldSetInfoResProto {
         private com.google.protobuf.SingleFieldBuilderV3<
             World, World.Builder, WorldOrBuilder> outdoorBuilder_;
         /**
-         * <code>.classlink.SysWorldSetInfoRes.World Outdoor = 2;</code>
+         * <code>.Classlink.SysWorldSetInfoRes.World Outdoor = 3;</code>
          * @return Whether the outdoor field is set.
          */
         public boolean hasOutdoor() {
           return outdoorBuilder_ != null || outdoor_ != null;
         }
         /**
-         * <code>.classlink.SysWorldSetInfoRes.World Outdoor = 2;</code>
+         * <code>.Classlink.SysWorldSetInfoRes.World Outdoor = 3;</code>
          * @return The outdoor.
          */
         public World getOutdoor() {
@@ -2531,7 +2589,7 @@ public final class SysWorldSetInfoResProto {
           }
         }
         /**
-         * <code>.classlink.SysWorldSetInfoRes.World Outdoor = 2;</code>
+         * <code>.Classlink.SysWorldSetInfoRes.World Outdoor = 3;</code>
          */
         public Builder setOutdoor(World value) {
           if (outdoorBuilder_ == null) {
@@ -2547,7 +2605,7 @@ public final class SysWorldSetInfoResProto {
           return this;
         }
         /**
-         * <code>.classlink.SysWorldSetInfoRes.World Outdoor = 2;</code>
+         * <code>.Classlink.SysWorldSetInfoRes.World Outdoor = 3;</code>
          */
         public Builder setOutdoor(
             World.Builder builderForValue) {
@@ -2561,7 +2619,7 @@ public final class SysWorldSetInfoResProto {
           return this;
         }
         /**
-         * <code>.classlink.SysWorldSetInfoRes.World Outdoor = 2;</code>
+         * <code>.Classlink.SysWorldSetInfoRes.World Outdoor = 3;</code>
          */
         public Builder mergeOutdoor(World value) {
           if (outdoorBuilder_ == null) {
@@ -2579,7 +2637,7 @@ public final class SysWorldSetInfoResProto {
           return this;
         }
         /**
-         * <code>.classlink.SysWorldSetInfoRes.World Outdoor = 2;</code>
+         * <code>.Classlink.SysWorldSetInfoRes.World Outdoor = 3;</code>
          */
         public Builder clearOutdoor() {
           if (outdoorBuilder_ == null) {
@@ -2593,7 +2651,7 @@ public final class SysWorldSetInfoResProto {
           return this;
         }
         /**
-         * <code>.classlink.SysWorldSetInfoRes.World Outdoor = 2;</code>
+         * <code>.Classlink.SysWorldSetInfoRes.World Outdoor = 3;</code>
          */
         public World.Builder getOutdoorBuilder() {
           
@@ -2601,7 +2659,7 @@ public final class SysWorldSetInfoResProto {
           return getOutdoorFieldBuilder().getBuilder();
         }
         /**
-         * <code>.classlink.SysWorldSetInfoRes.World Outdoor = 2;</code>
+         * <code>.Classlink.SysWorldSetInfoRes.World Outdoor = 3;</code>
          */
         public WorldOrBuilder getOutdoorOrBuilder() {
           if (outdoorBuilder_ != null) {
@@ -2612,7 +2670,7 @@ public final class SysWorldSetInfoResProto {
           }
         }
         /**
-         * <code>.classlink.SysWorldSetInfoRes.World Outdoor = 2;</code>
+         * <code>.Classlink.SysWorldSetInfoRes.World Outdoor = 3;</code>
          */
         private com.google.protobuf.SingleFieldBuilderV3<
             World, World.Builder, WorldOrBuilder>
@@ -2632,14 +2690,14 @@ public final class SysWorldSetInfoResProto {
         private com.google.protobuf.SingleFieldBuilderV3<
             World, World.Builder, WorldOrBuilder> indoorBuilder_;
         /**
-         * <code>.classlink.SysWorldSetInfoRes.World Indoor = 3;</code>
+         * <code>.Classlink.SysWorldSetInfoRes.World Indoor = 4;</code>
          * @return Whether the indoor field is set.
          */
         public boolean hasIndoor() {
           return indoorBuilder_ != null || indoor_ != null;
         }
         /**
-         * <code>.classlink.SysWorldSetInfoRes.World Indoor = 3;</code>
+         * <code>.Classlink.SysWorldSetInfoRes.World Indoor = 4;</code>
          * @return The indoor.
          */
         public World getIndoor() {
@@ -2650,7 +2708,7 @@ public final class SysWorldSetInfoResProto {
           }
         }
         /**
-         * <code>.classlink.SysWorldSetInfoRes.World Indoor = 3;</code>
+         * <code>.Classlink.SysWorldSetInfoRes.World Indoor = 4;</code>
          */
         public Builder setIndoor(World value) {
           if (indoorBuilder_ == null) {
@@ -2666,7 +2724,7 @@ public final class SysWorldSetInfoResProto {
           return this;
         }
         /**
-         * <code>.classlink.SysWorldSetInfoRes.World Indoor = 3;</code>
+         * <code>.Classlink.SysWorldSetInfoRes.World Indoor = 4;</code>
          */
         public Builder setIndoor(
             World.Builder builderForValue) {
@@ -2680,7 +2738,7 @@ public final class SysWorldSetInfoResProto {
           return this;
         }
         /**
-         * <code>.classlink.SysWorldSetInfoRes.World Indoor = 3;</code>
+         * <code>.Classlink.SysWorldSetInfoRes.World Indoor = 4;</code>
          */
         public Builder mergeIndoor(World value) {
           if (indoorBuilder_ == null) {
@@ -2698,7 +2756,7 @@ public final class SysWorldSetInfoResProto {
           return this;
         }
         /**
-         * <code>.classlink.SysWorldSetInfoRes.World Indoor = 3;</code>
+         * <code>.Classlink.SysWorldSetInfoRes.World Indoor = 4;</code>
          */
         public Builder clearIndoor() {
           if (indoorBuilder_ == null) {
@@ -2712,7 +2770,7 @@ public final class SysWorldSetInfoResProto {
           return this;
         }
         /**
-         * <code>.classlink.SysWorldSetInfoRes.World Indoor = 3;</code>
+         * <code>.Classlink.SysWorldSetInfoRes.World Indoor = 4;</code>
          */
         public World.Builder getIndoorBuilder() {
           
@@ -2720,7 +2778,7 @@ public final class SysWorldSetInfoResProto {
           return getIndoorFieldBuilder().getBuilder();
         }
         /**
-         * <code>.classlink.SysWorldSetInfoRes.World Indoor = 3;</code>
+         * <code>.Classlink.SysWorldSetInfoRes.World Indoor = 4;</code>
          */
         public WorldOrBuilder getIndoorOrBuilder() {
           if (indoorBuilder_ != null) {
@@ -2731,7 +2789,7 @@ public final class SysWorldSetInfoResProto {
           }
         }
         /**
-         * <code>.classlink.SysWorldSetInfoRes.World Indoor = 3;</code>
+         * <code>.Classlink.SysWorldSetInfoRes.World Indoor = 4;</code>
          */
         private com.google.protobuf.SingleFieldBuilderV3<
             World, World.Builder, WorldOrBuilder>
@@ -2759,10 +2817,10 @@ public final class SysWorldSetInfoResProto {
         }
 
 
-        // @@protoc_insertion_point(builder_scope:classlink.SysWorldSetInfoRes.WorldSet)
+        // @@protoc_insertion_point(builder_scope:Classlink.SysWorldSetInfoRes.WorldSet)
       }
 
-      // @@protoc_insertion_point(class_scope:classlink.SysWorldSetInfoRes.WorldSet)
+      // @@protoc_insertion_point(class_scope:Classlink.SysWorldSetInfoRes.WorldSet)
       private static final WorldSet DEFAULT_INSTANCE;
       static {
         DEFAULT_INSTANCE = new WorldSet();
@@ -2810,82 +2868,59 @@ public final class SysWorldSetInfoResProto {
 
     }
 
-    public static final int WORLDSETS_FIELD_NUMBER = 1;
-    private java.util.List<WorldSet> worldSets_;
+    public static final int WORLDSETLIST_FIELD_NUMBER = 1;
+    private java.util.List<WorldSet> worldSetList_;
     /**
-     * <code>repeated .classlink.SysWorldSetInfoRes.WorldSet WorldSets = 1;</code>
+     * <code>repeated .Classlink.SysWorldSetInfoRes.WorldSet WorldSetList = 1;</code>
      */
     @Override
-    public java.util.List<WorldSet> getWorldSetsList() {
-      return worldSets_;
+    public java.util.List<WorldSet> getWorldSetListList() {
+      return worldSetList_;
     }
     /**
-     * <code>repeated .classlink.SysWorldSetInfoRes.WorldSet WorldSets = 1;</code>
+     * <code>repeated .Classlink.SysWorldSetInfoRes.WorldSet WorldSetList = 1;</code>
      */
     @Override
     public java.util.List<? extends WorldSetOrBuilder>
-        getWorldSetsOrBuilderList() {
-      return worldSets_;
+        getWorldSetListOrBuilderList() {
+      return worldSetList_;
     }
     /**
-     * <code>repeated .classlink.SysWorldSetInfoRes.WorldSet WorldSets = 1;</code>
+     * <code>repeated .Classlink.SysWorldSetInfoRes.WorldSet WorldSetList = 1;</code>
      */
     @Override
-    public int getWorldSetsCount() {
-      return worldSets_.size();
+    public int getWorldSetListCount() {
+      return worldSetList_.size();
     }
     /**
-     * <code>repeated .classlink.SysWorldSetInfoRes.WorldSet WorldSets = 1;</code>
+     * <code>repeated .Classlink.SysWorldSetInfoRes.WorldSet WorldSetList = 1;</code>
      */
     @Override
-    public WorldSet getWorldSets(int index) {
-      return worldSets_.get(index);
+    public WorldSet getWorldSetList(int index) {
+      return worldSetList_.get(index);
     }
     /**
-     * <code>repeated .classlink.SysWorldSetInfoRes.WorldSet WorldSets = 1;</code>
+     * <code>repeated .Classlink.SysWorldSetInfoRes.WorldSet WorldSetList = 1;</code>
      */
     @Override
-    public WorldSetOrBuilder getWorldSetsOrBuilder(
+    public WorldSetOrBuilder getWorldSetListOrBuilder(
         int index) {
-      return worldSets_.get(index);
+      return worldSetList_.get(index);
     }
 
-    public static final int CURWORLDSETCODE_FIELD_NUMBER = 2;
-    private volatile Object curWorldSetCode_;
+    public static final int CURWORLDSETIDX_FIELD_NUMBER = 2;
+    private int curWorldSetIdx_;
     /**
-     * <code>string CurWorldSetCode = 2;</code>
-     * @return The curWorldSetCode.
+     * <pre>
+     * Code 에서 Idx 로 변경
+     * </pre>
+     *
+     * <code>int32 CurWorldSetIdx = 2;</code>
+     * @return The curWorldSetIdx.
      */
     @Override
-    public String getCurWorldSetCode() {
-      Object ref = curWorldSetCode_;
-      if (ref instanceof String) {
-        return (String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        String s = bs.toStringUtf8();
-        curWorldSetCode_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>string CurWorldSetCode = 2;</code>
-     * @return The bytes for curWorldSetCode.
-     */
-    @Override
-    public com.google.protobuf.ByteString
-        getCurWorldSetCodeBytes() {
-      Object ref = curWorldSetCode_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (String) ref);
-        curWorldSetCode_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
+    public int getCurWorldSetIdx() {
+      return curWorldSetIdx_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -2902,11 +2937,11 @@ public final class SysWorldSetInfoResProto {
     @Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      for (int i = 0; i < worldSets_.size(); i++) {
-        output.writeMessage(1, worldSets_.get(i));
+      for (int i = 0; i < worldSetList_.size(); i++) {
+        output.writeMessage(1, worldSetList_.get(i));
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(curWorldSetCode_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, curWorldSetCode_);
+      if (curWorldSetIdx_ != 0) {
+        output.writeInt32(2, curWorldSetIdx_);
       }
       getUnknownFields().writeTo(output);
     }
@@ -2917,12 +2952,13 @@ public final class SysWorldSetInfoResProto {
       if (size != -1) return size;
 
       size = 0;
-      for (int i = 0; i < worldSets_.size(); i++) {
+      for (int i = 0; i < worldSetList_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(1, worldSets_.get(i));
+          .computeMessageSize(1, worldSetList_.get(i));
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(curWorldSetCode_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, curWorldSetCode_);
+      if (curWorldSetIdx_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(2, curWorldSetIdx_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -2939,10 +2975,10 @@ public final class SysWorldSetInfoResProto {
       }
       SysWorldSetInfoRes other = (SysWorldSetInfoRes) obj;
 
-      if (!getWorldSetsList()
-          .equals(other.getWorldSetsList())) return false;
-      if (!getCurWorldSetCode()
-          .equals(other.getCurWorldSetCode())) return false;
+      if (!getWorldSetListList()
+          .equals(other.getWorldSetListList())) return false;
+      if (getCurWorldSetIdx()
+          != other.getCurWorldSetIdx()) return false;
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -2954,12 +2990,12 @@ public final class SysWorldSetInfoResProto {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      if (getWorldSetsCount() > 0) {
-        hash = (37 * hash) + WORLDSETS_FIELD_NUMBER;
-        hash = (53 * hash) + getWorldSetsList().hashCode();
+      if (getWorldSetListCount() > 0) {
+        hash = (37 * hash) + WORLDSETLIST_FIELD_NUMBER;
+        hash = (53 * hash) + getWorldSetListList().hashCode();
       }
-      hash = (37 * hash) + CURWORLDSETCODE_FIELD_NUMBER;
-      hash = (53 * hash) + getCurWorldSetCode().hashCode();
+      hash = (37 * hash) + CURWORLDSETIDX_FIELD_NUMBER;
+      hash = (53 * hash) + getCurWorldSetIdx();
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -3056,21 +3092,21 @@ public final class SysWorldSetInfoResProto {
       return builder;
     }
     /**
-     * Protobuf type {@code classlink.SysWorldSetInfoRes}
+     * Protobuf type {@code Classlink.SysWorldSetInfoRes}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:classlink.SysWorldSetInfoRes)
+        // @@protoc_insertion_point(builder_implements:Classlink.SysWorldSetInfoRes)
         SysWorldSetInfoResOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return SysWorldSetInfoResProto.internal_static_classlink_SysWorldSetInfoRes_descriptor;
+        return SysWorldSetInfoResProto.internal_static_Classlink_SysWorldSetInfoRes_descriptor;
       }
 
       @Override
       protected FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return SysWorldSetInfoResProto.internal_static_classlink_SysWorldSetInfoRes_fieldAccessorTable
+        return SysWorldSetInfoResProto.internal_static_Classlink_SysWorldSetInfoRes_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
                 SysWorldSetInfoRes.class, Builder.class);
       }
@@ -3088,14 +3124,14 @@ public final class SysWorldSetInfoResProto {
       @Override
       public Builder clear() {
         super.clear();
-        if (worldSetsBuilder_ == null) {
-          worldSets_ = java.util.Collections.emptyList();
+        if (worldSetListBuilder_ == null) {
+          worldSetList_ = java.util.Collections.emptyList();
         } else {
-          worldSets_ = null;
-          worldSetsBuilder_.clear();
+          worldSetList_ = null;
+          worldSetListBuilder_.clear();
         }
         bitField0_ = (bitField0_ & ~0x00000001);
-        curWorldSetCode_ = "";
+        curWorldSetIdx_ = 0;
 
         return this;
       }
@@ -3103,7 +3139,7 @@ public final class SysWorldSetInfoResProto {
       @Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return SysWorldSetInfoResProto.internal_static_classlink_SysWorldSetInfoRes_descriptor;
+        return SysWorldSetInfoResProto.internal_static_Classlink_SysWorldSetInfoRes_descriptor;
       }
 
       @Override
@@ -3124,16 +3160,16 @@ public final class SysWorldSetInfoResProto {
       public SysWorldSetInfoRes buildPartial() {
         SysWorldSetInfoRes result = new SysWorldSetInfoRes(this);
         int from_bitField0_ = bitField0_;
-        if (worldSetsBuilder_ == null) {
+        if (worldSetListBuilder_ == null) {
           if (((bitField0_ & 0x00000001) != 0)) {
-            worldSets_ = java.util.Collections.unmodifiableList(worldSets_);
+            worldSetList_ = java.util.Collections.unmodifiableList(worldSetList_);
             bitField0_ = (bitField0_ & ~0x00000001);
           }
-          result.worldSets_ = worldSets_;
+          result.worldSetList_ = worldSetList_;
         } else {
-          result.worldSets_ = worldSetsBuilder_.build();
+          result.worldSetList_ = worldSetListBuilder_.build();
         }
-        result.curWorldSetCode_ = curWorldSetCode_;
+        result.curWorldSetIdx_ = curWorldSetIdx_;
         onBuilt();
         return result;
       }
@@ -3182,35 +3218,34 @@ public final class SysWorldSetInfoResProto {
 
       public Builder mergeFrom(SysWorldSetInfoRes other) {
         if (other == SysWorldSetInfoRes.getDefaultInstance()) return this;
-        if (worldSetsBuilder_ == null) {
-          if (!other.worldSets_.isEmpty()) {
-            if (worldSets_.isEmpty()) {
-              worldSets_ = other.worldSets_;
+        if (worldSetListBuilder_ == null) {
+          if (!other.worldSetList_.isEmpty()) {
+            if (worldSetList_.isEmpty()) {
+              worldSetList_ = other.worldSetList_;
               bitField0_ = (bitField0_ & ~0x00000001);
             } else {
-              ensureWorldSetsIsMutable();
-              worldSets_.addAll(other.worldSets_);
+              ensureWorldSetListIsMutable();
+              worldSetList_.addAll(other.worldSetList_);
             }
             onChanged();
           }
         } else {
-          if (!other.worldSets_.isEmpty()) {
-            if (worldSetsBuilder_.isEmpty()) {
-              worldSetsBuilder_.dispose();
-              worldSetsBuilder_ = null;
-              worldSets_ = other.worldSets_;
+          if (!other.worldSetList_.isEmpty()) {
+            if (worldSetListBuilder_.isEmpty()) {
+              worldSetListBuilder_.dispose();
+              worldSetListBuilder_ = null;
+              worldSetList_ = other.worldSetList_;
               bitField0_ = (bitField0_ & ~0x00000001);
-              worldSetsBuilder_ = 
+              worldSetListBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                   getWorldSetsFieldBuilder() : null;
+                   getWorldSetListFieldBuilder() : null;
             } else {
-              worldSetsBuilder_.addAllMessages(other.worldSets_);
+              worldSetListBuilder_.addAllMessages(other.worldSetList_);
             }
           }
         }
-        if (!other.getCurWorldSetCode().isEmpty()) {
-          curWorldSetCode_ = other.curWorldSetCode_;
-          onChanged();
+        if (other.getCurWorldSetIdx() != 0) {
+          setCurWorldSetIdx(other.getCurWorldSetIdx());
         }
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
@@ -3243,19 +3278,19 @@ public final class SysWorldSetInfoResProto {
                     input.readMessage(
                         WorldSet.parser(),
                         extensionRegistry);
-                if (worldSetsBuilder_ == null) {
-                  ensureWorldSetsIsMutable();
-                  worldSets_.add(m);
+                if (worldSetListBuilder_ == null) {
+                  ensureWorldSetListIsMutable();
+                  worldSetList_.add(m);
                 } else {
-                  worldSetsBuilder_.addMessage(m);
+                  worldSetListBuilder_.addMessage(m);
                 }
                 break;
               } // case 10
-              case 18: {
-                curWorldSetCode_ = input.readStringRequireUtf8();
+              case 16: {
+                curWorldSetIdx_ = input.readInt32();
 
                 break;
-              } // case 18
+              } // case 16
               default: {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                   done = true; // was an endgroup tag
@@ -3273,318 +3308,285 @@ public final class SysWorldSetInfoResProto {
       }
       private int bitField0_;
 
-      private java.util.List<WorldSet> worldSets_ =
+      private java.util.List<WorldSet> worldSetList_ =
         java.util.Collections.emptyList();
-      private void ensureWorldSetsIsMutable() {
+      private void ensureWorldSetListIsMutable() {
         if (!((bitField0_ & 0x00000001) != 0)) {
-          worldSets_ = new java.util.ArrayList<WorldSet>(worldSets_);
+          worldSetList_ = new java.util.ArrayList<WorldSet>(worldSetList_);
           bitField0_ |= 0x00000001;
          }
       }
 
       private com.google.protobuf.RepeatedFieldBuilderV3<
-          WorldSet, WorldSet.Builder, WorldSetOrBuilder> worldSetsBuilder_;
+          WorldSet, WorldSet.Builder, WorldSetOrBuilder> worldSetListBuilder_;
 
       /**
-       * <code>repeated .classlink.SysWorldSetInfoRes.WorldSet WorldSets = 1;</code>
+       * <code>repeated .Classlink.SysWorldSetInfoRes.WorldSet WorldSetList = 1;</code>
        */
-      public java.util.List<WorldSet> getWorldSetsList() {
-        if (worldSetsBuilder_ == null) {
-          return java.util.Collections.unmodifiableList(worldSets_);
+      public java.util.List<WorldSet> getWorldSetListList() {
+        if (worldSetListBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(worldSetList_);
         } else {
-          return worldSetsBuilder_.getMessageList();
+          return worldSetListBuilder_.getMessageList();
         }
       }
       /**
-       * <code>repeated .classlink.SysWorldSetInfoRes.WorldSet WorldSets = 1;</code>
+       * <code>repeated .Classlink.SysWorldSetInfoRes.WorldSet WorldSetList = 1;</code>
        */
-      public int getWorldSetsCount() {
-        if (worldSetsBuilder_ == null) {
-          return worldSets_.size();
+      public int getWorldSetListCount() {
+        if (worldSetListBuilder_ == null) {
+          return worldSetList_.size();
         } else {
-          return worldSetsBuilder_.getCount();
+          return worldSetListBuilder_.getCount();
         }
       }
       /**
-       * <code>repeated .classlink.SysWorldSetInfoRes.WorldSet WorldSets = 1;</code>
+       * <code>repeated .Classlink.SysWorldSetInfoRes.WorldSet WorldSetList = 1;</code>
        */
-      public WorldSet getWorldSets(int index) {
-        if (worldSetsBuilder_ == null) {
-          return worldSets_.get(index);
+      public WorldSet getWorldSetList(int index) {
+        if (worldSetListBuilder_ == null) {
+          return worldSetList_.get(index);
         } else {
-          return worldSetsBuilder_.getMessage(index);
+          return worldSetListBuilder_.getMessage(index);
         }
       }
       /**
-       * <code>repeated .classlink.SysWorldSetInfoRes.WorldSet WorldSets = 1;</code>
+       * <code>repeated .Classlink.SysWorldSetInfoRes.WorldSet WorldSetList = 1;</code>
        */
-      public Builder setWorldSets(
+      public Builder setWorldSetList(
           int index, WorldSet value) {
-        if (worldSetsBuilder_ == null) {
+        if (worldSetListBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
           }
-          ensureWorldSetsIsMutable();
-          worldSets_.set(index, value);
+          ensureWorldSetListIsMutable();
+          worldSetList_.set(index, value);
           onChanged();
         } else {
-          worldSetsBuilder_.setMessage(index, value);
+          worldSetListBuilder_.setMessage(index, value);
         }
         return this;
       }
       /**
-       * <code>repeated .classlink.SysWorldSetInfoRes.WorldSet WorldSets = 1;</code>
+       * <code>repeated .Classlink.SysWorldSetInfoRes.WorldSet WorldSetList = 1;</code>
        */
-      public Builder setWorldSets(
+      public Builder setWorldSetList(
           int index, WorldSet.Builder builderForValue) {
-        if (worldSetsBuilder_ == null) {
-          ensureWorldSetsIsMutable();
-          worldSets_.set(index, builderForValue.build());
+        if (worldSetListBuilder_ == null) {
+          ensureWorldSetListIsMutable();
+          worldSetList_.set(index, builderForValue.build());
           onChanged();
         } else {
-          worldSetsBuilder_.setMessage(index, builderForValue.build());
+          worldSetListBuilder_.setMessage(index, builderForValue.build());
         }
         return this;
       }
       /**
-       * <code>repeated .classlink.SysWorldSetInfoRes.WorldSet WorldSets = 1;</code>
+       * <code>repeated .Classlink.SysWorldSetInfoRes.WorldSet WorldSetList = 1;</code>
        */
-      public Builder addWorldSets(WorldSet value) {
-        if (worldSetsBuilder_ == null) {
+      public Builder addWorldSetList(WorldSet value) {
+        if (worldSetListBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
           }
-          ensureWorldSetsIsMutable();
-          worldSets_.add(value);
+          ensureWorldSetListIsMutable();
+          worldSetList_.add(value);
           onChanged();
         } else {
-          worldSetsBuilder_.addMessage(value);
+          worldSetListBuilder_.addMessage(value);
         }
         return this;
       }
       /**
-       * <code>repeated .classlink.SysWorldSetInfoRes.WorldSet WorldSets = 1;</code>
+       * <code>repeated .Classlink.SysWorldSetInfoRes.WorldSet WorldSetList = 1;</code>
        */
-      public Builder addWorldSets(
+      public Builder addWorldSetList(
           int index, WorldSet value) {
-        if (worldSetsBuilder_ == null) {
+        if (worldSetListBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
           }
-          ensureWorldSetsIsMutable();
-          worldSets_.add(index, value);
+          ensureWorldSetListIsMutable();
+          worldSetList_.add(index, value);
           onChanged();
         } else {
-          worldSetsBuilder_.addMessage(index, value);
+          worldSetListBuilder_.addMessage(index, value);
         }
         return this;
       }
       /**
-       * <code>repeated .classlink.SysWorldSetInfoRes.WorldSet WorldSets = 1;</code>
+       * <code>repeated .Classlink.SysWorldSetInfoRes.WorldSet WorldSetList = 1;</code>
        */
-      public Builder addWorldSets(
+      public Builder addWorldSetList(
           WorldSet.Builder builderForValue) {
-        if (worldSetsBuilder_ == null) {
-          ensureWorldSetsIsMutable();
-          worldSets_.add(builderForValue.build());
+        if (worldSetListBuilder_ == null) {
+          ensureWorldSetListIsMutable();
+          worldSetList_.add(builderForValue.build());
           onChanged();
         } else {
-          worldSetsBuilder_.addMessage(builderForValue.build());
+          worldSetListBuilder_.addMessage(builderForValue.build());
         }
         return this;
       }
       /**
-       * <code>repeated .classlink.SysWorldSetInfoRes.WorldSet WorldSets = 1;</code>
+       * <code>repeated .Classlink.SysWorldSetInfoRes.WorldSet WorldSetList = 1;</code>
        */
-      public Builder addWorldSets(
+      public Builder addWorldSetList(
           int index, WorldSet.Builder builderForValue) {
-        if (worldSetsBuilder_ == null) {
-          ensureWorldSetsIsMutable();
-          worldSets_.add(index, builderForValue.build());
+        if (worldSetListBuilder_ == null) {
+          ensureWorldSetListIsMutable();
+          worldSetList_.add(index, builderForValue.build());
           onChanged();
         } else {
-          worldSetsBuilder_.addMessage(index, builderForValue.build());
+          worldSetListBuilder_.addMessage(index, builderForValue.build());
         }
         return this;
       }
       /**
-       * <code>repeated .classlink.SysWorldSetInfoRes.WorldSet WorldSets = 1;</code>
+       * <code>repeated .Classlink.SysWorldSetInfoRes.WorldSet WorldSetList = 1;</code>
        */
-      public Builder addAllWorldSets(
+      public Builder addAllWorldSetList(
           Iterable<? extends WorldSet> values) {
-        if (worldSetsBuilder_ == null) {
-          ensureWorldSetsIsMutable();
+        if (worldSetListBuilder_ == null) {
+          ensureWorldSetListIsMutable();
           com.google.protobuf.AbstractMessageLite.Builder.addAll(
-              values, worldSets_);
+              values, worldSetList_);
           onChanged();
         } else {
-          worldSetsBuilder_.addAllMessages(values);
+          worldSetListBuilder_.addAllMessages(values);
         }
         return this;
       }
       /**
-       * <code>repeated .classlink.SysWorldSetInfoRes.WorldSet WorldSets = 1;</code>
+       * <code>repeated .Classlink.SysWorldSetInfoRes.WorldSet WorldSetList = 1;</code>
        */
-      public Builder clearWorldSets() {
-        if (worldSetsBuilder_ == null) {
-          worldSets_ = java.util.Collections.emptyList();
+      public Builder clearWorldSetList() {
+        if (worldSetListBuilder_ == null) {
+          worldSetList_ = java.util.Collections.emptyList();
           bitField0_ = (bitField0_ & ~0x00000001);
           onChanged();
         } else {
-          worldSetsBuilder_.clear();
+          worldSetListBuilder_.clear();
         }
         return this;
       }
       /**
-       * <code>repeated .classlink.SysWorldSetInfoRes.WorldSet WorldSets = 1;</code>
+       * <code>repeated .Classlink.SysWorldSetInfoRes.WorldSet WorldSetList = 1;</code>
        */
-      public Builder removeWorldSets(int index) {
-        if (worldSetsBuilder_ == null) {
-          ensureWorldSetsIsMutable();
-          worldSets_.remove(index);
+      public Builder removeWorldSetList(int index) {
+        if (worldSetListBuilder_ == null) {
+          ensureWorldSetListIsMutable();
+          worldSetList_.remove(index);
           onChanged();
         } else {
-          worldSetsBuilder_.remove(index);
+          worldSetListBuilder_.remove(index);
         }
         return this;
       }
       /**
-       * <code>repeated .classlink.SysWorldSetInfoRes.WorldSet WorldSets = 1;</code>
+       * <code>repeated .Classlink.SysWorldSetInfoRes.WorldSet WorldSetList = 1;</code>
        */
-      public WorldSet.Builder getWorldSetsBuilder(
+      public WorldSet.Builder getWorldSetListBuilder(
           int index) {
-        return getWorldSetsFieldBuilder().getBuilder(index);
+        return getWorldSetListFieldBuilder().getBuilder(index);
       }
       /**
-       * <code>repeated .classlink.SysWorldSetInfoRes.WorldSet WorldSets = 1;</code>
+       * <code>repeated .Classlink.SysWorldSetInfoRes.WorldSet WorldSetList = 1;</code>
        */
-      public WorldSetOrBuilder getWorldSetsOrBuilder(
+      public WorldSetOrBuilder getWorldSetListOrBuilder(
           int index) {
-        if (worldSetsBuilder_ == null) {
-          return worldSets_.get(index);  } else {
-          return worldSetsBuilder_.getMessageOrBuilder(index);
+        if (worldSetListBuilder_ == null) {
+          return worldSetList_.get(index);  } else {
+          return worldSetListBuilder_.getMessageOrBuilder(index);
         }
       }
       /**
-       * <code>repeated .classlink.SysWorldSetInfoRes.WorldSet WorldSets = 1;</code>
+       * <code>repeated .Classlink.SysWorldSetInfoRes.WorldSet WorldSetList = 1;</code>
        */
       public java.util.List<? extends WorldSetOrBuilder>
-           getWorldSetsOrBuilderList() {
-        if (worldSetsBuilder_ != null) {
-          return worldSetsBuilder_.getMessageOrBuilderList();
+           getWorldSetListOrBuilderList() {
+        if (worldSetListBuilder_ != null) {
+          return worldSetListBuilder_.getMessageOrBuilderList();
         } else {
-          return java.util.Collections.unmodifiableList(worldSets_);
+          return java.util.Collections.unmodifiableList(worldSetList_);
         }
       }
       /**
-       * <code>repeated .classlink.SysWorldSetInfoRes.WorldSet WorldSets = 1;</code>
+       * <code>repeated .Classlink.SysWorldSetInfoRes.WorldSet WorldSetList = 1;</code>
        */
-      public WorldSet.Builder addWorldSetsBuilder() {
-        return getWorldSetsFieldBuilder().addBuilder(
+      public WorldSet.Builder addWorldSetListBuilder() {
+        return getWorldSetListFieldBuilder().addBuilder(
             WorldSet.getDefaultInstance());
       }
       /**
-       * <code>repeated .classlink.SysWorldSetInfoRes.WorldSet WorldSets = 1;</code>
+       * <code>repeated .Classlink.SysWorldSetInfoRes.WorldSet WorldSetList = 1;</code>
        */
-      public WorldSet.Builder addWorldSetsBuilder(
+      public WorldSet.Builder addWorldSetListBuilder(
           int index) {
-        return getWorldSetsFieldBuilder().addBuilder(
+        return getWorldSetListFieldBuilder().addBuilder(
             index, WorldSet.getDefaultInstance());
       }
       /**
-       * <code>repeated .classlink.SysWorldSetInfoRes.WorldSet WorldSets = 1;</code>
+       * <code>repeated .Classlink.SysWorldSetInfoRes.WorldSet WorldSetList = 1;</code>
        */
       public java.util.List<WorldSet.Builder>
-           getWorldSetsBuilderList() {
-        return getWorldSetsFieldBuilder().getBuilderList();
+           getWorldSetListBuilderList() {
+        return getWorldSetListFieldBuilder().getBuilderList();
       }
       private com.google.protobuf.RepeatedFieldBuilderV3<
           WorldSet, WorldSet.Builder, WorldSetOrBuilder>
-          getWorldSetsFieldBuilder() {
-        if (worldSetsBuilder_ == null) {
-          worldSetsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+          getWorldSetListFieldBuilder() {
+        if (worldSetListBuilder_ == null) {
+          worldSetListBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               WorldSet, WorldSet.Builder, WorldSetOrBuilder>(
-                  worldSets_,
+                  worldSetList_,
                   ((bitField0_ & 0x00000001) != 0),
                   getParentForChildren(),
                   isClean());
-          worldSets_ = null;
+          worldSetList_ = null;
         }
-        return worldSetsBuilder_;
+        return worldSetListBuilder_;
       }
 
-      private Object curWorldSetCode_ = "";
+      private int curWorldSetIdx_ ;
       /**
-       * <code>string CurWorldSetCode = 2;</code>
-       * @return The curWorldSetCode.
+       * <pre>
+       * Code 에서 Idx 로 변경
+       * </pre>
+       *
+       * <code>int32 CurWorldSetIdx = 2;</code>
+       * @return The curWorldSetIdx.
        */
-      public String getCurWorldSetCode() {
-        Object ref = curWorldSetCode_;
-        if (!(ref instanceof String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          String s = bs.toStringUtf8();
-          curWorldSetCode_ = s;
-          return s;
-        } else {
-          return (String) ref;
-        }
+      @Override
+      public int getCurWorldSetIdx() {
+        return curWorldSetIdx_;
       }
       /**
-       * <code>string CurWorldSetCode = 2;</code>
-       * @return The bytes for curWorldSetCode.
-       */
-      public com.google.protobuf.ByteString
-          getCurWorldSetCodeBytes() {
-        Object ref = curWorldSetCode_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (String) ref);
-          curWorldSetCode_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>string CurWorldSetCode = 2;</code>
-       * @param value The curWorldSetCode to set.
+       * <pre>
+       * Code 에서 Idx 로 변경
+       * </pre>
+       *
+       * <code>int32 CurWorldSetIdx = 2;</code>
+       * @param value The curWorldSetIdx to set.
        * @return This builder for chaining.
        */
-      public Builder setCurWorldSetCode(
-          String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        curWorldSetCode_ = value;
+      public Builder setCurWorldSetIdx(int value) {
+        
+        curWorldSetIdx_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>string CurWorldSetCode = 2;</code>
+       * <pre>
+       * Code 에서 Idx 로 변경
+       * </pre>
+       *
+       * <code>int32 CurWorldSetIdx = 2;</code>
        * @return This builder for chaining.
        */
-      public Builder clearCurWorldSetCode() {
+      public Builder clearCurWorldSetIdx() {
         
-        curWorldSetCode_ = getDefaultInstance().getCurWorldSetCode();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string CurWorldSetCode = 2;</code>
-       * @param value The bytes for curWorldSetCode to set.
-       * @return This builder for chaining.
-       */
-      public Builder setCurWorldSetCodeBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        curWorldSetCode_ = value;
+        curWorldSetIdx_ = 0;
         onChanged();
         return this;
       }
@@ -3601,10 +3603,10 @@ public final class SysWorldSetInfoResProto {
       }
 
 
-      // @@protoc_insertion_point(builder_scope:classlink.SysWorldSetInfoRes)
+      // @@protoc_insertion_point(builder_scope:Classlink.SysWorldSetInfoRes)
     }
 
-    // @@protoc_insertion_point(class_scope:classlink.SysWorldSetInfoRes)
+    // @@protoc_insertion_point(class_scope:Classlink.SysWorldSetInfoRes)
     private static final SysWorldSetInfoRes DEFAULT_INSTANCE;
     static {
       DEFAULT_INSTANCE = new SysWorldSetInfoRes();
@@ -3653,25 +3655,25 @@ public final class SysWorldSetInfoResProto {
   }
 
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_classlink_SysWorldSetInfoRes_descriptor;
+    internal_static_Classlink_SysWorldSetInfoRes_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_classlink_SysWorldSetInfoRes_fieldAccessorTable;
+      internal_static_Classlink_SysWorldSetInfoRes_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_classlink_SysWorldSetInfoRes_WorldSlot_descriptor;
+    internal_static_Classlink_SysWorldSetInfoRes_WorldSlot_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_classlink_SysWorldSetInfoRes_WorldSlot_fieldAccessorTable;
+      internal_static_Classlink_SysWorldSetInfoRes_WorldSlot_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_classlink_SysWorldSetInfoRes_World_descriptor;
+    internal_static_Classlink_SysWorldSetInfoRes_World_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_classlink_SysWorldSetInfoRes_World_fieldAccessorTable;
+      internal_static_Classlink_SysWorldSetInfoRes_World_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_classlink_SysWorldSetInfoRes_WorldSet_descriptor;
+    internal_static_Classlink_SysWorldSetInfoRes_WorldSet_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_classlink_SysWorldSetInfoRes_WorldSet_fieldAccessorTable;
+      internal_static_Classlink_SysWorldSetInfoRes_WorldSet_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -3681,49 +3683,49 @@ public final class SysWorldSetInfoResProto {
       descriptor;
   static {
     String[] descriptorData = {
-      "\n\030SysWorldSetInfoRes.proto\022\tclasslink\"\245\003" +
-      "\n\022SysWorldSetInfoRes\0229\n\tWorldSets\030\001 \003(\0132" +
-      "&.classlink.SysWorldSetInfoRes.WorldSet\022" +
-      "\027\n\017CurWorldSetCode\030\002 \001(\t\032A\n\tWorldSlot\022\025\n" +
-      "\rWorldSlotCode\030\001 \001(\t\022\035\n\025ConnectedWorldSe" +
-      "tCode\030\002 \001(\t\032j\n\005World\022\021\n\tWorldCode\030\001 \001(\t\022" +
-      "\021\n\tWorldType\030\002 \001(\t\022;\n\nWorldSlots\030\003 \003(\0132\'" +
-      ".classlink.SysWorldSetInfoRes.WorldSlot\032" +
-      "\213\001\n\010WorldSet\022\024\n\014WorldSetCode\030\001 \001(\t\0224\n\007Ou" +
-      "tdoor\030\002 \001(\0132#.classlink.SysWorldSetInfoR" +
-      "es.World\0223\n\006Indoor\030\003 \001(\0132#.classlink.Sys" +
-      "WorldSetInfoRes.WorldBN\n3com.classlink.w" +
-      "ebsocket.api.system.domain.dto.protoB\027Sy" +
-      "sWorldSetInfoResProtob\006proto3"
+      "\n\030SysWorldSetInfoRes.proto\022\tClasslink\"\255\003" +
+      "\n\022SysWorldSetInfoRes\022<\n\014WorldSetList\030\001 \003" +
+      "(\0132&.Classlink.SysWorldSetInfoRes.WorldS" +
+      "et\022\026\n\016CurWorldSetIdx\030\002 \001(\005\0327\n\tWorldSlot\022" +
+      "\014\n\004Code\030\001 \001(\t\022\034\n\024ConnectedWorldSetIdx\030\002 " +
+      "\001(\005\032u\n\005World\022\013\n\003Idx\030\001 \001(\005\022\014\n\004Code\030\002 \001(\t\022" +
+      "\021\n\tWorldType\030\003 \001(\t\022>\n\rWorldSlotList\030\004 \003(" +
+      "\0132\'.Classlink.SysWorldSetInfoRes.WorldSl" +
+      "ot\032\220\001\n\010WorldSet\022\013\n\003Idx\030\001 \001(\005\022\014\n\004Code\030\002 \001" +
+      "(\t\0224\n\007Outdoor\030\003 \001(\0132#.Classlink.SysWorld" +
+      "SetInfoRes.World\0223\n\006Indoor\030\004 \001(\0132#.Class" +
+      "link.SysWorldSetInfoRes.WorldBN\n3com.cla" +
+      "sslink.websocket.api.system.domain.dto.p" +
+      "rotoB\027SysWorldSetInfoResProtob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
         });
-    internal_static_classlink_SysWorldSetInfoRes_descriptor =
+    internal_static_Classlink_SysWorldSetInfoRes_descriptor =
       getDescriptor().getMessageTypes().get(0);
-    internal_static_classlink_SysWorldSetInfoRes_fieldAccessorTable = new
+    internal_static_Classlink_SysWorldSetInfoRes_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_classlink_SysWorldSetInfoRes_descriptor,
-        new String[] { "WorldSets", "CurWorldSetCode", });
-    internal_static_classlink_SysWorldSetInfoRes_WorldSlot_descriptor =
-      internal_static_classlink_SysWorldSetInfoRes_descriptor.getNestedTypes().get(0);
-    internal_static_classlink_SysWorldSetInfoRes_WorldSlot_fieldAccessorTable = new
+        internal_static_Classlink_SysWorldSetInfoRes_descriptor,
+        new String[] { "WorldSetList", "CurWorldSetIdx", });
+    internal_static_Classlink_SysWorldSetInfoRes_WorldSlot_descriptor =
+      internal_static_Classlink_SysWorldSetInfoRes_descriptor.getNestedTypes().get(0);
+    internal_static_Classlink_SysWorldSetInfoRes_WorldSlot_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_classlink_SysWorldSetInfoRes_WorldSlot_descriptor,
-        new String[] { "WorldSlotCode", "ConnectedWorldSetCode", });
-    internal_static_classlink_SysWorldSetInfoRes_World_descriptor =
-      internal_static_classlink_SysWorldSetInfoRes_descriptor.getNestedTypes().get(1);
-    internal_static_classlink_SysWorldSetInfoRes_World_fieldAccessorTable = new
+        internal_static_Classlink_SysWorldSetInfoRes_WorldSlot_descriptor,
+        new String[] { "Code", "ConnectedWorldSetIdx", });
+    internal_static_Classlink_SysWorldSetInfoRes_World_descriptor =
+      internal_static_Classlink_SysWorldSetInfoRes_descriptor.getNestedTypes().get(1);
+    internal_static_Classlink_SysWorldSetInfoRes_World_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_classlink_SysWorldSetInfoRes_World_descriptor,
-        new String[] { "WorldCode", "WorldType", "WorldSlots", });
-    internal_static_classlink_SysWorldSetInfoRes_WorldSet_descriptor =
-      internal_static_classlink_SysWorldSetInfoRes_descriptor.getNestedTypes().get(2);
-    internal_static_classlink_SysWorldSetInfoRes_WorldSet_fieldAccessorTable = new
+        internal_static_Classlink_SysWorldSetInfoRes_World_descriptor,
+        new String[] { "Idx", "Code", "WorldType", "WorldSlotList", });
+    internal_static_Classlink_SysWorldSetInfoRes_WorldSet_descriptor =
+      internal_static_Classlink_SysWorldSetInfoRes_descriptor.getNestedTypes().get(2);
+    internal_static_Classlink_SysWorldSetInfoRes_WorldSet_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_classlink_SysWorldSetInfoRes_WorldSet_descriptor,
-        new String[] { "WorldSetCode", "Outdoor", "Indoor", });
+        internal_static_Classlink_SysWorldSetInfoRes_WorldSet_descriptor,
+        new String[] { "Idx", "Code", "Outdoor", "Indoor", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

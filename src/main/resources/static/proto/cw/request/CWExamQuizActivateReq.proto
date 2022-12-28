@@ -1,0 +1,12 @@
+syntax = "proto3"; 
+package Classlink; 
+option java_package = "com.classlink.websocket.api.cw.domain.param.proto"; 
+option java_outer_classname = "CWExamQuizActivateReqProto"; 
+
+message CWExamQuizActivateReq{
+string DataTableType =1;
+int32 QuizSetIdx =2;
+int32 QuestionCount =3;
+int32 LimitTime =4;
+bool IsShowCorrectAnswer =5;
+}

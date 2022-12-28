@@ -1,0 +1,20 @@
+syntax = "proto3"; 
+package Classlink;  
+option java_package = "com.classlink.websocket.api.cw.domain.dto.proto"; 
+option java_outer_classname = "CWExamNoteExamActiveResProto"; 
+
+message CWExamNoteExamActiveRes{
+message QuizExample{
+   string Example =1;
+   bool  IsCorrect =2;
+}
+message QuizInfo
+{
+   int32  Idx =1;
+   int32  QuestionType =2;
+   string Question =3;
+   repeated QuizExample ExampleList =4;
+}
+
+repeated QuizInfo QuizInfoList =1;
+}

@@ -1,0 +1,11 @@
+syntax = "proto3"; 
+package Classlink; 
+option java_package = "com.classlink.websocket.api.cw.domain.param.proto"; 
+option java_outer_classname = "CWQuestionBoxCreateReqProto"; 
+
+message CWQuestionBoxCreateReq{
+string Title = 1;
+string Question = 2;
+int32 TeacherIdx = 3;
+//repeated FileMetaInfo FileMetaInfoList = 4;
+}

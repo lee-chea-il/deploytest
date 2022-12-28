@@ -1,0 +1,10 @@
+syntax = "proto3"; 
+package Classlink; 
+option java_package = "com.classlink.websocket.api.cw.domain.param.proto"; 
+option java_outer_classname = "CWCurriculumListReqProto"; 
+
+message CWCurriculumListReq{
+
+int32 LecBidx = 1;
+
+}

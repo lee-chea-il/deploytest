@@ -1,0 +1,17 @@
+syntax = "proto3"; 
+package Classlink;  
+option java_package = "com.classlink.websocket.api.cw.domain.dto.proto"; 
+option java_outer_classname = "CWQuestionBoxListResProto"; 
+
+message CWQuestionBoxListRes{
+message QuestionInfo {
+  int32 QuestionIdx = 1;
+  string Title = 2;
+  string TeacherName = 3;
+  string RegistDate = 4;
+  int32 Status = 5;
+}
+
+
+repeated QuestionInfo QuestionInfoList = 1;
+}

@@ -1,8 +1,0 @@
-syntax = "proto3"; 
-package Classlink;  
-option java_package = "com.classlink.websocket.api.lobby.domain.dto.proto"; 
-option java_outer_classname = "LobbyCalenderUrlResProto"; 
-
-message LobbyCalenderUrlRes{
-string ReportUrl =1; // URL관련 칼럼현재 없음
-}

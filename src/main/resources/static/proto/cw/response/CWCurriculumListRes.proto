@@ -1,0 +1,21 @@
+syntax = "proto3"; 
+package Classlink;  
+option java_package = "com.classlink.websocket.api.cw.domain.dto.proto"; 
+option java_outer_classname = "CWCurriculumListResProto"; 
+
+message CWCurriculumListRes{
+message CurriculumInfo
+{
+   int32 Idx = 1;
+   string Name = 2;
+   int32 TeacherIdx = 3;
+   string TeacherName = 4;
+   string ClassName = 5;
+}
+
+
+int32 SelectCurriculumIdx = 1;
+repeated CurriculumInfo CommCurriculumList =2;
+repeated CurriculumInfo MyCurriculumList = 3;
+repeated CurriculumInfo CurrentClassCurriculumList = 4;
+}

@@ -1,0 +1,15 @@
+syntax = "proto3"; 
+package Classlink; 
+option java_package = "com.classlink.websocket.api.cw.domain.param.proto"; 
+option java_outer_classname = "QuizAnswerDoneReqProto"; 
+
+message QuizAnswerDoneReq{
+message QuizAnswerInfo
+{
+   int32  QuizInfoIdx =1;
+   int32  NumberAnswer =2;
+   string SubjectiveAnswer =3;
+}
+
+repeated QuizAnswerInfo  QuizAnswerList =1;
+}

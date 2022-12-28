@@ -1,0 +1,49 @@
+syntax = "proto3"; 
+package Classlink;  
+option java_package = "com.classlink.websocket.api.cw.domain.dto.proto"; 
+option java_outer_classname = "CWInfoBasicInfoResProto"; 
+
+message CWInfoBasicInfoRes{
+message StudentInfo
+{
+   int32 MemIdx = 1;
+   string Name = 2;
+   string NickName = 3;
+   string ImgUrl = 4;
+   bool IsOnline = 5;
+   bool IsMute = 6;
+   bool IsHold = 7;
+   bool IsPresentationEnable = 8;
+}
+
+message TeacherInfo
+{
+   int32 MemIdx = 1;
+   string Name = 2;
+   string NickName = 3;
+   string ImgUrl = 4;
+   bool IsSubteacher = 5;
+   bool IsOnline = 6;
+}
+
+message GroupInfo{
+  int32 GroupIdx = 1;
+  string GroupName = 2;
+  bool IsPresentationEnable = 3;
+  repeated int32 StudentIdxList = 4;
+}
+
+message ClassInfo
+{
+   int32 Idx = 1;
+   string Name = 2;
+   repeated StudentInfo StudentInfoList= 3;
+   repeated TeacherInfo TeacherInfoList = 4;
+   repeated GroupInfo GroupInfoList = 5;
+   int32 CurriculumIdx = 6;
+   string CurriculumName = 7;
+   bool IsMute = 8;
+   bool IsHold = 9;
+}
+ClassInfo ClassInfoData = 1;
+}
