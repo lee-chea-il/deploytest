@@ -561,8 +561,8 @@
 
                         const IdentityAvatarChangeReqObj = {
                             InsCode: 'InsCode',
-                            IdentityType: 'IdentityType',
-                            AvatarId: 'AvatarId',
+                            IdentityType: 'S',
+                            AvatarId: 1,
                         };
 
                         Data = setDataToSend(root, IdentityAvatarChangeReqName, IdentityAvatarChangeReqObj);
