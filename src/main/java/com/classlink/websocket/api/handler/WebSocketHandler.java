@@ -1,9 +1,14 @@
 package com.classlink.websocket.api.handler;
 
+import java.lang.reflect.Array;
 import java.lang.reflect.Method;
+import java.util.Arrays;
+import java.util.List;
 import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
 
+import com.classlink.websocket.api.common.NoJwtOpCode;
+import lombok.RequiredArgsConstructor;
 import org.reflections.Reflections;
 import org.reflections.util.ConfigurationBuilder;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,15 +30,25 @@ import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
 @Component
+@RequiredArgsConstructor
 public class WebSocketHandler extends TextWebSocketHandler {
+
+	private final JwtTokenParser jwtTokenParser;
+
+	private final JwtExceptionResponseController jwtExceptionResponseController;
 
 	private static final ConcurrentHashMap<String, WebSocketSession> CLIENTS = new ConcurrentHashMap<String, WebSocketSession>();
 
-	@Autowired
-	JwtTokenParser jwtTokenParser;
-	
-	@Autowired
-	JwtExceptionResponseController jwtExceptionResponseController;
+	// Reflections 클래스는 원하는 클래스를 찾기 위해 사용
+	// 파라미터값은 클래스를 찾을때 출발 패키지
+	// "" -> classpath 모든 패키지 검색
+	private static final Reflections reflector = new Reflections(
+			new ConfigurationBuilder().forPackages("com.classlink.websocket.api.controller"));
+
+	// getTypesAnnotatedWith():
+	// 파라미터값으로 넘긴 어노테이션이 붙은 클래스를 찾는다.
+	// 반환값: Controller 어노테이션이 선언된 클래스 목록
+	private static final Set<Class<?>> list = reflector.getTypesAnnotatedWith(Controller.class);
 
 	@Override
 	public void afterConnectionEstablished(WebSocketSession session) throws Exception {
@@ -48,20 +63,11 @@ public class WebSocketHandler extends TextWebSocketHandler {
 	@Override
 	protected void handleBinaryMessage(WebSocketSession session, BinaryMessage message) {
 		log.info("start? =" + 0);
-		// Reflections 클래스는 원하는 클래스를 찾기 위해 사용
-		// 파라미터값은 클래스를 찾을때 출발 패키지
-		// "" -> classpath 모든 패키지 검색
-		Reflections reflector = new Reflections(
-				new ConfigurationBuilder().forPackages("com.classlink.websocket.api.controller"));
-
-		// getTypesAnnotatedWith():
-		// 파라미터값으로 넘긴 어노테이션이 붙은 클래스를 찾는다.
-		// 반환값: Controller 어노테이션이 선언된 클래스 목록
-		Set<Class<?>> list = reflector.getTypesAnnotatedWith(Controller.class);
 
 		boolean stop = false;
 		int opCode = 0;
 		String userId = null;
+
 		try {
 			RequestPacket deserializedParam = RequestPacket.newBuilder().mergeFrom(message.getPayload().array())
 					.build();
@@ -70,14 +76,20 @@ public class WebSocketHandler extends TextWebSocketHandler {
 			log.info(String.valueOf(deserializedParam.getInstanceId()));
 			log.info(deserializedParam.getData().toString());
 
-			// 토큰 유효성 검사
-			if (jwtTokenParser.checkClaim(deserializedParam.getAccessToken())) {
-				// 토큰이 유효할때 호출할 opCode 및 userId 처리
-				opCode = deserializedParam.getOpCode();
-				userId = jwtTokenParser.getUserId(deserializedParam.getAccessToken());
-			} else {
-				// 토큰이 유효하지 않을때 호출할 opCode 처리 및 message 전송
-				jwtExceptionResponseController.tokenException(session, deserializedParam);
+			opCode = deserializedParam.getOpCode();
+
+			// 현재 전달받은 opCode가 Jwt토큰을 검사할 필요가없는지 확인
+			if(!NoJwtOpCode.codeValues.contains(opCode)){
+				log.info("토큰유효성검사 실행!!");
+				// 토큰 유효성 검사
+				if (jwtTokenParser.checkClaim(deserializedParam.getAccessToken())) {
+					// 토큰이 유효할때 userId 처리
+					userId = jwtTokenParser.getUserId(deserializedParam.getAccessToken());
+				} else {
+					// 토큰이 유효하지 않을때 호출할 opCode 처리 및 message 전송
+					jwtExceptionResponseController.tokenException(session, deserializedParam);
+					return;
+				}
 			}
 
 			for (Class<?> clazz : list) {
